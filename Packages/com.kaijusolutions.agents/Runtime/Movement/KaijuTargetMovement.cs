@@ -43,7 +43,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The transform to move in relation to.
+        /// The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to move in relation to.
         /// </summary>
         public Transform TargetTransform
         {
@@ -56,7 +56,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The GameObject to move in relation to.
+        /// The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.
         /// </summary>
         public GameObject TargetGameObject
         {
@@ -119,7 +119,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The internal transform value.
+        /// The internal <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> value.
         /// </summary>
         private Transform _transform;
         
@@ -158,10 +158,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create the target movement for a transform.
+        /// Create the target movement for a <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see>.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The transform to move in relation to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         protected KaijuTargetMovement(KaijuAgent agent, Transform target, float distance) : base(agent)
         {
@@ -170,10 +170,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create the target movement for a GameObject.
+        /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The GameObject to move in relation to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         protected KaijuTargetMovement(KaijuAgent agent, GameObject target, float distance) : base(agent)
         {
@@ -254,14 +254,14 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator Vector3(KaijuTargetMovement t) => t.Target3 ?? Vector3.zero;
         
         /// <summary>
-        /// Implicit conversion to a transform from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Transform(KaijuTargetMovement t) => t.TargetTransform;
         
         /// <summary>
-        /// Implicit conversion to a GameObject from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>

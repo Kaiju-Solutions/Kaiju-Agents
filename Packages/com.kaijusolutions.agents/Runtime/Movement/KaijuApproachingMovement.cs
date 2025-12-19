@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuApproachingMovement : KaijuTargetMovement
     {
         /// <summary>
-        /// Create the target movement for a Vector2.
+        /// Create an approach movement for a Vector2.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move towards.</param>
@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuApproachingMovement(KaijuAgent agent, Vector2 target, float distance = 0) : base(agent, target, distance) { }
         
         /// <summary>
-        /// Create the target movement for a Vector3.
+        /// Create an approach movement for a Vector3.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move towards.</param>
@@ -24,23 +24,23 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuApproachingMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance) { }
         
         /// <summary>
-        /// Create the target movement for a transform.
+        /// Create an approach movement for a <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see>.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The transform to move towards.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         public KaijuApproachingMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
         
         /// <summary>
-        /// Create the target movement for a GameObject.
+        /// Create an approach movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The GameObject to move towards.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         public KaijuApproachingMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance) { }
         
         /// <summary>
-        /// Create the target movement for a component.
+        /// Create an approach movement for a component.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The component to move towards.</param>

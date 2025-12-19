@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Movement
         /// The previous position of the target.
         /// </summary>
         public Vector2 Previous;
-
+        
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
@@ -22,7 +22,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             Previous = target;
         }
-
+        
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
@@ -33,12 +33,12 @@ namespace KaijuSolutions.Agents.Movement
         {
             Previous = new(target.x, target.z);
         }
-
+        
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The transform to pursue to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuPursueMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance)
         {

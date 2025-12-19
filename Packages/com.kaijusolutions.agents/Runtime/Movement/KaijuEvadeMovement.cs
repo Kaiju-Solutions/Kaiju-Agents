@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Movement
         /// The previous position of the target.
         /// </summary>
         public Vector2 Previous;
-
+        
         /// <summary>
         /// Create an evade movement.
         /// </summary>
@@ -33,12 +33,12 @@ namespace KaijuSolutions.Agents.Movement
         {
             Previous = new(target.x, target.z);
         }
-
+        
         /// <summary>
         /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The transform to evade from.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuEvadeMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance)
         {
@@ -51,12 +51,12 @@ namespace KaijuSolutions.Agents.Movement
             Vector3 p = target.position;
             Previous = new(p.x, p.z);
         }
-
+        
         /// <summary>
         /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The GameObject to evade from.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuEvadeMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance)
         {
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents.Movement
             Vector3 p = target.transform.position;
             Previous = new(p.x, p.z);
         }
-
+        
         /// <summary>
         /// Create an evade movement.
         /// </summary>

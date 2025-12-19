@@ -27,7 +27,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Create a seek movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The transform to seek to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuSeekMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
         
@@ -35,7 +35,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Create a seek movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The GameObject to seek to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuSeekMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance) { }
         
