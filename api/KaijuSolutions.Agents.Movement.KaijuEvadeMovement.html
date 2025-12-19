@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuEvadeMovement | Kaiju Multiplayer Engine</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuEvadeMovement | Kaiju Multiplayer Engine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement" class="text-break">Class KaijuEvadeMovement
+  </h1>
+  <div class="markdown level0 summary"><p>Evade steering behaviour.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></div>
+    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html">KaijuTargetMovement</a></div>
+    <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html">KaijuLeavingMovement</a></div>
+    <div class="level4"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuFleeMovement.html">KaijuFleeMovement</a></div>
+    <div class="level5"><span class="xref">KaijuEvadeMovement</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement_Done">KaijuLeavingMovement.Done()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Target">KaijuTargetMovement.Target</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Target3">KaijuTargetMovement.Target3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetTransform">KaijuTargetMovement.TargetTransform</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetGameObject">KaijuTargetMovement.TargetGameObject</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetComponent">KaijuTargetMovement.TargetComponent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition">KaijuTargetMovement.AgentPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition3">KaijuTargetMovement.AgentPosition3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Distance">KaijuTargetMovement.Distance</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance">KaijuTargetMovement.CurrentDistance</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_Vector2_System_Single_">KaijuTargetMovement.Move(Vector2, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">KaijuMovement.Agent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_VelocityAndSpeed_Vector2_Vector2_Vector2__System_Single__">KaijuMovement.VelocityAndSpeed(Vector2, Vector2, Vector2, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Speed_Vector2_Vector2_">KaijuMovement.Speed(Vector2, Vector2)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Velocity_Vector2_Vector2_">KaijuMovement.Velocity(Vector2, Vector2)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuEvadeMovement : KaijuFleeMovement</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)">KaijuEvadeMovement(KaijuAgent, Component, Single)</h4>
+  <div class="markdown level1 summary"><p>Create an evade movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuEvadeMovement(KaijuAgent agent, Component target, float distance = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to evade from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)">KaijuEvadeMovement(KaijuAgent, GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Create an evade movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuEvadeMovement(KaijuAgent agent, GameObject target, float distance = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The GameObject to evade from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)">KaijuEvadeMovement(KaijuAgent, Transform, Single)</h4>
+  <div class="markdown level1 summary"><p>Create an evade movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuEvadeMovement(KaijuAgent agent, Transform target, float distance = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The transform to evade from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)">KaijuEvadeMovement(KaijuAgent, Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Create an evade movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuEvadeMovement(KaijuAgent agent, Vector2 target, float distance = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to evade from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)">KaijuEvadeMovement(KaijuAgent, Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Create an evade movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuEvadeMovement(KaijuAgent agent, Vector3 target, float distance = 0F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to evade from.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Previous" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Previous">Previous</h4>
+  <div class="markdown level1 summary"><p>The previous position of the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Previous</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Calculate_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Calculate*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Calculate_Vector2_Vector2_System_Single_Vector2_" data-uid="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Calculate(Vector2,Vector2,System.Single,Vector2)">Calculate(Vector2, Vector2, Single, Vector2)</h4>
+  <div class="markdown level1 summary"><p>Calculate the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The agent&apos;s current position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">velocity</span></td>
+        <td><p>The agent&apos;s current velocity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>The agent&apos;s maximum movement speed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to move in relation to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The calculated movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement_Calculate_Vector2_Vector2_System_Single_Vector2_">KaijuFleeMovement.Calculate(Vector2, Vector2, Single, Vector2)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

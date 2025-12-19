@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuMovement | Kaiju Multiplayer Engine</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuMovement | Kaiju Multiplayer Engine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Movement_KaijuMovement" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement" class="text-break">Class KaijuMovement
+  </h1>
+  <div class="markdown level0 summary"><p>Base movement class.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuMovement</span></div>
+      <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html">KaijuTargetMovement</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Movement_KaijuMovement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class KaijuMovement</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement__ctor_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.#ctor(KaijuSolutions.Agents.KaijuAgent)">KaijuMovement(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Create the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuMovement(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_Agent" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Agent">Agent</h4>
+  <div class="markdown level1 summary"><p>The agent the movement is assigned to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgent Agent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_Done_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Done*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_Done" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Done">Done()</h4>
+  <div class="markdown level1 summary"><p>Determine if the movement is done or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Done()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the movement is done or not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Move*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Get the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Vector2 Move(Vector2 velocity, float speed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">velocity</span></td>
+        <td><p>The agent&apos;s current velocity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>The agent&apos;s maximum movement speed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The calculated movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_Speed_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Speed*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_Speed_Vector2_Vector2_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Speed(Vector2,Vector2)">Speed(Vector2, Vector2)</h4>
+  <div class="markdown level1 summary"><p>Get the speed in units per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static float Speed(Vector2 current, Vector2 previous)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">current</span></td>
+        <td><p>Current position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">previous</span></td>
+        <td><p>Position at the previous time step.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The speed in units per second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_Velocity_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Velocity*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_Velocity_Vector2_Vector2_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.Velocity(Vector2,Vector2)">Velocity(Vector2, Vector2)</h4>
+  <div class="markdown level1 summary"><p>Get the velocity across axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static Vector2 Velocity(Vector2 current, Vector2 previous)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">current</span></td>
+        <td><p>Current position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">previous</span></td>
+        <td><p>Position at the previous time step.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The velocity across axis</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_VelocityAndSpeed_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.VelocityAndSpeed*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_VelocityAndSpeed_Vector2_Vector2_Vector2__System_Single__" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.VelocityAndSpeed(Vector2,Vector2,Vector2@,System.Single@)">VelocityAndSpeed(Vector2, Vector2, out Vector2, out Single)</h4>
+  <div class="markdown level1 summary"><p>Get the velocity and speed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void VelocityAndSpeed(Vector2 current, Vector2 previous, out Vector2 velocity, out float speed)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">current</span></td>
+        <td><p>Current position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">previous</span></td>
+        <td><p>Position at the previous time step.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">velocity</span></td>
+        <td><p>The velocity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">speed</span></td>
+        <td><p>The speed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuMovement to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> from the assigned <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_String" data-uid="KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.String">Implicit(KaijuMovement to String)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string (KaijuMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Movement.KaijuMovement.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

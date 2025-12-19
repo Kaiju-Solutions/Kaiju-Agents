@@ -1,0 +1,407 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://multiplayer.kaijusolutions.ca/",
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://multiplayer.kaijusolutions.ca/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/Kaiju-Agents/Kaiju-Agents/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgent.html",
+          "hash": "pHdoBdVzC+SDsvI9dwSlp/8F4JWhUtZIx0CsbfwSJiA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgents.html",
+          "hash": "UWAn6JGnrKoncgNVgbY+E5B/GiymF8g+dLplqZ65tGg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuCharacterAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuCharacterAgent.html",
+          "hash": "CNjXqIFPxBdz80f8T3sbARBj7vKWZzJUgVKgY3un4oA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuNavigationAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuNavigationAgent.html",
+          "hash": "opK5zl6D7hG2YpoQleRtJl4e1DHkB0bescnUsaHeefI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuRigidbodyAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html",
+          "hash": "ja81npeRDQqQPBQQ+NN1uUr1MeJpR+IlJSyuITiuzcg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuTransformAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuTransformAgent.html",
+          "hash": "ex2SqX/t0UWqkB8d2WRr8E8iwI4ZnlRacngTiTAQi0Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html",
+          "hash": "7QzoLIveLTBUqJ5Xp9kDUaz54BcciqvmtAodxVsU16I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html",
+          "hash": "wsCWsetb+6eJnQza1gTy/R6ApgKEaYTDydGD7zkNPmw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html",
+          "hash": "wbvrpXw02M3n2Ua/trZlvr727DM1UCyOrefn0ht0BYE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html",
+          "hash": "kwnXlsxsRncOsAqLRlFsBt6BYMiskJHPaJDnbe0o+sc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovement.html",
+          "hash": "8TtddiUe+aYcn5bR+paebbB+kmpLhp9fzbXyOCMOfvk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementCache.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html",
+          "hash": "6WS/GC5F0YP4tAtY0z/EWlbRp0TqFY34U12CnH36klc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html",
+          "hash": "NZRjXSosleroKAbr0FvsC70v/yAog8ICWm0+OK0Ludo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html",
+          "hash": "Dyp8mvXbUIyDjMA/3Mi9WyqvJE+bdssJBWzSPV5Oko8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html",
+          "hash": "ovNkXaSdMWUzABH9eUwssGfcHkcm9ichcRVVxwn8H1A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.html",
+          "hash": "OE4ErjMLp1pqf9BOVwixX7Mzwh7YHxOUb99g2BtDQs0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.html",
+          "hash": "X8aAq+OHhmKW7cKTQu0aH7rEiZ6sjXA9AG5JIzeqKNw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "hAAC1+SHpJi806hQD+uV9URZgF039N1ow+fjYpEPf0g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "changelog/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/index.html",
+          "hash": "vu1jhPStrawmBJQsUS3ATsMCy3FfVBYuBXf2Fnh4VVk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contact/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "contact/index.html",
+          "hash": "s+2mYEDmlZcp9Ba55J7ENnbK0ZIUTzLgLPM7aEcJQEY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "DVXj5uhUUGTnn9IIgSQUTJhqBnJcfC+PZsCgTpHKbqI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "license/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/index.html",
+          "hash": "G8mikVk6qKul9ciijUUo5rm+CYswDo3wHouAUM2v+Sg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/getting-started.html",
+          "hash": "nal0I2dzKf2vRxAiCsPoDikY0DxbkBFL0OW62zULCs8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "+nyR3PJCRi3KnR8Xq3HJ8Nu+uV/xs+k/Bf/DVP6MQtM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "43rtmrdBLDcz7DBm5TE8TjoQ5eEpXX3AAn3l/27cDs4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 18,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
