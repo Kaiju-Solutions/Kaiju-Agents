@@ -196,13 +196,11 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
-        /// <param name="velocity">The agent's current velocity.</param>
-        /// <param name="speed">The agent's maximum movement speed.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move(Vector2 velocity, float speed)
+        public override Vector2 Move()
         {
             Vector2? t = Target;
-            return t.HasValue ? Calculate(AgentPosition, velocity, speed, t.Value) : Vector2.zero;
+            return Agent && t.HasValue ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value) : Vector2.zero;
         }
         
         /// <summary>

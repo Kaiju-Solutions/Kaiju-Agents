@@ -14,6 +14,16 @@ namespace KaijuSolutions.Agents
     public abstract class KaijuAgent : MonoBehaviour
     {
         /// <summary>
+        /// The maximum speed of the agent.
+        /// </summary>
+        public float Speed { get; private set; }
+        
+        /// <summary>
+        /// The current velocity of the agent.
+        /// </summary>
+        public Vector2 Velocity { get; private set; }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public virtual void Setup() { }

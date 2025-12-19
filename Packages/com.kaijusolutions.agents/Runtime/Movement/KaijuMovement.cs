@@ -84,10 +84,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
-        /// <param name="velocity">The agent's current velocity.</param>
-        /// <param name="speed">The agent's maximum movement speed.</param>
         /// <returns>The calculated movement.</returns>
-        public abstract Vector2 Move(Vector2 velocity, float speed);
+        public abstract Vector2 Move();
 
         /// <summary>
         /// Determine if the movement is done or not.
