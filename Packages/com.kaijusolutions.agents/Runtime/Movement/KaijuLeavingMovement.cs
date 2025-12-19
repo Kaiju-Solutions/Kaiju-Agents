@@ -24,10 +24,10 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuLeavingMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance) { }
         
         /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see>.
+        /// Create a leaving movement for a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to move away from.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to move away from.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         public KaijuLeavingMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
         

@@ -3,7 +3,7 @@
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Kaiju Agent which moves via the <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see>.
+    /// Kaiju Agent which moves via the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
     /// </summary>
 #if UNITY_EDITOR
     [SelectionBase]

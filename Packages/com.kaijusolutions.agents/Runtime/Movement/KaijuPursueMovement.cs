@@ -38,7 +38,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Create a pursue movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to pursue to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuPursueMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance)
         {

@@ -42,10 +42,10 @@ namespace KaijuSolutions.Agents
         public static implicit operator GameObject(KaijuAgent t) => t.gameObject;
         
         /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see>.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The movement.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> of the agent.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the agent.</returns>
         public static implicit operator Transform(KaijuAgent t) => t.transform;
     }
 }

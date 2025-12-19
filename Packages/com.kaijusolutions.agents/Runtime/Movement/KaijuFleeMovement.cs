@@ -27,7 +27,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Create a flee movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/ScriptReference/Transform.html">transform</see> to flee from.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to flee from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         public KaijuFleeMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
         
