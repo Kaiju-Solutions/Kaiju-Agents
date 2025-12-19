@@ -1,0 +1,24 @@
+{
+	"name": "com.kaijusolutions.agents",
+	"displayName":"Kaiju Agents",
+	"version": "1.0.0",
+	"unity": "6000.3",
+	"description": "Rapidly prototype AI agents.",
+	"dependencies": {
+		"com.unity.modules.ai": "latest"
+	},
+	"author": {
+		"name": "Kaiju Solutions Inc.",
+		"url": "http://kaijusolutions.ca",
+		"email": "contact@kaijusolutions.ca"
+	},
+	"changelogUrl": "https://agents.kaijusolutions.ca/changelog",
+	"documentationUrl": "https://agents.kaijusolutions.ca",
+	"licensesUrl": "https://agents.kaijusolutions.ca/license",
+	"license": "MIT License",
+	"keywords": [
+		"Agents",
+		"AI",
+		"Artificial Intelligence"
+	]
+}

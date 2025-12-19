@@ -1,0 +1,43 @@
+apiRules:
+- exclude:
+    uidRegex: ^Global$
+    type: Namespace
+- exclude:
+    uidRegex: ^System$
+    type: Namespace
+- exclude:
+    uidRegex: .*Editor$
+    type: Namespace
+- exclude:
+    uidRegex: .*Samples$
+    type: Namespace
+- exclude:
+    uidRegex: .*Samples*.
+    type: Namespace
+- exclude:
+    uidRegex: \.ToString$
+    type: Method
+- exclude:
+    uidRegex: \.Awake$
+    type: Method
+- exclude:
+    uidRegex: \.Start$
+    type: Method
+- exclude:
+    uidRegex: \.OnEnable$
+    type: Method
+- exclude:
+    uidRegex: \.OnDisable$
+    type: Method
+- exclude:
+    uidRegex: \.OnDestroy$
+    type: Method
+- exclude:
+    uidRegex: \.Update$
+    type: Method
+- exclude:
+    uidRegex: \.FixedUpdate$
+    type: Method
+- exclude:
+    uidRegex: \.OnValidate$
+    type: Method

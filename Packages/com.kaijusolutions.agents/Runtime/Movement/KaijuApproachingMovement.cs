@@ -1,0 +1,69 @@
+﻿using UnityEngine;
+
+namespace KaijuSolutions.Agents.Movement
+{
+    /// <summary>
+    /// Base movement class for moving towards a single target.
+    /// </summary>
+    public abstract class KaijuApproachingMovement : KaijuTargetMovement
+    {
+        /// <summary>
+        /// Create the target movement for a Vector2.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The vector to move towards.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        public KaijuApproachingMovement(KaijuAgent agent, Vector2 target, float distance = 0) : base(agent, target, distance) { }
+        
+        /// <summary>
+        /// Create the target movement for a Vector3.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The vector to move towards.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        public KaijuApproachingMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance) { }
+        
+        /// <summary>
+        /// Create the target movement for a transform.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The transform to move towards.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        public KaijuApproachingMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
+        
+        /// <summary>
+        /// Create the target movement for a GameObject.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The GameObject to move towards.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        public KaijuApproachingMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance) { }
+        
+        /// <summary>
+        /// Create the target movement for a component.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The component to move towards.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        public KaijuApproachingMovement(KaijuAgent agent, Component target, float distance = 0) : base(agent, target, distance) { }
+        
+        /// <summary>
+        /// Determine if the movement is done or not.
+        /// </summary>
+        /// <returns>If the movement is done or not.</returns>
+        public override bool Done()
+        {
+            return base.Done() || CurrentDistance <= Distance;
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            Vector2? t = Target;
+            return $"Kaiju Approaching Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - {(Done() ? "Done" : "Executing")}";
+        }
+    }
+}

@@ -1,0 +1,320 @@
+name: Create Documentation
+
+on:
+  # Run every push.
+  #push:
+  #  branches:
+  #    - master
+
+  # Manually run from the Actions tab.
+  workflow_dispatch:
+
+# Concurrency group to cancel in-progress runs of this workflow on the same branch.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Delete all old jobs before starting this new one.
+  delete-old-runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 0
+
+  # Delete all old deployments before starting this new one.
+  delete-old-deployments:
+    needs: delete-old-runs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old deployments
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
+  # Build the documentation.
+  build:
+    needs: delete-old-deployments
+    # DocFX needs Windows.
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # DocFx can't recognize compiler flags so change them based on set flags.
+      - name: Handle Precompiler Definitions
+        run: |
+          $trueDefinesFile = "Documentation/TRUE.txt"
+          $falseDefinesFile = "Documentation/FALSE.txt"
+
+          # Load TRUE definitions if the file exists.
+          $trueDefines = @()
+          if (Test-Path $trueDefinesFile) {
+              $trueDefines = Get-Content $trueDefinesFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+              Write-Host "Loaded $($trueDefines.Count) symbols to be replaced with TRUE."
+          } else {
+              Write-Host "'$trueDefinesFile' not found. No symbols will be replaced with TRUE."
+          }
+
+          # Load FALSE definitions if the file exists.
+          $falseDefines = @()
+          if (Test-Path $falseDefinesFile) {
+              $falseDefines = Get-Content $falseDefinesFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+              Write-Host "Loaded $($falseDefines.Count) symbols to be replaced with FALSE."
+          } else {
+              Write-Host "'$falseDefinesFile' not found. No symbols will be replaced with FALSE."
+          }
+
+          # Exit if no definitions were loaded.
+          if ($trueDefines.Count -eq 0 -and $falseDefines.Count -eq 0) {
+              Write-Host "No define symbol files found or files are empty. Skipping replacement."
+              return
+          }
+
+          # Get all C# files recursively.
+          $csFiles = Get-ChildItem -Path . -Filter *.cs -Recurse
+
+          # Iterate over each C# file and apply replacements.
+          foreach ($file in $csFiles) {
+              $originalContent = Get-Content $file.FullName -Raw
+              $newContent = $originalContent
+
+              # Replace symbols with 'TRUE'.
+              foreach ($define in $trueDefines) {
+                  $pattern = "\b$([regex]::Escape($define))\b"
+                  $newContent = $newContent -creplace $pattern, 'TRUE'
+              }
+
+              # Replace symbols with 'FALSE'.
+              foreach ($define in $falseDefines) {
+                  $pattern = "\b$([regex]::Escape($define))\b"
+                  $newContent = $newContent -creplace $pattern, 'FALSE'
+              }
+
+              # Write content back to file only if changes were made.
+              if ($originalContent -ne $newContent) {
+                  Write-Host "Updating definitions in: $($file.FullName)"
+                  Set-Content -Path $file.FullName -Value $newContent
+              }
+          }
+        shell: pwsh
+
+      - name: Install DocFX
+        run: choco install -y docfx
+
+        # Ensure a clean build for safety.
+      - name: Clean DocFX Intermediate Files
+        run: Remove-Item -Path Documentation/obj -Recurse -Force -ErrorAction SilentlyContinue
+
+      - name: Use README.md as index.md
+        run: cp README.md Documentation/index.md
+
+      - name: Copy LICENSE.md
+        run: |
+          New-Item -Path "Documentation/license" -ItemType Directory -Force
+          cp LICENSE.md Documentation/license/index.md
+
+      - name: Documentation Folder Contents Before Build
+        run: |
+          Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
+        shell: pwsh
+
+      - name: Generate Metadata
+        run: docfx metadata Documentation/docfx.json -l Verbose
+
+      - name: Documentation Folder Contents After Build
+        run: |
+          Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
+        shell: pwsh
+
+      # Write custom names to the API table of contents.
+      - name: Update API Names
+        shell: pwsh
+        run: |
+          $tocFile = "Documentation/api/toc.yml"
+          $namespacesDir = "Documentation/namespaces"
+
+          # 1. Check if the toc.yml file exists.
+          if (-not (Test-Path $tocFile -PathType Leaf)) {
+              Write-Host "TOC file not found at '$tocFile'. Skipping name update."
+              exit 0
+          }
+
+          # 2. Check if the namespaces directory exists.
+          if (-not (Test-Path $namespacesDir -PathType Container)) {
+              Write-Host "Namespaces directory not found at '$namespacesDir'. Skipping name update."
+              exit 0
+          }
+
+          # 3. Load all .txt files and create mappings for replacement.
+          $namespaceFiles = Get-ChildItem -Path $namespacesDir -Filter *.txt
+          if ($namespaceFiles.Count -eq 0) {
+              Write-Host "No namespace mapping files (.txt) found in '$namespacesDir'. Skipping name update."
+              exit 0
+          }
+
+          $nameMappings = @{}
+          foreach ($file in $namespaceFiles) {
+              $originalName = $file.BaseName
+              # Read the content as a single, trimmed string.
+              $niceName = (Get-Content $file.FullName -Raw).Trim()
+              if (-not [string]::IsNullOrWhiteSpace($niceName)) {
+                  $nameMappings[$originalName] = $niceName
+                  Write-Host "Found mapping: '$originalName' -> '$niceName'"
+              }
+          }
+
+          if ($nameMappings.Count -eq 0) {
+              Write-Host "No valid name mappings were loaded. Skipping replacement."
+              exit 0
+          }
+
+          # 4. Read the TOC file and update each entry.
+          # Essentially turns every entry of "name: My.Namespace" into "name: Nice Name" where "Nice Name" was loaded from "Documentation/namespaces/My.Namespace.txt".
+          $tocContent = Get-Content $tocFile -Raw
+          $originalTocContent = $tocContent
+          foreach ($originalName in $nameMappings.Keys) {
+              $niceName = $nameMappings[$originalName]
+              # This regex matches "name: " followed by the exact namespace.
+              # The negative lookahead (?!\S) ensures it doesn't match a substring of a longer namespace (e.g., it matches "name: My.Namespace" but not "name: My.Namespace.Sub").
+              $pattern = "(name:\s+)$([regex]::Escape($originalName))(?!\S)"
+              if ($tocContent -match $pattern) {
+                  Write-Host "Updating name for '$originalName' in TOC."
+                  $tocContent = $tocContent -creplace $pattern, "name: $niceName"
+              } else {
+                  Write-Host "Name '$originalName' not found in TOC for replacement."
+              }
+          }
+
+          # Write content back to the file only if changes were made.
+          if ($originalTocContent -ne $tocContent) {
+              Write-Host "Writing updated names to '$tocFile'."
+              Set-Content -Path $tocFile -Value $tocContent
+          } else {
+              Write-Host "No changes were made to the TOC file."
+          }
+
+      # Write the contents of the specified YML file to the log.
+      - name: Show API YML Contents
+        run: Get-Content Documentation\api\toc.yml
+        shell: pwsh
+      
+      # Build the API.
+      - name: Build Documentation Website
+        run: docfx build Documentation/docfx.json -l Verbose
+
+      # Copy over the 404.html file to the root of the build output.
+      - name: Copy 404.html
+        run: Copy-Item -Path Documentation/404.html -Destination _site/404.html
+        shell: pwsh
+
+      # Clean "index.html" links for prettier URLs.
+      - name: Clean Site HTML
+        shell: pwsh
+        run: |
+          $siteDir = "_site"
+          # Get all HTML files from the output directory.
+          $htmlFiles = Get-ChildItem -Path $siteDir -Filter *.html -Recurse
+          Write-Host "Found $($htmlFiles.Count) HTML files to process for cleaning."
+
+          foreach ($file in $htmlFiles) {
+              $originalContent = Get-Content $file.FullName -Raw
+
+              # Clean all internal links.
+              $newContent = $originalContent -creplace 'https?://multiplayer\.kaijusolutions\.ca', ''
+
+              # This makes URLs cleaner, e.g., '.../topic/index.html' becomes '.../topic/'.
+              $newContent = $newContent -creplace '/index\.html#', '#'
+              $newContent = $newContent -creplace '/index\.html"', '"'
+              $newContent = $newContent -creplace '"index\.html"', '"."'
+
+              # Remove blank, useless name attributes.
+              $newContent = $newContent -creplace 'name=""', ''
+
+              # Find <a> tags with external links that do NOT have a target attribute, and add target="_blank"
+              $newContent = $newContent -creplace '(<a\s+(?!.*\btarget\b=)[^>]*\bhref\s*=\s*["'']https?://[^>]+?)>', '$1 target="_blank">'
+
+              # Remove any blank assemblies listed.
+              $newContent = $newContent -creplace '<h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>', ''
+
+              # Clean up whitespace in the title tag.
+              $newContent = $newContent -creplace ' </title>', '</title>'
+              $newContent = $newContent -creplace '(\r\n|\n|\r)\s+\| ', ' | '
+
+              # Remove duplicate text around a pipe separator, e.g., turn "My Title | My Title" into "My Title".
+              # This is targeted at title-like text containing words, spaces, commas, dots, and hyphens.
+              $genericPipeRegex = '([\w\s.,-]+)\s*\|\s*([\w\s.,-]+)'
+              $pipeEvaluator = {
+                  param($match)
+                  $firstPart = $match.Groups[1].Value.Trim()
+                  $secondPart = $match.Groups[2].Value.Trim()
+
+                  # Check for equality and that the strings aren't just whitespace.
+                  if (($firstPart -eq $secondPart) -and (-not [string]::IsNullOrWhiteSpace($firstPart))) {
+                      # Return only the first part, effectively removing the duplicate and the pipe.
+                      $firstPart
+                  } else {
+                      # If they are not equal, return the original matched string so no change occurs.
+                      $match.Value
+                  }
+              }
+              $newContent = [regex]::Replace($newContent, $genericPipeRegex, $pipeEvaluator)
+
+              # If content was changed, write it back to the file.
+              if ($originalContent -ne $newContent) {
+                  Write-Host "Cleaned links and titles in: $($file.FullName)"
+                  # Use UTF8 without BOM to prevent issues with web servers.
+                  $utf8WithoutBom = New-Object System.Text.UTF8Encoding($false)
+                  [System.IO.File]::WriteAllText($file.FullName, $newContent, $utf8WithoutBom)
+              }
+          }
+
+      # Upload the generated documentation.
+      - name: Upload Site Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: _site
+          # Must equal the 'build.dest' value on the docfx.json.
+          path: _site
+
+  # Deploy the generated documentation to the gh-pages branch.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://agents.kaijusolutions.ca
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      # Download the generated documentation.
+      - name: Download Site Artifact
+        uses: actions/download-artifact@v4
+        with:
+          # Specify the path to download the artifact.
+          name: _site
+          path: _site
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          cname: agents.kaijusolutions.ca
