@@ -3,7 +3,7 @@
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/ScriptReference/CharacterController.html">chracter controller</see>.
+    /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
     /// </summary>
 #if UNITY_EDITOR
     [SelectionBase]
@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuCharacterAgent : KaijuAgent
     {
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/CharacterController.html">chracter controller</see> which controls the agent's movement.
+        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the agent's movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The character controller which controls the agent's movement.")]
