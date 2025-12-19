@@ -3,7 +3,7 @@
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/ScriptReference/Rigidbody.html">rigidbody</see>.
+    /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
     /// </summary>
 #if UNITY_EDITOR
     [SelectionBase]
@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuRigidbodyAgent : KaijuAgent
     {
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/Rigidbody.html">rigidbody</see>. which controls the agent's movement.
+        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>. which controls the agent's movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The rigidbody which controls the agent's movement.")]
