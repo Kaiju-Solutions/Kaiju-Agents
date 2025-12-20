@@ -95,23 +95,6 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The <see cref="KaijuMovement.Agent"/>'s current position.
-        /// </summary>
-        public Vector2 AgentPosition
-        {
-            get
-            {
-                Vector3 p3 = AgentPosition3;
-                return new(p3.x, p3.z);
-            }
-        }
-        
-        /// <summary>
-        /// The <see cref="KaijuMovement.Agent"/>'s current position.
-        /// </summary>
-        public Vector3 AgentPosition3 => Agent ? Agent.transform.position : Vector3.zero;
-        
-        /// <summary>
         /// The distance at which we can consider this behaviour done.
         /// </summary>
         public float Distance

@@ -14,6 +14,16 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuAgent Agent;
         
         /// <summary>
+        /// The <see cref="KaijuMovement.Agent"/>'s current position.
+        /// </summary>
+        public Vector2 AgentPosition => Agent ? Agent.Position : Vector2.zero;
+        
+        /// <summary>
+        /// The <see cref="KaijuMovement.Agent"/>'s current position.
+        /// </summary>
+        public Vector3 AgentPosition3 => Agent ? Agent.Position3 : Vector3.zero;
+        
+        /// <summary>
         /// Create the movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
@@ -119,14 +129,70 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the assigned <see cref="Agent"/>.</returns>
-        public static implicit operator Transform([NotNull] KaijuMovement m) => m.Agent.transform;
+        public static implicit operator Transform([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the assigned <see cref="Agent"/>.
         /// </summary>
         /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the assigned <see cref="Agent"/>.</returns>
-        public static implicit operator GameObject([NotNull] KaijuMovement m) => m.Agent.gameObject;
+        public static implicit operator GameObject([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a Vector2 from the assigned <see cref="Agent"/>'s position.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The Vector2 from the assigned <see cref="Agent"/>'s position.</returns>
+        public static implicit operator Vector2([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector2 from the assigned <see cref="Agent"/>'s position.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The Vector2 from the assigned <see cref="Agent"/>'s position.</returns>
+        public static implicit operator Vector2?([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a Vector3 from the assigned <see cref="Agent"/>'s position.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The Vector3 from the assigned <see cref="Agent"/>'s position.</returns>
+        public static implicit operator Vector3([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector3 from the assigned <see cref="Agent"/>'s position.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The Vector3 from the assigned <see cref="Agent"/>'s position.</returns>
+        public static implicit operator Vector3?([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a float from the assigned <see cref="Agent"/>'s Y orientation.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The float from the assigned <see cref="Agent"/>'s Y orientation.</returns>
+        public static implicit operator float([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable float from the assigned <see cref="Agent"/>'s Y orientation.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The float from the assigned <see cref="Agent"/>'s Y orientation.</returns>
+        public static implicit operator float?([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a double from the assigned <see cref="Agent"/>'s Y orientation.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The double from the assigned <see cref="Agent"/>'s Y orientation.</returns>
+        public static implicit operator double([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable double from the assigned <see cref="Agent"/>'s Y orientation.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The double from the assigned <see cref="Agent"/>'s Y orientation.</returns>
+        public static implicit operator double?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a string.
