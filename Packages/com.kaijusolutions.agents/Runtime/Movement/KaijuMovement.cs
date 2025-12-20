@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -110,14 +111,28 @@ namespace KaijuSolutions.Agents.Movement
         /// Implicit conversion to an <see cref="KaijuAgent"/> from the assigned <see cref="Agent"/>.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The agent.</returns>
-        public static implicit operator KaijuAgent(KaijuMovement m) => m.Agent;
+        /// <returns>The <see cref="KaijuAgent"/>.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuMovement m) => m.Agent;
+        
+        /// <summary>
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the assigned <see cref="Agent"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the assigned <see cref="Agent"/>.</returns>
+        public static implicit operator Transform([NotNull] KaijuMovement m) => m.Agent.transform;
+        
+        /// <summary>
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the assigned <see cref="Agent"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the assigned <see cref="Agent"/>.</returns>
+        public static implicit operator GameObject([NotNull] KaijuMovement m) => m.Agent.gameObject;
         
         /// <summary>
         /// Implicit conversion to a string.
         /// </summary>
         /// <param name="m">The movement.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
-        public static implicit operator string(KaijuMovement m) => m.ToString();
+        public static implicit operator string([NotNull] KaijuMovement m) => m.ToString();
     }
 }

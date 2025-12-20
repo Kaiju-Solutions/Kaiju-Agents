@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents
 {
@@ -51,7 +52,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Rigidbody Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
+            return $"Kaiju Rigidbody Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
         
         /// <summary>
@@ -59,6 +60,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> of the agent.</returns>
-        public static implicit operator Rigidbody(KaijuRigidbodyAgent a) => a.body;
+        public static implicit operator Rigidbody([NotNull] KaijuRigidbodyAgent a) => a.body;
     }
 }

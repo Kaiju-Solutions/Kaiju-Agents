@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents
 {
@@ -54,7 +55,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Character Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
+            return $"Kaiju Character Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
         
         /// <summary>
@@ -62,6 +63,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> of the agent.</returns>
-        public static implicit operator CharacterController(KaijuCharacterAgent a) => a.character;
+        public static implicit operator CharacterController([NotNull] KaijuCharacterAgent a) => a.character;
     }
 }

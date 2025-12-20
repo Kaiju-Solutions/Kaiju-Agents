@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace KaijuSolutions.Agents
@@ -52,7 +53,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Navigation Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
+            return $"Kaiju Navigation Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
         
         /// <summary>
@@ -60,6 +61,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> of the agent.</returns>
-        public static implicit operator NavMeshAgent(KaijuNavigationAgent a) => a.nav;
+        public static implicit operator NavMeshAgent([NotNull] KaijuNavigationAgent a) => a.nav;
     }
 }

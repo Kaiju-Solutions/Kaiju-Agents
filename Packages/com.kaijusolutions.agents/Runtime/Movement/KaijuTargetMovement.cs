@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -66,6 +67,19 @@ namespace KaijuSolutions.Agents.Movement
                 _transform = value.transform;
                 _vector = null;
             }
+        }
+        
+        /// <summary>
+        /// The <see cref="KaijuAgent"/> to move in relation to.
+        /// </summary>
+        public KaijuAgent TargetAgent
+        {
+            get
+            {
+                Transform tr = TargetTransform;
+                return tr ? tr.GetComponent<KaijuAgent>() : null;
+            }
+            set => TargetComponent = value;
         }
         
         /// <summary>
@@ -228,62 +242,83 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector2?(KaijuTargetMovement t) => t.Target;
+        public static implicit operator Vector2?([NotNull] KaijuTargetMovement t) => t.Target;
         
         /// <summary>
         /// Implicit conversion to a Vector2 from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector2(KaijuTargetMovement t) => t.Target ?? Vector2.zero;
+        public static implicit operator Vector2([NotNull] KaijuTargetMovement t) => t.Target ?? Vector2.zero;
         
         /// <summary>
         /// Implicit conversion to a nullable Vector3 from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector3?(KaijuTargetMovement t) => t.Target3;
+        public static implicit operator Vector3?([NotNull] KaijuTargetMovement t) => t.Target3;
         
         /// <summary>
         /// Implicit conversion to a Vector3 from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector3(KaijuTargetMovement t) => t.Target3 ?? Vector3.zero;
+        public static implicit operator Vector3([NotNull] KaijuTargetMovement t) => t.Target3 ?? Vector3.zero;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The target.</returns>
-        public static implicit operator Transform(KaijuTargetMovement t) => t.TargetTransform;
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</returns>
+        public static implicit operator Transform([NotNull] KaijuTargetMovement t) => t.TargetTransform;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The target.</returns>
-        public static implicit operator GameObject(KaijuTargetMovement t) => t.TargetGameObject;
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</returns>
+        public static implicit operator GameObject([NotNull] KaijuTargetMovement t) => t.TargetGameObject;
+
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/> from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target <see cref="KaijuAgent"/> from the target.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuTargetMovement t) => t.TargetAgent;
         
         /// <summary>
         /// Implicit conversion to a Boolean based on if this is done or not.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>If this is done or not.</returns>
-        public static implicit operator bool(KaijuTargetMovement t) => t.Done();
+        public static implicit operator bool([NotNull] KaijuTargetMovement t) => t.Done();
         
         /// <summary>
         /// Implicit conversion to a float from the <see cref="CurrentDistance"/>.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator float(KaijuTargetMovement t) => t.CurrentDistance;
+        public static implicit operator float([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable float from the <see cref="CurrentDistance"/>.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The <see cref="CurrentDistance"/>.</returns>
+        public static implicit operator float?([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
         
         /// <summary>
         /// Implicit conversion to a double from the <see cref="CurrentDistance"/>.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator double(KaijuTargetMovement t) => t.CurrentDistance;
+        public static implicit operator double([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable double from the <see cref="CurrentDistance"/>.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The <see cref="CurrentDistance"/>.</returns>
+        public static implicit operator double?([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
     }
 }

@@ -22,7 +22,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Transform Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
+            return $"Kaiju Transform Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
     }
 }
