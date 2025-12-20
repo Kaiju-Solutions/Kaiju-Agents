@@ -20,10 +20,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
-        {
-            Previous = target;
-        }
+        public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an evade movement.
@@ -32,10 +29,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
-        {
-            Previous = new(target.x, target.z);
-        }
+        public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an evade movement.
@@ -44,11 +38,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuEvadeMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
-        {
-            Vector3 p = target.transform.position;
-            Previous = new(p.x, p.z);
-        }
+        public KaijuEvadeMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an evade movement.
@@ -57,10 +47,24 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The component to evade from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuEvadeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
+        public KaijuEvadeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        
+        /// <summary>
+        /// Handle any additional setup.
+        /// </summary>
+        protected override void Setup()
         {
-            Vector3 p = target.transform.position;
-            Previous = new(p.x, p.z);
+            // Start the previous position as the current position.
+            Previous = Target ?? Vector2.zero;
+        }
+        
+        /// <summary>
+        /// Perform any needed reset operations.
+        /// </summary>
+        protected override void Reset()
+        {
+            base.Reset();
+            Previous = Vector2.zero;
         }
         
         /// <summary>
@@ -91,7 +95,7 @@ namespace KaijuSolutions.Agents.Movement
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

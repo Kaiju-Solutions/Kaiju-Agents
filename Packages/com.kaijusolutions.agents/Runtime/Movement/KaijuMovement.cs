@@ -38,17 +38,6 @@ namespace KaijuSolutions.Agents.Movement
         public Vector3 AgentPosition3 => Agent ? Agent.Position3 : Vector3.zero;
         
         /// <summary>
-        /// Create the movement.
-        /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="weight">The weight of this movement.</param>
-        public KaijuMovement([NotNull] KaijuAgent agent, float weight = 1)
-        {
-            Agent = agent;
-            Weight = weight;
-        }
-        
-        /// <summary>
         /// Get the velocity and speed.
         /// </summary>
         /// <param name="current">Current position.</param>
@@ -109,6 +98,33 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
+        /// Create the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuMovement([NotNull] KaijuAgent agent, float weight = 1)
+        {
+            Initialize(agent, weight);
+        }
+        
+        /// <summary>
+        /// Initialize the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        protected void Initialize([NotNull] KaijuAgent agent, float weight = 1)
+        {
+            Agent = agent;
+            Weight = weight;
+            Setup();
+        }
+        
+        /// <summary>
+        /// Handle any additional setup.
+        /// </summary>
+        protected virtual void Setup() { }
+        
+        /// <summary>
         /// Get the movement.
         /// </summary>
         /// <returns>The calculated movement.</returns>
@@ -129,7 +145,17 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public void Return()
         {
+            Reset();
             KaijuMovementManager.Return(this);
+        }
+        
+        /// <summary>
+        /// Perform any needed reset operations.
+        /// </summary>
+        protected virtual void Reset()
+        {
+            Agent = null;
+            _weight = 0;
         }
         
         /// <summary>
@@ -138,7 +164,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Movement - Agent: {(Agent ? Agent.name : "None")} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Movement - Agent: {(Agent ? Agent.name : "None")} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>

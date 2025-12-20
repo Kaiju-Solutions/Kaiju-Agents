@@ -183,6 +183,62 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
+        /// Initialize the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The vector to move in relation to.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = 1)
+        {
+            Target = target;
+            Distance = distance;
+            Initialize(agent, weight);
+        }
+        
+        /// <summary>
+        /// Initialize the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The vector to move in relation to.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = 1)
+        {
+            Target3 = target;
+            Distance = distance;
+            Initialize(agent, weight);
+        }
+        
+        /// <summary>
+        /// Initialize the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = 1)
+        {
+            TargetGameObject = target;
+            Distance = distance;
+            Initialize(agent, weight);
+        }
+        
+        /// <summary>
+        /// Initialize the movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="distance">The distance to consider this move done.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1)
+        {
+            TargetComponent = target;
+            Distance = distance;
+            Initialize(agent, weight);
+        }
+        
+        /// <summary>
         /// Get the movement.
         /// </summary>
         /// <returns>The calculated movement.</returns>
@@ -203,13 +259,24 @@ namespace KaijuSolutions.Agents.Movement
         protected abstract Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target);
         
         /// <summary>
+        /// Perform any needed reset operations.
+        /// </summary>
+        protected override void Reset()
+        {
+            base.Reset();
+            _vector = Vector2.zero;
+            _transform = null;
+            _distance = 0;
+        }
+        
+        /// <summary>
         /// Get a description of the object.
         /// </summary>
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>

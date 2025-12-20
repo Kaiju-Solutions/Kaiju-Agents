@@ -133,27 +133,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public void Seek(Vector2 target, float distance = 0, bool clear = true)
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuSeekMovement Seek(Vector2 target, float distance = 0, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
-            if (movement == null)
-            {
-                movement = new(this, target, distance);
-            }
-            else
-            {
-                movement.Agent = this;
-                movement.Target = target;
-                movement.Distance = distance;
-            }
-            
+            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
             Movements.Add(movement);
+            return movement;
         }
         
         /// <summary>
@@ -161,27 +153,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public void Seek(Vector3 target, float distance = 0, bool clear = true)
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuSeekMovement Seek(Vector3 target, float distance = 0, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
-            if (movement == null)
-            {
-                movement = new(this, target, distance);
-            }
-            else
-            {
-                movement.Agent = this;
-                movement.Target3 = target;
-                movement.Distance = distance;
-            }
-            
+            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
             Movements.Add(movement);
+            return movement;
         }
         
         /// <summary>
@@ -189,8 +173,10 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public void Seek([NotNull] GameObject target, float distance = 0, bool clear = true)
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuSeekMovement Seek([NotNull] GameObject target, float distance = 0, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -198,22 +184,13 @@ namespace KaijuSolutions.Agents
             }
             else
             {
+                // Only have one movement towards each target object.
                 StopFor(target);
             }
             
-            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
-            if (movement == null)
-            {
-                movement = new(this, target, distance);
-            }
-            else
-            {
-                movement.Agent = this;
-                movement.TargetGameObject = target;
-                movement.Distance = distance;
-            }
-            
+            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
             Movements.Add(movement);
+            return movement;
         }
         
         /// <summary>
@@ -221,8 +198,10 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public void Seek([NotNull] Component target, float distance = 0, bool clear = true)
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuSeekMovement Seek([NotNull] Component target, float distance = 0, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -230,22 +209,13 @@ namespace KaijuSolutions.Agents
             }
             else
             {
+                // Only have one movement towards each target object.
                 StopFor(target);
             }
             
-            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
-            if (movement == null)
-            {
-                movement = new(this, target, distance);
-            }
-            else
-            {
-                movement.Agent = this;
-                movement.TargetComponent = target;
-                movement.Distance = distance;
-            }
-            
+            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
             Movements.Add(movement);
+            return movement;
         }
         
         // TODO - Pursue, Flee, and Evade.

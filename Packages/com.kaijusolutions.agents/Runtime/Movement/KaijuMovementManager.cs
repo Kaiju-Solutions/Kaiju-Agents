@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 #if UNITY_EDITOR
 using UnityEngine;
 #endif
@@ -53,6 +54,86 @@ namespace KaijuSolutions.Agents.Movement
             }
             
             queue.Enqueue(movement);
+        }
+        
+        /// <summary>
+        /// Get a seek to a target.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuSeekMovement GetSeek(this KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1)
+        {
+            KaijuSeekMovement movement = Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a seek to a target.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuSeekMovement GetSeek(this KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1)
+        {
+            KaijuSeekMovement movement = Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a seek to a target.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuSeekMovement GetSeek(this KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1)
+        {
+            KaijuSeekMovement movement = Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a seek to a target.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuSeekMovement GetSeek(this KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1)
+        {
+            KaijuSeekMovement movement = Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
         }
     }
 }
