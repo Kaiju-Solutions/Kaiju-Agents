@@ -12,6 +12,20 @@ namespace KaijuSolutions.Agents.Movement
         /// The agent the movement is assigned to.
         /// </summary>
         public KaijuAgent Agent;
+
+        /// <summary>
+        /// The weight of this movement.
+        /// </summary>
+        public float Weight
+        {
+            get => _weight;
+            set => _weight = Mathf.Max(value, float.Epsilon);
+        }
+        
+        /// <summary>
+        /// The weight of this movement.
+        /// </summary>
+        private float _weight;
         
         /// <summary>
         /// The <see cref="KaijuMovement.Agent"/>'s current position.
@@ -27,9 +41,11 @@ namespace KaijuSolutions.Agents.Movement
         /// Create the movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
-        public KaijuMovement(KaijuAgent agent)
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuMovement([NotNull] KaijuAgent agent, float weight = 1)
         {
             Agent = agent;
+            Weight = weight;
         }
         
         /// <summary>
@@ -109,6 +125,14 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
+        /// Return this movement.
+        /// </summary>
+        public void Return()
+        {
+            KaijuMovementManager.Return(this);
+        }
+        
+        /// <summary>
         /// Get a description of the object.
         /// </summary>
         /// <returns>A description of the object.</returns>
@@ -167,32 +191,18 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator Vector3?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a float from the assigned <see cref="Agent"/>'s Y orientation.
+        /// Implicit conversion to a Boolean to see if the <see cref="Agent"/> is assigned.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The float from the assigned <see cref="Agent"/>'s Y orientation.</returns>
-        public static implicit operator float([NotNull] KaijuMovement m) => m.Agent;
+        /// <returns>If the <see cref="Agent"/> is assigned.</returns>
+        public static implicit operator bool([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a nullable float from the assigned <see cref="Agent"/>'s Y orientation.
+        /// Implicit conversion to a nullable Boolean to see if the <see cref="Agent"/> is assigned.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The float from the assigned <see cref="Agent"/>'s Y orientation.</returns>
-        public static implicit operator float?([NotNull] KaijuMovement m) => m.Agent;
-        
-        /// <summary>
-        /// Implicit conversion to a double from the assigned <see cref="Agent"/>'s Y orientation.
-        /// </summary>
-        /// <param name="m">The movement.</param>
-        /// <returns>The double from the assigned <see cref="Agent"/>'s Y orientation.</returns>
-        public static implicit operator double([NotNull] KaijuMovement m) => m.Agent;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable double from the assigned <see cref="Agent"/>'s Y orientation.
-        /// </summary>
-        /// <param name="m">The movement.</param>
-        /// <returns>The double from the assigned <see cref="Agent"/>'s Y orientation.</returns>
-        public static implicit operator double?([NotNull] KaijuMovement m) => m.Agent;
+        /// <returns>If the <see cref="Agent"/> is assigned.</returns>
+        public static implicit operator bool?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a string.
@@ -200,5 +210,33 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="m">The movement.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
         public static implicit operator string([NotNull] KaijuMovement m) => m.ToString();
+        
+        /// <summary>
+        /// Implicit conversion to a float from the <see cref="Weight"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see cref="Weight"/>.</returns>
+        public static implicit operator float([NotNull] KaijuMovement m) => m.Weight;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable float from the <see cref="Weight"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see cref="Weight"/>.</returns>
+        public static implicit operator float?([NotNull] KaijuMovement m) => m.Weight;
+        
+        /// <summary>
+        /// Implicit conversion to a double from the <see cref="Weight"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see cref="Weight"/>.</returns>
+        public static implicit operator double([NotNull] KaijuMovement m) => m.Weight;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable double from the <see cref="Weight"/>.
+        /// </summary>
+        /// <param name="m">The movement.</param>
+        /// <returns>The <see cref="Weight"/>.</returns>
+        public static implicit operator double?([NotNull] KaijuMovement m) => m.Weight;
     }
 }

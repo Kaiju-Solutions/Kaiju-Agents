@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -13,7 +14,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move away from.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        public KaijuLeavingMovement(KaijuAgent agent, Vector2 target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuLeavingMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a leaving movement for a Vector3.
@@ -21,15 +23,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move away from.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        public KaijuLeavingMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance) { }
-        
-        /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
-        /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to move away from.</param>
-        /// <param name="distance">The distance to consider this move done.</param>
-        public KaijuLeavingMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuLeavingMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a leaving movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
@@ -37,7 +32,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move away from.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        public KaijuLeavingMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuLeavingMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a leaving movement for a component.
@@ -45,7 +41,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The component to move away from.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        public KaijuLeavingMovement(KaijuAgent agent, Component target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuLeavingMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Determine if the movement is done or not.

@@ -136,7 +136,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        protected KaijuTargetMovement(KaijuAgent agent, Vector2 target, float distance) : base(agent)
+        /// <param name="weight">The weight of this movement.</param>
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = 1) : base(agent, weight)
         {
             Target = target;
             Distance = distance;
@@ -148,21 +149,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        protected KaijuTargetMovement(KaijuAgent agent, Vector3 target, float distance) : base(agent)
+        /// <param name="weight">The weight of this movement.</param>
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = 1) : base(agent, weight)
         {
             Target3 = target;
-            Distance = distance;
-        }
-        
-        /// <summary>
-        /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
-        /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to move in relation to.</param>
-        /// <param name="distance">The distance to consider this move done.</param>
-        protected KaijuTargetMovement(KaijuAgent agent, Transform target, float distance) : base(agent)
-        {
-            TargetTransform = target;
             Distance = distance;
         }
         
@@ -172,7 +162,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        protected KaijuTargetMovement(KaijuAgent agent, GameObject target, float distance) : base(agent)
+        /// <param name="weight">The weight of this movement.</param>
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = 1) : base(agent, weight)
         {
             TargetGameObject = target;
             Distance = distance;
@@ -184,7 +175,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The component to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        protected KaijuTargetMovement(KaijuAgent agent, Component target, float distance) : base(agent)
+        /// <param name="weight">The weight of this movement.</param>
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1) : base(agent, weight)
         {
             TargetComponent = target;
             Distance = distance;
@@ -277,31 +269,10 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator bool([NotNull] KaijuTargetMovement t) => t.Done();
         
         /// <summary>
-        /// Implicit conversion to a float from the <see cref="CurrentDistance"/>.
+        /// Implicit conversion to a nullable Boolean based on if this is done or not.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator float([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable float from the <see cref="CurrentDistance"/>.
-        /// </summary>
-        /// <param name="t">The target movement.</param>
-        /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator float?([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
-        
-        /// <summary>
-        /// Implicit conversion to a double from the <see cref="CurrentDistance"/>.
-        /// </summary>
-        /// <param name="t">The target movement.</param>
-        /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator double([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable double from the <see cref="CurrentDistance"/>.
-        /// </summary>
-        /// <param name="t">The target movement.</param>
-        /// <returns>The <see cref="CurrentDistance"/>.</returns>
-        public static implicit operator double?([NotNull] KaijuTargetMovement t) => t.CurrentDistance;
+        /// <returns>If this is done or not.</returns>
+        public static implicit operator bool?([NotNull] KaijuTargetMovement t) => t.Done();
     }
 }

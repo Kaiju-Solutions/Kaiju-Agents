@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -23,6 +25,11 @@ namespace KaijuSolutions.Agents
         /// The current velocity of the agent.
         /// </summary>
         public Vector2 Velocity { get; private set; }
+        
+        /// <summary>
+        /// All movements the agent is currently performing.
+        /// </summary>
+        public readonly List<KaijuMovement> Movements = new();
         
         /// <summary>
         /// Get the position vector along the main XZ axis.
@@ -50,6 +57,198 @@ namespace KaijuSolutions.Agents
         /// Initialize the agent.
         /// </summary>
         public virtual void Setup() { }
+        
+        /// <summary>
+        /// Handle moving the agent.
+        /// </summary>
+        private Vector2 Move()
+        {
+            // Start with no motion this frame.
+            Vector2 velocity = Vector2.zero;
+            
+            // At first there is no weight.
+            float weight = 0;
+            
+            // Go through all assigned movements.
+            for (int i = 0; i < Movements.Count; i++)
+            {
+                // If the movement is done, remove it to the cache.
+                if (Movements[i].Done())
+                {
+                    Movements[i].Return();
+                    Movements.RemoveAt(i--);
+                    continue;
+                }
+                
+                // Otherwise, add up its weighting.
+                weight += Movements[i].Weight;
+                
+                // Otherwise, calculate the movement.
+                velocity += Movements[i].Move();
+            }
+            
+            // Go through all remaining movements again to perform them.
+            foreach (KaijuMovement movement in Movements)
+            {
+                // Weight the movement.
+                velocity += movement.Move() * (movement.Weight / weight);
+            }
+            
+            return velocity;
+        }
+        
+        /// <summary>
+        /// Stop all movement.
+        /// </summary>
+        public void Stop()
+        {
+            foreach (KaijuMovement movement in Movements)
+            {
+                movement.Return();
+            }
+            
+            Movements.Clear();
+        }
+        
+        /// <summary>
+        /// Stop an existing movement in relation to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">component</see>.
+        /// </summary>
+        /// <param name="go">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to stop moving in relation to.</param>
+        public void StopFor([NotNull] GameObject go)
+        {
+            // TODO.
+        }
+        
+        /// <summary>
+        /// Stop an existing movement in relation to a component.
+        /// </summary>
+        /// <param name="c">The component to stop moving in relation to.</param>
+        public void StopFor([NotNull] Component c)
+        {
+            // TODO.
+        }
+        
+        /// <summary>
+        /// Seek to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public void Seek(Vector2 target, float distance = 0, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                movement = new(this, target, distance);
+            }
+            else
+            {
+                movement.Agent = this;
+                movement.Target = target;
+                movement.Distance = distance;
+            }
+            
+            Movements.Add(movement);
+        }
+        
+        /// <summary>
+        /// Seek to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public void Seek(Vector3 target, float distance = 0, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                movement = new(this, target, distance);
+            }
+            else
+            {
+                movement.Agent = this;
+                movement.Target3 = target;
+                movement.Distance = distance;
+            }
+            
+            Movements.Add(movement);
+        }
+        
+        /// <summary>
+        /// Seek to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public void Seek([NotNull] GameObject target, float distance = 0, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                StopFor(target);
+            }
+            
+            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                movement = new(this, target, distance);
+            }
+            else
+            {
+                movement.Agent = this;
+                movement.TargetGameObject = target;
+                movement.Distance = distance;
+            }
+            
+            Movements.Add(movement);
+        }
+        
+        /// <summary>
+        /// Seek to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public void Seek([NotNull] Component target, float distance = 0, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                StopFor(target);
+            }
+            
+            KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
+            if (movement == null)
+            {
+                movement = new(this, target, distance);
+            }
+            else
+            {
+                movement.Agent = this;
+                movement.TargetComponent = target;
+                movement.Distance = distance;
+            }
+            
+            Movements.Add(movement);
+        }
+        
+        // TODO - Pursue, Flee, and Evade.
         
         /// <summary>
         /// Get a description of the object.
@@ -149,7 +348,14 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="a">The agent.</param>
         /// <returns>If the agent is active.</returns>
-        public static implicit operator bool([NotNull] KaijuAgent a) => a.isActiveAndEnabled;
+        public static implicit operator bool(KaijuAgent a) => a != null && a.isActiveAndEnabled;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Boolean if the agent is active.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>If the agent is active.</returns>
+        public static implicit operator bool?(KaijuAgent a) =>  a != null && a.isActiveAndEnabled;
         
         /// <summary>
         /// Implicit conversion to a string.

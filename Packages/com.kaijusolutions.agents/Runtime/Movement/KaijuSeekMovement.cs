@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -13,7 +14,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The position to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuSeekMovement(KaijuAgent agent, Vector2 target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a seek movement.
@@ -21,15 +23,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The position to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuSeekMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance) { }
-        
-        /// <summary>
-        /// Create a seek movement.
-        /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to seek to.</param>
-        /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuSeekMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a seek movement.
@@ -37,7 +32,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuSeekMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a seek movement.
@@ -45,7 +41,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The component to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuSeekMovement(KaijuAgent agent, Component target, float distance = 0) : base(agent, target, distance) { }
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Calculate the movement.

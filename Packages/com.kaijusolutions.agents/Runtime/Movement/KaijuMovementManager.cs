@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+#if UNITY_EDITOR
+using UnityEngine;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -12,9 +14,16 @@ namespace KaijuSolutions.Agents.Movement
         /// Cache of all movement instances.
         /// </summary>
         private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
-        
-        // TODO - Reset domain.
-        
+#if UNITY_EDITOR
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            Movements.Clear();
+        }
+#endif
         /// <summary>
         /// Get a movement instance.
         /// </summary>

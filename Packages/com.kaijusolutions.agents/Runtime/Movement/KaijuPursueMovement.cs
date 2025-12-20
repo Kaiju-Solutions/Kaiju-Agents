@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -18,7 +19,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuPursueMovement(KaijuAgent agent, Vector2 target, float distance = 0) : base(agent, target, distance)
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
         {
             Previous = target;
         }
@@ -29,27 +31,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuPursueMovement(KaijuAgent agent, Vector3 target, float distance = 0) : base(agent, target, distance)
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
         {
             Previous = new(target.x, target.z);
-        }
-        
-        /// <summary>
-        /// Create a pursue movement.
-        /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to pursue to.</param>
-        /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuPursueMovement(KaijuAgent agent, Transform target, float distance = 0) : base(agent, target, distance)
-        {
-            if (!target)
-            {
-                Previous = Vector2.zero;
-                return;
-            }
-            
-            Vector3 p = target.position;
-            Previous = new(p.x, p.z);
         }
 
         /// <summary>
@@ -58,14 +43,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The GameObject to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuPursueMovement(KaijuAgent agent, GameObject target, float distance = 0) : base(agent, target, distance)
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
         {
-            if (!target)
-            {
-                Previous = Vector2.zero;
-                return;
-            }
-            
             Vector3 p = target.transform.position;
             Previous = new(p.x, p.z);
         }
@@ -76,14 +56,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="target">The component to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
-        public KaijuPursueMovement(KaijuAgent agent, Component target, float distance = 0) : base(agent, target, distance)
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight)
         {
-            if (!target)
-            {
-                Previous = Vector2.zero;
-                return;
-            }
-            
             Vector3 p = target.transform.position;
             Previous = new(p.x, p.z);
         }
