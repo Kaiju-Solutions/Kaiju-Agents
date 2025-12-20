@@ -23,6 +23,11 @@ namespace KaijuSolutions.Agents
 #endif
         [SerializeField]
         private CharacterController character;
+        
+        /// <summary>
+        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the agent's movement.
+        /// </summary>
+        public CharacterController Character => character;
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
@@ -49,7 +54,14 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return "Kaiju Character Agent";
+            return $"Kaiju Character Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
+        
+        /// <summary>
+        /// Implicit conversion to get the <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> of the agent.</returns>
+        public static implicit operator CharacterController(KaijuCharacterAgent a) => a.character;
     }
 }

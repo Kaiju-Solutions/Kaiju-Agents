@@ -24,6 +24,11 @@ namespace KaijuSolutions.Agents
         public Vector2 Velocity { get; private set; }
         
         /// <summary>
+        /// Check if the agent is active.
+        /// </summary>
+        public bool Active => isActiveAndEnabled && gameObject.activeInHierarchy;
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public virtual void Setup() { }
@@ -34,28 +39,34 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return "Kaiju Agent";
+            return $"Kaiju Agent {name} - Velocity: {Velocity} - Max Speed: {Speed}";
         }
         
         /// <summary>
-        /// Implicit conversion to a string getting the name.
+        /// Get a description of the object.
         /// </summary>
-        /// <param name="t">The movement.</param>
-        /// <returns>The name of the agent.</returns>
-        public static implicit operator string(KaijuAgent t) => t.name;
+        /// <returns>A description of the object.</returns>
+        public static implicit operator string(KaijuAgent a) => a.ToString();
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
-        /// <param name="t">The movement.</param>
+        /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the agent.</returns>
-        public static implicit operator GameObject(KaijuAgent t) => t.gameObject;
+        public static implicit operator GameObject(KaijuAgent a) => a.gameObject;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The movement.</param>
+        /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the agent.</returns>
-        public static implicit operator Transform(KaijuAgent t) => t.transform;
+        public static implicit operator Transform(KaijuAgent a) => a.transform;
+        
+        /// <summary>
+        /// Implicit conversion to a Boolean if the agent is <see cref="Active"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>If the agent is <see cref="Active"/>.</returns>
+        public static implicit operator bool(KaijuAgent a) => a != null && a.Active;
     }
 }

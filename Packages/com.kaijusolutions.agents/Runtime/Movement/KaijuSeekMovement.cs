@@ -67,7 +67,7 @@ namespace KaijuSolutions.Agents.Movement
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Seek Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Seek Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

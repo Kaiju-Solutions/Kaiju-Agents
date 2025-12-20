@@ -103,21 +103,21 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Movement - Agent: {(Agent ? Agent.name : "None")}- {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Movement - Agent: {(Agent ? Agent.name : "None")} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>
         /// Implicit conversion to an <see cref="KaijuAgent"/> from the assigned <see cref="Agent"/>.
         /// </summary>
-        /// <param name="t">The movement.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The agent.</returns>
-        public static implicit operator KaijuAgent(KaijuMovement t) => t.Agent;
+        public static implicit operator KaijuAgent(KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a string.
         /// </summary>
-        /// <param name="t">The movement.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
-        public static implicit operator string(KaijuMovement t) => t.ToString();
+        public static implicit operator string(KaijuMovement m) => m.ToString();
     }
 }
