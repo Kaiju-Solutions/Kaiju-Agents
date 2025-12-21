@@ -12,6 +12,10 @@ namespace KaijuSolutions.Agents.Movement
     /// </summary>
     public static class KaijuMovementManager
     {
+        /// <summary>
+        /// Cache of all movement instances.
+        /// </summary>
+        private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
 #if UNITY_EDITOR
         /// <summary>
         /// The key for the seek color preference.
@@ -222,12 +226,108 @@ namespace KaijuSolutions.Agents.Movement
         {
             EvadeColor = Color.orange;
         }
-#endif
+        
         /// <summary>
-        /// Cache of all movement instances.
+        /// The key for if all gizmos should be rendered or only the selected agent.
         /// </summary>
-        private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
-#if UNITY_EDITOR
+        private const string GizmosAllKey = "KAIJU_AGENTS_GIZMOS_ALL";
+        
+        /// <summary>
+        /// Handle if all gizmos should be rendered or only the selected agent.
+        /// </summary>
+        public static bool GizmosAll
+        {
+            get
+            {
+                if (_gizmosAll.HasValue)
+                {
+                    return _gizmosAll.Value;
+                }
+                
+                _gizmosAll = EditorPrefs.GetBool(GizmosAllKey, true);
+                return _gizmosAll.Value;
+            }
+            set
+            {
+                _gizmosAll = value;
+                EditorPrefs.SetBool(GizmosAllKey, _gizmosAll.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Handle if all gizmos should be rendered or only the selected agent.
+        /// </summary>
+        private static bool? _gizmosAll;
+        
+        /// <summary>
+        /// Reset if all gizmos should be rendered or only the selected agent.
+        /// </summary>
+        public static void ResetGizmosAll()
+        {
+            GizmosAll = true;
+        }
+        
+        /// <summary>
+        /// The key for how text should be displayed with gizmos.
+        /// </summary>
+        private const string GizmosTextKey = "KAIJU_AGENTS_GIZMOS_TEXT";
+        
+        /// <summary>
+        ///  How text should be displayed with gizmos.
+        /// </summary>
+        public static GizmosTextMode GizmosText
+        {
+            get
+            {
+                if (_gizmosText.HasValue)
+                {
+                    return _gizmosText.Value;
+                }
+                
+                _gizmosText = (GizmosTextMode)EditorPrefs.GetInt(GizmosTextKey, (int)GizmosTextMode.All);
+                return _gizmosText.Value;
+            }
+            set
+            {
+                _gizmosText = value;
+                EditorPrefs.SetInt(GizmosTextKey, (int)_gizmosText.Value);
+            }
+        }
+        
+        /// <summary>
+        /// How text should be displayed with gizmos.
+        /// </summary>
+        private static GizmosTextMode? _gizmosText;
+        
+        /// <summary>
+        /// Reset how text should be displayed with gizmos.
+        /// </summary>
+        public static void ResetGizmosText()
+        {
+            GizmosText = GizmosTextMode.All;
+        }
+        
+        /// <summary>
+        /// Gizmos text modes.
+        /// </summary>
+        public enum GizmosTextMode
+        {
+            /// <summary>
+            /// Display all text fields.
+            /// </summary>
+            All = 0,
+            
+            /// <summary>
+            /// Only display text fields of the selected agent.
+            /// </summary>
+            Selected = 1,
+            
+            /// <summary>
+            /// Don't display any text fields.
+            /// </summary>
+            None = 2
+        }
+        
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
@@ -236,6 +336,8 @@ namespace KaijuSolutions.Agents.Movement
         {
             Movements.Clear();
             SyncColors();
+            _ = GizmosAll;
+            _ = GizmosText;
         }
 #endif
         /// <summary>

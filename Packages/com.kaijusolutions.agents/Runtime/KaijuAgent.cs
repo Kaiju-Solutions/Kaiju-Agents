@@ -2,7 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents
 {
     /// <summary>
@@ -597,11 +599,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            // TODO - Check if should render based on all/selected only rule.
+            // See if this should be rendered.
+            bool selected = Selection.activeTransform == transform;
+            if (!selected && !KaijuMovementManager.GizmosAll)
+            {
+                return;
+            }
+            
+            KaijuMovementManager.GizmosTextMode mode = KaijuMovementManager.GizmosText;
+            bool text = mode is KaijuMovementManager.GizmosTextMode.All || (mode is KaijuMovementManager.GizmosTextMode.Selected && selected);
             
             foreach (KaijuMovement movement in _movements)
             {
-                movement.Visualize();
+                movement.Visualize(text);
             }
         }
 #endif

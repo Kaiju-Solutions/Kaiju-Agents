@@ -35,7 +35,10 @@ internal static class KaijuAgentsSettings
                 // Cache all actions that trigger a refresh.
                 List<Action> refreshActions = new();
                 
+                // TODO - Add a section (with header) for the GizmosAll and GizmosText properties from the KaijuMovementManager, along with reset buttons for each.
+                
                 // Add all buttons.
+                // TODO - Add a header for the colors.
                 container.Add(ColorSetting("Seek Color", () => KaijuMovementManager.SeekColor, color => KaijuMovementManager.SeekColor = color, KaijuMovementManager.ResetSeekColor, refreshActions, "The color for seek visualizations."));
                 container.Add(ColorSetting("Pursue Color", () => KaijuMovementManager.PursueColor, color => KaijuMovementManager.PursueColor = color, KaijuMovementManager.ResetPursueColor, refreshActions, "The color for pursue visualizations."));
                 container.Add(ColorSetting("Flee Color", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));
