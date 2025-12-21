@@ -81,7 +81,7 @@
   
   <h1 id="KaijuSolutions_Agents_KaijuRigidbodyAgent" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent" class="text-break">Class KaijuRigidbodyAgent
   </h1>
-  <div class="markdown level0 summary"><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/ScriptReference/Rigidbody.html" target="_blank">rigidbody</a>.</p>
+  <div class="markdown level0 summary"><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -90,12 +90,80 @@
     <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></div>
     <div class="level2"><span class="xref">KaijuRigidbodyAgent</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Speed">KaijuAgent.Speed</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Velocity">KaijuAgent.Velocity</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Movements">KaijuAgent.Movements</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">KaijuAgent.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position3">KaijuAgent.Position3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">KaijuAgent.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop">KaijuAgent.Stop()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopFor_GameObject_">KaijuAgent.StopFor(GameObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopFor_Component_">KaijuAgent.StopFor(Component)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector2_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Vector2, Single, Single, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector3_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Vector3, Single, Single, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_GameObject_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(GameObject, Single, Single, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Component_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Component, Single, Single, Boolean)</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
   
   <h5 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public sealed class KaijuRigidbodyAgent : KaijuAgent</code></pre>
   </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Body_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Body*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Body" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Body">Body</h4>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> which controls the agent&apos;s movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Rigidbody Body { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rigidbody</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Setup_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Setup*"></a>
@@ -109,6 +177,51 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Setup">KaijuAgent.Setup()</a></div>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_KaijuSolutions_Agents_KaijuRigidbodyAgent__Rigidbody" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(KaijuSolutions.Agents.KaijuRigidbodyAgent)~Rigidbody">Implicit(KaijuRigidbodyAgent to Rigidbody)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to get the <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Rigidbody(KaijuRigidbodyAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rigidbody</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> of the agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

@@ -13,6 +13,227 @@ references:
   commentId: T:KaijuSolutions.Agents.KaijuAgent
   fullName: KaijuSolutions.Agents.KaijuAgent
   nameWithType: KaijuAgent
+- uid: KaijuSolutions.Agents.KaijuAgent.Movements
+  name: Movements
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Movements
+  commentId: F:KaijuSolutions.Agents.KaijuAgent.Movements
+  fullName: KaijuSolutions.Agents.KaijuAgent.Movements
+  nameWithType: KaijuAgent.Movements
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuAgent
+  name: Implicit(GameObject to KaijuAgent)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_GameObject__KaijuSolutions_Agents_KaijuAgent
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuAgent
+  name.vb: Widening(GameObject to KaijuAgent)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(GameObject to KaijuSolutions.Agents.KaijuAgent)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(GameObject to KaijuSolutions.Agents.KaijuAgent)
+  nameWithType: KaijuAgent.Implicit(GameObject to KaijuAgent)
+  nameWithType.vb: KaijuAgent.Widening(GameObject to KaijuAgent)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~GameObject
+  name: Implicit(KaijuAgent to GameObject)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__GameObject
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~GameObject
+  name.vb: Widening(KaijuAgent to GameObject)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to GameObject)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to GameObject)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to GameObject)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to GameObject)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Boolean
+  name: Implicit(KaijuAgent to Boolean)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Boolean
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Boolean
+  name.vb: Widening(KaijuAgent to Boolean)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Boolean)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Boolean)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Double
+  name: Implicit(KaijuAgent to Double)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Double
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Double
+  name.vb: Widening(KaijuAgent to Double)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Double)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Double)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Double)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Double)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Boolean}
+  name: Implicit(KaijuAgent to Nullable<Boolean>)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Boolean}
+  name.vb: Widening(KaijuAgent to Nullable(Of Boolean))
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Nullable<System.Boolean>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Nullable(Of System.Boolean))
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Nullable<Boolean>)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Nullable(Of Boolean))
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Double}
+  name: Implicit(KaijuAgent to Nullable<Double>)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Double_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Double}
+  name.vb: Widening(KaijuAgent to Nullable(Of Double))
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Nullable<System.Double>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Nullable(Of System.Double))
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Nullable<Double>)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Nullable(Of Double))
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Single}
+  name: Implicit(KaijuAgent to Nullable<Single>)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Single_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Single}
+  name.vb: Widening(KaijuAgent to Nullable(Of Single))
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Nullable<System.Single>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Nullable(Of System.Single))
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Nullable<Single>)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Nullable(Of Single))
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector2}
+  name: Implicit(KaijuAgent to Nullable<Vector2>)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_Vector2_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector2}
+  name.vb: Widening(KaijuAgent to Nullable(Of Vector2))
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Nullable<Vector2>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Nullable(Of Vector2))
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Nullable<Vector2>)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Nullable(Of Vector2))
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector3}
+  name: Implicit(KaijuAgent to Nullable<Vector3>)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_Vector3_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector3}
+  name.vb: Widening(KaijuAgent to Nullable(Of Vector3))
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Nullable<Vector3>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Nullable(Of Vector3))
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Nullable<Vector3>)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Nullable(Of Vector3))
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Single
+  name: Implicit(KaijuAgent to Single)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Single
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Single
+  name.vb: Widening(KaijuAgent to Single)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.Single)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.Single)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Single)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Single)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.String
+  name: Implicit(KaijuAgent to String)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_String
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.String
+  name.vb: Widening(KaijuAgent to String)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to System.String)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to System.String)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to String)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to String)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Transform
+  name: Implicit(KaijuAgent to Transform)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Transform
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Transform
+  name.vb: Widening(KaijuAgent to Transform)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to Transform)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to Transform)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Transform)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Transform)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector2
+  name: Implicit(KaijuAgent to Vector2)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Vector2
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector2
+  name.vb: Widening(KaijuAgent to Vector2)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to Vector2)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to Vector2)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Vector2)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Vector2)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector3
+  name: Implicit(KaijuAgent to Vector3)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Vector3
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector3
+  name.vb: Widening(KaijuAgent to Vector3)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(KaijuSolutions.Agents.KaijuAgent to Vector3)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(KaijuSolutions.Agents.KaijuAgent to Vector3)
+  nameWithType: KaijuAgent.Implicit(KaijuAgent to Vector3)
+  nameWithType.vb: KaijuAgent.Widening(KaijuAgent to Vector3)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuAgent
+  name: Implicit(Transform to KaijuAgent)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_Transform__KaijuSolutions_Agents_KaijuAgent
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuAgent
+  name.vb: Widening(Transform to KaijuAgent)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit(Transform to KaijuSolutions.Agents.KaijuAgent)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening(Transform to KaijuSolutions.Agents.KaijuAgent)
+  nameWithType: KaijuAgent.Implicit(Transform to KaijuAgent)
+  nameWithType.vb: KaijuAgent.Widening(Transform to KaijuAgent)
+- uid: KaijuSolutions.Agents.KaijuAgent.op_Implicit*
+  name: Implicit
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_op_Implicit_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: KaijuSolutions.Agents.KaijuAgent.Implicit
+  fullName.vb: KaijuSolutions.Agents.KaijuAgent.Widening
+  nameWithType: KaijuAgent.Implicit
+  nameWithType.vb: KaijuAgent.Widening
+- uid: KaijuSolutions.Agents.KaijuAgent.Orientation
+  name: Orientation
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.Orientation
+  fullName: KaijuSolutions.Agents.KaijuAgent.Orientation
+  nameWithType: KaijuAgent.Orientation
+- uid: KaijuSolutions.Agents.KaijuAgent.Orientation*
+  name: Orientation
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Orientation
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Orientation
+  nameWithType: KaijuAgent.Orientation
+- uid: KaijuSolutions.Agents.KaijuAgent.Position
+  name: Position
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.Position
+  fullName: KaijuSolutions.Agents.KaijuAgent.Position
+  nameWithType: KaijuAgent.Position
+- uid: KaijuSolutions.Agents.KaijuAgent.Position*
+  name: Position
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Position
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Position
+  nameWithType: KaijuAgent.Position
+- uid: KaijuSolutions.Agents.KaijuAgent.Position3
+  name: Position3
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position3
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.Position3
+  fullName: KaijuSolutions.Agents.KaijuAgent.Position3
+  nameWithType: KaijuAgent.Position3
+- uid: KaijuSolutions.Agents.KaijuAgent.Position3*
+  name: Position3
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position3_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Position3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Position3
+  nameWithType: KaijuAgent.Position3
+- uid: KaijuSolutions.Agents.KaijuAgent.Seek(Component,System.Single,System.Single,System.Boolean)
+  name: Seek(Component, Single, Single, Boolean)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Component_System_Single_System_Single_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.Seek(Component,System.Single,System.Single,System.Boolean)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Seek(Component, System.Single, System.Single, System.Boolean)
+  nameWithType: KaijuAgent.Seek(Component, Single, Single, Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.Seek(GameObject,System.Single,System.Single,System.Boolean)
+  name: Seek(GameObject, Single, Single, Boolean)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_GameObject_System_Single_System_Single_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.Seek(GameObject,System.Single,System.Single,System.Boolean)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Seek(GameObject, System.Single, System.Single, System.Boolean)
+  nameWithType: KaijuAgent.Seek(GameObject, Single, Single, Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.Seek(Vector2,System.Single,System.Single,System.Boolean)
+  name: Seek(Vector2, Single, Single, Boolean)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector2_System_Single_System_Single_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.Seek(Vector2,System.Single,System.Single,System.Boolean)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Seek(Vector2, System.Single, System.Single, System.Boolean)
+  nameWithType: KaijuAgent.Seek(Vector2, Single, Single, Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.Seek(Vector3,System.Single,System.Single,System.Boolean)
+  name: Seek(Vector3, Single, Single, Boolean)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector3_System_Single_System_Single_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.Seek(Vector3,System.Single,System.Single,System.Boolean)
+  fullName: KaijuSolutions.Agents.KaijuAgent.Seek(Vector3, System.Single, System.Single, System.Boolean)
+  nameWithType: KaijuAgent.Seek(Vector3, Single, Single, Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.Seek*
+  name: Seek
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Seek
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Seek
+  nameWithType: KaijuAgent.Seek
 - uid: KaijuSolutions.Agents.KaijuAgent.Setup
   name: Setup()
   href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Setup
@@ -26,6 +247,64 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.KaijuAgent.Setup
   nameWithType: KaijuAgent.Setup
+- uid: KaijuSolutions.Agents.KaijuAgent.Speed
+  name: Speed
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Speed
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.Speed
+  fullName: KaijuSolutions.Agents.KaijuAgent.Speed
+  nameWithType: KaijuAgent.Speed
+- uid: KaijuSolutions.Agents.KaijuAgent.Speed*
+  name: Speed
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Speed_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Speed
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Speed
+  nameWithType: KaijuAgent.Speed
+- uid: KaijuSolutions.Agents.KaijuAgent.Stop
+  name: Stop()
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.Stop
+  fullName: KaijuSolutions.Agents.KaijuAgent.Stop()
+  nameWithType: KaijuAgent.Stop()
+- uid: KaijuSolutions.Agents.KaijuAgent.Stop*
+  name: Stop
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Stop
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Stop
+  nameWithType: KaijuAgent.Stop
+- uid: KaijuSolutions.Agents.KaijuAgent.StopFor(Component)
+  name: StopFor(Component)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopFor_Component_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.StopFor(Component)
+  fullName: KaijuSolutions.Agents.KaijuAgent.StopFor(Component)
+  nameWithType: KaijuAgent.StopFor(Component)
+- uid: KaijuSolutions.Agents.KaijuAgent.StopFor(GameObject)
+  name: StopFor(GameObject)
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopFor_GameObject_
+  commentId: M:KaijuSolutions.Agents.KaijuAgent.StopFor(GameObject)
+  fullName: KaijuSolutions.Agents.KaijuAgent.StopFor(GameObject)
+  nameWithType: KaijuAgent.StopFor(GameObject)
+- uid: KaijuSolutions.Agents.KaijuAgent.StopFor*
+  name: StopFor
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopFor_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.StopFor
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.StopFor
+  nameWithType: KaijuAgent.StopFor
+- uid: KaijuSolutions.Agents.KaijuAgent.Velocity
+  name: Velocity
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Velocity
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.Velocity
+  fullName: KaijuSolutions.Agents.KaijuAgent.Velocity
+  nameWithType: KaijuAgent.Velocity
+- uid: KaijuSolutions.Agents.KaijuAgent.Velocity*
+  name: Velocity
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Velocity_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.Velocity
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.Velocity
+  nameWithType: KaijuAgent.Velocity
 - uid: KaijuSolutions.Agents.KaijuAgents
   name: KaijuAgents
   href: api/KaijuSolutions.Agents.KaijuAgents.html
@@ -63,6 +342,38 @@ references:
   commentId: T:KaijuSolutions.Agents.KaijuCharacterAgent
   fullName: KaijuSolutions.Agents.KaijuCharacterAgent
   nameWithType: KaijuCharacterAgent
+- uid: KaijuSolutions.Agents.KaijuCharacterAgent.Character
+  name: Character
+  href: api/KaijuSolutions.Agents.KaijuCharacterAgent.html#KaijuSolutions_Agents_KaijuCharacterAgent_Character
+  commentId: P:KaijuSolutions.Agents.KaijuCharacterAgent.Character
+  fullName: KaijuSolutions.Agents.KaijuCharacterAgent.Character
+  nameWithType: KaijuCharacterAgent.Character
+- uid: KaijuSolutions.Agents.KaijuCharacterAgent.Character*
+  name: Character
+  href: api/KaijuSolutions.Agents.KaijuCharacterAgent.html#KaijuSolutions_Agents_KaijuCharacterAgent_Character_
+  commentId: Overload:KaijuSolutions.Agents.KaijuCharacterAgent.Character
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuCharacterAgent.Character
+  nameWithType: KaijuCharacterAgent.Character
+- uid: KaijuSolutions.Agents.KaijuCharacterAgent.op_Implicit(KaijuSolutions.Agents.KaijuCharacterAgent)~CharacterController
+  name: Implicit(KaijuCharacterAgent to CharacterController)
+  href: api/KaijuSolutions.Agents.KaijuCharacterAgent.html#KaijuSolutions_Agents_KaijuCharacterAgent_op_Implicit_KaijuSolutions_Agents_KaijuCharacterAgent__CharacterController
+  commentId: M:KaijuSolutions.Agents.KaijuCharacterAgent.op_Implicit(KaijuSolutions.Agents.KaijuCharacterAgent)~CharacterController
+  name.vb: Widening(KaijuCharacterAgent to CharacterController)
+  fullName: KaijuSolutions.Agents.KaijuCharacterAgent.Implicit(KaijuSolutions.Agents.KaijuCharacterAgent to CharacterController)
+  fullName.vb: KaijuSolutions.Agents.KaijuCharacterAgent.Widening(KaijuSolutions.Agents.KaijuCharacterAgent to CharacterController)
+  nameWithType: KaijuCharacterAgent.Implicit(KaijuCharacterAgent to CharacterController)
+  nameWithType.vb: KaijuCharacterAgent.Widening(KaijuCharacterAgent to CharacterController)
+- uid: KaijuSolutions.Agents.KaijuCharacterAgent.op_Implicit*
+  name: Implicit
+  href: api/KaijuSolutions.Agents.KaijuCharacterAgent.html#KaijuSolutions_Agents_KaijuCharacterAgent_op_Implicit_
+  commentId: Overload:KaijuSolutions.Agents.KaijuCharacterAgent.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: KaijuSolutions.Agents.KaijuCharacterAgent.Implicit
+  fullName.vb: KaijuSolutions.Agents.KaijuCharacterAgent.Widening
+  nameWithType: KaijuCharacterAgent.Implicit
+  nameWithType.vb: KaijuCharacterAgent.Widening
 - uid: KaijuSolutions.Agents.KaijuCharacterAgent.Setup
   name: Setup()
   href: api/KaijuSolutions.Agents.KaijuCharacterAgent.html#KaijuSolutions_Agents_KaijuCharacterAgent_Setup
@@ -82,6 +393,38 @@ references:
   commentId: T:KaijuSolutions.Agents.KaijuNavigationAgent
   fullName: KaijuSolutions.Agents.KaijuNavigationAgent
   nameWithType: KaijuNavigationAgent
+- uid: KaijuSolutions.Agents.KaijuNavigationAgent.Nav
+  name: Nav
+  href: api/KaijuSolutions.Agents.KaijuNavigationAgent.html#KaijuSolutions_Agents_KaijuNavigationAgent_Nav
+  commentId: P:KaijuSolutions.Agents.KaijuNavigationAgent.Nav
+  fullName: KaijuSolutions.Agents.KaijuNavigationAgent.Nav
+  nameWithType: KaijuNavigationAgent.Nav
+- uid: KaijuSolutions.Agents.KaijuNavigationAgent.Nav*
+  name: Nav
+  href: api/KaijuSolutions.Agents.KaijuNavigationAgent.html#KaijuSolutions_Agents_KaijuNavigationAgent_Nav_
+  commentId: Overload:KaijuSolutions.Agents.KaijuNavigationAgent.Nav
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuNavigationAgent.Nav
+  nameWithType: KaijuNavigationAgent.Nav
+- uid: KaijuSolutions.Agents.KaijuNavigationAgent.op_Implicit(KaijuSolutions.Agents.KaijuNavigationAgent)~NavMeshAgent
+  name: Implicit(KaijuNavigationAgent to NavMeshAgent)
+  href: api/KaijuSolutions.Agents.KaijuNavigationAgent.html#KaijuSolutions_Agents_KaijuNavigationAgent_op_Implicit_KaijuSolutions_Agents_KaijuNavigationAgent__NavMeshAgent
+  commentId: M:KaijuSolutions.Agents.KaijuNavigationAgent.op_Implicit(KaijuSolutions.Agents.KaijuNavigationAgent)~NavMeshAgent
+  name.vb: Widening(KaijuNavigationAgent to NavMeshAgent)
+  fullName: KaijuSolutions.Agents.KaijuNavigationAgent.Implicit(KaijuSolutions.Agents.KaijuNavigationAgent to NavMeshAgent)
+  fullName.vb: KaijuSolutions.Agents.KaijuNavigationAgent.Widening(KaijuSolutions.Agents.KaijuNavigationAgent to NavMeshAgent)
+  nameWithType: KaijuNavigationAgent.Implicit(KaijuNavigationAgent to NavMeshAgent)
+  nameWithType.vb: KaijuNavigationAgent.Widening(KaijuNavigationAgent to NavMeshAgent)
+- uid: KaijuSolutions.Agents.KaijuNavigationAgent.op_Implicit*
+  name: Implicit
+  href: api/KaijuSolutions.Agents.KaijuNavigationAgent.html#KaijuSolutions_Agents_KaijuNavigationAgent_op_Implicit_
+  commentId: Overload:KaijuSolutions.Agents.KaijuNavigationAgent.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: KaijuSolutions.Agents.KaijuNavigationAgent.Implicit
+  fullName.vb: KaijuSolutions.Agents.KaijuNavigationAgent.Widening
+  nameWithType: KaijuNavigationAgent.Implicit
+  nameWithType.vb: KaijuNavigationAgent.Widening
 - uid: KaijuSolutions.Agents.KaijuNavigationAgent.Setup
   name: Setup()
   href: api/KaijuSolutions.Agents.KaijuNavigationAgent.html#KaijuSolutions_Agents_KaijuNavigationAgent_Setup
@@ -101,6 +444,38 @@ references:
   commentId: T:KaijuSolutions.Agents.KaijuRigidbodyAgent
   fullName: KaijuSolutions.Agents.KaijuRigidbodyAgent
   nameWithType: KaijuRigidbodyAgent
+- uid: KaijuSolutions.Agents.KaijuRigidbodyAgent.Body
+  name: Body
+  href: api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html#KaijuSolutions_Agents_KaijuRigidbodyAgent_Body
+  commentId: P:KaijuSolutions.Agents.KaijuRigidbodyAgent.Body
+  fullName: KaijuSolutions.Agents.KaijuRigidbodyAgent.Body
+  nameWithType: KaijuRigidbodyAgent.Body
+- uid: KaijuSolutions.Agents.KaijuRigidbodyAgent.Body*
+  name: Body
+  href: api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html#KaijuSolutions_Agents_KaijuRigidbodyAgent_Body_
+  commentId: Overload:KaijuSolutions.Agents.KaijuRigidbodyAgent.Body
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuRigidbodyAgent.Body
+  nameWithType: KaijuRigidbodyAgent.Body
+- uid: KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(KaijuSolutions.Agents.KaijuRigidbodyAgent)~Rigidbody
+  name: Implicit(KaijuRigidbodyAgent to Rigidbody)
+  href: api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html#KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_KaijuSolutions_Agents_KaijuRigidbodyAgent__Rigidbody
+  commentId: M:KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(KaijuSolutions.Agents.KaijuRigidbodyAgent)~Rigidbody
+  name.vb: Widening(KaijuRigidbodyAgent to Rigidbody)
+  fullName: KaijuSolutions.Agents.KaijuRigidbodyAgent.Implicit(KaijuSolutions.Agents.KaijuRigidbodyAgent to Rigidbody)
+  fullName.vb: KaijuSolutions.Agents.KaijuRigidbodyAgent.Widening(KaijuSolutions.Agents.KaijuRigidbodyAgent to Rigidbody)
+  nameWithType: KaijuRigidbodyAgent.Implicit(KaijuRigidbodyAgent to Rigidbody)
+  nameWithType.vb: KaijuRigidbodyAgent.Widening(KaijuRigidbodyAgent to Rigidbody)
+- uid: KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit*
+  name: Implicit
+  href: api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html#KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_
+  commentId: Overload:KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: KaijuSolutions.Agents.KaijuRigidbodyAgent.Implicit
+  fullName.vb: KaijuSolutions.Agents.KaijuRigidbodyAgent.Widening
+  nameWithType: KaijuRigidbodyAgent.Implicit
+  nameWithType.vb: KaijuRigidbodyAgent.Widening
 - uid: KaijuSolutions.Agents.KaijuRigidbodyAgent.Setup
   name: Setup()
   href: api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html#KaijuSolutions_Agents_KaijuRigidbodyAgent_Setup
@@ -132,36 +507,30 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuApproachingMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement
   nameWithType: KaijuApproachingMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuApproachingMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuApproachingMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuApproachingMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuApproachingMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuApproachingMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuApproachingMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuApproachingMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuApproachingMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuApproachingMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.KaijuApproachingMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuApproachingMovement.KaijuApproachingMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuApproachingMovement.#ctor*
   name: KaijuApproachingMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html#KaijuSolutions_Agents_Movement_KaijuApproachingMovement__ctor_
@@ -188,36 +557,30 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuEvadeMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement
   nameWithType: KaijuEvadeMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuEvadeMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuEvadeMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuEvadeMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuEvadeMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuEvadeMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuEvadeMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuEvadeMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuEvadeMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuEvadeMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.KaijuEvadeMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuEvadeMovement.KaijuEvadeMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.#ctor*
   name: KaijuEvadeMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement__ctor_
@@ -244,42 +607,62 @@ references:
   commentId: F:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Previous
   fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Previous
   nameWithType: KaijuEvadeMovement.Previous
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset
+  name: Reset()
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Reset
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset()
+  nameWithType: KaijuEvadeMovement.Reset()
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset*
+  name: Reset
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Reset_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Reset
+  nameWithType: KaijuEvadeMovement.Reset
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup
+  name: Setup()
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Setup
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup()
+  nameWithType: KaijuEvadeMovement.Setup()
+- uid: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup*
+  name: Setup
+  href: api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html#KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Setup_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuEvadeMovement.Setup
+  nameWithType: KaijuEvadeMovement.Setup
 - uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement
   name: KaijuFleeMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html
   commentId: T:KaijuSolutions.Agents.Movement.KaijuFleeMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement
   nameWithType: KaijuFleeMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuFleeMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuFleeMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuFleeMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuFleeMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuFleeMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuFleeMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuFleeMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuFleeMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuFleeMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuFleeMovement.KaijuFleeMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuFleeMovement.KaijuFleeMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuFleeMovement.#ctor*
   name: KaijuFleeMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html#KaijuSolutions_Agents_Movement_KaijuFleeMovement__ctor_
@@ -306,36 +689,30 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuLeavingMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement
   nameWithType: KaijuLeavingMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuLeavingMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuLeavingMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuLeavingMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuLeavingMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuLeavingMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuLeavingMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuLeavingMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuLeavingMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuLeavingMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.KaijuLeavingMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuLeavingMovement.KaijuLeavingMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuLeavingMovement.#ctor*
   name: KaijuLeavingMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html#KaijuSolutions_Agents_Movement_KaijuLeavingMovement__ctor_
@@ -362,12 +739,12 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuMovement
   nameWithType: KaijuMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuMovement.#ctor(KaijuSolutions.Agents.KaijuAgent)
-  name: KaijuMovement(KaijuAgent)
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement__ctor_KaijuSolutions_Agents_KaijuAgent_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.#ctor(KaijuSolutions.Agents.KaijuAgent)
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.KaijuMovement(KaijuSolutions.Agents.KaijuAgent)
-  nameWithType: KaijuMovement.KaijuMovement(KaijuAgent)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single)
+  name: KaijuMovement(KaijuAgent, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.KaijuMovement(KaijuSolutions.Agents.KaijuAgent, System.Single)
+  nameWithType: KaijuMovement.KaijuMovement(KaijuAgent, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.#ctor*
   name: KaijuMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement__ctor_
@@ -381,6 +758,32 @@ references:
   commentId: F:KaijuSolutions.Agents.Movement.KaijuMovement.Agent
   fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Agent
   nameWithType: KaijuMovement.Agent
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition
+  name: AgentPosition
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition
+  commentId: P:KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition
+  nameWithType: KaijuMovement.AgentPosition
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition*
+  name: AgentPosition
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition
+  nameWithType: KaijuMovement.AgentPosition
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3
+  name: AgentPosition3
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition3
+  commentId: P:KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3
+  nameWithType: KaijuMovement.AgentPosition3
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3*
+  name: AgentPosition3
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition3_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.AgentPosition3
+  nameWithType: KaijuMovement.AgentPosition3
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.Done
   name: Done()
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Done
@@ -394,12 +797,25 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Done
   nameWithType: KaijuMovement.Done
-- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Move(Vector2,System.Single)
-  name: Move(Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Move(Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Move(Vector2, System.Single)
-  nameWithType: KaijuMovement.Move(Vector2, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,System.Single)
+  name: Initialize(KaijuAgent, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Initialize(KaijuSolutions.Agents.KaijuAgent, System.Single)
+  nameWithType: KaijuMovement.Initialize(KaijuAgent, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Initialize*
+  name: Initialize
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Initialize_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.Initialize
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Initialize
+  nameWithType: KaijuMovement.Initialize
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Move
+  name: Move()
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Move
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Move()
+  nameWithType: KaijuMovement.Move()
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.Move*
   name: Move
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move_
@@ -407,6 +823,15 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Move
   nameWithType: KaijuMovement.Move
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~GameObject
+  name: Implicit(KaijuMovement to GameObject)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__GameObject
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~GameObject
+  name.vb: Widening(KaijuMovement to GameObject)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to GameObject)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to GameObject)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to GameObject)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to GameObject)
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~KaijuSolutions.Agents.KaijuAgent
   name: Implicit(KaijuMovement to KaijuAgent)
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__KaijuSolutions_Agents_KaijuAgent
@@ -416,6 +841,78 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to KaijuSolutions.Agents.KaijuAgent)
   nameWithType: KaijuMovement.Implicit(KaijuMovement to KaijuAgent)
   nameWithType.vb: KaijuMovement.Widening(KaijuMovement to KaijuAgent)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Boolean
+  name: Implicit(KaijuMovement to Boolean)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Boolean
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Boolean
+  name.vb: Widening(KaijuMovement to Boolean)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Boolean)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Boolean)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Boolean)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Double
+  name: Implicit(KaijuMovement to Double)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Double
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Double
+  name.vb: Widening(KaijuMovement to Double)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Double)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Double)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Double)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Double)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Boolean}
+  name: Implicit(KaijuMovement to Nullable<Boolean>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Nullable_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Boolean}
+  name.vb: Widening(KaijuMovement to Nullable(Of Boolean))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable<System.Boolean>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable(Of System.Boolean))
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Nullable<Boolean>)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Nullable(Of Boolean))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Double}
+  name: Implicit(KaijuMovement to Nullable<Double>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Nullable_System_Double_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Double}
+  name.vb: Widening(KaijuMovement to Nullable(Of Double))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable<System.Double>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable(Of System.Double))
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Nullable<Double>)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Nullable(Of Double))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Single}
+  name: Implicit(KaijuMovement to Nullable<Single>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Nullable_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{System.Single}
+  name.vb: Widening(KaijuMovement to Nullable(Of Single))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable<System.Single>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable(Of System.Single))
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Nullable<Single>)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Nullable(Of Single))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{Vector2}
+  name: Implicit(KaijuMovement to Nullable<Vector2>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Nullable_Vector2_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{Vector2}
+  name.vb: Widening(KaijuMovement to Nullable(Of Vector2))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable<Vector2>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable(Of Vector2))
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Nullable<Vector2>)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Nullable(Of Vector2))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{Vector3}
+  name: Implicit(KaijuMovement to Nullable<Vector3>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Nullable_Vector3_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Nullable{Vector3}
+  name.vb: Widening(KaijuMovement to Nullable(Of Vector3))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable<Vector3>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Nullable(Of Vector3))
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Nullable<Vector3>)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Nullable(Of Vector3))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Single
+  name: Implicit(KaijuMovement to Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_Single
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.Single
+  name.vb: Widening(KaijuMovement to Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to System.Single)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.Single)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Single)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~System.String
   name: Implicit(KaijuMovement to String)
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__System_String
@@ -425,6 +922,33 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to System.String)
   nameWithType: KaijuMovement.Implicit(KaijuMovement to String)
   nameWithType.vb: KaijuMovement.Widening(KaijuMovement to String)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Transform
+  name: Implicit(KaijuMovement to Transform)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__Transform
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Transform
+  name.vb: Widening(KaijuMovement to Transform)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to Transform)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to Transform)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Transform)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Transform)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Vector2
+  name: Implicit(KaijuMovement to Vector2)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__Vector2
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Vector2
+  name.vb: Widening(KaijuMovement to Vector2)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to Vector2)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to Vector2)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Vector2)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Vector2)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Vector3
+  name: Implicit(KaijuMovement to Vector3)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuMovement__Vector3
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuMovement)~Vector3
+  name.vb: Widening(KaijuMovement to Vector3)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuMovement to Vector3)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening(KaijuSolutions.Agents.Movement.KaijuMovement to Vector3)
+  nameWithType: KaijuMovement.Implicit(KaijuMovement to Vector3)
+  nameWithType.vb: KaijuMovement.Widening(KaijuMovement to Vector3)
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.op_Implicit*
   name: Implicit
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_op_Implicit_
@@ -435,6 +959,45 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovement.Widening
   nameWithType: KaijuMovement.Implicit
   nameWithType.vb: KaijuMovement.Widening
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Reset
+  name: Reset()
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Reset
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Reset
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Reset()
+  nameWithType: KaijuMovement.Reset()
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Reset*
+  name: Reset
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Reset_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.Reset
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Reset
+  nameWithType: KaijuMovement.Reset
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Return
+  name: Return()
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Return
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Return
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Return()
+  nameWithType: KaijuMovement.Return()
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Return*
+  name: Return
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Return_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.Return
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Return
+  nameWithType: KaijuMovement.Return
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Setup
+  name: Setup()
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Setup
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovement.Setup
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Setup()
+  nameWithType: KaijuMovement.Setup()
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Setup*
+  name: Setup
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Setup_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.Setup
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Setup
+  nameWithType: KaijuMovement.Setup
 - uid: KaijuSolutions.Agents.Movement.KaijuMovement.Speed(Vector2,Vector2)
   name: Speed(Vector2, Vector2)
   href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Speed_Vector2_Vector2_
@@ -477,80 +1040,118 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuMovement.VelocityAndSpeed
   nameWithType: KaijuMovement.VelocityAndSpeed
-- uid: KaijuSolutions.Agents.Movement.KaijuMovementCache
-  name: KaijuMovementCache
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html
-  commentId: T:KaijuSolutions.Agents.Movement.KaijuMovementCache
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovementCache
-  nameWithType: KaijuMovementCache
-- uid: KaijuSolutions.Agents.Movement.KaijuMovementCache.Get*
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Weight
+  name: Weight
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Weight
+  commentId: P:KaijuSolutions.Agents.Movement.KaijuMovement.Weight
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Weight
+  nameWithType: KaijuMovement.Weight
+- uid: KaijuSolutions.Agents.Movement.KaijuMovement.Weight*
+  name: Weight
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Weight_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovement.Weight
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovement.Weight
+  nameWithType: KaijuMovement.Weight
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager
+  name: KaijuMovementManager
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html
+  commentId: T:KaijuSolutions.Agents.Movement.KaijuMovementManager
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager
+  nameWithType: KaijuMovementManager
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.Get*
   name: Get
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html#KaijuSolutions_Agents_Movement_KaijuMovementCache_Get_
-  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementCache.Get
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_Get_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementManager.Get
   isSpec: "True"
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovementCache.Get
-  nameWithType: KaijuMovementCache.Get
-- uid: KaijuSolutions.Agents.Movement.KaijuMovementCache.Get``1
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.Get
+  nameWithType: KaijuMovementManager.Get
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.Get``1
   name: Get<T>()
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html#KaijuSolutions_Agents_Movement_KaijuMovementCache_Get__1
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementCache.Get``1
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_Get__1
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.Get``1
   name.vb: Get(Of T)()
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovementCache.Get<T>()
-  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementCache.Get(Of T)()
-  nameWithType: KaijuMovementCache.Get<T>()
-  nameWithType.vb: KaijuMovementCache.Get(Of T)()
-- uid: KaijuSolutions.Agents.Movement.KaijuMovementCache.Return*
-  name: Return
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html#KaijuSolutions_Agents_Movement_KaijuMovementCache_Return_
-  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementCache.Return
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.Get<T>()
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementManager.Get(Of T)()
+  nameWithType: KaijuMovementManager.Get<T>()
+  nameWithType.vb: KaijuMovementManager.Get(Of T)()
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: GetSeek(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_GetSeek_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuMovementManager.GetSeek(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: GetSeek(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_GetSeek_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuMovementManager.GetSeek(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: GetSeek(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_GetSeek_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuMovementManager.GetSeek(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: GetSeek(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_GetSeek_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuMovementManager.GetSeek(KaijuAgent, Vector3, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek*
+  name: GetSeek
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_GetSeek_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek
   isSpec: "True"
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovementCache.Return
-  nameWithType: KaijuMovementCache.Return
-- uid: KaijuSolutions.Agents.Movement.KaijuMovementCache.Return``1
-  name: Return<T>()
-  href: api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html#KaijuSolutions_Agents_Movement_KaijuMovementCache_Return__1
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementCache.Return``1
-  name.vb: Return(Of T)()
-  fullName: KaijuSolutions.Agents.Movement.KaijuMovementCache.Return<T>()
-  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementCache.Return(Of T)()
-  nameWithType: KaijuMovementCache.Return<T>()
-  nameWithType.vb: KaijuMovementCache.Return(Of T)()
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.GetSeek
+  nameWithType: KaijuMovementManager.GetSeek
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.Return*
+  name: Return
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_Return_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementManager.Return
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.Return
+  nameWithType: KaijuMovementManager.Return
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementManager.Return``1(``0)
+  name: Return<T>(T)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html#KaijuSolutions_Agents_Movement_KaijuMovementManager_Return__1___0_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementManager.Return``1(``0)
+  name.vb: Return(Of T)(T)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementManager.Return<T>(T)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementManager.Return(Of T)(T)
+  nameWithType: KaijuMovementManager.Return<T>(T)
+  nameWithType.vb: KaijuMovementManager.Return(Of T)(T)
 - uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement
   name: KaijuPursueMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html
   commentId: T:KaijuSolutions.Agents.Movement.KaijuPursueMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement
   nameWithType: KaijuPursueMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuPursueMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuPursueMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuPursueMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuPursueMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuPursueMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuPursueMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuPursueMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuPursueMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuPursueMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.KaijuPursueMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuPursueMovement.KaijuPursueMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.#ctor*
   name: KaijuPursueMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement__ctor_
@@ -577,42 +1178,62 @@ references:
   commentId: F:KaijuSolutions.Agents.Movement.KaijuPursueMovement.Previous
   fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Previous
   nameWithType: KaijuPursueMovement.Previous
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset
+  name: Reset()
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement_Reset
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset()
+  nameWithType: KaijuPursueMovement.Reset()
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset*
+  name: Reset
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement_Reset_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Reset
+  nameWithType: KaijuPursueMovement.Reset
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup
+  name: Setup()
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement_Setup
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup()
+  nameWithType: KaijuPursueMovement.Setup()
+- uid: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup*
+  name: Setup
+  href: api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html#KaijuSolutions_Agents_Movement_KaijuPursueMovement_Setup_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuPursueMovement.Setup
+  nameWithType: KaijuPursueMovement.Setup
 - uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement
   name: KaijuSeekMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html
   commentId: T:KaijuSolutions.Agents.Movement.KaijuSeekMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement
   nameWithType: KaijuSeekMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuSeekMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuSeekMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuSeekMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuSeekMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuSeekMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuSeekMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuSeekMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuSeekMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuSeekMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuSeekMovement.KaijuSeekMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuSeekMovement.KaijuSeekMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuSeekMovement.#ctor*
   name: KaijuSeekMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html#KaijuSolutions_Agents_Movement_KaijuSeekMovement__ctor_
@@ -639,36 +1260,30 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuTargetMovement
   fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement
   nameWithType: KaijuTargetMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  name: KaijuTargetMovement(KaijuAgent, Component, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single)
-  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Component, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  name: KaijuTargetMovement(KaijuAgent, GameObject, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single)
-  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, GameObject, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  name: KaijuTargetMovement(KaijuAgent, Transform, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Transform, System.Single)
-  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Transform, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  name: KaijuTargetMovement(KaijuAgent, Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single)
-  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Vector2, Single)
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  name: KaijuTargetMovement(KaijuAgent, Vector3, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single)
-  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Vector3, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: KaijuTargetMovement(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: KaijuTargetMovement(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: KaijuTargetMovement(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: KaijuTargetMovement(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.KaijuTargetMovement(KaijuAgent, Vector3, Single, Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*
   name: KaijuTargetMovement
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_
@@ -676,32 +1291,6 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.KaijuTargetMovement
   nameWithType: KaijuTargetMovement.KaijuTargetMovement
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition
-  name: AgentPosition
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition
-  commentId: P:KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition
-  nameWithType: KaijuTargetMovement.AgentPosition
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition*
-  name: AgentPosition
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition_
-  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition
-  nameWithType: KaijuTargetMovement.AgentPosition
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3
-  name: AgentPosition3
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition3
-  commentId: P:KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3
-  nameWithType: KaijuTargetMovement.AgentPosition3
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3*
-  name: AgentPosition3
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition3_
-  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3
-  nameWithType: KaijuTargetMovement.AgentPosition3
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Calculate(Vector2,Vector2,System.Single,Vector2)
   name: Calculate(Vector2, Vector2, Single, Vector2)
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Calculate_Vector2_Vector2_System_Single_Vector2_
@@ -741,12 +1330,43 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Distance
   nameWithType: KaijuTargetMovement.Distance
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move(Vector2,System.Single)
-  name: Move(Vector2, Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_Vector2_System_Single_
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move(Vector2,System.Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move(Vector2, System.Single)
-  nameWithType: KaijuTargetMovement.Move(Vector2, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  name: Initialize(KaijuAgent, Component, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent, Component, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.Initialize(KaijuAgent, Component, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  name: Initialize(KaijuAgent, GameObject, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent, GameObject, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.Initialize(KaijuAgent, GameObject, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  name: Initialize(KaijuAgent, Vector2, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent, Vector2, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.Initialize(KaijuAgent, Vector2, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  name: Initialize(KaijuAgent, Vector3, Single, Single)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent, Vector3, System.Single, System.Single)
+  nameWithType: KaijuTargetMovement.Initialize(KaijuAgent, Vector3, Single, Single)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize*
+  name: Initialize
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize
+  nameWithType: KaijuTargetMovement.Initialize
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move
+  name: Move()
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move()
+  nameWithType: KaijuTargetMovement.Move()
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move*
   name: Move
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_
@@ -763,6 +1383,15 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to GameObject)
   nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to GameObject)
   nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to GameObject)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~KaijuSolutions.Agents.KaijuAgent
+  name: Implicit(KaijuTargetMovement to KaijuAgent)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__KaijuSolutions_Agents_KaijuAgent
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~KaijuSolutions.Agents.KaijuAgent
+  name.vb: Widening(KaijuTargetMovement to KaijuAgent)
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement to KaijuSolutions.Agents.KaijuAgent)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to KaijuSolutions.Agents.KaijuAgent)
+  nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to KaijuAgent)
+  nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to KaijuAgent)
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Boolean
   name: Implicit(KaijuTargetMovement to Boolean)
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Boolean
@@ -772,15 +1401,15 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Boolean)
   nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to Boolean)
   nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to Boolean)
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Double
-  name: Implicit(KaijuTargetMovement to Double)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Double
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Double
-  name.vb: Widening(KaijuTargetMovement to Double)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Double)
-  fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Double)
-  nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to Double)
-  nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to Double)
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Nullable{System.Boolean}
+  name: Implicit(KaijuTargetMovement to Nullable<Boolean>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Nullable_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Nullable{System.Boolean}
+  name.vb: Widening(KaijuTargetMovement to Nullable(Of Boolean))
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Nullable<System.Boolean>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Nullable(Of System.Boolean))
+  nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to Nullable<Boolean>)
+  nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to Nullable(Of Boolean))
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Nullable{Vector2}
   name: Implicit(KaijuTargetMovement to Nullable<Vector2>)
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Nullable_Vector2_
@@ -799,15 +1428,6 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Nullable(Of Vector3))
   nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to Nullable<Vector3>)
   nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to Nullable(Of Vector3))
-- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Single
-  name: Implicit(KaijuTargetMovement to Single)
-  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Single
-  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Single
-  name.vb: Widening(KaijuTargetMovement to Single)
-  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Single)
-  fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening(KaijuSolutions.Agents.Movement.KaijuTargetMovement to System.Single)
-  nameWithType: KaijuTargetMovement.Implicit(KaijuTargetMovement to Single)
-  nameWithType.vb: KaijuTargetMovement.Widening(KaijuTargetMovement to Single)
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~Transform
   name: Implicit(KaijuTargetMovement to Transform)
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__Transform
@@ -845,6 +1465,19 @@ references:
   fullName.vb: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Widening
   nameWithType: KaijuTargetMovement.Implicit
   nameWithType.vb: KaijuTargetMovement.Widening
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset
+  name: Reset()
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Reset
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset()
+  nameWithType: KaijuTargetMovement.Reset()
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset*
+  name: Reset
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Reset_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset
+  nameWithType: KaijuTargetMovement.Reset
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target
   name: Target
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_Target
@@ -871,6 +1504,19 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target3
   nameWithType: KaijuTargetMovement.Target3
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent
+  name: TargetAgent
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetAgent
+  commentId: P:KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent
+  nameWithType: KaijuTargetMovement.TargetAgent
+- uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent*
+  name: TargetAgent
+  href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetAgent_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent
+  nameWithType: KaijuTargetMovement.TargetAgent
 - uid: KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetComponent
   name: TargetComponent
   href: api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetComponent

@@ -28,7 +28,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgent.html",
-          "hash": "pHdoBdVzC+SDsvI9dwSlp/8F4JWhUtZIx0CsbfwSJiA="
+          "hash": "JpLmbiSgltW/OrQXEpaa9HBsYENx+PUdVOmzLCj5ZFI="
         }
       },
       "is_incremental": false,
@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgents.html",
-          "hash": "UWAn6JGnrKoncgNVgbY+E5B/GiymF8g+dLplqZ65tGg="
+          "hash": "rFYAleFycufNQS1zwPepJmpXsc2t760ZHlYtHvR2Dsg="
         }
       },
       "is_incremental": false,
@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuCharacterAgent.html",
-          "hash": "CNjXqIFPxBdz80f8T3sbARBj7vKWZzJUgVKgY3un4oA="
+          "hash": "HVcMAa9fKsqYaUtojIf8a4SKB0JJJMKANuEiCmwZkcM="
         }
       },
       "is_incremental": false,
@@ -64,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuNavigationAgent.html",
-          "hash": "opK5zl6D7hG2YpoQleRtJl4e1DHkB0bescnUsaHeefI="
+          "hash": "xPxtFeWKjY57ZNjyRVydU8wc1VdzrWaF6ptZ0fLw3Gw="
         }
       },
       "is_incremental": false,
@@ -76,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html",
-          "hash": "ja81npeRDQqQPBQQ+NN1uUr1MeJpR+IlJSyuITiuzcg="
+          "hash": "L3KWXTbACLLgd1FYbmlOFMc2fiQxvGfAVE5J/QIvrJQ="
         }
       },
       "is_incremental": false,
@@ -88,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuTransformAgent.html",
-          "hash": "ex2SqX/t0UWqkB8d2WRr8E8iwI4ZnlRacngTiTAQi0Y="
+          "hash": "sZIU5dY76XSimnXCZ8oAakdH4nce1AUL8BREXH55gbI="
         }
       },
       "is_incremental": false,
@@ -100,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html",
-          "hash": "7QzoLIveLTBUqJ5Xp9kDUaz54BcciqvmtAodxVsU16I="
+          "hash": "EFmPIsBHoHKNd0VyhU1R+6L3LYUPXxr2iSzbyTvUxss="
         }
       },
       "is_incremental": false,
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html",
-          "hash": "wsCWsetb+6eJnQza1gTy/R6ApgKEaYTDydGD7zkNPmw="
+          "hash": "uXzzO9YH5HkypJCZgPGF2MDOctXN8FSU1mSdPJ3dZu4="
         }
       },
       "is_incremental": false,
@@ -124,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html",
-          "hash": "wbvrpXw02M3n2Ua/trZlvr727DM1UCyOrefn0ht0BYE="
+          "hash": "Gk8AUc1v9pLA5mfith/EdTkRhD9vwiPfjsAMQBqRoq4="
         }
       },
       "is_incremental": false,
@@ -136,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html",
-          "hash": "kwnXlsxsRncOsAqLRlFsBt6BYMiskJHPaJDnbe0o+sc="
+          "hash": "NHS/DnD408PP2Y2XZaXyNuJGjlifIp8SwoMg3iIiRa8="
         }
       },
       "is_incremental": false,
@@ -148,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovement.html",
-          "hash": "8TtddiUe+aYcn5bR+paebbB+kmpLhp9fzbXyOCMOfvk="
+          "hash": "QjUTGw56dIa22kA8vPE0zHsS7FlAM2EKwxq79UeOPx4="
         }
       },
       "is_incremental": false,
@@ -156,11 +156,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementCache.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementManager.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementCache.html",
-          "hash": "6WS/GC5F0YP4tAtY0z/EWlbRp0TqFY34U12CnH36klc="
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html",
+          "hash": "Rrz0NSJ32/6Xe2kcJfK+4994k/KcXiEk7B835wvRju4="
         }
       },
       "is_incremental": false,
@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html",
-          "hash": "NZRjXSosleroKAbr0FvsC70v/yAog8ICWm0+OK0Ludo="
+          "hash": "UnaRU7F1yEurVzomkdmaeq8UYYKF+2qP6ve0WjflSTM="
         }
       },
       "is_incremental": false,
@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html",
-          "hash": "Dyp8mvXbUIyDjMA/3Mi9WyqvJE+bdssJBWzSPV5Oko8="
+          "hash": "QRIddQW5k8+sl5CWWkyPOYavUHK103IJidlhWr3WAPI="
         }
       },
       "is_incremental": false,
@@ -196,7 +196,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html",
-          "hash": "ovNkXaSdMWUzABH9eUwssGfcHkcm9ichcRVVxwn8H1A="
+          "hash": "ORxeE3YPN/wQrzzvyXrZmJdX3sZ5UgOFrFkqwCVlWI8="
         }
       },
       "is_incremental": false,
@@ -208,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.html",
-          "hash": "OE4ErjMLp1pqf9BOVwixX7Mzwh7YHxOUb99g2BtDQs0="
+          "hash": "cU4QBNl+JxQbKAp9niEsW3C6Eev5PPbtSkJkvwBOsgg="
         }
       },
       "is_incremental": false,
@@ -220,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.html",
-          "hash": "X8aAq+OHhmKW7cKTQu0aH7rEiZ6sjXA9AG5JIzeqKNw="
+          "hash": "U1zb0CeNLOQ0+zdYrSIz3pvGh3A8cvRmAaRYJHaQvqk="
         }
       },
       "is_incremental": false,
@@ -232,7 +232,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "hAAC1+SHpJi806hQD+uV9URZgF039N1ow+fjYpEPf0g="
+          "hash": "LAhQxTfepx2KehbqKfZI6G5G6WiDgUeusP8mpfgYdI8="
         }
       },
       "is_incremental": false,
@@ -368,7 +368,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 19,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

@@ -98,6 +98,15 @@
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">KaijuMovement.Agent</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Weight">KaijuMovement.Weight</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition">KaijuMovement.AgentPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_AgentPosition3">KaijuMovement.AgentPosition3</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_VelocityAndSpeed_Vector2_Vector2_Vector2__System_Single__">KaijuMovement.VelocityAndSpeed(Vector2, Vector2, Vector2, Single)</a>
     </div>
     <div>
@@ -107,7 +116,16 @@
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Velocity_Vector2_Vector2_">KaijuMovement.Velocity(Vector2, Vector2)</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_">KaijuMovement.Initialize(KaijuAgent, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Setup">KaijuMovement.Setup()</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Done">KaijuMovement.Done()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Return">KaijuMovement.Return()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
@@ -119,13 +137,13 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single)">KaijuTargetMovement(KaijuAgent, Component, Single)</h4>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)">KaijuTargetMovement(KaijuAgent, Component, Single, Single)</h4>
   <div class="markdown level1 summary"><p>Create the target movement for a component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Component target, float distance)</code></pre>
+    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Component target, float distance, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -155,16 +173,22 @@
         <td><p>The distance to consider this move done.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single)">KaijuTargetMovement(KaijuAgent, GameObject, Single)</h4>
-  <div class="markdown level1 summary"><p>Create the target movement for a GameObject.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)">KaijuTargetMovement(KaijuAgent, GameObject, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Create the target movement for a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, GameObject target, float distance)</code></pre>
+    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, GameObject target, float distance, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -185,7 +209,7 @@
       <tr>
         <td><span class="xref">GameObject</span></td>
         <td><span class="parametername">target</span></td>
-        <td><p>The GameObject to move in relation to.</p>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to move in relation to.</p>
 </td>
       </tr>
       <tr>
@@ -194,55 +218,22 @@
         <td><p>The distance to consider this move done.</p>
 </td>
       </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Transform_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Transform,System.Single)">KaijuTargetMovement(KaijuAgent, Transform, Single)</h4>
-  <div class="markdown level1 summary"><p>Create the target movement for a transform.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Transform target, float distance)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
-        <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Transform</span></td>
-        <td><span class="parametername">target</span></td>
-        <td><p>The transform to move in relation to.</p>
-</td>
-      </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
-        <td><span class="parametername">distance</span></td>
-        <td><p>The distance to consider this move done.</p>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single)">KaijuTargetMovement(KaijuAgent, Vector2, Single)</h4>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)">KaijuTargetMovement(KaijuAgent, Vector2, Single, Single)</h4>
   <div class="markdown level1 summary"><p>Create the target movement for a Vector2.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Vector2 target, float distance)</code></pre>
+    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Vector2 target, float distance, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -272,16 +263,22 @@
         <td><p>The distance to consider this move done.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single)">KaijuTargetMovement(KaijuAgent, Vector3, Single)</h4>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)">KaijuTargetMovement(KaijuAgent, Vector3, Single, Single)</h4>
   <div class="markdown level1 summary"><p>Create the target movement for a Vector3.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Vector3 target, float distance)</code></pre>
+    <pre><code class="lang-csharp hljs">protected KaijuTargetMovement(KaijuAgent agent, Vector3 target, float distance, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -309,60 +306,18 @@
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">distance</span></td>
         <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition">AgentPosition</h4>
-  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>&apos;s current position.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 AgentPosition { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector2</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition3_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_AgentPosition3" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.AgentPosition3">AgentPosition3</h4>
-  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>&apos;s current position.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 AgentPosition3 { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.CurrentDistance*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.CurrentDistance">CurrentDistance</h4>
   <div class="markdown level1 summary"><p>The current distance between the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and the target.</p>
@@ -459,6 +414,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetAgent_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetAgent" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetAgent">TargetAgent</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgent TargetAgent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetComponent_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetComponent*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetComponent" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetComponent">TargetComponent</h4>
   <div class="markdown level1 summary"><p>The component to move in relation to.</p>
@@ -485,7 +464,7 @@
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetGameObject_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetGameObject*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetGameObject" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetGameObject">TargetGameObject</h4>
-  <div class="markdown level1 summary"><p>The GameObject to move in relation to.</p>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to move in relation to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -509,7 +488,7 @@
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetTransform_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetTransform*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_TargetTransform" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.TargetTransform">TargetTransform</h4>
-  <div class="markdown level1 summary"><p>The transform to move in relation to.</p>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> to move in relation to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -594,14 +573,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
-  <div class="markdown level1 summary"><p>Get the movement.</p>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Single)">Initialize(KaijuAgent, Component, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override Vector2 Move(Vector2 velocity, float speed)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Component target, float distance, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -614,19 +593,175 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Vector2</span></td>
-        <td><span class="parametername">velocity</span></td>
-        <td><p>The agent&apos;s current velocity.</p>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
-        <td><span class="parametername">speed</span></td>
-        <td><p>The agent&apos;s maximum movement speed.</p>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
 </td>
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Single)">Initialize(KaijuAgent, GameObject, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, GameObject target, float distance, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Single)">Initialize(KaijuAgent, Vector2, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector2 target, float distance, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The vector to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Single)">Initialize(KaijuAgent, Vector3, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector3 target, float distance, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The vector to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Move" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Move">Move()</h4>
+  <div class="markdown level1 summary"><p>Get the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector2 Move()</code></pre>
+  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -644,12 +779,23 @@
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move_Vector2_System_Single_">KaijuMovement.Move(Vector2, Single)</a></div>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move">KaijuMovement.Move()</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Reset_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_Reset" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Perform any needed reset operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Reset()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Reset">KaijuMovement.Reset()</a></div>
   <h3 id="operators">Operators
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__GameObject" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~GameObject">Implicit(KaijuTargetMovement to GameObject)</h4>
-  <div class="markdown level1 summary"><p>Implicit conversion to a GameObject from the target.</p>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> from the target.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -685,7 +831,50 @@
     <tbody>
       <tr>
         <td><span class="xref">GameObject</span></td>
-        <td><p>The target.</p>
+        <td><p>The target <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuTargetMovement to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuTargetMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html">KaijuTargetMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The target <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> from the target.</p>
 </td>
       </tr>
     </tbody>
@@ -734,13 +923,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Double" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Double">Implicit(KaijuTargetMovement to Double)</h4>
-  <div class="markdown level1 summary"><p>Implicit conversion to a double from the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance">CurrentDistance</a>.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Nullable_System_Boolean_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Nullable{System.Boolean}">Implicit(KaijuTargetMovement to Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Boolean based on if this is done or not.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator double (KaijuTargetMovement t)</code></pre>
+    <pre><code class="lang-csharp hljs">public static implicit operator bool? (KaijuTargetMovement t)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -770,8 +959,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance">CurrentDistance</a>.</p>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>If this is done or not.</p>
 </td>
       </tr>
     </tbody>
@@ -863,51 +1052,8 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__System_Single" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~System.Single">Implicit(KaijuTargetMovement to Single)</h4>
-  <div class="markdown level1 summary"><p>Implicit conversion to a float from the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance">CurrentDistance</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static implicit operator float (KaijuTargetMovement t)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html">KaijuTargetMovement</a></td>
-        <td><span class="parametername">t</span></td>
-        <td><p>The target movement.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuTargetMovement.html#KaijuSolutions_Agents_Movement_KaijuTargetMovement_CurrentDistance">CurrentDistance</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuTargetMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuTargetMovement__Transform" data-uid="KaijuSolutions.Agents.Movement.KaijuTargetMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuTargetMovement)~Transform">Implicit(KaijuTargetMovement to Transform)</h4>
-  <div class="markdown level1 summary"><p>Implicit conversion to a transform from the target.</p>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> from the target.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -943,7 +1089,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Transform</span></td>
-        <td><p>The target.</p>
+        <td><p>The target <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
 </td>
       </tr>
     </tbody>

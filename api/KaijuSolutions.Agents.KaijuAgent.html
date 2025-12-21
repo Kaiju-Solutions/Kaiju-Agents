@@ -99,8 +99,399 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class KaijuAgent : MonoBehaviour</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Movements" data-uid="KaijuSolutions.Agents.KaijuAgent.Movements">Movements</h4>
+  <div class="markdown level1 summary"><p>All movements the agent is currently performing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly List&lt;KaijuMovement&gt; Movements</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">KaijuMovement</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Orientation_" data-uid="KaijuSolutions.Agents.KaijuAgent.Orientation*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Orientation" data-uid="KaijuSolutions.Agents.KaijuAgent.Orientation">Orientation</h4>
+  <div class="markdown level1 summary"><p>Get the angle the agent is rotated along the main Y axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Orientation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Position_" data-uid="KaijuSolutions.Agents.KaijuAgent.Position*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Position" data-uid="KaijuSolutions.Agents.KaijuAgent.Position">Position</h4>
+  <div class="markdown level1 summary"><p>Get the position vector along the main XZ axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Position { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Position3_" data-uid="KaijuSolutions.Agents.KaijuAgent.Position3*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Position3" data-uid="KaijuSolutions.Agents.KaijuAgent.Position3">Position3</h4>
+  <div class="markdown level1 summary"><p>Get the position vector along all three axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Position3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Speed_" data-uid="KaijuSolutions.Agents.KaijuAgent.Speed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Speed" data-uid="KaijuSolutions.Agents.KaijuAgent.Speed">Speed</h4>
+  <div class="markdown level1 summary"><p>The maximum speed of the agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Speed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Velocity_" data-uid="KaijuSolutions.Agents.KaijuAgent.Velocity*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Velocity" data-uid="KaijuSolutions.Agents.KaijuAgent.Velocity">Velocity</h4>
+  <div class="markdown level1 summary"><p>The current velocity of the agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Velocity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Seek_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Seek_Component_System_Single_System_Single_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek(Component,System.Single,System.Single,System.Boolean)">Seek(Component, Single, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Seek to a target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuSeekMovement Seek(Component target, float distance = 0F, float weight = 1F, bool clear = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>At what distance from the target should the seek be considered successful.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clear</span></td>
+        <td><p>If this should clear all other current movement and become the only one the agent is performing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSeekMovement</span></td>
+        <td><p>The seek movement to the target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Seek_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Seek_GameObject_System_Single_System_Single_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek(GameObject,System.Single,System.Single,System.Boolean)">Seek(GameObject, Single, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Seek to a target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuSeekMovement Seek(GameObject target, float distance = 0F, float weight = 1F, bool clear = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>At what distance from the target should the seek be considered successful.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clear</span></td>
+        <td><p>If this should clear all other current movement and become the only one the agent is performing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSeekMovement</span></td>
+        <td><p>The seek movement to the target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Seek_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Seek_Vector2_System_Single_System_Single_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek(Vector2,System.Single,System.Single,System.Boolean)">Seek(Vector2, Single, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Seek to a target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuSeekMovement Seek(Vector2 target, float distance = 0F, float weight = 1F, bool clear = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>At what distance from the target should the seek be considered successful.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clear</span></td>
+        <td><p>If this should clear all other current movement and become the only one the agent is performing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSeekMovement</span></td>
+        <td><p>The seek movement to the target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Seek_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Seek_Vector3_System_Single_System_Single_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgent.Seek(Vector3,System.Single,System.Single,System.Boolean)">Seek(Vector3, Single, Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Seek to a target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuSeekMovement Seek(Vector3 target, float distance = 0F, float weight = 1F, bool clear = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>At what distance from the target should the seek be considered successful.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">clear</span></td>
+        <td><p>If this should clear all other current movement and become the only one the agent is performing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSeekMovement</span></td>
+        <td><p>The seek movement to the target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgent_Setup_" data-uid="KaijuSolutions.Agents.KaijuAgent.Setup*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuAgent_Setup" data-uid="KaijuSolutions.Agents.KaijuAgent.Setup">Setup()</h4>
   <div class="markdown level1 summary"><p>Initialize the agent.</p>
@@ -110,6 +501,716 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public virtual void Setup()</code></pre>
   </div>
+  <a id="KaijuSolutions_Agents_KaijuAgent_Stop_" data-uid="KaijuSolutions.Agents.KaijuAgent.Stop*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_Stop" data-uid="KaijuSolutions.Agents.KaijuAgent.Stop">Stop()</h4>
+  <div class="markdown level1 summary"><p>Stop all movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_KaijuAgent_StopFor_" data-uid="KaijuSolutions.Agents.KaijuAgent.StopFor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_StopFor_Component_" data-uid="KaijuSolutions.Agents.KaijuAgent.StopFor(Component)">StopFor(Component)</h4>
+  <div class="markdown level1 summary"><p>Stop an existing movement in relation to a component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopFor(Component c)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>The component to stop moving in relation to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_StopFor_" data-uid="KaijuSolutions.Agents.KaijuAgent.StopFor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_StopFor_GameObject_" data-uid="KaijuSolutions.Agents.KaijuAgent.StopFor(GameObject)">StopFor(GameObject)</h4>
+  <div class="markdown level1 summary"><p>Stop an existing movement in relation to a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">component</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopFor(GameObject go)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">go</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to stop moving in relation to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_GameObject__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuAgent">Implicit(GameObject to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The agent attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__GameObject" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~GameObject">Implicit(KaijuAgent to GameObject)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator GameObject(KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> of the agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Boolean" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Boolean">Implicit(KaijuAgent to Boolean)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Boolean if the agent is active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator bool (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the agent is active.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Double" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Double">Implicit(KaijuAgent to Double)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a double from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator double (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Boolean}">Implicit(KaijuAgent to Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Boolean if the agent is active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator bool? (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>If the agent is active.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Double_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Double}">Implicit(KaijuAgent to Nullable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable double from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator double? (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_System_Single_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{System.Single}">Implicit(KaijuAgent to Nullable&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable float from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator float? (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_Vector2_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector2}">Implicit(KaijuAgent to Nullable&lt;Vector2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector2 from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2? (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Nullable_Vector3_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Nullable{Vector3}">Implicit(KaijuAgent to Nullable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector3 from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position3">Position3</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3? (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position3">Position3</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_Single" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.Single">Implicit(KaijuAgent to Single)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a float from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator float (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__System_String" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~System.String">Implicit(KaijuAgent to String)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string (KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.KaijuAgent.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Transform" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Transform">Implicit(KaijuAgent to Transform)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Transform(KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> of the agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Vector2" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector2">Implicit(KaijuAgent to Vector2)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector2 from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2(KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_KaijuSolutions_Agents_KaijuAgent__Vector3" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~Vector3">Implicit(KaijuAgent to Vector3)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector2 from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgent_op_Implicit_Transform__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.KaijuAgent.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuAgent">Implicit(Transform to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The agent attached to the <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
