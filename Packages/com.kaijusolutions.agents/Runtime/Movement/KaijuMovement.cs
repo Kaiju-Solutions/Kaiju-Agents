@@ -137,16 +137,17 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
         /// </summary>
-        public void Visualize()
+        /// <param name="text">If text elements should be visualized or not.</param>
+        public void Visualize(bool text = true)
         {
             // Nothing to visualize if no agents.
-            if (!Agent)
+            if (Done())
             {
                 return;
             }
             
             Gizmos.color = VisualizationColor();
-            RenderVisualizations();
+            RenderVisualizations(text);
         }
         
         /// <summary>
@@ -158,7 +159,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        protected virtual void RenderVisualizations() { }
+        /// <param name="text">If text elements should be visualized or not.</param>
+        protected virtual void RenderVisualizations(bool text = true) { }
 #endif
         /// <summary>
         /// Get a description of the object.

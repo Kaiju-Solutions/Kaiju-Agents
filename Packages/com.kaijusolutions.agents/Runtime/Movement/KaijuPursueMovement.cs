@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -179,6 +181,7 @@ namespace KaijuSolutions.Agents.Movement
             Vector2 targetVelocity = Velocity(target, Previous, delta);
             float targetSpeed = Speed(target, Previous, delta);
             
+            // Predict where the target will be.
             Future = target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed));
             
             // Seek ahead of the target.
@@ -201,24 +204,36 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        protected override void RenderVisualizations()
+        /// <param name="text">If text elements should be visualized or not.</param>
+        protected override void RenderVisualizations(bool text = true)
         {
             Vector3 t = Target3;
             Vector3 a = Agent;
             Vector3 f = Future3;
             
-            Gizmos.DrawLineList(new[]
+            // Only one line to draw if equal.
+            bool still = t == f;
+            if (still)
             {
-                // Agent to target.
-                a,
-                t,
-                // Agent to forecast.
-                a,
-                f,
-                // Target to forecast.
-                t,
-                f
-            });
+                Gizmos.DrawLine(a, t);
+            }
+            else
+            {
+                Gizmos.DrawLineList(new[]
+                {
+                    // Agent to target.
+                    a,
+                    t,
+                    // Agent to forecast.
+                    a,
+                    f,
+                    // Target to forecast.
+                    t,
+                    f
+                });
+            }
+            
+            RenderTargetVisualizationText("Pursue", a, t,text);
         }
 #endif
         /// <summary>

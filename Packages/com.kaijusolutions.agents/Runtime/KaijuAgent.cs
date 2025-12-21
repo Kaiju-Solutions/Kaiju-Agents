@@ -597,22 +597,11 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            Visualize();
-        }
-        
-        /// <summary>
-        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
-        /// </summary>
-        private void Visualize()
-        {
-            //Gizmos.matrix = transform.localToWorldMatrix;
+            // TODO - Check if should render based on all/selected only rule.
             
             foreach (KaijuMovement movement in _movements)
             {
-                if (!movement.Done())
-                {
-                    movement.Visualize();
-                }
+                movement.Visualize();
             }
         }
 #endif

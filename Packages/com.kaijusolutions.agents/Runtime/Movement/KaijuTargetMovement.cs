@@ -288,14 +288,41 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        protected override void RenderVisualizations()
+        /// <param name="text">If text elements should be visualized or not.</param>
+        protected override void RenderVisualizations(bool text = true)
+        {
+            RenderTargetVisualization("Target", text);
+        }
+        
+        /// <summary>
+        /// Render the visualizations for this core target movement.
+        /// </summary>
+        /// <param name="label">The label to display.</param>
+        /// <param name="text">If text elements should be visualized or not.</param>
+        protected void RenderTargetVisualization(string label, bool text = true)
         {
             Vector3 a = Agent;
             Vector3 t = Target3;
-            Vector3 midpoint = (a + t) / 2f;
             Gizmos.DrawLine(a, t);
-            Handles.Label(midpoint, $"Distance: {CurrentDistance3:F2}");
-            Handles.Label(t, $"Seek: ({t.x:F2}, {t.y:F2}, {t.z:F2})");
+            RenderTargetVisualizationText(label, a, t);
+        }
+        
+        /// <summary>
+        /// Render the visualizations for this target movement.
+        /// </summary>
+        /// <param name="label">The label to display.</param>
+        /// <param name="a">The <see cref="KaijuMovement.Agent"/>'s position.</param>
+        /// <param name="t">The <see cref="Target3"/>'s position.</param>
+        /// <param name="text">If text elements should be visualized or not.</param>
+        protected void RenderTargetVisualizationText(string label, Vector3 a, Vector3 t, bool text = true)
+        {
+            if (!text)
+            {
+                return;
+            }
+            
+            Handles.Label(t, $"{label}: ({t.x:F2}, {t.y:F2}, {t.z:F2})");
+            Handles.Label((a + t) / 2f, $"{CurrentDistance3:F2}");
         }
 #endif
         /// <summary>

@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 2056024825}
-  type: 0
+  type: 3
 --- !u!1 &2056024824
 GameObject:
   m_ObjectHideFlags: 0
