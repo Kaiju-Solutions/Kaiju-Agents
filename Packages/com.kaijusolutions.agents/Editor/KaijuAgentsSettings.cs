@@ -28,8 +28,9 @@ internal static class KaijuAgentsSettings
                     }
                 };
                 
-                //container.Add(new Label("TEST"));
-                //root.Add(container);
+                // TODO - Add the ability to change all the colors found in KaijuMovementManager with the ability to reset each.
+                
+                root.Add(container);
             },
             keywords = new HashSet<string>(new[] { "Kaiju", "Agents", "AI", "Artificial Intelligence" })
         };
