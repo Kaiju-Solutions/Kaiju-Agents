@@ -14,6 +14,86 @@ namespace KaijuSolutions.Agents.Movement
         public Vector2 Previous;
         
         /// <summary>
+        /// Get a pursue movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1)
+        {
+            KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a pursue movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1)
+        {
+            KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a pursue movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1)
+        {
+            KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a pursue movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1)
+        {
+            KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
         /// Create a pursue movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>

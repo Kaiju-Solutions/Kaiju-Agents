@@ -9,13 +9,84 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuFleeMovement : KaijuLeavingMovement
     {
         /// <summary>
-        /// Create a flee movement.
+        /// Get a flee movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The position to flee from.</param>
-        /// <param name="distance">The distance from the target to consider this movement done.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuFleeMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuFleeMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = float.MaxValue, float weight = 1)
+        {
+            KaijuFleeMovement movement = KaijuMovementManager.Get<KaijuFleeMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a flee movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuFleeMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = float.MaxValue, float weight = 1)
+        {
+            KaijuFleeMovement movement = KaijuMovementManager.Get<KaijuFleeMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a flee movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuFleeMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = float.MaxValue, float weight = 1)
+        {
+            KaijuFleeMovement movement = KaijuMovementManager.Get<KaijuFleeMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Get a flee movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <returns>Get a seek movement for the agent.</returns>
+        public static KaijuFleeMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = float.MaxValue, float weight = 1)
+        {
+            KaijuFleeMovement movement = KaijuMovementManager.Get<KaijuFleeMovement>();
+            if (movement == null)
+            {
+                return new(agent, target, distance, weight);
+            }
+            
+            movement.Initialize(agent, target, distance, weight);
+            return movement;
+        }
         
         /// <summary>
         /// Create a flee movement.
@@ -24,7 +95,16 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to flee from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuFleeMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuFleeMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
+        
+        /// <summary>
+        /// Create a flee movement.
+        /// </summary>
+        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="target">The position to flee from.</param>
+        /// <param name="distance">The distance from the target to consider this movement done.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        public KaijuFleeMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a flee movement.
@@ -33,7 +113,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to flee from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a flee movement.
@@ -42,7 +122,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The component to flee from.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Calculate the movement.

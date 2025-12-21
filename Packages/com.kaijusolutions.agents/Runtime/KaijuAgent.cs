@@ -143,7 +143,7 @@ namespace KaijuSolutions.Agents
                 Stop();
             }
             
-            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             Movements.Add(movement);
             return movement;
         }
@@ -163,7 +163,7 @@ namespace KaijuSolutions.Agents
                 Stop();
             }
             
-            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             Movements.Add(movement);
             return movement;
         }
@@ -188,7 +188,7 @@ namespace KaijuSolutions.Agents
                 StopFor(target);
             }
             
-            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             Movements.Add(movement);
             return movement;
         }
@@ -213,12 +213,280 @@ namespace KaijuSolutions.Agents
                 StopFor(target);
             }
             
-            KaijuSeekMovement movement = this.GetSeek(target, distance, weight);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             Movements.Add(movement);
             return movement;
         }
         
-        // TODO - Pursue, Flee, and Evade.
+        /// <summary>
+        /// Pursue to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuPursueMovement Pursue(Vector2 target, float distance = 0, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Pursue to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuPursueMovement Pursue(Vector3 target, float distance = 0, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Pursue to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuPursueMovement Pursue([NotNull] GameObject target, float distance = 0, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Pursue to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuPursueMovement Pursue([NotNull] Component target, float distance = 0, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Flee from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuFleeMovement Flee(Vector2 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Flee from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuFleeMovement Flee(Vector3 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Flee from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuFleeMovement Flee([NotNull] GameObject target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Flee from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuFleeMovement Flee([NotNull] Component target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Evade from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuEvadeMovement Evade(Vector2 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Evade from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuEvadeMovement Evade(Vector3 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Evade from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuEvadeMovement Evade([NotNull] GameObject target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Evade from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns>The seek movement to the target.</returns>
+        public KaijuEvadeMovement Evade([NotNull] Component target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            else
+            {
+                // Only have one movement towards each target object.
+                StopFor(target);
+            }
+            
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            Movements.Add(movement);
+            return movement;
+        }
         
         /// <summary>
         /// Get a description of the object.
