@@ -46,7 +46,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The speed in units per second.</returns>
         protected static float Speed(Vector2 current, Vector2 previous, float delta)
         {
-            return Vector2.Distance(current, previous) * delta;
+            return Vector2.Distance(current, previous) / delta;
         }
         
         /// <summary>
