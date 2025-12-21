@@ -123,7 +123,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
-        
+
         /// <summary>
         /// Calculate the movement.
         /// </summary>
@@ -131,8 +131,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target)
+        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta)
         {
             return (position - target).normalized * speed - velocity;
         }

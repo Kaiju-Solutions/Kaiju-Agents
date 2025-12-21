@@ -14,7 +14,15 @@ namespace KaijuSolutions.Agents
 #endif
     public sealed class KaijuTransformAgent : KaijuAgent
     {
-        // TODO.
+        /// <summary>
+        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        private void Update()
+        {
+            float delta = Time.deltaTime;
+            CalculateVelocity(delta);
+            transform.position += Velocity3 * delta;
+        }
         
         /// <summary>
         /// Get a description of the object.

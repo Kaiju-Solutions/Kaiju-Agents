@@ -38,63 +38,38 @@ namespace KaijuSolutions.Agents.Movement
         public Vector3 AgentPosition3 => Agent ? Agent.Position3 : Vector3.zero;
         
         /// <summary>
-        /// Get the velocity and speed.
-        /// </summary>
-        /// <param name="current">Current position.</param>
-        /// <param name="previous">Position at the previous time step.</param>
-        /// <param name="velocity">The velocity.</param>
-        /// <param name="speed">The speed.</param>
-        protected static void VelocityAndSpeed(Vector2 current, Vector2 previous, out Vector2 velocity, out float speed)
-        {
-            float delta = Time.deltaTime;
-            velocity = Velocity(current, previous, delta);
-            speed = Speed(current, previous, delta);
-        }
-        
-        /// <summary>
-        /// Get the speed in units per second.
-        /// </summary>
-        /// <param name="current">Current position.</param>
-        /// <param name="previous">Position at the previous time step.</param>
-        /// <returns>The speed in units per second.</returns>
-        protected static float Speed(Vector2 current, Vector2 previous)
-        {
-            return Speed(current, previous, Time.deltaTime);
-        }
-        
-        /// <summary>
         /// Get the speed in units per second.
         /// </summary>
         /// <param name="current">Current position.</param>
         /// <param name="previous">Position at the previous time step.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The speed in units per second.</returns>
-        private static float Speed(Vector2 current, Vector2 previous, float delta)
+        protected static float Speed(Vector2 current, Vector2 previous, float delta)
         {
             return Vector2.Distance(current, previous) * delta;
         }
         
         /// <summary>
-        /// Get the velocity across axis.
-        /// </summary>
-        /// <param name="current">Current position.</param>
-        /// <param name="previous">Position at the previous time step.</param>
-        /// <returns>The velocity across axis</returns>
-        protected static Vector2 Velocity(Vector2 current, Vector2 previous)
-        {
-            return Velocity(current, previous, Time.deltaTime);
-        }
-        
-        /// <summary>
-        /// Get the velocity across axis.
+        /// Get the velocity across axes.
         /// </summary>
         /// <param name="current">Current position.</param>
         /// <param name="previous">Position at the previous time step.</param>
         /// <param name="delta">The time step.</param>
-        /// <returns>The velocity across axis</returns>
-        private static Vector2 Velocity(Vector2 current, Vector2 previous, float delta)
+        /// <returns>The velocity across axes</returns>
+        protected static Vector2 Velocity(Vector2 current, Vector2 previous, float delta)
         {
-            return (current - previous) / delta;
+            return Direction(current, previous) / delta;
+        }
+        
+        /// <summary>
+        /// Get the direction from the first vector to the second.
+        /// </summary>
+        /// <param name="a">The first vector.</param>
+        /// <param name="b">The second vector.</param>
+        /// <returns>The direction from the first vector to the second.</returns>
+        protected static Vector2 Direction(Vector2 a, Vector2 b)
+        {
+            return a - b;
         }
         
         /// <summary>
@@ -127,8 +102,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public abstract Vector2 Move();
+        public abstract Vector2 Move(float delta);
 
         /// <summary>
         /// Determine if the movement is done or not.
@@ -157,6 +133,11 @@ namespace KaijuSolutions.Agents.Movement
             Agent = null;
             _weight = 0;
         }
+        
+        /// <summary>
+        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// </summary>
+        public virtual void Visualize() { }
         
         /// <summary>
         /// Get a description of the object.

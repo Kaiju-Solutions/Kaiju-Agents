@@ -14,6 +14,21 @@ namespace KaijuSolutions.Agents.Movement
         public Vector2 Previous;
         
         /// <summary>
+        /// The previous position of the target.
+        /// </summary>
+        public Vector3 Previous3 => new(Previous.x, 0, Previous.y);
+        
+        /// <summary>
+        /// The predicted future target.
+        /// </summary>
+        public Vector2 Future { get; private set; }
+        
+        /// <summary>
+        /// The predicted future target.
+        /// </summary>
+        public Vector3 Future3 => new(Future.x, 0, Future.y);
+        
+        /// <summary>
         /// Get a pursue movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
@@ -135,7 +150,16 @@ namespace KaijuSolutions.Agents.Movement
         protected override void Setup()
         {
             // Start the previous position as the current position.
-            Previous = Target ?? Vector2.zero;
+            if (Target.HasValue)
+            {
+                Previous = Target.Value;
+                Future = Target.Value;
+            }
+            else
+            {
+                Previous = Vector2.zero;
+                Future = Vector2.zero;
+            }
         }
         
         /// <summary>
@@ -145,6 +169,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             base.Reset();
             Previous = Vector2.zero;
+            Future = Vector2.zero;
         }
         
         /// <summary>
@@ -154,20 +179,46 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target)
+        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta)
         {
             // Calculate target values.
-            VelocityAndSpeed(target, Previous, out Vector2 targetVelocity, out float targetSpeed);
+            Vector2 targetVelocity = Velocity(target, Previous, delta);
+            float targetSpeed = Speed(target, Previous, delta);
+            
+            Future = target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed));
             
             // Seek ahead of the target.
-            Vector2 move = base.Calculate(position, velocity, speed, target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed)));
+            Vector2 move = base.Calculate(position, velocity, speed, Future, delta);
             
             // Update the previous position.
-            Previous = position;
+            Previous = target;
             return move;
         }
         
+        /// <summary>
+        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// </summary>
+        public override void Visualize()
+        {
+            if (!Agent)
+            {
+                return;
+            }
+            
+            Vector3? t = Target3;
+            if (!t.HasValue)
+            {
+                return;
+            }
+            
+            Gizmos.color = Visuals;
+            Gizmos.DrawLine(Agent.transform.position, t.Value);
+            Gizmos.DrawLine(Agent.transform.position, Future3);
+            Gizmos.DrawLine(t.Value, Future3);
+        }
+
         /// <summary>
         /// Get a description of the object.
         /// </summary>

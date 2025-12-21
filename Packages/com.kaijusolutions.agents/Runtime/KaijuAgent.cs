@@ -19,7 +19,21 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The maximum speed of the agent.
         /// </summary>
-        public float Speed { get; private set; }
+        public float Speed
+        {
+            get => speed;
+            set => speed = Mathf.Max(value, 0);
+        }
+        
+        /// <summary>
+        /// The maximum speed of the agent.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The maximum speed of the agents.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float speed = 10;
         
         /// <summary>
         /// The current velocity of the agent.
@@ -27,9 +41,24 @@ namespace KaijuSolutions.Agents
         public Vector2 Velocity { get; private set; }
         
         /// <summary>
+        /// The current velocity of the agent.
+        /// </summary>
+        public Vector3 Velocity3 => new Vector3(Velocity.x, 0, Velocity.y);
+        
+        /// <summary>
         /// All movements the agent is currently performing.
         /// </summary>
-        public readonly List<KaijuMovement> Movements = new();
+        private readonly List<KaijuMovement> _movements = new();
+        
+        /// <summary>
+        /// All movements the agent is currently performing.
+        /// </summary>
+        public IReadOnlyList<KaijuMovement> Movements => _movements.AsReadOnly();
+        
+        /// <summary>
+        /// The total number movements the agent is currently performing.
+        /// </summary>
+        public int MovementsCount => _movements.Count;
         
         /// <summary>
         /// Get the position vector along the main XZ axis.
@@ -59,9 +88,10 @@ namespace KaijuSolutions.Agents
         public virtual void Setup() { }
         
         /// <summary>
-        /// Handle moving the agent.
+        /// Calculate the velocity for the next update.
+        /// <param name="delta">The time step.</param>
         /// </summary>
-        private Vector2 Move()
+        protected void CalculateVelocity(float delta)
         {
             // Start with no motion this frame.
             Vector2 velocity = Vector2.zero;
@@ -70,31 +100,28 @@ namespace KaijuSolutions.Agents
             float weight = 0;
             
             // Go through all assigned movements.
-            for (int i = 0; i < Movements.Count; i++)
+            for (int i = 0; i < _movements.Count; i++)
             {
                 // If the movement is done, remove it to the cache.
-                if (Movements[i].Done())
+                if (_movements[i].Done())
                 {
-                    Movements[i].Return();
-                    Movements.RemoveAt(i--);
+                    _movements[i].Return();
+                    _movements.RemoveAt(i--);
                     continue;
                 }
                 
                 // Otherwise, add up its weighting.
-                weight += Movements[i].Weight;
-                
-                // Otherwise, calculate the movement.
-                velocity += Movements[i].Move();
+                weight += _movements[i].Weight;
             }
             
             // Go through all remaining movements again to perform them.
-            foreach (KaijuMovement movement in Movements)
+            foreach (KaijuMovement movement in _movements)
             {
                 // Weight the movement.
-                velocity += movement.Move() * (movement.Weight / weight);
+                velocity += movement.Move(delta) * (movement.Weight / weight);
             }
             
-            return velocity;
+            Velocity += velocity;
         }
         
         /// <summary>
@@ -102,30 +129,39 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void Stop()
         {
-            foreach (KaijuMovement movement in Movements)
+            foreach (KaijuMovement movement in _movements)
             {
                 movement.Return();
             }
             
-            Movements.Clear();
+            _movements.Clear();
         }
         
         /// <summary>
-        /// Stop an existing movement in relation to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">component</see>.
+        /// Stop an existing target movement in relation to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">component</see>.
         /// </summary>
         /// <param name="go">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to stop moving in relation to.</param>
-        public void StopFor([NotNull] GameObject go)
+        public void Stop([NotNull] GameObject go)
         {
-            // TODO.
+            for (int i = 0; i < _movements.Count; i++)
+            {
+                if (_movements[i] is KaijuTargetMovement target && target.TargetGameObject != go)
+                {
+                    continue;
+                }
+                
+                _movements.RemoveAt(i);
+                return;
+            }
         }
         
         /// <summary>
-        /// Stop an existing movement in relation to a component.
+        /// Stop an existing target movement in relation to a component.
         /// </summary>
         /// <param name="c">The component to stop moving in relation to.</param>
-        public void StopFor([NotNull] Component c)
+        public void Stop([NotNull] Component c)
         {
-            // TODO.
+            Stop(c.gameObject);
         }
         
         /// <summary>
@@ -144,7 +180,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -164,7 +200,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -185,11 +221,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -210,11 +246,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -234,7 +270,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -254,7 +290,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -275,11 +311,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -300,11 +336,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -324,7 +360,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -344,7 +380,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -365,11 +401,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -390,11 +426,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -414,7 +450,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -434,7 +470,7 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -455,11 +491,11 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
         }
         
@@ -480,12 +516,36 @@ namespace KaijuSolutions.Agents
             else
             {
                 // Only have one movement towards each target object.
-                StopFor(target);
+                Stop(target);
             }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
-            Movements.Add(movement);
+            _movements.Add(movement);
             return movement;
+        }
+        
+        /// <summary>
+        /// Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
+        /// </summary>
+        private void OnDrawGizmos()
+        {
+            Visualize();
+        }
+        
+        /// <summary>
+        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// </summary>
+        private void Visualize()
+        {
+            //Gizmos.matrix = transform.localToWorldMatrix;
+            
+            foreach (KaijuMovement movement in _movements)
+            {
+                if (!movement.Done())
+                {
+                    movement.Visualize();
+                }
+            }
         }
         
         /// <summary>
@@ -544,7 +604,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="a">The agent.</param>
         /// <returns>The agent's <see cref="Position"/>.</returns>
-        public static implicit operator Vector3([NotNull] KaijuAgent a) => a.Position;
+        public static implicit operator Vector3([NotNull] KaijuAgent a) => a.Position3;
         
         /// <summary>
         /// Implicit conversion to a nullable Vector3 from the <see cref="Position3"/>.

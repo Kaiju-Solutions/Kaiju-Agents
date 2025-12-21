@@ -131,8 +131,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target)
+        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta)
         {
             return (target - position).normalized * speed - velocity;
         }

@@ -9,6 +9,11 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuTargetMovement : KaijuMovement
     {
         /// <summary>
+        /// The color to render visuals with.
+        /// </summary>
+        public Color Visuals = Color.green;
+        
+        /// <summary>
         /// The position to move in relation to.
         /// </summary>
         public Vector2? Target
@@ -241,11 +246,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move()
+        public override Vector2 Move(float delta)
         {
             Vector2? t = Target;
-            return Agent && t.HasValue ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value) : Vector2.zero;
+            return Agent && t.HasValue ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value, delta) : Vector2.zero;
         }
         
         /// <summary>
@@ -255,8 +261,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
+        /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected abstract Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target);
+        protected abstract Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta);
         
         /// <summary>
         /// Perform any needed reset operations.
@@ -267,6 +274,26 @@ namespace KaijuSolutions.Agents.Movement
             _vector = Vector2.zero;
             _transform = null;
             _distance = 0;
+        }
+        
+        /// <summary>
+        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// </summary>
+        public override void Visualize()
+        {
+            if (!Agent)
+            {
+                return;
+            }
+            
+            Vector3? t = Target3;
+            if (!t.HasValue)
+            {
+                return;
+            }
+            
+            Gizmos.color = Visuals;
+            Gizmos.DrawLine(Agent.transform.position, t.Value);
         }
         
         /// <summary>
