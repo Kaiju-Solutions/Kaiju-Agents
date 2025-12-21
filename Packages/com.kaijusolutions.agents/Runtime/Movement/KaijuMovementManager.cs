@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 #if UNITY_EDITOR
 using UnityEngine;
 #endif
@@ -11,6 +10,27 @@ namespace KaijuSolutions.Agents.Movement
     /// </summary>
     public static class KaijuMovementManager
     {
+#if UNITY_EDITOR
+        /// <summary>
+        /// Color for seek visuals.
+        /// </summary>
+        public static Color SeekColor = Color.green;
+        
+        /// <summary>
+        /// Color for pursue visuals.
+        /// </summary>
+        public static Color PursueColor = Color.cyan;
+        
+        /// <summary>
+        /// Color for flee visuals.
+        /// </summary>
+        public static Color FleeColor = Color.red;
+        
+        /// <summary>
+        /// Color for evade visuals.
+        /// </summary>
+        public static Color EvadeColor = Color.orange;
+#endif
         /// <summary>
         /// Cache of all movement instances.
         /// </summary>

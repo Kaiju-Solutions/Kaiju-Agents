@@ -137,7 +137,16 @@ namespace KaijuSolutions.Agents.Movement
         {
             return (target - position).normalized * speed - velocity;
         }
-        
+#if UNITY_EDITOR
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color VisualizationColor()
+        {
+            return KaijuMovementManager.SeekColor;
+        }
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>
@@ -145,7 +154,7 @@ namespace KaijuSolutions.Agents.Movement
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Seek Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Seek Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {t.Value.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

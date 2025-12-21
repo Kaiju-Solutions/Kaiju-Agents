@@ -133,12 +133,33 @@ namespace KaijuSolutions.Agents.Movement
             Agent = null;
             _weight = 0;
         }
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
         /// </summary>
-        public virtual void Visualize() { }
+        public void Visualize()
+        {
+            // Nothing to visualize if no agents.
+            if (!Agent)
+            {
+                return;
+            }
+            
+            Gizmos.color = VisualizationColor();
+            RenderVisualizations();
+        }
         
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected virtual Color VisualizationColor() => Color.white;
+        
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// </summary>
+        protected virtual void RenderVisualizations() { }
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>

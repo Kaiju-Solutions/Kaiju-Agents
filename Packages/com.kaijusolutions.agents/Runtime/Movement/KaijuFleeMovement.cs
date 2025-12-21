@@ -137,7 +137,16 @@ namespace KaijuSolutions.Agents.Movement
         {
             return (position - target).normalized * speed - velocity;
         }
-        
+#if UNITY_EDITOR
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color VisualizationColor()
+        {
+            return KaijuMovementManager.FleeColor;
+        }
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>

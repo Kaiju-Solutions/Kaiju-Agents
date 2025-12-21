@@ -14,6 +14,21 @@ namespace KaijuSolutions.Agents.Movement
         public Vector2 Previous;
         
         /// <summary>
+        /// The previous position of the target.
+        /// </summary>
+        public Vector3 Previous3 => new(Previous.x, 0, Previous.y);
+        
+        /// <summary>
+        /// The predicted future target.
+        /// </summary>
+        public Vector2 Future { get; private set; }
+        
+        /// <summary>
+        /// The predicted future target.
+        /// </summary>
+        public Vector3 Future3 => new(Future.x, 0, Future.y);
+        
+        /// <summary>
         /// Get an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
@@ -134,8 +149,9 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void Setup()
         {
-            // Start the previous position as the current position.
-            Previous = Target ?? Vector2.zero;
+            // Start the previous and future position as the current position.
+            Previous = Target;
+            Future = Target;
         }
         
         /// <summary>
@@ -145,6 +161,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             base.Reset();
             Previous = Vector2.zero;
+            Future = Vector2.zero;
         }
         
         /// <summary>
@@ -169,7 +186,39 @@ namespace KaijuSolutions.Agents.Movement
             Previous = target;
             return move;
         }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color VisualizationColor()
+        {
+            return KaijuMovementManager.EvadeColor;
+        }
         
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// </summary>
+        protected override void RenderVisualizations()
+        {
+            Vector3 t = Target3;
+            Vector3 a = Agent;
+            Vector3 f = Future3;
+            
+            Gizmos.DrawLineList(new[]
+            {
+                // Agent to target.
+                a,
+                t,
+                // Agent to forecast.
+                a,
+                f,
+                // Target to forecast.
+                t,
+                f
+            });
+        }
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>
@@ -177,7 +226,7 @@ namespace KaijuSolutions.Agents.Movement
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {t.Value.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

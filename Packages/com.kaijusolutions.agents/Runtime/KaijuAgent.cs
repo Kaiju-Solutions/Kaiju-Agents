@@ -61,6 +61,28 @@ namespace KaijuSolutions.Agents
         public int MovementsCount => _movements.Count;
         
         /// <summary>
+        /// If there are any movements occuring.
+        /// </summary>
+        public bool Moving => isActiveAndEnabled && MovementsCount > 0;
+        
+        /// <summary>
+        /// The total weight of all movements.
+        /// </summary>
+        public float MovementWeights
+        {
+            get
+            {
+                float weight = 0;
+                foreach (KaijuMovement movement in _movements)
+                {
+                    weight += movement.Weight;
+                }
+                
+                return weight;
+            }
+        }
+        
+        /// <summary>
         /// Get the position vector along the main XZ axis.
         /// </summary>
         public Vector2 Position
@@ -138,11 +160,93 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Stop an existing target movement in relation to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">component</see>.
+        /// Stop a movement of this agent.
+        /// </summary>
+        /// <param name="movement">The movement to stop.</param>
+        /// <returns>True if this movement has been stopped, otherwise this movement was not a part of this agent and was not stopped.</returns>
+        public bool Stop(KaijuMovement movement)
+        {
+            for (int i = 0; i < _movements.Count; i++)
+            {
+                if (_movements[i] != movement)
+                {
+                    continue;
+                }
+                
+                _movements[i].Return();
+                _movements.RemoveAt(i);
+                return true;
+            }
+            
+            return false;
+        }
+        
+        /// <summary>
+        /// Stop a movement by the given index.
+        /// </summary>
+        /// <param name="index">The index to stop.</param>
+        /// <returns>If the movement was stopped, with a failure incdicating the index was out of bounds.</returns>
+        public bool Stop(int index)
+        {
+            if (index < 0 || index >= MovementsCount)
+            {
+                return false;
+            }
+            
+            _movements[index].Return();
+            _movements.RemoveAt(index);
+            return true;
+        }
+
+        /// <summary>
+        /// Stop existing target movements in relation to a vector.
+        /// </summary>
+        /// <param name="v">The vector to stop moving in relation to.</param>
+        /// <returns>The number of target movements which were stopped.</returns>
+        public int Stop(Vector2 v)
+        {
+            int removed = 0;
+            
+            for (int i = 0; i < _movements.Count; i++)
+            {
+                if (_movements[i] is not KaijuTargetMovement target)
+                {
+                    continue;
+                }
+                
+                Vector2? t = target.Target;
+                if (!t.HasValue || v != t)
+                {
+                    continue;
+                }
+                
+                _movements[i].Return();
+                _movements.RemoveAt(i--);
+                removed++;
+            }
+            
+            return removed;
+        }
+        
+        /// <summary>
+        /// Stop existing target movements in relation to a vector.
+        /// </summary>
+        /// <param name="v">The vector to stop moving in relation to.</param>
+        /// <returns>The number of target movements which were stopped.</returns>
+        public int Stop(Vector3 v)
+        {
+            return Stop(new Vector2(v.x, v.z));
+        }
+        
+        /// <summary>
+        /// Stop existing target movements in relation to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="go">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to stop moving in relation to.</param>
-        public void Stop([NotNull] GameObject go)
+        /// <returns>The number of target movements which were stopped.</returns>
+        public int Stop([NotNull] GameObject go)
         {
+            int removed = 0;
+            
             for (int i = 0; i < _movements.Count; i++)
             {
                 if (_movements[i] is KaijuTargetMovement target && target.TargetGameObject != go)
@@ -150,18 +254,22 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _movements.RemoveAt(i);
-                return;
+                _movements[i].Return();
+                _movements.RemoveAt(i--);
+                removed++;
             }
+            
+            return removed;
         }
         
         /// <summary>
         /// Stop an existing target movement in relation to a component.
         /// </summary>
         /// <param name="c">The component to stop moving in relation to.</param>
-        public void Stop([NotNull] Component c)
+        /// <returns>The number of target movements which were stopped.</returns>
+        public int Stop([NotNull] Component c)
         {
-            Stop(c.gameObject);
+            return Stop(c.gameObject);
         }
         
         /// <summary>
@@ -218,11 +326,6 @@ namespace KaijuSolutions.Agents
             {
                 Stop();
             }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
-            }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
@@ -242,11 +345,6 @@ namespace KaijuSolutions.Agents
             if (clear)
             {
                 Stop();
-            }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
             }
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
@@ -308,11 +406,6 @@ namespace KaijuSolutions.Agents
             {
                 Stop();
             }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
-            }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
@@ -332,11 +425,6 @@ namespace KaijuSolutions.Agents
             if (clear)
             {
                 Stop();
-            }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
             }
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
@@ -398,11 +486,6 @@ namespace KaijuSolutions.Agents
             {
                 Stop();
             }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
-            }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
@@ -422,11 +505,6 @@ namespace KaijuSolutions.Agents
             if (clear)
             {
                 Stop();
-            }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
             }
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
@@ -488,11 +566,6 @@ namespace KaijuSolutions.Agents
             {
                 Stop();
             }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
-            }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
@@ -513,17 +586,12 @@ namespace KaijuSolutions.Agents
             {
                 Stop();
             }
-            else
-            {
-                // Only have one movement towards each target object.
-                Stop(target);
-            }
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
             return movement;
         }
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
         /// </summary>
@@ -547,7 +615,7 @@ namespace KaijuSolutions.Agents
                 }
             }
         }
-        
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>

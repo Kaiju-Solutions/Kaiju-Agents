@@ -9,20 +9,15 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuTargetMovement : KaijuMovement
     {
         /// <summary>
-        /// The color to render visuals with.
-        /// </summary>
-        public Color Visuals = Color.green;
-        
-        /// <summary>
         /// The position to move in relation to.
         /// </summary>
-        public Vector2? Target
+        public Vector2 Target
         {
             get
             {
                 if (!_transform)
                 {
-                    return _vector;
+                    return _vector ?? (Agent ? Agent.transform.position : Vector2.zero);
                 }
                 
                 Vector3 p = _transform.position;
@@ -38,13 +33,13 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The position to move in relation to.
         /// </summary>
-        public Vector3? Target3
+        public Vector3 Target3
         {
-            get => _transform ? _transform.position : _vector.HasValue ? new(_vector.Value.x, 0, _vector.Value.y) : null;
+            get => _transform ? _transform.position : _vector.HasValue ? new(_vector.Value.x, 0, _vector.Value.y) : Agent ? Agent.transform.position : Vector3.zero;
             set
             {
                 _transform = null;
-                _vector = value.HasValue ? new(value.Value.x, value.Value.z) : null;
+                _vector = new(value.x, value.z);
             }
         }
         
@@ -116,7 +111,7 @@ namespace KaijuSolutions.Agents.Movement
             get
             {
                 Vector2? t = Target;
-                return t.HasValue ? Vector2.Distance(t.Value, AgentPosition) : 0;
+                return Vector2.Distance(t.Value, AgentPosition);
             }
         }
         
@@ -251,7 +246,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(float delta)
         {
             Vector2? t = Target;
-            return Agent && t.HasValue ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value, delta) : Vector2.zero;
+            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value, delta) : Vector2.zero;
         }
         
         /// <summary>
@@ -275,27 +270,15 @@ namespace KaijuSolutions.Agents.Movement
             _transform = null;
             _distance = 0;
         }
-        
+#if UNITY_EDITOR
         /// <summary>
-        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// Render the visualization of the movement.
         /// </summary>
-        public override void Visualize()
+        protected override void RenderVisualizations()
         {
-            if (!Agent)
-            {
-                return;
-            }
-            
-            Vector3? t = Target3;
-            if (!t.HasValue)
-            {
-                return;
-            }
-            
-            Gizmos.color = Visuals;
-            Gizmos.DrawLine(Agent.transform.position, t.Value);
+            Gizmos.DrawLine(Agent, Target3);
         }
-        
+#endif
         /// <summary>
         /// Get a description of the object.
         /// </summary>
@@ -303,7 +286,7 @@ namespace KaijuSolutions.Agents.Movement
         public override string ToString()
         {
             Vector2? t = Target;
-            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {(t.HasValue ? t.Value.ToString() : "None")} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {t.Value.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>
@@ -318,7 +301,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector2([NotNull] KaijuTargetMovement t) => t.Target ?? Vector2.zero;
+        public static implicit operator Vector2([NotNull] KaijuTargetMovement t) => t.Target;
         
         /// <summary>
         /// Implicit conversion to a nullable Vector3 from the target.
@@ -332,7 +315,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
-        public static implicit operator Vector3([NotNull] KaijuTargetMovement t) => t.Target3 ?? Vector3.zero;
+        public static implicit operator Vector3([NotNull] KaijuTargetMovement t) => t.Target3;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the target.
