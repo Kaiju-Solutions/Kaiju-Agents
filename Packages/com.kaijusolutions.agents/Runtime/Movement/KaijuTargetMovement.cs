@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -112,6 +114,18 @@ namespace KaijuSolutions.Agents.Movement
             {
                 Vector2? t = Target;
                 return Vector2.Distance(t.Value, AgentPosition);
+            }
+        }
+        
+        /// <summary>
+        /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
+        /// </summary>
+        public float CurrentDistance3
+        {
+            get
+            {
+                Vector2? t = Target;
+                return Vector3.Distance(Target3, AgentPosition3);
             }
         }
         
@@ -276,7 +290,12 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void RenderVisualizations()
         {
-            Gizmos.DrawLine(Agent, Target3);
+            Vector3 a = Agent;
+            Vector3 t = Target3;
+            Vector3 midpoint = (a + t) / 2f;
+            Gizmos.DrawLine(a, t);
+            Handles.Label(midpoint, $"Distance: {CurrentDistance3:F2}");
+            Handles.Label(t, $"Seek: ({t.x:F2}, {t.y:F2}, {t.z:F2})");
         }
 #endif
         /// <summary>
