@@ -793,6 +793,12 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             // See if this should be rendered.
             bool selected = Selection.activeTransform == transform;
             if (!selected && !KaijuMovementManager.GizmosAll)
