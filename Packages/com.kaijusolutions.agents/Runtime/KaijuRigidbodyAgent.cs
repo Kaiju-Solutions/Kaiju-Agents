@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -44,6 +45,21 @@ namespace KaijuSolutions.Agents
         public override void Setup()
         {
             gameObject.AssignComponent(ref body);
+            body.centerOfMass = Vector3.zero;
+            body.constraints = body.constraints | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            body.linearDamping = 0;
+            body.angularDamping = 0;
+            body.interpolation = RigidbodyInterpolation.Interpolate;
+            body.isKinematic = false;
+        }
+        
+        /// <summary>
+        /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
+        /// </summary>
+        private void FixedUpdate()
+        {
+            CalculateVelocity(Time.deltaTime);
+            body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
         }
         
         /// <summary>

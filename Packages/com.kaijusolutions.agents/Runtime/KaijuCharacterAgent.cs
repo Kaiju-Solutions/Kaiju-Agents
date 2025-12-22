@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -25,6 +26,8 @@ namespace KaijuSolutions.Agents
         [SerializeField]
         private CharacterController character;
         
+        private float _velocityY;
+        
         /// <summary>
         /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the agent's movement.
         /// </summary>
@@ -43,10 +46,29 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public override void Setup()
         {
-            if (gameObject.AssignComponent(ref character))
+            gameObject.AssignComponent(ref character);
+        }
+        
+        /// <summary>
+        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        private void Update()
+        {
+            // When on the ground, keep a minimal velocity to stay grounded, and add it when in the air.
+            float delta = Time.deltaTime;
+            float gravity = Physics.gravity.y * delta;
+            if (Character.isGrounded)
             {
-                character.center = new(0, 1, 0);
+                _velocityY = gravity;
             }
+            else
+            {
+                _velocityY += gravity;
+            }
+            
+            CalculateVelocity(delta);
+            Vector2 scaled = Velocity * delta;
+            Character.Move(new(scaled.x, _velocityY, scaled.y));
         }
         
         /// <summary>

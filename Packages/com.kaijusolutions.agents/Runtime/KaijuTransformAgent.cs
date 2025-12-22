@@ -19,6 +19,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void Update()
         {
+            // Step the position.
             float delta = Time.deltaTime;
             CalculateVelocity(delta);
             transform.position += Velocity3 * delta;

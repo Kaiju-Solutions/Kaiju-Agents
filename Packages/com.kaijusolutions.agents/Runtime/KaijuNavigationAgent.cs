@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -45,6 +46,17 @@ namespace KaijuSolutions.Agents
         public override void Setup()
         {
             gameObject.AssignComponent(ref nav);
+        }
+        
+        /// <summary>
+        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        private void Update()
+        {
+            // Offset the current position by the movement velocity.
+            float delta = Time.deltaTime;
+            CalculateVelocity(delta);
+            nav.Move(Velocity3 * delta);
         }
         
         /// <summary>
