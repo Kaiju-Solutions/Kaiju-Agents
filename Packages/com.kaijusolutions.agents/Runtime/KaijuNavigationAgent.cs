@@ -48,12 +48,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// Perform agent movement.
         /// </summary>
-        private void Update()
+        /// <param name="delta">The time step.</param>
+        public override void Move(float delta)
         {
             // Offset the current position by the movement velocity.
-            float delta = Time.deltaTime;
             CalculateVelocity(delta);
             nav.Move(Velocity3 * delta);
         }

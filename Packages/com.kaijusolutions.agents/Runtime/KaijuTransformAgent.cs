@@ -14,13 +14,14 @@ namespace KaijuSolutions.Agents
 #endif
     public sealed class KaijuTransformAgent : KaijuAgent
     {
+        
         /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// Perform agent movement.
         /// </summary>
-        private void Update()
+        /// <param name="delta">The time step.</param>
+        public override void Move(float delta)
         {
             // Step the position.
-            float delta = Time.deltaTime;
             CalculateVelocity(delta);
             transform.position += Velocity3 * delta;
         }

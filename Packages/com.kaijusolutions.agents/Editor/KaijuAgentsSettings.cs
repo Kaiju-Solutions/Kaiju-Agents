@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using KaijuSolutions.Agents;
 using KaijuSolutions.Agents.Movement;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -42,6 +43,7 @@ internal static class KaijuAgentsSettings
                 
                 // Add all buttons.
                 container.Add(Header("Colors"));
+                container.Add(ColorSetting("Seek Color", () => KaijuAgentsManager.AgentColor, color => KaijuAgentsManager.AgentColor = color, KaijuAgentsManager.ResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
                 container.Add(ColorSetting("Seek Color", () => KaijuMovementManager.SeekColor, color => KaijuMovementManager.SeekColor = color, KaijuMovementManager.ResetSeekColor, refreshActions, "The color for seek visualizations."));
                 container.Add(ColorSetting("Pursue Color", () => KaijuMovementManager.PursueColor, color => KaijuMovementManager.PursueColor = color, KaijuMovementManager.ResetPursueColor, refreshActions, "The color for pursue visualizations."));
                 container.Add(ColorSetting("Flee Color", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));

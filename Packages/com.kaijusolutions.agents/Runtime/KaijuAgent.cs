@@ -19,6 +19,11 @@ namespace KaijuSolutions.Agents
     public abstract class KaijuAgent : MonoBehaviour
     {
         /// <summary>
+        /// If this agent should move with the physics system.
+        /// </summary>
+        public virtual bool PhysicsAgent => false;
+        
+        /// <summary>
         /// The maximum move speed of the agent.
         /// </summary>
         public float Speed
@@ -302,44 +307,19 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// LateUpdate is called every frame, if the Behaviour is enabled.
+        /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void LateUpdate()
+        private void OnEnable()
         {
-            // See if there is an explicit target.
-            Vector3? v = LookVector3;
-            Transform t = transform;
-            
-            // If not, see if we are moving towards anything.
-            Vector3 target;
-            if (!v.HasValue)
-            {
-                // If we don't want to automatically look or there is no movement, stop.
-                if (!AutoRotate || Velocity == Vector2.zero)
-                {
-                    return;
-                }
-                
-                target = t.position + Velocity3.normalized;
-            }
-            else
-            {
-                // The rotation is only along the Y axis.
-                target = new(v.Value.x, t.position.y, v.Value.z);
-            }
-            
-            // If the look target is our current location, there is nothing to do.
-            if (target == t.position)
-            {
-                return;
-            }
-            
-            // Get the rotation.
-            Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed : Mathf.Infinity) * Time.deltaTime, 0.0f);
-            if (rotation != Vector3.zero && !float.IsNaN(rotation.x) && !float.IsNaN(rotation.y) && !float.IsNaN(rotation.z))
-            {
-                t.rotation = Quaternion.LookRotation(rotation);
-            }
+            KaijuAgentsManager.Register(this);
+        }
+        
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            KaijuAgentsManager.Unregister(this);
         }
         
         /// <summary>
@@ -466,6 +446,16 @@ namespace KaijuSolutions.Agents
         public int Stop([NotNull] Component c)
         {
             return Stop(c.gameObject);
+        }
+        
+        /// <summary>
+        /// Stop explicitly looking at a target.
+        /// </summary>
+        public void StopLooking()
+        {
+            _lookTransform = null;
+            _lookVector = null;
+            _lookVector3 = null;
         }
         
         /// <summary>
@@ -789,9 +779,9 @@ namespace KaijuSolutions.Agents
         }
 #if UNITY_EDITOR
         /// <summary>
-        /// Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
+        /// Visualize this agent.
         /// </summary>
-        private void OnDrawGizmos()
+        public void Visualize()
         {
             // See if this should be rendered.
             bool selected = Selection.activeTransform == transform;
@@ -844,6 +834,53 @@ namespace KaijuSolutions.Agents
             }
         }
 #endif
+        /// <summary>
+        /// Perform agent movement.
+        /// </summary>
+        /// <param name="delta">The time step.</param>
+        public abstract void Move(float delta);
+        
+        /// <summary>
+        /// Handle look actions.
+        /// </summary>
+        public void Look()
+        {
+            // See if there is an explicit target.
+            Vector3? v = LookVector3;
+            Transform t = transform;
+            
+            // If not, see if we are moving towards anything.
+            Vector3 target;
+            if (!v.HasValue)
+            {
+                // If we don't want to automatically look or there is no movement, stop.
+                if (!AutoRotate || Velocity == Vector2.zero)
+                {
+                    return;
+                }
+                
+                target = t.position + Velocity3.normalized;
+            }
+            else
+            {
+                // The rotation is only along the Y axis.
+                target = new(v.Value.x, t.position.y, v.Value.z);
+            }
+            
+            // If the look target is our current location, there is nothing to do.
+            if (target == t.position)
+            {
+                return;
+            }
+            
+            // Get the rotation.
+            Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed : Mathf.Infinity) * Time.deltaTime, 0.0f);
+            if (rotation != Vector3.zero && !float.IsNaN(rotation.x) && !float.IsNaN(rotation.y) && !float.IsNaN(rotation.z))
+            {
+                t.rotation = Quaternion.LookRotation(rotation);
+            }
+        }
+        
         /// <summary>
         /// Get a description of the object.
         /// </summary>

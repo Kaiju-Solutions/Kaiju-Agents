@@ -17,6 +17,11 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuRigidbodyAgent : KaijuAgent
     {
         /// <summary>
+        /// If this agent should move with the physics system.
+        /// </summary>
+        public override bool PhysicsAgent => true;
+        
+        /// <summary>
         /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the agent's movement.
         /// </summary>
 #if UNITY_EDITOR
@@ -53,11 +58,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
+        /// Perform agent movement.
         /// </summary>
-        private void FixedUpdate()
+        /// <param name="delta">The time step.</param>
+        public override void Move(float delta)
         {
-            CalculateVelocity(Time.deltaTime);
+            CalculateVelocity(delta);
             body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
         }
         

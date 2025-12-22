@@ -49,12 +49,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
+        /// Perform agent movement.
         /// </summary>
-        private void Update()
+        /// <param name="delta">The time step.</param>
+        public override void Move(float delta)
         {
             // When on the ground, keep a minimal velocity to stay grounded, and add it when in the air.
-            float delta = Time.deltaTime;
             float gravity = Physics.gravity.y * delta;
             if (Character.isGrounded)
             {
