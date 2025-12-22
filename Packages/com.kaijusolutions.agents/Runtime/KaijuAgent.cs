@@ -818,13 +818,20 @@ namespace KaijuSolutions.Agents
             if (moving)
             {
                 Gizmos.DrawLine(p, p + Velocity3.normalized);
+                if (text)
+                {
+                    Handles.Label(p, $"{name} - Velocity: {Velocity}");
+                }
+            }
+            else if (text)
+            {
+                Handles.Label(p, name);
             }
             
             // Show where the agent is looking.
             if (v.HasValue)
             {
                 Gizmos.DrawLine(p, v.Value);
-                
                 if (text)
                 {
                     Handles.Label((v.Value + p) / 2f, $"{LookDistance:F2}");
