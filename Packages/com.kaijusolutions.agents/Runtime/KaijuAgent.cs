@@ -793,12 +793,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-#endif
             // See if this should be rendered.
             bool selected = Selection.activeTransform == transform;
             if (!selected && !KaijuMovementManager.GizmosAll)
@@ -816,8 +810,7 @@ namespace KaijuSolutions.Agents
             Vector3? v = LookVector3;
             if (moving || v.HasValue)
             {
-                // TODO - Make a setting.
-                Gizmos.color = Color.white;
+                Gizmos.color = KaijuAgentsManager.AgentColor;
             }
             
             // Draw the movement vector.

@@ -49,13 +49,13 @@ namespace KaijuSolutions.Agents.Movement
                     return _seekColor.Value;
                 }
                 
-                _seekColor = LoadColor(SeekKey, Color.green);
+                _seekColor = KaijuAgentsManager.LoadColor(SeekKey, Color.green);
                 return _seekColor.Value;
             }
             set
             {
                 _seekColor = value;
-                SaveColor(SeekKey, _seekColor.Value);
+                KaijuAgentsManager.SaveColor(SeekKey, _seekColor.Value);
             }
         }
         
@@ -76,13 +76,13 @@ namespace KaijuSolutions.Agents.Movement
                     return _pursueColor.Value;
                 }
                 
-                _pursueColor = LoadColor(PursueKey, Color.cyan);
+                _pursueColor = KaijuAgentsManager.LoadColor(PursueKey, Color.cyan);
                 return _pursueColor.Value;
             }
             set
             {
                 _pursueColor = value;
-                SaveColor(PursueKey, _pursueColor.Value);
+                KaijuAgentsManager.SaveColor(PursueKey, _pursueColor.Value);
             }
         }
         
@@ -103,13 +103,13 @@ namespace KaijuSolutions.Agents.Movement
                     return _fleeColor.Value;
                 }
                 
-                _fleeColor = LoadColor(FleeKey, Color.red);
+                _fleeColor = KaijuAgentsManager.LoadColor(FleeKey, Color.red);
                 return _fleeColor.Value;
             }
             set
             {
                 _fleeColor = value;
-                SaveColor(FleeKey, _fleeColor.Value);
+                KaijuAgentsManager.SaveColor(FleeKey, _fleeColor.Value);
             }
         }
         
@@ -130,13 +130,13 @@ namespace KaijuSolutions.Agents.Movement
                     return _evadeColor.Value;
                 }
                 
-                _evadeColor = LoadColor(EvadeKey, Color.orange);
+                _evadeColor = KaijuAgentsManager.LoadColor(EvadeKey, Color.orange);
                 return _evadeColor.Value;
             }
             set
             {
                 _evadeColor = value;
-                SaveColor(EvadeKey, _evadeColor.Value);
+                KaijuAgentsManager.SaveColor(EvadeKey, _evadeColor.Value);
             }
         }
         
@@ -144,34 +144,6 @@ namespace KaijuSolutions.Agents.Movement
         /// Color for evade visuals.
         /// </summary>
         private static Color? _evadeColor;
-        
-        /// <summary>
-        /// Load a color from preferences.
-        /// </summary>
-        /// <param name="key">The color key to retrieve.</param>
-        /// <param name="fallback">The fallback color if this is a default value.</param>
-        /// <returns>The color loaded from preferences.</returns>
-        private static Color LoadColor([NotNull] string key, Color fallback)
-        {
-            float r = EditorPrefs.GetFloat($"{key}_R", fallback.r);
-            float g = EditorPrefs.GetFloat($"{key}_G", fallback.g);
-            float b = EditorPrefs.GetFloat($"{key}_B", fallback.b);
-            float a = EditorPrefs.GetFloat($"{key}_A", fallback.a);
-            return new(r, g, b, a);
-        }
-        
-        /// <summary>
-        /// Save a color to preferences.
-        /// </summary>
-        /// <param name="key">The color key to save.</param>
-        /// <param name="color">The color to set.</param>
-        private static void SaveColor([NotNull] string key, Color color)
-        {
-            EditorPrefs.SetFloat($"{key}_R", color.r);
-            EditorPrefs.SetFloat($"{key}_G", color.g);
-            EditorPrefs.SetFloat($"{key}_B", color.b);
-            EditorPrefs.SetFloat($"{key}_A", color.a);
-        }
         
         /// <summary>
         /// Sync all colors.
