@@ -45,7 +45,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The current velocity of the agent.
         /// </summary>
-        public Vector3 Velocity3 => new Vector3(Velocity.x, 0, Velocity.y);
+        public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
         
         /// <summary>
         /// All movements the agent is currently performing.
@@ -216,8 +216,8 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                Vector2? t = target.Target;
-                if (!t.HasValue || v != t)
+                Vector2 t = target.Target;
+                if (v != t)
                 {
                     continue;
                 }

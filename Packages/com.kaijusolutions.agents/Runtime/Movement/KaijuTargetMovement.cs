@@ -108,26 +108,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target.
         /// </summary>
-        public float CurrentDistance
-        {
-            get
-            {
-                Vector2? t = Target;
-                return Vector2.Distance(t.Value, AgentPosition);
-            }
-        }
+        public float CurrentDistance => Vector2.Distance(Target, AgentPosition);
         
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
         /// </summary>
-        public float CurrentDistance3
-        {
-            get
-            {
-                Vector2? t = Target;
-                return Vector3.Distance(Target3, AgentPosition3);
-            }
-        }
+        public float CurrentDistance3 => Vector3.Distance(Target3, AgentPosition3);
         
         /// <summary>
         /// The internal <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> value.
@@ -259,8 +245,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         public override Vector2 Move(float delta)
         {
-            Vector2? t = Target;
-            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, t.Value, delta) : Vector2.zero;
+            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, Target, delta) : Vector2.zero;
         }
         
         /// <summary>
@@ -331,8 +316,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            Vector2? t = Target;
-            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {t.Value.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Target Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {Target.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>

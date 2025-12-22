@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -242,8 +240,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            Vector2? t = Target;
-            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {t.Value.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Evade Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {Target.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Previous: {Previous} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }
