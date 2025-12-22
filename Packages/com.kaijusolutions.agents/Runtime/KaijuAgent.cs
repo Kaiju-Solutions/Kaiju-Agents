@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -55,15 +56,16 @@ namespace KaijuSolutions.Agents
         [Min(0)]
         [SerializeField]
         private float lookSpeed = 360f;
-        
+
         /// <summary>
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
 #if UNITY_EDITOR
-        [field: Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
+        [field:
+            Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
 #endif
         [field: SerializeField]
-        public bool AutoRotate { get; private set; }
+        public bool AutoRotate { get; private set; } = true;
         
         /// <summary>
         /// The current velocity of the agent.
@@ -298,6 +300,44 @@ namespace KaijuSolutions.Agents
             }
             
             Velocity += velocity;
+        }
+        
+        /// <summary>
+        /// LateUpdate is called every frame, if the Behaviour is enabled.
+        /// </summary>
+        private void LateUpdate()
+        {
+            // See if there is an explicit target.
+            Vector3? v = LookVector3;
+            Transform t = transform;
+            
+            // If not, see if we are moving towards anything.
+            if (!v.HasValue)
+            {
+                // If we don't want to automatically look or there is no movement, stop.
+                if (!AutoRotate || Velocity == Vector2.zero)
+                {
+                    return;
+                }
+                
+                v = t.position + t.rotation * Velocity3.normalized;
+            }
+            
+            // The rotation is only along the Y axis.
+            Vector3 target = new(v.Value.x, t.position.y, v.Value.z);
+            
+            // If the look target is our current location, there is nothing to do.
+            if (target == t.position)
+            {
+                return;
+            }
+            
+            // Get the rotation.
+            Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed : Mathf.Infinity) * Time.deltaTime, 0.0f);
+            if (rotation != Vector3.zero && !float.IsNaN(rotation.x) && !float.IsNaN(rotation.y) && !float.IsNaN(rotation.z))
+            {
+                t.rotation = Quaternion.LookRotation(rotation);
+            }
         }
         
         /// <summary>
