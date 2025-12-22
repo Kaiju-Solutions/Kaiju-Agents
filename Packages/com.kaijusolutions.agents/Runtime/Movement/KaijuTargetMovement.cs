@@ -76,11 +76,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public KaijuAgent TargetAgent
         {
-            get
-            {
-                Transform tr = TargetTransform;
-                return tr ? tr.GetComponent<KaijuAgent>() : null;
-            }
+            get => _transform ? _transform.GetComponent<KaijuAgent>() : null;
             set => TargetComponent = value;
         }
         

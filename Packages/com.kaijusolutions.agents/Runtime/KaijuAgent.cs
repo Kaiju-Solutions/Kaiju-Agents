@@ -19,7 +19,7 @@ namespace KaijuSolutions.Agents
     public abstract class KaijuAgent : MonoBehaviour
     {
         /// <summary>
-        /// The maximum speed of the agent.
+        /// The maximum move speed of the agent.
         /// </summary>
         public float Speed
         {
@@ -28,14 +28,42 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The maximum speed of the agent.
+        /// The maximum move speed of the agent.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum speed of the agents.")]
+        [Tooltip("The maximum move speed of the agents.")]
 #endif
         [Min(0)]
         [SerializeField]
-        private float speed = 10;
+        private float speed = 10f;
+        
+        /// <summary>
+        /// The maximum look speed of the agent.
+        /// </summary>
+        public float LookSpeed
+        {
+            get => lookSpeed;
+            set => lookSpeed = Mathf.Max(value, 0);
+        }
+        
+        /// <summary>
+        /// The maximum look speed of the agent.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The maximum look speed of the agents.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float lookSpeed = 360f;
+        
+        /// <summary>
+        /// If the agent should automatically rotate towards where it is moving when no look target is set.
+        /// </summary>
+#if UNITY_EDITOR
+        [field: Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
+#endif
+        [field: SerializeField]
+        public bool AutoRotate { get; private set; }
         
         /// <summary>
         /// The current velocity of the agent.
@@ -66,6 +94,130 @@ namespace KaijuSolutions.Agents
         /// If there are any movements occuring.
         /// </summary>
         public bool Moving => isActiveAndEnabled && MovementsCount > 0;
+        
+        /// <summary>
+        /// The vector to look at.
+        /// </summary>
+        private Vector2? _lookVector;
+        
+        /// <summary>
+        /// The vector to look at.
+        /// </summary>
+        private Vector3? _lookVector3;
+        
+        /// <summary>
+        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to look at.
+        /// </summary>
+        private Transform _lookTransform;
+        
+        /// <summary>
+        /// The vector to look at.
+        /// </summary>
+        public Vector2? LookVector
+        {
+            get
+            {
+                if (!transform)
+                {
+                    return _lookVector3.HasValue ? new(_lookVector3.Value.x, _lookVector3.Value.z) : _lookVector;
+                }
+                
+                Vector3 p = transform.position;
+                return new(p.x, p.z);
+            }
+            set
+            {
+                _lookVector = value;
+                _lookVector3 = null;
+                _lookTransform = null;
+            }
+        }
+        
+        /// <summary>
+        /// The vector to look at.
+        /// </summary>
+        public Vector3? LookVector3
+        {
+            get => transform ? transform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3;
+            set
+            {
+                _lookVector3 = value;
+                _lookVector = null;
+                _lookTransform = null;
+            }
+        }
+        
+        /// <summary>
+        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to look at.
+        /// </summary>
+        public Transform LookTransform
+        {
+            get => _lookTransform;
+            set
+            {
+                _lookTransform = value;
+                _lookVector = null;
+                _lookVector3 = null;
+            }
+        }
+        
+        /// <summary>
+        /// The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to look at.
+        /// </summary>
+        public GameObject LookGameObject
+        {
+            get => _lookTransform ? _lookTransform.gameObject : null;
+            set
+            {
+                _lookTransform = value.transform;
+                _lookVector = null;
+                _lookVector3 = null;
+            }
+        }
+        
+        /// <summary>
+        /// The agent to move in relation to.
+        /// </summary>
+        public KaijuAgent TargetAgent
+        {
+            get => _lookTransform ? _lookTransform.GetComponent<KaijuAgent>() : null;
+            set => TargetComponent = value;
+        }
+        
+        /// <summary>
+        /// The component to look at.
+        /// </summary>
+        public Component TargetComponent
+        {
+            set
+            {
+                _lookTransform = value.transform;
+                _lookVector = null;
+                _lookVector3 = null;
+            }
+        }
+        
+        /// <summary>
+        /// If the agent is currently looking at something.
+        /// </summary>
+        public bool Looking => LookVector.HasValue;
+        
+        /// <summary>
+        /// Get the distance from the agent to the target which is being looked at.
+        /// </summary>
+        public float LookDistance
+        {
+            get
+            {
+                Vector3? v = LookVector3;
+                if (!v.HasValue)
+                {
+                    return 0;
+                }
+                
+                return Vector3.Distance(v.Value, transform.position);
+            }
+        }
         
         /// <summary>
         /// The total weight of all movements.
