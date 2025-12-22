@@ -803,6 +803,35 @@ namespace KaijuSolutions.Agents
             KaijuMovementManager.GizmosTextMode mode = KaijuMovementManager.GizmosText;
             bool text = mode is KaijuMovementManager.GizmosTextMode.All || (mode is KaijuMovementManager.GizmosTextMode.Selected && selected);
             
+            Vector3 p = transform.position;
+            
+            // If the agent is moving or has an explicit looking target, it has some visuals of its own.
+            bool moving = Velocity != Vector2.zero;
+            Vector3? v = LookVector3;
+            if (moving || v.HasValue)
+            {
+                // TODO - Make a setting.
+                Gizmos.color = Color.white;
+            }
+            
+            // Draw the movement vector.
+            if (moving)
+            {
+                Gizmos.DrawLine(p, p + Velocity3.normalized);
+            }
+            
+            // Show where the agent is looking.
+            if (v.HasValue)
+            {
+                Gizmos.DrawLine(p, v.Value);
+                
+                if (text)
+                {
+                    Handles.Label((v.Value + p) / 2f, $"{LookDistance:F2}");
+                }
+            }
+            
+            // Visualize all movements.
             foreach (KaijuMovement movement in _movements)
             {
                 movement.Visualize(text);
