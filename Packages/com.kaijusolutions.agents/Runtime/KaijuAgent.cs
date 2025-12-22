@@ -55,7 +55,7 @@ namespace KaijuSolutions.Agents
 #endif
         [Min(0)]
         [SerializeField]
-        private float lookSpeed = 360f;
+        private float lookSpeed;
 
         /// <summary>
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
@@ -119,12 +119,12 @@ namespace KaijuSolutions.Agents
         {
             get
             {
-                if (!transform)
+                if (!_lookTransform)
                 {
                     return _lookVector3.HasValue ? new(_lookVector3.Value.x, _lookVector3.Value.z) : _lookVector;
                 }
                 
-                Vector3 p = transform.position;
+                Vector3 p = _lookTransform.position;
                 return new(p.x, p.z);
             }
             set
@@ -140,7 +140,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public Vector3? LookVector3
         {
-            get => transform ? transform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3;
+            get => _lookTransform ? _lookTransform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3;
             set
             {
                 _lookVector3 = value;
@@ -312,6 +312,7 @@ namespace KaijuSolutions.Agents
             Transform t = transform;
             
             // If not, see if we are moving towards anything.
+            Vector3 target;
             if (!v.HasValue)
             {
                 // If we don't want to automatically look or there is no movement, stop.
@@ -320,11 +321,13 @@ namespace KaijuSolutions.Agents
                     return;
                 }
                 
-                v = t.position + t.rotation * Velocity3.normalized;
+                target = t.position + Velocity3.normalized;
             }
-            
-            // The rotation is only along the Y axis.
-            Vector3 target = new(v.Value.x, t.position.y, v.Value.z);
+            else
+            {
+                // The rotation is only along the Y axis.
+                target = new(v.Value.x, t.position.y, v.Value.z);
+            }
             
             // If the look target is our current location, there is nothing to do.
             if (target == t.position)

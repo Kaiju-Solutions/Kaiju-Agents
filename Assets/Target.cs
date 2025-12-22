@@ -1,5 +1,4 @@
-﻿using System;
-using KaijuSolutions.Agents;
+﻿using KaijuSolutions.Agents;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -10,24 +9,37 @@ public class Target : MonoBehaviour
     
     private void Awake()
     {
-        switch (type)
+        OnValidate();
+        
+        if (agent != null)
         {
-            case MoveType.Seek:
-            default:
-                agent.Seek(this);
-                break;
-            case MoveType.Pursue:
-                agent.Pursue(this);
-                break;
-            case MoveType.Flee:
-                agent.Flee(this);
-                break;
-            case MoveType.Evade:
-                agent.Evade(this);
-                break;
+            switch (type)
+            {
+                case MoveType.Seek:
+                default:
+                    agent.Seek(this);
+                    break;
+                case MoveType.Pursue:
+                    agent.Pursue(this);
+                    break;
+                case MoveType.Flee:
+                    agent.Flee(this);
+                    break;
+                case MoveType.Evade:
+                    agent.Evade(this);
+                    break;
+            }
         }
         
         Destroy(this);
+    }
+    
+    private void OnValidate()
+    {
+        if (agent == null)
+        {
+            agent = FindAnyObjectByType<KaijuAgent>();
+        }
     }
     
     public enum MoveType
