@@ -36,18 +36,19 @@ internal static class KaijuAgentsSettings
                 // Cache all actions that trigger a refresh.
                 List<Action> refreshActions = new();
                 
-                // Add the gizmos section.
-                container.Add(Header("Gizmos"));
+                // Add visualization configurations.
+                container.Add(Header("Visualizations"));
                 container.Add(ToggleSetting("Render All Gizmos", () => KaijuMovementManager.GizmosAll, value => KaijuMovementManager.GizmosAll = value, KaijuMovementManager.ResetGizmosAll, refreshActions, "If all gizmos should be rendered or only the selected agent."));
                 container.Add(EnumSetting("Gizmos Text Mode", () => KaijuMovementManager.GizmosText, value => KaijuMovementManager.GizmosText = value, KaijuMovementManager.ResetGizmosText, refreshActions, "How text should be displayed with gizmos."));
+                // TODO - Allow for modifying the LabelOffset from the KaijuAgentsManager with a reset button.
                 
-                // Add all buttons.
+                // Add options for all colors
                 container.Add(Header("Colors"));
-                container.Add(ColorSetting("Seek Color", () => KaijuAgentsManager.AgentColor, color => KaijuAgentsManager.AgentColor = color, KaijuAgentsManager.ResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
-                container.Add(ColorSetting("Seek Color", () => KaijuMovementManager.SeekColor, color => KaijuMovementManager.SeekColor = color, KaijuMovementManager.ResetSeekColor, refreshActions, "The color for seek visualizations."));
-                container.Add(ColorSetting("Pursue Color", () => KaijuMovementManager.PursueColor, color => KaijuMovementManager.PursueColor = color, KaijuMovementManager.ResetPursueColor, refreshActions, "The color for pursue visualizations."));
-                container.Add(ColorSetting("Flee Color", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));
-                container.Add(ColorSetting("Evade Color", () => KaijuMovementManager.EvadeColor, color => KaijuMovementManager.EvadeColor = color, KaijuMovementManager.ResetEvadeColor, refreshActions, "The color for evade visualizations."));
+                container.Add(ColorSetting("Agents", () => KaijuAgentsManager.AgentColor, color => KaijuAgentsManager.AgentColor = color, KaijuAgentsManager.ResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
+                container.Add(ColorSetting("Seek", () => KaijuMovementManager.SeekColor, color => KaijuMovementManager.SeekColor = color, KaijuMovementManager.ResetSeekColor, refreshActions, "The color for seek visualizations."));
+                container.Add(ColorSetting("Pursue", () => KaijuMovementManager.PursueColor, color => KaijuMovementManager.PursueColor = color, KaijuMovementManager.ResetPursueColor, refreshActions, "The color for pursue visualizations."));
+                container.Add(ColorSetting("Flee", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));
+                container.Add(ColorSetting("Evade", () => KaijuMovementManager.EvadeColor, color => KaijuMovementManager.EvadeColor = color, KaijuMovementManager.ResetEvadeColor, refreshActions, "The color for evade visualizations."));
                 
                 // Add a full reset button.
                 Button resetAllButton = new(KaijuMovementManager.ResetColors)

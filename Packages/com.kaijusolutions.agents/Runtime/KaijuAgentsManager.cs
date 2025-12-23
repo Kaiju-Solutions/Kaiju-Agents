@@ -51,7 +51,7 @@ namespace KaijuSolutions.Agents
         /// <param name="text">The label itself</param>
         public static void Label(Vector3 position, [NotNull] string text)
         {
-            Handles.Label(position + AgentsLabelOffset, text, AgentsLabelStyle);
+            Handles.Label(position + new Vector3(0, LabelOffset, 0), text, AgentsLabelStyle);
         }
         
         /// <summary>
@@ -65,7 +65,7 @@ namespace KaijuSolutions.Agents
             AgentsLabelStyle.normal.textColor = color;
             _agentsLabelStyle.active.textColor = color;
             _agentsLabelStyle.hover.textColor = color;
-            Handles.Label(position + AgentsLabelOffset, text, _agentsLabelStyle);
+            Handles.Label(position + new Vector3(0, LabelOffset, 0), text, _agentsLabelStyle);
         }
         
         /// <summary>
@@ -111,29 +111,27 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The offset for label placement.
         /// </summary>
-        public static Vector3 AgentsLabelOffset
+        public static float LabelOffset
         {
-            get => _agentsLabelOffset ?? new(EditorPrefs.GetFloat($"{OffsetKey}_X", 0), EditorPrefs.GetFloat($"{OffsetKey}_Y", 2.5f), EditorPrefs.GetFloat($"{OffsetKey}_Z", 0));
+            get => _labelOffset ?? EditorPrefs.GetFloat(OffsetKey, 2.5f);
             set
             {
-                _agentsLabelOffset = value;
-                EditorPrefs.SetFloat($"{OffsetKey}_X", _agentsLabelOffset.Value.x);
-                EditorPrefs.SetFloat($"{OffsetKey}_Y", _agentsLabelOffset.Value.y);
-                EditorPrefs.SetFloat($"{OffsetKey}_Z", _agentsLabelOffset.Value.z);
+                _labelOffset = value;
+                EditorPrefs.SetFloat(OffsetKey, _labelOffset.Value);
             }
         }
         
         /// <summary>
         /// The offset for label placement.
         /// </summary>
-        private static Vector3? _agentsLabelOffset;
+        private static float? _labelOffset;
         
         /// <summary>
         /// Reset the offset for label placement.
         /// </summary>
-        public static void ResetAgentsLabelOffset()
+        public static void ResetLabelOffset()
         {
-            AgentsLabelOffset = new(0, 2.5f, 0);
+            LabelOffset = 2.5f;
         }
         
         /// <summary>
