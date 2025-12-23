@@ -2,9 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 namespace KaijuSolutions.Agents
 {
     /// <summary>
@@ -798,14 +796,11 @@ namespace KaijuSolutions.Agents
             if (moving)
             {
                 Gizmos.DrawLine(p, p + Velocity3.normalized);
-                if (text)
-                {
-                    Handles.Label(p, $"{name} - Velocity: {Velocity}", KaijuAgentsManager.AgentsLabelStyle);
-                }
             }
-            else if (text)
+            
+            if (text)
             {
-                Handles.Label(p, name, KaijuAgentsManager.AgentsLabelStyle);
+                KaijuAgentsManager.Label(p, name, KaijuAgentsManager.AgentColor);
             }
             
             // Show where the agent is looking.
@@ -814,7 +809,7 @@ namespace KaijuSolutions.Agents
                 Gizmos.DrawLine(p, v.Value);
                 if (text)
                 {
-                    Handles.Label((v.Value + p) / 2f, $"{LookDistance:F2}", KaijuAgentsManager.AgentsLabelStyle);
+                    KaijuAgentsManager.Label(v.Value, "Look", KaijuAgentsManager.AgentColor);
                 }
             }
             

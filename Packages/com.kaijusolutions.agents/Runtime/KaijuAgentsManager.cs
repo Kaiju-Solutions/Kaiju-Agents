@@ -45,15 +45,47 @@ namespace KaijuSolutions.Agents
         private readonly HashSet<KaijuAgent> _selectedAgents = new();
         
         /// <summary>
+        /// Add a label of text in the scene view.
+        /// </summary>
+        /// <param name="position">The position to set it at.</param>
+        /// <param name="text">The label itself</param>
+        public static void Label(Vector3 position, [NotNull] string text)
+        {
+            Handles.Label(position, text, AgentsLabelStyle);
+        }
+        
+        /// <summary>
+        /// Add a label of text in the scene view.
+        /// </summary>
+        /// <param name="position">The position to set it at.</param>
+        /// <param name="text">The label itself</param>
+        /// <param name="color">The color for the text.</param>
+        public static void Label(Vector3 position, [NotNull] string text, Color color)
+        {
+            AgentsLabelStyle.normal.textColor = color;
+            _agentsLabelStyle.active.textColor = color;
+            _agentsLabelStyle.hover.textColor = color;
+            Handles.Label(position, text, _agentsLabelStyle);
+        }
+        
+        /// <summary>
         /// The label style to use for handles.
         /// </summary>
-        public static GUIStyle AgentsLabelStyle
+        private static GUIStyle AgentsLabelStyle
         {
             get
             {
                 _agentsLabelStyle ??= new(GUI.skin.label)
                 {
                     normal =
+                    {
+                        textColor = Color.white
+                    },
+                    active =
+                    {
+                        textColor = Color.white
+                    },
+                    hover =
                     {
                         textColor = Color.white
                     },

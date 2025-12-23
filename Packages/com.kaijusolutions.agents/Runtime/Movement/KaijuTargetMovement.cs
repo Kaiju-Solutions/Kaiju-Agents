@@ -1,8 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -285,25 +283,21 @@ namespace KaijuSolutions.Agents.Movement
             Vector3 a = Agent;
             Vector3 t = Target3;
             Gizmos.DrawLine(a, t);
-            RenderTargetVisualizationText(label, a, t);
+            RenderTargetVisualizationText(label, t);
         }
         
         /// <summary>
         /// Render the visualizations for this target movement.
         /// </summary>
         /// <param name="label">The label to display.</param>
-        /// <param name="a">The <see cref="KaijuMovement.Agent"/>'s position.</param>
         /// <param name="t">The <see cref="Target3"/>'s position.</param>
         /// <param name="text">If text elements should be visualized or not.</param>
-        protected void RenderTargetVisualizationText(string label, Vector3 a, Vector3 t, bool text = true)
+        protected void RenderTargetVisualizationText(string label, Vector3 t, bool text = true)
         {
-            if (!text)
+            if (text)
             {
-                return;
+                KaijuAgentsManager.Label(t, label, VisualizationColor());
             }
-            
-            Handles.Label(t, $"{label}: ({t.x:F2}, {t.y:F2}, {t.z:F2})", KaijuAgentsManager.AgentsLabelStyle);
-            Handles.Label((a + t) / 2f, $"{CurrentDistance3:F2}", KaijuAgentsManager.AgentsLabelStyle);
         }
 #endif
         /// <summary>

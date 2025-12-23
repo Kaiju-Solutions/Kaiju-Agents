@@ -231,7 +231,7 @@ namespace KaijuSolutions.Agents.Movement
                 });
             }
             
-            RenderTargetVisualizationText("Evade", a, t,text);
+            RenderTargetVisualizationText("Evade", t, text);
         }
 #endif
         /// <summary>

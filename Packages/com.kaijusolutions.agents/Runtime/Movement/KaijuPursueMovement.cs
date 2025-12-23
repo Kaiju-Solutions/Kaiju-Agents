@@ -231,7 +231,7 @@ namespace KaijuSolutions.Agents.Movement
                 });
             }
             
-            RenderTargetVisualizationText("Pursue", a, t,text);
+            RenderTargetVisualizationText("Pursue", t, text);
         }
 #endif
         /// <summary>
