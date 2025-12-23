@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 #if UNITY_EDITOR
+using KaijuSolutions.Agents.Movement;
 using UnityEditor;
 #endif
 namespace KaijuSolutions.Agents
@@ -25,13 +25,18 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Cache for agents which tick in the main update loop.
         /// </summary>
-        private static readonly HashSet<KaijuAgent> _agents = new();
+        private static readonly HashSet<KaijuAgent> Agents = new();
         
         /// <summary>
         /// Cache for agents which tick during the phyics update loop.
         /// </summary>
-        private static readonly HashSet<KaijuAgent> _physicsAgents = new();
+        private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
 #if UNITY_EDITOR
+        /// <summary>
+        /// All currently selected agents.
+        /// </summary>
+        private readonly HashSet<KaijuAgent> _selectedAgents = new();
+        
         /// <summary>
         /// The key for what color <see cref="KaijuAgent"/> gizmos should be.
         /// </summary>
@@ -107,8 +112,8 @@ namespace KaijuSolutions.Agents
         private static void InitOnPlayMode()
         {
             _instance = null;
-            _agents.Clear();
-            _physicsAgents.Clear();
+            Agents.Clear();
+            PhysicsAgents.Clear();
             _ = AgentColor;
         }
 #endif
@@ -123,11 +128,11 @@ namespace KaijuSolutions.Agents
             
             if (agent.PhysicsAgent)
             {
-                _physicsAgents.Add(agent);
+                PhysicsAgents.Add(agent);
             }
             else
             {
-                _agents.Add(agent);
+                Agents.Add(agent);
             }
         }
         
@@ -139,12 +144,18 @@ namespace KaijuSolutions.Agents
         {
             if (agent.PhysicsAgent)
             {
-                _physicsAgents.Remove(agent);
+                PhysicsAgents.Remove(agent);
             }
             else
             {
-                _agents.Remove(agent);
+                Agents.Remove(agent);
             }
+#if UNITY_EDITOR
+            if (_instance)
+            {
+                _instance._selectedAgents.Remove(agent);
+            }
+#endif
         }
         
         /// <summary>
@@ -168,16 +179,49 @@ namespace KaijuSolutions.Agents
             // Otherwise, set this as the singleton.
             _instance = this;
             DontDestroyOnLoad(gameObject);
+#if UNITY_EDITOR
+            Selection.selectionChanged += SelectionChanged;
+            SelectionChanged();
+#endif
+        }
+#if UNITY_EDITOR
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            Selection.selectionChanged -= SelectionChanged;
         }
         
+        /// <summary>
+        /// See if the active selection has changed.
+        /// </summary>
+        private void SelectionChanged()
+        {
+            _selectedAgents.Clear();
+            
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+            
+            foreach (Transform t in Selection.transforms)
+            {
+                if (t.GetComponent<KaijuAgent>() is { } a)
+                {
+                    _selectedAgents.Add(a);
+                }
+            }
+        }
+#endif
         /// <summary>
         /// Update is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
         private void Update()
         {
-            Move(_agents);
-            Look(_agents);
-            Look(_physicsAgents);
+            Move(Agents);
+            Look(Agents);
+            Look(PhysicsAgents);
         }
         
         /// <summary>
@@ -185,7 +229,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void FixedUpdate()
         {
-            Move(_physicsAgents);
+            Move(PhysicsAgents);
         }
         
         /// <summary>
@@ -225,21 +269,34 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            Visualize(_agents);
-            Visualize(_physicsAgents);
+            KaijuMovementManager.GizmosTextMode mode = KaijuMovementManager.GizmosText;
+            
+            if (!KaijuMovementManager.GizmosAll)
+            {
+                bool text = mode is KaijuMovementManager.GizmosTextMode.All or KaijuMovementManager.GizmosTextMode.Selected;
+                Visualize(_selectedAgents, text, text);
+                return;
+            }
+            
+            bool all = mode is KaijuMovementManager.GizmosTextMode.All;
+            bool selected = all || mode is KaijuMovementManager.GizmosTextMode.Selected;
+            Visualize(Agents, all, selected);
+            Visualize(PhysicsAgents, all, selected);
         }
-        
+
         /// <summary>
         /// Handle visualizations for agents.
         /// </summary>
         /// <param name="agents">The agents to render visualizations for.</param>
-        private static void Visualize(HashSet<KaijuAgent> agents)
+        /// <param name="all">If text should be run for all agents in this.</param>
+        /// <param name="selected">If text should be run for selected agents in this.</param>
+        private void Visualize(HashSet<KaijuAgent> agents, bool all, bool selected)
         {
             foreach (KaijuAgent agent in agents)
             {
                 if (agent)
                 {
-                    agent.Visualize();
+                    agent.Visualize(all || (selected && _selectedAgents.Contains(agent)));
                 }
             }
         }

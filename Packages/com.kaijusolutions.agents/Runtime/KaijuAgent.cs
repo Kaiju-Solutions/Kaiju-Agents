@@ -781,18 +781,9 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Visualize this agent.
         /// </summary>
-        public void Visualize()
+        /// <param name="text">If the text for this agent should be visualized.</param>
+        public void Visualize(bool text)
         {
-            // See if this should be rendered.
-            bool selected = Selection.activeTransform == transform;
-            if (!selected && !KaijuMovementManager.GizmosAll)
-            {
-                return;
-            }
-            
-            KaijuMovementManager.GizmosTextMode mode = KaijuMovementManager.GizmosText;
-            bool text = mode is KaijuMovementManager.GizmosTextMode.All || (mode is KaijuMovementManager.GizmosTextMode.Selected && selected);
-            
             Vector3 p = transform.position;
             
             // If the agent is moving or has an explicit looking target, it has some visuals of its own.
