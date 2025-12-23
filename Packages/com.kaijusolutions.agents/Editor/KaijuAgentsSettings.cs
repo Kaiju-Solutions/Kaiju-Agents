@@ -40,7 +40,7 @@ internal static class KaijuAgentsSettings
                 container.Add(Header("Visualizations"));
                 container.Add(ToggleSetting("Render All Gizmos", () => KaijuMovementManager.GizmosAll, value => KaijuMovementManager.GizmosAll = value, KaijuMovementManager.ResetGizmosAll, refreshActions, "If all gizmos should be rendered or only the selected agent."));
                 container.Add(EnumSetting("Gizmos Text Mode", () => KaijuMovementManager.GizmosText, value => KaijuMovementManager.GizmosText = value, KaijuMovementManager.ResetGizmosText, refreshActions, "How text should be displayed with gizmos."));
-                // TODO - Allow for modifying the LabelOffset from the KaijuAgentsManager with a reset button.
+                container.Add(FloatSetting("Label Offset", () => KaijuAgentsManager.LabelOffset, value => KaijuAgentsManager.LabelOffset = value, KaijuAgentsManager.ResetLabelOffset, refreshActions, "How much to offset labels in the scene view."));
                 
                 // Add options for all colors
                 container.Add(Header("Colors"));
@@ -268,6 +268,66 @@ internal static class KaijuAgentsSettings
         void Refresh()
         {
             colorField.value = get();
+        }
+    }
+
+    /// <summary>
+    /// Add a float setting element.
+    /// </summary>
+    /// <param name="label">The label to use.</param>
+    /// <param name="get">The getter method.</param>
+    /// <param name="set">The setter method.</param>
+    /// <param name="reset">The resetting method.</param>
+    /// <param name="refresh">What to apply when resetting.</param>
+    /// <param name="tooltip">What tooltip to add.</param>
+    /// <returns>A float settings element.</returns>
+    private static VisualElement FloatSetting(string label, Func<float> get, Action<float> set, Action reset, List<Action> refresh, string tooltip = null)
+    {
+        // Set the base styling.
+        VisualElement row = new()
+        {
+            style =
+            {
+                flexDirection = FlexDirection.Row,
+                marginBottom = 5
+            },
+            tooltip = tooltip
+        };
+        
+        // Define the float field itself.
+        FloatField floatField = new(label)
+        {
+            value = get(),
+            style =
+            {
+                flexGrow = 1
+            }
+        };
+        floatField.RegisterValueChangedCallback(evt => set(evt.newValue));
+        
+        // Bind refresh actions.
+        refresh.Add(Refresh);
+        
+        // Create the reset button.
+        Button resetButton = new(() =>
+        {
+            reset();
+            Refresh();
+        })
+        {
+            text = "Reset"
+        };
+        
+        // Add each to the fields.
+        row.Add(floatField);
+        row.Add(resetButton);
+        
+        return row;
+        
+        // Refresh command.
+        void Refresh()
+        {
+            floatField.value = get();
         }
     }
 }
