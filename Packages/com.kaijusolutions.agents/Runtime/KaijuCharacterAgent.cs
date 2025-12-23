@@ -6,9 +6,9 @@ namespace KaijuSolutions.Agents
     /// <summary>
     /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
     /// </summary>
+    [DisallowMultipleComponent]
 #if UNITY_EDITOR
     [SelectionBase]
-    [DisallowMultipleComponent]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Character Agent", 2)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]

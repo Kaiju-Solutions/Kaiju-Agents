@@ -10,9 +10,9 @@ namespace KaijuSolutions.Agents
     /// <summary>
     /// Base Kaiju Agent class.
     /// </summary>
+    [DisallowMultipleComponent]
 #if UNITY_EDITOR
     [SelectionBase]
-    [DisallowMultipleComponent]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
