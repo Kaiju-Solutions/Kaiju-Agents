@@ -51,7 +51,7 @@ namespace KaijuSolutions.Agents
         /// <param name="text">The label itself</param>
         public static void Label(Vector3 position, [NotNull] string text)
         {
-            Handles.Label(position, text, AgentsLabelStyle);
+            Handles.Label(position + AgentsLabelOffset, text, AgentsLabelStyle);
         }
         
         /// <summary>
@@ -65,7 +65,7 @@ namespace KaijuSolutions.Agents
             AgentsLabelStyle.normal.textColor = color;
             _agentsLabelStyle.active.textColor = color;
             _agentsLabelStyle.hover.textColor = color;
-            Handles.Label(position, text, _agentsLabelStyle);
+            Handles.Label(position + AgentsLabelOffset, text, _agentsLabelStyle);
         }
         
         /// <summary>
@@ -102,6 +102,39 @@ namespace KaijuSolutions.Agents
         /// The label style to use for handles.
         /// </summary>
         private static GUIStyle _agentsLabelStyle;
+        
+        /// <summary>
+        /// The key for how much to offset labels.
+        /// </summary>
+        private const string OffsetKey = "KAIJU_AGENTS_LABEL_OFFSET";
+        
+        /// <summary>
+        /// The offset for label placement.
+        /// </summary>
+        public static Vector3 AgentsLabelOffset
+        {
+            get => _agentsLabelOffset ?? new(EditorPrefs.GetFloat($"{OffsetKey}_X", 0), EditorPrefs.GetFloat($"{OffsetKey}_Y", 2.5f), EditorPrefs.GetFloat($"{OffsetKey}_Z", 0));
+            set
+            {
+                _agentsLabelOffset = value;
+                EditorPrefs.SetFloat($"{OffsetKey}_X", _agentsLabelOffset.Value.x);
+                EditorPrefs.SetFloat($"{OffsetKey}_Y", _agentsLabelOffset.Value.y);
+                EditorPrefs.SetFloat($"{OffsetKey}_Z", _agentsLabelOffset.Value.z);
+            }
+        }
+        
+        /// <summary>
+        /// The offset for label placement.
+        /// </summary>
+        private static Vector3? _agentsLabelOffset;
+        
+        /// <summary>
+        /// Reset the offset for label placement.
+        /// </summary>
+        public static void ResetAgentsLabelOffset()
+        {
+            AgentsLabelOffset = new(0, 2.5f, 0);
+        }
         
         /// <summary>
         /// The key for what color <see cref="KaijuAgent"/> gizmos should be.

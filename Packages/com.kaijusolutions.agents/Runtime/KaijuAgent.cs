@@ -63,8 +63,7 @@ namespace KaijuSolutions.Agents
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
 #if UNITY_EDITOR
-        [field:
-            Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
+        [field: Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
 #endif
         [field: SerializeField]
         public bool AutoRotate { get; private set; } = true;
