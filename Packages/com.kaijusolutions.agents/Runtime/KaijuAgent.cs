@@ -800,12 +800,12 @@ namespace KaijuSolutions.Agents
                 Gizmos.DrawLine(p, p + Velocity3.normalized);
                 if (text)
                 {
-                    Handles.Label(p, $"{name} - Velocity: {Velocity}");
+                    Handles.Label(p, $"{name} - Velocity: {Velocity}", KaijuAgentsManager.AgentsLabelStyle);
                 }
             }
             else if (text)
             {
-                Handles.Label(p, name);
+                Handles.Label(p, name, KaijuAgentsManager.AgentsLabelStyle);
             }
             
             // Show where the agent is looking.
@@ -814,7 +814,7 @@ namespace KaijuSolutions.Agents
                 Gizmos.DrawLine(p, v.Value);
                 if (text)
                 {
-                    Handles.Label((v.Value + p) / 2f, $"{LookDistance:F2}");
+                    Handles.Label((v.Value + p) / 2f, $"{LookDistance:F2}", KaijuAgentsManager.AgentsLabelStyle);
                 }
             }
             

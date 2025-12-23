@@ -302,8 +302,8 @@ namespace KaijuSolutions.Agents.Movement
                 return;
             }
             
-            Handles.Label(t, $"{label}: ({t.x:F2}, {t.y:F2}, {t.z:F2})");
-            Handles.Label((a + t) / 2f, $"{CurrentDistance3:F2}");
+            Handles.Label(t, $"{label}: ({t.x:F2}, {t.y:F2}, {t.z:F2})", KaijuAgentsManager.AgentsLabelStyle);
+            Handles.Label((a + t) / 2f, $"{CurrentDistance3:F2}", KaijuAgentsManager.AgentsLabelStyle);
         }
 #endif
         /// <summary>

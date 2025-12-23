@@ -123,7 +123,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = float.MaxValue, float weight = 1) : base(agent, target, distance, weight) { }
-
+        
         /// <summary>
         /// Calculate the movement.
         /// </summary>

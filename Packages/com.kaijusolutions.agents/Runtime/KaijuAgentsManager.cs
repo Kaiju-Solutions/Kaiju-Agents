@@ -35,7 +35,7 @@ namespace KaijuSolutions.Agents
         private static readonly HashSet<KaijuAgent> Agents = new();
         
         /// <summary>
-        /// Cache for agents which tick during the phyics update loop.
+        /// Cache for agents which tick during the physics update loop.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
 #if UNITY_EDITOR
@@ -43,6 +43,33 @@ namespace KaijuSolutions.Agents
         /// All currently selected agents.
         /// </summary>
         private readonly HashSet<KaijuAgent> _selectedAgents = new();
+        
+        /// <summary>
+        /// The label style to use for handles.
+        /// </summary>
+        public static GUIStyle AgentsLabelStyle
+        {
+            get
+            {
+                _agentsLabelStyle ??= new(GUI.skin.label)
+                {
+                    normal =
+                    {
+                        textColor = Color.white
+                    },
+                    fontSize = 12,
+                    fontStyle = FontStyle.Normal,
+                    alignment = TextAnchor.MiddleCenter
+                };
+                
+                return _agentsLabelStyle;
+            }
+        }
+        
+        /// <summary>
+        /// The label style to use for handles.
+        /// </summary>
+        private static GUIStyle _agentsLabelStyle;
         
         /// <summary>
         /// The key for what color <see cref="KaijuAgent"/> gizmos should be.
@@ -122,6 +149,7 @@ namespace KaijuSolutions.Agents
             Agents.Clear();
             PhysicsAgents.Clear();
             _ = AgentColor;
+            _agentsLabelStyle = null;
         }
 #endif
         /// <summary>
