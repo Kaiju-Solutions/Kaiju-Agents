@@ -428,6 +428,7 @@ MonoBehaviour:
   speed: 10
   lookSpeed: 0
   <AutoRotate>k__BackingField: 1
+  identifiers: 
 --- !u!1 &790598151
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 462820016}
   type: 1
-  wander: 0
+  wander: 1
 --- !u!1 &2061521143
 GameObject:
   m_ObjectHideFlags: 0

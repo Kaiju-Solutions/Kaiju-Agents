@@ -233,6 +233,17 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
+        /// Perform any needed reset operations.
+        /// </summary>
+        protected override void Reset()
+        {
+            base.Reset();
+            _vector = null;
+            _transform = null;
+            _distance = 0;
+        }
+        
+        /// <summary>
         /// Get the movement.
         /// </summary>
         /// <param name="delta">The time step.</param>
@@ -240,6 +251,15 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(float delta)
         {
             return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, Target, delta) : Vector2.zero;
+        }
+        
+        /// <summary>
+        /// Determine if the movement is done or not.
+        /// </summary>
+        /// <returns>If the movement is done or not.</returns>
+        public override bool Done()
+        {
+            return base.Done() && (_transform != null || _vector != null);
         }
         
         /// <summary>
@@ -252,17 +272,6 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
         protected abstract Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta);
-        
-        /// <summary>
-        /// Perform any needed reset operations.
-        /// </summary>
-        protected override void Reset()
-        {
-            base.Reset();
-            _vector = Vector2.zero;
-            _transform = null;
-            _distance = 0;
-        }
 #if UNITY_EDITOR
         /// <summary>
         /// Render the visualization of the movement.

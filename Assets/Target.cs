@@ -19,16 +19,16 @@ public class Target : MonoBehaviour
             {
                 case MoveType.Seek:
                 default:
-                    agent.Seek(this);
+                    agent.Seek(this, clear: false);
                     break;
                 case MoveType.Pursue:
-                    agent.Pursue(this);
+                    agent.Pursue(this, clear: false);
                     break;
                 case MoveType.Flee:
-                    agent.Flee(this);
+                    agent.Flee(this, clear: false);
                     break;
                 case MoveType.Evade:
-                    agent.Evade(this);
+                    agent.Evade(this, clear: false);
                     break;
             }
             
