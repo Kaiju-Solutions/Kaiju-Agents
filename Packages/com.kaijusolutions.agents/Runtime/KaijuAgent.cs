@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -67,6 +68,20 @@ namespace KaijuSolutions.Agents
 #endif
         [field: SerializeField]
         public bool AutoRotate { get; private set; } = true;
+        
+        /// <summary>
+        /// Identifiers for this agent.
+        /// </summary>
+        public IReadOnlyList<uint> Identifiers => identifiers;
+        
+        /// <summary>
+        /// Identifiers for this agent.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Identifiers for this agent.")]
+#endif
+        [SerializeField]
+        private List<uint> identifiers = new();
         
         /// <summary>
         /// The current velocity of the agent.
@@ -317,6 +332,148 @@ namespace KaijuSolutions.Agents
         private void OnDisable()
         {
             KaijuAgentsManager.Unregister(this);
+        }
+        
+        /// <summary>
+        /// Clear all identifiers.
+        /// </summary>
+        public void ClearIdentifiers()
+        {
+            foreach (uint identifier in identifiers)
+            {
+                KaijuAgentsManager.RemoveIdentifier(this, identifier);
+            }
+            
+            identifiers.Clear();
+        }
+        
+        /// <summary>
+        /// If this agent has an identifier.
+        /// </summary>
+        /// <param name="identifier">The identifier to check.</param>
+        /// <returns>If this agent has the identifier.</returns>
+        public bool HasIdentifier(uint identifier)
+        {
+            foreach (uint i in identifiers)
+            {
+                if (i == identifier)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        /// <summary>
+        /// If this agent has any one of a set of identifiers.
+        /// </summary>
+        /// <param name="collection">The identifiers to check.</param>
+        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        public bool HasAnyIdentifier(IEnumerable<uint> collection)
+        {
+            foreach (uint identifier in collection)
+            {
+                if (HasIdentifier(identifier))
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        /// <summary>
+        /// Add an identifier to this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to set.</param>
+        /// <returns>If the identifier was added.</returns>
+        public bool AddIdentifier(uint identifier)
+        {
+            if (HasIdentifier(identifier))
+            {
+                return false;
+            }
+            
+            identifiers.Add(identifier);
+            KaijuAgentsManager.AddIdentifier(this, identifier);
+            return true;
+        }
+        
+        /// <summary>
+        /// Add identifiers to this agent.
+        /// </summary>
+        /// <param name="collection">The identifiers to add.</param>
+        /// <returns>If any of the identifiers were added.</returns>
+        public bool AddIdentifiers(IEnumerable<uint> collection)
+        {
+            bool added = false;
+            foreach (uint identifier in collection)
+            {
+                if (AddIdentifier(identifier))
+                {
+                    added = true;
+                }
+            }
+            
+            return added;
+        }
+        
+        /// <summary>
+        /// Remove an identifier from this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to remove.</param>
+        /// <returns>If the identifier was removed.</returns>
+        public bool RemoveIdentifier(uint identifier)
+        {
+            if (!HasIdentifier(identifier))
+            {
+                return false;
+            }
+            
+            identifiers.Remove(identifier);
+            KaijuAgentsManager.RemoveIdentifier(this, identifier);
+            return true;
+        }
+        
+        /// <summary>
+        /// Remove identifiers from this agent.
+        /// </summary>
+        /// <param name="collection">The identifiers to remove.</param>
+        /// <returns>If any of the identifiers were removed.</returns>
+        public bool RemoveIdentifiers(IEnumerable<uint> collection)
+        {
+            bool removed = false;
+            foreach (uint identifier in collection)
+            {
+                if (RemoveIdentifier(identifier))
+                {
+                    removed = true;
+                }
+            }
+            
+            return removed;
+        }
+        
+        /// <summary>
+        /// Set an identifier to this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to set.</param>
+        public void SetIdentifier(uint identifier)
+        {
+            ClearIdentifiers();
+            AddIdentifier(identifier);
+        }
+        
+        /// <summary>
+        /// If this agent has any one of a set of identifiers.
+        /// </summary>
+        /// <param name="collection">The identifiers to check.</param>
+        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        public void SetIdentifiers(IEnumerable<uint> collection)
+        {
+            ClearIdentifiers();
+            AddIdentifiers(collection);
         }
         
         /// <summary>
@@ -795,6 +952,20 @@ namespace KaijuSolutions.Agents
             return movement;
         }
 #if UNITY_EDITOR
+        /// <summary>
+        /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
+        /// </summary>
+        protected virtual void OnValidate()
+        {
+            // Validate all identifiers when playing.
+            if (Application.isPlaying)
+            {
+                KaijuAgentsManager.ValidateIdentifiers(this);
+            }
+            
+            Setup();
+        }
+        
         /// <summary>
         /// Visualize this agent.
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 #if UNITY_EDITOR
@@ -22,22 +23,47 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The singleton manager instance.
         /// </summary>
-        public static KaijuAgentsManager Instance => _instance ? _instance : new GameObject("Kaiju Agents Manager").AddComponent<KaijuAgentsManager>();
+        private static KaijuAgentsManager _instance;
         
         /// <summary>
         /// The singleton manager instance.
         /// </summary>
-        private static KaijuAgentsManager _instance;
+        public static KaijuAgentsManager Instance => _instance ? _instance : new GameObject("Kaiju Agents Manager").AddComponent<KaijuAgentsManager>();
+        
+        /// <summary>
+        /// Cache agents paired to their identifiers.
+        /// </summary>
+        private static readonly Dictionary<uint, HashSet<KaijuAgent>> AgentIdentifiers = new();
+        
+        /// <summary>
+        /// All agents.
+        /// </summary>
+        public static IReadOnlyCollection<KaijuAgent> Agents => AllAgents;
+        
+        /// <summary>
+        /// The number of agents.
+        /// </summary>
+        public static int AgentsCount => AllAgents.Count;
+        
+        /// <summary>
+        /// Cache all agents.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> AllAgents = new();
         
         /// <summary>
         /// Cache for agents which tick in the main update loop.
         /// </summary>
-        private static readonly HashSet<KaijuAgent> Agents = new();
+        private static readonly HashSet<KaijuAgent> TickAgents = new();
         
         /// <summary>
         /// Cache for agents which tick during the physics update loop.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
+        
+        /// <summary>
+        /// Helper empty agents array for returning defaults.
+        /// </summary>
+        private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
 #if UNITY_EDITOR
         /// <summary>
         /// All currently selected agents.
@@ -221,8 +247,10 @@ namespace KaijuSolutions.Agents
         private static void InitOnPlayMode()
         {
             _instance = null;
-            Agents.Clear();
+            AllAgents.Clear();
+            TickAgents.Clear();
             PhysicsAgents.Clear();
+            AgentIdentifiers.Clear();
             _ = AgentColor;
             _agentsLabelStyle = null;
         }
@@ -236,13 +264,21 @@ namespace KaijuSolutions.Agents
             // Ensure there is a manager.
             _ = Instance;
             
+            AllAgents.Add(agent);
+            
+            // Add identifiers.
+            foreach (uint identifier in agent.Identifiers)
+            {
+                AddIdentifier(agent, identifier);
+            }
+            
             if (agent.PhysicsAgent)
             {
                 PhysicsAgents.Add(agent);
             }
             else
             {
-                Agents.Add(agent);
+                TickAgents.Add(agent);
             }
         }
         
@@ -252,13 +288,21 @@ namespace KaijuSolutions.Agents
         /// <param name="agent">The agent to unregister.</param>
         public static void Unregister(KaijuAgent agent)
         {
+            AllAgents.Remove(agent);
+            
+            // Remove identifiers.
+            foreach (uint identifier in agent.Identifiers)
+            {
+                RemoveIdentifier(agent, identifier);
+            }
+            
             if (agent.PhysicsAgent)
             {
                 PhysicsAgents.Remove(agent);
             }
             else
             {
-                Agents.Remove(agent);
+                TickAgents.Remove(agent);
             }
 #if UNITY_EDITOR
             if (_instance)
@@ -268,6 +312,109 @@ namespace KaijuSolutions.Agents
 #endif
         }
         
+        /// <summary>
+        /// Add an identifier to an agent. There is no use for manually calling this.
+        /// </summary>
+        /// <param name="agent">The agent.</param>
+        /// <param name="identifier">The identifier.</param>
+        public static void AddIdentifier(KaijuAgent agent, uint identifier)
+        {
+            if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+            {
+                set = new();
+                AgentIdentifiers.Add(identifier, set);
+            }
+            
+            set.Add(agent);
+        }
+        
+        /// <summary>
+        /// Remove an identifier from an agent. There is no use for manually calling this.
+        /// </summary>
+        /// <param name="agent">The agent.</param>
+        /// <param name="identifier">The identifier.</param>
+        public static void RemoveIdentifier(KaijuAgent agent, uint identifier)
+        {
+            if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+            {
+                return;
+            }
+            
+            set.Remove(agent);
+            if (set.Count < 1)
+            {
+                AgentIdentifiers.Remove(identifier);
+            }
+        }
+        
+        /// <summary>
+        /// Get all agents with a given identifier.
+        /// </summary>
+        /// <param name="identifier">The identifier.</param>
+        /// <returns>All agents with the given identifier.</returns>
+        public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier)
+        {
+            return AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set) ? set : EmptyAgents;
+        }
+        
+        /// <summary>
+        /// Get all agents which have any of the given identifier.
+        /// </summary>
+        /// <param name="identifiers">The identifiers.</param>
+        /// <returns>All agents which have any of the given identifier.</returns>
+        public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
+        {
+            HashSet<KaijuAgent> identified = new();
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent agent in set)
+                {
+                    identified.Add(agent);
+                }
+            }
+            
+            return identified;
+        }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Validate the identifiers of an agent in the editor. There is no use for manually calling this.
+        /// </summary>
+        /// <param name="agent">The agent.</param>
+        public static void ValidateIdentifiers(KaijuAgent agent)
+        {
+            // Store empty instances.
+            HashSet<uint> empty = new(AgentIdentifiers.Count);
+            
+            // Remove all currently cached identifiers.
+            foreach (KeyValuePair<uint, HashSet<KaijuAgent>> pair in AgentIdentifiers)
+            {
+                // Mark if this set is now empty.
+                if (AgentIdentifiers[pair.Key].Remove(agent) && AgentIdentifiers[pair.Key].Count < 1)
+                {
+                    empty.Add(pair.Key);
+                }
+            }
+            
+            // Add all new identifiers, flagging ones which are no longer empty.
+            foreach (uint identifier in agent.Identifiers)
+            {
+                AddIdentifier(agent, identifier);
+                empty.Remove(identifier);
+            }
+            
+            // Remove empty sets.
+            foreach (uint identifier in empty)
+            {
+                AgentIdentifiers.Remove(identifier);
+            }
+        }
+#endif
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
@@ -329,9 +476,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void Update()
         {
-            Move(Agents);
-            Look(Agents);
-            Look(PhysicsAgents);
+            Move(TickAgents);
+            Look(AllAgents);
         }
         
         /// <summary>
@@ -389,11 +535,9 @@ namespace KaijuSolutions.Agents
             }
             
             bool all = mode is KaijuMovementManager.GizmosTextMode.All;
-            bool selected = all || mode is KaijuMovementManager.GizmosTextMode.Selected;
-            Visualize(Agents, all, selected);
-            Visualize(PhysicsAgents, all, selected);
+            Visualize(AllAgents, all, all || mode is KaijuMovementManager.GizmosTextMode.Selected);
         }
-
+        
         /// <summary>
         /// Handle visualizations for agents.
         /// </summary>

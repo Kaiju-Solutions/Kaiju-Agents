@@ -30,15 +30,7 @@ namespace KaijuSolutions.Agents
         /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the agent's movement.
         /// </summary>
         public NavMeshAgent Nav => nav;
-#if UNITY_EDITOR
-        /// <summary>
-        /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
-        /// </summary>
-        private void OnValidate()
-        {
-            Setup();
-        }
-#endif
+        
         /// <summary>
         /// Initialize the agent.
         /// </summary>
