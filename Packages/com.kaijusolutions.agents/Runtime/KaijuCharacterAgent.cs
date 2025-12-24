@@ -57,7 +57,6 @@ namespace KaijuSolutions.Agents
                 _velocityY += gravity;
             }
             
-            CalculateVelocity(delta);
             Vector2 scaled = Velocity * delta;
             Character.Move(new(scaled.x, _velocityY, scaled.y));
         }

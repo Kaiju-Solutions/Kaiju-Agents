@@ -498,10 +498,12 @@ namespace KaijuSolutions.Agents
             
             foreach (KaijuAgent agent in agents)
             {
-                if (agent)
-                {
-                    agent.Move(delta);
-                }
+                agent.CalculateVelocity(delta);
+            }
+            
+            foreach (KaijuAgent agent in agents)
+            {
+                agent.Move(delta);
             }
         }
         
@@ -513,10 +515,7 @@ namespace KaijuSolutions.Agents
         {
             foreach (KaijuAgent agent in agents)
             {
-                if (agent)
-                {
-                    agent.Look();
-                }
+                agent.Look();
             }
         }
 #if UNITY_EDITOR

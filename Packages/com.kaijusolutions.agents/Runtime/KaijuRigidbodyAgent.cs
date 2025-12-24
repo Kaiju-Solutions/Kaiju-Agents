@@ -55,7 +55,6 @@ namespace KaijuSolutions.Agents
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)
         {
-            CalculateVelocity(delta);
             body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
         }
         

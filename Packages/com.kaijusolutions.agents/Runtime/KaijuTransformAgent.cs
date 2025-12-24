@@ -22,7 +22,6 @@ namespace KaijuSolutions.Agents
         public override void Move(float delta)
         {
             // Step the position.
-            CalculateVelocity(delta);
             transform.position += Velocity3 * delta;
         }
         

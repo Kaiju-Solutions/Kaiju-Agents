@@ -46,7 +46,6 @@ namespace KaijuSolutions.Agents
         public override void Move(float delta)
         {
             // Offset the current position by the movement velocity.
-            CalculateVelocity(delta);
             nav.Move(Velocity3 * delta);
         }
         

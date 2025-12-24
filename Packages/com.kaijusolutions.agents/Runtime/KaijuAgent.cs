@@ -285,7 +285,7 @@ namespace KaijuSolutions.Agents
         /// Calculate the velocity for the next update.
         /// <param name="delta">The time step.</param>
         /// </summary>
-        protected void CalculateVelocity(float delta)
+        public void CalculateVelocity(float delta)
         {
             // Start with no motion this frame.
             Vector2 velocity = Vector2.zero;

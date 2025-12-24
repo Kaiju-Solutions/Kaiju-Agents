@@ -105,7 +105,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
         public abstract Vector2 Move(float delta);
-
+        
         /// <summary>
         /// Determine if the movement is done or not.
         /// </summary>
