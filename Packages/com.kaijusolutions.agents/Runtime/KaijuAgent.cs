@@ -476,15 +476,34 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get the distance to a vector.
+        /// </summary>
+        /// <param name="position">The vector.</param>
+        /// <returns>The distance to the vector.</returns>
+        public float Distance(Vector2 position)
+        {
+            Vector3 a = transform.position;
+            return Vector2.Distance(new(a.x, a.z), position);
+        }
+        
+        /// <summary>
+        /// Get the distance to a vector.
+        /// </summary>
+        /// <param name="position">The vector.</param>
+        /// <returns>The distance to the vector.</returns>
+        public float Distance(Vector3 position)
+        {
+            return Distance(new Vector2(position.x, position.z));
+        }
+        
+        /// <summary>
         /// Get the distance to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see></returns>
+        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</returns>
         public float Distance([NotNull] GameObject o)
         {
-            Vector3 a = transform.position;
-            Vector3 b = o.transform.position;
-            return Vector2.Distance(new(a.x, a.z), new(b.x, b.z));
+            return Distance(o.transform.position);
         }
         
         /// <summary>
@@ -494,7 +513,18 @@ namespace KaijuSolutions.Agents
         /// <returns>The distance to the component.</returns>
         public float Distance([NotNull] Component c)
         {
-            return Distance(c.gameObject);
+            return Distance(c.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the distance to a vector.
+        /// </summary>
+        /// <param name="position">The vector.</param>
+        /// <returns>The distance to the vector.</returns>
+        public float Distance3(Vector3 position)
+        {
+            Vector3 a = transform.position;
+            return Vector3.Distance(a, position);
         }
         
         /// <summary>
@@ -504,7 +534,7 @@ namespace KaijuSolutions.Agents
         /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see></returns>
         public float Distance3([NotNull] GameObject o)
         {
-            return Vector3.Distance(transform.position, o.transform.position);
+            return Distance3(o.transform.position);
         }
         
         /// <summary>
@@ -514,7 +544,7 @@ namespace KaijuSolutions.Agents
         /// <returns>The distance to the component.</returns>
         public float Distance3([NotNull] Component c)
         {
-            return Distance3(c.gameObject);
+            return Distance3(c.transform.position);
         }
         
         /// <summary>
