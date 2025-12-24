@@ -259,7 +259,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the movement is done or not.</returns>
         public override bool Done()
         {
-            return base.Done() && (_transform != null || _vector != null);
+            return base.Done() || (!_transform && _vector == null);
         }
         
         /// <summary>
