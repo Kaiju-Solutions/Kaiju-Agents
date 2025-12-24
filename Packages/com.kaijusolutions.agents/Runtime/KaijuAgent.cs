@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -474,6 +473,48 @@ namespace KaijuSolutions.Agents
         {
             ClearIdentifiers();
             AddIdentifiers(collection);
+        }
+        
+        /// <summary>
+        /// Get the distance to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see></returns>
+        public float Distance([NotNull] GameObject o)
+        {
+            Vector3 a = transform.position;
+            Vector3 b = o.transform.position;
+            return Vector2.Distance(new(a.x, a.z), new(b.x, b.z));
+        }
+        
+        /// <summary>
+        /// Get the distance to a component.
+        /// </summary>
+        /// <param name="c">The component.</param>
+        /// <returns>The distance to the component.</returns>
+        public float Distance([NotNull] Component c)
+        {
+            return Distance(c.gameObject);
+        }
+        
+        /// <summary>
+        /// Get the distance to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see></returns>
+        public float Distance3([NotNull] GameObject o)
+        {
+            return Vector3.Distance(transform.position, o.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the distance to a component.
+        /// </summary>
+        /// <param name="c">The component.</param>
+        /// <returns>The distance to the component.</returns>
+        public float Distance3([NotNull] Component c)
+        {
+            return Distance3(c.gameObject);
         }
         
         /// <summary>
