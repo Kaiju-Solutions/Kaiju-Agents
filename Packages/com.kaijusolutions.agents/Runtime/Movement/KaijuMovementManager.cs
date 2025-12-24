@@ -38,6 +38,11 @@ namespace KaijuSolutions.Agents.Movement
         private const string EvadeKey = "KAIJU_AGENTS_COLOR_EVADE";
         
         /// <summary>
+        /// The key for the wander color preference.
+        /// </summary>
+        private const string WanderKey = "KAIJU_AGENTS_COLOR_WANDER";
+        
+        /// <summary>
         /// Color for seek visuals.
         /// </summary>
         public static Color SeekColor
@@ -146,6 +151,33 @@ namespace KaijuSolutions.Agents.Movement
         private static Color? _evadeColor;
         
         /// <summary>
+        /// Color for wander visuals.
+        /// </summary>
+        public static Color WanderColor
+        {
+            get
+            {
+                if (_wanderColor.HasValue)
+                {
+                    return _wanderColor.Value;
+                }
+                
+                _wanderColor = KaijuAgentsManager.LoadColor(WanderKey, Color.yellow);
+                return _wanderColor.Value;
+            }
+            set
+            {
+                _wanderColor = value;
+                KaijuAgentsManager.SaveColor(WanderKey, _wanderColor.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Color for wander visuals.
+        /// </summary>
+        private static Color? _wanderColor;
+        
+        /// <summary>
         /// Sync all colors.
         /// </summary>
         public static void SyncColors()
@@ -154,6 +186,7 @@ namespace KaijuSolutions.Agents.Movement
             _ = PursueColor;
             _ = FleeColor;
             _ = EvadeColor;
+            _ = WanderKey;
         }
         
         /// <summary>
@@ -165,6 +198,7 @@ namespace KaijuSolutions.Agents.Movement
             ResetPursueColor();
             ResetFleeColor();
             ResetEvadeColor();
+            ResetWanderColor();
         }
         
         /// <summary>
@@ -172,7 +206,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetSeekColor()
         {
-            SeekColor = Color.green;
+            KaijuAgentsManager.ResetColor(SeekKey);
         }
         
         /// <summary>
@@ -180,7 +214,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetPursueColor()
         {
-            PursueColor = Color.cyan;
+            KaijuAgentsManager.ResetColor(PursueKey);
         }
         
         /// <summary>
@@ -188,7 +222,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetFleeColor()
         {
-            FleeColor = Color.red;
+            KaijuAgentsManager.ResetColor(FleeKey);
         }
         
         /// <summary>
@@ -196,7 +230,15 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetEvadeColor()
         {
-            EvadeColor = Color.orange;
+            KaijuAgentsManager.ResetColor(EvadeKey);
+        }
+        
+        /// <summary>
+        /// Reset the wander color.
+        /// </summary>
+        public static void ResetWanderColor()
+        {
+            KaijuAgentsManager.ResetColor(WanderKey);
         }
         
         /// <summary>
@@ -236,7 +278,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetGizmosAll()
         {
-            GizmosAll = true;
+            EditorPrefs.DeleteKey(GizmosAllKey);
         }
         
         /// <summary>
@@ -276,7 +318,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public static void ResetGizmosText()
         {
-            GizmosText = GizmosTextMode.All;
+            EditorPrefs.DeleteKey(GizmosTextKey);
         }
         
         /// <summary>

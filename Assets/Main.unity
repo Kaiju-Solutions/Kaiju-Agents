@@ -741,7 +741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 462820016}
-  type: 0
+  type: 1
+  wander: 0
 --- !u!1 &2061521143
 GameObject:
   m_ObjectHideFlags: 0

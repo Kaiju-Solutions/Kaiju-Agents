@@ -131,7 +131,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public static void ResetLabelOffset()
         {
-            LabelOffset = 2.5f;
+            EditorPrefs.DeleteKey(OffsetKey);
         }
         
         /// <summary>
@@ -171,7 +171,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public static void ResetAgentColor()
         {
-            AgentColor = Color.white;
+            ResetColor(AgentKey);
         }
         
         /// <summary>
@@ -200,6 +200,18 @@ namespace KaijuSolutions.Agents
             EditorPrefs.SetFloat($"{key}_G", color.g);
             EditorPrefs.SetFloat($"{key}_B", color.b);
             EditorPrefs.SetFloat($"{key}_A", color.a);
+        }
+        
+        /// <summary>
+        /// Reset a color to preferences.
+        /// </summary>
+        /// <param name="key">The color key to reset.</param>
+        public static void ResetColor([NotNull] string key)
+        {
+            EditorPrefs.DeleteKey($"{key}_R");
+            EditorPrefs.DeleteKey($"{key}_G");
+            EditorPrefs.DeleteKey($"{key}_B");
+            EditorPrefs.DeleteKey($"{key}_A");
         }
         
         /// <summary>

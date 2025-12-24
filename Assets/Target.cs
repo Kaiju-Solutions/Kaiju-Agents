@@ -6,6 +6,8 @@ public class Target : MonoBehaviour
     public KaijuAgent agent;
     
     public MoveType type = 0;
+
+    public bool wander;
     
     private void Awake()
     {
@@ -28,6 +30,11 @@ public class Target : MonoBehaviour
                 case MoveType.Evade:
                     agent.Evade(this);
                     break;
+            }
+            
+            if (wander)
+            {
+                agent.Wander(clear: false);
             }
         }
         

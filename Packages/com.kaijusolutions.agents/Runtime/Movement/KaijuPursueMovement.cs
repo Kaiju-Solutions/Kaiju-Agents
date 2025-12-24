@@ -27,7 +27,12 @@ namespace KaijuSolutions.Agents.Movement
         /// The predicted future target.
         /// </summary>
         public Vector3 Future3 => new(Future.x, 0, Future.y);
-        
+#if UNITY_EDITOR
+        /// <summary>
+        /// Points to render.
+        /// </summary>
+        private  Vector3[] _rendering = new Vector3[6];
+#endif
         /// <summary>
         /// Get a pursue movement.
         /// </summary>
@@ -217,18 +222,17 @@ namespace KaijuSolutions.Agents.Movement
             }
             else
             {
-                Gizmos.DrawLineList(new[]
-                {
-                    // Agent to target.
-                    a,
-                    t,
-                    // Agent to forecast.
-                    a,
-                    f,
-                    // Target to forecast.
-                    t,
-                    f
-                });
+                // Agent to target.
+                _rendering[0] = a;
+                _rendering[1] = t;
+                // Agent to forecast.
+                _rendering[2] = a;
+                _rendering[3] = f;
+                // Target to forecast.
+                _rendering[4] = t;
+                _rendering[5] = f;
+                
+                Gizmos.DrawLineList(_rendering);
             }
             
             RenderTargetVisualizationText("Pursue", t, text);
