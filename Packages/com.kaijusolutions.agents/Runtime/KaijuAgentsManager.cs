@@ -476,8 +476,14 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void Update()
         {
-            Move(TickAgents);
-            Look(AllAgents);
+            float delta = Time.deltaTime;
+            
+            Move(TickAgents, delta);
+            
+            foreach (KaijuAgent agent in Agents)
+            {
+                agent.Look(delta);
+            }
         }
         
         /// <summary>
@@ -485,37 +491,26 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void FixedUpdate()
         {
-            Move(PhysicsAgents);
+            float delta = Time.deltaTime;
+            
+            foreach (KaijuAgent agent in Agents)
+            {
+                agent.CalculateVelocity(delta);
+            }
+            
+            Move(PhysicsAgents, delta);
         }
         
         /// <summary>
         /// Move a set of agents.
         /// </summary>
         /// <param name="agents">The agents to move.</param>
-        private static void Move(HashSet<KaijuAgent> agents)
+        /// <param name="delta">The time step.</param>
+        private static void Move(HashSet<KaijuAgent> agents, float delta)
         {
-            float delta = Time.deltaTime;
-            
-            foreach (KaijuAgent agent in agents)
-            {
-                agent.CalculateVelocity(delta);
-            }
-            
             foreach (KaijuAgent agent in agents)
             {
                 agent.Move(delta);
-            }
-        }
-        
-        /// <summary>
-        /// Handle looking for agents.
-        /// </summary>
-        /// <param name="agents">The agents to handle the looking for.</param>
-        private static void Look(HashSet<KaijuAgent> agents)
-        {
-            foreach (KaijuAgent agent in agents)
-            {
-                agent.Look();
             }
         }
 #if UNITY_EDITOR
