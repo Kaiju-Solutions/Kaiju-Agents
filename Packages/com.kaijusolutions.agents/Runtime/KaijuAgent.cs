@@ -326,6 +326,13 @@ namespace KaijuSolutions.Agents
                 weight += _movements[i].Weight;
             }
             
+            // If there is no movement, come to a stop.
+            if (_movements.Count < 1)
+            {
+                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
+                return;
+            }
+            
             // Go through all remaining movements again to perform them.
             foreach (KaijuMovement movement in _movements)
             {
@@ -334,7 +341,7 @@ namespace KaijuSolutions.Agents
             }
             
             // Incorporate acceleration so we can only adjust by so much.
-            Velocity += moveAcceleration > 0 ? Vector2.ClampMagnitude(velocity, moveAcceleration* delta) : velocity;
+            Velocity += moveAcceleration > 0 ? Vector2.ClampMagnitude(velocity, moveAcceleration * delta) : velocity;
         }
         
         /// <summary>
