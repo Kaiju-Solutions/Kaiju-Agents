@@ -358,13 +358,13 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all agents which have any of the given identifier.
+        /// Get all agents which have any of the given identifiers. The agents are added to the identified parameter.
         /// </summary>
+        /// <param name="identified">Updated to contain all agents which were identified.</param>
         /// <param name="identifiers">The identifiers.</param>
-        /// <returns>All agents which have any of the given identifier.</returns>
-        public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
+        public static void IdentifiedAgents([NotNull] HashSet<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
         {
-            HashSet<KaijuAgent> identified = new();
+            identified.Clear();
             
             foreach (uint identifier in identifiers)
             {
@@ -378,7 +378,17 @@ namespace KaijuSolutions.Agents
                     identified.Add(agent);
                 }
             }
-            
+        }
+        
+        /// <summary>
+        /// Get all agents which have any of the given identifiers.
+        /// </summary>
+        /// <param name="identifiers">The identifiers.</param>
+        /// <returns>All agents which have any of the given identifier.</returns>
+        public static HashSet<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
+        {
+            HashSet<KaijuAgent> identified = new();
+            IdentifiedAgents(identified, identifiers);
             return identified;
         }
 #if UNITY_EDITOR

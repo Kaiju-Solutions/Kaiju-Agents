@@ -24,6 +24,18 @@ namespace KaijuSolutions.Agents.Movement
         private float _distance = float.MaxValue;
         
         /// <summary>
+        /// What type of agent to avoid.
+        /// </summary>
+        public uint Identifier
+        {
+            set
+            {
+                Identifiers.Clear();
+                Identifiers.Add(value);
+            }
+        }
+        
+        /// <summary>
         /// What types of agents to avoid.
         /// </summary>
         public readonly HashSet<uint> Identifiers = new();
