@@ -1177,7 +1177,7 @@ namespace KaijuSolutions.Agents
             }
             
             // Get the rotation.
-            Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed : Mathf.Infinity) * delta, 0.0f);
+            Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed * Mathf.Deg2Rad : Mathf.Infinity) * delta, 0.0f);
             if (rotation != Vector3.zero && !float.IsNaN(rotation.x) && !float.IsNaN(rotation.y) && !float.IsNaN(rotation.z))
             {
                 t.rotation = Quaternion.LookRotation(rotation);
