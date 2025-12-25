@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -612,10 +613,35 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Stop all instances of a movement type. This checks for exact matches, not inherited classes.
+        /// </summary>
+        /// <typeparam name="T">The type of movement to stop.</typeparam>
+        /// <returns>True if any instances were stopped.</returns>
+        public bool Stop<T>() where T : KaijuMovement
+        {
+            Type t = typeof(T);
+            bool removed = false;
+            
+            for (int i = 0; i < _movements.Count; i++)
+            {
+                if (_movements[i].GetType() != t)
+                {
+                    continue;
+                }
+                
+                _movements[i].Return();
+                _movements.RemoveAt(i--);
+                removed = true;
+            }
+            
+            return removed;
+        }
+        
+        /// <summary>
         /// Stop a movement by the given index.
         /// </summary>
         /// <param name="index">The index to stop.</param>
-        /// <returns>If the movement was stopped, with a failure incdicating the index was out of bounds.</returns>
+        /// <returns>If the movement was stopped, with a failure indicating the index was out of bounds.</returns>
         public bool Stop(int index)
         {
             if (index < 0 || index >= MovementsCount)
