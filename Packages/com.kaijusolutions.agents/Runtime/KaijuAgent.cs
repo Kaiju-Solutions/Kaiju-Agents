@@ -22,26 +22,45 @@ namespace KaijuSolutions.Agents
         public virtual bool PhysicsAgent => false;
         
         /// <summary>
-        /// The maximum move speed of the agent.
+        /// The maximum move speed of the agent in units per second.
         /// </summary>
-        public float Speed
+        public float MoveSpeed
         {
-            get => speed;
-            set => speed = Mathf.Max(value, 0);
+            get => moveSpeed;
+            set => moveSpeed = Mathf.Max(value, 0);
         }
         
         /// <summary>
-        /// The maximum move speed of the agent.
+        /// The maximum move speed of the agent in units per second.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum move speed of the agents.")]
+        [Tooltip("The maximum move speed of the agent in units per second.")]
 #endif
         [Min(0)]
         [SerializeField]
-        private float speed = 10f;
+        private float moveSpeed = 10f;
         
         /// <summary>
-        /// The maximum look speed of the agent.
+        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
+        /// </summary>
+        public float MoveAcceleration
+        {
+            get => moveAcceleration;
+            set => moveAcceleration = Mathf.Max(value, 0);
+        }
+        
+        /// <summary>
+        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float moveAcceleration;
+        
+        /// <summary>
+        /// The maximum look speed of the agent in degrees per second.
         /// </summary>
         public float LookSpeed
         {
@@ -50,10 +69,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The maximum look speed of the agent.
+        /// The maximum look speed of the agent in degrees per second.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum look speed of the agents.")]
+        [Tooltip("The maximum look speed of the agent in degrees per second.")]
 #endif
         [Min(0)]
         [SerializeField]
@@ -307,6 +326,9 @@ namespace KaijuSolutions.Agents
                 weight += _movements[i].Weight;
             }
             
+            // If not using acceleration, have everything move as quick as possible to be clamped later.
+            float acceleration = moveAcceleration > 0 ? moveAcceleration : float.MaxValue;
+            
             // Go through all remaining movements again to perform them.
             foreach (KaijuMovement movement in _movements)
             {
@@ -314,6 +336,7 @@ namespace KaijuSolutions.Agents
                 velocity += movement.Move(delta) * (movement.Weight / weight);
             }
             
+            // TODO - Incorporate acceleration so we can only adjust by so much.
             Velocity += velocity;
         }
         
@@ -1135,7 +1158,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {Speed}";
+            return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {MoveSpeed}";
         }
         
         /// <summary>

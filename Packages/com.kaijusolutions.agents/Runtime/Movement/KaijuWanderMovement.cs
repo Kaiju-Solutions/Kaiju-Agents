@@ -165,7 +165,7 @@ namespace KaijuSolutions.Agents.Movement
             Target = Center + new Vector2(Mathf.Cos(angle) * _radius, Mathf.Sin(angle) * _radius);
             
             // Perform a seek towards the random target.
-            return (Target - position).normalized * Agent.Speed - Agent.Velocity;
+            return (Target - position).normalized * Agent.MoveSpeed - Agent.Velocity;
         }
 #if UNITY_EDITOR
         /// <summary>

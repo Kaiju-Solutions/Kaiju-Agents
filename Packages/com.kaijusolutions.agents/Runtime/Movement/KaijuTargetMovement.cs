@@ -250,7 +250,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         public override Vector2 Move(float delta)
         {
-            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.Speed, Target, delta) : Vector2.zero;
+            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.MoveSpeed, Target, delta) : Vector2.zero;
         }
         
         /// <summary>
