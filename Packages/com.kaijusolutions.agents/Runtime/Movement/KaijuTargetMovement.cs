@@ -248,11 +248,13 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="velocity">The velocity of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move(float delta)
+        public override Vector2 Move(Vector2 position, Vector2 velocity, float delta)
         {
-            return Agent ? Calculate(AgentPosition, Agent.Velocity, Agent.MoveSpeed, Target, delta) : Vector2.zero;
+            return Agent ? Calculate(position, velocity, Agent.MoveSpeed, Target, delta) : Vector2.zero;
         }
         
         /// <summary>

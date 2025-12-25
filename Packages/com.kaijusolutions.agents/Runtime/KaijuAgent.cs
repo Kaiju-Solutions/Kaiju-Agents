@@ -332,17 +332,20 @@ namespace KaijuSolutions.Agents
             // If there is no movement, come to a stop.
             if (_movements.Count < 1)
             {
-
+                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
+                return;
             }
             
+            Vector2 position = Position;
             bool active = false;
             
             // Go through all remaining movements again to perform them.
             foreach (KaijuMovement movement in _movements)
             {
                 // Weight the movement.
-                velocity += movement.Move(delta) * (movement.Weight / weight);
-
+                velocity += movement.Move(position, Velocity, delta) * (movement.Weight / weight);
+                
+                // See if calculations have been made.
                 if (!active)
                 {
                     active = movement.Performed;

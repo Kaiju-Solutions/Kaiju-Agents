@@ -132,14 +132,14 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get the movement.
         /// </summary>
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="velocity">The velocity of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move(float delta)
+        public override Vector2 Move(Vector2 position, Vector2 velocity, float delta)
         {
-            Vector2 position = Agent;
-            
             // Get the center of the circle.
-            Center = Agent.Velocity.normalized * _distance + position;
+            Center = velocity.normalized * _distance + position;
             
             // Get a random angle in Radians (0 to 2PI).
             float angle = Random.Range(0f, Mathf.PI * 2);
@@ -148,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
             Target = Center + new Vector2(Mathf.Cos(angle) * _radius, Mathf.Sin(angle) * _radius);
             
             // Perform a seek towards the random target.
-            return (Target - position).normalized * Agent.MoveSpeed - Agent.Velocity;
+            return (Target - position).normalized * Agent.MoveSpeed - velocity;
         }
 #if UNITY_EDITOR
         /// <summary>
