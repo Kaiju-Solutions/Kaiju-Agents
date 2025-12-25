@@ -332,15 +332,28 @@ namespace KaijuSolutions.Agents
             // If there is no movement, come to a stop.
             if (_movements.Count < 1)
             {
-                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
-                return;
+
             }
+            
+            bool active = false;
             
             // Go through all remaining movements again to perform them.
             foreach (KaijuMovement movement in _movements)
             {
                 // Weight the movement.
                 velocity += movement.Move(delta) * (movement.Weight / weight);
+
+                if (!active)
+                {
+                    active = movement.Performed;
+                }
+            }
+            
+            // If the agent was not active with any movements, come to a stop.
+            if (!active)
+            {
+                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
+                return;
             }
             
             // Incorporate acceleration so we can only adjust by so much.
@@ -1145,6 +1158,25 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuWanderMovement movement = KaijuWanderMovement.Get(this, distance, radius, weight);
+            _movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Separate.
+        /// </summary>
+        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="collection">What types of agents to avoid.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public KaijuSeparationMovement Separate(float distance = float.MaxValue, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, collection, weight);
             _movements.Add(movement);
             return movement;
         }

@@ -65,7 +65,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a seek movement for the agent.</returns>
+        /// <returns>Get a wander movement for the agent.</returns>
         public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = 1)
         {
             KaijuWanderMovement movement = KaijuMovementManager.Get<KaijuWanderMovement>();

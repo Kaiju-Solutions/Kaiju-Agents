@@ -101,6 +101,11 @@ namespace KaijuSolutions.Agents.Movement
         protected virtual void Setup() { }
         
         /// <summary>
+        /// If movement was actually performed.
+        /// </summary>
+        public virtual bool Performed => true;
+        
+        /// <summary>
         /// Get the movement.
         /// </summary>
         /// <param name="delta">The time step.</param>

@@ -5,9 +5,7 @@ public class Target : MonoBehaviour
 {
     public KaijuAgent agent;
     
-    public MoveType type = MoveType.None;
-
-    public bool wander;
+    public MoveType type = MoveType.Seek;
     
     private void Awake()
     {
@@ -18,6 +16,7 @@ public class Target : MonoBehaviour
             switch (type)
             {
                 case MoveType.Seek:
+                default:
                     agent.Seek(this, clear: false);
                     break;
                 case MoveType.Pursue:
@@ -29,14 +28,12 @@ public class Target : MonoBehaviour
                 case MoveType.Evade:
                     agent.Evade(this, clear: false);
                     break;
-                case MoveType.None:
-                default:
+                case MoveType.Wander:
+                    agent.Wander(clear: false);
                     break;
-            }
-            
-            if (wander)
-            {
-                agent.Wander(clear: false);
+                case MoveType.Separate:
+                    agent.Separate(clear: false);
+                    break;
             }
         }
         
@@ -53,10 +50,11 @@ public class Target : MonoBehaviour
     
     public enum MoveType
     {
-        None,
         Seek,
         Pursue,
         Flee,
-        Evade
+        Evade,
+        Wander,
+        Separate
     }
 }

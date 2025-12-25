@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a seek movement for the agent.</returns>
+        /// <returns>Get an evade movement for the agent.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = float.MaxValue, float weight = 1)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -62,7 +62,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a seek movement for the agent.</returns>
+        /// <returns>Get an evade movement for the agent.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = float.MaxValue, float weight = 1)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -82,7 +82,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a seek movement for the agent.</returns>
+        /// <returns>Get an evade movement for the agent.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = float.MaxValue, float weight = 1)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -102,7 +102,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a seek movement for the agent.</returns>
+        /// <returns>Get an evade movement for the agent.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = float.MaxValue, float weight = 1)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
