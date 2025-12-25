@@ -506,75 +506,146 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get the distance to a vector.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="position">The vector.</param>
-        /// <returns>The distance to the vector.</returns>
-        public float Distance(Vector2 position)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance(Vector2 target)
         {
             Vector3 a = transform.position;
-            return Vector2.Distance(new(a.x, a.z), position);
+            return Vector2.Distance(new(a.x, a.z), target);
         }
         
         /// <summary>
-        /// Get the distance to a vector.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="position">The vector.</param>
-        /// <returns>The distance to the vector.</returns>
-        public float Distance(Vector3 position)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance(Vector3 target)
         {
-            return Distance(new Vector2(position.x, position.z));
+            return Distance(new Vector2(target.x, target.z));
         }
         
         /// <summary>
-        /// Get the distance to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</returns>
-        public float Distance([NotNull] GameObject o)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance([NotNull] GameObject target)
         {
-            return Distance(o.transform.position);
+            return Distance(target.transform.position);
         }
         
         /// <summary>
-        /// Get the distance to a component.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="c">The component.</param>
-        /// <returns>The distance to the component.</returns>
-        public float Distance([NotNull] Component c)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance([NotNull] Component target)
         {
-            return Distance(c.transform.position);
+            return Distance(target.transform.position);
         }
         
         /// <summary>
-        /// Get the distance to a vector.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="position">The vector.</param>
-        /// <returns>The distance to the vector.</returns>
-        public float Distance3(Vector3 position)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance3(Vector3 target)
         {
             Vector3 a = transform.position;
-            return Vector3.Distance(a, position);
+            return Vector3.Distance(a, target);
         }
         
         /// <summary>
-        /// Get the distance to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The distance to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see></returns>
-        public float Distance3([NotNull] GameObject o)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance3([NotNull] GameObject target)
         {
-            return Distance3(o.transform.position);
+            return Distance3(target.transform.position);
         }
         
         /// <summary>
-        /// Get the distance to a component.
+        /// Get the distance to a target.
         /// </summary>
-        /// <param name="c">The component.</param>
-        /// <returns>The distance to the component.</returns>
-        public float Distance3([NotNull] Component c)
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance3([NotNull] Component target)
         {
-            return Distance3(c.transform.position);
+            return Distance3(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector2 Direction(Vector2 target)
+        {
+            Vector3 a = transform.position;
+            return new Vector2(a.x, a.z) - target;
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector2 Direction(Vector3 target)
+        {
+            return Direction(new Vector2(target.x, target.z));
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector2 Direction(GameObject target)
+        {
+            return Direction(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector2 Direction(Component target)
+        {
+            return Direction(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector3 Direction3(Vector3 target)
+        {
+            return transform.position - target;
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector3 Direction3(GameObject target)
+        {
+            return Direction3(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector3 Direction3(Component target)
+        {
+            return Direction3(target.transform.position);
         }
         
         /// <summary>
