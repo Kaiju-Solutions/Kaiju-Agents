@@ -326,9 +326,6 @@ namespace KaijuSolutions.Agents
                 weight += _movements[i].Weight;
             }
             
-            // If not using acceleration, have everything move as quick as possible to be clamped later.
-            float acceleration = moveAcceleration > 0 ? moveAcceleration : float.MaxValue;
-            
             // Go through all remaining movements again to perform them.
             foreach (KaijuMovement movement in _movements)
             {
@@ -336,8 +333,8 @@ namespace KaijuSolutions.Agents
                 velocity += movement.Move(delta) * (movement.Weight / weight);
             }
             
-            // TODO - Incorporate acceleration so we can only adjust by so much.
-            Velocity += velocity;
+            // Incorporate acceleration so we can only adjust by so much.
+            Velocity += moveAcceleration > 0 ? Vector2.ClampMagnitude(velocity, moveAcceleration* delta) : velocity;
         }
         
         /// <summary>

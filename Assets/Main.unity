@@ -425,7 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1fe3449474b4fa7bb17d68339ad72da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
-  speed: 10
+  moveSpeed: 10
+  moveAcceleration: 0
   lookSpeed: 0
   <AutoRotate>k__BackingField: 1
   identifiers: 
@@ -742,8 +743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 462820016}
-  type: 0
-  wander: 1
+  type: 1
+  wander: 0
 --- !u!1 &2061521143
 GameObject:
   m_ObjectHideFlags: 0
