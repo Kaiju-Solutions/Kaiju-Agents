@@ -2,7 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents
 {
     /// <summary>
@@ -1077,13 +1079,13 @@ namespace KaijuSolutions.Agents
             Vector3? v = LookVector3;
             if (moving || v.HasValue)
             {
-                Gizmos.color = KaijuAgentsManager.AgentColor;
+                Handles.color = KaijuAgentsManager.AgentColor;
             }
             
             // Draw the movement vector.
             if (moving)
             {
-                Gizmos.DrawLine(p, p + Velocity3.normalized);
+                Handles.DrawLine(p, p + Velocity3.normalized);
             }
             
             if (text)
@@ -1094,7 +1096,7 @@ namespace KaijuSolutions.Agents
             // Show where the agent is looking.
             if (v.HasValue)
             {
-                Gizmos.DrawLine(p, v.Value);
+                Handles.DrawLine(p, v.Value);
                 if (text)
                 {
                     KaijuAgentsManager.Label(v.Value, "Look", KaijuAgentsManager.AgentColor);

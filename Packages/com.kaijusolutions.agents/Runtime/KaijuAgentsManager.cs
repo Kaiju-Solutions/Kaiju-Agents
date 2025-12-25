@@ -161,12 +161,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The key for what color <see cref="KaijuAgent"/> gizmos should be.
+        /// The key for what color <see cref="KaijuAgent"/> visualizations should be.
         /// </summary>
         private const string AgentKey = "KAIJU_AGENTS_COLOR_AGENT";
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> gizmos should be.
+        /// What color <see cref="KaijuAgent"/> visualizations should be.
         /// </summary>
         public static Color AgentColor
         {
@@ -188,7 +188,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> gizmos should be.
+        /// What color <see cref="KaijuAgent"/> visualizations should be.
         /// </summary>
         private static Color? _agentColor;
         
@@ -519,17 +519,17 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            KaijuMovementManager.GizmosTextMode mode = KaijuMovementManager.GizmosText;
+            KaijuMovementManager.VisualizationsTextMode mode = KaijuMovementManager.VisualizationsText;
             
-            if (!KaijuMovementManager.GizmosAll)
+            if (!KaijuMovementManager.VisualizationsActive)
             {
-                bool text = mode is KaijuMovementManager.GizmosTextMode.All or KaijuMovementManager.GizmosTextMode.Selected;
+                bool text = mode is KaijuMovementManager.VisualizationsTextMode.All or KaijuMovementManager.VisualizationsTextMode.Selected;
                 Visualize(_selectedAgents, text, text);
                 return;
             }
             
-            bool all = mode is KaijuMovementManager.GizmosTextMode.All;
-            Visualize(AllAgents, all, all || mode is KaijuMovementManager.GizmosTextMode.Selected);
+            bool all = mode is KaijuMovementManager.VisualizationsTextMode.All;
+            Visualize(AllAgents, all, all || mode is KaijuMovementManager.VisualizationsTextMode.Selected);
         }
         
         /// <summary>

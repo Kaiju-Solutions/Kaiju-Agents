@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using UnityEditor;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
@@ -135,7 +136,7 @@ namespace KaijuSolutions.Agents.Movement
         }
 #if UNITY_EDITOR
         /// <summary>
-        /// Allow for visualizing with <see href="https://docs.unity3d.com/ScriptReference/Gizmos.html">gizmos</see>.
+        /// Allow for visualizing in the editor.
         /// </summary>
         /// <param name="text">If text elements should be visualized or not.</param>
         public void Visualize(bool text = true)
@@ -146,7 +147,7 @@ namespace KaijuSolutions.Agents.Movement
                 return;
             }
             
-            Gizmos.color = VisualizationColor();
+            Handles.color = VisualizationColor();
             RenderVisualizations(text);
         }
         

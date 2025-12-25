@@ -242,89 +242,89 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The key for if all gizmos should be rendered or only the selected agent.
+        /// The key for if all visualizations should be rendered or only the selected agent.
         /// </summary>
-        private const string GizmosAllKey = "KAIJU_AGENTS_GIZMOS_ALL";
+        private const string VisualizationsActiveKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
         
         /// <summary>
-        /// Handle if all gizmos should be rendered or only the selected agent.
+        /// Handle if all visualizations should be rendered or only the selected agent.
         /// </summary>
-        public static bool GizmosAll
+        public static bool VisualizationsActive
         {
             get
             {
-                if (_gizmosAll.HasValue)
+                if (_visualizationsAll.HasValue)
                 {
-                    return _gizmosAll.Value;
+                    return _visualizationsAll.Value;
                 }
                 
-                _gizmosAll = EditorPrefs.GetBool(GizmosAllKey, true);
-                return _gizmosAll.Value;
+                _visualizationsAll = EditorPrefs.GetBool(VisualizationsActiveKey, true);
+                return _visualizationsAll.Value;
             }
             set
             {
-                _gizmosAll = value;
-                EditorPrefs.SetBool(GizmosAllKey, _gizmosAll.Value);
+                _visualizationsAll = value;
+                EditorPrefs.SetBool(VisualizationsActiveKey, _visualizationsAll.Value);
             }
         }
         
         /// <summary>
-        /// Handle if all gizmos should be rendered or only the selected agent.
+        /// Handle if all visualizations should be rendered or only the selected agent.
         /// </summary>
-        private static bool? _gizmosAll;
+        private static bool? _visualizationsAll;
         
         /// <summary>
-        /// Reset if all gizmos should be rendered or only the selected agent.
+        /// Reset if all visualizations should be rendered or only the selected agent.
         /// </summary>
-        public static void ResetGizmosAll()
+        public static void ResetVisualizationsActive()
         {
-            EditorPrefs.DeleteKey(GizmosAllKey);
+            EditorPrefs.DeleteKey(VisualizationsActiveKey);
         }
         
         /// <summary>
-        /// The key for how text should be displayed with gizmos.
+        /// The key for how text should be displayed with visualizations.
         /// </summary>
-        private const string GizmosTextKey = "KAIJU_AGENTS_GIZMOS_TEXT";
+        private const string VisualizationsTextKey = "KAIJU_AGENTS_VISUALIZATIONS_TEXT";
         
         /// <summary>
-        ///  How text should be displayed with gizmos.
+        ///  How text should be displayed with visualizations.
         /// </summary>
-        public static GizmosTextMode GizmosText
+        public static VisualizationsTextMode VisualizationsText
         {
             get
             {
-                if (_gizmosText.HasValue)
+                if (_visualizationsText.HasValue)
                 {
-                    return _gizmosText.Value;
+                    return _visualizationsText.Value;
                 }
                 
-                _gizmosText = (GizmosTextMode)EditorPrefs.GetInt(GizmosTextKey, (int)GizmosTextMode.All);
-                return _gizmosText.Value;
+                _visualizationsText = (VisualizationsTextMode)EditorPrefs.GetInt(VisualizationsTextKey, (int)VisualizationsTextMode.All);
+                return _visualizationsText.Value;
             }
             set
             {
-                _gizmosText = value;
-                EditorPrefs.SetInt(GizmosTextKey, (int)_gizmosText.Value);
+                _visualizationsText = value;
+                EditorPrefs.SetInt(VisualizationsTextKey, (int)_visualizationsText.Value);
             }
         }
         
         /// <summary>
-        /// How text should be displayed with gizmos.
+        /// How text should be displayed with visualizations.
         /// </summary>
-        private static GizmosTextMode? _gizmosText;
+        private static VisualizationsTextMode? _visualizationsText;
         
         /// <summary>
-        /// Reset how text should be displayed with gizmos.
+        /// Reset how text should be displayed with visualizations.
         /// </summary>
-        public static void ResetGizmosText()
+        public static void ResetVisualizationsText()
         {
-            EditorPrefs.DeleteKey(GizmosTextKey);
+            EditorPrefs.DeleteKey(VisualizationsTextKey);
         }
         
         /// <summary>
-        /// Gizmos text modes.
+        /// Visualizations text modes.
         /// </summary>
-        public enum GizmosTextMode
+        public enum VisualizationsTextMode
         {
             /// <summary>
             /// Display all text fields.
@@ -350,8 +350,8 @@ namespace KaijuSolutions.Agents.Movement
         {
             Movements.Clear();
             SyncColors();
-            _ = GizmosAll;
-            _ = GizmosText;
+            _ = VisualizationsActive;
+            _ = VisualizationsText;
         }
 #endif
         /// <summary>

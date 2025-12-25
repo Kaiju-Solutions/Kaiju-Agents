@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -58,17 +57,7 @@ namespace KaijuSolutions.Agents.Movement
         /// The target calculated along the circle.
         /// </summary>
         public Vector3 Target3 =>  new(Target.x, 0, Target.y);
-#if UNITY_EDITOR
-        /// <summary>
-        /// Points to render.
-        /// </summary>
-        private readonly Vector3[] _rendering = new Vector3[6];
         
-        /// <summary>
-        /// The rendering index point.
-        /// </summary>
-        private int _index;
-#endif
         /// <summary>
         /// Get a wander movement.
         /// </summary>
@@ -128,9 +117,6 @@ namespace KaijuSolutions.Agents.Movement
             Vector2 a = Agent;
             Center = a;
             Target = a;
-#if UNITY_EDITOR
-            _index = 0;
-#endif
         }
         
         /// <summary>
@@ -141,9 +127,6 @@ namespace KaijuSolutions.Agents.Movement
             base.Reset();
             Center = Vector2.zero;
             Target = Vector2.zero;
-#if UNITY_EDITOR
-            _index = 0;
-#endif
         }
         
         /// <summary>
@@ -185,27 +168,21 @@ namespace KaijuSolutions.Agents.Movement
             Vector3 c = Center3;
             Vector3 t = Target3;
             
-            // Reset the index.
-            _index = 0;
-            
             // Don't draw points that are equal to each other.
             if (a != c)
             {
-                Insert(a, c);
+                Handles.DrawLine(a, c);
             }
             
             if (a != t)
             {
-                Insert(a, t);
+                Handles.DrawLine(a, t);
             }
             
             if (c != t)
             {
-                Insert(c, t);
+                Handles.DrawLine(c, t);
             }
-            
-            // Draw the points.
-            Gizmos.DrawLineList(new ArraySegment<Vector3>(_rendering, 0, _index));
             
             // Draw the circle itself.
             Color color = VisualizationColor();
@@ -220,26 +197,6 @@ namespace KaijuSolutions.Agents.Movement
             {
                 KaijuAgentsManager.Label(t, "Wander", color);
             }
-        }
-        
-        /// <summary>
-        /// Insert a line into the rendering array.
-        /// </summary>
-        /// <param name="a">The first point.</param>
-        /// <param name="b">The second point.</param>
-        private void Insert(Vector3 a, Vector3 b)
-        {
-            Insert(a);
-            Insert(b);
-        }
-        
-        /// <summary>
-        /// Insert a point into the rendering array.
-        /// </summary>
-        /// <param name="point">The point to insert.</param>
-        private void Insert(Vector3 point)
-        {
-            _rendering[_index++] = point;
         }
 #endif
         /// <summary>

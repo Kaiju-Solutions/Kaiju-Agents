@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -218,7 +220,7 @@ namespace KaijuSolutions.Agents.Movement
             bool still = t == f;
             if (still)
             {
-                Gizmos.DrawLine(a, t);
+                Handles.DrawLine(a, t);
             }
             else
             {
@@ -232,7 +234,7 @@ namespace KaijuSolutions.Agents.Movement
                 _rendering[4] = t;
                 _rendering[5] = f;
                 
-                Gizmos.DrawLineList(_rendering);
+                Handles.DrawLines(_rendering);
             }
             
             RenderTargetVisualizationText("Evade", t, text);

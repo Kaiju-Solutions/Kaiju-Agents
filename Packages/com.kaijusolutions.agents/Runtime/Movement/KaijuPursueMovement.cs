@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using UnityEditor;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
@@ -218,7 +219,7 @@ namespace KaijuSolutions.Agents.Movement
             bool still = t == f;
             if (still)
             {
-                Gizmos.DrawLine(a, t);
+                Handles.DrawLine(a, t);
             }
             else
             {
@@ -231,8 +232,7 @@ namespace KaijuSolutions.Agents.Movement
                 // Target to forecast.
                 _rendering[4] = t;
                 _rendering[5] = f;
-                
-                Gizmos.DrawLineList(_rendering);
+                Handles.DrawLines(_rendering);
             }
             
             RenderTargetVisualizationText("Pursue", t, text);

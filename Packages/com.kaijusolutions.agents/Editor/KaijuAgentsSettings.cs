@@ -38,8 +38,8 @@ internal static class KaijuAgentsSettings
                 
                 // Add visualization configurations.
                 container.Add(Header("Visualizations"));
-                container.Add(ToggleSetting("Render All Gizmos", () => KaijuMovementManager.GizmosAll, value => KaijuMovementManager.GizmosAll = value, KaijuMovementManager.ResetGizmosAll, refreshActions, "If all gizmos should be rendered or only the selected agent."));
-                container.Add(EnumSetting("Gizmos Text Mode", () => KaijuMovementManager.GizmosText, value => KaijuMovementManager.GizmosText = value, KaijuMovementManager.ResetGizmosText, refreshActions, "How text should be displayed with gizmos."));
+                container.Add(ToggleSetting("Active", () => KaijuMovementManager.VisualizationsActive, value => KaijuMovementManager.VisualizationsActive = value, KaijuMovementManager.ResetVisualizationsActive, refreshActions, "If all visualizations should be rendered or only the selected agent."));
+                container.Add(EnumSetting("Text Mode", () => KaijuMovementManager.VisualizationsText, value => KaijuMovementManager.VisualizationsText = value, KaijuMovementManager.ResetVisualizationsActive, refreshActions, "How text should be displayed with visualizations."));
                 container.Add(FloatSetting("Label Offset", () => KaijuAgentsManager.LabelOffset, value => KaijuAgentsManager.LabelOffset = value, KaijuAgentsManager.ResetLabelOffset, refreshActions, "How much to offset labels in the scene view."));
                 
                 // Add options for all colors
