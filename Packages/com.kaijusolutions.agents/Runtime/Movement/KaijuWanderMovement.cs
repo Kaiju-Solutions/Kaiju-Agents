@@ -188,7 +188,6 @@ namespace KaijuSolutions.Agents.Movement
             Color color = VisualizationColor();
             if (_radius > 0)
             {
-                Handles.color = color;
                 Handles.DrawWireDisc(c, Vector3.up, _radius, 0);
             }
             

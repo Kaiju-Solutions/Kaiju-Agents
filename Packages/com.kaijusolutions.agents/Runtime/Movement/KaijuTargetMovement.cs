@@ -294,7 +294,8 @@ namespace KaijuSolutions.Agents.Movement
             Vector3 a = Agent;
             Vector3 t = Target3;
             Handles.DrawLine(a, t);
-            RenderTargetVisualizationText(label, t);
+            RenderDistance(t);
+            RenderTargetVisualizationText(label, t, text);
         }
         
         /// <summary>
@@ -308,6 +309,19 @@ namespace KaijuSolutions.Agents.Movement
             if (text)
             {
                 KaijuAgentsManager.Label(t, label, VisualizationColor());
+            }
+        }
+        
+        /// <summary>
+        /// Render the distance visualization.
+        /// </summary>
+        /// <param name="target">The target position.</param>
+        protected void RenderDistance(Vector3 target)
+        {
+            // If there is a completion distance, render it.
+            if (Distance is > 0 and < float.MaxValue)
+            {
+                Handles.DrawWireDisc(target, Vector3.up, Distance, 0);
             }
         }
 #endif

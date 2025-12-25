@@ -237,6 +237,7 @@ namespace KaijuSolutions.Agents.Movement
                 Handles.DrawLines(_rendering);
             }
             
+            RenderDistance(t);
             RenderTargetVisualizationText("Evade", t, text);
         }
 #endif
