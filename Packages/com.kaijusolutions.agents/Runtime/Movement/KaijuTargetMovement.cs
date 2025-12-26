@@ -252,9 +252,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="velocity">The velocity of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move(Vector2 position, Vector2 velocity, float delta)
+        public override Vector2 Move(Vector2 position, float delta)
         {
-            return Agent ? Calculate(position, velocity, Agent.MoveSpeed, Target, delta) : Vector2.zero;
+            return Agent ? Calculate(position, Agent.MoveSpeed, Target, delta) : Vector2.zero;
         }
         
         /// <summary>
@@ -270,12 +270,11 @@ namespace KaijuSolutions.Agents.Movement
         /// Calculate the movement.
         /// </summary>
         /// <param name="position">The agent's current position.</param>
-        /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected abstract Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta);
+        protected abstract Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta);
 #if UNITY_EDITOR
         /// <summary>
         /// Render the visualization of the movement.

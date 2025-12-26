@@ -311,8 +311,7 @@ namespace KaijuSolutions.Agents
             // Start with no motion this frame.
             Vector2 velocity = Vector2.zero;
             
-            // At first there is no weight.
-            float weight = 0;
+            Vector2 position = Position;
             
             // Go through all assigned movements.
             for (int i = 0; i < _movements.Count; i++)
@@ -325,48 +324,18 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                // Otherwise, add up its weighting.
-                weight += _movements[i].Weight;
-            }
-            
-            // If there is no movement, come to a stop.
-            if (_movements.Count < 1)
-            {
-                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
-                return;
-            }
-            
-            Vector2 position = Position;
-            bool active = false;
-            
-            // Go through all remaining movements again to perform them.
-            foreach (KaijuMovement movement in _movements)
-            {
                 // Weight the movement.
-                velocity += movement.Move(position, Velocity, delta) * (movement.Weight / weight);
-                
-                // See if calculations have been made.
-                if (!active)
-                {
-                    active = movement.Performed;
-                }
+                velocity += _movements[i].Move(position, delta) * _movements[i].Weight;
             }
             
-            // If the agent was not active with any movements, come to a stop.
-            if (!active)
+            // Clamp the movement velocity.
+            if (velocity.sqrMagnitude > moveSpeed * moveSpeed)
             {
-                Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, Vector2.zero, moveAcceleration * delta) : Vector2.zero;
-                return;
+                velocity = velocity.normalized * moveSpeed;
             }
             
-            // Incorporate acceleration so we can only adjust by so much.
-            Velocity += moveAcceleration > 0 ? Vector2.ClampMagnitude(velocity, moveAcceleration * delta) : velocity;
-            
-            // Ensure we do not exceed the maximum speed.
-            if (Velocity.magnitude > moveSpeed)
-            {
-                Velocity = Velocity.normalized * moveSpeed;
-            }
+            // Set the updated velocity.
+            Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, velocity, moveAcceleration * delta) : velocity;
         }
         
         /// <summary>

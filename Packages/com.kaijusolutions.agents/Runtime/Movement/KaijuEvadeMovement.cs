@@ -175,12 +175,11 @@ namespace KaijuSolutions.Agents.Movement
         /// Calculate the movement.
         /// </summary>
         /// <param name="position">The agent's current position.</param>
-        /// <param name="velocity">The agent's current velocity.</param>
         /// <param name="speed">The agent's maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        protected override Vector2 Calculate(Vector2 position, Vector2 velocity, float speed, Vector2 target, float delta)
+        protected override Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta)
         {
             // Calculate target values.
             Vector2 targetVelocity = Velocity(target, Previous, delta);
@@ -190,7 +189,7 @@ namespace KaijuSolutions.Agents.Movement
             Future = target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed));
             
             // Flee predicting the target.
-            Vector2 move = base.Calculate(position, velocity, speed, Future, delta);
+            Vector2 move = base.Calculate(position, speed, Future, delta);
             
             // Update the previous position.
             Previous = target;

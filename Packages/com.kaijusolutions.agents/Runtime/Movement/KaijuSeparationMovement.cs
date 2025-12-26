@@ -143,16 +143,6 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// If movement was actually performed.
-        /// </summary>
-        public override bool Performed => _performed;
-        
-        /// <summary>
-        /// If any avoidance we performed this update.
-        /// </summary>
-        private bool _performed;
-        
-        /// <summary>
         /// Get a separation movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
@@ -226,13 +216,10 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the movement.
         /// </summary>
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
-        /// <param name="velocity">The velocity of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
-        public override Vector2 Move(Vector2 position, Vector2 velocity, float delta)
+        public override Vector2 Move(Vector2 position, float delta)
         {
-            // Start with indicating no movement has been performed.
-            _performed = false;
             Vector2 movement = Vector2.zero;
             _separating.Clear();
             
@@ -286,7 +273,6 @@ namespace KaijuSolutions.Agents.Movement
                 
                 // Add the movement, and indicate there has been a separation performed.
                 movement -= direction.normalized * Mathf.Min(strength, Agent.MoveSpeed);
-                _performed = true;
                 _separating.Add(agent);
             }
             
