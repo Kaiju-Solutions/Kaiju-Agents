@@ -84,6 +84,16 @@ namespace KaijuSolutions.Agents.Movement
         private readonly List<RaycastHit> _hits = new(3);
         
         /// <summary>
+        /// All points which were checked to hit but misses.
+        /// </summary>
+        public IReadOnlyList<Vector3> Misses => _misses;
+        
+        /// <summary>
+        /// All points which were checked to hit but misses.
+        /// </summary>
+        private readonly List<Vector3> _misses = new(3);
+        
+        /// <summary>
         /// Get an obstacle avoidance movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
@@ -147,6 +157,8 @@ namespace KaijuSolutions.Agents.Movement
             Height = height;
             Horizontal = horizontal;
             Mask = mask;
+            _hits.Clear();
+            _misses.Clear();
         }
         
         /// <summary>
@@ -163,6 +175,7 @@ namespace KaijuSolutions.Agents.Movement
             Horizontal = 0;
             Mask = null;
             _hits.Clear();
+            _misses.Clear();
         }
         
         /// <summary>
@@ -174,6 +187,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             _hits.Clear();
+            _misses.Clear();
             
             // Get the starting ray position.
             Vector3 height = new(0, Height, 0);
@@ -230,9 +244,14 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance of the ray.</param>
         private void Raycast(Vector3 start, Vector3 direction, float distance)
         {
-            if (Mask.HasValue ? Physics.Raycast(start, direction, out RaycastHit hit, distance, Mask.Value) : Physics.Raycast(start, direction, out hit, distance))
+            Vector3 end = direction.normalized * distance + start;
+            if (Mask.HasValue ? Physics.Linecast(start, end, out RaycastHit hit, Mask.Value) : Physics.Linecast(start, end, out hit))
             {
                 _hits.Add(hit);
+            }
+            else
+            {
+                _misses.Add(end);
             }
         }
 #if UNITY_EDITOR
@@ -252,6 +271,11 @@ namespace KaijuSolutions.Agents.Movement
             foreach (RaycastHit hit in _hits)
             {
                 Handles.DrawLine(position, hit.point);
+            }
+            
+            foreach (Vector3 p in _misses)
+            {
+                Handles.DrawLine(position, p);
             }
         }
 #endif
