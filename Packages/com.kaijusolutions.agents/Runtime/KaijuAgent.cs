@@ -1374,7 +1374,7 @@ namespace KaijuSolutions.Agents
         /// <param name="collection">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuSeparationMovement Separate(float distance = 10, float coefficient = 0, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
+        public KaijuSeparationMovement Separate(float distance = 10, float coefficient = 0, ICollection<uint> collection = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {

@@ -62,7 +62,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Set the identifier of agents to interact with.
         /// </summary>
         /// <param name="identifiers">The identifiers to set.</param>
-        public void SetIdentifiers([NotNull] IEnumerable<uint> identifiers)
+        public void SetIdentifiers([NotNull] ICollection<uint> identifiers)
         {
             ClearIdentifiers();
             AddIdentifiers(identifiers);
@@ -83,7 +83,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="identifiers">The identifiers to add.</param>
         /// <returns>If any of the identifiers were added.</returns>
-        public bool AddIdentifiers([NotNull] IEnumerable<uint> identifiers)
+        public bool AddIdentifiers([NotNull] ICollection<uint> identifiers)
         {
             bool added = false;
             
@@ -113,7 +113,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="identifiers">The identifiers to remove.</param>
         /// <returns>If any of the identifiers were removed.</returns>
-        public bool RemoveIdentifiers([NotNull] IEnumerable<uint> identifiers)
+        public bool RemoveIdentifiers([NotNull] ICollection<uint> identifiers)
         {
             bool removed = false;
             
@@ -136,7 +136,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get an area movement for the agent.</returns>
-        public KaijuAreaMovement(KaijuAgent agent, float distance = 10, IEnumerable<uint> identifiers = null, float weight = 1) : base(agent, weight)
+        public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1) : base(agent, weight)
         {
             Initialize(agent, distance, identifiers, weight);
         }
@@ -148,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance to avoid other agents from.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        protected void Initialize(KaijuAgent agent, float distance = 10, IEnumerable<uint> identifiers = null, float weight = 1)
+        protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1)
         {
             base.Initialize(agent, weight);
             Distance = distance;
