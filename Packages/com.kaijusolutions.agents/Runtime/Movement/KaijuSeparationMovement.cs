@@ -9,22 +9,8 @@ namespace KaijuSolutions.Agents.Movement
     /// <summary>
     /// Separation steering behaviour.
     /// </summary>
-    public class KaijuSeparationMovement : KaijuMovement
+    public class KaijuSeparationMovement : KaijuAreaMovement
     {
-        /// <summary>
-        /// The distance to avoid other agents from.
-        /// </summary>
-        public float Distance
-        {
-            get => _distance;
-            set => _distance = Mathf.Max(value, float.Epsilon);
-        }
-        
-        /// <summary>
-        /// The distance to avoid other agents from.
-        /// </summary>
-        private float _distance = float.MaxValue;
-        
         /// <summary>
         /// The coefficient to use for inverse square law separation. Zero will use linear separation.
         /// </summary>
@@ -38,109 +24,6 @@ namespace KaijuSolutions.Agents.Movement
         /// The coefficient to use for inverse square law separation. Zero will use linear separation.
         /// </summary>
         private float _coefficient = float.MaxValue;
-        
-        /// <summary>
-        /// What types of agents to avoid.
-        /// </summary>
-        public readonly HashSet<uint> Identifiers = new();
-        
-        /// <summary>
-        /// The agents currently being separated from.
-        /// </summary>
-        public IReadOnlyCollection<KaijuAgent> Separating => _separating;
-        
-        /// <summary>
-        /// The agents currently being separated from.
-        /// </summary>
-        private readonly HashSet<KaijuAgent> _separating = new();
-        
-        /// <summary>
-        /// Clear all identifiers of agents to separate from.
-        /// </summary>
-        public void ClearIdentifiers()
-        {
-            Identifiers.Clear();
-        }
-        
-        /// <summary>
-        /// Set the identifier of agents to separate from.
-        /// </summary>
-        /// <param name="identifier">The identifier to set.</param>
-        public void SetIdentifier(uint identifier)
-        {
-            ClearIdentifiers();
-            AddIdentifier(identifier);
-        }
-        
-        /// <summary>
-        /// Set the identifier of agents to separate from.
-        /// </summary>
-        /// <param name="identifiers">The identifiers to set.</param>
-        public void SetIdentifiers([NotNull] IEnumerable<uint> identifiers)
-        {
-            ClearIdentifiers();
-            AddIdentifiers(identifiers);
-        }
-        
-        /// <summary>
-        /// Add an identifier for agents to separate from.
-        /// </summary>
-        /// <param name="identifier">The identifier to add.</param>
-        /// <returns>If the identifier was added.</returns>
-        public bool AddIdentifier(uint identifier)
-        {
-            return Identifiers.Add(identifier);
-        }
-        
-        /// <summary>
-        /// Add identifiers for agents to separate from.
-        /// </summary>
-        /// <param name="identifiers">The identifiers to add.</param>
-        /// <returns>If any of the identifiers were added.</returns>
-        public bool AddIdentifiers([NotNull] IEnumerable<uint> identifiers)
-        {
-            bool added = false;
-            
-            foreach (uint identifier in identifiers)
-            {
-                if (AddIdentifier(identifier))
-                {
-                    added = true;
-                }
-            }
-            
-            return added;
-        }
-        
-        /// <summary>
-        /// Remove an identifier for agents to separate from.
-        /// </summary>
-        /// <param name="identifier">The identifier to remove.</param>
-        /// <returns>If the identifier was removed.</returns>
-        public bool RemoveIdentifier(uint identifier)
-        {
-            return Identifiers.Remove(identifier);
-        }
-        
-        /// <summary>
-        /// Remove identifiers for agents to separate from.
-        /// </summary>
-        /// <param name="identifiers">The identifiers to remove.</param>
-        /// <returns>If any of the identifiers were removed.</returns>
-        public bool RemoveIdentifiers([NotNull] IEnumerable<uint> identifiers)
-        {
-            bool removed = false;
-            
-            foreach (uint identifier in identifiers)
-            {
-                if (RemoveIdentifier(identifier))
-                {
-                    removed = true;
-                }
-            }
-            
-            return removed;
-        }
         
         /// <summary>
         /// Get a separation movement.
@@ -186,19 +69,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="weight">The weight of this movement.</param>
         private void Initialize(KaijuAgent agent, float distance = 10, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
         {
-            base.Initialize(agent, weight);
-            Distance = distance;
+            Initialize(agent, distance, identifiers, weight);
             Coefficient = coefficient;
-            Identifiers.Clear();
-            if (identifiers == null)
-            {
-                return;
-            }
-            
-            foreach (uint identifier in identifiers)
-            {
-                Identifiers.Add(identifier);
-            }
         }
         
         /// <summary>
@@ -207,9 +79,7 @@ namespace KaijuSolutions.Agents.Movement
         protected override void Reset()
         {
             base.Reset();
-            _distance = float.MaxValue;
             _coefficient = 0;
-            Identifiers.Clear();
         }
         
         /// <summary>
@@ -221,7 +91,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             Vector2 movement = Vector2.zero;
-            _separating.Clear();
+            Interacting.Clear();
             
             // Compare with all other agents.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
@@ -273,7 +143,7 @@ namespace KaijuSolutions.Agents.Movement
                 
                 // Add the movement, and indicate there has been a separation performed.
                 movement -= direction.normalized * Mathf.Min(strength, Agent.MoveSpeed);
-                _separating.Add(agent);
+                Interacting.Add(agent);
             }
             
             return movement;
@@ -290,13 +160,8 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void RenderVisualizations()
         {
-            Vector3 a = Agent;
-            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
-            foreach (KaijuAgent agent in _separating)
-            {
-                Vector3 b = agent;
-                Handles.DrawLine(a, b);
-            }
+            Handles.DrawWireDisc(Agent, Vector3.up, Distance, 0);
+            base.RenderVisualizations();
         }
 #endif
         /// <summary>
