@@ -49,17 +49,36 @@ namespace KaijuSolutions.Agents
         /// <returns>The material to use.</returns>
         public static Material GetMaterial(Color color)
         {
+#if UNITY_EDITOR
+            // When not playing in the editor
+            if (!Application.isPlaying)
+            {
+                // TODO - Look for any existing material assets with this color.
+                //  If one is found, use it. Otherwise, create and save the new material to the root of the assets folder.
+                return null;
+            }
+#endif
             // Return the cached one if it exists.
             if (Materials.TryGetValue(color, out Material material))
             {
                 return material;
             }
             
-            // Find the Standard Shader.
-            Shader standardShader = Shader.Find("Standard");
-            
-            // Create a new Material with the shader.
-            material = new(standardShader)
+            // Create a new material.
+            material = CreateMaterial(color);
+            Materials.Add(color, material);
+            return material;
+        }
+        
+        /// <summary>
+        /// Create a material.
+        /// </summary>
+        /// <param name="color">The color of the material.</param>
+        /// <returns>The created material.</returns>
+        private static Material CreateMaterial(Color color)
+        {
+            // Create a new material with the standard shader.
+            Material material = new(Shader.Find("Standard"))
             {
                 color = color
             };
@@ -68,6 +87,7 @@ namespace KaijuSolutions.Agents
             material.SetFloat(Mode, 0);
             material.SetFloat(Glossiness, 0);
             material.SetFloat(Metallic, 0);
+            material.name = $"Material {color.r} {color.g} {color.b} {color.a}";
             Materials.Add(color, material);
             return material;
         }
