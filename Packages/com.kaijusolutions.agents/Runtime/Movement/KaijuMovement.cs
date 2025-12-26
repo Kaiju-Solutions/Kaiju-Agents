@@ -145,8 +145,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Allow for visualizing in the editor.
         /// </summary>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        public void Visualize(bool text = true)
+        public void Visualize()
         {
             // Nothing to visualize if no agents.
             if (Done())
@@ -155,7 +154,7 @@ namespace KaijuSolutions.Agents.Movement
             }
             
             Handles.color = VisualizationColor();
-            RenderVisualizations(text);
+            RenderVisualizations();
         }
         
         /// <summary>
@@ -167,8 +166,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected virtual void RenderVisualizations(bool text = true) { }
+        protected virtual void RenderVisualizations() { }
 #endif
         /// <summary>
         /// Get a description of the object.

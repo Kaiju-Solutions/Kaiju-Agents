@@ -361,6 +361,12 @@ namespace KaijuSolutions.Agents
             
             // Incorporate acceleration so we can only adjust by so much.
             Velocity += moveAcceleration > 0 ? Vector2.ClampMagnitude(velocity, moveAcceleration * delta) : velocity;
+            
+            // Ensure we do not exceed the maximum speed.
+            if (Velocity.magnitude > moveSpeed)
+            {
+                Velocity = Velocity.normalized * moveSpeed;
+            }
         }
         
         /// <summary>
@@ -1399,7 +1405,7 @@ namespace KaijuSolutions.Agents
         /// <param name="collection">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuSeparationMovement Separate(float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
+        public KaijuSeparationMovement Separate(float distance = 10, float coefficient = 0, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1456,16 +1462,12 @@ namespace KaijuSolutions.Agents
             if (v.HasValue)
             {
                 Handles.DrawLine(p, v.Value);
-                if (text)
-                {
-                    KaijuAgentsManager.Label(v.Value, "Look", KaijuAgentsManager.AgentColor);
-                }
             }
             
             // Visualize all movements.
             foreach (KaijuMovement movement in _movements)
             {
-                movement.Visualize(text);
+                movement.Visualize();
             }
         }
 #endif

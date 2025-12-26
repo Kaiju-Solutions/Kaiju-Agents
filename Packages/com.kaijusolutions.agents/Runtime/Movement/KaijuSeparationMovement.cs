@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -159,7 +161,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a separation movement for the agent.</returns>
-        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
+        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
             if (movement == null)
@@ -179,7 +181,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuSeparationMovement(KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1) : base(agent, weight)
+        public KaijuSeparationMovement(KaijuAgent agent, float distance = 10, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1) : base(agent, weight)
         {
             Initialize(agent, distance, coefficient, identifiers, weight);
         }
@@ -192,7 +194,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        private void Initialize(KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
+        private void Initialize(KaijuAgent agent, float distance = 10, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
         {
             base.Initialize(agent, weight);
             Distance = distance;
@@ -234,17 +236,17 @@ namespace KaijuSolutions.Agents.Movement
             Vector2 movement = Vector2.zero;
             _separating.Clear();
             
-            // Cache the agent's position.
-            Vector2 a = Agent;
-            
             // Compare with all other agents.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
             {
-                // Get the other agent's position.
-                Vector2 target = agent;
+                // Ignore ourselves.
+                if (agent == Agent)
+                {
+                    continue;
+                }
                 
-                // Get the direction to the target from the agent.
-                Vector2 direction = target - a;
+                // Get the direction to the target agent from the current agent's position.
+                Vector2 direction = agent - position;
                 
                 // See if this is within our distance to consider.
                 float distance = direction.magnitude;
@@ -278,17 +280,38 @@ namespace KaijuSolutions.Agents.Movement
                 // Calculate the strength.
                 float strength = Coefficient > 0
                     // Inverse square law separation.
-                    ? Mathf.Min(Coefficient / (distance * distance), Agent.MoveSpeed)
+                    ? Coefficient / (distance * distance)
                     // Linear separation.
                     : Agent.MoveSpeed * (Distance - distance) / Distance;
                 
                 // Add the movement, and indicate there has been a separation performed.
-                movement += direction.normalized * strength;
+                movement -= direction.normalized * Mathf.Min(strength, Agent.MoveSpeed);
                 _performed = true;
                 _separating.Add(agent);
             }
             
             return movement;
         }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color VisualizationColor() => Color.violet; // TODO - Make a setting.
+        
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// </summary>
+        protected override void RenderVisualizations()
+        {
+            Vector3 a = Agent;
+            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
+            foreach (KaijuAgent agent in _separating)
+            {
+                Vector3 b = agent;
+                Handles.DrawLine(a, b);
+            }
+        }
+#endif
     }
 }

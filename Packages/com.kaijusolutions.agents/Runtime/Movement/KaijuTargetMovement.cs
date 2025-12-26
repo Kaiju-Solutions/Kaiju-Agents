@@ -280,38 +280,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected override void RenderVisualizations(bool text = true)
-        {
-            RenderTargetVisualization("Target", text);
-        }
-        
-        /// <summary>
-        /// Render the visualizations for this core target movement.
-        /// </summary>
-        /// <param name="label">The label to display.</param>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected void RenderTargetVisualization(string label, bool text = true)
+        protected override void RenderVisualizations()
         {
             Vector3 a = Agent;
             Vector3 t = Target3;
             Handles.DrawLine(a, t);
             RenderDistance(t);
-            RenderTargetVisualizationText(label, t, text);
-        }
-        
-        /// <summary>
-        /// Render the visualizations for this target movement.
-        /// </summary>
-        /// <param name="label">The label to display.</param>
-        /// <param name="t">The <see cref="Target3"/>'s position.</param>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected void RenderTargetVisualizationText(string label, Vector3 t, bool text = true)
-        {
-            if (text)
-            {
-                KaijuAgentsManager.Label(t, label, VisualizationColor());
-            }
         }
         
         /// <summary>

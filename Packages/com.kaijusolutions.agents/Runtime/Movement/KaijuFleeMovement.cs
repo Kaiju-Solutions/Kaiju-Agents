@@ -142,19 +142,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected override Color VisualizationColor()
-        {
-            return KaijuMovementManager.FleeColor;
-        }
-        
-        /// <summary>
-        /// Render the visualization of the movement.
-        /// </summary>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected override void RenderVisualizations(bool text = true)
-        {
-            RenderTargetVisualization("Flee", text);
-        }
+        protected override Color VisualizationColor() => KaijuMovementManager.FleeColor;
 #endif
         /// <summary>
         /// Get a description of the object.

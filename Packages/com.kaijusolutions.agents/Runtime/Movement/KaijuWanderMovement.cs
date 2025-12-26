@@ -160,8 +160,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Render the visualization of the movement.
         /// </summary>
-        /// <param name="text">If text elements should be visualized or not.</param>
-        protected override void RenderVisualizations(bool text = true)
+        protected override void RenderVisualizations()
         {
             // Cache rendering positions.
             Vector3 a = Agent;
@@ -185,16 +184,9 @@ namespace KaijuSolutions.Agents.Movement
             }
             
             // Draw the circle itself.
-            Color color = VisualizationColor();
             if (_radius > 0)
             {
                 Handles.DrawWireDisc(c, Vector3.up, _radius, 0);
-            }
-            
-            // Add the label.
-            if (text)
-            {
-                KaijuAgentsManager.Label(t, "Wander", color);
             }
         }
 #endif
