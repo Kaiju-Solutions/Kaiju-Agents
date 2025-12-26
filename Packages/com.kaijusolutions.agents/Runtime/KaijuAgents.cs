@@ -4,7 +4,9 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using Object = UnityEngine.Object;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents
 {
     /// <summary>
@@ -49,23 +51,42 @@ namespace KaijuSolutions.Agents
         /// <returns>The material to use.</returns>
         public static Material GetMaterial(Color color)
         {
-#if UNITY_EDITOR
-            // When not playing in the editor
-            if (!Application.isPlaying)
-            {
-                // TODO - Look for any existing material assets with this color.
-                //  If one is found, use it. Otherwise, create and save the new material to the root of the assets folder.
-                return null;
-            }
-#endif
             // Return the cached one if it exists.
             if (Materials.TryGetValue(color, out Material material))
             {
                 return material;
             }
-            
-            // Create a new material.
+#if UNITY_EDITOR
+            // Search for all materials.
+            foreach (string guid in AssetDatabase.FindAssets("t:Material"))
+            {
+                // Try to load the material.
+                material = AssetDatabase.LoadAssetAtPath<Material>(AssetDatabase.GUIDToAssetPath(guid));
+                    
+                // If the color matches, use it.
+                if (material == null || material.color != color)
+                {
+                    continue;
+                }
+                
+                // Cache the material if playing.
+                if (Application.isPlaying)
+                {
+                    Materials.Add(color, material);
+                }
+                
+                return material;
+            }
+#endif
+            // Otherwise, create a new material.
             material = CreateMaterial(color);
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                AssetDatabase.CreateAsset(material, $"Assets/{material.name}.mat");
+                return material;
+            }
+#endif
             Materials.Add(color, material);
             return material;
         }
@@ -242,7 +263,14 @@ namespace KaijuSolutions.Agents
             }
             
             // Create the agent for scratch otherwise.
-            GameObject go = new(name ?? "Agent");
+            GameObject go = new(name ?? "Agent")
+            {
+                transform =
+                {
+                    position = position ?? Vector3.zero,
+                    rotation = orientation ?? Quaternion.identity
+                }
+            };
             switch (type)
             {
                 case KaijuAgentType.Rigidbody:
@@ -265,7 +293,7 @@ namespace KaijuSolutions.Agents
             }
             
             // Create the default visuals.
-            CreateCapsule(CreateCapsule(agent.transform, Vector3.one, Quaternion.identity, Vector3.one, body ?? Body, "Body"), new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
+            CreateCapsule(CreateCapsule(agent.transform, Vector3.up, Quaternion.identity, Vector3.one, body ?? Body, "Body"), new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
             return agent;
         }
         

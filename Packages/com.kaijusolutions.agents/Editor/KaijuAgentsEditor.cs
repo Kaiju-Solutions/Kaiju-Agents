@@ -11,8 +11,92 @@ using UnityEngine.UIElements;
 /// <summary>
 /// Provide a space to flag all settings for agents.
 /// </summary>
-internal static class KaijuAgentsSettings
+internal static class KaijuAgentsEditor
 {
+    /// <summary>
+    /// Create a <see cref="KaijuTransformAgent"/>.
+    /// </summary>
+    [MenuItem("Tools/Kaiju Solutions/Agents/Transform Agent", false, 0)]
+    [MenuItem("GameObject/Kaiju Solutions/Agents/Transform Agent", false, 0)]
+    private static void CreateTransformAgent()
+    {
+        CreateAgent();
+    }
+    
+    /// <summary>
+    /// Create a <see cref="KaijuRigidbodyAgent"/>.
+    /// </summary>
+    [MenuItem("Tools/Kaiju Solutions/Agents/Rigidbody Agent", false, 1)]
+    [MenuItem("GameObject/Kaiju Solutions/Agents/Rigidbody Agent", false, 1)]
+    private static void CreateRigidbodyAgent()
+    {
+        CreateAgent(KaijuAgentType.Rigidbody);
+    }
+    
+    /// <summary>
+    /// Create a <see cref="KaijuRigidbodyAgent"/>.
+    /// </summary>
+    [MenuItem("Tools/Kaiju Solutions/Agents/Character Agent", false, 2)]
+    [MenuItem("GameObject/Kaiju Solutions/Agents/Character Agent", false, 2)]
+    private static void CreateCharacterAgent()
+    {
+        CreateAgent(KaijuAgentType.Character);
+    }
+    
+    /// <summary>
+    /// Create a <see cref="KaijuRigidbodyAgent"/>.
+    /// </summary>
+    [MenuItem("Tools/Kaiju Solutions/Agents/Navigation Agent", false, 3)]
+    [MenuItem("GameObject/Kaiju Solutions/Agents/Navigation Agent", false, 3)]
+    private static void CreateNavigationAgent()
+    {
+        CreateAgent(KaijuAgentType.Navigation);
+    }
+    
+    /// <summary>
+    /// Create a <see cref="KaijuAgent"/>.
+    /// </summary>
+    /// <param name="type">The type of agent to spawn.</param>
+    private static void CreateAgent(KaijuAgentType type = KaijuAgentType.Transform)
+    {
+        Selection.activeGameObject = KaijuAgents.Spawn(type, GetSpawnPosition());
+    }
+    
+    /// <summary>
+    /// Get a spawn position.
+    /// </summary>
+    /// <returns>A spawn position.</returns>
+    private static Vector3 GetSpawnPosition()
+    {
+        // Spawn at the origin if there is somehow no scene.
+        SceneView view = SceneView.lastActiveSceneView;
+        if (view == null)
+        {
+            return Vector3.zero;
+        }
+        
+        // Create a ray from the camera.
+        Camera sceneCam = view.camera;
+        Ray ray = new(sceneCam.transform.position, sceneCam.transform.forward);
+        
+        // Try to hit any colliders in the world to spawn on them.
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        {
+            return hit.point;
+        }
+        
+        // Try to collide with the zero-plane.
+        Plane zero = new(Vector3.up, Vector3.zero);
+        if (!zero.Raycast(ray, out float distance))
+        {
+            // If it fails, we must be looking at the sky and be above the ground level, so spawn below us.
+            return new(view.pivot.x, 0, view.pivot.z);
+        }
+        
+        Vector3 p = ray.GetPoint(distance);
+        return new(p.x, 0, p.z);
+    }
+    
     /// <summary>
     /// Create the UI for the settings menu.
     /// </summary>
