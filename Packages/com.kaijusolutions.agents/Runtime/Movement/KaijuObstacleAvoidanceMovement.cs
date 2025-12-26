@@ -176,11 +176,12 @@ namespace KaijuSolutions.Agents.Movement
             _hits.Clear();
             
             // Get the starting ray position.
-            Vector3 start = Agent.Position3 + new Vector3(0, Height, 0);
-            Vector3 velocity = Agent.Velocity3;
+            Vector3 height = new(0, Height, 0);
+            Vector3 start = Agent.Position3 + height;
+            Vector3 forward = Agent.Forward;
             
             // Cast the central ray.
-            Raycast(start, velocity, Distance);
+            Raycast(start, forward, Distance);
             
             // Cast side rays as long as they are different from the main ray.
             if (Angle != 0 || Horizontal != 0)
@@ -193,10 +194,10 @@ namespace KaijuSolutions.Agents.Movement
                 Transform t = Agent.transform;
                 
                 // Perform the first (positive) side ray.
-                Raycast(t.TransformPoint(offset), Quaternion.Euler(0, Angle, 0) * velocity, side);
+                Raycast(t.TransformPoint(offset) + height, Quaternion.Euler(0, Angle, 0) * forward, side);
                 
                 // Perform the second (negative) side ray.
-                Raycast(t.TransformPoint(-offset), Quaternion.Euler(0, -Angle, 0) * velocity, side);
+                Raycast(t.TransformPoint(-offset) + height, Quaternion.Euler(0, -Angle, 0) * forward, side);
             }
             
             // Process all hits.
@@ -206,11 +207,33 @@ namespace KaijuSolutions.Agents.Movement
                 // Calculate from the wall where to move.
                 Vector3 v = hit.point + hit.normal * Avoidance;
                 
-                // Perform a seek.
-                movement += (new Vector2(v.x, v.z) - position).normalized * Agent.MoveSpeed;
+                // The wall's position.
+                Vector2 h = new(hit.point.x, hit.point.z);
+                Vector2 f = new(v.x, v.z);
+                
+                // Only consider performing the avoiding if we are closer than our current distance.
+                if (Vector2.Distance(position, h) < Vector2.Distance(f, h))
+                {
+                    // Perform a seek.
+                    movement += (f - position).normalized * Agent.MoveSpeed;
+                }
             }
             
             return movement;
+        }
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="start">The starting position of the ray.</param>
+        /// <param name="direction">The direction of the ray.</param>
+        /// <param name="distance">The distance of the ray.</param>
+        private void Raycast(Vector3 start, Vector3 direction, float distance)
+        {
+            if (Mask.HasValue ? Physics.Raycast(start, direction, out RaycastHit hit, distance, Mask.Value) : Physics.Raycast(start, direction, out hit, distance))
+            {
+                _hits.Add(hit);
+            }
         }
 #if UNITY_EDITOR
         /// <summary>
@@ -232,18 +255,5 @@ namespace KaijuSolutions.Agents.Movement
             }
         }
 #endif
-        /// <summary>
-        /// Perform a raycast.
-        /// </summary>
-        /// <param name="start">The starting position of the ray.</param>
-        /// <param name="direction">The direction of the ray.</param>
-        /// <param name="distance">The distance of the ray.</param>
-        private void Raycast(Vector3 start, Vector3 direction, float distance)
-        {
-            if (Mask.HasValue ? Physics.Raycast(start, direction, out RaycastHit hit, distance, Mask.Value) : Physics.Raycast(start, direction, out hit, distance))
-            {
-                _hits.Add(hit);
-            }
-        }
     }
 }

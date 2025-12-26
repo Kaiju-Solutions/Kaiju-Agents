@@ -115,6 +115,11 @@ namespace KaijuSolutions.Agents
         public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
         
         /// <summary>
+        /// Get the forward direction of this agent.
+        /// </summary>
+        public Vector3 Forward => Velocity == Vector2.zero ? transform.forward : Velocity3;
+        
+        /// <summary>
         /// All movements the agent is currently performing.
         /// </summary>
         private readonly List<KaijuMovement> _movements = new();
