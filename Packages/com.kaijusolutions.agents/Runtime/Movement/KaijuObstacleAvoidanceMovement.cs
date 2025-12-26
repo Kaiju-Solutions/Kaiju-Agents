@@ -187,12 +187,16 @@ namespace KaijuSolutions.Agents.Movement
             {
                 // Get how far to cast the side rays.
                 float side = SideDistance;
-                // TODO - Fire each of the side raycasts.
-                //  These must be offset along the agent's local X axis by the "Horizontal" value.
-                //  As there are two side rays, one ray is offset by "Horizontal" positive and the other negative.
-                //  The rays must also have their corresponding "Angle" offset applied.
-                //  These are applied relatively to the above "velocity" variable which is the agent's direction, offsetting along the horizontal axis.
-                //  Again, one has the positive value of "Angle" and the other has the negative value.
+                
+                // Get the horizontal offset.
+                Vector3 offset = new(Horizontal, 0, 0);
+                Transform t = Agent.transform;
+                
+                // Perform the first (positive) side ray.
+                Raycast(t.TransformPoint(offset), Quaternion.Euler(0, Angle, 0) * velocity, side);
+                
+                // Perform the second (negative) side ray.
+                Raycast(t.TransformPoint(-offset), Quaternion.Euler(0, -Angle, 0) * velocity, side);
             }
             
             // Process all hits.
@@ -213,7 +217,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected override Color VisualizationColor() => KaijuMovementManager.SeparationColor;
+        protected override Color VisualizationColor() => KaijuMovementManager.ObstacleAvoidanceColor;
         
         /// <summary>
         /// Render the visualization of the movement.
@@ -221,7 +225,11 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void RenderVisualizations(Vector3 position)
         {
-            // TODO - Visualize the rays.
+            position += new Vector3(0, Height, 0);
+            foreach (RaycastHit hit in _hits)
+            {
+                Handles.DrawLine(position, hit.point);
+            }
         }
 #endif
         /// <summary>
