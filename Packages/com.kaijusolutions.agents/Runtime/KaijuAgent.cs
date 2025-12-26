@@ -85,6 +85,11 @@ namespace KaijuSolutions.Agents
         public static event AgentMovementAction OnMovementStopped;
         
         /// <summary>
+        /// Callback for when a movement has ben performed.
+        /// </summary>
+        public static event AgentMovementAction OnMovementPerformed;
+        
+        /// <summary>
         /// If this agent should move with the physics system.
         /// </summary>
         public virtual bool PhysicsAgent => false;
@@ -490,6 +495,7 @@ namespace KaijuSolutions.Agents
                 
                 // Weight the movement.
                 velocity += _movements[i].Move(position, delta) * _movements[i].Weight;
+                OnMovementPerformed?.Invoke(this, _movements[i]);
             }
             
             // Clamp the movement velocity.
