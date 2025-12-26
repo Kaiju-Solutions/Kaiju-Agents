@@ -43,6 +43,16 @@ namespace KaijuSolutions.Agents.Movement
         public readonly HashSet<uint> Identifiers = new();
         
         /// <summary>
+        /// The agents currently being separated from.
+        /// </summary>
+        public IReadOnlyCollection<KaijuAgent> Separating => _separating;
+        
+        /// <summary>
+        /// The agents currently being separated from.
+        /// </summary>
+        private readonly HashSet<KaijuAgent> _separating = new();
+        
+        /// <summary>
         /// Clear all identifiers of agents to separate from.
         /// </summary>
         public void ClearIdentifiers()
@@ -222,6 +232,7 @@ namespace KaijuSolutions.Agents.Movement
             // Start with indicating no movement has been performed.
             _performed = false;
             Vector2 movement = Vector2.zero;
+            _separating.Clear();
             
             // Cache the agent's position.
             Vector2 a = Agent;
@@ -264,10 +275,17 @@ namespace KaijuSolutions.Agents.Movement
                     }
                 }
                 
-                // TODO - Calculate strength.
-                // TODO - Add to movement.
+                // Calculate the strength.
+                float strength = Coefficient > 0
+                    // Inverse square law separation.
+                    ? Mathf.Min(Coefficient / (distance * distance), Agent.MoveSpeed)
+                    // Linear separation.
+                    : Agent.MoveSpeed * (Distance - distance) / Distance;
+                
+                // Add the movement, and indicate there has been a separation performed.
+                movement += direction.normalized * strength;
                 _performed = true;
-                // TODO - Add this agent to a cache to be looked up and used with visualizations.
+                _separating.Add(agent);
             }
             
             return movement;
