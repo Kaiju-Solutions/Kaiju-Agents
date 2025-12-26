@@ -204,26 +204,26 @@ namespace KaijuSolutions.Agents.Movement
         
         /// <summary>
         /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations()
+        protected override void RenderVisualizations(Vector3 position)
         {
             Vector3 t = Target3;
-            Vector3 a = Agent;
             Vector3 f = Future3;
             
             // Only one line to draw if equal.
             bool still = t == f;
             if (still)
             {
-                Handles.DrawLine(a, t);
+                Handles.DrawLine(position, t);
             }
             else
             {
                 // Agent to target.
-                _rendering[0] = a;
+                _rendering[0] = position;
                 _rendering[1] = t;
                 // Agent to forecast.
-                _rendering[2] = a;
+                _rendering[2] = position;
                 _rendering[3] = f;
                 // Target to forecast.
                 _rendering[4] = t;

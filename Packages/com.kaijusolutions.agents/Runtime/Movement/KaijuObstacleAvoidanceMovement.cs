@@ -217,8 +217,9 @@ namespace KaijuSolutions.Agents.Movement
         
         /// <summary>
         /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations()
+        protected override void RenderVisualizations(Vector3 position)
         {
             // TODO - Visualize the rays.
         }

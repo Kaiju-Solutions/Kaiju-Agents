@@ -278,12 +278,12 @@ namespace KaijuSolutions.Agents.Movement
 #if UNITY_EDITOR
         /// <summary>
         /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations()
+        protected override void RenderVisualizations(Vector3 position)
         {
-            Vector3 a = Agent;
             Vector3 t = Target3;
-            Handles.DrawLine(a, t);
+            Handles.DrawLine(position, t);
             RenderDistance(t);
         }
         

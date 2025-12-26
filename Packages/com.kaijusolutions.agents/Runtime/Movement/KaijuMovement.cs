@@ -148,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
             }
             
             Handles.color = VisualizationColor();
-            RenderVisualizations();
+            RenderVisualizations(Agent);
         }
         
         /// <summary>
@@ -159,8 +159,9 @@ namespace KaijuSolutions.Agents.Movement
         
         /// <summary>
         /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        protected virtual void RenderVisualizations() { }
+        protected virtual void RenderVisualizations(Vector3 position) { }
 #endif
         /// <summary>
         /// Get a description of the object.

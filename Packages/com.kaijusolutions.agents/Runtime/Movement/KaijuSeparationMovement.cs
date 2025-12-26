@@ -168,15 +168,15 @@ namespace KaijuSolutions.Agents.Movement
         
         /// <summary>
         /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations()
+        protected override void RenderVisualizations(Vector3 position)
         {
-            Vector3 a = Agent;
-            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
+            Handles.DrawWireDisc(position, Vector3.up, Distance, 0);
             foreach (KaijuAgent agent in _interacting)
             {
                 Vector3 b = agent;
-                Handles.DrawLine(a, b);
+                Handles.DrawLine(position, b);
             }
         }
 #endif
