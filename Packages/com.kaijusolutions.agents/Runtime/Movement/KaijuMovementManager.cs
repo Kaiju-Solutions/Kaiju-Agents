@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 #if UNITY_EDITOR
-using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
 #endif
@@ -41,6 +40,11 @@ namespace KaijuSolutions.Agents.Movement
         /// The key for the wander color preference.
         /// </summary>
         private const string WanderKey = "KAIJU_AGENTS_COLOR_WANDER";
+        
+        /// <summary>
+        /// The key for the separation color preference.
+        /// </summary>
+        private const string SeparationKey = "KAIJU_AGENTS_COLOR_SEPARATION";
         
         /// <summary>
         /// Color for seek visuals.
@@ -178,6 +182,33 @@ namespace KaijuSolutions.Agents.Movement
         private static Color? _wanderColor;
         
         /// <summary>
+        /// Color for separation visuals.
+        /// </summary>
+        public static Color SeparationColor
+        {
+            get
+            {
+                if (_separationColor.HasValue)
+                {
+                    return _separationColor.Value;
+                }
+                
+                _separationColor = KaijuAgentsManager.LoadColor(SeparationKey, Color.violet);
+                return _separationColor.Value;
+            }
+            set
+            {
+                _separationColor = value;
+                KaijuAgentsManager.SaveColor(SeparationKey, _separationColor.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Color for separation visuals.
+        /// </summary>
+        private static Color? _separationColor;
+        
+        /// <summary>
         /// Sync all colors.
         /// </summary>
         public static void SyncColors()
@@ -187,6 +218,7 @@ namespace KaijuSolutions.Agents.Movement
             _ = FleeColor;
             _ = EvadeColor;
             _ = WanderKey;
+            _ = SeparationColor;
         }
         
         /// <summary>
@@ -199,6 +231,7 @@ namespace KaijuSolutions.Agents.Movement
             ResetFleeColor();
             ResetEvadeColor();
             ResetWanderColor();
+            ResetSeparationColor();
         }
         
         /// <summary>
@@ -239,6 +272,14 @@ namespace KaijuSolutions.Agents.Movement
         public static void ResetWanderColor()
         {
             KaijuAgentsManager.ResetColor(WanderKey);
+        }
+        
+        /// <summary>
+        /// Reset the separation color.
+        /// </summary>
+        public static void ResetSeparationColor()
+        {
+            KaijuAgentsManager.ResetColor(SeparationKey);
         }
         
         /// <summary>

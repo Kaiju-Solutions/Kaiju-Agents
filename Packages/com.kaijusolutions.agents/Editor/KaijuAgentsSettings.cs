@@ -50,6 +50,7 @@ internal static class KaijuAgentsSettings
                 container.Add(ColorSetting("Flee", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));
                 container.Add(ColorSetting("Evade", () => KaijuMovementManager.EvadeColor, color => KaijuMovementManager.EvadeColor = color, KaijuMovementManager.ResetEvadeColor, refreshActions, "The color for evade visualizations."));
                 container.Add(ColorSetting("Wander", () => KaijuMovementManager.WanderColor, color => KaijuMovementManager.WanderColor = color, KaijuMovementManager.ResetWanderColor, refreshActions, "The color for wander visualizations."));
+                container.Add(ColorSetting("Separation", () => KaijuMovementManager.SeparationColor, color => KaijuMovementManager.SeparationColor = color, KaijuMovementManager.ResetSeparationColor, refreshActions, "The color for separation visualizations."));
                 
                 // Add a full reset button.
                 Button resetAllButton = new(KaijuMovementManager.ResetColors)
