@@ -64,6 +64,11 @@ namespace KaijuSolutions.Agents
         /// Helper empty agents array for returning defaults.
         /// </summary>
         private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
+        
+        /// <summary>
+        /// Cache to help reduce garbage with single identifier methods.
+        /// </summary>
+        private static readonly uint[] SingleCache = { 0 };
 #if UNITY_EDITOR
         /// <summary>
         /// All currently selected agents.
@@ -397,6 +402,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="agent">The agent to get other agents within a certain distance to.</param>
         /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="identifier">The identifier of the agents to get being within a distance to the given agent.</param>
+        /// <returns>All agents within a distance to a given agent.</returns>
+        public static HashSet<KaijuAgent> Within([NotNull] KaijuAgent agent, float distance, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Within(agent, distance, SingleCache);
+        }
+        
+        /// <summary>
+        /// Get all agents within a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents within.</param>
         /// <param name="identifiers">The identifiers of the agents to get being within a distance to the given agent.</param>
         /// <returns>All agents within a distance to a given agent.</returns>
         public static HashSet<KaijuAgent> Within([NotNull] KaijuAgent agent, float distance, IEnumerable<uint> identifiers = null)
@@ -404,6 +422,20 @@ namespace KaijuSolutions.Agents
             HashSet<KaijuAgent> within = new();
             Within(agent, distance, within, identifiers);
             return within;
+        }
+        
+        /// <summary>
+        /// Get all agents within a distance to a given agent. The agents are added to the within parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="within">The agents close to the given agent.</param>
+        /// <param name="identifier">The identifier of the agents to get being within a distance to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Within([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> within, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Within(agent, distance, within, SingleCache);
         }
         
         /// <summary>
@@ -462,6 +494,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="agent">The agent to get other agents beyond a certain distance to.</param>
         /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="identifier">The identifier of the agents to get being beyond a distance to the given agent.</param>
+        /// <returns>All agents beyond a distance to a given agent.</returns>
+        public static HashSet<KaijuAgent> Beyond([NotNull] KaijuAgent agent, float distance, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Beyond(agent, distance, SingleCache);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents beyond a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents beyond.</param>
         /// <param name="identifiers">The identifiers of the agents to get being beyond a distance to the given agent.</param>
         /// <returns>All agents beyond a distance a given agent.</returns>
         public static HashSet<KaijuAgent> Beyond([NotNull] KaijuAgent agent, float distance, IEnumerable<uint> identifiers = null)
@@ -469,6 +514,20 @@ namespace KaijuSolutions.Agents
             HashSet<KaijuAgent> beyond = new();
             Beyond(agent, distance, beyond, identifiers);
             return beyond;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent. The agents are added to the beyond parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents beyond a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="beyond">The agents close to the given agent.</param>
+        /// <param name="identifier">The identifier of the agents to get being beyond a distance to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Beyond([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> beyond, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Beyond(agent, distance, beyond, SingleCache);
         }
         
         /// <summary>
@@ -528,6 +587,20 @@ namespace KaijuSolutions.Agents
         /// <param name="agent">The agent to get other agents within a given distance range.</param>
         /// <param name="distanceA">One of the distances.</param>
         /// <param name="distanceB">One of the distances.</param>
+        /// <param name="identifier">The identifier of the agents to get being between the distances to the given agent.</param>
+        /// <returns>All agents between the distances to a given agent.</returns>
+        public static HashSet<KaijuAgent> Between([NotNull] KaijuAgent agent, float distanceA, float distanceB, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Between(agent, distanceA, distanceB, SingleCache);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a given distance range.</param>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
         /// <param name="identifiers">The identifiers of the agents to get being between the distances to the given agent.</param>
         /// <returns>All agents between the distances to a given agent.</returns>
         public static HashSet<KaijuAgent> Between([NotNull] KaijuAgent agent, float distanceA, float distanceB, IEnumerable<uint> identifiers = null)
@@ -535,6 +608,21 @@ namespace KaijuSolutions.Agents
             HashSet<KaijuAgent> between = new();
             Between(agent, distanceA, distanceB, between, identifiers);
             return between;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance and within another distance to a given agent. The agents are added to the between parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a given distance range.</param>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
+        /// <param name="between">The agents close to the given agent.</param>
+        /// <param name="identifier">The identifier of the agents to get being between the distances to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Between([NotNull] KaijuAgent agent, float distanceA, float distanceB, [NotNull] ICollection<KaijuAgent> between, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Between(agent, distanceA, distanceB, between, SingleCache);
         }
         
         /// <summary>
