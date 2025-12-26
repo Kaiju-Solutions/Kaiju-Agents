@@ -249,7 +249,6 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the movement.
         /// </summary>
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
-        /// <param name="velocity">The velocity of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
         public override Vector2 Move(Vector2 position, float delta)
