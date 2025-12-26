@@ -762,7 +762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 462820016}
-  type: 6
+  type: 5
 --- !u!1 &1442947134
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 799231850}
-  type: 6
+  type: 5
 --- !u!23 &1442947136
 MeshRenderer:
   m_ObjectHideFlags: 0

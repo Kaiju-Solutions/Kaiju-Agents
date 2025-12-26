@@ -1385,27 +1385,6 @@ namespace KaijuSolutions.Agents
             _movements.Add(movement);
             return movement;
         }
-        
-        /// <summary>
-        /// Collision avoid.
-        /// </summary>
-        /// <param name="distance">The distance to avoid other agents from.</param>
-        /// <param name="radius">The radius of agents for avoidance.</param>
-        /// <param name="collection">What types of agents to avoid.</param>
-        /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        /// <returns></returns>
-        public KaijuCollisionAvoidanceMovement CollisionAvoidance(float distance = 10, float radius = 0.5f, ICollection<uint> collection = null, float weight = 1, bool clear = true)
-        {
-            if (clear)
-            {
-                Stop();
-            }
-            
-            KaijuCollisionAvoidanceMovement movement = KaijuCollisionAvoidanceMovement.Get(this, distance, radius, collection, weight);
-            _movements.Add(movement);
-            return movement;
-        }
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
