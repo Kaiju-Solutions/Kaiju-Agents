@@ -360,6 +360,24 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Spawn this agent if it is not currently spawned.
+        /// </summary>
+        public void Spawn()
+        {
+            gameObject.SetActive(true);
+            enabled = true;
+        }
+        
+        /// <summary>
+        /// Despawn this agent.
+        /// </summary>
+        public void Despawn()
+        {
+            enabled = false;
+            gameObject.SetActive(false);
+        }
+        
+        /// <summary>
         /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
         /// </summary>
         private void OnDestroy()

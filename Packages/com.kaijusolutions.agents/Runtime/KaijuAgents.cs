@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
+using Object = UnityEngine.Object;
 
 namespace KaijuSolutions.Agents
 {
@@ -162,89 +165,143 @@ namespace KaijuSolutions.Agents
             return c.gameObject.AssignComponent(ref current, self, children, parents);
         }
         
-        public static KaijuAgent Spawn(Vector3 position, Quaternion orientation, bool cached = true, KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null)
+        /// <summary>
+        /// Spawn an agent.
+        /// </summary>
+        /// <param name="type">The type of agent to spawn.</param>
+        /// <param name="position">The position to spawn the agent at.</param>
+        /// <param name="orientation">The orientation to spawn the agent at.</param>
+        /// <param name="cached">If this should try to load a cached agent or not.</param>
+        /// <param name="prefab"></param>
+        /// <param name="name"></param>
+        /// <param name="body"></param>
+        /// <param name="eyes"></param>
+        /// <returns></returns>
+        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null)
         {
             KaijuAgent agent;
             
             // If we can use a cached agent, do so.
             if (cached)
             {
-                agent = KaijuAgentsManager.GetCached();
+                agent = type switch
+                {
+                    KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(),
+                    KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(),
+                    KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(),
+                    _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>()
+                };
                 
                 // If there is a cached agent, work with it.
                 if (agent != null)
                 {
-                    if (name != null)
-                    {
-                        agent.name = name;
-                    }
+                    // Set values.
+                    agent.name = name ?? "Agent";
+                    Transform root = agent.transform;
+                    root.position = position ?? Vector3.zero;
+                    root.rotation = orientation ?? Quaternion.identity;
                     
-                    // If this is a default agent, and we passed a desired color, assign it.
-                    if (body.HasValue || eyes.HasValue)
-                    {
-                        Transform t = agent.transform;
-                        for (int i = 0; i < t.childCount; i++)
-                        {
-                            Transform child = agent.transform.GetChild(i);
-                            
-                            // Only looking for the default-named body for automatic assignment.
-                            if (child.name != "Body")
-                            {
-                                continue;
-                            }
-                            
-                            // Assign the body color.
-                            if (body.HasValue && child.TryGetComponent(out MeshRenderer renderer))
-                            {
-                                renderer.material = GetMaterial(body.Value);
-                            }
-                            
-                            // Do the same with the eye color.
-                            if (eyes.HasValue)
-                            {
-                                for (int j = 0; j < child.childCount; j++)
-                                {
-                                    Transform final = child.GetChild(i);
-                                    
-                                    if (final.name != "Eyes")
-                                    {
-                                        continue;
-                                    }
-                                    
-                                    if (final.TryGetComponent(out renderer))
-                                    {
-                                        renderer.material = GetMaterial(eyes.Value);
-                                    }
-                                    break;
-                                }
-                            }
-                            
-                            break;
-                        }
-                    }
+                    // Set the colors if this conforms to the standard setup.
+                    SetMaterials(root, body, eyes);
                     
                     // Reactive this agent.
-                    agent.gameObject.SetActive(true);
-                    agent.enabled = true;
+                    agent.Spawn();
                     return agent;
                 }
             }
             
+            // Load the agent if it is a prefab.
             if (prefab != null)
             {
-                agent = Object.Instantiate(prefab, position, orientation);
+                agent = Object.Instantiate(prefab, position ?? Vector3.zero, orientation ?? Quaternion.identity);
                 agent.name = name ?? "Agent";
-            }
-            else
-            {
-                // Create the agent.
-                GameObject go = new(name ?? "Agent");
-                agent = go.AddComponent<KaijuRigidbodyAgent>(); // TODO - Type.
-                Transform visuals = CreateCapsule(agent.transform, Vector3.one, Quaternion.identity, Vector3.one, body ?? Body, "Body");
-                CreateCapsule(visuals, new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
+                
+                // Set the colors if this conforms to the standard setup.
+                SetMaterials(agent.transform, body, eyes);
+                return agent;
             }
             
+            // Create the agent for scratch otherwise.
+            GameObject go = new(name ?? "Agent");
+            switch (type)
+            {
+                case KaijuAgentType.Rigidbody:
+                    go.AddComponent<Rigidbody>();
+                    agent = go.AddComponent<KaijuRigidbodyAgent>();
+                    go.AddComponent<CapsuleCollider>();
+                    break;
+                case KaijuAgentType.Character:
+                    go.AddComponent<CharacterController>();
+                    agent = go.AddComponent<KaijuCharacterAgent>();
+                    break;
+                case KaijuAgentType.Navigation:
+                    go.AddComponent<NavMeshAgent>();
+                    agent = go.AddComponent<KaijuNavigationAgent>();
+                    break;
+                case KaijuAgentType.Transform:
+                default:
+                    agent = go.AddComponent<KaijuTransformAgent>();
+                    break;
+            }
+            
+            // Create the default visuals.
+            CreateCapsule(CreateCapsule(agent.transform, Vector3.one, Quaternion.identity, Vector3.one, body ?? Body, "Body"), new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
             return agent;
+        }
+        
+        /// <summary>
+        /// Try to set the materials.
+        /// </summary>
+        /// <param name="root">The root transform.</param>
+        /// <param name="body">The color for the body.</param>
+        /// <param name="eyes">The color for the eyes.</param>
+        private static void SetMaterials([NotNull] Transform root, Color? body = null, Color? eyes = null)
+        {
+            // If there are no desired colors, skip.
+            if (!body.HasValue && !eyes.HasValue)
+            {
+                return;
+            }
+            
+            for (int i = 0; i < root.childCount; i++)
+            {
+                Transform child = root.GetChild(i);
+                
+                // Only looking for the default-named body for automatic assignment.
+                if (child.name != "Body")
+                {
+                    continue;
+                }
+                
+                // Assign the body color.
+                if (body.HasValue && child.TryGetComponent(out MeshRenderer renderer))
+                {
+                    renderer.material = GetMaterial(body.Value);
+                }
+                
+                // Do the same with the eye color.
+                if (eyes.HasValue)
+                {
+                    for (int j = 0; j < child.childCount; j++)
+                    {
+                        Transform final = child.GetChild(i);
+                        
+                        if (final.name != "Eyes")
+                        {
+                            continue;
+                        }
+                        
+                        if (final.TryGetComponent(out renderer))
+                        {
+                            renderer.material = GetMaterial(eyes.Value);
+                        }
+                        
+                        break;
+                    }
+                }
+                
+                break;
+            }
         }
         
         /// <summary>

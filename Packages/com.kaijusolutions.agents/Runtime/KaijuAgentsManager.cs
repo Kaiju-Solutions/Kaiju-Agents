@@ -64,7 +64,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Cache agents which have been disabled for reuse.
         /// </summary>
-        private static readonly HashSet<KaijuAgent> DisabledAgents = new();
+        private static readonly Dictionary<Type, HashSet<KaijuAgent>> DisabledAgents = new();
         
         /// <summary>
         /// Helper empty agents array for returning defaults.
@@ -276,7 +276,15 @@ namespace KaijuSolutions.Agents
             _ = Instance;
             
             // Remove from cached disabled.
-            DisabledAgents.Remove(agent);
+            Type type = agent.GetType();
+            if (DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
+            {
+                set.Remove(agent);
+                if (set.Count < 1)
+                {
+                    DisabledAgents.Remove(type);
+                }
+            }
             
             AllAgents.Add(agent);
             
@@ -323,7 +331,14 @@ namespace KaijuSolutions.Agents
             // Cache for reuse.
             if (cache)
             {
-                DisabledAgents.Add(agent);
+                Type type = agent.GetType();
+                if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
+                {
+                    set = new(1);
+                    DisabledAgents.Add(type, set);
+                }
+                
+                set.Add(agent);
             }
 #if UNITY_EDITOR
             if (_instance)
@@ -336,18 +351,26 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Get a cached agent to spawn.
         /// </summary>
+        /// <typeparam name="T">The type of agent.</typeparam>
         /// <returns>A cached agent if one is found, otherwise NULL.</returns>
-        public static KaijuAgent GetCached()
+        public static KaijuAgent GetCached<T>() where T : KaijuAgent
         {
             // Nothing to do if no cached agents.
-            if (DisabledAgents.Count < 1)
+            Type type = typeof(T);
+            if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
             {
                 return null;
             }
             
             // Get the cached agent.
-            KaijuAgent agent = DisabledAgents.First();
-            DisabledAgents.Remove(agent);
+            KaijuAgent agent = set.First();
+            set.Remove(agent);
+            
+            if (set.Count < 1)
+            {
+                DisabledAgents.Remove(type);
+            }
+            
             return agent;
         }
         
