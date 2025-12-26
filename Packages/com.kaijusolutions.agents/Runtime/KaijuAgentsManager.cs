@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEngine;
 #if UNITY_EDITOR
 using KaijuSolutions.Agents.Movement;
@@ -61,10 +62,14 @@ namespace KaijuSolutions.Agents
         private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
         
         /// <summary>
+        /// Cache agents which have been disabled for reuse.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> DisabledAgents = new();
+        
+        /// <summary>
         /// Helper empty agents array for returning defaults.
         /// </summary>
         private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
-        
         /// <summary>
         /// Cache to help reduce garbage with single identifier methods.
         /// </summary>
@@ -256,6 +261,7 @@ namespace KaijuSolutions.Agents
             TickAgents.Clear();
             PhysicsAgents.Clear();
             AgentIdentifiers.Clear();
+            DisabledAgents.Clear();
             _ = AgentColor;
             _agentsLabelStyle = null;
         }
@@ -268,6 +274,9 @@ namespace KaijuSolutions.Agents
         {
             // Ensure there is a manager.
             _ = Instance;
+            
+            // Remove from cached disabled.
+            DisabledAgents.Remove(agent);
             
             AllAgents.Add(agent);
             
@@ -291,7 +300,8 @@ namespace KaijuSolutions.Agents
         /// Unregister an agent for movement.
         /// </summary>
         /// <param name="agent">The agent to unregister.</param>
-        public static void Unregister(KaijuAgent agent)
+        /// <param name="cache">If this agent should be cached.</param>
+        public static void Unregister(KaijuAgent agent, bool cache = true)
         {
             AllAgents.Remove(agent);
             
@@ -309,12 +319,36 @@ namespace KaijuSolutions.Agents
             {
                 TickAgents.Remove(agent);
             }
+            
+            // Cache for reuse.
+            if (cache)
+            {
+                DisabledAgents.Add(agent);
+            }
 #if UNITY_EDITOR
             if (_instance)
             {
                 _instance._selectedAgents.Remove(agent);
             }
 #endif
+        }
+        
+        /// <summary>
+        /// Get a cached agent to spawn.
+        /// </summary>
+        /// <returns>A cached agent if one is found, otherwise NULL.</returns>
+        public static KaijuAgent GetCached()
+        {
+            // Nothing to do if no cached agents.
+            if (DisabledAgents.Count < 1)
+            {
+                return null;
+            }
+            
+            // Get the cached agent.
+            KaijuAgent agent = DisabledAgents.First();
+            DisabledAgents.Remove(agent);
+            return agent;
         }
         
         /// <summary>

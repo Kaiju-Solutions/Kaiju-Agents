@@ -360,6 +360,15 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Unregister without caching.
+            KaijuAgentsManager.Unregister(this, false);
+        }
+
+        /// <summary>
         /// Clear all identifiers.
         /// </summary>
         public void ClearIdentifiers()
