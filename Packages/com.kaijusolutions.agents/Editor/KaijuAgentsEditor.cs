@@ -16,7 +16,7 @@ internal static class KaijuAgentsEditor
     /// <summary>
     /// Create a <see cref="KaijuTransformAgent"/>.
     /// </summary>
-    [MenuItem("Tools/Kaiju Solutions/Agents/Transform Agent", false, 0)]
+    [MenuItem("Tools/Kaiju Solutions/Agents/Create/Transform Agent", false, 0)]
     [MenuItem("GameObject/Kaiju Solutions/Agents/Transform Agent", false, 0)]
     private static void CreateTransformAgent()
     {
@@ -26,7 +26,7 @@ internal static class KaijuAgentsEditor
     /// <summary>
     /// Create a <see cref="KaijuRigidbodyAgent"/>.
     /// </summary>
-    [MenuItem("Tools/Kaiju Solutions/Agents/Rigidbody Agent", false, 1)]
+    [MenuItem("Tools/Kaiju Solutions/Agents/Create/Rigidbody Agent", false, 1)]
     [MenuItem("GameObject/Kaiju Solutions/Agents/Rigidbody Agent", false, 1)]
     private static void CreateRigidbodyAgent()
     {
@@ -36,7 +36,7 @@ internal static class KaijuAgentsEditor
     /// <summary>
     /// Create a <see cref="KaijuRigidbodyAgent"/>.
     /// </summary>
-    [MenuItem("Tools/Kaiju Solutions/Agents/Character Agent", false, 2)]
+    [MenuItem("Tools/Kaiju Solutions/Agents/Create/Character Agent", false, 2)]
     [MenuItem("GameObject/Kaiju Solutions/Agents/Character Agent", false, 2)]
     private static void CreateCharacterAgent()
     {
@@ -46,11 +46,20 @@ internal static class KaijuAgentsEditor
     /// <summary>
     /// Create a <see cref="KaijuRigidbodyAgent"/>.
     /// </summary>
-    [MenuItem("Tools/Kaiju Solutions/Agents/Navigation Agent", false, 3)]
+    [MenuItem("Tools/Kaiju Solutions/Agents/Create/Navigation Agent", false, 3)]
     [MenuItem("GameObject/Kaiju Solutions/Agents/Navigation Agent", false, 3)]
     private static void CreateNavigationAgent()
     {
         CreateAgent(KaijuAgentType.Navigation);
+    }
+    
+    /// <summary>
+    /// Open the documentation.
+    /// </summary>
+    [MenuItem("Tools/Kaiju Solutions/Agents/Documentation", false, int.MaxValue)]
+    private static void Documentation()
+    {
+        Application.OpenURL("https://agents.kaijusolutions.ca");
     }
     
     /// <summary>
@@ -93,6 +102,7 @@ internal static class KaijuAgentsEditor
             return new(view.pivot.x, 0, view.pivot.z);
         }
         
+        // Explicitly zero the point on the Y axis, as due to floating point decisions it may be slightly off.
         Vector3 p = ray.GetPoint(distance);
         return new(p.x, 0, p.z);
     }
@@ -102,7 +112,7 @@ internal static class KaijuAgentsEditor
     /// </summary>
     /// <returns>The UI for the settings menu.</returns>
     [SettingsProvider]
-    public static SettingsProvider CreateProvider()
+    private static SettingsProvider CreateProvider()
     {
         return new("Project/Kaiju Agents", SettingsScope.Project)
         {

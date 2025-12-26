@@ -20,5 +20,17 @@
 		"Agents",
 		"AI",
 		"Artificial Intelligence"
+	],
+	"samples": [
+		{
+			"displayName": "Materials",
+			"description": "Contains materials used in the other samples.",
+			"path": "Samples~/Materials"
+		},
+		{
+			"displayName": "Movement",
+			"description": "Contains scenes showing off agent movements.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Movement"
+		}
 	]
 }

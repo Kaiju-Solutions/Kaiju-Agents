@@ -294,6 +294,7 @@ namespace KaijuSolutions.Agents
             
             // Create the default visuals.
             CreateCapsule(CreateCapsule(agent.transform, Vector3.up, Quaternion.identity, Vector3.one, body ?? Body, "Body"), new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
+            agent.Setup();
             return agent;
         }
         

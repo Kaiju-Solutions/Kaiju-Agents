@@ -1441,6 +1441,14 @@ namespace KaijuSolutions.Agents
             _movements.Add(movement);
             return movement;
         }
+        
+        /// <summary>
+        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
+        /// </summary>
+        private void Start()
+        {
+            Setup();
+        }
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
