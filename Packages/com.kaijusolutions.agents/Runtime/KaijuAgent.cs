@@ -567,6 +567,16 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns>The distance to the target.</returns>
+        public float Distance([NotNull] KaijuAgent target)
+        {
+            return Distance(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the distance to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
         public float Distance3(Vector3 target)
         {
             Vector3 a = transform.position;
@@ -594,6 +604,16 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get the distance to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The distance to the target.</returns>
+        public float Distance3([NotNull] KaijuAgent target)
+        {
+            return Distance3(target.transform.position);
+        }
+        
+        /// <summary>
         /// Get the direction to a target.
         /// </summary>
         /// <param name="target">The target.</param>
@@ -601,7 +621,7 @@ namespace KaijuSolutions.Agents
         public Vector2 Direction(Vector2 target)
         {
             Vector3 a = transform.position;
-            return new Vector2(a.x, a.z) - target;
+            return target - new Vector2(a.x, a.z);
         }
         
         /// <summary>
@@ -619,7 +639,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns>The direction to a target.</returns>
-        public Vector2 Direction(GameObject target)
+        public Vector2 Direction([NotNull] GameObject target)
         {
             return Direction(target.transform.position);
         }
@@ -629,7 +649,17 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns>The direction to a target.</returns>
-        public Vector2 Direction(Component target)
+        public Vector2 Direction([NotNull] Component target)
+        {
+            return Direction(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector2 Direction([NotNull] KaijuAgent target)
         {
             return Direction(target.transform.position);
         }
@@ -641,7 +671,7 @@ namespace KaijuSolutions.Agents
         /// <returns>The direction to a target.</returns>
         public Vector3 Direction3(Vector3 target)
         {
-            return transform.position - target;
+            return target - transform.position;
         }
         
         /// <summary>
@@ -649,7 +679,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns>The direction to a target.</returns>
-        public Vector3 Direction3(GameObject target)
+        public Vector3 Direction3([NotNull] GameObject target)
         {
             return Direction3(target.transform.position);
         }
@@ -659,7 +689,17 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="target">The target.</param>
         /// <returns>The direction to a target.</returns>
-        public Vector3 Direction3(Component target)
+        public Vector3 Direction3([NotNull] Component target)
+        {
+            return Direction3(target.transform.position);
+        }
+        
+        /// <summary>
+        /// Get the direction to a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <returns>The direction to a target.</returns>
+        public Vector3 Direction3([NotNull] KaijuAgent target)
         {
             return Direction3(target.transform.position);
         }
@@ -1355,17 +1395,18 @@ namespace KaijuSolutions.Agents
         /// Separate.
         /// </summary>
         /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="collection">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuSeparationMovement Separate(float distance = float.MaxValue, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
+        public KaijuSeparationMovement Separate(float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> collection = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, collection, weight);
+            KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
             _movements.Add(movement);
             return movement;
         }

@@ -24,6 +24,20 @@ namespace KaijuSolutions.Agents.Movement
         private float _distance = float.MaxValue;
         
         /// <summary>
+        /// The coefficient to use for inverse square law separation. Zero will use linear separation.
+        /// </summary>
+        public float Coefficient
+        {
+            get => _coefficient;
+            set => _coefficient = Mathf.Max(value, 0);
+        }
+        
+        /// <summary>
+        /// The coefficient to use for inverse square law separation. Zero will use linear separation.
+        /// </summary>
+        private float _coefficient = float.MaxValue;
+        
+        /// <summary>
         /// What types of agents to avoid.
         /// </summary>
         public readonly HashSet<uint> Identifiers = new();
@@ -117,16 +131,6 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// All agents near this agent.
-        /// </summary>
-        public IReadOnlyCollection<KaijuAgent> Near => _near;
-        
-        /// <summary>
-        /// All agents near this agent.
-        /// </summary>
-        private readonly HashSet<KaijuAgent> _near = new();
-        
-        /// <summary>
         /// If movement was actually performed.
         /// </summary>
         public override bool Performed => _performed;
@@ -141,18 +145,19 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a separation movement for the agent.</returns>
-        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = float.MaxValue, IEnumerable<uint> identifiers = null, float weight = 1)
+        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
             if (movement == null)
             {
-                return new(agent, distance, identifiers, weight);
+                return new(agent, distance, coefficient, identifiers, weight);
             }
             
-            movement.Initialize(agent, distance, identifiers, weight);
+            movement.Initialize(agent, distance, coefficient, identifiers, weight);
             return movement;
         }
         
@@ -161,11 +166,12 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuSeparationMovement(KaijuAgent agent, float distance = float.MaxValue, IEnumerable<uint> identifiers = null, float weight = 1) : base(agent, weight)
+        public KaijuSeparationMovement(KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1) : base(agent, weight)
         {
-            Initialize(agent, distance, identifiers, weight);
+            Initialize(agent, distance, coefficient, identifiers, weight);
         }
         
         /// <summary>
@@ -173,13 +179,14 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
         /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        private void Initialize(KaijuAgent agent, float distance = float.MaxValue, IEnumerable<uint> identifiers = null, float weight = 1)
+        private void Initialize(KaijuAgent agent, float distance = float.MaxValue, float coefficient = 0, IEnumerable<uint> identifiers = null, float weight = 1)
         {
             base.Initialize(agent, weight);
             Distance = distance;
-            _near.Clear();
+            Coefficient = coefficient;
             Identifiers.Clear();
             if (identifiers == null)
             {
@@ -199,6 +206,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             base.Reset();
             _distance = float.MaxValue;
+            _coefficient = 0;
             Identifiers.Clear();
         }
         
@@ -211,9 +219,58 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         public override Vector2 Move(Vector2 position, Vector2 velocity, float delta)
         {
+            // Start with indicating no movement has been performed.
             _performed = false;
-            // TODO - Implement.
-            return Vector2.zero;
+            Vector2 movement = Vector2.zero;
+            
+            // Cache the agent's position.
+            Vector2 a = Agent;
+            
+            // Compare with all other agents.
+            foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
+            {
+                // Get the other agent's position.
+                Vector2 target = agent;
+                
+                // Get the direction to the target from the agent.
+                Vector2 direction = target - a;
+                
+                // See if this is within our distance to consider.
+                float distance = direction.magnitude;
+                if (distance >= Distance)
+                {
+                    continue;
+                }
+                
+                // If there are identifiers to limit the search, consider them.
+                if (Identifiers.Count < 0)
+                {
+                    bool valid = false;
+                    
+                    foreach (uint identifier in agent.Identifiers)
+                    {
+                        if (!Identifiers.Contains(identifier))
+                        {
+                            continue;
+                        }
+                        
+                        valid = true;
+                        break;
+                    }
+
+                    if (!valid)
+                    {
+                        continue;
+                    }
+                }
+                
+                // TODO - Calculate strength.
+                // TODO - Add to movement.
+                _performed = true;
+                // TODO - Add this agent to a cache to be looked up and used with visualizations.
+            }
+            
+            return movement;
         }
     }
 }
