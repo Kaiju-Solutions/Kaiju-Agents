@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -22,6 +24,16 @@ namespace KaijuSolutions.Agents.Movement
         /// The coefficient to use for inverse square law separation. Zero will use linear separation.
         /// </summary>
         private float _coefficient = float.MaxValue;
+        
+        /// <summary>
+        /// The agents currently detected this movement is moving in relation to.
+        /// </summary>
+        public IReadOnlyCollection<KaijuAgent> Interacting => _interacting;
+        
+        /// <summary>
+        /// The agents currently detected this movement is moving in relation to.
+        /// </summary>
+        private readonly HashSet<KaijuAgent> _interacting = new();
         
         /// <summary>
         /// Get a separation movement.
@@ -89,7 +101,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             Vector2 movement = Vector2.zero;
-            Interacting.Clear();
+            _interacting.Clear();
             
             // Compare with all other agents.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
@@ -141,7 +153,7 @@ namespace KaijuSolutions.Agents.Movement
                 
                 // Add the movement, and indicate there has been a separation performed.
                 movement -= direction.normalized * Mathf.Min(strength, Agent.MoveSpeed);
-                Interacting.Add(agent);
+                _interacting.Add(agent);
             }
             
             return movement;
@@ -152,6 +164,20 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <returns>The color for visualizations</returns>
         protected override Color VisualizationColor() => KaijuMovementManager.SeparationColor;
+        
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// </summary>
+        protected override void RenderVisualizations()
+        {
+            Vector3 a = Agent;
+            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
+            foreach (KaijuAgent agent in _interacting)
+            {
+                Vector3 b = agent;
+                Handles.DrawLine(a, b);
+            }
+        }
 #endif
         /// <summary>
         /// Get a description of the object.

@@ -31,16 +31,6 @@ namespace KaijuSolutions.Agents.Movement
         public readonly HashSet<uint> Identifiers = new();
         
         /// <summary>
-        /// The agents currently detected this movement is moving in relation to.
-        /// </summary>
-        public IReadOnlyCollection<KaijuAgent> Interacted => Interacting;
-        
-        /// <summary>
-        /// The agents currently detected this movement is moving in relation to.
-        /// </summary>
-        protected readonly HashSet<KaijuAgent> Interacting = new();
-        
-        /// <summary>
         /// Clear all identifiers of agents to interact with.
         /// </summary>
         public void ClearIdentifiers()
@@ -179,13 +169,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void RenderVisualizations()
         {
-            Vector3 a = Agent;
-            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
-            foreach (KaijuAgent agent in Interacting)
-            {
-                Vector3 b = agent;
-                Handles.DrawLine(a, b);
-            }
+            Handles.DrawWireDisc(Agent, Vector3.up, Distance, 0);
         }
 #endif
         /// <summary>

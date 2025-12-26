@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -22,6 +24,11 @@ namespace KaijuSolutions.Agents.Movement
         /// The radius of agents for avoidance.
         /// </summary>
         private float _radius;
+        
+        /// <summary>
+        /// The target agent to avoid.
+        /// </summary>
+        public KaijuAgent Target { get; private set; }
         
         /// <summary>
         /// Get a separation movement.
@@ -89,8 +96,13 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         public override Vector2 Move(Vector2 position, float delta)
         {
-            Vector2 movement = Vector2.zero;
-            Interacting.Clear();
+            // Initialize variables for identifying the agent.
+            float shortestTime = float.MaxValue;
+            float targetMinSeparation = 0;
+            float targetDistance = float.MaxValue;
+            Vector2 targetPosition = Vector2.zero;
+            Vector2 targetRelativePosition = Vector2.zero;
+            Vector2 targetRelativeVelocity = Vector2.zero; 
             
             // Compare with all other agents.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
@@ -133,10 +145,66 @@ namespace KaijuSolutions.Agents.Movement
                     }
                 }
                 
-                // TODO.
+                // If this is a valid target, see if we should consider it.
+                targetPosition = agent;
+                Vector2 relativePosition = targetPosition - position;
+                Vector2 relativeVelocity = agent.Velocity - Agent.Velocity;
+                float relativeSpeed = relativeVelocity.magnitude;
+                float time = Vector2.Dot(relativePosition, relativeVelocity) / (relativeSpeed * relativeSpeed);
+                
+                // See if this will collide at all and if so, if this is the quickest collision we now need to avoid.
+                float relativeDistance = relativePosition.magnitude;
+                float minSeparation = relativeDistance - relativeSpeed * time;
+                if (minSeparation > 2 * _radius || time <= 0 || time >= shortestTime)
+                {
+                    continue;
+                }
+                
+                // Update the nearest collision details.
+                shortestTime = time;
+                Target = agent;
+                targetMinSeparation = minSeparation;
+                targetDistance = relativeDistance;
+                targetRelativePosition = relativePosition;
+                targetRelativeVelocity = relativeVelocity;
             }
             
-            return movement;
+            // Nothing to do if there are no targets.
+            if (!Target)
+            {
+                return Vector2.zero;
+            }
+            
+            // Handle if this will be an exact collision or if one is already happening. Otherwise, calculate the future relative position.
+            return (targetMinSeparation <= 0 || targetDistance < 2 * _radius ? targetPosition - position : targetRelativePosition + targetRelativeVelocity * shortestTime).normalized * Agent.MoveSpeed;
+        }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color VisualizationColor() => KaijuMovementManager.CollisionAvoidanceColor;
+        
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// </summary>
+        protected override void RenderVisualizations()
+        {
+            Vector3 a = Agent;
+            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
+            if (Target)
+            {
+                Handles.DrawLine(a, Target);
+            }
+        }
+#endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Separation Movement - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Radius: {Radius} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

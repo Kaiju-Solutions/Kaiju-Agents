@@ -47,6 +47,11 @@ namespace KaijuSolutions.Agents.Movement
         private const string SeparationKey = "KAIJU_AGENTS_COLOR_SEPARATION";
         
         /// <summary>
+        /// The key for the collision avoidance color preference.
+        /// </summary>
+        private const string CollisionAvoidanceKey = "KAIJU_AGENTS_COLOR_COLLISION_AVOIDANCE";
+        
+        /// <summary>
         /// Color for seek visuals.
         /// </summary>
         public static Color SeekColor
@@ -209,6 +214,33 @@ namespace KaijuSolutions.Agents.Movement
         private static Color? _separationColor;
         
         /// <summary>
+        /// Color for collision avoidance visuals.
+        /// </summary>
+        public static Color CollisionAvoidanceColor
+        {
+            get
+            {
+                if (_collisionAvoidanceColor.HasValue)
+                {
+                    return _collisionAvoidanceColor.Value;
+                }
+                
+                _collisionAvoidanceColor = KaijuAgentsManager.LoadColor(CollisionAvoidanceKey, Color.maroon);
+                return _collisionAvoidanceColor.Value;
+            }
+            set
+            {
+                _collisionAvoidanceColor = value;
+                KaijuAgentsManager.SaveColor(CollisionAvoidanceKey, _collisionAvoidanceColor.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Color for collision avoidance visuals.
+        /// </summary>
+        private static Color? _collisionAvoidanceColor;
+        
+        /// <summary>
         /// Sync all colors.
         /// </summary>
         public static void SyncColors()
@@ -219,6 +251,7 @@ namespace KaijuSolutions.Agents.Movement
             _ = EvadeColor;
             _ = WanderKey;
             _ = SeparationColor;
+            _ = CollisionAvoidanceKey;
         }
         
         /// <summary>
@@ -232,6 +265,7 @@ namespace KaijuSolutions.Agents.Movement
             ResetEvadeColor();
             ResetWanderColor();
             ResetSeparationColor();
+            ResetCollisionAvoidanceColor();
         }
         
         /// <summary>
@@ -280,6 +314,14 @@ namespace KaijuSolutions.Agents.Movement
         public static void ResetSeparationColor()
         {
             KaijuAgentsManager.ResetColor(SeparationKey);
+        }
+        
+        /// <summary>
+        /// Reset the collision avoidance color.
+        /// </summary>
+        public static void ResetCollisionAvoidanceColor()
+        {
+            KaijuAgentsManager.ResetColor(CollisionAvoidanceKey);
         }
         
         /// <summary>
