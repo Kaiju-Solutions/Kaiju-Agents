@@ -1066,7 +1066,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek(Vector2 target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1086,7 +1086,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek(Vector3 target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1106,7 +1106,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek([NotNull] GameObject target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1126,7 +1126,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek([NotNull] Component target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1146,7 +1146,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue(Vector2 target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1166,7 +1166,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue(Vector3 target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1186,7 +1186,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue([NotNull] GameObject target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1206,7 +1206,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue([NotNull] Component target, float distance = 0, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1226,7 +1226,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee(Vector2 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1246,7 +1246,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee(Vector3 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1266,7 +1266,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee([NotNull] GameObject target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1286,7 +1286,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee([NotNull] Component target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1306,7 +1306,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuEvadeMovement Evade(Vector2 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1326,7 +1326,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade(Vector3 target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1346,7 +1346,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade([NotNull] GameObject target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1366,7 +1366,7 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade([NotNull] Component target, float distance = float.MaxValue, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
         {
             if (clear)
             {

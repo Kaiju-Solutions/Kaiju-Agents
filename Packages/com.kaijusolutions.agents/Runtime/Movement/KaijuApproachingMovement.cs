@@ -15,7 +15,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an approach movement for a Vector3.
@@ -24,7 +24,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an approach movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuApproachingMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuApproachingMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create an approach movement for a component.
@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The component to move towards.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuApproachingMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuApproachingMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Determine if the movement is done or not.

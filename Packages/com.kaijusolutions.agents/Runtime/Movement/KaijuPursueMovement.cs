@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a pursue movement for the agent.</returns>
-        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1)
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
             if (movement == null)
@@ -62,7 +62,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a pursue movement for the agent.</returns>
-        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1)
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
             if (movement == null)
@@ -82,7 +82,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a pursue movement for the agent.</returns>
-        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1)
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
             if (movement == null)
@@ -102,7 +102,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <returns>Get a pursue movement for the agent.</returns>
-        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1)
+        public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
             if (movement == null)
@@ -121,7 +121,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a pursue movement.
@@ -130,7 +130,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
 
         /// <summary>
         /// Create a pursue movement.
@@ -139,7 +139,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The GameObject to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
 
         /// <summary>
         /// Create a pursue movement.
@@ -148,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The component to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Handle any additional setup.
