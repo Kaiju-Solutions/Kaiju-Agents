@@ -356,6 +356,10 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDisable()
         {
+            Stop();
+            StopLooking();
+            ClearIdentifiers();
+            Velocity = Vector2.zero;
             KaijuAgentsManager.Unregister(this);
         }
         
