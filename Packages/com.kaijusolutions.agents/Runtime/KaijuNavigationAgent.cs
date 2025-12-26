@@ -32,11 +32,42 @@ namespace KaijuSolutions.Agents
         public NavMeshAgent Nav => nav;
         
         /// <summary>
+        /// Callback when the movement speed has changed.
+        /// </summary>
+        protected override void ChangedMoveSpeed()
+        {
+            base.ChangedMoveSpeed();
+            Setup();
+        }
+        
+        /// <summary>
+        /// Callback when the movement acceleration has changed.
+        /// </summary>
+        protected override void ChangedMoveAcceleration()
+        {
+            base.ChangedMoveAcceleration();
+            Setup();
+        }
+        
+        /// <summary>
+        /// Callback when the look speed has changed.
+        /// </summary>
+        protected override void ChangedLookSpeed()
+        {
+            base.ChangedLookSpeed();
+            Setup();
+        }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public override void Setup()
         {
             gameObject.AssignComponent(ref nav);
+            nav.speed = MoveSpeed;
+            float acceleration = MoveAcceleration;
+            nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
+            nav.angularSpeed = LookSpeed;
         }
         
         /// <summary>

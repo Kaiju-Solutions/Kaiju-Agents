@@ -30,7 +30,11 @@ namespace KaijuSolutions.Agents
         public float MoveSpeed
         {
             get => moveSpeed;
-            set => moveSpeed = Mathf.Max(value, 0);
+            set
+            {
+                moveSpeed = Mathf.Max(value, 0);
+                ChangedMoveSpeed();
+            }
         }
         
         /// <summary>
@@ -44,12 +48,21 @@ namespace KaijuSolutions.Agents
         private float moveSpeed = 10f;
         
         /// <summary>
+        /// Callback when the movement speed has changed.
+        /// </summary>
+        protected virtual void ChangedMoveSpeed() { }
+        
+        /// <summary>
         /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
         /// </summary>
         public float MoveAcceleration
         {
             get => moveAcceleration;
-            set => moveAcceleration = Mathf.Max(value, 0);
+            set
+            {
+                moveAcceleration = Mathf.Max(value, 0);
+                ChangedMoveAcceleration();
+            }
         }
         
         /// <summary>
@@ -63,12 +76,21 @@ namespace KaijuSolutions.Agents
         private float moveAcceleration;
         
         /// <summary>
+        /// Callback when the movement acceleration has changed.
+        /// </summary>
+        protected virtual void ChangedMoveAcceleration() { }
+        
+        /// <summary>
         /// The maximum look speed of the agent in degrees per second.
         /// </summary>
         public float LookSpeed
         {
             get => lookSpeed;
-            set => lookSpeed = Mathf.Max(value, 0);
+            set
+            {
+                lookSpeed = Mathf.Max(value, 0);
+                ChangedLookSpeed();
+            }
         }
         
         /// <summary>
@@ -80,15 +102,38 @@ namespace KaijuSolutions.Agents
         [Min(0)]
         [SerializeField]
         private float lookSpeed;
+        
+        /// <summary>
+        /// Callback when the look speed has changed.
+        /// </summary>
+        protected virtual void ChangedLookSpeed() { }
 
         /// <summary>
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
+        public bool AutoRotate
+        {
+            get => autoRotate;
+            set
+            {
+                autoRotate = value;
+                ChangedAutoRotate();
+            }
+        }
+        
+        /// <summary>
+        /// If the agent should automatically rotate towards where it is moving when no look target is set.
+        /// </summary>
 #if UNITY_EDITOR
-        [field: Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
+        [Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
 #endif
-        [field: SerializeField]
-        public bool AutoRotate { get; private set; } = true;
+        [SerializeField]
+        private bool autoRotate = true;
+        
+        /// <summary>
+        /// Callback when the autorotate has changed.
+        /// </summary>
+        protected virtual void ChangedAutoRotate() { }
         
         /// <summary>
         /// Identifiers for this agent.
@@ -96,13 +141,18 @@ namespace KaijuSolutions.Agents
         public IReadOnlyList<uint> Identifiers => identifiers;
         
         /// <summary>
-        /// Identifiers for this agent.
+        /// Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the <see cref="ChangedIdentifiers"/> callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("Identifiers for this agent.")]
+        [Tooltip("Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the ChangedIdentifiers callback.")]
 #endif
         [SerializeField]
         private List<uint> identifiers = new();
+        
+        /// <summary>
+        /// Callback when identifiers have been updated.
+        /// </summary>
+        protected virtual void ChangedIdentifiers() { }
         
         /// <summary>
         /// The current velocity of the agent.
@@ -315,7 +365,6 @@ namespace KaijuSolutions.Agents
         {
             // Start with no motion this frame.
             Vector2 velocity = Vector2.zero;
-            
             Vector2 position = Position;
             
             // Go through all assigned movements.
@@ -1457,7 +1506,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
-        protected virtual void OnValidate()
+        protected virtual void ChangedValidate()
         {
             // Validate all identifiers when playing.
             if (Application.isPlaying)
