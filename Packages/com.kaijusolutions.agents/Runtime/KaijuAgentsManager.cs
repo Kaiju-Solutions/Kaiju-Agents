@@ -1044,12 +1044,12 @@ namespace KaijuSolutions.Agents
             
             if (!KaijuMovementManager.VisualizationsActive)
             {
-                bool text = mode is KaijuMovementManager.VisualizationsTextMode.All or KaijuMovementManager.VisualizationsTextMode.Selected;
+                bool text = AllAgents.Count > 1 && mode is KaijuMovementManager.VisualizationsTextMode.All or KaijuMovementManager.VisualizationsTextMode.Selected;
                 Visualize(_selectedAgents, text, text);
                 return;
             }
             
-            bool all = mode is KaijuMovementManager.VisualizationsTextMode.All;
+            bool all = AllAgents.Count > 1 &&  mode is KaijuMovementManager.VisualizationsTextMode.All;
             Visualize(AllAgents, all, all || mode is KaijuMovementManager.VisualizationsTextMode.Selected);
         }
         
