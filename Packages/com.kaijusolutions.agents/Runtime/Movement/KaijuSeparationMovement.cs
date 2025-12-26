@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -154,15 +152,6 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <returns>The color for visualizations</returns>
         protected override Color VisualizationColor() => KaijuMovementManager.SeparationColor;
-        
-        /// <summary>
-        /// Render the visualization of the movement.
-        /// </summary>
-        protected override void RenderVisualizations()
-        {
-            Handles.DrawWireDisc(Agent, Vector3.up, Distance, 0);
-            base.RenderVisualizations();
-        }
 #endif
         /// <summary>
         /// Get a description of the object.

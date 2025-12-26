@@ -180,6 +180,7 @@ namespace KaijuSolutions.Agents.Movement
         protected override void RenderVisualizations()
         {
             Vector3 a = Agent;
+            Handles.DrawWireDisc(a, Vector3.up, Distance, 0);
             foreach (KaijuAgent agent in Interacting)
             {
                 Vector3 b = agent;
