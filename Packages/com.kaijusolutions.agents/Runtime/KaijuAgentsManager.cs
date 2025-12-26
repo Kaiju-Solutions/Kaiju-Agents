@@ -699,6 +699,19 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="agent">The given agent.</param>
         /// <param name="distance">The distance the nearest agent is found to be.</param>
+        /// <param name="identifier">The identifier to limit the search to.</param>
+        /// <returns>The nearest agent or NULL if none are found.</returns>
+        public static KaijuAgent Nearest([NotNull] KaijuAgent agent, out float distance, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Nearest(agent, out distance, SingleCache);
+        }
+        
+        /// <summary>
+        /// Get the nearest agent to a given agent.
+        /// </summary>
+        /// <param name="agent">The given agent.</param>
+        /// <param name="distance">The distance the nearest agent is found to be.</param>
         /// <param name="identifiers">Any identifiers to limit the search to.</param>
         /// <returns>The nearest agent or NULL if none are found.</returns>
         public static KaijuAgent Nearest([NotNull] KaijuAgent agent, out float distance, IEnumerable<uint> identifiers = null)
@@ -755,6 +768,19 @@ namespace KaijuSolutions.Agents
             }
             
             return nearest;
+        }
+        
+        /// <summary>
+        /// Get the farthest agent to a given agent.
+        /// </summary>
+        /// <param name="agent">The given agent.</param>
+        /// <param name="distance">The distance the farthest agent is found to be.</param>
+        /// <param name="identifier">The identifier to limit the search to.</param>
+        /// <returns>The farthest agent or NULL if none are found.</returns>
+        public static KaijuAgent Farthest([NotNull] KaijuAgent agent, out float distance, uint identifier)
+        {
+            SingleCache[0] = identifier;
+            return Farthest(agent, out distance, SingleCache);
         }
         
         /// <summary>
