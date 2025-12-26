@@ -32,7 +32,10 @@ public class Target : MonoBehaviour
                     agent.Wander(clear: false);
                     break;
                 case MoveType.Separate:
-                    agent.Separate(clear: false);
+                    agent.Separation(clear: false);
+                    break;
+                case MoveType.CollisionAvoidance:
+                    agent.CollisionAvoidance(clear: false);
                     break;
             }
         }
@@ -55,6 +58,7 @@ public class Target : MonoBehaviour
         Flee,
         Evade,
         Wander,
-        Separate
+        Separate,
+        CollisionAvoidance
     }
 }

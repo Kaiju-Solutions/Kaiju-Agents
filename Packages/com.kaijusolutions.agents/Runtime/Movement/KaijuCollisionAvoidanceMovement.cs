@@ -97,6 +97,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             // Initialize variables for identifying the agent.
+            Target = null;
             float shortestTime = float.MaxValue;
             float targetMinSeparation = 0;
             float targetDistance = float.MaxValue;
@@ -147,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
                 
                 // If this is a valid target, see if we should consider it.
                 targetPosition = agent;
-                Vector2 relativePosition = targetPosition - position;
+                Vector2 relativePosition = position - targetPosition;
                 Vector2 relativeVelocity = agent.Velocity - Agent.Velocity;
                 float relativeSpeed = relativeVelocity.magnitude;
                 float time = Vector2.Dot(relativePosition, relativeVelocity) / (relativeSpeed * relativeSpeed);

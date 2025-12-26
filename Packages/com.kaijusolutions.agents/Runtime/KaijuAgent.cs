@@ -1374,7 +1374,7 @@ namespace KaijuSolutions.Agents
         /// <param name="collection">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuSeparationMovement Separate(float distance = 10, float coefficient = 0, ICollection<uint> collection = null, float weight = 1, bool clear = true)
+        public KaijuSeparationMovement Separation(float distance = 10, float coefficient = 0, ICollection<uint> collection = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1382,6 +1382,27 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
+            _movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Collision avoid.
+        /// </summary>
+        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="radius">The radius of agents for avoidance.</param>
+        /// <param name="collection">What types of agents to avoid.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <returns></returns>
+        public KaijuCollisionAvoidanceMovement CollisionAvoidance(float distance = 10, float radius = 0.5f, ICollection<uint> collection = null, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuCollisionAvoidanceMovement movement = KaijuCollisionAvoidanceMovement.Get(this, distance, radius, collection, weight);
             _movements.Add(movement);
             return movement;
         }
