@@ -25,7 +25,7 @@ internal static class KaijuAgentsSettings
             label = "Kaiju Agents",
             activateHandler = (_, root) =>
             {
-                VisualElement container = new()
+                ScrollView container = new(ScrollViewMode.Vertical)
                 {
                     style =
                     {
@@ -207,8 +207,10 @@ internal static class KaijuAgentsSettings
             style =
             {
                 unityFontStyleAndWeight = FontStyle.Bold,
+                fontSize = 14,
                 marginTop = 10,
-                marginBottom = 5
+                marginBottom = 5,
+                marginLeft = 2.5f
             }
         };
     }
