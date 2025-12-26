@@ -33,11 +33,34 @@ namespace KaijuSolutions.Agents
         public CharacterController Character => character;
         
         /// <summary>
+        /// Callback before updating the transform.
+        /// </summary>
+        protected override void PreSetTransform()
+        {
+            if (character)
+            {
+                character.enabled = false;
+            }
+        }
+        
+        /// <summary>
+        /// Callback after updating the transform.
+        /// </summary>
+        protected override void PostSetTransform()
+        {
+            if (character)
+            {
+                character.enabled = true;
+            }
+        }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public override void Setup()
         {
             gameObject.AssignComponent(ref character);
+            character.enabled = true;
         }
         
         /// <summary>

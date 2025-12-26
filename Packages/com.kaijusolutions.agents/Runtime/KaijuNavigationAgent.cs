@@ -36,8 +36,10 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void ChangedMoveSpeed()
         {
-            base.ChangedMoveSpeed();
-            Setup();
+            if (nav)
+            {
+                nav.speed = MoveSpeed;
+            }
         }
         
         /// <summary>
@@ -45,8 +47,13 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void ChangedMoveAcceleration()
         {
-            base.ChangedMoveAcceleration();
-            Setup();
+            if (!nav)
+            {
+                return;
+            }
+            
+            float acceleration = MoveAcceleration;
+            nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
         }
         
         /// <summary>
@@ -54,8 +61,10 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void ChangedLookSpeed()
         {
-            base.ChangedLookSpeed();
-            Setup();
+            if (nav)
+            {
+                nav.angularSpeed = LookSpeed;
+            }
         }
         
         /// <summary>
@@ -68,6 +77,7 @@ namespace KaijuSolutions.Agents
             float acceleration = MoveAcceleration;
             nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
             nav.angularSpeed = LookSpeed;
+            nav.enabled = true;
         }
         
         /// <summary>

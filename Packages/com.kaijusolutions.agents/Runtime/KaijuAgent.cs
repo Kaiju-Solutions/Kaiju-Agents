@@ -20,6 +20,71 @@ namespace KaijuSolutions.Agents
     public abstract class KaijuAgent : MonoBehaviour
     {
         /// <summary>
+        /// Movement speed changed callback.
+        /// </summary>
+        public static event AgentAction OnMoveSpeed;
+        
+        /// <summary>
+        /// Movement acceleration changed callback.
+        /// </summary>
+        public static event AgentAction OnMoveAcceleration;
+        
+        /// <summary>
+        /// Look speed changed callback.
+        /// </summary>
+        public static event AgentAction OnLookSpeed;
+        
+        /// <summary>
+        /// Autorotation changed callback.
+        /// </summary>
+        public static event AgentAction OnAutoRotate;
+        
+        /// <summary>
+        /// Callback for when the look target has been set.
+        /// </summary>
+        public static event AgentAction OnLookTarget;
+        
+        /// <summary>
+        /// Callback for when the position has been explicitly set.
+        /// </summary>
+        public static event AgentAction OnSetPosition;
+        
+        /// <summary>
+        /// Callback for when the orientation has been explicitly set.
+        /// </summary>
+        public static event AgentAction OnSetOrientation;
+        
+        /// <summary>
+        /// Callback for when this agent has calculated movement.
+        /// </summary>
+        public static event AgentAction OnMove;
+        
+        /// <summary>
+        /// Callback for when this has finishing becoming enabled.
+        /// </summary>
+        public static event AgentAction OnEnabled;
+        
+        /// <summary>
+        /// Callback for when this has finishing becoming disabled.
+        /// </summary>
+        public static event AgentAction OnDisabled;
+        
+        /// <summary>
+        /// Callback for when this has finishing becoming destroyed.
+        /// </summary>
+        public static event AgentAction OnDestroyed;
+        
+        /// <summary>
+        /// Callback for when a movement has started.
+        /// </summary>
+        public static event AgentMovementAction OnMovementStarted;
+        
+        /// <summary>
+        /// Callback for when a movement has stopped.
+        /// </summary>
+        public static event AgentMovementAction OnMovementStopped;
+        
+        /// <summary>
         /// If this agent should move with the physics system.
         /// </summary>
         public virtual bool PhysicsAgent => false;
@@ -34,14 +99,15 @@ namespace KaijuSolutions.Agents
             {
                 moveSpeed = Mathf.Max(value, 0);
                 ChangedMoveSpeed();
+                OnMoveSpeed?.Invoke(this);
             }
         }
         
         /// <summary>
-        /// The maximum move speed of the agent in units per second.
+        /// The maximum move speed of the agent in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum move speed of the agent in units per second.")]
+        [Tooltip("The maximum move speed of the agent in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
         [SerializeField]
@@ -62,14 +128,15 @@ namespace KaijuSolutions.Agents
             {
                 moveAcceleration = Mathf.Max(value, 0);
                 ChangedMoveAcceleration();
+                OnMoveAcceleration?.Invoke(this);
             }
         }
         
         /// <summary>
-        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
+        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.")]
+        [Tooltip("The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
         [SerializeField]
@@ -90,14 +157,15 @@ namespace KaijuSolutions.Agents
             {
                 lookSpeed = Mathf.Max(value, 0);
                 ChangedLookSpeed();
+                OnLookSpeed?.Invoke(this);
             }
         }
         
         /// <summary>
-        /// The maximum look speed of the agent in degrees per second.
+        /// The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The maximum look speed of the agent in degrees per second.")]
+        [Tooltip("The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
         [SerializeField]
@@ -107,7 +175,7 @@ namespace KaijuSolutions.Agents
         /// Callback when the look speed has changed.
         /// </summary>
         protected virtual void ChangedLookSpeed() { }
-
+        
         /// <summary>
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
@@ -118,14 +186,15 @@ namespace KaijuSolutions.Agents
             {
                 autoRotate = value;
                 ChangedAutoRotate();
+                OnAutoRotate?.Invoke(this);
             }
         }
         
         /// <summary>
-        /// If the agent should automatically rotate towards where it is moving when no look target is set.
+        /// If the agent should automatically rotate towards where it is moving when no look target is set. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set.")]
+        [Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [SerializeField]
         private bool autoRotate = true;
@@ -141,10 +210,10 @@ namespace KaijuSolutions.Agents
         public IReadOnlyList<uint> Identifiers => identifiers;
         
         /// <summary>
-        /// Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the <see cref="ChangedIdentifiers"/> callback.
+        /// Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the ChangedIdentifiers callback.")]
+        [Tooltip("Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [SerializeField]
         private List<uint> identifiers = new();
@@ -224,6 +293,7 @@ namespace KaijuSolutions.Agents
                 _lookVector = value;
                 _lookVector3 = null;
                 _lookTransform = null;
+                OnLookTarget?.Invoke(this);
             }
         }
         
@@ -238,6 +308,7 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = value;
                 _lookVector = null;
                 _lookTransform = null;
+                OnLookTarget?.Invoke(this);
             }
         }
         
@@ -252,6 +323,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value;
                 _lookVector = null;
                 _lookVector3 = null;
+                OnLookTarget?.Invoke(this);
             }
         }
         
@@ -266,6 +338,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value.transform;
                 _lookVector = null;
                 _lookVector3 = null;
+                OnLookTarget?.Invoke(this);
             }
         }
         
@@ -288,6 +361,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value.transform;
                 _lookVector = null;
                 _lookVector3 = null;
+                OnLookTarget?.Invoke(this);
             }
         }
         
@@ -331,7 +405,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get the position vector along the main XZ axis.
+        /// The position vector along the main XZ axis.
         /// </summary>
         public Vector2 Position
         {
@@ -340,17 +414,52 @@ namespace KaijuSolutions.Agents
                 Vector3 p = transform.position;
                 return new(p.x, p.z);
             }
+            set
+            {
+                PreSetTransform();
+                transform.position = new(value.x, 0, value.y);
+                PostSetTransform();
+                OnSetPosition?.Invoke(this);
+            }
         }
         
         /// <summary>
-        /// Get the position vector along all three axes.
+        /// The position vector along all three axes.
         /// </summary>
-        public Vector3 Position3 => transform.position;
+        public Vector3 Position3
+        {
+            get => transform.position;
+            set
+            {
+                PreSetTransform();
+                transform.position = value;
+                PostSetTransform();
+                OnSetPosition?.Invoke(this);
+            }
+        }
         
         /// <summary>
-        /// Get the angle the agent is rotated along the main Y axis.
+        /// Callback before updating the transform.
         /// </summary>
-        public float Orientation => transform.localEulerAngles.y;
+        protected virtual void PreSetTransform() { }
+        
+        /// <summary>
+        /// Callback after updating the transform.
+        /// </summary>
+        protected virtual void PostSetTransform() { }
+        
+        /// <summary>
+        /// The angle the agent is rotated along the main Y axis.
+        /// </summary>
+        public float Orientation
+        {
+            get => transform.localEulerAngles.y;
+            set
+            {
+                transform.localEulerAngles = new(0, value, 0);
+                OnSetOrientation?.Invoke(this);
+            }
+        }
         
         /// <summary>
         /// Initialize the agent.
@@ -373,6 +482,7 @@ namespace KaijuSolutions.Agents
                 // If the movement is done, remove it to the cache.
                 if (_movements[i].Done())
                 {
+                    OnMovementStopped?.Invoke(this, _movements[i]);
                     _movements[i].Return();
                     _movements.RemoveAt(i--);
                     continue;
@@ -390,6 +500,7 @@ namespace KaijuSolutions.Agents
             
             // Set the updated velocity.
             Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, velocity, moveAcceleration * delta) : velocity;
+            OnMove?.Invoke(this);
         }
         
         /// <summary>
@@ -398,6 +509,7 @@ namespace KaijuSolutions.Agents
         private void OnEnable()
         {
             KaijuAgentsManager.Register(this);
+            OnEnabled?.Invoke(this);
         }
         
         /// <summary>
@@ -410,6 +522,25 @@ namespace KaijuSolutions.Agents
             ClearIdentifiers();
             Velocity = Vector2.zero;
             KaijuAgentsManager.Unregister(this);
+            OnDisabled?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Unregister without caching.
+            KaijuAgentsManager.Unregister(this, false);
+            OnDestroyed?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
+        /// </summary>
+        private void Start()
+        {
+            Setup();
         }
         
         /// <summary>
@@ -430,15 +561,6 @@ namespace KaijuSolutions.Agents
             gameObject.SetActive(false);
         }
         
-        /// <summary>
-        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
-        /// </summary>
-        private void OnDestroy()
-        {
-            // Unregister without caching.
-            KaijuAgentsManager.Unregister(this, false);
-        }
-
         /// <summary>
         /// Clear all identifiers.
         /// </summary>
@@ -957,6 +1079,7 @@ namespace KaijuSolutions.Agents
         {
             foreach (KaijuMovement movement in _movements)
             {
+                OnMovementStopped?.Invoke(this, movement);
                 movement.Return();
             }
             
@@ -977,6 +1100,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
+                OnMovementStopped?.Invoke(this, _movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i);
                 return true;
@@ -1002,6 +1126,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
+                OnMovementStopped?.Invoke(this, _movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed = true;
@@ -1022,6 +1147,7 @@ namespace KaijuSolutions.Agents
                 return false;
             }
             
+            OnMovementStopped?.Invoke(this, _movements[index]);
             _movements[index].Return();
             _movements.RemoveAt(index);
             return true;
@@ -1049,6 +1175,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
+                OnMovementStopped?.Invoke(this, _movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed++;
@@ -1083,6 +1210,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
+                OnMovementStopped?.Invoke(this, _movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed++;
@@ -1109,6 +1237,7 @@ namespace KaijuSolutions.Agents
             _lookTransform = null;
             _lookVector = null;
             _lookVector3 = null;
+            OnLookTarget?.Invoke(this);
         }
         
         /// <summary>
@@ -1128,6 +1257,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1148,6 +1278,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1168,6 +1299,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1188,6 +1320,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1208,6 +1341,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1228,6 +1362,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1248,6 +1383,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1268,6 +1404,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1288,6 +1425,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1308,6 +1446,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1328,6 +1467,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1348,6 +1488,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1368,6 +1509,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1388,6 +1530,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1408,6 +1551,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1428,6 +1572,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1448,6 +1593,7 @@ namespace KaijuSolutions.Agents
             
             KaijuWanderMovement movement = KaijuWanderMovement.Get(this, distance, radius, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1468,6 +1614,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
         }
         
@@ -1492,21 +1639,14 @@ namespace KaijuSolutions.Agents
             
             KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
             _movements.Add(movement);
+            OnMovementStarted?.Invoke(this, movement);
             return movement;
-        }
-        
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
-        /// </summary>
-        private void Start()
-        {
-            Setup();
         }
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
-        protected virtual void ChangedValidate()
+        protected virtual void OnValidate()
         {
             // Validate all identifiers when playing.
             if (Application.isPlaying)
