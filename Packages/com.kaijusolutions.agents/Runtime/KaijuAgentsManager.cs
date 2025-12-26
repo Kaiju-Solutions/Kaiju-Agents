@@ -417,12 +417,13 @@ namespace KaijuSolutions.Agents
         public static int Within([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> within, IEnumerable<uint> identifiers = null)
         {
             int count = 0;
+            Vector2 a = agent;
             
             if (identifiers == null)
             {
                 foreach (KaijuAgent other in AllAgents)
                 {
-                    if (agent == other || Vector2.Distance(agent, other) > distance)
+                    if (agent == other || Vector2.Distance(a, other) > distance)
                     {
                         continue;
                     }
@@ -443,7 +444,7 @@ namespace KaijuSolutions.Agents
                 
                 foreach (KaijuAgent other in set)
                 {
-                    if (agent == other || Vector2.Distance(agent, other) > distance)
+                    if (agent == other || Vector2.Distance(a, other) > distance)
                     {
                         continue;
                     }
@@ -481,12 +482,13 @@ namespace KaijuSolutions.Agents
         public static int Beyond([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> beyond, IEnumerable<uint> identifiers = null)
         {
             int count = 0;
+            Vector2 a = agent;
             
             if (identifiers == null)
             {
                 foreach (KaijuAgent other in AllAgents)
                 {
-                    if (agent == other || Vector2.Distance(agent, other) < distance)
+                    if (agent == other || Vector2.Distance(a, other) < distance)
                     {
                         continue;
                     }
@@ -507,7 +509,7 @@ namespace KaijuSolutions.Agents
                 
                 foreach (KaijuAgent other in set)
                 {
-                    if (agent == other || Vector2.Distance(agent, other) < distance)
+                    if (agent == other || Vector2.Distance(a, other) < distance)
                     {
                         continue;
                     }
@@ -552,6 +554,7 @@ namespace KaijuSolutions.Agents
             }
 
             int count = 0;
+            Vector2 a = agent;
             
             if (identifiers == null)
             {
@@ -562,7 +565,7 @@ namespace KaijuSolutions.Agents
                         continue;
                     }
                     
-                    float d = Vector2.Distance(agent, other);
+                    float d = Vector2.Distance(a, other);
                     if (distanceA > d || d > distanceB)
                     {
                         continue;
@@ -589,7 +592,7 @@ namespace KaijuSolutions.Agents
                         continue;
                     }
                     
-                    float d = Vector2.Distance(agent, other);
+                    float d = Vector2.Distance(a, other);
                     if (distanceA > d || d > distanceB)
                     {
                         continue;
@@ -601,6 +604,132 @@ namespace KaijuSolutions.Agents
             }
 
             return count;
+        }
+        
+        /// <summary>
+        /// Get the nearest agent to a given agent.
+        /// </summary>
+        /// <param name="agent">The given agent.</param>
+        /// <param name="distance">The distance the nearest agent is found to be.</param>
+        /// <param name="identifiers">Any identifiers to limit the search to.</param>
+        /// <returns>The nearest agent or NULL if none are found.</returns>
+        public static KaijuAgent Nearest([NotNull] KaijuAgent agent, out float distance, IEnumerable<uint> identifiers = null)
+        {
+            distance = float.MaxValue;
+            KaijuAgent nearest = null;
+            Vector2 a = agent;
+            
+            if (identifiers == null)
+            {
+                foreach (KaijuAgent other in AllAgents)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(a, other);
+                    if (nearest && d >= distance)
+                    {
+                        continue;
+                    }
+                    
+                    nearest = other;
+                    distance = d;
+                }
+                
+                return nearest;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent other in set)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(a, other);
+                    if (nearest && d >= distance)
+                    {
+                        continue;
+                    }
+                    
+                    nearest = other;
+                    distance = d;
+                }
+            }
+            
+            return nearest;
+        }
+        
+        /// <summary>
+        /// Get the farthest agent to a given agent.
+        /// </summary>
+        /// <param name="agent">The given agent.</param>
+        /// <param name="distance">The distance the farthest agent is found to be.</param>
+        /// <param name="identifiers">Any identifiers to limit the search to.</param>
+        /// <returns>The farthest agent or NULL if none are found.</returns>
+        public static KaijuAgent Farthest([NotNull] KaijuAgent agent, out float distance, IEnumerable<uint> identifiers = null)
+        {
+            distance = float.MinValue;
+            KaijuAgent farthest = null;
+            Vector2 a = agent;
+            
+            if (identifiers == null)
+            {
+                foreach (KaijuAgent other in AllAgents)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(a, other);
+                    if (farthest && d <= distance)
+                    {
+                        continue;
+                    }
+                    
+                    farthest = other;
+                    distance = d;
+                }
+                
+                return farthest;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent other in set)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(a, other);
+                    if (farthest && d <= distance)
+                    {
+                        continue;
+                    }
+                    
+                    farthest = other;
+                    distance = d;
+                }
+            }
+            
+            return farthest;
         }
 #if UNITY_EDITOR
         /// <summary>

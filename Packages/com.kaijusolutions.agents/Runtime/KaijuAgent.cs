@@ -736,6 +736,28 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get the nearest agent to this agent.
+        /// </summary>
+        /// <param name="distance">The distance the nearest agent is found to be.</param>
+        /// <param name="collection">Any identifiers to limit the search to.</param>
+        /// <returns>The nearest agent or NULL if none are found.</returns>
+        public KaijuAgent Nearest(out float distance, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Nearest(this, out distance, collection);
+        }
+        
+        /// <summary>
+        /// Get the farthest agent to this agent.
+        /// </summary>
+        /// <param name="distance">The distance the farthest agent is found to be.</param>
+        /// <param name="collection">Any identifiers to limit the search to.</param>
+        /// <returns>The farthest agent or NULL if none are found.</returns>
+        public KaijuAgent Farthest(out float distance, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Farthest(this, out distance, collection);
+        }
+        
+        /// <summary>
         /// Stop all movement.
         /// </summary>
         public void Stop()
