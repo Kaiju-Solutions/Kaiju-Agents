@@ -64,7 +64,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        public KaijuSeparationMovement(KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1) : base(agent, distance, identifiers, weight)
+        public KaijuSeparationMovement([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1) : base(agent, distance, identifiers, weight)
         {
             Initialize(agent, distance, coefficient, identifiers, weight);
         }
@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of agents to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        private void Initialize(KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
+        private void Initialize([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
         {
             Initialize(agent, distance, identifiers, weight);
             Coefficient = coefficient;
@@ -90,6 +90,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             base.Reset();
             _coefficient = 0;
+            _interacting.Clear();
         }
         
         /// <summary>

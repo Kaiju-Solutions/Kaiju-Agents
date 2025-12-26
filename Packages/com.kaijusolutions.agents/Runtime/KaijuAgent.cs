@@ -1367,7 +1367,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Separate.
+        /// Separate from other agents.
         /// </summary>
         /// <param name="distance">The distance to avoid other agents from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
@@ -1382,6 +1382,30 @@ namespace KaijuSolutions.Agents
             }
             
             KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
+            _movements.Add(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Avoid obstacles.
+        /// </summary>
+        /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
+        /// <param name="distance">The distance for rays.</param>
+        /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="KaijuObstacleAvoidanceMovement.Distance"/>.</param>
+        /// <param name="angle">The angle for side rays.</param>
+        /// <param name="height">The height offset for the rays.</param>
+        /// <param name="horizontal">The horizontal shift for the side rays.</param>
+        /// <param name="mask">The mask for what layers should the rays hit.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1, bool clear = true)
+        {
+            if (clear)
+            {
+                Stop();
+            }
+            
+            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
             _movements.Add(movement);
             return movement;
         }

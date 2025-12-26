@@ -47,6 +47,11 @@ namespace KaijuSolutions.Agents.Movement
         private const string SeparationKey = "KAIJU_AGENTS_COLOR_SEPARATION";
         
         /// <summary>
+        /// The key for the obstacle avoidance color preference.
+        /// </summary>
+        private const string ObstacleAvoidanceKey = "KAIJU_AGENTS_OBSTACLE_AVOIDANCE_COLOR";
+        
+        /// <summary>
         /// Color for seek visuals.
         /// </summary>
         public static Color SeekColor
@@ -209,6 +214,33 @@ namespace KaijuSolutions.Agents.Movement
         private static Color? _separationColor;
         
         /// <summary>
+        /// Color for obstacle avoidance visuals.
+        /// </summary>
+        public static Color ObstacleAvoidanceColor
+        {
+            get
+            {
+                if (_obstacleAvoidanceColor.HasValue)
+                {
+                    return _obstacleAvoidanceColor.Value;
+                }
+                
+                _obstacleAvoidanceColor = KaijuAgentsManager.LoadColor(ObstacleAvoidanceKey, Color.brown);
+                return _obstacleAvoidanceColor.Value;
+            }
+            set
+            {
+                _obstacleAvoidanceColor = value;
+                KaijuAgentsManager.SaveColor(ObstacleAvoidanceKey, _obstacleAvoidanceColor.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Color for obstacle avoidance visuals.
+        /// </summary>
+        private static Color? _obstacleAvoidanceColor;
+        
+        /// <summary>
         /// Sync all colors.
         /// </summary>
         public static void SyncColors()
@@ -219,6 +251,7 @@ namespace KaijuSolutions.Agents.Movement
             _ = EvadeColor;
             _ = WanderKey;
             _ = SeparationColor;
+            _ = ObstacleAvoidanceColor;
         }
         
         /// <summary>
@@ -232,6 +265,7 @@ namespace KaijuSolutions.Agents.Movement
             ResetEvadeColor();
             ResetWanderColor();
             ResetSeparationColor();
+            ResetObstacleAvoidanceColor();
         }
         
         /// <summary>
@@ -280,6 +314,14 @@ namespace KaijuSolutions.Agents.Movement
         public static void ResetSeparationColor()
         {
             KaijuAgentsManager.ResetColor(SeparationKey);
+        }
+        
+        /// <summary>
+        /// Reset the obstacle avoidance color.
+        /// </summary>
+        public static void ResetObstacleAvoidanceColor()
+        {
+            KaijuAgentsManager.ResetColor(ObstacleAvoidanceKey);
         }
         
         /// <summary>
