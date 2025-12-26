@@ -665,6 +665,77 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get all agents within a distance this agent.
+        /// </summary>
+        /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="collection">The identifiers of the agents to get being within a distance this agent.</param>
+        /// <returns>All agents with a distance to this agent.</returns>
+        public HashSet<KaijuAgent> Within(float distance, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Within(this, distance, collection);
+        }
+        
+        /// <summary>
+        /// Get all agents within a distance this agent. The agents are added to the within parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="within">The agents close to this agent.</param>
+        /// <param name="collection">The identifiers of the agents to get being within a distance to this agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public int Within(float distance, [NotNull] ICollection<KaijuAgent> within, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Within(this, distance, within, collection);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance this agent.
+        /// </summary>
+        /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="collection">The identifiers of the agents to get being beyond a distance to this agent.</param>
+        /// <returns>All beyond a distance to this agent.</returns>
+        public HashSet<KaijuAgent> Beyond(float distance, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Beyond(this, distance, collection);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance this agent. The agents are added to the beyond parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="beyond">The agents close to this agent.</param>
+        /// <param name="collection">The identifiers of the agents to get being beyond a distance to this agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public int Beyond(float distance, [NotNull] ICollection<KaijuAgent> beyond, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Beyond(this, distance, beyond, collection);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to this agent.
+        /// </summary>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
+        /// <param name="collection">The identifiers of the agents to get being between the distances to this agent.</param>
+        /// <returns>All agents between the distances to this agent.</returns>
+        public HashSet<KaijuAgent> Between(float distanceA, float distanceB, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Between(this, distanceA, distanceA, collection);
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance and within another distance to this agent. The agents are added to the between parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
+        /// <param name="between">The agents close to this agent.</param>
+        /// <param name="collection">The identifiers of the agents to get being between the distances to this agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public int Between(float distanceA, float distanceB,  [NotNull] ICollection<KaijuAgent> between, IEnumerable<uint> collection = null)
+        {
+            return KaijuAgentsManager.Between(this, distanceA, distanceA, between, collection);
+        }
+        
+        /// <summary>
         /// Stop all movement.
         /// </summary>
         public void Stop()

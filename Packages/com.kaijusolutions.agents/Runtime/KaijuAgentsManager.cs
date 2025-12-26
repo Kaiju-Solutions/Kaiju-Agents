@@ -351,7 +351,7 @@ namespace KaijuSolutions.Agents
         /// Get all agents with a given identifier.
         /// </summary>
         /// <param name="identifier">The identifier.</param>
-        /// <returns>All agents with the given identifier.</returns>
+        /// <returns>All agents with a given identifier.</returns>
         public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier)
         {
             return AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set) ? set : EmptyAgents;
@@ -362,7 +362,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="identified">Updated to contain all agents which were identified.</param>
         /// <param name="identifiers">The identifiers.</param>
-        public static void IdentifiedAgents([NotNull] HashSet<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
+        public static void IdentifiedAgents([NotNull] ICollection<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
         {
             identified.Clear();
             
@@ -390,6 +390,217 @@ namespace KaijuSolutions.Agents
             HashSet<KaijuAgent> identified = new();
             IdentifiedAgents(identified, identifiers);
             return identified;
+        }
+        
+        /// <summary>
+        /// Get all agents within a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being within a distance to the given agent.</param>
+        /// <returns>All agents within a distance to a given agent.</returns>
+        public static HashSet<KaijuAgent> Within([NotNull] KaijuAgent agent, float distance, IEnumerable<uint> identifiers = null)
+        {
+            HashSet<KaijuAgent> within = new();
+            Within(agent, distance, within, identifiers);
+            return within;
+        }
+        
+        /// <summary>
+        /// Get all agents within a distance to a given agent. The agents are added to the within parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents within.</param>
+        /// <param name="within">The agents close to the given agent.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being within a distance to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Within([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> within, IEnumerable<uint> identifiers = null)
+        {
+            int count = 0;
+            
+            if (identifiers == null)
+            {
+                foreach (KaijuAgent other in AllAgents)
+                {
+                    if (agent == other || Vector2.Distance(agent, other) > distance)
+                    {
+                        continue;
+                    }
+                    
+                    within.Add(other);
+                    count++;
+                }
+                
+                return count;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent other in set)
+                {
+                    if (agent == other || Vector2.Distance(agent, other) > distance)
+                    {
+                        continue;
+                    }
+                    
+                    within.Add(other);
+                    count++;
+                }
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents beyond a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being beyond a distance to the given agent.</param>
+        /// <returns>All agents beyond a distance a given agent.</returns>
+        public static HashSet<KaijuAgent> Beyond([NotNull] KaijuAgent agent, float distance, IEnumerable<uint> identifiers = null)
+        {
+            HashSet<KaijuAgent> beyond = new();
+            Beyond(agent, distance, beyond, identifiers);
+            return beyond;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent. The agents are added to the beyond parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents beyond a certain distance to.</param>
+        /// <param name="distance">The distance to detect agents beyond.</param>
+        /// <param name="beyond">The agents close to the given agent.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being beyond a distance to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Beyond([NotNull] KaijuAgent agent, float distance, [NotNull] ICollection<KaijuAgent> beyond, IEnumerable<uint> identifiers = null)
+        {
+            int count = 0;
+            
+            if (identifiers == null)
+            {
+                foreach (KaijuAgent other in AllAgents)
+                {
+                    if (agent == other || Vector2.Distance(agent, other) < distance)
+                    {
+                        continue;
+                    }
+                    
+                    beyond.Add(other);
+                    count++;
+                }
+                
+                return count;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent other in set)
+                {
+                    if (agent == other || Vector2.Distance(agent, other) < distance)
+                    {
+                        continue;
+                    }
+                    
+                    beyond.Add(other);
+                    count++;
+                }
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance to a given agent.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a given distance range.</param>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being between the distances to the given agent.</param>
+        /// <returns>All agents between the distances to a given agent.</returns>
+        public static HashSet<KaijuAgent> Between([NotNull] KaijuAgent agent, float distanceA, float distanceB, IEnumerable<uint> identifiers = null)
+        {
+            HashSet<KaijuAgent> between = new();
+            Between(agent, distanceA, distanceB, between, identifiers);
+            return between;
+        }
+        
+        /// <summary>
+        /// Get all agents beyond a distance and within another distance to a given agent. The agents are added to the between parameter. It is up to you to clear this prior, as otherwise this will add entries.
+        /// </summary>
+        /// <param name="agent">The agent to get other agents within a given distance range.</param>
+        /// <param name="distanceA">One of the distances.</param>
+        /// <param name="distanceB">One of the distances.</param>
+        /// <param name="between">The agents close to the given agent.</param>
+        /// <param name="identifiers">The identifiers of the agents to get being between the distances to the given agent.</param>
+        /// <returns>The number of agents found.</returns>
+        public static int Between([NotNull] KaijuAgent agent, float distanceA, float distanceB, [NotNull] ICollection<KaijuAgent> between, IEnumerable<uint> identifiers = null)
+        {
+            if (distanceA > distanceB)
+            {
+                (distanceA, distanceB) = (distanceB, distanceA);
+            }
+
+            int count = 0;
+            
+            if (identifiers == null)
+            {
+                foreach (KaijuAgent other in AllAgents)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(agent, other);
+                    if (distanceA > d || d > distanceB)
+                    {
+                        continue;
+                    }
+                    
+                    between.Add(other);
+                    count++;
+                }
+                
+                return count;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                foreach (KaijuAgent other in set)
+                {
+                    if (agent == other)
+                    {
+                        continue;
+                    }
+                    
+                    float d = Vector2.Distance(agent, other);
+                    if (distanceA > d || d > distanceB)
+                    {
+                        continue;
+                    }
+                    
+                    between.Add(other);
+                    count++;
+                }
+            }
+
+            return count;
         }
 #if UNITY_EDITOR
         /// <summary>
