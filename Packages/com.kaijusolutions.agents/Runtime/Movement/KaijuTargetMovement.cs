@@ -351,26 +351,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="t">The target movement.</param>
         /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</returns>
         public static implicit operator GameObject([NotNull] KaijuTargetMovement t) => t.TargetGameObject;
-
+        
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target <see cref="KaijuAgent"/> from the target.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuTargetMovement t) => t.TargetAgent;
-        
-        /// <summary>
-        /// Implicit conversion to a Boolean based on if this is done or not.
-        /// </summary>
-        /// <param name="t">The target movement.</param>
-        /// <returns>If this is done or not.</returns>
-        public static implicit operator bool([NotNull] KaijuTargetMovement t) => t.Done();
-        
-        /// <summary>
-        /// Implicit conversion to a nullable Boolean based on if this is done or not.
-        /// </summary>
-        /// <param name="t">The target movement.</param>
-        /// <returns>If this is done or not.</returns>
-        public static implicit operator bool?([NotNull] KaijuTargetMovement t) => t.Done();
     }
 }

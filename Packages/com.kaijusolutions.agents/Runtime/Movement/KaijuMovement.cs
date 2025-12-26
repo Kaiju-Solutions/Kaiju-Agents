@@ -231,14 +231,14 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="m">The movement.</param>
         /// <returns>If the <see cref="Agent"/> is assigned.</returns>
-        public static implicit operator bool([NotNull] KaijuMovement m) => m.Agent;
+        public static implicit operator bool([NotNull] KaijuMovement m) => m.Done();
         
         /// <summary>
         /// Implicit conversion to a nullable Boolean to see if the <see cref="Agent"/> is assigned.
         /// </summary>
         /// <param name="m">The movement.</param>
         /// <returns>If the <see cref="Agent"/> is assigned.</returns>
-        public static implicit operator bool?([NotNull] KaijuMovement m) => m.Agent;
+        public static implicit operator bool?([NotNull] KaijuMovement m) => m.Done();
         
         /// <summary>
         /// Implicit conversion to a string.

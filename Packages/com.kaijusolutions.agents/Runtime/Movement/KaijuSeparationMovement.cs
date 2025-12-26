@@ -313,5 +313,13 @@ namespace KaijuSolutions.Agents.Movement
             }
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Separation Movement - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Coefficient: {Coefficient} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+        }
     }
 }

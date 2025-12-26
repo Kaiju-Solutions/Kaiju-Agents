@@ -1525,7 +1525,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Max Speed: {MoveSpeed}";
+            return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed}";
         }
         
         /// <summary>

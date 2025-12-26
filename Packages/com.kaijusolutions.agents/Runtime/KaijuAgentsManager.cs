@@ -1013,5 +1013,13 @@ namespace KaijuSolutions.Agents
             }
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Agents Manager - Agents: {AgentsCount}";
+        }
     }
 }
