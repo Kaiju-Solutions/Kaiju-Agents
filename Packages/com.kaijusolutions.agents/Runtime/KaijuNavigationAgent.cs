@@ -68,6 +68,20 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        protected override void OnDisable()
+        {
+            if (nav)
+            {
+                nav.ResetPath();
+                nav.isStopped = true;
+            }
+            
+            base.OnDisable();
+        }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public override void Setup()
@@ -77,6 +91,8 @@ namespace KaijuSolutions.Agents
             float acceleration = MoveAcceleration;
             nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
             nav.angularSpeed = LookSpeed;
+            nav.ResetPath();
+            nav.isStopped = true;
             nav.enabled = true;
         }
         

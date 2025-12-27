@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -37,6 +36,20 @@ namespace KaijuSolutions.Agents
         public Rigidbody Body => body;
         
         /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        protected override void OnDisable()
+        {
+            if (body)
+            {
+                body.linearVelocity = Vector3.zero;
+                body.angularVelocity = Vector3.zero;
+            }
+            
+            base.OnDisable();
+        }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public override void Setup()
@@ -48,6 +61,8 @@ namespace KaijuSolutions.Agents
             body.angularDamping = 0;
             body.interpolation = RigidbodyInterpolation.Interpolate;
             body.isKinematic = false;
+            body.linearVelocity = Vector3.zero;
+            body.angularVelocity = Vector3.zero;
         }
         
         /// <summary>

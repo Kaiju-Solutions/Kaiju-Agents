@@ -25,6 +25,9 @@ namespace KaijuSolutions.Agents
         [SerializeField]
         private CharacterController character;
         
+        /// <summary>
+        /// The cached gravity of the agent.
+        /// </summary>
         private float _velocityY;
         
         /// <summary>
@@ -37,6 +40,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void PreSetTransform()
         {
+            // The character controller needs to be disabled to set the position.
             if (character)
             {
                 character.enabled = false;
@@ -48,6 +52,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void PostSetTransform()
         {
+            // Enable the character controller after the position has been set.
             if (character)
             {
                 character.enabled = true;
@@ -55,10 +60,20 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        protected override void OnDisable()
+        {
+            _velocityY = 0;
+            base.OnDisable();
+        }
+        
+        /// <summary>
         /// Initialize the agent.
         /// </summary>
         public override void Setup()
         {
+            _velocityY = 0;
             gameObject.AssignComponent(ref character);
             character.enabled = true;
         }

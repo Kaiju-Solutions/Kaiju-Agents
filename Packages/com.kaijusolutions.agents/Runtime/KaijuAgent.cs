@@ -22,72 +22,72 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Movement speed changed callback.
         /// </summary>
-        public static event AgentAction OnMoveSpeed;
+        public event KaijuAction OnMoveSpeed;
         
         /// <summary>
         /// Movement acceleration changed callback.
         /// </summary>
-        public static event AgentAction OnMoveAcceleration;
+        public event KaijuAction OnMoveAcceleration;
         
         /// <summary>
         /// Look speed changed callback.
         /// </summary>
-        public static event AgentAction OnLookSpeed;
+        public event KaijuAction OnLookSpeed;
         
         /// <summary>
         /// Autorotation changed callback.
         /// </summary>
-        public static event AgentAction OnAutoRotate;
+        public event KaijuAction OnAutoRotate;
         
         /// <summary>
         /// Callback for when the look target has been set.
         /// </summary>
-        public static event AgentAction OnLookTarget;
+        public event KaijuAction OnLookTarget;
         
         /// <summary>
         /// Callback for when the position has been explicitly set.
         /// </summary>
-        public static event AgentAction OnSetPosition;
+        public event KaijuAction OnSetPosition;
         
         /// <summary>
         /// Callback for when the orientation has been explicitly set.
         /// </summary>
-        public static event AgentAction OnSetOrientation;
+        public event KaijuAction OnSetOrientation;
         
         /// <summary>
         /// Callback for when this agent has calculated movement.
         /// </summary>
-        public static event AgentAction OnMove;
+        public event KaijuAction OnMove;
         
         /// <summary>
         /// Callback for when this has finishing becoming enabled.
         /// </summary>
-        public static event AgentAction OnEnabled;
+        public event KaijuAction OnEnabled;
         
         /// <summary>
         /// Callback for when this has finishing becoming disabled.
         /// </summary>
-        public static event AgentAction OnDisabled;
+        public event KaijuAction OnDisabled;
         
         /// <summary>
         /// Callback for when this has finishing becoming destroyed.
         /// </summary>
-        public static event AgentAction OnDestroyed;
+        public event KaijuAction OnDestroyed;
         
         /// <summary>
         /// Callback for when a movement has started.
         /// </summary>
-        public static event AgentMovementAction OnMovementStarted;
+        public static event KaijuMovementAction OnMovementStarted;
         
         /// <summary>
         /// Callback for when a movement has stopped.
         /// </summary>
-        public static event AgentMovementAction OnMovementStopped;
+        public static event KaijuMovementAction OnMovementStopped;
         
         /// <summary>
         /// Callback for when a movement has ben performed.
         /// </summary>
-        public static event AgentMovementAction OnMovementPerformed;
+        public static event KaijuMovementAction OnMovementPerformed;
         
         /// <summary>
         /// If this agent should move with the physics system.
@@ -104,7 +104,7 @@ namespace KaijuSolutions.Agents
             {
                 moveSpeed = Mathf.Max(value, 0);
                 ChangedMoveSpeed();
-                OnMoveSpeed?.Invoke(this);
+                OnMoveSpeed?.Invoke();
             }
         }
         
@@ -133,7 +133,7 @@ namespace KaijuSolutions.Agents
             {
                 moveAcceleration = Mathf.Max(value, 0);
                 ChangedMoveAcceleration();
-                OnMoveAcceleration?.Invoke(this);
+                OnMoveAcceleration?.Invoke();
             }
         }
         
@@ -162,7 +162,7 @@ namespace KaijuSolutions.Agents
             {
                 lookSpeed = Mathf.Max(value, 0);
                 ChangedLookSpeed();
-                OnLookSpeed?.Invoke(this);
+                OnLookSpeed?.Invoke();
             }
         }
         
@@ -191,7 +191,7 @@ namespace KaijuSolutions.Agents
             {
                 autoRotate = value;
                 ChangedAutoRotate();
-                OnAutoRotate?.Invoke(this);
+                OnAutoRotate?.Invoke();
             }
         }
         
@@ -298,7 +298,7 @@ namespace KaijuSolutions.Agents
                 _lookVector = value;
                 _lookVector3 = null;
                 _lookTransform = null;
-                OnLookTarget?.Invoke(this);
+                OnLookTarget?.Invoke();
             }
         }
         
@@ -313,7 +313,7 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = value;
                 _lookVector = null;
                 _lookTransform = null;
-                OnLookTarget?.Invoke(this);
+                OnLookTarget?.Invoke();
             }
         }
         
@@ -328,7 +328,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value;
                 _lookVector = null;
                 _lookVector3 = null;
-                OnLookTarget?.Invoke(this);
+                OnLookTarget?.Invoke();
             }
         }
         
@@ -343,7 +343,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value.transform;
                 _lookVector = null;
                 _lookVector3 = null;
-                OnLookTarget?.Invoke(this);
+                OnLookTarget?.Invoke();
             }
         }
         
@@ -366,7 +366,7 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value.transform;
                 _lookVector = null;
                 _lookVector3 = null;
-                OnLookTarget?.Invoke(this);
+                OnLookTarget?.Invoke();
             }
         }
         
@@ -424,7 +424,7 @@ namespace KaijuSolutions.Agents
                 PreSetTransform();
                 transform.position = new(value.x, 0, value.y);
                 PostSetTransform();
-                OnSetPosition?.Invoke(this);
+                OnSetPosition?.Invoke();
             }
         }
         
@@ -439,7 +439,7 @@ namespace KaijuSolutions.Agents
                 PreSetTransform();
                 transform.position = value;
                 PostSetTransform();
-                OnSetPosition?.Invoke(this);
+                OnSetPosition?.Invoke();
             }
         }
         
@@ -462,7 +462,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 transform.localEulerAngles = new(0, value, 0);
-                OnSetOrientation?.Invoke(this);
+                OnSetOrientation?.Invoke();
             }
         }
         
@@ -487,7 +487,7 @@ namespace KaijuSolutions.Agents
                 // If the movement is done, remove it to the cache.
                 if (_movements[i].Done())
                 {
-                    OnMovementStopped?.Invoke(this, _movements[i]);
+                    OnMovementStopped?.Invoke(_movements[i]);
                     _movements[i].Return();
                     _movements.RemoveAt(i--);
                     continue;
@@ -495,7 +495,7 @@ namespace KaijuSolutions.Agents
                 
                 // Weight the movement.
                 velocity += _movements[i].Move(position, delta) * _movements[i].Weight;
-                OnMovementPerformed?.Invoke(this, _movements[i]);
+                OnMovementPerformed?.Invoke(_movements[i]);
             }
             
             // Clamp the movement velocity.
@@ -506,7 +506,7 @@ namespace KaijuSolutions.Agents
             
             // Set the updated velocity.
             Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, velocity, moveAcceleration * delta) : velocity;
-            OnMove?.Invoke(this);
+            OnMove?.Invoke();
         }
         
         /// <summary>
@@ -514,21 +514,22 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnEnable()
         {
+            Setup();
             KaijuAgentsManager.Register(this);
-            OnEnabled?.Invoke(this);
+            OnEnabled?.Invoke();
         }
         
         /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             Stop();
             StopLooking();
             ClearIdentifiers();
             Velocity = Vector2.zero;
             KaijuAgentsManager.Unregister(this);
-            OnDisabled?.Invoke(this);
+            OnDisabled?.Invoke();
         }
         
         /// <summary>
@@ -538,15 +539,7 @@ namespace KaijuSolutions.Agents
         {
             // Unregister without caching.
             KaijuAgentsManager.Unregister(this, false);
-            OnDestroyed?.Invoke(this);
-        }
-        
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
-        /// </summary>
-        private void Start()
-        {
-            Setup();
+            OnDestroyed?.Invoke();
         }
         
         /// <summary>
@@ -1085,7 +1078,7 @@ namespace KaijuSolutions.Agents
         {
             foreach (KaijuMovement movement in _movements)
             {
-                OnMovementStopped?.Invoke(this, movement);
+                OnMovementStopped?.Invoke(movement);
                 movement.Return();
             }
             
@@ -1106,7 +1099,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                OnMovementStopped?.Invoke(this, _movements[i]);
+                OnMovementStopped?.Invoke(_movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i);
                 return true;
@@ -1132,7 +1125,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                OnMovementStopped?.Invoke(this, _movements[i]);
+                OnMovementStopped?.Invoke(_movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed = true;
@@ -1153,7 +1146,7 @@ namespace KaijuSolutions.Agents
                 return false;
             }
             
-            OnMovementStopped?.Invoke(this, _movements[index]);
+            OnMovementStopped?.Invoke(_movements[index]);
             _movements[index].Return();
             _movements.RemoveAt(index);
             return true;
@@ -1181,7 +1174,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                OnMovementStopped?.Invoke(this, _movements[i]);
+                OnMovementStopped?.Invoke(_movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed++;
@@ -1216,7 +1209,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                OnMovementStopped?.Invoke(this, _movements[i]);
+                OnMovementStopped?.Invoke(_movements[i]);
                 _movements[i].Return();
                 _movements.RemoveAt(i--);
                 removed++;
@@ -1243,7 +1236,7 @@ namespace KaijuSolutions.Agents
             _lookTransform = null;
             _lookVector = null;
             _lookVector3 = null;
-            OnLookTarget?.Invoke(this);
+            OnLookTarget?.Invoke();
         }
         
         /// <summary>
@@ -1263,7 +1256,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1284,7 +1277,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1305,7 +1298,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1326,7 +1319,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1347,7 +1340,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1368,7 +1361,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1389,7 +1382,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1410,7 +1403,7 @@ namespace KaijuSolutions.Agents
             
             KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1431,7 +1424,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1452,7 +1445,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1473,7 +1466,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1494,7 +1487,7 @@ namespace KaijuSolutions.Agents
             
             KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1515,7 +1508,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1536,7 +1529,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1557,7 +1550,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1578,7 +1571,7 @@ namespace KaijuSolutions.Agents
             
             KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1599,7 +1592,7 @@ namespace KaijuSolutions.Agents
             
             KaijuWanderMovement movement = KaijuWanderMovement.Get(this, distance, radius, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1620,7 +1613,7 @@ namespace KaijuSolutions.Agents
             
             KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
         
@@ -1645,7 +1638,7 @@ namespace KaijuSolutions.Agents
             
             KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
             _movements.Add(movement);
-            OnMovementStarted?.Invoke(this, movement);
+            OnMovementStarted?.Invoke(movement);
             return movement;
         }
 #if UNITY_EDITOR
