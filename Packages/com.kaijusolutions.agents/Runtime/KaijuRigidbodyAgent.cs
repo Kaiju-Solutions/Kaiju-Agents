@@ -14,7 +14,7 @@ namespace KaijuSolutions.Agents
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
     [RequireComponent(typeof(Rigidbody))]
-    public sealed class KaijuRigidbodyAgent : KaijuAgent
+    public sealed class KaijuRigidbodyAgent : KaijuRadiusAgent
     {
         /// <summary>
         /// If this agent should move with the physics system.
@@ -54,6 +54,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public override void Setup()
         {
+            base.Setup();
             gameObject.AssignComponent(ref body);
             body.centerOfMass = Vector3.zero;
             body.constraints = body.constraints | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;

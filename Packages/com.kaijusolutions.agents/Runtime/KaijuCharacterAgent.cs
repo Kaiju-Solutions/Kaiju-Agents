@@ -79,6 +79,15 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get the radius of an agent.
+        /// </summary>
+        /// <returns>The radius of the agent.</returns>
+        public override float GetRadius()
+        {
+            return character ? character.radius : 0;
+        }
+        
+        /// <summary>
         /// Perform agent movement.
         /// </summary>
         /// <param name="delta">The time step.</param>

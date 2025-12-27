@@ -234,9 +234,14 @@ namespace KaijuSolutions.Agents
         public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
         
         /// <summary>
-        /// Get the forward direction of this agent.
+        /// Get the forward direction of this agent being where it is looking.
         /// </summary>
-        public Vector3 Forward => Velocity == Vector2.zero ? transform.forward : Velocity3;
+        public Vector3 Forward => transform.forward;
+        
+        /// <summary>
+        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="Forward"/>.
+        /// </summary>
+        public Vector3 MoveForward => Velocity == Vector2.zero ? Forward : Velocity3;
         
         /// <summary>
         /// All movements the agent is currently performing.
@@ -478,6 +483,12 @@ namespace KaijuSolutions.Agents
                 OnSetOrientation?.Invoke();
             }
         }
+        
+        /// <summary>
+        /// Get the radius of an agent.
+        /// </summary>
+        /// <returns>The radius of the agent.</returns>
+        public abstract float GetRadius();
         
         /// <summary>
         /// Initialize the agent.

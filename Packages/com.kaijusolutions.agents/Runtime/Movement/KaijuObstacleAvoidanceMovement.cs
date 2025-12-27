@@ -192,7 +192,7 @@ namespace KaijuSolutions.Agents.Movement
             // Get the starting ray position.
             Vector3 height = new(0, Height, 0);
             Vector3 start = Agent.Position3 + height;
-            Vector3 forward = Agent.Forward;
+            Vector3 forward = Agent.MoveForward;
             
             // Cast the central ray.
             Raycast(start, forward, Distance);

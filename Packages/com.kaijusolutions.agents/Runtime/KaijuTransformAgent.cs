@@ -12,9 +12,8 @@ namespace KaijuSolutions.Agents
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
-    public sealed class KaijuTransformAgent : KaijuAgent
+    public sealed class KaijuTransformAgent : KaijuRadiusAgent
     {
-        
         /// <summary>
         /// Perform agent movement.
         /// </summary>

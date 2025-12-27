@@ -260,6 +260,7 @@ MonoBehaviour:
   lookSpeed: 0
   autoRotate: 1
   identifiers: 00000000
+  radius: 0.5
 --- !u!1 &1323261324
 GameObject:
   m_ObjectHideFlags: 0

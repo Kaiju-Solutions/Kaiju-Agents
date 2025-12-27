@@ -32,6 +32,15 @@ namespace KaijuSolutions.Agents
         public NavMeshAgent Nav => nav;
         
         /// <summary>
+        /// Get the radius of an agent.
+        /// </summary>
+        /// <returns>The radius of the agent.</returns>
+        public override float GetRadius()
+        {
+            return nav ? nav.radius : 0;
+        }
+        
+        /// <summary>
         /// Callback when the movement speed has changed.
         /// </summary>
         protected override void ChangedMoveSpeed()
