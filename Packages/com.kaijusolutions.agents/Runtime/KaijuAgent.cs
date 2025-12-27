@@ -40,6 +40,21 @@ namespace KaijuSolutions.Agents
         public event KaijuAction OnAutoRotate;
         
         /// <summary>
+        /// Sight distance changed callback.
+        /// </summary>
+        public event KaijuAction OnSightDistance;
+        
+        /// <summary>
+        /// Sight angle changed callback.
+        /// </summary>
+        public event KaijuAction OnSightAngle;
+        
+        /// <summary>
+        /// Sight height changed callback.
+        /// </summary>
+        public event KaijuAction OnSightHeight;
+        
+        /// <summary>
         /// Callback for when the look target has been set.
         /// </summary>
         public event KaijuAction OnLookTarget;
@@ -112,6 +127,7 @@ namespace KaijuSolutions.Agents
         /// The maximum move speed of the agent in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Movement")]
         [Tooltip("The maximum move speed of the agent in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
@@ -170,6 +186,7 @@ namespace KaijuSolutions.Agents
         /// The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Looking")]
         [Tooltip("The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
@@ -210,6 +227,90 @@ namespace KaijuSolutions.Agents
         protected virtual void ChangedAutoRotate() { }
         
         /// <summary>
+        /// How far the agent can see.
+        /// </summary>
+        public float SightDistance
+        {
+            get => sightDistance;
+            set
+            {
+                sightDistance = Mathf.Max(value, 0);
+                OnSightDistance?.Invoke();
+            }
+        }
+        
+        /// <summary>
+        /// How far the agent can see. Setting to zero means an infinite length. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// </summary>
+#if UNITY_EDITOR
+        [Header("Sight")]
+        [Tooltip("How far the agent can see. Setting to zero means an infinite length. Note that modifying this at runtime via the inspector will not trigger the callback.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float sightDistance;
+        
+        /// <summary>
+        /// The angle that the agent can see within.
+        /// </summary>
+        public float SightAngle
+        {
+            get => sightAngle;
+            set
+            {
+                sightAngle = Mathf.Clamp(value, float.Epsilon, 360);
+                OnSightAngle?.Invoke();
+            }
+        }
+        
+        /// <summary>
+        /// The angle that the agent can see within. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The angle that the agent can see within. Note that modifying this at runtime via the inspector will not trigger the callback.")]
+#endif
+        [Range(float.Epsilon, 360)]
+        [SerializeField]
+        private float sightAngle = 180;
+        
+        /// <summary>
+        /// The height to perform vision line-of-sight checks from.
+        /// </summary>
+        public float SightHeight
+        {
+            get => sightHeight;
+            set
+            {
+                sightHeight = value;
+                OnSightHeight?.Invoke();
+            }
+        }
+        
+        /// <summary>
+        /// The height to perform vision line-of-sight checks from. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The height to perform vision line-of-sight checks from. Note that modifying this at runtime via the inspector will not trigger the callback.")]
+#endif
+        [SerializeField]
+        private float sightHeight = 1.5f;
+        
+        /// <summary>
+        /// All others agents this agent can currently see.
+        /// </summary>
+        public IReadOnlyCollection<KaijuAgent> Seen => _seen;
+        
+        /// <summary>
+        /// All others agents this agent can currently see.
+        /// </summary>
+        private readonly HashSet<KaijuAgent> _seen = new();
+        
+        /// <summary>
+        /// All previously seen agents.
+        /// </summary>
+        private readonly HashSet<KaijuAgent> _seenPrevious = new();
+        
+        /// <summary>
         /// Identifiers for this agent.
         /// </summary>
         public IReadOnlyList<uint> Identifiers => identifiers;
@@ -218,6 +319,7 @@ namespace KaijuSolutions.Agents
         /// Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Configuration")]
         [Tooltip("Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [SerializeField]
@@ -391,7 +493,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Check if we were looking in the last frame and if it now gone, indicating it was destroyed externally.
         /// </summary>
-        private bool _wasLooking = false;
+        private bool _wasLooking;
         
         /// <summary>
         /// Get the distance from the agent to the target which is being looked at.
@@ -538,6 +640,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnEnable()
         {
+            _seen.Clear();
+            _seenPrevious.Clear();
             Setup();
             KaijuAgentsManager.Register(this);
             OnEnabled?.Invoke();
@@ -548,6 +652,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected virtual void OnDisable()
         {
+            _seen.Clear();
+            _seenPrevious.Clear();
             Stop();
             StopLooking();
             ClearIdentifiers();
@@ -1777,6 +1883,23 @@ namespace KaijuSolutions.Agents
             {
                 t.rotation = Quaternion.LookRotation(rotation);
             }
+        }
+        
+        /// <summary>
+        /// Detect all other agents we can see.
+        /// </summary>
+        /// <param name="agents">The agents to check sight against.</param>
+        public void SeeAgents(IReadOnlyCollection<KaijuAgent> agents)
+        {
+            // Cache all previously seen agents so we can detect if we have now lost sight of any.
+            _seenPrevious.Clear();
+            foreach (KaijuAgent agent in _seen)
+            {
+                _seenPrevious.Add(agent);
+            }
+            _seen.Clear();
+            
+            // TODO - Detect what agents we can see based on vision distance, vision angle, and line-of-sight from the vision height to the other agents' vision heights.
         }
         
         /// <summary>

@@ -1001,7 +1001,7 @@ namespace KaijuSolutions.Agents
             
             Move(TickAgents, delta);
             
-            foreach (KaijuAgent agent in Agents)
+            foreach (KaijuAgent agent in AllAgents)
             {
                 agent.Look(delta);
             }
@@ -1014,12 +1014,20 @@ namespace KaijuSolutions.Agents
         {
             float delta = Time.deltaTime;
             
-            foreach (KaijuAgent agent in Agents)
+            // All agents calculate their velocity.
+            foreach (KaijuAgent agent in AllAgents)
             {
                 agent.CalculateVelocity(delta);
             }
             
+            // Step all physics agents.
             Move(PhysicsAgents, delta);
+            
+            // Perform sight checks.
+            foreach (KaijuAgent agent in AllAgents)
+            {
+                agent.SeeAgents(AllAgents);
+            }
         }
         
         /// <summary>

@@ -259,6 +259,8 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
+  sightDistance: 0
+  sightAngle: 180
   identifiers: 00000000
   radius: 0.5
 --- !u!1 &1323261324
