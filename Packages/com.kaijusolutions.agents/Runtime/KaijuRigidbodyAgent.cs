@@ -26,6 +26,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The rigidbody which controls the agent's movement.")]
+        [HideInInspector]
 #endif
         [SerializeField]
         private Rigidbody body;

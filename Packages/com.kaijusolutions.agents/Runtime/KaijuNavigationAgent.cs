@@ -22,6 +22,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The navigation mesh agent which controls the agent's movement.")]
+        [HideInInspector]
 #endif
         [SerializeField]
         private NavMeshAgent nav;
@@ -117,6 +118,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public override void Setup()
         {
+            base.Setup();
             gameObject.AssignComponent(ref nav);
             nav.speed = MoveSpeed;
             float acceleration = MoveAcceleration;

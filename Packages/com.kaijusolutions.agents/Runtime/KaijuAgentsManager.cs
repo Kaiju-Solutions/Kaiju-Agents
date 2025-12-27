@@ -1023,10 +1023,16 @@ namespace KaijuSolutions.Agents
             // Step all physics agents.
             Move(PhysicsAgents, delta);
             
-            // Perform sight checks.
+            // Run automatic sensors.
             foreach (KaijuAgent agent in AllAgents)
             {
-                agent.SeeAgents(AllAgents);
+                agent.Sense();
+            }
+            
+            // Run actuators.
+            foreach (KaijuAgent agent in AllAgents)
+            {
+                agent.Act();
             }
         }
         

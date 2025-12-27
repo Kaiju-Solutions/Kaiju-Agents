@@ -21,6 +21,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The character controller which controls the agent's movement.")]
+        [HideInInspector]
 #endif
         [SerializeField]
         private CharacterController character;
@@ -73,6 +74,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public override void Setup()
         {
+            base.Setup();
             _velocityY = 0;
             gameObject.AssignComponent(ref character);
             character.enabled = true;

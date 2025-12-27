@@ -91,6 +91,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public override void Setup()
         {
+            base.Setup();
             radius = CheckRadius(radius);
         }
     }
