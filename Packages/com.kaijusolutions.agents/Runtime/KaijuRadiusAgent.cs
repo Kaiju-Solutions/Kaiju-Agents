@@ -48,7 +48,42 @@ namespace KaijuSolutions.Agents
         /// <returns>The radius to use.</returns>
         private float CheckRadius(float value)
         {
-            return TryGetComponent(out CapsuleCollider c) ? Mathf.Max(c.radius, 0) : TryGetComponent(out SphereCollider s) ? Mathf.Max(s.radius, 0) : Mathf.Max(TryGetComponent(out Collider o) ? o.bounds.extents.magnitude : value, 0);
+            // Get the largest of all colliders first.
+            float found = 0;
+            foreach (Collider c in GetComponents<Collider>())
+            {
+                // Try capsule and sphere colliders first.
+                switch (c)
+                {
+                    case CapsuleCollider capsule:
+                    {
+                        if (capsule.radius > found)
+                        {
+                            found = capsule.radius;
+                        } 
+                    
+                        continue;
+                    }
+                    case SphereCollider sphere:
+                    {
+                        if (sphere.radius > found)
+                        {
+                            found = sphere.radius;
+                        } 
+                    
+                        continue;
+                    }
+                }
+                
+                float m = c.bounds.extents.magnitude;
+                if (m > found)
+                {
+                    found = m;
+                }
+            }
+            
+            // Return the largest collider or otherwise use the value.
+            return found > 0 ? found : Mathf.Max(value, 0);
         }
         
         /// <summary>
