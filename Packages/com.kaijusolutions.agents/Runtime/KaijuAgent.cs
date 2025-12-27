@@ -1889,7 +1889,7 @@ namespace KaijuSolutions.Agents
         /// Detect all other agents we can see.
         /// </summary>
         /// <param name="agents">The agents to check sight against.</param>
-        public void SeeAgents(IReadOnlyCollection<KaijuAgent> agents)
+        public void SeeAgents([NotNull] IReadOnlyCollection<KaijuAgent> agents)
         {
             // Cache all previously seen agents so we can detect if we have now lost sight of any.
             _seenPrevious.Clear();
