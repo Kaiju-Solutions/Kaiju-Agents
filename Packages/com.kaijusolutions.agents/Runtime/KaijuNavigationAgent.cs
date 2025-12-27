@@ -68,6 +68,28 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Callback when the autorotate has changed.
+        /// </summary>
+        protected override void ChangedAutoRotate()
+        {
+            if (nav)
+            {
+                nav.updateRotation = AutoRotate && !Looking;
+            }
+        }
+        
+        /// <summary>
+        /// Callback for when the look target has changed.
+        /// </summary>
+        protected override void ChangedLookTarget()
+        {
+            if (nav)
+            {
+                nav.updateRotation = AutoRotate && !Looking;
+            }
+        }
+        
+        /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>
         protected override void OnDisable()
@@ -91,6 +113,7 @@ namespace KaijuSolutions.Agents
             float acceleration = MoveAcceleration;
             nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
             nav.angularSpeed = LookSpeed;
+            nav.updateRotation = AutoRotate && !Looking;
             nav.ResetPath();
             nav.isStopped = true;
             nav.enabled = true;

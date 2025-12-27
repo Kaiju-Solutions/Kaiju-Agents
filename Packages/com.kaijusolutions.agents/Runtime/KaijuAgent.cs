@@ -224,11 +224,6 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
         
         /// <summary>
-        /// Callback when identifiers have been updated.
-        /// </summary>
-        protected virtual void ChangedIdentifiers() { }
-        
-        /// <summary>
         /// The current velocity of the agent.
         /// </summary>
         public Vector2 Velocity { get; private set; }
@@ -298,6 +293,8 @@ namespace KaijuSolutions.Agents
                 _lookVector = value;
                 _lookVector3 = null;
                 _lookTransform = null;
+                _wasLooking = false;
+                ChangedLookTarget();
                 OnLookTarget?.Invoke();
             }
         }
@@ -313,6 +310,8 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = value;
                 _lookVector = null;
                 _lookTransform = null;
+                _wasLooking = false;
+                ChangedLookTarget();
                 OnLookTarget?.Invoke();
             }
         }
@@ -328,6 +327,8 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value;
                 _lookVector = null;
                 _lookVector3 = null;
+                _wasLooking = false;
+                ChangedLookTarget();
                 OnLookTarget?.Invoke();
             }
         }
@@ -343,9 +344,16 @@ namespace KaijuSolutions.Agents
                 _lookTransform = value.transform;
                 _lookVector = null;
                 _lookVector3 = null;
+                _wasLooking = false;
+                ChangedLookTarget();
                 OnLookTarget?.Invoke();
             }
         }
+
+        /// <summary>
+        /// Callback for when the look target has changed.
+        /// </summary>
+        protected virtual void ChangedLookTarget() { }
         
         /// <summary>
         /// The agent to move in relation to.
@@ -374,6 +382,11 @@ namespace KaijuSolutions.Agents
         /// If the agent is currently looking at something.
         /// </summary>
         public bool Looking => LookVector.HasValue;
+        
+        /// <summary>
+        /// Check if we were looking in the last frame and if it now gone, indicating it was destroyed externally.
+        /// </summary>
+        private bool _wasLooking = false;
         
         /// <summary>
         /// Get the distance from the agent to the target which is being looked at.
@@ -1716,6 +1729,14 @@ namespace KaijuSolutions.Agents
             Vector3 target;
             if (!v.HasValue)
             {
+                // If we were looking but now are not, indicate this has changed.
+                if (_wasLooking)
+                {
+                    _wasLooking = false;
+                    ChangedLookTarget();
+                    OnLookTarget?.Invoke();
+                }
+                
                 // If we don't want to automatically look or there is no movement, stop.
                 if (!AutoRotate || Velocity == Vector2.zero)
                 {
@@ -1726,6 +1747,9 @@ namespace KaijuSolutions.Agents
             }
             else
             {
+                // Indicate we have a look target.
+                _wasLooking = true;
+                
                 // The rotation is only along the Y axis.
                 target = new(v.Value.x, t.position.y, v.Value.z);
             }
