@@ -182,7 +182,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             // Calculate target values.
             Vector2 targetVelocity = Velocity(target, Previous, delta);
-            float targetSpeed = Speed(target, Previous, delta);
+            float targetSpeed = target.Speed(Previous, delta);
             
             // Predict where the target will be.
             Future = target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed));
