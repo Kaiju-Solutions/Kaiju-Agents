@@ -6,6 +6,7 @@ namespace KaijuSolutions.Agents
     /// An agent type which tries to get its radius from colliders or otherwise manually assigns them.
     /// </summary>
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(int.MinValue + 2)]
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]

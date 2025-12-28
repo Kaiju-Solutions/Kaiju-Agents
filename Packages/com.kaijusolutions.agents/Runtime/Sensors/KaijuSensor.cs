@@ -5,6 +5,7 @@ namespace KaijuSolutions.Agents.Sensors
     /// <summary>
     /// Base sensor class.
     /// </summary>
+    [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
@@ -15,6 +16,31 @@ namespace KaijuSolutions.Agents.Sensors
         /// Callback for when this sensor has been run.
         /// </summary>
         public event KaijuAction OnSense;
+        
+        /// <summary>
+        /// Global callback for when this sensor has been run.
+        /// </summary>
+        public event KaijuSensorAction OnSenseGlobal;
+        
+        /// <summary>
+        /// Callback for when this has finishing becoming enabled.
+        /// </summary>
+        public event KaijuAction OnEnabled;
+        
+        /// <summary>
+        /// Global callback for when this has finishing becoming enabled.
+        /// </summary>
+        public static event KaijuSensorAction OnEnabledGlobal;
+        
+        /// <summary>
+        /// Callback for when this has finishing becoming disabled.
+        /// </summary>
+        public event KaijuAction OnDisabled;
+        
+        /// <summary>
+        /// Global callback for when this has finishing becoming disabled.
+        /// </summary>
+        public static event KaijuSensorAction OnDisabledGlobal;
         
         /// <summary>
         /// If this sensor should be run automatically.
@@ -46,6 +72,8 @@ namespace KaijuSolutions.Agents.Sensors
             }
             
             _agent.RegisterSensor(this);
+            OnEnabled?.Invoke();
+            OnEnabledGlobal?.Invoke(this);
         }
         
         /// <summary>
@@ -57,6 +85,9 @@ namespace KaijuSolutions.Agents.Sensors
             {
                 _agent.UnregisterSensor(this);
             }
+            
+            OnDisabled?.Invoke();
+            OnDisabledGlobal?.Invoke(this);
         }
         
         /// <summary>
@@ -66,6 +97,7 @@ namespace KaijuSolutions.Agents.Sensors
         {
             Run();
             OnSense?.Invoke();
+            OnSenseGlobal?.Invoke(this);
             _agent.SensorRun(this);
         }
         

@@ -6,6 +6,7 @@ namespace KaijuSolutions.Agents
     /// Kaiju Agent which moves via the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
     /// </summary>]
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(int.MinValue + 2)]
 #if UNITY_EDITOR
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Transform Agent", 0)]

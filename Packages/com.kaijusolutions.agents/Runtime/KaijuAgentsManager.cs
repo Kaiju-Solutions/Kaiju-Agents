@@ -13,6 +13,7 @@ namespace KaijuSolutions.Agents
     /// Manager agents.
     /// </summary>
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(int.MinValue + 3)]
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]

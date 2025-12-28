@@ -10,6 +10,36 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuMovement
     {
         /// <summary>
+        /// Callback for this movement starting.
+        /// </summary>
+        public KaijuAction OnStarted;
+        
+        /// <summary>
+        /// Global callback for this movement starting.
+        /// </summary>
+        public KaijuMovementAction OnStartedGlobal;
+        
+        /// <summary>
+        /// Callback for this movement stopping.
+        /// </summary>
+        public KaijuAction OnStopped;
+        
+        /// <summary>
+        /// Global callback for this movement stopping.
+        /// </summary>
+        public KaijuMovementAction OnStoppedGlobal;
+        
+        /// <summary>
+        /// Callback for this movement being performed.
+        /// </summary>
+        public KaijuAction OnPerformed;
+        
+        /// <summary>
+        /// Global callback for this movement being performed.
+        /// </summary>
+        public KaijuMovementAction OnPerformedGlobal;
+        
+        /// <summary>
         /// The agent the movement is assigned to.
         /// </summary>
         public KaijuAgent Agent;
@@ -107,6 +137,33 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
         public abstract Vector2 Move(Vector2 position, float delta);
+        
+        /// <summary>
+        /// Invoke started callbacks.
+        /// </summary>
+        public void Started()
+        {
+            OnStarted?.Invoke();
+            OnStartedGlobal?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Invoke stopped callbacks.
+        /// </summary>
+        public void Stopped()
+        {
+            OnStopped?.Invoke();
+            OnStoppedGlobal?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Invoke performed callbacks.
+        /// </summary>
+        public void Performed()
+        {
+            OnPerformed?.Invoke();
+            OnPerformedGlobal?.Invoke(this);
+        }
         
         /// <summary>
         /// Determine if the movement is done or not.

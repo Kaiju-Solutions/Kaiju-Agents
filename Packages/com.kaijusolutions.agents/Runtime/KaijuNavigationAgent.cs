@@ -8,6 +8,7 @@ namespace KaijuSolutions.Agents
     /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
     /// </summary>
     [DisallowMultipleComponent]
+    [DefaultExecutionOrder(int.MinValue + 2)]
 #if UNITY_EDITOR
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Navigation Agent", 3)]
