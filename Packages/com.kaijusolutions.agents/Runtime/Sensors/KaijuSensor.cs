@@ -12,6 +12,11 @@ namespace KaijuSolutions.Agents.Sensors
     public abstract class KaijuSensor : MonoBehaviour
     {
         /// <summary>
+        /// Callback for when this sensor has been run.
+        /// </summary>
+        public event KaijuAction OnSense;
+        
+        /// <summary>
         /// If this sensor should be run automatically.
         /// </summary>
 #if UNITY_EDITOR
@@ -57,6 +62,16 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// Run the sensor.
         /// </summary>
-        public abstract void Sense();
+        public void Sense()
+        {
+            Run();
+            OnSense?.Invoke();
+            _agent.SensorRun(this);
+        }
+        
+        /// <summary>
+        /// Run the sensor.
+        /// </summary>
+        protected abstract void Run();
     }
 }
