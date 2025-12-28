@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
 using UnityEngine.AI;
 using Object = UnityEngine.Object;
@@ -132,7 +133,7 @@ namespace KaijuSolutions.Agents
         /// <param name="parents">If the component can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
         /// <typeparam name="T">The type of component to assign.</typeparam>
         /// <returns>If a new assignment was made.</returns>
-        public static bool AssignComponent<T>(this GameObject go, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
+        public static bool AssignComponent<T>([NotNull] this GameObject go, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
         {
             // If one currently exists, see if it meets our requirements to be assigned.
             if (current != null)
@@ -201,7 +202,7 @@ namespace KaijuSolutions.Agents
         /// <param name="parents">If the component can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
         /// <typeparam name="T">The type of component to assign.</typeparam>
         /// <returns>If a new assignment was made.</returns>
-        public static bool AssignComponent<T>(this Component c, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
+        public static bool AssignComponent<T>([NotNull] this Component c, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
         {
             return c.gameObject.AssignComponent(ref current, self, children, parents);
         }
@@ -218,7 +219,7 @@ namespace KaijuSolutions.Agents
         /// <param name="body"></param>
         /// <param name="eyes"></param>
         /// <returns></returns>
-        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null)
+        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null)
         {
             KaijuAgent agent;
             
@@ -400,5 +401,2262 @@ namespace KaijuSolutions.Agents
             
             return go.transform;
         }
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, Vector2 other) => Vector2.Distance(self, other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, Vector3 other) => self.Distance(new Vector2(other.x, other.z));
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, [NotNull] Transform other) => self.Distance(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, [NotNull] Component other) => self.Distance(other.transform);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, [NotNull] GameObject other) => self.Distance(other.transform);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, [NotNull] KaijuAgent other) => self.Distance(other.transform);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector2 self, [NotNull] KaijuSensor other) => self.Distance(other.transform);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, Vector2 other) => other.Distance(self);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, Vector3 other) => new Vector2(self.x, self.z).Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, [NotNull] Transform other) => self.Distance(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, [NotNull] Component other) => self.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, [NotNull] GameObject other) => self.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, [NotNull] KaijuAgent other) => self.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance(this Vector3 self, [NotNull] KaijuSensor other) => self.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, Vector2 other) => self.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, Vector3 other) => self.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, [NotNull] Transform other) => self.position.Distance(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, [NotNull] Component other) => self.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, [NotNull] GameObject other) => self.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, Vector2 other) => self.transform.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, Vector3 other) => self.transform.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, [NotNull] Transform other) => self.transform.position.Distance(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, [NotNull] Component other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, Vector2 other) => self.transform.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, [NotNull] Transform other) => self.transform.position.Distance(other.position);
+
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, Vector3 other) => self.transform.position.Distance(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, [NotNull] Component other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Distance(other.transform.position);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, Vector2 other, float distance) => self.Distance(other) <= distance;
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, Vector3 other, float distance) => self.Within(new Vector2(other.x, other.z), distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, [NotNull] Transform other, float distance) => self.Within(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, [NotNull] Component other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, [NotNull] GameObject other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, [NotNull] KaijuAgent other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector2 self, [NotNull] KaijuSensor other, float distance) => self.Within(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, Vector2 other, float distance) => other.Within(self, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, Vector3 other, float distance) => self.Distance(other) <= distance;
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, [NotNull] Transform other, float distance) => self.Within(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, [NotNull] Component other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, Vector2 other, float distance) => self.Distance(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, Vector3 other, float distance) => self.Beyond(new Vector2(other.x, other.z), distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, [NotNull] Transform other, float distance) => self.Beyond(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, [NotNull] Component other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, [NotNull] GameObject other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, [NotNull] KaijuAgent other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector2 self, [NotNull] KaijuSensor other, float distance) => self.Beyond(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, Vector2 other, float distance) => other.Beyond(self, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, Vector3 other, float distance) => self.Distance(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, [NotNull] Transform other, float distance) => self.Beyond(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, [NotNull] Component other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, [NotNull] GameObject other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Beyond(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, Vector2 other, float distance) => other.Beyond(self.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, Vector3 other, float distance) => self.position.Distance(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, [NotNull] Transform other, float distance) => self.position.Beyond(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, [NotNull] Component other, float distance) => self.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, [NotNull] GameObject other, float distance) => self.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, [NotNull] KaijuAgent other, float distance) => self.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Transform self, [NotNull] KaijuSensor other, float distance) => self.position.Beyond(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, Vector2 other, float distance) => other.Beyond(self.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Distance(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, [NotNull] Transform other, float distance) => self.transform.position.Beyond(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, [NotNull] Component other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this Component self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, Vector2 other, float distance) => other.Beyond(self.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Distance(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.transform.position.Beyond(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, [NotNull] Component other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond([NotNull] this GameObject self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, Vector2 other, float minimum, float maximum)
+        {
+            float distance = self.Distance(other);
+            return distance >= minimum && distance <= maximum;
+        }
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, Vector3 other, float minimum, float maximum) => self.Between(new Vector2(other.x, other.z), minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, [NotNull] Transform other, float minimum, float maximum) => self.Between(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, [NotNull] Component other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, [NotNull] GameObject other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector2 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, Vector2 other, float minimum, float maximum) => other.Between(self, minimum, maximum);
+
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, Vector3 other, float minimum, float maximum) => new Vector2(self.x, self.z).Between(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, [NotNull] Transform other, float minimum, float maximum) => self.Between(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, [NotNull] Component other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, [NotNull] GameObject other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between(this Vector3 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, Vector2 other, float minimum, float maximum) => other.Between(self.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, Vector3 other, float minimum, float maximum) => self.position.Between(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, [NotNull] Transform other, float minimum, float maximum) => self.position.Between(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, [NotNull] Component other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, [NotNull] GameObject other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Transform self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, Vector2 other, float minimum, float maximum) => other.Between(self.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, Vector3 other, float minimum, float maximum) => self.transform.position.Between(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, [NotNull] Transform other, float minimum, float maximum) => self.transform.position.Between(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, [NotNull] Component other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this Component self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, Vector2 other, float minimum, float maximum) => other.Between(self.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, Vector3 other, float minimum, float maximum) => self.transform.position.Between(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, [NotNull] Transform other, float minimum, float maximum) => self.transform.position.Between(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, [NotNull] Component other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between([NotNull] this GameObject self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, Vector3 other) => Vector3.Distance(self, other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, [NotNull] Transform other) => self.Distance3(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, [NotNull] Component other) => self.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, [NotNull] GameObject other) => self.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, [NotNull] KaijuAgent other) => self.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, [NotNull] KaijuSensor other) => self.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, Vector3 other) => self.position.Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, [NotNull] Transform other) => self.position.Distance3(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, [NotNull] Component other) => self.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, [NotNull] GameObject other) => self.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, Vector3 other) => self.transform.position.Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, [NotNull] Transform other) => self.transform.position.Distance3(other.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, [NotNull] Component other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, [NotNull] Transform other) => self.transform.position.Distance3(other.position);
+
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, Vector3 other) => self.transform.position.Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, [NotNull] Component other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, Vector3 other, float distance) => self.Distance3(other) <= distance;
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, [NotNull] Transform other, float distance) => self.Within3(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, [NotNull] Component other, float distance) => self.Within3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Within3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Within3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, Vector3 other, float distance) => self.Distance3(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, [NotNull] Transform other, float distance) => self.Beyond3(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, [NotNull] Component other, float distance) => self.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, Vector3 other, float distance) => self.position.Distance3(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, [NotNull] Transform other, float distance) => self.position.Beyond3(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, [NotNull] Component other, float distance) => self.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, [NotNull] GameObject other, float distance) => self.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, [NotNull] KaijuAgent other, float distance) => self.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, [NotNull] KaijuSensor other, float distance) => self.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, [NotNull] Transform other, float distance) => self.transform.position.Beyond3(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, [NotNull] Component other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.transform.position.Beyond3(other.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] Component other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, Vector3 other, float minimum, float maximum)
+        {
+            float distance = self.Distance3(other);
+            return distance >= minimum && distance <= maximum;
+        }
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, [NotNull] Transform other, float minimum, float maximum) => self.Between3(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, [NotNull] Component other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, [NotNull] GameObject other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, Vector3 other, float minimum, float maximum) => self.position.Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, [NotNull] Transform other, float minimum, float maximum) => self.position.Between3(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, [NotNull] Component other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, [NotNull] GameObject other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, Vector3 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, [NotNull] Transform other, float minimum, float maximum) => self.transform.position.Between3(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, [NotNull] Component other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, Vector3 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, [NotNull] Transform other, float minimum, float maximum) => self.transform.position.Between3(other.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, [NotNull] Component other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, Vector2 other) => self - other;
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, Vector3 other) => self.Direction(new Vector2(other.x, other.z));
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, [NotNull] Transform other) => self.Direction(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, [NotNull] Component other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, [NotNull] GameObject other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, [NotNull] KaijuAgent other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector2 self, [NotNull] KaijuSensor other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, Vector2 other) => new Vector2(self.x, self.z).Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, Vector3 other) => new Vector2(self.x, self.z).Direction(new Vector2(other.x, other.z));
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, [NotNull] Transform other) => self.Direction(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, [NotNull] Component other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, [NotNull] GameObject other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, [NotNull] KaijuAgent other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction(this Vector3 self, [NotNull] KaijuSensor other) => self.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, Vector2 other) => self.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, Vector3 other) => self.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, [NotNull] Transform other) => self.position.Direction(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, [NotNull] Component other) => self.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, [NotNull] GameObject other) => self.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, Vector2 other) => self.transform.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, Vector3 other) => self.transform.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, [NotNull] Transform other) => self.transform.position.Direction(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, [NotNull] Component other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, Vector2 other) => self.transform.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, Vector3 other) => self.transform.position.Direction(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] Transform other) => self.transform.position.Direction(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] Component other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Direction(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, Vector3 other) => self - other;
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, [NotNull] Transform other) => self.Direction3(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, [NotNull] Component other) => self.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, [NotNull] GameObject other) => self.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, [NotNull] KaijuAgent other) => self.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, [NotNull] KaijuSensor other) => self.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, Vector3 other) => self.position.Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] Transform other) => self.position.Direction3(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] Component other) => self.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] GameObject other) => self.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, Vector3 other) => self.transform.position.Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, [NotNull] Transform other) => self.transform.position.Direction3(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, [NotNull] Component other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, Vector3 other) => self.transform.position.Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] Transform other) => self.transform.position.Direction3(other.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] Component other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Direction3(other.transform.position);
     }
 }

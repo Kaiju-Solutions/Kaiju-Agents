@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The speed in units per second.</returns>
         protected static float Speed(Vector2 current, Vector2 previous, float delta)
         {
-            return Vector2.Distance(current, previous) / delta;
+            return current.Distance(previous) / delta;
         }
         
         /// <summary>
@@ -89,18 +89,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The velocity across axes</returns>
         protected static Vector2 Velocity(Vector2 current, Vector2 previous, float delta)
         {
-            return Direction(current, previous) / delta;
-        }
-        
-        /// <summary>
-        /// Get the direction from the first vector to the second.
-        /// </summary>
-        /// <param name="a">The first vector.</param>
-        /// <param name="b">The second vector.</param>
-        /// <returns>The direction from the first vector to the second.</returns>
-        protected static Vector2 Direction(Vector2 a, Vector2 b)
-        {
-            return a - b;
+            return current.Direction(previous) / delta;
         }
         
         /// <summary>

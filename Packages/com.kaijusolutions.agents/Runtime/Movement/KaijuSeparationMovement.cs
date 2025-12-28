@@ -114,7 +114,7 @@ namespace KaijuSolutions.Agents.Movement
                 }
                 
                 // Get the direction to the target agent from the current agent's position.
-                Vector2 direction = agent - position;
+                Vector2 direction = agent.Direction(position);
                 
                 // See if this is within our distance to consider.
                 float distance = direction.magnitude;

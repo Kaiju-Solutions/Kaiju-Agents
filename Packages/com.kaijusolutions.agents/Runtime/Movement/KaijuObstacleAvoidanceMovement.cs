@@ -226,7 +226,7 @@ namespace KaijuSolutions.Agents.Movement
                 Vector2 f = new(v.x, v.z);
                 
                 // Only consider performing the avoiding if we are closer than our current distance.
-                if (Vector2.Distance(position, h) < Vector2.Distance(f, h))
+                if (position.Distance(h) < f.Distance(h))
                 {
                     // Perform a seek.
                     movement += (f - position).normalized * Agent.MoveSpeed;
