@@ -213,6 +213,11 @@ namespace KaijuSolutions.Agents
         public IReadOnlyCollection<KaijuSensor> Sensors => _sensors;
         
         /// <summary>
+        /// The number of sensors attached to this agent.
+        /// </summary>
+        public int SensorsCount => _sensors.Count;
+        
+        /// <summary>
         /// All sensors attached to this agent.
         /// </summary>
         private readonly HashSet<KaijuSensor> _sensors = new();
@@ -1769,11 +1774,105 @@ namespace KaijuSolutions.Agents
         public abstract void Move(float delta);
         
         /// <summary>
+        /// Get a sensor of a given type.
+        /// </summary>
+        /// <param name="ignore">The optional set of sensors to ignore from this search, meaning only a sensor not in this set can be returned.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of sensor.</typeparam>
+        /// <returns>The first sensor found of the given type or NULL if there are none found.</returns>
+        public T GetSensor<T>(ISet<T> ignore = null, bool automatic = true) where T : KaijuSensor
+        {
+            // Use an explicit type to only run exact matches.
+            Type type = typeof(T);
+            
+            foreach (KaijuSensor sensor in _sensors)
+            {
+                if ((automatic || !sensor.automatic) && sensor.GetType() == type && sensor is T cast && (ignore == null || !ignore.Contains(cast)))
+                {
+                    return cast;
+                }
+            }
+            
+            return null;
+        }
+        
+        /// <summary>
+        /// Get all sensor of a given type.
+        /// </summary>
+        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of sensor.</typeparam>
+        /// <returns>The set of sensors found.</returns>
+        public HashSet<T> GetSensors<T>(bool automatic = true) where T : KaijuSensor
+        {
+            HashSet<T> sensors = new();
+            GetSensors(sensors, automatic);
+            return sensors;
+        }
+        
+        /// <summary>
+        /// Get all sensor of a given type.
+        /// </summary>
+        /// <param name="sensors">The set of sensors to add the executed sensors to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of sensor.</typeparam>
+        /// <returns>The number of sensors added to the set.</returns>
+        public int GetSensors<T>([NotNull] ISet<T> sensors, bool automatic = true) where T : KaijuSensor
+        {
+            // Use an explicit type to only run exact matches.
+            Type type = typeof(T);
+            int count = 0;
+            
+            foreach (KaijuSensor sensor in _sensors)
+            {
+                if ((automatic || !sensor.automatic) && sensor.GetType() == type && sensor is T cast && sensors.Add(cast))
+                {
+                    count++;
+                }
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Manually run all sensors of a type attached to this agent.
+        /// </summary>
+        /// <param name="sensors">The optional set of sensors to add the executed sensors to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to run automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of sensor.</typeparam>
+        /// <returns>The number of sensors which were run.</returns>
+        public int Sense<T>(ICollection<T> sensors = null, bool automatic = false) where T : KaijuSensor
+        {
+            // Use an explicit type to only run exact matches.
+            Type type = typeof(T);
+            int count = 0;
+            
+            foreach (KaijuSensor sensor in _sensors)
+            {
+                if ((!automatic && sensor.automatic) || sensor.GetType() != type || sensor is not T cast)
+                {
+                    continue;
+                }
+                
+                cast.Sense();
+                sensors?.Add(cast);
+                count++;
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
         /// Execute all automatically-running sensors.
         /// </summary>
-        public void Sense()
+        public void SenseAutomatic()
         {
-            // TODO - Run sensors.
+            foreach (KaijuSensor sensor in _sensors)
+            {
+                if (sensor.automatic)
+                {
+                    sensor.Sense();
+                }
+            }
         }
         
         /// <summary>

@@ -1026,7 +1026,7 @@ namespace KaijuSolutions.Agents
             // Run automatic sensors.
             foreach (KaijuAgent agent in AllAgents)
             {
-                agent.Sense();
+                agent.SenseAutomatic();
             }
             
             // Run actuators.
@@ -1073,7 +1073,7 @@ namespace KaijuSolutions.Agents
         /// <param name="agents">The agents to render visualizations for.</param>
         /// <param name="all">If text should be run for all agents in this.</param>
         /// <param name="selected">If text should be run for selected agents in this.</param>
-        private void Visualize(HashSet<KaijuAgent> agents, bool all, bool selected)
+        private void Visualize([NotNull] ISet<KaijuAgent> agents, bool all, bool selected)
         {
             foreach (KaijuAgent agent in agents)
             {
