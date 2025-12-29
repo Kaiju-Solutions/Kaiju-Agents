@@ -3365,5 +3365,212 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector2 forward, Vector2 target, float fov)
+        {
+            // Get the direction vector.
+            Vector2 directionToTarget = target.Direction(position);
+            
+            // Early exit if vectors are too small to avoid NaN errors on normalize. Calculate Dot product using the normalized vectors and see if it is in range.
+            return forward.sqrMagnitude >= Mathf.Epsilon && directionToTarget.sqrMagnitude >= Mathf.Epsilon && Vector2.Dot(forward.normalized, directionToTarget.normalized) >= Mathf.Cos(fov / 2.0f * Mathf.Deg2Rad);
+        }
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector2 forward, Vector3 target, float fov) => position.FOV(forward, new Vector2(target.x, target.z), fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector3 forward, Vector2 target, float fov) => position.FOV(new Vector2(forward.x, forward.z), target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector3 forward, Vector3 target, float fov) => position.FOV(new Vector2(forward.x, forward.z), new Vector2(target.x, target.z), fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector2 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector2 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector3 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector3 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
     }
 }
