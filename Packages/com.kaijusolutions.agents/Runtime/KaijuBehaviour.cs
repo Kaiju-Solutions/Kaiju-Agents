@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace KaijuSolutions.Agents
 {
@@ -765,6 +766,44 @@ namespace KaijuSolutions.Agents
             get => transform.hierarchyCapacity;
             set => transform.hierarchyCapacity = value;
         }
+        
+        /// <summary>
+        /// Integer identifying the layer the GameObject is assigned to.
+        /// </summary>
+        public int Layer
+        {
+            get => gameObject.layer;
+            set => gameObject.layer = value;
+        }
+        
+        /// <summary>
+        /// The number of components on the GameObject as an integer value.
+        /// </summary>
+        public int ComponentCount => gameObject.GetComponentCount();
+        
+        /// <summary>
+        /// The active state of the GameObject in the Scene hierarchy. True if active, false if inactive.
+        /// </summary>
+        public bool ActiveInHierarchy => gameObject.activeInHierarchy;
+        
+        /// <summary>
+        /// The local active state of the GameObject. True if active, false if inactive.
+        /// </summary>
+        public bool ActiveSelf => gameObject.activeSelf;
+        
+        /// <summary>
+        /// Whether there are any Static Editor Flags set for the GameObject.
+        /// </summary>
+        public bool IsStatic
+        {
+            get => gameObject.isStatic;
+            set => gameObject.isStatic = value;
+        }
+        
+        /// <summary>
+        /// The Scene that contains the GameObject.
+        /// </summary>
+        public Scene Scene => gameObject.scene;
         
         /// <summary>
         /// Get a description of the object.
