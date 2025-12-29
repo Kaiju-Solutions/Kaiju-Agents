@@ -342,12 +342,7 @@ namespace KaijuSolutions.Agents
         public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
         
         /// <summary>
-        /// Get the forward direction of this agent being where it is looking.
-        /// </summary>
-        public Vector3 Forward => transform.forward;
-        
-        /// <summary>
-        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="Forward"/>.
+        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward"/>.
         /// </summary>
         public Vector3 MoveForward => Velocity == Vector2.zero ? Forward : Velocity3;
         
