@@ -59,16 +59,6 @@ namespace KaijuSolutions.Agents.Movement
         private float _weight;
         
         /// <summary>
-        /// The <see cref="KaijuMovement.Agent"/>'s current position.
-        /// </summary>
-        public Vector2 AgentPosition => Agent ? Agent.Position : Vector2.zero;
-        
-        /// <summary>
-        /// The <see cref="KaijuMovement.Agent"/>'s current position.
-        /// </summary>
-        public Vector3 AgentPosition3 => Agent ? Agent.Position3 : Vector3.zero;
-        
-        /// <summary>
         /// Create the movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>

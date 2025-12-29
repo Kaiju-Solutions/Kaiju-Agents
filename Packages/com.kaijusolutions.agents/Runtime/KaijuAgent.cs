@@ -912,7 +912,7 @@ namespace KaijuSolutions.Agents
         /// <returns>The number of target movements which were stopped.</returns>
         public int Stop(Vector3 v)
         {
-            return Stop(new Vector2(v.x, v.z));
+            return Stop(v.Flatten());
         }
         
         /// <summary>

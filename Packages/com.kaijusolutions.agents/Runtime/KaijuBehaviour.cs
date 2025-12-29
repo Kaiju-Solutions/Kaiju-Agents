@@ -78,11 +78,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public Vector2 Position
         {
-            get
-            {
-                Vector3 p = transform.position;
-                return new(p.x, p.z);
-            }
+            get => transform.position.Flatten();
             set
             {
                 OnPreSetPosition?.Invoke();

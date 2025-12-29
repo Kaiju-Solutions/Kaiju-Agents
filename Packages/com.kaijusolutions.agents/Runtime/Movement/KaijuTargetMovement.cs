@@ -15,16 +15,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector2 Target
         {
-            get
-            {
-                if (!_transform)
-                {
-                    return _vector ?? (Agent ? Agent.transform.position : Vector2.zero);
-                }
-                
-                Vector3 p = _transform.position;
-                return new(p.x, p.z);
-            }
+            get => _transform ? _transform.position.Flatten() : _vector ?? (Agent ? Agent.transform.position : Vector2.zero);
             set
             {
                 _transform = null;
@@ -41,7 +32,7 @@ namespace KaijuSolutions.Agents.Movement
             set
             {
                 _transform = null;
-                _vector = new(value.x, value.z);
+                _vector = value.Flatten();
             }
         }
         
@@ -104,12 +95,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target.
         /// </summary>
-        public float CurrentDistance => Vector2.Distance(Target, AgentPosition);
+        public float CurrentDistance => Vector2.Distance(Target, Agent.Position);
         
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
         /// </summary>
-        public float CurrentDistance3 => Vector3.Distance(Target3, AgentPosition3);
+        public float CurrentDistance3 => Vector3.Distance(Target3, Agent.Position3);
         
         /// <summary>
         /// The internal <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> value.

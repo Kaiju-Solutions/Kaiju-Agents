@@ -402,6 +402,34 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Flatten an XYZ vector down to the X and Z axes.
+        /// </summary>
+        /// <param name="vector">The vector to flatten.</param>
+        /// <returns>The  XYZ vector flattened down to the X and Z axes.</returns>
+        public static Vector2 Flatten(this Vector3 vector) => new(vector.x, vector.z);
+        
+        /// <summary>
+        /// Flatten a transform down to the X and Z axes positions.
+        /// </summary>
+        /// <param name="transform">The vector to flatten.</param>
+        /// <returns>The transform flattened down to the X and Z axes positions.</returns>
+        public static Vector2 Flatten([NotNull] this Transform transform) => transform.position.Flatten();
+        
+        /// <summary>
+        /// Flatten a component down to the X and Z axes positions.
+        /// </summary>
+        /// <param name="component">The vector to flatten.</param>
+        /// <returns>The component flattened down to the X and Z axes positions.</returns>
+        public static Vector2 Flatten([NotNull] this Component component) => component.transform.position.Flatten();
+        
+        /// <summary>
+        /// Flatten a GameObject down to the X and Z axes positions.
+        /// </summary>
+        /// <param name="gameObject">The vector to flatten.</param>
+        /// <returns>The GameObject flattened down to the X and Z axes positions.</returns>
+        public static Vector2 Flatten([NotNull] this GameObject gameObject) => gameObject.transform.position.Flatten();
+        
+        /// <summary>
         /// Get the distance between this and another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -415,7 +443,7 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
-        public static float Distance(this Vector2 self, Vector3 other) => self.Distance(new Vector2(other.x, other.z));
+        public static float Distance(this Vector2 self, Vector3 other) => self.Distance(other.Flatten());
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -455,7 +483,7 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
-        public static float Distance(this Vector3 self, Vector3 other) => new Vector2(self.x, self.z).Distance(other);
+        public static float Distance(this Vector3 self, Vector3 other) => self.Flatten().Distance(other);
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -618,7 +646,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector2 self, Vector3 other, float distance) => self.Within(new Vector2(other.x, other.z), distance);
+        public static bool Within(this Vector2 self, Vector3 other, float distance) => self.Within(other.Flatten(), distance);
         
         /// <summary>
         /// If this is within a distance to another position.
@@ -708,7 +736,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector2 self, Vector3 other, float distance) => self.Beyond(new Vector2(other.x, other.z), distance);
+        public static bool Beyond(this Vector2 self, Vector3 other, float distance) => self.Beyond(other.Flatten(), distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -939,7 +967,7 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector2 self, Vector3 other, float minimum, float maximum) => self.Between(new Vector2(other.x, other.z), minimum, maximum);
+        public static bool Between(this Vector2 self, Vector3 other, float minimum, float maximum) => self.Between(other.Flatten(), minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -989,7 +1017,7 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector3 self, Vector3 other, float minimum, float maximum) => new Vector2(self.x, self.z).Between(other, minimum, maximum);
+        public static bool Between(this Vector3 self, Vector3 other, float minimum, float maximum) => self.Flatten().Between(other, minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1658,7 +1686,7 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector2 self, Vector3 other) => self.Direction(new Vector2(other.x, other.z));
+        public static Vector2 Direction(this Vector2 self, Vector3 other) => self.Direction(other.Flatten());
         
         /// <summary>
         /// The direction from this position to another position.
@@ -1690,7 +1718,7 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector3 self, Vector2 other) => new Vector2(self.x, self.z).Direction(other);
+        public static Vector2 Direction(this Vector3 self, Vector2 other) => self.Flatten().Direction(other);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -1698,7 +1726,7 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector3 self, Vector3 other) => new Vector2(self.x, self.z).Direction(new Vector2(other.x, other.z));
+        public static Vector2 Direction(this Vector3 self, Vector3 other) => self.Flatten().Direction(other.Flatten());
         
         /// <summary>
         /// The direction from this position to another position.
@@ -1996,7 +2024,7 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector2 current, Vector3 previous, float delta) => current.Speed(new Vector2(previous.x, previous.z), delta);
+        public static float Speed(this Vector2 current, Vector3 previous, float delta) => current.Speed(previous.Flatten(), delta);
         
         /// <summary>
         /// The current speed based on the time it took to move from a previous position.
@@ -2081,7 +2109,7 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector3 current, Vector3 previous, float delta) => new Vector2(current.x, current.z).Speed(previous, delta);
+        public static float Speed(this Vector3 current, Vector3 previous, float delta) => current.Flatten().Speed(previous, delta);
         
         /// <summary>
         /// The current speed based on the time it took to move from a previous position.
@@ -2693,7 +2721,7 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
-        public static Vector2 Velocity(this Vector2 current, Vector3 previous, float delta) => current.Velocity(new Vector2(previous.x, previous.z), delta);
+        public static Vector2 Velocity(this Vector2 current, Vector3 previous, float delta) => current.Velocity(previous.Flatten(), delta);
         
         /// <summary>
         /// The current velocity based on the time it took to move from a previous position.
@@ -2761,7 +2789,7 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
-        public static Vector2 Velocity(this Vector3 current, Vector2 previous, float delta) => new Vector2(current.x, current.z).Velocity(previous, delta);
+        public static Vector2 Velocity(this Vector3 current, Vector2 previous, float delta) => current.Flatten().Velocity(previous, delta);
         
         /// <summary>
         /// The current velocity based on the time it took to move from a previous position.
@@ -2778,7 +2806,7 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
-        public static Vector2 Velocity(this Vector3 current, Vector3 previous, float delta) => new Vector2(current.x, current.z).Velocity(new Vector2(previous.x, previous.z),delta);
+        public static Vector2 Velocity(this Vector3 current, Vector3 previous, float delta) => current.Flatten().Velocity(previous.Flatten(),delta);
         
         /// <summary>
         /// The current velocity based on the time it took to move from a previous position.
@@ -3391,7 +3419,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector2 position, Vector2 forward, Vector3 target, float fov) => position.InView(forward, new Vector2(target.x, target.z), fov);
+        public static bool InView(this Vector2 position, Vector2 forward, Vector3 target, float fov) => position.InView(forward, target.Flatten(), fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3431,7 +3459,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector2 position, Vector3 forward, Vector2 target, float fov) => position.InView(new Vector2(forward.x, forward.z), target, fov);
+        public static bool InView(this Vector2 position, Vector3 forward, Vector2 target, float fov) => position.InView(forward.Flatten(), target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3441,7 +3469,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector2 position, Vector3 forward, Vector3 target, float fov) => position.InView(new Vector2(forward.x, forward.z), new Vector2(target.x, target.z), fov);
+        public static bool InView(this Vector2 position, Vector3 forward, Vector3 target, float fov) => position.InView(forward.Flatten(), target.Flatten(), fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3481,7 +3509,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector3 position, Vector2 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, Vector2 target, float fov) => position.Flatten().InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3491,7 +3519,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector3 position, Vector2 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, Vector3 target, float fov) => position.Flatten().InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3531,7 +3559,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector3 position, Vector3 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, Vector2 target, float fov) => position.Flatten().InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3541,7 +3569,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView(this Vector3 position, Vector3 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, Vector3 target, float fov) => position.Flatten().InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -4292,5 +4320,17 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How the check should handle hitting triggers.</param>
         /// <returns>If there is a direct line of sight with a given radius from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
         public static bool HasSight([NotNull] this GameObject position, [NotNull] GameObject target, out RaycastHit hit, float radius, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.HasSight(target.transform, out hit, radius, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast(this Vector3 position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => Physics.Raycast(position, direction, out hit, distance, mask, triggers);
     }
 }

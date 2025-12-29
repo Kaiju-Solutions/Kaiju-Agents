@@ -222,8 +222,8 @@ namespace KaijuSolutions.Agents.Movement
                 Vector3 v = hit.point + hit.normal * Avoidance;
                 
                 // The wall's position.
-                Vector2 h = new(hit.point.x, hit.point.z);
-                Vector2 f = new(v.x, v.z);
+                Vector2 h = hit.point.Flatten();
+                Vector2 f = v.Flatten();
                 
                 // Only consider performing the avoiding if we are closer than our current distance.
                 if (position.Distance(h) < f.Distance(h))
