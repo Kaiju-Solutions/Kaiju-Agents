@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Sensors
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
-    public abstract class KaijuSensor : MonoBehaviour
+    public abstract class KaijuSensor : KaijuBehaviour
     {
         /// <summary>
         /// Callback for when this sensor has been run.

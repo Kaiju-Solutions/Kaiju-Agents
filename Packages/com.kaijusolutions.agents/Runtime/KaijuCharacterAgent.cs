@@ -38,9 +38,9 @@ namespace KaijuSolutions.Agents
         public CharacterController Character => character;
         
         /// <summary>
-        /// Callback before updating the transform.
+        /// Callback before updating the position.
         /// </summary>
-        protected override void PreSetTransform()
+        private void PreSetPosition()
         {
             // The character controller needs to be disabled to set the position.
             if (character)
@@ -50,9 +50,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Callback after updating the transform.
+        /// Callback after updating the position.
         /// </summary>
-        protected override void PostSetTransform()
+        private void PostSetPosition()
         {
             // Enable the character controller after the position has been set.
             if (character)
@@ -62,10 +62,22 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// This function is called when the object becomes enabled and active.
+        /// </summary>
+        protected override void OnEnable()
+        {
+            OnPreSetPosition += PreSetPosition;
+            OnSetPosition += PostSetPosition;
+            base.OnEnable();
+        }
+
+        /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>
         protected override void OnDisable()
         {
+            OnPreSetPosition -= PreSetPosition;
+            OnSetPosition -= PostSetPosition;
             _velocityY = 0;
             base.OnDisable();
         }

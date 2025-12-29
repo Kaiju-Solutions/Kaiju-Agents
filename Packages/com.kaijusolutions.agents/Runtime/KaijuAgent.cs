@@ -19,7 +19,7 @@ namespace KaijuSolutions.Agents
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
-    public abstract class KaijuAgent : MonoBehaviour
+    public abstract class KaijuAgent : KaijuBehaviour
     {
         /// <summary>
         /// Movement speed changed callback.
@@ -70,26 +70,6 @@ namespace KaijuSolutions.Agents
         /// Global callback for when the look target has been set.
         /// </summary>
         public static event KaijuAgentAction OnLookTargetGlobal;
-        
-        /// <summary>
-        /// Callback for when the position has been explicitly set.
-        /// </summary>
-        public event KaijuAction OnSetPosition;
-        
-        /// <summary>
-        /// Global callback for when the position has been explicitly set.
-        /// </summary>
-        public static event KaijuAgentAction OnSetPositionGlobal;
-        
-        /// <summary>
-        /// Callback for when the orientation has been explicitly set.
-        /// </summary>
-        public event KaijuAction OnSetOrientation;
-        
-        /// <summary>
-        /// Global callback for when the orientation has been explicitly set.
-        /// </summary>
-        public static event KaijuAgentAction OnSetOrientationGlobal;
         
         /// <summary>
         /// Callback for when this agent has moved.
@@ -549,66 +529,6 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The position vector along the main XZ axis.
-        /// </summary>
-        public Vector2 Position
-        {
-            get
-            {
-                Vector3 p = transform.position;
-                return new(p.x, p.z);
-            }
-            set
-            {
-                PreSetTransform();
-                transform.position = new(value.x, 0, value.y);
-                PostSetTransform();
-                OnSetPosition?.Invoke();
-                OnSetPositionGlobal?.Invoke(this);
-            }
-        }
-        
-        /// <summary>
-        /// The position vector along all three axes.
-        /// </summary>
-        public Vector3 Position3
-        {
-            get => transform.position;
-            set
-            {
-                PreSetTransform();
-                transform.position = value;
-                PostSetTransform();
-                OnSetPosition?.Invoke();
-                OnSetPositionGlobal?.Invoke(this);
-            }
-        }
-        
-        /// <summary>
-        /// Callback before updating the transform.
-        /// </summary>
-        protected virtual void PreSetTransform() { }
-        
-        /// <summary>
-        /// Callback after updating the transform.
-        /// </summary>
-        protected virtual void PostSetTransform() { }
-        
-        /// <summary>
-        /// The angle the agent is rotated along the main Y axis.
-        /// </summary>
-        public float Orientation
-        {
-            get => transform.localEulerAngles.y;
-            set
-            {
-                transform.localEulerAngles = new(0, value, 0);
-                OnSetOrientation?.Invoke();
-                OnSetOrientationGlobal?.Invoke(this);
-            }
-        }
-        
-        /// <summary>
         /// Get the radius of an agent.
         /// </summary>
         /// <returns>The radius of the agent.</returns>
@@ -680,7 +600,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             Setup();
             KaijuAgentsManager.Register(this);
@@ -1714,110 +1634,5 @@ namespace KaijuSolutions.Agents
         {
             return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed}";
         }
-        
-        /// <summary>
-        /// Implicit conversion to a float from the <see cref="Orientation"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
-        public static implicit operator float([NotNull] KaijuAgent a) => a.Orientation;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable float from the <see cref="Orientation"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
-        public static implicit operator float?([NotNull] KaijuAgent a) => a.Orientation;
-        
-        /// <summary>
-        /// Implicit conversion to a double from the <see cref="Orientation"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
-        public static implicit operator double([NotNull] KaijuAgent a) => a.Orientation;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable double from the <see cref="Orientation"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
-        public static implicit operator double?([NotNull] KaijuAgent a) => a.Orientation;
-        
-        /// <summary>
-        /// Implicit conversion to a Vector2 from the <see cref="Position"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
-        public static implicit operator Vector2([NotNull] KaijuAgent a) => a.Position;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable Vector2 from the <see cref="Position"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
-        public static implicit operator Vector2?([NotNull] KaijuAgent a) => a.Position;
-        
-        /// <summary>
-        /// Implicit conversion to a Vector2 from the <see cref="Position"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
-        public static implicit operator Vector3([NotNull] KaijuAgent a) => a.Position3;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable Vector3 from the <see cref="Position3"/>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The agent's <see cref="Position3"/>.</returns>
-        public static implicit operator Vector3?([NotNull] KaijuAgent a) => a.Position3;
-        
-        /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the agent.</returns>
-        public static implicit operator GameObject([NotNull] KaijuAgent a) => a.gameObject;
-        
-        /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
-        /// </summary>
-        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
-        public static implicit operator KaijuAgent([NotNull] GameObject o) => o.GetComponent<KaijuAgent>();
-        
-        /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the agent.</returns>
-        public static implicit operator Transform([NotNull] KaijuAgent a) => a.transform;
-        
-        /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
-        /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
-        public static implicit operator KaijuAgent([NotNull] Transform t) => t.GetComponent<KaijuAgent>();
-        
-        /// <summary>
-        /// Implicit conversion to a Boolean if the agent is active.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>If the agent is active.</returns>
-        public static implicit operator bool(KaijuAgent a) => a != null && a.isActiveAndEnabled;
-        
-        /// <summary>
-        /// Implicit conversion to a nullable Boolean if the agent is active.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>If the agent is active.</returns>
-        public static implicit operator bool?(KaijuAgent a) =>  a != null && a.isActiveAndEnabled;
-        
-        /// <summary>
-        /// Implicit conversion to a string.
-        /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The string from the <see cref="ToString"/> method.</returns>
-        public static implicit operator string([NotNull] KaijuAgent a) => a.ToString();
     }
 }

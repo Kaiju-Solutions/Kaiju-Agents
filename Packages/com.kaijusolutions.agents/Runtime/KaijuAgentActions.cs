@@ -10,6 +10,12 @@ namespace KaijuSolutions.Agents
     public delegate void KaijuAction();
     
     /// <summary>
+    /// An action for a behaviour.
+    /// </summary>
+    /// <param name="behaviour">The behaviour.</param>
+    public delegate void KaijuBehaviourAction([NotNull] KaijuBehaviour behaviour);
+    
+    /// <summary>
     /// An action for an agent.
     /// </summary>
     /// <param name="agent">The agent.</param>
