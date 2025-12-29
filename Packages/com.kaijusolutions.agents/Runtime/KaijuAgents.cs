@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
 using UnityEngine.AI;
 using Object = UnityEngine.Object;
@@ -448,22 +447,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
-        public static float Distance(this Vector2 self, [NotNull] KaijuAgent other) => self.Distance(other.transform);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance(this Vector2 self, [NotNull] KaijuSensor other) => self.Distance(other.transform);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
         public static float Distance(this Vector3 self, Vector2 other) => other.Distance(self);
         
         /// <summary>
@@ -497,22 +480,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance(this Vector3 self, [NotNull] GameObject other) => self.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance(this Vector3 self, [NotNull] KaijuAgent other) => self.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance(this Vector3 self, [NotNull] KaijuSensor other) => self.Distance(other.transform.position);
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -560,22 +527,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This object.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
         public static float Distance([NotNull] this Component self, Vector2 other) => self.transform.position.Distance(other);
         
         /// <summary>
@@ -609,22 +560,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Distance(other.transform.position);
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -666,22 +601,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Distance(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Distance(other.transform.position);
         
         /// <summary>
         /// If this is within a distance to another position.
@@ -727,24 +646,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
         public static bool Within(this Vector2 self, [NotNull] GameObject other, float distance) => self.Within(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector2 self, [NotNull] KaijuAgent other, float distance) => self.Within(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector2 self, [NotNull] KaijuSensor other, float distance) => self.Within(other.transform.position, distance);
 
         /// <summary>
         /// If this is within a distance to another position.
@@ -792,24 +693,6 @@ namespace KaijuSolutions.Agents
         public static bool Within(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within(other.transform.position, distance);
         
         /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Within(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Within(other.transform.position, distance);
-        
-        /// <summary>
         /// If this is beyond a distance to another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -853,24 +736,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond(this Vector2 self, [NotNull] GameObject other, float distance) => self.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector2 self, [NotNull] KaijuAgent other, float distance) => self.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector2 self, [NotNull] KaijuSensor other, float distance) => self.Beyond(other.transform.position, distance);
 
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -916,24 +781,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond(this Vector3 self, [NotNull] GameObject other, float distance) => self.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Beyond(other.transform.position, distance);
 
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -979,24 +826,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond([NotNull] this Transform self, [NotNull] GameObject other, float distance) => self.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Transform self, [NotNull] KaijuAgent other, float distance) => self.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Transform self, [NotNull] KaijuSensor other, float distance) => self.position.Beyond(other.transform.position, distance);
 
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1042,24 +871,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond([NotNull] this Component self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Component self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Component self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
 
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1105,24 +916,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this GameObject self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this GameObject self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond(other.transform.position, distance);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1186,26 +979,6 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector2 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector2 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between(this Vector3 self, Vector2 other, float minimum, float maximum) => other.Between(self, minimum, maximum);
 
         /// <summary>
@@ -1247,26 +1020,6 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between(this Vector3 self, [NotNull] GameObject other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector3 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between(this Vector3 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between(other.transform.position, minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1326,26 +1079,6 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this Transform self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this Transform self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between([NotNull] this Component self, Vector2 other, float minimum, float maximum) => other.Between(self.transform.position, minimum, maximum);
         
         /// <summary>
@@ -1387,28 +1120,6 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between([NotNull] this Component self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this Component self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this Component self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
-        
-        
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1461,26 +1172,6 @@ namespace KaijuSolutions.Agents
         public static bool Between([NotNull] this GameObject self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
         
         /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this GameObject self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between([NotNull] this GameObject self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between(other.transform.position, minimum, maximum);
-        
-        /// <summary>
         /// Get the distance between this and another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -1511,22 +1202,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance3(this Vector3 self, [NotNull] GameObject other) => self.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3(this Vector3 self, [NotNull] KaijuAgent other) => self.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3(this Vector3 self, [NotNull] KaijuSensor other) => self.Distance3(other.transform.position);
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -1566,22 +1241,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This object.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
         public static float Distance3([NotNull] this Component self, Vector3 other) => self.transform.position.Distance3(other);
         
         /// <summary>
@@ -1607,22 +1266,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Distance3(other.transform.position);
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -1656,22 +1299,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance3([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Distance3(other.transform.position);
-        
-        /// <summary>
-        /// Get the distance between this and another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The distance.</returns>
-        public static float Distance3([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Distance3(other.transform.position);
         
         /// <summary>
         /// If this is within a distance to another position.
@@ -1710,24 +1337,6 @@ namespace KaijuSolutions.Agents
         public static bool Within3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within3(other.transform.position, distance);
         
         /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within3(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Within3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is within a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within3(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Within3(other.transform.position, distance);
-        
-        /// <summary>
         /// If this is beyond a distance to another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -1762,24 +1371,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3(this Vector3 self, [NotNull] KaijuAgent other, float distance) => self.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3(this Vector3 self, [NotNull] KaijuSensor other, float distance) => self.Beyond3(other.transform.position, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1824,24 +1415,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Transform self, [NotNull] KaijuAgent other, float distance) => self.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Transform self, [NotNull] KaijuSensor other, float distance) => self.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond3([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
         
         /// <summary>
@@ -1878,24 +1451,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Component self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Component self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond3([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
         
         /// <summary>
@@ -1924,24 +1479,6 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond3([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this GameObject self, [NotNull] KaijuAgent other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
-        
-        /// <summary>
-        /// If this is beyond a distance to another position.
-        /// </summary>
-        /// <param name="self">This object.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="distance">The distance.</param>
-        /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this GameObject self, [NotNull] KaijuSensor other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1995,26 +1532,6 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3(this Vector3 self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3(this Vector3 self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this Transform self, Vector3 other, float minimum, float maximum) => self.position.Between3(other, minimum, maximum);
         
         /// <summary>
@@ -2046,26 +1563,6 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this Transform self, [NotNull] GameObject other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this Transform self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this Transform self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.position.Between3(other.transform.position, minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -2115,26 +1612,6 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this Component self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this Component self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this GameObject self, Vector3 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
         
         /// <summary>
@@ -2166,26 +1643,6 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this GameObject self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this GameObject self, [NotNull] KaijuAgent other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
-        
-        /// <summary>
-        /// If this is between two distances to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <param name="minimum">The minimum distance.</param>
-        /// <param name="maximum">The maximum distance.</param>
-        /// <returns>If this is between two distances to another position.</returns>
-        public static bool Between3([NotNull] this GameObject self, [NotNull] KaijuSensor other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2233,22 +1690,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector2 self, [NotNull] KaijuAgent other) => self.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector2 self, [NotNull] KaijuSensor other) => self.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
         public static Vector2 Direction(this Vector3 self, Vector2 other) => new Vector2(self.x, self.z).Direction(other);
         
         /// <summary>
@@ -2282,22 +1723,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector2 Direction(this Vector3 self, [NotNull] GameObject other) => self.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector3 self, [NotNull] KaijuAgent other) => self.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction(this Vector3 self, [NotNull] KaijuSensor other) => self.Direction(other.transform.position);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2345,22 +1770,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
         public static Vector2 Direction([NotNull] this Component self, Vector2 other) => self.transform.position.Direction(other);
         
         /// <summary>
@@ -2394,22 +1803,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector2 Direction([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Direction(other.transform.position);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2457,22 +1850,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector2 Direction([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Direction(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3(this Vector3 self, Vector3 other) => self - other;
         
         /// <summary>
@@ -2498,22 +1875,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3(this Vector3 self, [NotNull] GameObject other) => self.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3(this Vector3 self, [NotNull] KaijuAgent other) => self.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3(this Vector3 self, [NotNull] KaijuSensor other) => self.Direction3(other.transform.position);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2553,22 +1914,6 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] KaijuAgent other) => self.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this Transform self, [NotNull] KaijuSensor other) => self.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3([NotNull] this Component self, Vector3 other) => self.transform.position.Direction3(other);
         
         /// <summary>
@@ -2594,22 +1939,6 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this Component self, [NotNull] KaijuAgent other) => self.transform.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this Component self, [NotNull] KaijuSensor other) => self.transform.position.Direction3(other.transform.position);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2644,1022 +1973,1397 @@ namespace KaijuSolutions.Agents
         public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] GameObject other) => self.transform.position.Direction3(other.transform.position);
         
         /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] KaijuAgent other) => self.transform.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The direction from this position to another position.
-        /// </summary>
-        /// <param name="self">This position.</param>
-        /// <param name="other">The other position.</param>
-        /// <returns>The direction from this position to another position.</returns>
-        public static Vector3 Direction3([NotNull] this GameObject self, [NotNull] KaijuSensor other) => self.transform.position.Direction3(other.transform.position);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, Vector2 previous, float delta) => current.Distance(previous) / delta;
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, Vector2 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, Vector3 previous, float delta) => current.Speed(new Vector2(previous.x, previous.z), delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, Vector3 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] Transform previous, float delta) => current.Speed(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] Transform previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] Component previous, float delta) => current.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] Component previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] GameObject previous, float delta) => current.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector2 current, [NotNull] GameObject previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector2 current, [NotNull] KaijuAgent previous, float delta) => current.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector2 current, [NotNull] KaijuAgent previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector2 current, [NotNull] KaijuSensor previous, float delta) => current.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector2 current, [NotNull] KaijuSensor previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, Vector2 previous, float delta) => previous.Speed(current, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, Vector2 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, Vector3 previous, float delta) => new Vector2(current.x, current.z).Speed(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, Vector3 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] Transform previous, float delta) => current.Speed(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] Transform previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] Component previous, float delta) => current.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] Component previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] GameObject previous, float delta) => current.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed(this Vector3 current, [NotNull] GameObject previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector3 current, [NotNull] KaijuAgent previous, float delta) => current.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector3 current, [NotNull] KaijuAgent previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector3 current, [NotNull] KaijuSensor previous, float delta) => current.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed(this Vector3 current, [NotNull] KaijuSensor previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, Vector2 previous, float delta) => previous.Speed(current, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, Vector2 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, Vector3 previous, float delta) => current.position.Speed(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, Vector3 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] Transform previous, float delta) => current.position.Speed(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] Transform previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] Component previous, float delta) => current.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] Component previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] GameObject previous, float delta) => current.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Transform current, [NotNull] GameObject previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Transform current, [NotNull] KaijuAgent previous, float delta) => current.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Transform current, [NotNull] KaijuAgent previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Transform current, [NotNull] KaijuSensor previous, float delta) => current.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Transform current, [NotNull] KaijuSensor previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, Vector2 previous, float delta) => previous.Speed(current, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, Vector2 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Speed(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, Vector3 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] Transform previous, float delta) => current.transform.position.Speed(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] Transform previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] Component previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] Component previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] GameObject previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this Component current, [NotNull] GameObject previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Component current, [NotNull] KaijuAgent previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Component current, [NotNull] KaijuAgent previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Component current, [NotNull] KaijuSensor previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this Component current, [NotNull] KaijuSensor previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, Vector2 previous, float delta) => previous.Speed(current, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, Vector2 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, Vector3 previous, float delta) => current.transform.position.Speed(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, Vector3 previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] Transform previous, float delta) => current.transform.position.Speed(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] Transform previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] Component previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] Component previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] GameObject previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Speed(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this GameObject current, [NotNull] KaijuAgent previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this GameObject current, [NotNull] KaijuAgent previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this GameObject current, [NotNull] KaijuSensor previous, float delta) => current.transform.position.Speed(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed([NotNull] this GameObject current, [NotNull] KaijuSensor previous) => current.Speed(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, Vector3 previous, float delta) => current.Distance3(previous) / delta;
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, Vector3 previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] Transform previous, float delta) => current.Speed3(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] Transform previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] Component previous, float delta) => current.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] Component previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] GameObject previous, float delta) => current.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3(this Vector3 current, [NotNull] KaijuAgent previous, float delta) => current.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3(this Vector3 current, [NotNull] KaijuAgent previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3(this Vector3 current, [NotNull] KaijuSensor previous, float delta) => current.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3(this Vector3 current, [NotNull] KaijuSensor previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, Vector3 previous, float delta) => current.position.Speed3(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, Vector3 previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] Transform previous, float delta) => current.position.Speed3(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] Transform previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] Component previous, float delta) => current.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] Component previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] GameObject previous, float delta) => current.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Transform current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Transform current, [NotNull] KaijuAgent previous, float delta) => current.position.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Transform current, [NotNull] KaijuAgent previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Transform current, [NotNull] KaijuSensor previous, float delta) => current.position.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Transform current, [NotNull] KaijuSensor previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Speed3(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, Vector3 previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] Transform previous, float delta) => current.transform.position.Speed3(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] Transform previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] Component previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] Component previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] GameObject previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Component current, [NotNull] KaijuAgent previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Component current, [NotNull] KaijuAgent previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Component current, [NotNull] KaijuSensor previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this Component current, [NotNull] KaijuSensor previous) => current.Speed3(previous, Time.deltaTime);
-        
-        /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
-        /// </summary>
-        /// <param name="current">The current position.</param>
-        /// <param name="previous">The previous position.</param>
-        /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, Vector3 previous, float delta) => current.transform.position.Speed3(previous, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, Vector3 previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] Transform previous, float delta) => current.transform.position.Speed3(previous.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] Transform previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] Component previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] Component previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] GameObject previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current speed based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current velocity based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this GameObject current, [NotNull] KaijuAgent previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, Vector2 previous, float delta) => current.Direction(previous) / delta;
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current velocity based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this GameObject current, [NotNull] KaijuAgent previous) => current.Speed3(previous, Time.deltaTime);
-        
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, Vector2 previous) => current.Velocity(previous, Time.deltaTime);
+
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current velocity based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this GameObject current, [NotNull] KaijuSensor previous, float delta) => current.transform.position.Speed3(previous.transform.position, delta);
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, Vector3 previous, float delta) => current.Velocity(new Vector2(previous.x, previous.z), delta);
         
         /// <summary>
-        /// The current movement speed based on the time it took to move from a previous position.
+        /// The current velocity based on the time it took to move from a previous position.
         /// </summary>
         /// <param name="current">The current position.</param>
         /// <param name="previous">The previous position.</param>
-        /// <returns>The current movement speed based on the time it took to move from a previous position.</returns>
-        public static float Speed3([NotNull] this GameObject current, [NotNull] KaijuSensor previous) => current.Speed3(previous, Time.deltaTime);
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, Vector3 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] Transform previous, float delta) => current.Velocity(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] Transform previous) => current.Velocity(previous.position, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] Component previous, float delta) => current.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] Component previous) => current.Velocity(previous.transform.position, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] GameObject previous, float delta) => current.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector2 current, [NotNull] GameObject previous) => current.Velocity(previous.transform.position, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, Vector2 previous, float delta) => new Vector2(current.x, current.z).Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, Vector2 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, Vector3 previous, float delta) => new Vector2(current.x, current.z).Velocity(new Vector2(previous.x, previous.z),delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, Vector3 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] Transform previous, float delta) => current.Velocity(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] Transform previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] Component previous, float delta) => current.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] Component previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] GameObject previous, float delta) => current.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity(this Vector3 current, [NotNull] GameObject previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, Vector2 previous, float delta) => current.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, Vector2 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, Vector3 previous, float delta) => current.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, Vector3 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] Transform previous, float delta) => current.position.Velocity(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] Transform previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] Component previous, float delta) => current.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] Component previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] GameObject previous, float delta) => current.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Transform current, [NotNull] GameObject previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, Vector2 previous, float delta) => current.transform.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, Vector2 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, Vector3 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] Transform previous, float delta) => current.transform.position.Velocity(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] Transform previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] Component previous, float delta) => current.transform.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] Component previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] GameObject previous, float delta) => current.transform.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this Component current, [NotNull] GameObject previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, Vector2 previous, float delta) => current.transform.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, Vector2 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, Vector3 previous, float delta) => current.transform.position.Velocity(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, Vector3 previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] Transform previous, float delta) => current.transform.position.Velocity(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] Transform previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] Component previous, float delta) => current.transform.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] Component previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] GameObject previous, float delta) => current.transform.position.Velocity(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector2 Velocity([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Velocity(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, Vector3 previous, float delta) => current.Direction3(previous) / delta;
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, Vector3 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] Transform previous, float delta) => current.Velocity3(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] Transform previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] Component previous, float delta) => current.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] Component previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] GameObject previous, float delta) => current.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, Vector3 previous, float delta) => current.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, Vector3 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] Transform previous, float delta) => current.position.Velocity3(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] Transform previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] Component previous, float delta) => current.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] Component previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] GameObject previous, float delta) => current.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, Vector3 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] Transform previous, float delta) => current.transform.position.Velocity3(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] Transform previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] Component previous, float delta) => current.transform.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] Component previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] GameObject previous, float delta) => current.transform.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, Vector3 previous, float delta) => current.transform.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, Vector3 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] Transform previous, float delta) => current.transform.position.Velocity3(previous.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] Transform previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] Component previous, float delta) => current.transform.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] Component previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] GameObject previous, float delta) => current.transform.position.Velocity3(previous.transform.position, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
     }
 }

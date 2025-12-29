@@ -182,7 +182,7 @@ namespace KaijuSolutions.Agents.Movement
         protected override Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta)
         {
             // Calculate target values.
-            Vector2 targetVelocity = Velocity(target, Previous, delta);
+            Vector2 targetVelocity = target.Velocity(Previous, delta);
             float targetSpeed = target.Speed(Previous, delta);
             
             // Predict where the target will be.

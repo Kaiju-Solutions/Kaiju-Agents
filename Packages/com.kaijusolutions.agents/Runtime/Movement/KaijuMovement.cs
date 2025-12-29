@@ -69,18 +69,6 @@ namespace KaijuSolutions.Agents.Movement
         public Vector3 AgentPosition3 => Agent ? Agent.Position3 : Vector3.zero;
         
         /// <summary>
-        /// Get the velocity across axes.
-        /// </summary>
-        /// <param name="current">Current position.</param>
-        /// <param name="previous">Position at the previous time step.</param>
-        /// <param name="delta">The time step.</param>
-        /// <returns>The velocity across axes</returns>
-        protected static Vector2 Velocity(Vector2 current, Vector2 previous, float delta)
-        {
-            return current.Direction(previous) / delta;
-        }
-        
-        /// <summary>
         /// Create the movement.
         /// </summary>
         /// <param name="agent">The agent this is assigned to.</param>
