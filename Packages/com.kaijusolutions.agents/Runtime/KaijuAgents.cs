@@ -430,6 +430,13 @@ namespace KaijuSolutions.Agents
         public static Vector2 Flatten([NotNull] this GameObject gameObject) => gameObject.transform.position.Flatten();
         
         /// <summary>
+        /// Expand an XZ vector to all three axes.
+        /// </summary>
+        /// <param name="vector">The vector to expand.</param>
+        /// <returns>The XZ vector expanded to all three axes.</returns>
+        public static Vector3 Expand(this Vector2 vector) => new(vector.x, 0, vector.y);
+        
+        /// <summary>
         /// Get the distance between this and another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -4331,6 +4338,155 @@ namespace KaijuSolutions.Agents
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the cast should handle hitting triggers.</param>
         /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast(this Vector2 position, Vector2 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().Raycast(direction.Expand(), out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast(this Vector2 position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast(this Vector3 position, Vector2 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Raycast(direction.Expand(), out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
         public static bool Raycast(this Vector3 position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => Physics.Raycast(position, direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Transform position, Vector2 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Transform position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast in the forward direction.
+        /// </summary>
+        /// <param name="position">The starting position of the cast which will be cast in its forward direction.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Transform position, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.Raycast(position.forward, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Component position, Vector2 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Component position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast in the forward direction.
+        /// </summary>
+        /// <param name="position">The starting position of the cast which will be cast in its forward direction.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this Component position, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        {
+            Transform t = position.transform;
+            return t.position.Raycast(t.forward, out hit, distance, mask, triggers);
+        }
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this GameObject position, Vector2 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The ending position of the cast.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this GameObject position, Vector3 direction, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.Raycast(direction, out hit, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform a raycast in the forward direction.
+        /// </summary>
+        /// <param name="position">The starting position of the cast which will be cast in its forward direction.</param>
+        /// <param name="hit">The hit information from the cast.</param>
+        /// <param name="distance">The distance for the cast.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the cast should handle hitting triggers.</param>
+        /// <returns>If the cast hit a collider or not.</returns>
+        public static bool Raycast([NotNull] this GameObject position, out RaycastHit hit, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        {
+            Transform t = position.transform;
+            return t.position.Raycast(t.forward, out hit, distance, mask, triggers);
+        }
     }
 }
