@@ -4662,5 +4662,44 @@ namespace KaijuSolutions.Agents
             Transform t = position.transform;
             return t.position.SphereCast(t.forward, radius, out hit, distance, mask, triggers);
         }
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector3 position, Vector3 direction, [NotNull] ref RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        {
+            // Nothing to do if no hits to store.
+            if (hits.Length < 1)
+            {
+                return 0;
+            }
+            
+            // If only a single cast should be performed, it should shoot straight in the given direction.
+            if (hits.Length == 1)
+            {
+                if (position.Raycast(direction, out RaycastHit hit, distance, mask, triggers))
+                {
+                    hits[0] = hit;
+                    return 1;
+                }
+                
+                hits[0] = null;
+                return 0;
+            }
+            
+            // Ensure a valid angle.
+            angle = Mathf.Clamp(angle, float.Epsilon, 360f);
+            
+            // TODO - Finish the implementation.
+            return 0;
+        }
     }
 }
