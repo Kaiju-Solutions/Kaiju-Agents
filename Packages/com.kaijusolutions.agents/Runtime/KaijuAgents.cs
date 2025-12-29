@@ -3729,34 +3729,34 @@ namespace KaijuSolutions.Agents
         public static bool HasSight(this Vector2 position, Vector3 target, out RaycastHit hit, int mask = -5) => new Vector3(position.x, target.y, position.y).HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector2 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask) || hit.transform == target;
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector2 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector2 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
         /// If there is a direct line of sight from a starting position to an end position.
@@ -3776,37 +3776,37 @@ namespace KaijuSolutions.Agents
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
         /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector3 position, Vector3 target, out RaycastHit hit, int mask = -5) => Physics.Linecast(position, target, out hit, mask);
+        public static bool HasSight(this Vector3 position, Vector3 target, out RaycastHit hit, int mask = -5) => !Physics.Linecast(position, target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector3 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask) || hit.transform == target;
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector3 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight(this Vector3 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
         /// If there is a direct line of sight from a starting position to an end position.
@@ -3829,34 +3829,34 @@ namespace KaijuSolutions.Agents
         public static bool HasSight([NotNull] this Transform position, Vector3 target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Transform position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Transform position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Transform position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
         /// If there is a direct line of sight from a starting position to an end position.
@@ -3879,34 +3879,34 @@ namespace KaijuSolutions.Agents
         public static bool HasSight([NotNull] this Component position, Vector3 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Component position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Component position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this Component position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
         /// If there is a direct line of sight from a starting position to an end position.
@@ -3929,33 +3929,33 @@ namespace KaijuSolutions.Agents
         public static bool HasSight([NotNull] this GameObject position, Vector3 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this GameObject position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this GameObject position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform, out hit, mask);
         
         /// <summary>
-        /// If there is a direct line of sight from a starting position to an end position.
+        /// If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.
         /// </summary>
         /// <param name="position">The starting position of the line of sight.</param>
         /// <param name="target">The ending position of the line of sight.</param>
         /// <param name="hit">The hit information from the line of sight check.</param>
         /// <param name="mask">The optional layer mask.</param>
-        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
-        public static bool HasSight([NotNull] this GameObject position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        /// <returns>If there is a direct line of sight from a starting position to an end position, or the hit during the line of sight check was the target.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform, out hit, mask);
     }
 }
