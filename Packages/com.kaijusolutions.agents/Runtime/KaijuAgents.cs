@@ -3374,7 +3374,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector2 forward, Vector2 target, float fov)
+        public static bool InView(this Vector2 position, Vector2 forward, Vector2 target, float fov)
         {
             // Get the direction vector.
             Vector2 directionToTarget = target.Direction(position);
@@ -3391,7 +3391,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector2 forward, Vector3 target, float fov) => position.FOV(forward, new Vector2(target.x, target.z), fov);
+        public static bool InView(this Vector2 position, Vector2 forward, Vector3 target, float fov) => position.InView(forward, new Vector2(target.x, target.z), fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3401,7 +3401,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        public static bool InView(this Vector2 position, Vector2 forward, [NotNull] Transform target, float fov) => position.InView(forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3411,7 +3411,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector2 position, Vector2 forward, [NotNull] Component target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3421,7 +3421,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector2 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3431,7 +3431,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector3 forward, Vector2 target, float fov) => position.FOV(new Vector2(forward.x, forward.z), target, fov);
+        public static bool InView(this Vector2 position, Vector3 forward, Vector2 target, float fov) => position.InView(new Vector2(forward.x, forward.z), target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3441,7 +3441,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector3 forward, Vector3 target, float fov) => position.FOV(new Vector2(forward.x, forward.z), new Vector2(target.x, target.z), fov);
+        public static bool InView(this Vector2 position, Vector3 forward, Vector3 target, float fov) => position.InView(new Vector2(forward.x, forward.z), new Vector2(target.x, target.z), fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3451,7 +3451,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        public static bool InView(this Vector2 position, Vector3 forward, [NotNull] Transform target, float fov) => position.InView(forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3461,7 +3461,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector2 position, Vector3 forward, [NotNull] Component target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3471,7 +3471,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector2 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector2 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3481,7 +3481,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector2 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3491,7 +3491,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector2 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3501,7 +3501,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, [NotNull] Transform target, float fov) => position.InView(forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3511,7 +3511,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, [NotNull] Component target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3521,7 +3521,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector3 position, Vector2 forward, [NotNull] GameObject target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3531,7 +3531,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector3 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, Vector2 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3541,7 +3541,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector3 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).FOV(forward, target, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, Vector3 target, float fov) => new Vector2(position.x, position.z).InView(forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3551,7 +3551,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] Transform target, float fov) => position.FOV(forward, target.position, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, [NotNull] Transform target, float fov) => position.InView(forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3561,7 +3561,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] Component target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, [NotNull] Component target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3571,7 +3571,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV(this Vector3 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.FOV(forward, target.transform.position, fov);
+        public static bool InView(this Vector3 position, Vector3 forward, [NotNull] GameObject target, float fov) => position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3580,7 +3580,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Transform position, Vector2 target, float fov) => position.position.FOV(position.forward, target, fov);
+        public static bool InView([NotNull] this Transform position, Vector2 target, float fov) => position.position.InView(position.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3589,7 +3589,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Transform position, Vector3 target, float fov) => position.position.FOV(position.forward, target, fov);
+        public static bool InView([NotNull] this Transform position, Vector3 target, float fov) => position.position.InView(position.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3598,7 +3598,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Transform position, [NotNull] Transform target, float fov) => position.position.FOV(position.forward, target.position, fov);
+        public static bool InView([NotNull] this Transform position, [NotNull] Transform target, float fov) => position.position.InView(position.forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3607,7 +3607,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Transform position, [NotNull] Component target, float fov) => position.position.FOV(position.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Transform position, [NotNull] Component target, float fov) => position.position.InView(position.forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3616,7 +3616,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Transform position, [NotNull] GameObject target, float fov) => position.position.FOV(position.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Transform position, [NotNull] GameObject target, float fov) => position.position.InView(position.forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3625,7 +3625,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Component position, Vector2 target, float fov) => position.transform.position.FOV(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this Component position, Vector2 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3634,7 +3634,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Component position, Vector3 target, float fov) => position.transform.position.FOV(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this Component position, Vector3 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3643,7 +3643,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Component position, [NotNull] Transform target, float fov) => position.transform.position.FOV(position.transform.forward, target.position, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] Transform target, float fov) => position.transform.position.InView(position.transform.forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3652,7 +3652,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Component position, [NotNull] Component target, float fov) => position.transform.position.FOV(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] Component target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3661,7 +3661,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this Component position, [NotNull] GameObject target, float fov) => position.transform.position.FOV(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] GameObject target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3670,7 +3670,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this GameObject position, Vector2 target, float fov) => position.transform.position.FOV(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this GameObject position, Vector2 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3679,7 +3679,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this GameObject position, Vector3 target, float fov) => position.transform.position.FOV(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this GameObject position, Vector3 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3688,7 +3688,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this GameObject position, [NotNull] Transform target, float fov) => position.transform.position.FOV(position.transform.forward, target.position, fov);
+        public static bool InView([NotNull] this GameObject position, [NotNull] Transform target, float fov) => position.transform.position.InView(position.transform.forward, target.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3697,7 +3697,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this GameObject position, [NotNull] Component target, float fov) => position.transform.position.FOV(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this GameObject position, [NotNull] Component target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -3706,6 +3706,256 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool FOV([NotNull] this GameObject position, [NotNull] GameObject target, float fov) => position.transform.position.FOV(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this GameObject position, [NotNull] GameObject target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector2 position, Vector2 target, out RaycastHit hit, int mask = -5) => new Vector3(position.x, 0, position.y).HasSight(new Vector3(target.x, 0, target.y), out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector2 position, Vector3 target, out RaycastHit hit, int mask = -5) => new Vector3(position.x, target.y, position.y).HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector2 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector3 position, Vector2 target, out RaycastHit hit, int mask = -5) => position.HasSight(new Vector3(target.x, position.y, target.y), out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector3 position, Vector3 target, out RaycastHit hit, int mask = -5) => Physics.Linecast(position, target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.HasSight(target.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight(this Vector3 position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Transform position, Vector2 target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Transform position, Vector3 target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Transform position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Component position, Vector2 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Component position, Vector3 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this Component position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this GameObject position, Vector2 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this GameObject position, Vector3 target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] Transform target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] Component target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
+        
+        /// <summary>
+        /// If there is a direct line of sight from a starting position to an end position.
+        /// </summary>
+        /// <param name="position">The starting position of the line of sight.</param>
+        /// <param name="target">The ending position of the line of sight.</param>
+        /// <param name="hit">The hit information from the line of sight check.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <returns>If there is a direct line of sight from a starting position to an end position.</returns>
+        public static bool HasSight([NotNull] this GameObject position, [NotNull] GameObject target, out RaycastHit hit, int mask = -5) => position.transform.position.HasSight(target.transform.position, out hit, mask);
     }
 }
