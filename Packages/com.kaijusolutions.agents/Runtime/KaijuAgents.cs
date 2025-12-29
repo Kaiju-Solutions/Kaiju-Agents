@@ -4698,8 +4698,40 @@ namespace KaijuSolutions.Agents
             // Ensure a valid angle.
             angle = Mathf.Clamp(angle, float.Epsilon, 360f);
             
-            // TODO - Finish the implementation.
-            return 0;
+            int hitCount = 0;
+            
+            // Calculate the angular step between each ray. We divide by the length less one to ensure the first and last rays align with the edges of the arc.
+            float step = angle / (hits.Length - 1);
+            
+            // Start at negative half the angle (left) and move towards positive (right).
+            float currentAngle = -angle / 2f;
+            
+            Vector3 axis = Vector3.up;
+            for (int i = 0; i < hits.Length; i++)
+            {
+                // Create the rotation for this specific step in the arc.
+                Quaternion rotation = Quaternion.AngleAxis(currentAngle, axis);
+                
+                // Apply the rotation to the forward direction vector.
+                Vector3 rayDirection = rotation * direction;
+                
+                // Perform the cast using the helper method inferred from the single-case block.
+                if (position.Raycast(rayDirection, out RaycastHit hit, distance, mask, triggers))
+                {
+                    hits[i] = hit;
+                    hitCount++;
+                }
+                else
+                {
+                    // Explicitly null out the entry if the ray missed, ensuring no stale data remains in the array.
+                    hits[i] = null;
+                }
+                
+                // Advance the angle for the next ray.
+                currentAngle += step;
+            }
+            
+            return hitCount;
         }
     }
 }
