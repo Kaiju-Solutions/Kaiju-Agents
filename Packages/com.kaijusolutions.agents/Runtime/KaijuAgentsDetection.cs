@@ -1679,8 +1679,8 @@ namespace KaijuSolutions.Agents
             // Ensure a valid angle.
             angle = Mathf.Clamp(angle, float.Epsilon, 360f);
             
-            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc.
-            float step = angle / (hits.Length - 1);
+            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc, unless it is a full circle to avoid any overlap.
+            float step = angle / (angle >= 360f ? hits.Length : hits.Length - 1);
             
             // Start at negative half the angle (left) and move towards positive (right).
             float currentAngle = -angle / 2f;
@@ -1903,8 +1903,8 @@ namespace KaijuSolutions.Agents
             // Ensure a valid angle.
             angle = Mathf.Clamp(angle, float.Epsilon, 360f);
             
-            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc.
-            float step = angle / (hits.Length - 1);
+            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc, unless it is a full circle to avoid any overlap.
+            float step = angle / (angle >= 360f ? hits.Length : hits.Length - 1);
             
             // Start at negative half the angle (left) and move towards positive (right).
             float currentAngle = -angle / 2f;
@@ -2124,8 +2124,8 @@ namespace KaijuSolutions.Agents
             // Ensure a valid angle.
             angle = Mathf.Clamp(angle, float.Epsilon, 360f);
             
-            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc.
-            float step = angle / (hits.Length - 1);
+            // Calculate the angular step between each cast. We divide by the length less one to ensure the first and last casts align with the edges of the arc, unless it is a full circle to avoid any overlap.
+            float step = angle / (angle >= 360f ? hits.Length : hits.Length - 1);
             
             // Start at negative half the angle (left) and move towards positive (right).
             float currentAngle = -angle / 2f;
