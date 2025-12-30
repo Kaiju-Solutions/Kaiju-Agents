@@ -275,11 +275,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor
   automatic: 1
-  visualizationColor: {r: 1, g: 1, b: 1, a: 1}
-  distance: 10
+  color: {r: 1, g: 1, b: 1, a: 1}
+  fromAgent: 1
+  distance: 20
   angle: 180
   lineOfSight: 1
-  radius: 0
+  radius: 0.5
   mask:
     serializedVersion: 2
     m_Bits: 51
@@ -636,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 1542773736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.63}
+  m_LocalPosition: {x: -2.7, y: 0, z: 4.63}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

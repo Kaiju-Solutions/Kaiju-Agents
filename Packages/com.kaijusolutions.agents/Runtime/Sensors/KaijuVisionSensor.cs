@@ -16,15 +16,41 @@ namespace KaijuSolutions.Agents.Sensors
 #endif
     public abstract class KaijuVisionSensor<T> : KaijuSensor where T : Component
     {
+#if UNITY_EDITOR
+        /// <summary>
+        /// If the visualizations for the line of sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
+        /// </summary>
+        [Tooltip("If the visualizations for the line of sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
+        public bool fromAgent = true;
+#endif
+        /// <summary>
+        /// How far vision can extend.
+        /// </summary>
+        public float Distance
+        {
+            get => distance;
+            set => distance = Mathf.Max(value, float.Epsilon);
+        }
+        
         /// <summary>
         /// How far vision can extend.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Area")]
         [Tooltip("How far vision can extend.")]
 #endif
-        [Min(0)]
+        [Min(float.Epsilon)]
         [SerializeField]
         private float distance = 10;
+        
+        /// <summary>
+        /// What angle the vision detection should cover.
+        /// </summary>
+        public float Angle
+        {
+            get => angle;
+            set => angle = Mathf.Clamp(value, float.Epsilon, 360f);
+        }
         
         /// <summary>
         /// What angle the vision detection should cover.
@@ -40,10 +66,19 @@ namespace KaijuSolutions.Agents.Sensors
         /// If line-of-sight checks should be made for the vision. Turning off line-of-sight checks will return items within the view arc based on the angle and distance.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Line-of-Sight")]
         [Tooltip("What angle the vision detection should cover.")]
 #endif
-        [SerializeField]
-        private bool lineOfSight = true;
+        public bool lineOfSight = true;
+        
+        /// <summary>
+        /// The radius of the line-of-sight checks.
+        /// </summary>
+        public float Radius
+        {
+            get => radius;
+            set => radius = Mathf.Max(value, 0);
+        }
         
         /// <summary>
         /// The radius of the line-of-sight checks.
@@ -61,8 +96,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("What layers to collide with on the line-of-sight checks.")]
 #endif
-        [SerializeField]
-        private LayerMask mask = -5;
+        public LayerMask mask = -5;
         
         /// <summary>
         /// How line-of-sight checks should handle hitting triggers.
@@ -70,8 +104,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("How line-of-sight checks should handle hitting triggers.")]
 #endif
-        [SerializeField]
-        private QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
+        public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
         /// The objects which this can detect.
@@ -120,7 +153,7 @@ namespace KaijuSolutions.Agents.Sensors
                 Vector2 o = o3.Flatten();
                 
                 // Perform checks.
-                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3, out RaycastHit _, 0, mask, triggers)))
+                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3, out RaycastHit _, radius, mask, triggers)))
                 {
                     _observed.Add(observable);
                 }
@@ -133,10 +166,15 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         public override void RenderVisualizations(Vector3 position)
         {
+            Vector3 p = Position3;
+            p = new(p.x, fromAgent ? position.y : p.y, p.z);
+            
             foreach (T observed in _observed)
             {
-                Handles.DrawLine(position, observed.transform.position);
+                Handles.DrawLine(p, observed.transform.position);
             }
+            
+            p = new(p.x, position.y, p.z);
             
             if (angle < 360f)
             {
@@ -144,15 +182,15 @@ namespace KaijuSolutions.Agents.Sensors
                 Vector3 forward = Forward;
                 Vector3 left = Quaternion.AngleAxis(-half, Vector3.up) * forward;
                 Vector3 right = Quaternion.AngleAxis(half, Vector3.up) * forward;
-                Handles.DrawWireArc(position, Vector3.up, left, angle, distance, 0);
-                Handles.DrawLine(position, position + left * distance);
-                Handles.DrawLine(position, position + right * distance);
+                Handles.DrawWireArc(p, Vector3.up, left, angle, distance, 0);
+                Handles.DrawLine(p, p + left * distance);
+                Handles.DrawLine(p, p + right * distance);
                 return;
             }
             
             if (distance < float.MaxValue)
             {
-                Handles.DrawWireDisc(position, Vector3.up, distance, 0);
+                Handles.DrawWireDisc(p, Vector3.up, distance, 0);
             }
         }
 #endif

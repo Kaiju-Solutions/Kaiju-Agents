@@ -55,9 +55,10 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The visualizations color.
         /// </summary>
+        [Header("Visualizations")]
         [Tooltip("If this sensor should be run automatically.")]
         [SerializeField]
-        private Color visualizationColor = Color.white;
+        private Color color = Color.white;
 #endif
         /// <summary>
         /// The agent this sensor is assigned to.
@@ -121,7 +122,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         public void Visualize(Vector3 position)
         {
-            Handles.color = visualizationColor;
+            Handles.color = color;
             RenderVisualizations(position);
         }
         
