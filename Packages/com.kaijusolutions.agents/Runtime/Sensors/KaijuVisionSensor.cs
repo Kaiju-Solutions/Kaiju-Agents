@@ -16,13 +16,6 @@ namespace KaijuSolutions.Agents.Sensors
 #endif
     public abstract class KaijuVisionSensor<T> : KaijuSensor where T : Component
     {
-#if UNITY_EDITOR
-        /// <summary>
-        /// If the visualizations for the line of sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
-        /// </summary>
-        [Tooltip("If the visualizations for the line of sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
-        public bool fromAgent = true;
-#endif
         /// <summary>
         /// How far vision can extend.
         /// </summary>
@@ -105,11 +98,30 @@ namespace KaijuSolutions.Agents.Sensors
         [Tooltip("How line-of-sight checks should handle hitting triggers.")]
 #endif
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
+#if UNITY_EDITOR
+        /// <summary>
+        /// The visualizations color.
+        /// </summary>
+        [Header("Visualizations")]
+        [Tooltip("The visualizations color.")]
+        [SerializeField]
+        private Color color = Color.white;
         
+        /// <summary>
+        /// If the visualizations for the line of sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
+        /// </summary>
+        [Tooltip("If the visualizations for the line of sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
+        public bool fromAgent = true;
+#endif
         /// <summary>
         /// The objects which this can detect.
         /// </summary>
         public IEnumerable<T> Observables;
+        
+        /// <summary>
+        /// The number of observed items.
+        /// </summary>
+        public int ObservedCount => _observed.Count;
         
         /// <summary>
         /// All observed items.
@@ -159,13 +171,24 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
         }
+        
+        /// <summary>
+        /// Perform any needed resetting of the sensor.
+        /// </summary>
+        protected override void Reset()
+        {
+            Observables = null;
+            _observed.Clear();
+        }
 #if UNITY_EDITOR
         /// <summary>
-        /// Render the visualization of the sensor.
+        /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="KaijuSensor.Agent"/>.</param>
         /// </summary>
-        public override void RenderVisualizations(Vector3 position)
+        public override void Visualize(Vector3 position)
         {
+            Handles.color = color;
+            
             Vector3 p = Position3;
             p = new(p.x, fromAgent ? position.y : p.y, p.z);
             

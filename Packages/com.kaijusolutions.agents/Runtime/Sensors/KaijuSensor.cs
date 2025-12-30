@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
@@ -51,15 +49,7 @@ namespace KaijuSolutions.Agents.Sensors
         [Tooltip("If this sensor should be run automatically.")]
 #endif
         public bool automatic = true;
-#if UNITY_EDITOR
-        /// <summary>
-        /// The visualizations color.
-        /// </summary>
-        [Header("Visualizations")]
-        [Tooltip("If this sensor should be run automatically.")]
-        [SerializeField]
-        private Color color = Color.white;
-#endif
+        
         /// <summary>
         /// The agent this sensor is assigned to.
         /// </summary>
@@ -81,6 +71,7 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
             
+            Reset();
             Agent.RegisterSensor(this);
             OnEnabled?.Invoke();
             OnEnabledGlobal?.Invoke(this);
@@ -96,6 +87,7 @@ namespace KaijuSolutions.Agents.Sensors
                 Agent.UnregisterSensor(this);
             }
             
+            Reset();
             OnDisabled?.Invoke();
             OnDisabledGlobal?.Invoke(this);
         }
@@ -115,22 +107,17 @@ namespace KaijuSolutions.Agents.Sensors
         /// Run the sensor.
         /// </summary>
         protected abstract void Run();
+        
+        /// <summary>
+        /// Perform any needed resetting of the sensor.
+        /// </summary>
+        protected virtual void Reset() { }
 #if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        public void Visualize(Vector3 position)
-        {
-            Handles.color = color;
-            RenderVisualizations(position);
-        }
-        
-        /// <summary>
-        /// Render the visualization of the snsor.
-        /// <param name="position">The position of the <see cref="Agent"/>.</param>
-        /// </summary>
-        public virtual void RenderVisualizations(Vector3 position) { }
+        public virtual void Visualize(Vector3 position) { }
 #endif
     }
 }

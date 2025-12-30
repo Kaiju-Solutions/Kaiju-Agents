@@ -271,20 +271,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 462820010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79f12c785c1c467894966207e29953c8, type: 3}
+  m_Script: {fileID: 11500000, guid: a0059ea102ed46c19a0dc758a7574e93, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor
+  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Sensors.KaijuCastSensor
   automatic: 1
-  color: {r: 1, g: 1, b: 1, a: 1}
-  fromAgent: 1
-  distance: 20
+  distance: 10
   angle: 180
-  lineOfSight: 1
+  casts: 5
   radius: 0
   mask:
     serializedVersion: 2
     m_Bits: 51
   triggers: 0
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  missColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!1 &521580545
 GameObject:
   m_ObjectHideFlags: 0
