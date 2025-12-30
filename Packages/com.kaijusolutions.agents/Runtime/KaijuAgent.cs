@@ -332,7 +332,7 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
         
         /// <summary>
-        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis.
+        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector2 Control
         {
@@ -341,7 +341,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis.
+        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector3 Control3
         {
@@ -350,7 +350,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The manual control vector for the agent's movement.
+        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         private Vector2 _control = Vector2.zero;
         
@@ -390,6 +390,11 @@ namespace KaijuSolutions.Agents
         public bool Moving => isActiveAndEnabled && MovementsCount > 0;
         
         /// <summary>
+        /// The manual spin control, ranging from negative one to positive one. Negative values mean a left spin and positive values mean a right spin, multiplied by the <see cref="LookSpeed"/>.
+        /// </summary>
+        private float? _spin;
+        
+        /// <summary>
         /// The angle to look at relative to the global forward direction.
         /// </summary>
         private float? _lookAngle;
@@ -410,6 +415,26 @@ namespace KaijuSolutions.Agents
         private Transform _lookTransform;
         
         /// <summary>
+        /// The manual spin control, ranging from negative one to positive one. Negative values mean a left spin and positive values mean a right spin, multiplied by the <see cref="LookSpeed"/>.
+        /// </summary>
+        public float? Spin
+        {
+            get => _spin;
+            set
+            {
+                _spin = value.HasValue ? Mathf.Clamp(value.Value, -1, 1) : null;
+                _lookAngle = value;
+                _lookVector = null;
+                _lookVector3 = null;
+                _lookTransform = null;
+                _wasLooking = false;
+                ChangedLookTarget();
+                OnLookTarget?.Invoke();
+                OnLookTargetGlobal?.Invoke(this);
+            }
+        }
+        
+        /// <summary>
         /// The angle to look at relative to the global forward direction.
         /// </summary>
         public float? LookAngle
@@ -419,6 +444,11 @@ namespace KaijuSolutions.Agents
                 if (_lookAngle.HasValue)
                 {
                     return _lookAngle;
+                }
+                
+                if (_spin.HasValue)
+                {
+                    return Orientation + _spin * LookSpeed;
                 }
                 
                 Vector2? v = LookVector;
@@ -433,6 +463,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookAngle = value;
+                _spin = null;
                 _lookVector = null;
                 _lookVector3 = null;
                 _lookTransform = null;
@@ -462,12 +493,13 @@ namespace KaijuSolutions.Agents
                         return _lookVector;
                     }
                     
-                    if (!_lookAngle.HasValue)
+                    float? lookAngle = LookAngle;
+                    if (!lookAngle.HasValue)
                     {
                         return null;
                     }
                     
-                    float angle = _lookAngle.Value * Mathf.Deg2Rad;
+                    float angle = lookAngle.Value * Mathf.Deg2Rad;
                     return Position + new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * float.MaxValue;
                 }
                 
@@ -477,6 +509,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookVector = value;
+                _spin = null;
                 _lookAngle = null;
                 _lookVector3 = null;
                 _lookTransform = null;
@@ -509,12 +542,14 @@ namespace KaijuSolutions.Agents
                     return _lookVector3;
                 }
                 
-                if (!_lookAngle.HasValue)
+                    
+                float? lookAngle = LookAngle;
+                if (!lookAngle.HasValue)
                 {
                     return null;
                 }
                 
-                float angle = _lookAngle.Value * Mathf.Deg2Rad;
+                float angle = lookAngle.Value * Mathf.Deg2Rad;
                 Vector3 p = Position3;
                 return p + new Vector3(Mathf.Sin(angle), p.y, Mathf.Cos(angle)) * float.MaxValue;
 
@@ -522,6 +557,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookVector3 = value;
+                _spin = null;
                 _lookAngle = null;
                 _lookVector = null;
                 _lookTransform = null;
@@ -541,6 +577,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookTransform = value;
+                _spin = null;
                 _lookAngle = null;
                 _lookVector = null;
                 _lookVector3 = null;
