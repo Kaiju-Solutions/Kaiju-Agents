@@ -1101,6 +1101,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void StopLooking()
         {
+            _spin = null;
             _lookAngle = null;
             _lookTransform = null;
             _lookVector = null;
