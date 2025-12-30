@@ -390,6 +390,11 @@ namespace KaijuSolutions.Agents
         public bool Moving => isActiveAndEnabled && MovementsCount > 0;
         
         /// <summary>
+        /// The angle to look at relative to the global forward direction.
+        /// </summary>
+        private float? _lookAngle;
+        
+        /// <summary>
         /// The vector to look at.
         /// </summary>
         private Vector2? _lookVector;
@@ -405,6 +410,25 @@ namespace KaijuSolutions.Agents
         private Transform _lookTransform;
         
         /// <summary>
+        /// The angle to look at relative to the global forward direction.
+        /// </summary>
+        public float? LookAngle
+        {
+            get => _lookAngle; // TODO - If NULL, try and get from the look vector.
+            set
+            {
+                _lookAngle = value;
+                _lookVector = null;
+                _lookVector3 = null;
+                _lookTransform = null;
+                _wasLooking = false;
+                ChangedLookTarget();
+                OnLookTarget?.Invoke();
+                OnLookTargetGlobal?.Invoke(this);
+            }
+        }
+        
+        /// <summary>
         /// The vector to look at.
         /// </summary>
         public Vector2? LookVector
@@ -413,7 +437,7 @@ namespace KaijuSolutions.Agents
             {
                 if (!_lookTransform)
                 {
-                    return _lookVector3.HasValue ? new(_lookVector3.Value.x, _lookVector3.Value.z) : _lookVector;
+                    return _lookVector3.HasValue ? new(_lookVector3.Value.x, _lookVector3.Value.z) : _lookVector; // TODO - Check to get from the look angle, being a point infinitely away in the direction of that angle.
                 }
                 
                 Vector3 p = _lookTransform.position;
@@ -422,6 +446,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookVector = value;
+                _lookAngle = null;
                 _lookVector3 = null;
                 _lookTransform = null;
                 _wasLooking = false;
@@ -436,10 +461,11 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public Vector3? LookVector3
         {
-            get => _lookTransform ? _lookTransform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3;
+            get => _lookTransform ? _lookTransform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3; // TODO - Check to get from the look angle, being a point infinitely away in the direction of that angle.
             set
             {
                 _lookVector3 = value;
+                _lookAngle = null;
                 _lookVector = null;
                 _lookTransform = null;
                 _wasLooking = false;
@@ -458,6 +484,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _lookTransform = value;
+                _lookAngle = null;
                 _lookVector = null;
                 _lookVector3 = null;
                 _wasLooking = false;
@@ -473,18 +500,17 @@ namespace KaijuSolutions.Agents
         public GameObject LookGameObject
         {
             get => _lookTransform ? _lookTransform.gameObject : null;
-            set
-            {
-                _lookTransform = value.transform;
-                _lookVector = null;
-                _lookVector3 = null;
-                _wasLooking = false;
-                ChangedLookTarget();
-                OnLookTarget?.Invoke();
-                OnLookTargetGlobal?.Invoke(this);
-            }
+            set => LookTransform = value.transform;
         }
-
+        
+        /// <summary>
+        /// The component to look at.
+        /// </summary>
+        public Component LookComponent
+        {
+            set => LookTransform = value.transform;
+        }
+        
         /// <summary>
         /// Callback for when the look target has changed.
         /// </summary>
@@ -981,6 +1007,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void StopLooking()
         {
+            _lookAngle = null;
             _lookTransform = null;
             _lookVector = null;
             _lookVector3 = null;
