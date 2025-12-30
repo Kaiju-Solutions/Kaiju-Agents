@@ -218,6 +218,106 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
         /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector2 forward, Vector2 target, float fov) => position.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector2 forward, Vector3 target, float fov) => position.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector2 forward, [NotNull] Transform target, float fov) => position.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector2 forward, [NotNull] Component target, float fov) => position.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector2 forward, [NotNull] GameObject target, float fov) => position.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector3 forward, Vector2 target, float fov) => position.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector3 forward, Vector3 target, float fov) => position.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector3 forward, [NotNull] Transform target, float fov) => position.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector3 forward, [NotNull] Component target, float fov) => position.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Transform position, Vector3 forward, [NotNull] GameObject target, float fov) => position.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
         /// <param name="position">The position to check field of view from relative to its forward.</param>
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
@@ -263,11 +363,102 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
         /// </summary>
-        /// <param name="position">The position to check field of view from relative to its forward.</param>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this Component position, Vector2 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this Component position, Vector2 forward, Vector2 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector2 forward, Vector3 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector2 forward, [NotNull] Transform target, float fov) => position.transform.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector2 forward, [NotNull] Component target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector2 forward, [NotNull] GameObject target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector3 forward, Vector2 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector3 forward, Vector3 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector3 forward, [NotNull] Transform target, float fov) => position.transform.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector3 forward, [NotNull] Component target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this Component position, Vector3 forward, [NotNull] GameObject target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -276,7 +467,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this Component position, Vector3 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this Component position, Vector2 target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -285,7 +480,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this Component position, [NotNull] Transform target, float fov) => position.transform.position.InView(position.transform.forward, target.position, fov);
+        public static bool InView([NotNull] this Component position, Vector3 target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -294,7 +493,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this Component position, [NotNull] Component target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] Transform target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.position, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -303,7 +506,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this Component position, [NotNull] GameObject target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] Component target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.transform.position, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -312,7 +519,111 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this GameObject position, Vector2 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this Component position, [NotNull] GameObject target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.transform.position, fov);
+        }
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector2 forward, Vector2 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector2 forward, Vector3 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector2 forward, [NotNull] Transform target, float fov) => position.transform.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector2 forward, [NotNull] Component target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector2 forward, [NotNull] GameObject target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector3 forward, Vector2 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector3 forward, Vector3 target, float fov) => position.transform.position.InView(forward, target, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector3 forward, [NotNull] Transform target, float fov) => position.transform.position.InView(forward, target.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector3 forward, [NotNull] Component target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from.</param>
+        /// <param name="forward">The forward direction to start the field of view check from.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, Vector3 forward, [NotNull] GameObject target, float fov) => position.transform.position.InView(forward, target.transform.position, fov);
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -321,7 +632,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this GameObject position, Vector3 target, float fov) => position.transform.position.InView(position.transform.forward, target, fov);
+        public static bool InView([NotNull] this GameObject position, Vector2 target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -330,7 +645,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this GameObject position, [NotNull] Transform target, float fov) => position.transform.position.InView(position.transform.forward, target.position, fov);
+        public static bool InView([NotNull] this GameObject position, Vector3 target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -339,7 +658,11 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this GameObject position, [NotNull] Component target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this GameObject position, [NotNull] Transform target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.position, fov);
+        }
         
         /// <summary>
         /// If a target is within the field of view. This does not consider vertical field of view.
@@ -348,7 +671,24 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target position to check if it is within the field of view.</param>
         /// <param name="fov">The field of view in degrees.</param>
         /// <returns>If a target is within the field of view.</returns>
-        public static bool InView([NotNull] this GameObject position, [NotNull] GameObject target, float fov) => position.transform.position.InView(position.transform.forward, target.transform.position, fov);
+        public static bool InView([NotNull] this GameObject position, [NotNull] Component target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.transform.position, fov);
+        }
+        
+        /// <summary>
+        /// If a target is within the field of view. This does not consider vertical field of view.
+        /// </summary>
+        /// <param name="position">The position to check field of view from relative to its forward.</param>
+        /// <param name="target">The target position to check if it is within the field of view.</param>
+        /// <param name="fov">The field of view in degrees.</param>
+        /// <returns>If a target is within the field of view.</returns>
+        public static bool InView([NotNull] this GameObject position, [NotNull] GameObject target, float fov)
+        {
+            Transform t = position.transform;
+            return t.position.InView(t.forward, target.transform.position, fov);
+        }
         
         /// <summary>
         /// If there is a direct line of sight from a starting position to an end position.
