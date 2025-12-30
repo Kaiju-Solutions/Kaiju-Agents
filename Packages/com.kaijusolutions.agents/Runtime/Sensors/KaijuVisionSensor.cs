@@ -41,7 +41,7 @@ namespace KaijuSolutions.Agents.Sensors
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float distance = 10;
+        private float distance = 20;
         
         /// <summary>
         /// What angle the vision detection should cover.

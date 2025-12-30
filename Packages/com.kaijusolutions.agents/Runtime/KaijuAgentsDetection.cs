@@ -1055,7 +1055,7 @@ namespace KaijuSolutions.Agents
                 return position.HasSight(target, out hit, mask, triggers);
             }
             
-            Vector3 direction = position.Direction3(target);
+            Vector3 direction = target.Direction3(position);
             return !Physics.SphereCast(position, radius, direction, out hit, direction.magnitude, mask);
         }
         

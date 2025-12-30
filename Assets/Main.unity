@@ -280,7 +280,7 @@ MonoBehaviour:
   distance: 20
   angle: 180
   lineOfSight: 1
-  radius: 0.5
+  radius: 0
   mask:
     serializedVersion: 2
     m_Bits: 51
@@ -596,7 +596,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 85450e951d60dc54b9a808428a5e1595, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -637,7 +637,7 @@ Transform:
   m_GameObject: {fileID: 1542773736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 0, z: 4.63}
+  m_LocalPosition: {x: -4.99, y: 0, z: 4.63}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
