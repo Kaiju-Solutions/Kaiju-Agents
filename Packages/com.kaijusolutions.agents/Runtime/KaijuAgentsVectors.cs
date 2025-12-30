@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -3007,5 +3008,290 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3([NotNull] this GameObject current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector2 Nearest(this Vector2 position, [NotNull] IEnumerable<Vector2> targets)
+        {
+            Vector2? nearest = null;
+            float distance = float.MaxValue;
+            foreach (Vector2 target in targets)
+            {
+                float current = position.Distance(target);
+                if (nearest.HasValue && current >= distance)
+                {
+                    continue;
+                }
+                
+                nearest = target;
+                distance = current;
+            }
+            
+            return nearest ?? position;
+        }
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector3 Nearest(this Vector2 position, [NotNull] IEnumerable<Vector3> targets)
+        {
+            Vector3? nearest = null;
+            float distance = float.MaxValue;
+            foreach (Vector3 target in targets)
+            {
+                float current = position.Distance(target);
+                if (nearest.HasValue && current >= distance)
+                {
+                    continue;
+                }
+                
+                nearest = target;
+                distance = current;
+            }
+            
+            return nearest ?? position.Expand();
+        }
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Transform Nearest(this Vector2 position, [NotNull] IEnumerable<Transform> targets)
+        {
+            Transform nearest = null;
+            float distance = float.MaxValue;
+            foreach (Transform target in targets)
+            {
+                float current = position.Distance(target);
+                if (nearest != null && current >= distance)
+                {
+                    continue;
+                }
+                
+                nearest = target;
+                distance = current;
+            }
+            
+            return nearest;
+        }
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static T Nearest<T>(this Vector2 position, [NotNull] IEnumerable<T> targets) where T : Component
+        {
+            T nearest = null;
+            float distance = float.MaxValue;
+            foreach (T target in targets)
+            {
+                float current = position.Distance(target);
+                if (nearest != null && current >= distance)
+                {
+                    continue;
+                }
+                
+                nearest = target;
+                distance = current;
+            }
+            
+            return nearest;
+        }
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static GameObject Nearest(this Vector2 position, [NotNull] IEnumerable<GameObject> targets)
+        {
+            GameObject nearest = null;
+            float distance = float.MaxValue;
+            foreach (GameObject target in targets)
+            {
+                float current = position.Distance(target);
+                if (nearest != null && current >= distance)
+                {
+                    continue;
+                }
+                
+                nearest = target;
+                distance = current;
+            }
+            
+            return nearest;
+        }
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector2 Nearest(this Vector3 position, [NotNull] IEnumerable<Vector2> targets) => position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector3 Nearest(this Vector3 position, [NotNull] IEnumerable<Vector3> targets) => position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Transform Nearest(this Vector3 position, [NotNull] IEnumerable<Transform> targets) => position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static T Nearest<T>(this Vector3 position, [NotNull] IEnumerable<T> targets) where T : Component => position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static GameObject Nearest(this Vector3 position, [NotNull] IEnumerable<GameObject> targets) => position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector2 Nearest([NotNull] this Transform position, [NotNull] IEnumerable<Vector2> targets) => position.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector3 Nearest([NotNull] this Transform position, [NotNull] IEnumerable<Vector3> targets) => position.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Transform Nearest([NotNull] this Transform position, [NotNull] IEnumerable<Transform> targets) => position.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static T Nearest<T>([NotNull] this Transform position, [NotNull] IEnumerable<T> targets) where T : Component => position.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static GameObject Nearest([NotNull] this Transform position, [NotNull] IEnumerable<GameObject> targets) => position.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector2 Nearest([NotNull] this Component position, [NotNull] IEnumerable<Vector2> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector3 Nearest([NotNull] this Component position, [NotNull] IEnumerable<Vector3> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Transform Nearest([NotNull] this Component position, [NotNull] IEnumerable<Transform> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static T Nearest<T>([NotNull] this Component position, [NotNull] IEnumerable<T> targets) where T : Component => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static GameObject Nearest([NotNull] this Component position, [NotNull] IEnumerable<GameObject> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector2 Nearest([NotNull] this GameObject position, [NotNull] IEnumerable<Vector2> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Vector3 Nearest([NotNull] this GameObject position, [NotNull] IEnumerable<Vector3> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static Transform Nearest([NotNull] this GameObject position, [NotNull] IEnumerable<Transform> targets) => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static T Nearest<T>([NotNull] this GameObject position, [NotNull] IEnumerable<T> targets) where T : Component => position.transform.position.Flatten().Nearest(targets);
+        
+        /// <summary>
+        /// The nearest instance to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <returns>The nearest instance from the targets to the position.</returns>
+        public static GameObject Nearest([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets) => position.transform.position.Flatten().Nearest(targets);
     }
 }
