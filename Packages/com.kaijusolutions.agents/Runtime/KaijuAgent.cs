@@ -414,7 +414,22 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public float? LookAngle
         {
-            get => _lookAngle; // TODO - If NULL, try and get from the look vector.
+            get
+            {
+                if (_lookAngle.HasValue)
+                {
+                    return _lookAngle;
+                }
+                
+                Vector2? v = LookVector;
+                if (!v.HasValue)
+                {
+                    return null;
+                }
+                
+                Vector2 d = v.Value - Position;
+                return Mathf.Atan2(d.x, d.y) * Mathf.Rad2Deg;
+            }
             set
             {
                 _lookAngle = value;
@@ -437,7 +452,23 @@ namespace KaijuSolutions.Agents
             {
                 if (!_lookTransform)
                 {
-                    return _lookVector3.HasValue ? new(_lookVector3.Value.x, _lookVector3.Value.z) : _lookVector; // TODO - Check to get from the look angle, being a point infinitely away in the direction of that angle.
+                    if (_lookVector3.HasValue)
+                    {
+                        return new(_lookVector3.Value.x, _lookVector3.Value.z);
+                    }
+                    
+                    if (_lookVector.HasValue)
+                    {
+                        return _lookVector;
+                    }
+                    
+                    if (!_lookAngle.HasValue)
+                    {
+                        return null;
+                    }
+                    
+                    float angle = _lookAngle.Value * Mathf.Deg2Rad;
+                    return Position + new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * float.MaxValue;
                 }
                 
                 Vector3 p = _lookTransform.position;
@@ -461,7 +492,33 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public Vector3? LookVector3
         {
-            get => _lookTransform ? _lookTransform.position : _lookVector.HasValue ? new(_lookVector.Value.x, transform.position.y, _lookVector.Value.y) : _lookVector3; // TODO - Check to get from the look angle, being a point infinitely away in the direction of that angle.
+            get
+            {
+                if (_lookTransform)
+                {
+                    return _lookTransform.position;
+                }
+                
+                if (_lookVector.HasValue)
+                {
+                    return new(_lookVector.Value.x, Y, _lookVector.Value.y);
+                }
+                
+                if (_lookVector3.HasValue)
+                {
+                    return _lookVector3;
+                }
+                
+                if (!_lookAngle.HasValue)
+                {
+                    return null;
+                }
+                
+                float angle = _lookAngle.Value * Mathf.Deg2Rad;
+                Vector3 p = Position3;
+                return p + new Vector3(Mathf.Sin(angle), p.y, Mathf.Cos(angle)) * float.MaxValue;
+
+            }
             set
             {
                 _lookVector3 = value;
