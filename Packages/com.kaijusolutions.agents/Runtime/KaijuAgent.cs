@@ -492,14 +492,21 @@ namespace KaijuSolutions.Agents
                     {
                         return _lookVector;
                     }
-                    
-                    float? lookAngle = LookAngle;
-                    if (!lookAngle.HasValue)
+
+                    float angle;
+                    if (_lookAngle.HasValue)
+                    {
+                        angle = _lookAngle.Value * Mathf.Deg2Rad;
+                    }
+                    else if (_spin.HasValue)
+                    {
+                        angle = Orientation + _spin.Value * lookSpeed;
+                    }
+                    else
                     {
                         return null;
                     }
                     
-                    float angle = lookAngle.Value * Mathf.Deg2Rad;
                     return Position + new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * float.MaxValue;
                 }
                 
@@ -542,14 +549,20 @@ namespace KaijuSolutions.Agents
                     return _lookVector3;
                 }
                 
-                    
-                float? lookAngle = LookAngle;
-                if (!lookAngle.HasValue)
+                float angle;
+                if (_lookAngle.HasValue)
+                {
+                    angle = _lookAngle.Value * Mathf.Deg2Rad;
+                }
+                else if (_spin.HasValue)
+                {
+                    angle = Orientation + _spin.Value * lookSpeed;
+                }
+                else
                 {
                     return null;
                 }
                 
-                float angle = lookAngle.Value * Mathf.Deg2Rad;
                 Vector3 p = Position3;
                 return p + new Vector3(Mathf.Sin(angle), p.y, Mathf.Cos(angle)) * float.MaxValue;
 
