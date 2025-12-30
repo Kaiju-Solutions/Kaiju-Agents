@@ -332,6 +332,29 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
         
         /// <summary>
+        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis.
+        /// </summary>
+        public Vector2 Control
+        {
+            get => _control;
+            set => _control = value.normalized;
+        }
+        
+        /// <summary>
+        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis.
+        /// </summary>
+        public Vector3 Control3
+        {
+            get => _control.Expand();
+            set => Control = value.Flatten();
+        }
+        
+        /// <summary>
+        /// The manual control vector for the agent's movement.
+        /// </summary>
+        private Vector2 _control = Vector2.zero;
+        
+        /// <summary>
         /// The current velocity of the agent.
         /// </summary>
         public Vector2 Velocity { get; private set; }
@@ -550,8 +573,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void CalculateVelocity(float delta)
         {
-            // Start with no motion this frame.
-            Vector2 velocity = Vector2.zero;
+            // Start with any manual steering.
+            Vector2 velocity = _control * moveSpeed;
             Vector2 position = Position;
             
             // Go through all assigned movements.
@@ -789,10 +812,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Stop all movement.
+        /// Stop all movement, including manual steering.
         /// </summary>
         public void Stop()
         {
+            _control = Vector2.zero;
+            
             foreach (KaijuMovement movement in _movements)
             {
                 movement.Stopped();
