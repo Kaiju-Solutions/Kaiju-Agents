@@ -94,6 +94,15 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The radius of the casts.
         /// </summary>
+        public float Radius
+        {
+            get => radius;
+            set => radius = Mathf.Max(value, 0);
+        }
+        
+        /// <summary>
+        /// The radius of the casts.
+        /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The radius of the casts.")]
 #endif
@@ -226,5 +235,13 @@ namespace KaijuSolutions.Agents.Sensors
             }
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Casts Sensor {name} - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Casts: {Casts} - Radius: {Radius}";
+        }
     }
 }

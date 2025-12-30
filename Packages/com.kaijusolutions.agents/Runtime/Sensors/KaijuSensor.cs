@@ -119,5 +119,13 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         public virtual void Visualize(Vector3 position) { }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Sensor {name} - Agent: {(Agent ? Agent.name : "None")}";
+        }
     }
 }
