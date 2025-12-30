@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
@@ -48,22 +50,29 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("If this sensor should be run automatically.")]
 #endif
-        public bool automatic;
-        
+        public bool automatic = true;
+#if UNITY_EDITOR
+        /// <summary>
+        /// The visualizations color.
+        /// </summary>
+        [Tooltip("If this sensor should be run automatically.")]
+        [SerializeField]
+        private Color visualizationColor = Color.white;
+#endif
         /// <summary>
         /// The agent this sensor is assigned to.
         /// </summary>
-        private KaijuAgent _agent;
+        public KaijuAgent Agent { get; private set; }
         
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
         private void OnEnable()
         {
-            if (_agent == null)
+            if (Agent == null)
             {
-                _agent = GetComponentInParent<KaijuAgent>(true);
-                if (_agent == null)
+                Agent = GetComponentInParent<KaijuAgent>(true);
+                if (Agent == null)
                 {
                     Debug.LogError("Kaiju Sensor - No agent found for sensor.", this);
                     enabled = false;
@@ -71,7 +80,7 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
             
-            _agent.RegisterSensor(this);
+            Agent.RegisterSensor(this);
             OnEnabled?.Invoke();
             OnEnabledGlobal?.Invoke(this);
         }
@@ -81,9 +90,9 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         private void OnDisable()
         {
-            if (_agent != null)
+            if (Agent != null)
             {
-                _agent.UnregisterSensor(this);
+                Agent.UnregisterSensor(this);
             }
             
             OnDisabled?.Invoke();
@@ -98,12 +107,29 @@ namespace KaijuSolutions.Agents.Sensors
             Run();
             OnSense?.Invoke();
             OnSenseGlobal?.Invoke(this);
-            _agent.SensorRun(this);
+            Agent.SensorRun(this);
         }
         
         /// <summary>
         /// Run the sensor.
         /// </summary>
         protected abstract void Run();
+#if UNITY_EDITOR
+        /// <summary>
+        /// Allow for visualizing in the editor.
+        /// <param name="position">The position of the <see cref="Agent"/>.</param>
+        /// </summary>
+        public void Visualize(Vector3 position)
+        {
+            Handles.color = visualizationColor;
+            RenderVisualizations(position);
+        }
+        
+        /// <summary>
+        /// Render the visualization of the snsor.
+        /// <param name="position">The position of the <see cref="Agent"/>.</param>
+        /// </summary>
+        public virtual void RenderVisualizations(Vector3 position) { }
+#endif
     }
 }

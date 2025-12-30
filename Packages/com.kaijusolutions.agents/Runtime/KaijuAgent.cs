@@ -1595,7 +1595,13 @@ namespace KaijuSolutions.Agents
             // Visualize all movements.
             foreach (KaijuMovement movement in _movements)
             {
-                movement.Visualize();
+                movement.Visualize(p);
+            }
+            
+            // Visualize all sensors.
+            foreach (KaijuSensor sensor in _sensors)
+            {
+                sensor.Visualize(p);
             }
         }
 #endif

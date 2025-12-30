@@ -1,0 +1,160 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+namespace KaijuSolutions.Agents.Sensors
+{
+    /// <summary>
+    /// Allow for visual detection of a component type.
+    /// </summary>
+    /// <typeparam name="T">The type of component.</typeparam>
+    [DefaultExecutionOrder(int.MinValue)]
+#if UNITY_EDITOR
+    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+#endif
+    public abstract class KaijuVisionSensor<T> : KaijuSensor where T : Component
+    {
+        /// <summary>
+        /// How far vision can extend.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("How far vision can extend.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float distance = 10;
+        
+        /// <summary>
+        /// What angle the vision detection should cover.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("What angle the vision detection should cover.")]
+#endif
+        [Range(float.Epsilon, 360)]
+        [SerializeField]
+        private float angle = 180;
+        
+        /// <summary>
+        /// If line-of-sight checks should be made for the vision. Turning off line-of-sight checks will return items within the view arc based on the angle and distance.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("What angle the vision detection should cover.")]
+#endif
+        [SerializeField]
+        private bool lineOfSight = true;
+        
+        /// <summary>
+        /// The radius of the line-of-sight checks.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The radius of the line-of-sight checks.")]
+#endif
+        [Min(0)]
+        [SerializeField]
+        private float radius;
+        
+        /// <summary>
+        /// What layers to collide with on the line-of-sight checks.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("What layers to collide with on the line-of-sight checks.")]
+#endif
+        [SerializeField]
+        private LayerMask mask = -5;
+        
+        /// <summary>
+        /// How line-of-sight checks should handle hitting triggers.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("How line-of-sight checks should handle hitting triggers.")]
+#endif
+        [SerializeField]
+        private QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
+        
+        /// <summary>
+        /// The objects which this can detect.
+        /// </summary>
+        public IEnumerable<T> Observables;
+        
+        /// <summary>
+        /// All observed items.
+        /// </summary>
+        public IReadOnlyCollection<T> Observed => _observed;
+        
+        /// <summary>
+        /// All observed items.
+        /// </summary>
+        private readonly HashSet<T> _observed = new();
+        
+        /// <summary>
+        /// If there are no explicitly defined observable objects, define how to query for default observables.
+        /// </summary>
+        /// <returns>All active instances.</returns>
+        protected virtual IEnumerable<T> DefaultObservables()
+        {
+            return FindObjectsByType<T>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        }
+        
+        /// <summary>
+        /// Run the sensor.
+        /// </summary>
+        protected override void Run()
+        {
+            // Clear all previously observed objects.
+            _observed.Clear();
+            
+            // Cache local values.
+            Transform t = transform;
+            Vector3 p3 = t.position;
+            Vector2 p = p3.Flatten();
+            Vector2 f = t.forward.Flatten();
+            
+            // Loop through all observable objects.
+            foreach (T observable in Observables ?? DefaultObservables())
+            {
+                // Cache values for this observable.
+                Transform to = observable.transform;
+                Vector3 o3 = to.position;
+                Vector2 o = o3.Flatten();
+                
+                // Perform checks.
+                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3, out RaycastHit _, 0, mask, triggers)))
+                {
+                    _observed.Add(observable);
+                }
+            }
+        }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Render the visualization of the sensor.
+        /// <param name="position">The position of the <see cref="KaijuSensor.Agent"/>.</param>
+        /// </summary>
+        public override void RenderVisualizations(Vector3 position)
+        {
+            foreach (T observed in _observed)
+            {
+                Handles.DrawLine(position, observed.transform.position);
+            }
+            
+            if (angle < 360f)
+            {
+                float half = angle / 2;
+                Vector3 forward = Forward;
+                Vector3 left = Quaternion.AngleAxis(-half, Vector3.up) * forward;
+                Vector3 right = Quaternion.AngleAxis(half, Vector3.up) * forward;
+                Handles.DrawWireArc(position, Vector3.up, left, angle, distance, 0);
+                Handles.DrawLine(position, position + left * distance);
+                Handles.DrawLine(position, position + right * distance);
+                return;
+            }
+            
+            if (distance < float.MaxValue)
+            {
+                Handles.DrawWireDisc(position, Vector3.up, distance, 0);
+            }
+        }
+#endif
+    }
+}

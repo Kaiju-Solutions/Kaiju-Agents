@@ -150,8 +150,9 @@ namespace KaijuSolutions.Agents.Movement
 #if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing in the editor.
+        /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        public void Visualize()
+        public void Visualize(Vector3 position)
         {
             // Nothing to visualize if no agents.
             if (Done())
@@ -160,7 +161,7 @@ namespace KaijuSolutions.Agents.Movement
             }
             
             Handles.color = VisualizationColor();
-            RenderVisualizations(Agent);
+            RenderVisualizations(position);
         }
         
         /// <summary>
