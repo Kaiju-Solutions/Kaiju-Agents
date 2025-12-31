@@ -897,6 +897,39 @@ namespace KaijuSolutions.Agents
         /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
         /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
         /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector2 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector2 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector2 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
         public static void ExtractPoints(this Vector3 position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
@@ -954,6 +987,39 @@ namespace KaijuSolutions.Agents
         /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
         /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
         /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector3 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector3 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints(this Vector3 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
         public static void ExtractPoints([NotNull] this Transform position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
@@ -966,6 +1032,39 @@ namespace KaijuSolutions.Agents
         /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
         /// <param name="distance">The distance of the casts which were run.</param>
         public static void ExtractPoints([NotNull] this Transform position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Transform position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Transform position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Transform position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
         /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
@@ -1002,6 +1101,39 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
         /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Component position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Component position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this Component position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
         /// <param name="position">The starting position where the casting were performed in its forward direction.</param>
         /// <param name="hits">The hits from casting.</param>
         /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
@@ -1034,6 +1166,39 @@ namespace KaijuSolutions.Agents
         /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
         /// <param name="distance">The distance of the casts which were run.</param>
         public static void ExtractPoints([NotNull] this GameObject position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this GameObject position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this GameObject position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
+        
+        /// <summary>
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// </summary>
+        /// <param name="position">The starting position where the casting were performed.</param>
+        /// <param name="direction">The central direction of the casting.</param>
+        /// <param name="hits">The hits from casting.</param>
+        /// <param name="positions">Will be updated to store the positions from the hits or otherwise the maximum extents for misses.</param>
+        /// <param name="angle">The angle of the arc in degrees which was used for casting.</param>
+        /// <param name="distance">The distance of the casts which were run.</param>
+        public static void ExtractPoints([NotNull] this GameObject position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
         /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see any of the arc casting methods. This can be useful if your agent only needs position vectors or to help perform debugging.
