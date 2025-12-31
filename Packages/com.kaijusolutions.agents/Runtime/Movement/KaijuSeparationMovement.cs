@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extension;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;

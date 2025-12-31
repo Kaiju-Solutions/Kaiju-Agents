@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to flatten objects down to their 2D representation as a Vector2 from the X and Z axes.

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to get the velocity at which an object is travelling along the X and Z axes. Methods without a delta time value will use Time.deltaTime. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

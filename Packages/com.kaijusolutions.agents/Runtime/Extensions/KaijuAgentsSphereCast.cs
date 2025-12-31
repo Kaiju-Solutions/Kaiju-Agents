@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to perform sphere casting. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.

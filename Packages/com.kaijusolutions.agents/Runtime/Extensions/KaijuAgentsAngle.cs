@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// General Kaiju Agents functions. The majority of this class contains extension methods for vectors, transforms, components, and GameObjects.

@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to get the direction along all three axes from one position to another. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.

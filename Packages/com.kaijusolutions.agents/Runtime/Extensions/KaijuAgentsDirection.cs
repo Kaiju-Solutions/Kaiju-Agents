@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to get the direction along the X and Z axes from one position to another. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

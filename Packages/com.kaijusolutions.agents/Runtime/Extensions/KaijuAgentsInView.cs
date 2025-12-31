@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to get if a target is within the field-of-view. This does not consider vertical field-of-view, meaning it checks relative to the global Y axis. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extension;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;

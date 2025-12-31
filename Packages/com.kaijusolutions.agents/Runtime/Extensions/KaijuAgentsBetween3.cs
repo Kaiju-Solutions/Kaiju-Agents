@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension methods to see if points are between two given distances of each other along all three axes. These methods are inclusive of the distances to check. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.

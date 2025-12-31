@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extension;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement

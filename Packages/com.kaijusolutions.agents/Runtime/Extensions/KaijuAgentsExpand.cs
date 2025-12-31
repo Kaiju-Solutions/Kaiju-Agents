@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KaijuSolutions.Agents
+namespace KaijuSolutions.Agents.Extension
 {
     /// <summary>
     /// Extension method to expand a 2D vector across the X and Z axes to all three axes, setting the Y axis to zero.
