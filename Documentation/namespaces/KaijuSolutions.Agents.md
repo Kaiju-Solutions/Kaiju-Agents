@@ -1,6 +1,6 @@
 ---
-uid: KaijuSolutions.Agents
-name: KaijuSolutions.Agents
+uid: KaijuSolutions.Agents.Extensions
+name: KaijuSolutions.Agents.Extensions
 summary: *content
 ---
-Core Kaiju Agents functionality.
+Extension helpers for use with Kaiju Agents.

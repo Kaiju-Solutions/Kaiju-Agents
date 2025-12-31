@@ -22,7 +22,7 @@
     ],
     "build": {
         "globalMetadata": {
-            "_appTitle": "Kaiju Multiplayer Engine",
+            "_appTitle": "Kaiju Agents",
             "_appFooter": "<a href=\"/license\" href=\"License\">© 2025</a> <a href=\"https://kaijusolutions.ca\" title=\"Kaiju Solutions Inc.\">Kaiju Solutions Inc.</a>",
             "_enableSearch": true,
             "_disableContribution": true,
@@ -99,7 +99,7 @@
             }
         ],
         "sitemap": {
-            "baseUrl": "https://multiplayer.kaijusolutions.ca",
+            "baseUrl": "https://agents.kaijusolutions.ca",
             "changefreq": "weekly",
             "fileOptions": {
                 "api/*": {
