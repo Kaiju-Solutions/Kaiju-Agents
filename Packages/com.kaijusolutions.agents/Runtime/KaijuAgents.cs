@@ -10,9 +10,9 @@ using UnityEditor;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// General Kaiju Agents functions. The majority of this class contains extension methods for vectors, transforms, components, and GameObjects.
+    /// Methods to help with <see cref="KaijuAgent"/> creation.
     /// </summary>
-    public static partial class KaijuAgents
+    public static class KaijuAgents
     {
         /// <summary>
         /// All materials cached.

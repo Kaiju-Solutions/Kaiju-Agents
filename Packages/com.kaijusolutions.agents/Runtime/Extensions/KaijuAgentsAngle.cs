@@ -6,7 +6,7 @@ namespace KaijuSolutions.Agents
     /// <summary>
     /// General Kaiju Agents functions. The majority of this class contains extension methods for vectors, transforms, components, and GameObjects.
     /// </summary>
-    public static partial class KaijuAgents
+    public static class KaijuAgentsAngle
     {
         /// <summary>
         /// The angle in degrees from a position towards a target around the global Y axis. This will be from -180 to 180 degrees.
