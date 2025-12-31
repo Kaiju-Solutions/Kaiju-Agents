@@ -819,6 +819,46 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
+        public static float Distance3(this Vector2 self, Vector3 other) => self.Expand().Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector2 self, [NotNull] Transform other) => self.Expand().Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector2 self, [NotNull] Component other) => self.Expand().Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector2 self, [NotNull] GameObject other) => self.Expand().Distance3(other);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3(this Vector3 self, Vector2 other) => Vector3.Distance(self, other.Expand());
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
         public static float Distance3(this Vector3 self, Vector3 other) => Vector3.Distance(self, other);
         
         /// <summary>
@@ -844,6 +884,14 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance3(this Vector3 self, [NotNull] GameObject other) => self.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Transform self, Vector2 other) => self.position.Distance3(other.Expand());
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -883,6 +931,14 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This object.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this Component self, Vector2 other) => self.transform.position.Distance3(other.Expand());
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
         public static float Distance3([NotNull] this Component self, Vector3 other) => self.transform.position.Distance3(other);
         
         /// <summary>
@@ -908,6 +964,14 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The distance.</returns>
         public static float Distance3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Distance3(other.transform.position);
+        
+        /// <summary>
+        /// Get the distance between this and another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The distance.</returns>
+        public static float Distance3([NotNull] this GameObject self, Vector2 other) => self.transform.position.Distance3(other.Expand());
         
         /// <summary>
         /// Get the distance between this and another position.
@@ -949,6 +1013,51 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector2 self, Vector3 other, float distance) => self.Expand().Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector2 self, [NotNull] Transform other, float distance) => self.Expand().Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector2 self, [NotNull] Component other, float distance) => self.Expand().Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector2 self, [NotNull] GameObject other, float distance) => self.Expand().Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3(this Vector3 self, Vector2 other, float distance) => self.Within3(other.Expand(), distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
         public static bool Within3(this Vector3 self, Vector3 other, float distance) => self.Distance3(other) <= distance;
         
         /// <summary>
@@ -977,6 +1086,51 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
         public static bool Within3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector2 self, Vector3 other, float distance) => self.Expand().Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector2 self, [NotNull] Transform other, float distance) => self.Expand().Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector2 self, [NotNull] Component other, float distance) => self.Expand().Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector2 self, [NotNull] GameObject other, float distance) => self.Expand().Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3(this Vector3 self, Vector2 other, float distance) => self.Beyond3(other.Expand(), distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
