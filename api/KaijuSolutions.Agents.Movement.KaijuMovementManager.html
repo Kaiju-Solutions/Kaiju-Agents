@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuMovementManager | Kaiju Multiplayer Engine</title>
+    <title>Class KaijuMovementManager | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuMovementManager | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Class KaijuMovementManager | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -95,8 +95,325 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class KaijuMovementManager</code></pre>
   </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorEditorVisualizationsText_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorEditorVisualizationsText*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorEditorVisualizationsText" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorEditorVisualizationsText">EditorEditorVisualizationsText</h4>
+  <div class="markdown level1 summary"><p>How text should be displayed with editor visualizations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuMovementManager.EditorVisualizationsTextMode EditorEditorVisualizationsText { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorVisualizationsTextMode.html">KaijuMovementManager.EditorVisualizationsTextMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorEvadeColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorEvadeColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorEvadeColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorEvadeColor">EditorEvadeColor</h4>
+  <div class="markdown level1 summary"><p>Color for evade visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorEvadeColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorFleeColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorFleeColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorFleeColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorFleeColor">EditorFleeColor</h4>
+  <div class="markdown level1 summary"><p>Color for flee visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorFleeColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorObstacleAvoidanceColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorObstacleAvoidanceColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorObstacleAvoidanceColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorObstacleAvoidanceColor">EditorObstacleAvoidanceColor</h4>
+  <div class="markdown level1 summary"><p>Color for obstacle avoidance visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorObstacleAvoidanceColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorPursueColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorPursueColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorPursueColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorPursueColor">EditorPursueColor</h4>
+  <div class="markdown level1 summary"><p>Color for pursue visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorPursueColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSeekColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSeekColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSeekColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSeekColor">EditorSeekColor</h4>
+  <div class="markdown level1 summary"><p>Color for seek visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorSeekColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSeparationColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSeparationColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSeparationColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSeparationColor">EditorSeparationColor</h4>
+  <div class="markdown level1 summary"><p>Color for separation visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorSeparationColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsActive_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorVisualizationsActive*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsActive" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorVisualizationsActive">EditorVisualizationsActive</h4>
+  <div class="markdown level1 summary"><p>Handle if all editor visualizations should be rendered or only the selected agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool EditorVisualizationsActive { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorWanderColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorWanderColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorWanderColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorWanderColor">EditorWanderColor</h4>
+  <div class="markdown level1 summary"><p>Color for wander visuals in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorWanderColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetColors_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetColors*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetColors" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetColors">EditorResetColors()</h4>
+  <div class="markdown level1 summary"><p>Reset all colors in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetColors()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetEvadeColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetEvadeColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetEvadeColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetEvadeColor">EditorResetEvadeColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the evade color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetEvadeColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetFleeColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetFleeColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetFleeColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetFleeColor">EditorResetFleeColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the seek color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetFleeColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetObstacleAvoidanceColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetObstacleAvoidanceColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetObstacleAvoidanceColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetObstacleAvoidanceColor">EditorResetObstacleAvoidanceColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the obstacle avoidance color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetObstacleAvoidanceColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetPursueColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetPursueColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetPursueColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetPursueColor">EditorResetPursueColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the pursue color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetPursueColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetSeekColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetSeekColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetSeekColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetSeekColor">EditorResetSeekColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the seek color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetSeekColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetSeparationColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetSeparationColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetSeparationColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetSeparationColor">EditorResetSeparationColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the separation color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetSeparationColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetVisualizationsActive_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetVisualizationsActive*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetVisualizationsActive" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetVisualizationsActive">EditorResetVisualizationsActive()</h4>
+  <div class="markdown level1 summary"><p>Reset if all editor visualizations should be rendered or only the selected agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetVisualizationsActive()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetVisualizationsText_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetVisualizationsText*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetVisualizationsText" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetVisualizationsText">EditorResetVisualizationsText()</h4>
+  <div class="markdown level1 summary"><p>Reset how text should be displayed with editor visualizations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetVisualizationsText()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetWanderColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetWanderColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorResetWanderColor" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorResetWanderColor">EditorResetWanderColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the wander color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetWanderColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSyncColors_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSyncColors*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorSyncColors" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorSyncColors">EditorSyncColors()</h4>
+  <div class="markdown level1 summary"><p>Sync all colors in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorSyncColors()</code></pre>
+  </div>
   <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Get*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Get__1" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Get``1">Get&lt;T&gt;()</h4>
   <div class="markdown level1 summary"><p>Get a movement instance.</p>

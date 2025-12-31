@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsArcRaycast | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsArcRaycast | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast" class="text-break">Class KaijuAgentsArcRaycast
+  </h1>
+  <div class="markdown level0 summary"><p>Extension methods to perform ray casting along an arc. Any Vector2 values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extension.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extension_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsArcRaycast</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extension.html">KaijuSolutions.Agents.Extension</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class KaijuAgentsArcRaycast</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, Component direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, GameObject direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast which will be cast in its forward direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, Transform direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_Vector2_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,Vector2,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, Vector2, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, Vector2 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Component_Vector3_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Component,Vector3,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Component, Vector3, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Component position, Vector3 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, Component direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, GameObject direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast which will be cast in its forward direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, Transform direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_Vector2_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,Vector2,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, Vector2, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, Vector2 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_GameObject_Vector3_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(GameObject,Vector3,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(GameObject, Vector3, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this GameObject position, Vector3 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, Component direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, GameObject direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast which will be cast in its forward direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, Transform direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_Vector2_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,Vector2,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, Vector2, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, Vector2 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Transform_Vector3_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Transform,Vector3,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Transform, Vector3, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Transform position, Vector3 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector2_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector2,Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector2, Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector2 position, Component direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector2_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector2,GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector2, GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector2 position, GameObject direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector2_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector2,Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector2, Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector2 position, Transform direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector2_Vector2_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector2,Vector2,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector2, Vector2, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector2 position, Vector2 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector2_Vector3_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector2,Vector3,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector2, Vector3, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector2 position, Vector3 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector3_Component_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector3,Component,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector3, Component, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector3 position, Component direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector3_GameObject_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector3,GameObject,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector3, GameObject, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector3 position, GameObject direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector3_Transform_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector3,Transform,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector3, Transform, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector3 position, Transform direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector3_Vector2_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector3,Vector2,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector3, Vector2, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector3 position, Vector2 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsArcRaycast_ArcRaycast_Vector3_Vector3_System_Nullable_RaycastHit____System_Single_System_Single_System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.ArcRaycast(Vector3,Vector3,System.Nullable{RaycastHit}[],System.Single,System.Single,System.Int32,QueryTriggerInteraction)">ArcRaycast(Vector3, Vector3, Nullable&lt;RaycastHit&gt;[], Single, Single, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ArcRaycast(this Vector3 position, Vector3 direction, RaycastHit? [] hits, float angle = 360F, float distance = 3.40282347E+38F, int mask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The starting position of the cast.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>The direction denoting the center of the arc of casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;[]</td>
+        <td><span class="parametername">hits</span></td>
+        <td><p>The hits detected from the arc, stored from left to right.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">angle</span></td>
+        <td><p>The angle of the arc in degrees.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance for the casts.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The optional layer mask.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the casts should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

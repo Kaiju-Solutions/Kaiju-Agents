@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Distance3Sorter | Kaiju Multiplayer Engine</title>
+    <title>Class KaijuAgentsDistanceSorter | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Distance3Sorter | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Class KaijuAgentsDistanceSorter | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,44 +76,44 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Distance3Sorter">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter">
   
   
-  <h1 id="KaijuSolutions_Agents_Distance3Sorter" data-uid="KaijuSolutions.Agents.Distance3Sorter" class="text-break">Class Distance3Sorter
+  <h1 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter" class="text-break">Class KaijuAgentsDistanceSorter
   </h1>
-  <div class="markdown level0 summary"><p>Sort by distance across all axes.</p>
+  <div class="markdown level0 summary"><p>Comparer class to sort by distance along the X and Z axes. Used in the extension methods found in <a class="xref" href="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.html">KaijuAgentsSortDistance</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Distance3Sorter</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsDistanceSorter</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extension.html">KaijuSolutions.Agents.Extension</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_Distance3Sorter_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Distance3Sorter : IComparer&lt;Vector2&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class KaijuAgentsDistanceSorter : IComparer&lt;Vector2&gt;</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor">Distance3Sorter()</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor">KaijuAgentsDistanceSorter()</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter()</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter()</code></pre>
   </div>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor_Component_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor(Component,System.Boolean)">Distance3Sorter(Component, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_Component_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor(Component,System.Boolean)">KaijuAgentsDistanceSorter(Component, Boolean)</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter(Component position, bool farthest = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter(Component position, bool farthest = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -139,14 +139,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor_GameObject_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor(GameObject,System.Boolean)">Distance3Sorter(GameObject, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_GameObject_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor(GameObject,System.Boolean)">KaijuAgentsDistanceSorter(GameObject, Boolean)</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter(GameObject position, bool farthest = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter(GameObject position, bool farthest = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -172,14 +172,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor_Transform_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor(Transform,System.Boolean)">Distance3Sorter(Transform, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_Transform_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor(Transform,System.Boolean)">KaijuAgentsDistanceSorter(Transform, Boolean)</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter(Transform position, bool farthest = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter(Transform position, bool farthest = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -205,14 +205,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor_Vector2_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor(Vector2,System.Boolean)">Distance3Sorter(Vector2, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_Vector2_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor(Vector2,System.Boolean)">KaijuAgentsDistanceSorter(Vector2, Boolean)</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter(Vector2 position, bool farthest = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter(Vector2 position, bool farthest = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -238,14 +238,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter__ctor_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter__ctor_Vector3_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.#ctor(Vector3,System.Boolean)">Distance3Sorter(Vector3, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter__ctor_Vector3_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.#ctor(Vector3,System.Boolean)">KaijuAgentsDistanceSorter(Vector3, Boolean)</h4>
   <div class="markdown level1 summary"><p>Create the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Distance3Sorter(Vector3 position, bool farthest = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgentsDistanceSorter(Vector3 position, bool farthest = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -273,7 +273,7 @@
   </table>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Farthest" data-uid="KaijuSolutions.Agents.Distance3Sorter.Farthest">Farthest</h4>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Farthest" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Farthest">Farthest</h4>
   <div class="markdown level1 summary"><p>If this should sort by farthest items first.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -296,41 +296,15 @@
       </tr>
     </tbody>
   </table>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Position" data-uid="KaijuSolutions.Agents.Distance3Sorter.Position">Position</h4>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Position" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Position">Position</h4>
   <div class="markdown level1 summary"><p>The position to compare against.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector3 Position</code></pre>
+    <pre><code class="lang-csharp hljs">public Vector2 Position</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Position2_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Position2*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Position2" data-uid="KaijuSolutions.Agents.Distance3Sorter.Position2">Position2</h4>
-  <div class="markdown level1 summary"><p>The position to compare against.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Vector2 Position2 { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -345,8 +319,34 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_PositionComponent_" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionComponent*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_PositionComponent" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionComponent">PositionComponent</h4>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Position3_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Position3*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Position3" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Position3">Position3</h4>
+  <div class="markdown level1 summary"><p>The position to compare against.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Position3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionComponent_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionComponent*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionComponent" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionComponent">PositionComponent</h4>
   <div class="markdown level1 summary"><p>The position to compare against.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -369,8 +369,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_PositionGameObject_" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionGameObject*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_PositionGameObject" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionGameObject">PositionGameObject</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionGameObject_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionGameObject*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionGameObject" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionGameObject">PositionGameObject</h4>
   <div class="markdown level1 summary"><p>The position to compare against.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -393,8 +393,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_PositionTransform_" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionTransform*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_PositionTransform" data-uid="KaijuSolutions.Agents.Distance3Sorter.PositionTransform">PositionTransform</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionTransform_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionTransform*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_PositionTransform" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.PositionTransform">PositionTransform</h4>
   <div class="markdown level1 summary"><p>The position to compare against.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -419,8 +419,8 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Compare_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Compare_Component_Component_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare(Component,Component)">Compare(Component, Component)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_Component_Component_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare(Component,Component)">Compare(Component, Component)</h4>
   <div class="markdown level1 summary"><p>Compare the two instances.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -468,8 +468,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Compare_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Compare_GameObject_GameObject_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare(GameObject,GameObject)">Compare(GameObject, GameObject)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_GameObject_GameObject_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare(GameObject,GameObject)">Compare(GameObject, GameObject)</h4>
   <div class="markdown level1 summary"><p>Compare the two instances.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -517,8 +517,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Compare_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Compare_Transform_Transform_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare(Transform,Transform)">Compare(Transform, Transform)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_Transform_Transform_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare(Transform,Transform)">Compare(Transform, Transform)</h4>
   <div class="markdown level1 summary"><p>Compare the two instances.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -566,8 +566,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Compare_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Compare_Vector2_Vector2_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare(Vector2,Vector2)">Compare(Vector2, Vector2)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_Vector2_Vector2_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare(Vector2,Vector2)">Compare(Vector2, Vector2)</h4>
   <div class="markdown level1 summary"><p>Compare the two instances.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -615,8 +615,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Compare_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Compare_Vector3_Vector3_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Compare(Vector3,Vector3)">Compare(Vector3, Vector3)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Compare_Vector3_Vector3_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Compare(Vector3,Vector3)">Compare(Vector3, Vector3)</h4>
   <div class="markdown level1 summary"><p>Compare the two instances.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -664,8 +664,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Set_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Set_Component_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set(Component,System.Boolean)">Set(Component, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_Component_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set(Component,System.Boolean)">Set(Component, Boolean)</h4>
   <div class="markdown level1 summary"><p>Set values for the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -697,8 +697,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Set_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Set_GameObject_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set(GameObject,System.Boolean)">Set(GameObject, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_GameObject_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set(GameObject,System.Boolean)">Set(GameObject, Boolean)</h4>
   <div class="markdown level1 summary"><p>Set values for the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -730,8 +730,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Set_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Set_Transform_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set(Transform,System.Boolean)">Set(Transform, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_Transform_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set(Transform,System.Boolean)">Set(Transform, Boolean)</h4>
   <div class="markdown level1 summary"><p>Set values for the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -763,8 +763,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Set_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Set_Vector2_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set(Vector2,System.Boolean)">Set(Vector2, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_Vector2_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set(Vector2,System.Boolean)">Set(Vector2, Boolean)</h4>
   <div class="markdown level1 summary"><p>Set values for the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -796,8 +796,8 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Distance3Sorter_Set_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set*"></a>
-  <h4 id="KaijuSolutions_Agents_Distance3Sorter_Set_Vector3_System_Boolean_" data-uid="KaijuSolutions.Agents.Distance3Sorter.Set(Vector3,System.Boolean)">Set(Vector3, Boolean)</h4>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsDistanceSorter_Set_Vector3_System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.Set(Vector3,System.Boolean)">Set(Vector3, Boolean)</h4>
   <div class="markdown level1 summary"><p>Set values for the sorter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

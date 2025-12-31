@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuVisionSensor&lt;T&gt; | Kaiju Multiplayer Engine</title>
+    <title>Class KaijuVisionSensor&lt;T&gt; | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuVisionSensor&lt;T&gt; | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Class KaijuVisionSensor&lt;T&gt; | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -357,6 +357,29 @@
   </table>
   <h3 id="fields">Fields
   </h3>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_editorFromAgent" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.editorFromAgent">editorFromAgent</h4>
+  <div class="markdown level1 summary"><p>If the visualizations in the editor for the line-of-sight checks should come from the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>&apos;s position or from the sensor&apos;s position. The range and view arc are always drawn from the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>&apos;s Y height and the sensor&apos;s X and Z positions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool editorFromAgent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_lineOfSight" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.lineOfSight">lineOfSight</h4>
   <div class="markdown level1 summary"><p>If line-of-sight checks should be made for the vision. Turning off line-of-sight checks will return items within the view arc based on the angle and distance.</p>
 </div>
@@ -598,6 +621,35 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_EditorVisualize_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.EditorVisualize*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_EditorVisualize_Vector3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.EditorVisualize(Vector3)">EditorVisualize(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Allow for visualizing in the editor.
+<param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void EditorVisualize(Vector3 position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_EditorVisualize_Vector3_">KaijuSensor.EditorVisualize(Vector3)</a></div>
   <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Reset_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Reset*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Reset" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Reset">Reset()</h4>
   <div class="markdown level1 summary"><p>Perform any needed resetting of the sensor.</p>

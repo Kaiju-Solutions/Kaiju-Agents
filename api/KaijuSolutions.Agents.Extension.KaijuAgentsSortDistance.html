@@ -1,0 +1,3672 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsSortDistance | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsSortDistance | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance" class="text-break">Class KaijuAgentsSortDistance
+  </h1>
+  <div class="markdown level0 summary"><p>Extension methods for sorting objects by their distance to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extension.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsSortDistance</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extension.html">KaijuSolutions.Agents.Extension</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class KaijuAgentsSortDistance</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_GameObject___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,GameObject[],System.Boolean)">SortDistance(Component, GameObject[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, GameObject[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_IEnumerable_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,IEnumerable{GameObject},System.Boolean)">SortDistance(Component, IEnumerable&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameObject[] SortDistance(this Component position, IEnumerable&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_IEnumerable_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,IEnumerable{Transform},System.Boolean)">SortDistance(Component, IEnumerable&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform[] SortDistance(this Component position, IEnumerable&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_IEnumerable_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,IEnumerable{Vector2},System.Boolean)">SortDistance(Component, IEnumerable&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2[] SortDistance(this Component position, IEnumerable&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_IEnumerable_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,IEnumerable{Vector3},System.Boolean)">SortDistance(Component, IEnumerable&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3[] SortDistance(this Component position, IEnumerable&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_List_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,List{GameObject},System.Boolean)">SortDistance(Component, List&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, List&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_List_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,List{Transform},System.Boolean)">SortDistance(Component, List&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, List&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_List_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,List{Vector2},System.Boolean)">SortDistance(Component, List&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, List&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_List_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,List{Vector3},System.Boolean)">SortDistance(Component, List&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, List&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_Transform___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,Transform[],System.Boolean)">SortDistance(Component, Transform[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, Transform[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_Vector2___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,Vector2[],System.Boolean)">SortDistance(Component, Vector2[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, Vector2[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Component_Vector3___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Component,Vector3[],System.Boolean)">SortDistance(Component, Vector3[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Component position, Vector3[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_GameObject___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,GameObject[],System.Boolean)">SortDistance(GameObject, GameObject[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, GameObject[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_IEnumerable_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,IEnumerable{GameObject},System.Boolean)">SortDistance(GameObject, IEnumerable&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameObject[] SortDistance(this GameObject position, IEnumerable&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_IEnumerable_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,IEnumerable{Transform},System.Boolean)">SortDistance(GameObject, IEnumerable&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform[] SortDistance(this GameObject position, IEnumerable&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_IEnumerable_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,IEnumerable{Vector2},System.Boolean)">SortDistance(GameObject, IEnumerable&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2[] SortDistance(this GameObject position, IEnumerable&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_IEnumerable_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,IEnumerable{Vector3},System.Boolean)">SortDistance(GameObject, IEnumerable&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3[] SortDistance(this GameObject position, IEnumerable&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_List_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,List{GameObject},System.Boolean)">SortDistance(GameObject, List&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, List&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_List_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,List{Transform},System.Boolean)">SortDistance(GameObject, List&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, List&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_List_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,List{Vector2},System.Boolean)">SortDistance(GameObject, List&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, List&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_List_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,List{Vector3},System.Boolean)">SortDistance(GameObject, List&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, List&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_Transform___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,Transform[],System.Boolean)">SortDistance(GameObject, Transform[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, Transform[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_Vector2___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,Vector2[],System.Boolean)">SortDistance(GameObject, Vector2[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, Vector2[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_GameObject_Vector3___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(GameObject,Vector3[],System.Boolean)">SortDistance(GameObject, Vector3[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this GameObject position, Vector3[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_GameObject___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,GameObject[],System.Boolean)">SortDistance(Transform, GameObject[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, GameObject[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_IEnumerable_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,IEnumerable{GameObject},System.Boolean)">SortDistance(Transform, IEnumerable&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameObject[] SortDistance(this Transform position, IEnumerable&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_IEnumerable_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,IEnumerable{Transform},System.Boolean)">SortDistance(Transform, IEnumerable&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform[] SortDistance(this Transform position, IEnumerable&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_IEnumerable_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,IEnumerable{Vector2},System.Boolean)">SortDistance(Transform, IEnumerable&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2[] SortDistance(this Transform position, IEnumerable&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_IEnumerable_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,IEnumerable{Vector3},System.Boolean)">SortDistance(Transform, IEnumerable&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3[] SortDistance(this Transform position, IEnumerable&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_List_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,List{GameObject},System.Boolean)">SortDistance(Transform, List&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, List&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_List_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,List{Transform},System.Boolean)">SortDistance(Transform, List&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, List&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_List_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,List{Vector2},System.Boolean)">SortDistance(Transform, List&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, List&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_List_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,List{Vector3},System.Boolean)">SortDistance(Transform, List&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, List&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_Transform___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,Transform[],System.Boolean)">SortDistance(Transform, Transform[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, Transform[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_Vector2___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,Vector2[],System.Boolean)">SortDistance(Transform, Vector2[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, Vector2[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Transform_Vector3___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Transform,Vector3[],System.Boolean)">SortDistance(Transform, Vector3[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Transform position, Vector3[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_GameObject___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,GameObject[],System.Boolean)">SortDistance(Vector2, GameObject[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, GameObject[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_IEnumerable_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,IEnumerable{GameObject},System.Boolean)">SortDistance(Vector2, IEnumerable&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameObject[] SortDistance(this Vector2 position, IEnumerable&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_IEnumerable_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,IEnumerable{Transform},System.Boolean)">SortDistance(Vector2, IEnumerable&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform[] SortDistance(this Vector2 position, IEnumerable&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_IEnumerable_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,IEnumerable{Vector2},System.Boolean)">SortDistance(Vector2, IEnumerable&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2[] SortDistance(this Vector2 position, IEnumerable&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_IEnumerable_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,IEnumerable{Vector3},System.Boolean)">SortDistance(Vector2, IEnumerable&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3[] SortDistance(this Vector2 position, IEnumerable&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_List_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,List{GameObject},System.Boolean)">SortDistance(Vector2, List&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, List&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_List_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,List{Transform},System.Boolean)">SortDistance(Vector2, List&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, List&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_List_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,List{Vector2},System.Boolean)">SortDistance(Vector2, List&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, List&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_List_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,List{Vector3},System.Boolean)">SortDistance(Vector2, List&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, List&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_Transform___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,Transform[],System.Boolean)">SortDistance(Vector2, Transform[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, Transform[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_Vector2___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,Vector2[],System.Boolean)">SortDistance(Vector2, Vector2[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, Vector2[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector2_Vector3___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector2,Vector3[],System.Boolean)">SortDistance(Vector2, Vector3[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector2 position, Vector3[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_GameObject___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,GameObject[],System.Boolean)">SortDistance(Vector3, GameObject[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, GameObject[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_IEnumerable_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,IEnumerable{GameObject},System.Boolean)">SortDistance(Vector3, IEnumerable&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GameObject[] SortDistance(this Vector3 position, IEnumerable&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_IEnumerable_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,IEnumerable{Transform},System.Boolean)">SortDistance(Vector3, IEnumerable&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Transform[] SortDistance(this Vector3 position, IEnumerable&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_IEnumerable_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,IEnumerable{Vector2},System.Boolean)">SortDistance(Vector3, IEnumerable&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2[] SortDistance(this Vector3 position, IEnumerable&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_IEnumerable_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,IEnumerable{Vector3},System.Boolean)">SortDistance(Vector3, IEnumerable&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3[] SortDistance(this Vector3 position, IEnumerable&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_List_GameObject__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,List{GameObject},System.Boolean)">SortDistance(Vector3, List&lt;GameObject&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, List&lt;GameObject&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_List_Transform__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,List{Transform},System.Boolean)">SortDistance(Vector3, List&lt;Transform&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, List&lt;Transform&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_List_Vector2__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,List{Vector2},System.Boolean)">SortDistance(Vector3, List&lt;Vector2&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, List&lt;Vector2&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_List_Vector3__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,List{Vector3},System.Boolean)">SortDistance(Vector3, List&lt;Vector3&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, List&lt;Vector3&gt; targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_Transform___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,Transform[],System.Boolean)">SortDistance(Vector3, Transform[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, Transform[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_Vector2___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,Vector2[],System.Boolean)">SortDistance(Vector3, Vector2[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, Vector2[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_Vector3_Vector3___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance(Vector3,Vector3[],System.Boolean)">SortDistance(Vector3, Vector3[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance(this Vector3 position, Vector3[] targets, bool farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Component___0___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Component,``0[],System.Boolean)">SortDistance&lt;T&gt;(Component, T[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Component position, T[] targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Component_IEnumerable___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Component,IEnumerable{``0},System.Boolean)">SortDistance&lt;T&gt;(Component, IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] SortDistance&lt;T&gt;(this Component position, IEnumerable&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Component_List___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Component,List{``0},System.Boolean)">SortDistance&lt;T&gt;(Component, List&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Component position, List&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_GameObject___0___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(GameObject,``0[],System.Boolean)">SortDistance&lt;T&gt;(GameObject, T[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this GameObject position, T[] targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_GameObject_IEnumerable___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(GameObject,IEnumerable{``0},System.Boolean)">SortDistance&lt;T&gt;(GameObject, IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] SortDistance&lt;T&gt;(this GameObject position, IEnumerable&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_GameObject_List___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(GameObject,List{``0},System.Boolean)">SortDistance&lt;T&gt;(GameObject, List&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this GameObject position, List&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Transform___0___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Transform,``0[],System.Boolean)">SortDistance&lt;T&gt;(Transform, T[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Transform position, T[] targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Transform_IEnumerable___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Transform,IEnumerable{``0},System.Boolean)">SortDistance&lt;T&gt;(Transform, IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] SortDistance&lt;T&gt;(this Transform position, IEnumerable&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Transform_List___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Transform,List{``0},System.Boolean)">SortDistance&lt;T&gt;(Transform, List&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Transform position, List&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector2___0___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector2,``0[],System.Boolean)">SortDistance&lt;T&gt;(Vector2, T[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Vector2 position, T[] targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector2_IEnumerable___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector2,IEnumerable{``0},System.Boolean)">SortDistance&lt;T&gt;(Vector2, IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] SortDistance&lt;T&gt;(this Vector2 position, IEnumerable&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector2_List___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector2,List{``0},System.Boolean)">SortDistance&lt;T&gt;(Vector2, List&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Vector2 position, List&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector3___0___System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector3,``0[],System.Boolean)">SortDistance&lt;T&gt;(Vector3, T[], Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Vector3 position, T[] targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector3_IEnumerable___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector3,IEnumerable{``0},System.Boolean)">SortDistance&lt;T&gt;(Vector3, IEnumerable&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] SortDistance&lt;T&gt;(this Vector3 position, IEnumerable&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Extension_KaijuAgentsSortDistance_SortDistance__1_Vector3_List___0__System_Boolean_" data-uid="KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.SortDistance``1(Vector3,List{``0},System.Boolean)">SortDistance&lt;T&gt;(Vector3, List&lt;T&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort targets from a position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SortDistance&lt;T&gt;(this Vector3 position, List&lt;T&gt; targets, bool farthest = false)
+    where T : Component</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to sort in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">List</span>&lt;T&gt;</td>
+        <td><span class="parametername">targets</span></td>
+        <td><p>The targets to sort.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

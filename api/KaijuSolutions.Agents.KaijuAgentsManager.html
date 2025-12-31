@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuAgentsManager | Kaiju Multiplayer Engine</title>
+    <title>Class KaijuAgentsManager | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuAgentsManager | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Class KaijuAgentsManager | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -145,6 +145,54 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor">EditorAgentColor</h4>
+  <div class="markdown level1 summary"><p>What color <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> visualizations should be in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorAgentColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabelOffset*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabelOffset">EditorLabelOffset</h4>
+  <div class="markdown level1 summary"><p>The offset for label placement in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float EditorLabelOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_Instance_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Instance*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_Instance" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Instance">Instance</h4>
   <div class="markdown level1 summary"><p>The singleton manager instance.</p>
@@ -200,6 +248,232 @@
         <td><span class="xref">System.UInt32</span></td>
         <td><span class="parametername">identifier</span></td>
         <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String)">EditorLabel(Vector3, String)</h4>
+  <div class="markdown level1 summary"><p>Add a label of text in the scene view in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorLabel(Vector3 position, string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to set it at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The label itself</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String,Color)">EditorLabel(Vector3, String, Color)</h4>
+  <div class="markdown level1 summary"><p>Add a label of text in the scene view in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorLabel(Vector3 position, string text, Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to set it at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The label itself</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color for the text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLoadColor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLoadColor(System.String,Color)">EditorLoadColor(String, Color)</h4>
+  <div class="markdown level1 summary"><p>Load a color from preferences in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color EditorLoadColor(string key, Color fallback)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to retrieve.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">fallback</span></td>
+        <td><p>The fallback color if this is a default value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><p>The color loaded from preferences.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetAgentColor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetAgentColor">EditorResetAgentColor()</h4>
+  <div class="markdown level1 summary"><p>Reset the agent color in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetAgentColor()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetColor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor_System_String_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetColor(System.String)">EditorResetColor(String)</h4>
+  <div class="markdown level1 summary"><p>Reset a color to preferences in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetColor(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to reset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetLabelOffset*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetLabelOffset">EditorResetLabelOffset()</h4>
+  <div class="markdown level1 summary"><p>Reset the offset for label placement in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorResetLabelOffset()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorSaveColor*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorSaveColor(System.String,Color)">EditorSaveColor(String, Color)</h4>
+  <div class="markdown level1 summary"><p>Save a color to preferences in the editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorSaveColor(string key, Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorValidateIdentifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorValidateIdentifiers(KaijuSolutions.Agents.KaijuAgent)">EditorValidateIdentifiers(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Validate the identifiers of an agent in the editor. There is no use for manually calling this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EditorValidateIdentifiers(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent.</p>
 </td>
       </tr>
     </tbody>
