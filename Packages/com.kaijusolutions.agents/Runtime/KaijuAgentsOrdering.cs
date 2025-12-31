@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace KaijuSolutions.Agents
 {
+    /// <summary>
+    /// General Kaiju Agents functions.
+    /// </summary>
     public static partial class KaijuAgents
     {
         /// <summary>
