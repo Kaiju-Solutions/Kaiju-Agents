@@ -305,7 +305,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
-        public static bool Within(this Vector3 self, Vector3 other, float distance) => self.Distance(other) <= distance;
+        public static bool Within(this Vector3 self, Vector3 other, float distance) => self.Flatten().Within(other.Flatten(), distance);
         
         /// <summary>
         /// If this is within a distance to another position.
@@ -333,6 +333,141 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is within a distance to another position.</returns>
         public static bool Within(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Transform self, Vector2 other, float distance) => self.Flatten().Within(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Transform self, Vector3 other, float distance) => self.Flatten().Within(other.Flatten(), distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Transform self, [NotNull] Transform other, float distance) => self.Flatten().Within(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Transform self, [NotNull] Component other, float distance) => self.Flatten().Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Transform self, [NotNull] GameObject other, float distance) => self.Flatten().Within(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Component self, Vector2 other, float distance) => self.Flatten().Within(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Component self, Vector3 other, float distance) => self.Flatten().Within(other.Flatten(), distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Component self, [NotNull] Transform other, float distance) => self.Flatten().Within(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Component self, [NotNull] Component other, float distance) => self.Flatten().Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this Component self, [NotNull] GameObject other, float distance) => self.Flatten().Within(other.transform.position, distance);
+
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this GameObject self, Vector2 other, float distance) => self.Flatten().Within(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this GameObject self, Vector3 other, float distance) => self.Flatten().Within(other.Flatten(), distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.Flatten().Within(other.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this GameObject self, [NotNull] Component other, float distance) => self.Flatten().Within(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.Flatten().Within(other.transform.position, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -395,7 +530,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond(this Vector3 self, Vector3 other, float distance) => self.Distance(other) >= distance;
+        public static bool Beyond(this Vector3 self, Vector3 other, float distance) => self.Flatten().Beyond(other.Flatten(), distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -440,7 +575,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Transform self, Vector3 other, float distance) => self.position.Distance(other) >= distance;
+        public static bool Beyond([NotNull] this Transform self, Vector3 other, float distance) => self.position.Beyond(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -485,7 +620,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Distance(other) >= distance;
+        public static bool Beyond([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Beyond(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -530,7 +665,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Distance(other) >= distance;
+        public static bool Beyond([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Beyond(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -622,7 +757,7 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between(this Vector3 self, Vector2 other, float minimum, float maximum) => other.Between(self, minimum, maximum);
-
+        
         /// <summary>
         /// If this is between two distances to another position.
         /// </summary>
@@ -1088,6 +1223,141 @@ namespace KaijuSolutions.Agents
         public static bool Within3(this Vector3 self, [NotNull] GameObject other, float distance) => self.Within3(other.transform.position, distance);
         
         /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Transform self, Vector2 other, float distance) => self.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Transform self, Vector3 other, float distance) => self.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Transform self, [NotNull] Transform other, float distance) => self.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Transform self, [NotNull] Component other, float distance) => self.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Transform self, [NotNull] GameObject other, float distance) => self.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Component self, Vector2 other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Component self, [NotNull] Transform other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Component self, [NotNull] Component other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this Component self, [NotNull] GameObject other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this GameObject self, Vector2 other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this GameObject self, [NotNull] Component other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
+        /// If this is within a distance to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is within a distance to another position.</returns>
+        public static bool Within3([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Within3(other, distance);
+        
+        /// <summary>
         /// If this is beyond a distance to another position.
         /// </summary>
         /// <param name="self">This position.</param>
@@ -1175,7 +1445,16 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Transform self, Vector3 other, float distance) => self.position.Distance3(other) >= distance;
+        public static bool Beyond3([NotNull] this Transform self, Vector2 other, float distance) => self.position.Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Transform self, Vector3 other, float distance) => self.position.Beyond3(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1211,7 +1490,16 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
+        public static bool Beyond3([NotNull] this Component self, Vector2 other, float distance) => self.transform.position.Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this Component self, Vector3 other, float distance) => self.transform.position.Beyond3(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1247,7 +1535,7 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Distance3(other) >= distance;
+        public static bool Beyond3([NotNull] this GameObject self, Vector2 other, float distance) => self.transform.position.Beyond3(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1256,7 +1544,16 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
-        public static bool Beyond3([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.transform.position.Beyond3(other.position, distance);
+        public static bool Beyond3([NotNull] this GameObject self, Vector3 other, float distance) => self.transform.position.Beyond3(other, distance);
+        
+        /// <summary>
+        /// If this is beyond a distance to another position.
+        /// </summary>
+        /// <param name="self">This object.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="distance">The distance.</param>
+        /// <returns>If this is beyond a distance to another position.</returns>
+        public static bool Beyond3([NotNull] this GameObject self, [NotNull] Transform other, float distance) => self.transform.position.Beyond3(other, distance);
         
         /// <summary>
         /// If this is beyond a distance to another position.
@@ -1275,6 +1572,56 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance.</param>
         /// <returns>If this is beyond a distance to another position.</returns>
         public static bool Beyond3([NotNull] this GameObject self, [NotNull] GameObject other, float distance) => self.transform.position.Beyond3(other.transform.position, distance);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector2 self, Vector3 other, float minimum, float maximum) => self.Expand().Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector2 self, [NotNull] Transform other, float minimum, float maximum) => self.Expand().Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector2 self, [NotNull] Component other, float minimum, float maximum) => self.Expand().Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector2 self, [NotNull] GameObject other, float minimum, float maximum) => self.Expand().Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3(this Vector3 self, Vector2 other, float minimum, float maximum) => self.Between3(other.Expand(), minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1328,6 +1675,16 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Transform self, Vector2 other, float minimum, float maximum) => self.position.Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this Transform self, Vector3 other, float minimum, float maximum) => self.position.Between3(other, minimum, maximum);
         
         /// <summary>
@@ -1368,6 +1725,16 @@ namespace KaijuSolutions.Agents
         /// <param name="minimum">The minimum distance.</param>
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this Component self, Vector2 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this Component self, Vector3 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
         
         /// <summary>
@@ -1399,6 +1766,16 @@ namespace KaijuSolutions.Agents
         /// <param name="maximum">The maximum distance.</param>
         /// <returns>If this is between two distances to another position.</returns>
         public static bool Between3([NotNull] this Component self, [NotNull] GameObject other, float minimum, float maximum) => self.transform.position.Between3(other.transform.position, minimum, maximum);
+        
+        /// <summary>
+        /// If this is between two distances to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <param name="minimum">The minimum distance.</param>
+        /// <param name="maximum">The maximum distance.</param>
+        /// <returns>If this is between two distances to another position.</returns>
+        public static bool Between3([NotNull] this GameObject self, Vector2 other, float minimum, float maximum) => self.transform.position.Between3(other, minimum, maximum);
         
         /// <summary>
         /// If this is between two distances to another position.
@@ -1646,6 +2023,54 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector2 self, Vector2 other) => self.Expand().Direction3(other.Expand());
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector2 self, Vector3 other) => self.Expand().Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector2 self, [NotNull] Transform other) => self.Expand().Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector2 self, [NotNull] Component other) => self.Expand().Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector2 self, [NotNull] GameObject other) => self.Expand().Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3(this Vector3 self, Vector2 other) => self.Direction3(other.Expand());
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3(this Vector3 self, Vector3 other) => self - other;
         
         /// <summary>
@@ -1671,6 +2096,14 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3(this Vector3 self, [NotNull] GameObject other) => self.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Transform self, Vector2 other) => self.position.Direction3(other);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -1710,6 +2143,14 @@ namespace KaijuSolutions.Agents
         /// <param name="self">This position.</param>
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this Component self, Vector2 other) => self.transform.position.Direction3(other);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3([NotNull] this Component self, Vector3 other) => self.transform.position.Direction3(other);
         
         /// <summary>
@@ -1735,6 +2176,14 @@ namespace KaijuSolutions.Agents
         /// <param name="other">The other position.</param>
         /// <returns>The direction from this position to another position.</returns>
         public static Vector3 Direction3([NotNull] this Component self, [NotNull] GameObject other) => self.transform.position.Direction3(other.transform.position);
+        
+        /// <summary>
+        /// The direction from this position to another position.
+        /// </summary>
+        /// <param name="self">This position.</param>
+        /// <param name="other">The other position.</param>
+        /// <returns>The direction from this position to another position.</returns>
+        public static Vector3 Direction3([NotNull] this GameObject self, Vector2 other) => self.transform.position.Direction3(other);
         
         /// <summary>
         /// The direction from this position to another position.
@@ -2200,6 +2649,91 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, Vector3 previous, float delta) => current.Expand().Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, Vector3 previous) => current.Expand().Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] Transform previous, float delta) => current.Expand().Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] Transform previous) => current.Expand().Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] Component previous, float delta) => current.Expand().Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] Component previous) => current.Expand().Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] GameObject previous, float delta) => current.Expand().Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector2 current, [NotNull] GameObject previous) => current.Expand().Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector3 current, Vector2 previous, float delta) => current.Speed3(previous.Expand(), delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3(this Vector3 current, Vector2 previous) => current.Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, Vector3 previous, float delta) => current.Distance3(previous) / delta;
         
         /// <summary>
@@ -2260,6 +2794,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3(this Vector3 current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this Transform current, Vector2 previous, float delta) => current.position.Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this Transform current, Vector2 previous) => current.position.Speed3(previous, Time.deltaTime);
         
         /// <summary>
         /// The current speed based on the time it took to move from a previous position.
@@ -2336,6 +2887,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this Component current, Vector2 previous, float delta) => current.transform.position.Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this Component current, Vector2 previous) => current.transform.position.Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Speed3(previous, delta);
         
         /// <summary>
@@ -2396,6 +2964,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static float Speed3([NotNull] this Component current, [NotNull] GameObject previous) => current.Speed3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this GameObject current, Vector2 previous, float delta) => current.transform.position.Speed3(previous, delta);
+        
+        /// <summary>
+        /// The current speed based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static float Speed3([NotNull] this GameObject current, Vector2 previous) => current.transform.position.Speed3(previous, Time.deltaTime);
         
         /// <summary>
         /// The current speed based on the time it took to move from a previous position.
@@ -2897,6 +3482,108 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, Vector2 previous, float delta) => current.Expand().Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, Vector2 previous) => current.Expand().Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, Vector3 previous, float delta) => current.Expand().Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, Vector3 previous) => current.Expand().Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] Transform previous, float delta) => current.Expand().Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] Transform previous) => current.Expand().Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] Component previous, float delta) => current.Expand().Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] Component previous) => current.Expand().Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] GameObject previous, float delta) => current.Expand().Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector2 current, [NotNull] GameObject previous) => current.Expand().Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, Vector2 previous, float delta) => current.Velocity3(previous.Expand(), delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3(this Vector3 current, Vector2 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3(this Vector3 current, Vector3 previous, float delta) => current.Direction3(previous) / delta;
         
         /// <summary>
@@ -2957,6 +3644,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3(this Vector3 current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, Vector2 previous, float delta) => current.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Transform current, Vector2 previous) => current.Velocity3(previous, Time.deltaTime);
         
         /// <summary>
         /// The current velocity based on the time it took to move from a previous position.
@@ -3033,6 +3737,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <param name="delta">The time since the last position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, Vector2 previous, float delta) => current.transform.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this Component current, Vector2 previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3([NotNull] this Component current, Vector3 previous, float delta) => current.transform.position.Velocity3(previous, delta);
         
         /// <summary>
@@ -3093,6 +3814,23 @@ namespace KaijuSolutions.Agents
         /// <param name="previous">The previous position.</param>
         /// <returns>The current speed based on the time it took to move from a previous position.</returns>
         public static Vector3 Velocity3([NotNull] this Component current, [NotNull] GameObject previous) => current.Velocity3(previous, Time.deltaTime);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <param name="delta">The time since the last position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, Vector2 previous, float delta) => current.transform.position.Velocity3(previous, delta);
+        
+        /// <summary>
+        /// The current velocity based on the time it took to move from a previous position.
+        /// </summary>
+        /// <param name="current">The current position.</param>
+        /// <param name="previous">The previous position.</param>
+        /// <returns>The current speed based on the time it took to move from a previous position.</returns>
+        public static Vector3 Velocity3([NotNull] this GameObject current, Vector2 previous) => current.Velocity3(previous, Time.deltaTime);
         
         /// <summary>
         /// The current velocity based on the time it took to move from a previous position.
