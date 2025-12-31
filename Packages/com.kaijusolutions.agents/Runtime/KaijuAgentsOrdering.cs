@@ -2061,6 +2061,875 @@ namespace KaijuSolutions.Agents
             Sorter.Set(position, farthest);
             return targets.OrderBy(x => x, Sorter).ToArray();
         }
+        
+        /// <summary>
+        /// The sorter for Vector2 distance in descending order.
+        /// </summary>
+        private static readonly Distance3Sorter Sorter3 = new (Vector3.zero);
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] Vector3[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector3[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] Transform[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Transform[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>(this Vector2 position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>(this Vector2 position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static T[] SortDistance3<T>(this Vector2 position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] GameObject[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static GameObject[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Vector2[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector2[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Vector3[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector3[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Transform[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Transform[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>(this Vector3 position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>(this Vector3 position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static T[] SortDistance3<T>(this Vector3 position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] GameObject[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static GameObject[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector2[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector2[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector3[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector3[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Transform[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Transform[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this Transform position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this Transform position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static T[] SortDistance3<T>([NotNull] this Transform position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] GameObject[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static GameObject[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector2[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector2[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector3[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector3[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Transform[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Transform[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this Component position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this Component position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static T[] SortDistance3<T>([NotNull] this Component position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] GameObject[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static GameObject[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector2[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector2[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector3[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector3[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Transform[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Transform[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this GameObject position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3<T>([NotNull] this GameObject position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static T[] SortDistance3<T>([NotNull] this GameObject position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] GameObject[] targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            Array.Sort(targets, Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            targets.Sort(Sorter3);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static GameObject[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        {
+            Sorter3.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter3).ToArray();
+        }
     }
     
     /// <summary>
@@ -2088,7 +2957,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The position to compare against.
         /// </summary>
-        public Transform PositionComponent
+        public Component PositionComponent
         {
             set => Position = value.Flatten();
         }
@@ -2096,7 +2965,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The position to compare against.
         /// </summary>
-        public Transform PositionGameObject
+        public GameObject PositionGameObject
         {
             set => Position = value.Flatten();
         }
@@ -2285,6 +3154,231 @@ namespace KaijuSolutions.Agents
         {
             // NULL entries come last.
             return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.Flatten(), y.Flatten());
+        }
+    }
+    
+    /// <summary>
+    /// Sort by distance across all axes.
+    /// </summary>
+    public sealed class Distance3Sorter : IComparer<Vector2>, IComparer<Vector3>, IComparer<Transform>, IComparer<Component>, IComparer<GameObject>
+    {
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Vector2 Position2
+        {
+            get => Position.Flatten();
+            set => Position = value.Expand();
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Transform PositionTransform
+        {
+            set => Position = value.position;
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Component PositionComponent
+        {
+            set => Position = value.transform.position;
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public GameObject PositionGameObject
+        {
+            set => Position = value.transform.position;
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Vector3 Position;
+        
+        /// <summary>
+        /// If this should sort by farthest items first.
+        /// </summary>
+        public bool Farthest;
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        public Distance3Sorter()
+        {
+            Position = Vector3.zero;
+            Farthest = false;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public Distance3Sorter(Vector2 position, bool farthest = false)
+        {
+            Position = position.Expand();
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public Distance3Sorter(Vector3 position, bool farthest = false)
+        {
+            Position = position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public Distance3Sorter([NotNull] Transform position, bool farthest = false)
+        {
+            Position = position.position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public Distance3Sorter([NotNull] Component position, bool farthest = false)
+        {
+            Position = position.transform.position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public Distance3Sorter([NotNull] GameObject position, bool farthest = false)
+        {
+            Position = position.transform.position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set(Vector2 position, bool farthest = false)
+        {
+            Set(position.Expand(), farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set(Vector3 position, bool farthest = false)
+        {
+            Position = position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] Transform position, bool farthest = false)
+        {
+            Set(position.position, farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] Component position, bool farthest = false)
+        {
+            Set(position.transform.position, farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] GameObject position, bool farthest = false)
+        {
+            Set(position.transform.position, farthest);
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Vector2 x, Vector2 y)
+        {
+            return Compare(x.Expand(), y.Expand());
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Vector3 x, Vector3 y)
+        {
+            float a = Position.Distance3(x);
+            float b = Position.Distance3(y);
+            int order = a < b ? -1 : b < a ? 1 : 0;
+            return Farthest ? -order : order;
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Transform x, Transform y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.position, y.position);
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Component x, Component y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.transform.position, y.transform.position);
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(GameObject x, GameObject y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.transform.position, y.transform.position);
         }
     }
 }
