@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuBehaviour | Kaiju Multiplayer Engine</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuBehaviour | Kaiju Multiplayer Engine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuBehaviour">
+  
+  
+  <h1 id="KaijuSolutions_Agents_KaijuBehaviour" data-uid="KaijuSolutions.Agents.KaijuBehaviour" class="text-break">Class KaijuBehaviour
+  </h1>
+  <div class="markdown level0 summary"><p>Base extended behaviour providing convenient helpers methods, mainly in relation to position and orientation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuBehaviour</span></div>
+      <div class="level2"><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></div>
+      <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_KaijuBehaviour_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class KaijuBehaviour : MonoBehaviour</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ActiveInHierarchy*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ActiveInHierarchy">ActiveInHierarchy</h4>
+  <div class="markdown level1 summary"><p>The active state of the GameObject in the Scene hierarchy. True if active, false if inactive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ActiveInHierarchy { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ActiveSelf*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ActiveSelf">ActiveSelf</h4>
+  <div class="markdown level1 summary"><p>The local active state of the GameObject. True if active, false if inactive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ActiveSelf { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Backwards_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Backwards*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Backwards" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Backwards">Backwards</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the negative blue axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Backwards { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_ChildCount_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ChildCount*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_ChildCount" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ChildCount">ChildCount</h4>
+  <div class="markdown level1 summary"><p>The number of children this has.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChildCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_ComponentCount_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ComponentCount*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_ComponentCount" data-uid="KaijuSolutions.Agents.KaijuBehaviour.ComponentCount">ComponentCount</h4>
+  <div class="markdown level1 summary"><p>The number of components on the GameObject as an integer value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ComponentCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Down_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Down*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Down" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Down">Down</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the negative green axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Down { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Forward_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Forward*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Forward" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Forward">Forward</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the blue axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Forward { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScale_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScale*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScale" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScale">GlobalScale</h4>
+  <div class="markdown level1 summary"><p>The global or lossy scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GlobalScale { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleX">GlobalScaleX</h4>
+  <div class="markdown level1 summary"><p>The X global or lossy scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GlobalScaleX { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleY">GlobalScaleY</h4>
+  <div class="markdown level1 summary"><p>The Y global or lossy scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GlobalScaleY { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.GlobalScaleZ">GlobalScaleZ</h4>
+  <div class="markdown level1 summary"><p>The Z global or lossy scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float GlobalScaleZ { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_HasChanged_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HasChanged*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_HasChanged" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HasChanged">HasChanged</h4>
+  <div class="markdown level1 summary"><p>Has the transform changed since the last time the flag was set to &apos;false&apos;?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasChanged { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HierarchyCapacity*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HierarchyCapacity">HierarchyCapacity</h4>
+  <div class="markdown level1 summary"><p>The transform capacity of the transform&apos;s hierarchy data structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HierarchyCapacity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HierarchyCount*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount" data-uid="KaijuSolutions.Agents.KaijuBehaviour.HierarchyCount">HierarchyCount</h4>
+  <div class="markdown level1 summary"><p>The number of transforms in the transform&apos;s hierarchy data structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HierarchyCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_IsStatic_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.IsStatic*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_IsStatic" data-uid="KaijuSolutions.Agents.KaijuBehaviour.IsStatic">IsStatic</h4>
+  <div class="markdown level1 summary"><p>Whether there are any Static Editor Flags set for the GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsStatic { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Layer_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Layer*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Layer" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Layer">Layer</h4>
+  <div class="markdown level1 summary"><p>Integer identifying the layer the GameObject is assigned to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Layer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Left_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Left*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Left" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Left">Left</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the negative red axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Left { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientation*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientation">LocalOrientation</h4>
+  <div class="markdown level1 summary"><p>The main local orientation around the Y axis.  The difference between this and <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">LocalOrientationY</a> is that setting this will snap the X and Y angles to zero while <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">LocalOrientationY</a> will not change them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationAngles*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationAngles">LocalOrientationAngles</h4>
+  <div class="markdown level1 summary"><p>Get the local orientation of this in angles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LocalOrientationAngles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternion*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternion">LocalOrientationQuaternion</h4>
+  <div class="markdown level1 summary"><p>Get the local orientation of this as a quaternion. In most instances, it is easier to work with <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles">LocalOrientationAngles</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion LocalOrientationQuaternion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionW*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionW">LocalOrientationQuaternionW</h4>
+  <div class="markdown level1 summary"><p>The local W value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">LocalOrientationX</a>, <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">LocalOrientationY</a>, or <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">LocalOrientationZ</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationQuaternionW { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionX">LocalOrientationQuaternionX</h4>
+  <div class="markdown level1 summary"><p>The local X value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">LocalOrientationX</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationQuaternionX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionY">LocalOrientationQuaternionY</h4>
+  <div class="markdown level1 summary"><p>The local Y value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">LocalOrientationY</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationQuaternionY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationQuaternionZ">LocalOrientationQuaternionZ</h4>
+  <div class="markdown level1 summary"><p>The local Z value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">LocalOrientationZ</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationQuaternionZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationX">LocalOrientationX</h4>
+  <div class="markdown level1 summary"><p>The local X orientation of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationY">LocalOrientationY</h4>
+  <div class="markdown level1 summary"><p>The local Y orientation of this. The difference between this and <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">LocalOrientation</a> is that <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">LocalOrientation</a> will snap the X and Z angles to zero while this will keep them the same.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalOrientationZ">LocalOrientationZ</h4>
+  <div class="markdown level1 summary"><p>The local Z orientation of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalOrientationZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalPosition">LocalPosition</h4>
+  <div class="markdown level1 summary"><p>The position vector along the main XZ axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 LocalPosition { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalPosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalPosition3">LocalPosition3</h4>
+  <div class="markdown level1 summary"><p>The position along all axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LocalPosition3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScale_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScale*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalScale" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScale">LocalScale</h4>
+  <div class="markdown level1 summary"><p>The local scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 LocalScale { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleX">LocalScaleX</h4>
+  <div class="markdown level1 summary"><p>The X local scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalScaleX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleY">LocalScaleY</h4>
+  <div class="markdown level1 summary"><p>The Y local scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalScaleY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalScaleZ">LocalScaleZ</h4>
+  <div class="markdown level1 summary"><p>The Z local scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalScaleZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalToWorld*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalToWorld">LocalToWorld</h4>
+  <div class="markdown level1 summary"><p>Matrix that transforms a point from local space into world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 LocalToWorld { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Matrix4x4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalX">LocalX</h4>
+  <div class="markdown level1 summary"><p>The local X position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalY">LocalY</h4>
+  <div class="markdown level1 summary"><p>The local Y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_LocalZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_LocalZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.LocalZ">LocalZ</h4>
+  <div class="markdown level1 summary"><p>The local Y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LocalZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Orientation_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Orientation*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Orientation" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Orientation">Orientation</h4>
+  <div class="markdown level1 summary"><p>The main orientation around the Y axis. The difference between this and <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">OrientationY</a> is that setting this will snap the X and Y angles to zero while <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">OrientationY</a> will not change them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Orientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationAngles*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationAngles">OrientationAngles</h4>
+  <div class="markdown level1 summary"><p>Get the orientation of this in angles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 OrientationAngles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternion*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternion">OrientationQuaternion</h4>
+  <div class="markdown level1 summary"><p>Get the orientation of this as a quaternion. In most instances, it is easier to work with <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles">OrientationAngles</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Quaternion OrientationQuaternion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionW*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionW">OrientationQuaternionW</h4>
+  <div class="markdown level1 summary"><p>The local W value of the orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">OrientationX</a>, <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">OrientationY</a>, or <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">OrientationZ</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationQuaternionW { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionX">OrientationQuaternionX</h4>
+  <div class="markdown level1 summary"><p>The local X value of the orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">OrientationX</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationQuaternionX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionY">OrientationQuaternionY</h4>
+  <div class="markdown level1 summary"><p>The local Y value of the orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">OrientationY</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationQuaternionY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationQuaternionZ">OrientationQuaternionZ</h4>
+  <div class="markdown level1 summary"><p>The local Z value of the orientation quaternion. If you are looking to get or The angle, you may be looking for <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">OrientationZ</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationQuaternionZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationX_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationX*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationX" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationX">OrientationX</h4>
+  <div class="markdown level1 summary"><p>The X orientation of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationY_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationY*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationY" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationY">OrientationY</h4>
+  <div class="markdown level1 summary"><p>The Y orientation of this. The difference between this and <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a> is that <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a> will snap the X and Z angles to zero while this will keep them the same.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationZ_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationZ*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OrientationZ" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OrientationZ">OrientationZ</h4>
+  <div class="markdown level1 summary"><p>The Z orientation of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float OrientationZ { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Parent_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Parent*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Parent" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>The parent of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Parent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Position_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Position*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Position" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position vector along the main XZ axis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Position3_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Position3*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Position3" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Position3">Position3</h4>
+  <div class="markdown level1 summary"><p>The position along all axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Position3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Right_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Right*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Right" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Right">Right</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the red axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Right { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Root_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Root*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Root" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Root">Root</h4>
+  <div class="markdown level1 summary"><p>The topmost parent of this.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Root { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Scene_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Scene*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Scene" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Scene">Scene</h4>
+  <div class="markdown level1 summary"><p>The Scene that contains the GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Scene Scene { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Scene</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Up_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Up*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Up" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Up">Up</h4>
+  <div class="markdown level1 summary"><p>A normalized vector representing the green axis of the transform in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Up { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.WorldToLocal*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.WorldToLocal">WorldToLocal</h4>
+  <div class="markdown level1 summary"><p>Matrix that transforms a point from world space into local space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 WorldToLocal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Matrix4x4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_X_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.X*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_X" data-uid="KaijuSolutions.Agents.KaijuBehaviour.X">X</h4>
+  <div class="markdown level1 summary"><p>The X position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float X { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Y_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Y*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Y" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Y">Y</h4>
+  <div class="markdown level1 summary"><p>The Y position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Y { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_Z_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Z*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_Z" data-uid="KaijuSolutions.Agents.KaijuBehaviour.Z">Z</h4>
+  <div class="markdown level1 summary"><p>The Z position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Z { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetOrientation">OnPreSetOrientation</h4>
+  <div class="markdown level1 summary"><p>Callback for before the orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnPreSetOrientation</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetOrientationGlobal">OnPreSetOrientationGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for before the orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnPreSetOrientationGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetPosition">OnPreSetPosition</h4>
+  <div class="markdown level1 summary"><p>Callback for before the position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnPreSetPosition</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetPositionGlobal">OnPreSetPositionGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for before the position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnPreSetPositionGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetScale">OnPreSetScale</h4>
+  <div class="markdown level1 summary"><p>Callback for before the scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnPreSetScale</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnPreSetScaleGlobal">OnPreSetScaleGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for before the scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnPreSetScaleGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetOrientation">OnSetOrientation</h4>
+  <div class="markdown level1 summary"><p>Callback for when the orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnSetOrientation</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetOrientationGlobal">OnSetOrientationGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnSetOrientationGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetPosition">OnSetPosition</h4>
+  <div class="markdown level1 summary"><p>Callback for when the position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnSetPosition</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetPositionGlobal">OnSetPositionGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnSetPositionGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetScale" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetScale">OnSetScale</h4>
+  <div class="markdown level1 summary"><p>Callback for when the scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnSetScale</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal" data-uid="KaijuSolutions.Agents.KaijuBehaviour.OnSetScaleGlobal">OnSetScaleGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuBehaviourAction OnSetScaleGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_GameObject__KaijuSolutions_Agents_KaijuBehaviour" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuBehaviour">Implicit(GameObject to KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuBehaviour(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><p>The behaviour attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__GameObject" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~GameObject">Implicit(KaijuBehaviour to GameObject)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator GameObject(KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> of the behaviour.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__Quaternion" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~Quaternion">Implicit(KaijuBehaviour to Quaternion)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Quaternion from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">OrientationQuaternion</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Quaternion(KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Quaternion</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Boolean" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Boolean">Implicit(KaijuBehaviour to Boolean)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Boolean if the behaviour is active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator bool (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The behaviour.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the behaviour is active.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Double" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Double">Implicit(KaijuBehaviour to Double)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a double from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator double (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_Quaternion_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{Quaternion}">Implicit(KaijuBehaviour to Nullable&lt;Quaternion&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Quaternion from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">OrientationQuaternion</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Quaternion? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Quaternion</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">Position3</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{System.Boolean}">Implicit(KaijuBehaviour to Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Boolean if the behaviour is active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator bool? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The behaviour.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>If the behaviour is active.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_System_Double_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{System.Double}">Implicit(KaijuBehaviour to Nullable&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable double from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator double? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_System_Single_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{System.Single}">Implicit(KaijuBehaviour to Nullable&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable float from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator float? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_Vector2_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{Vector2}">Implicit(KaijuBehaviour to Nullable&lt;Vector2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector2 from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Nullable_Vector3_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Nullable{Vector3}">Implicit(KaijuBehaviour to Nullable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector3 from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">Position3</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3? (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">Position3</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_Single" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.Single">Implicit(KaijuBehaviour to Single)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a float from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator float (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">Orientation</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__System_String" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~System.String">Implicit(KaijuBehaviour to String)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string (KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.KaijuBehaviour.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__Transform" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~Transform">Implicit(KaijuBehaviour to Transform)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Transform(KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> of the behaviour.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__Vector2" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~Vector2">Implicit(KaijuBehaviour to Vector2)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector2 from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2(KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_KaijuSolutions_Agents_KaijuBehaviour__Vector3" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(KaijuSolutions.Agents.KaijuBehaviour)~Vector3">Implicit(KaijuBehaviour to Vector3)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector3 from the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">Position3</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(KaijuBehaviour b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The agent&apos;s <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">Position</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuBehaviour_op_Implicit_Transform__KaijuSolutions_Agents_KaijuBehaviour" data-uid="KaijuSolutions.Agents.KaijuBehaviour.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuBehaviour">Implicit(Transform to KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuBehaviour(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><p>The behaviour attached to the <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

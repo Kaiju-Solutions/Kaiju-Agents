@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuCastSensor | Kaiju Multiplayer Engine</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuCastSensor | Kaiju Multiplayer Engine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor" class="text-break">Class KaijuCastSensor
+  </h1>
+  <div class="markdown level0 summary"><p>Sensor to perform ray or sphere casts.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></div>
+    <div class="level3"><span class="xref">KaijuCastSensor</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnSense">KaijuSensor.OnSense</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnSenseGlobal">KaijuSensor.OnSenseGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabled">KaijuSensor.OnEnabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabledGlobal">KaijuSensor.OnEnabledGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabled">KaijuSensor.OnDisabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabledGlobal">KaijuSensor.OnDisabledGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_automatic">KaijuSensor.automatic</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">KaijuSensor.Agent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Sense">KaijuSensor.Sense()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal">KaijuBehaviour.OnPreSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition">KaijuBehaviour.OnSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal">KaijuBehaviour.OnSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation">KaijuBehaviour.OnPreSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal">KaijuBehaviour.OnPreSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation">KaijuBehaviour.OnSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal">KaijuBehaviour.OnSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale">KaijuBehaviour.OnPreSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal">KaijuBehaviour.OnPreSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScale">KaijuBehaviour.OnSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal">KaijuBehaviour.OnSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">KaijuBehaviour.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">KaijuBehaviour.Position3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition">KaijuBehaviour.LocalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3">KaijuBehaviour.LocalPosition3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_X">KaijuBehaviour.X</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalX">KaijuBehaviour.LocalX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Y">KaijuBehaviour.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalY">KaijuBehaviour.LocalY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Z">KaijuBehaviour.Z</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalZ">KaijuBehaviour.LocalZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">KaijuBehaviour.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">KaijuBehaviour.LocalOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles">KaijuBehaviour.OrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles">KaijuBehaviour.LocalOrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">KaijuBehaviour.OrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion">KaijuBehaviour.LocalOrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">KaijuBehaviour.OrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">KaijuBehaviour.LocalOrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">KaijuBehaviour.OrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">KaijuBehaviour.LocalOrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">KaijuBehaviour.OrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">KaijuBehaviour.LocalOrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX">KaijuBehaviour.OrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX">KaijuBehaviour.LocalOrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY">KaijuBehaviour.OrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY">KaijuBehaviour.LocalOrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ">KaijuBehaviour.OrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ">KaijuBehaviour.LocalOrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW">KaijuBehaviour.OrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW">KaijuBehaviour.LocalOrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScale">KaijuBehaviour.LocalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX">KaijuBehaviour.LocalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY">KaijuBehaviour.LocalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ">KaijuBehaviour.LocalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScale">KaijuBehaviour.GlobalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX">KaijuBehaviour.GlobalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY">KaijuBehaviour.GlobalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ">KaijuBehaviour.GlobalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld">KaijuBehaviour.LocalToWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal">KaijuBehaviour.WorldToLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Up">KaijuBehaviour.Up</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Down">KaijuBehaviour.Down</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Right">KaijuBehaviour.Right</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Left">KaijuBehaviour.Left</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Parent">KaijuBehaviour.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Root">KaijuBehaviour.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ChildCount">KaijuBehaviour.ChildCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HasChanged">KaijuBehaviour.HasChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount">KaijuBehaviour.HierarchyCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity">KaijuBehaviour.HierarchyCapacity</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Layer">KaijuBehaviour.Layer</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ComponentCount">KaijuBehaviour.ComponentCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy">KaijuBehaviour.ActiveInHierarchy</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf">KaijuBehaviour.ActiveSelf</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_IsStatic">KaijuBehaviour.IsStatic</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Sensors.html">KaijuSolutions.Agents.Sensors</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuCastSensor : KaijuSensor</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_mask" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.mask">mask</h4>
+  <div class="markdown level1 summary"><p>What layers to collide with on the casts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask mask</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">LayerMask</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_triggers" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.triggers">triggers</h4>
+  <div class="markdown level1 summary"><p>How casts should handle hitting triggers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryTriggerInteraction triggers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Angle_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Angle*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Angle" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Angle">Angle</h4>
+  <div class="markdown level1 summary"><p>What angle to cast along.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Angle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Casts_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Casts*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Casts" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Casts">Casts</h4>
+  <div class="markdown level1 summary"><p>The number of casts to make. These will be evenly distributed across the <span class="xref">KaijuSolutions.Agents.Sensors.KaijuCastSensor.angle</span>, unless there is only one cast in which case it will cast directly forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Casts { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance">Distance</h4>
+  <div class="markdown level1 summary"><p>How far to cast.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Hits*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Hits">Hits</h4>
+  <div class="markdown level1 summary"><p>The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;RaycastHit?&gt; Hits { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HitsTotal_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HitsTotal*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HitsTotal" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HitsTotal">HitsTotal</h4>
+  <div class="markdown level1 summary"><p>The total number of casts which hit something.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HitsTotal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions">Positions</h4>
+  <div class="markdown level1 summary"><p>The positions corresponding to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>, with <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> that missed being set to the maximum casting distance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3&gt; Positions { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius">Radius</h4>
+  <div class="markdown level1 summary"><p>The radius of the casts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Radius { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Reset_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Reset*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Reset" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Perform any needed resetting of the sensor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Reset()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Reset">KaijuSensor.Reset()</a></div>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run">Run()</h4>
+  <div class="markdown level1 summary"><p>Run the sensor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Run()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Run">KaijuSensor.Run()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

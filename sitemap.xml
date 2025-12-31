@@ -1,134 +1,272 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Distance3Sorter.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.DistanceSorter.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgentAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgentMovementAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgents.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgentSensorAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgentsManager.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgentType.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuBehaviour.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuBehaviourAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuCharacterAgent.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuMovementAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuNavigationAgent.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuRadiusAgent.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuSensorAction.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuTransformAgent.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuAreaMovement.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuFleeMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuLeavingMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuSeekMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuTargetMovement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuWanderMovement.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuSensor.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.html</loc>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/api/KaijuSolutions.Agents.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/changelog/index.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/contact/index.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/index.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/license/index.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://multiplayer.kaijusolutions.ca/manual/getting-started.html</loc>
-    <lastmod>2025-12-21T11:41:01+00:00</lastmod>
+    <lastmod>2025-12-31T06:39:15+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

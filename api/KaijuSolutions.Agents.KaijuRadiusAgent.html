@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuTransformAgent | Kaiju Multiplayer Engine</title>
+    <title>Class KaijuRadiusAgent | Kaiju Multiplayer Engine</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuTransformAgent | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Class KaijuRadiusAgent | Kaiju Multiplayer Engine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,12 +76,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuTransformAgent">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent">
   
   
-  <h1 id="KaijuSolutions_Agents_KaijuTransformAgent" data-uid="KaijuSolutions.Agents.KaijuTransformAgent" class="text-break">Class KaijuTransformAgent
+  <h1 id="KaijuSolutions_Agents_KaijuRadiusAgent" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent" class="text-break">Class KaijuRadiusAgent
   </h1>
-  <div class="markdown level0 summary"><p>Kaiju Agent which moves via the <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+  <div class="markdown level0 summary"><p>An agent type which tries to get its radius from colliders or otherwise manually assigns them.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -89,20 +89,12 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
     <div class="level2"><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></div>
-    <div class="level3"><a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html">KaijuRadiusAgent</a></div>
-    <div class="level4"><span class="xref">KaijuTransformAgent</span></div>
+    <div class="level3"><span class="xref">KaijuRadiusAgent</span></div>
+      <div class="level4"><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></div>
+      <div class="level4"><a class="xref" href="KaijuSolutions.Agents.KaijuTransformAgent.html">KaijuTransformAgent</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html#KaijuSolutions_Agents_KaijuRadiusAgent_Radius">KaijuRadiusAgent.Radius</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html#KaijuSolutions_Agents_KaijuRadiusAgent_GetRadius">KaijuRadiusAgent.GetRadius()</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html#KaijuSolutions_Agents_KaijuRadiusAgent_Setup">KaijuRadiusAgent.Setup()</a>
-    </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnMoveSpeed">KaijuAgent.OnMoveSpeed</a>
     </div>
@@ -407,6 +399,9 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ObstacleAvoidance_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Nullable_LayerMask__System_Single_System_Boolean_">KaijuAgent.ObstacleAvoidance(Single, Single, Single, Single, Single, Single, Nullable&lt;LayerMask&gt;, Single, Boolean)</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Move_System_Single_">KaijuAgent.Move(Single)</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensor__1_ISet___0__System_Boolean_">KaijuAgent.GetSensor&lt;T&gt;(ISet&lt;T&gt;, Boolean)</a>
     </div>
     <div>
@@ -643,41 +638,76 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_KaijuTransformAgent_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_KaijuRadiusAgent_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class KaijuTransformAgent : KaijuRadiusAgent</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class KaijuRadiusAgent : KaijuAgent</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
   </h3>
-  <a id="KaijuSolutions_Agents_KaijuTransformAgent_Move_" data-uid="KaijuSolutions.Agents.KaijuTransformAgent.Move*"></a>
-  <h4 id="KaijuSolutions_Agents_KaijuTransformAgent_Move_System_Single_" data-uid="KaijuSolutions.Agents.KaijuTransformAgent.Move(System.Single)">Move(Single)</h4>
-  <div class="markdown level1 summary"><p>Perform agent movement.</p>
+  <a id="KaijuSolutions_Agents_KaijuRadiusAgent_Radius_" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.Radius*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRadiusAgent_Radius" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.Radius">Radius</h4>
+  <div class="markdown level1 summary"><p>The radius of this agent. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void Move(float delta)</code></pre>
+    <pre><code class="lang-csharp hljs">public float Radius { get; set; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><span class="xref">System.Single</span></td>
-        <td><span class="parametername">delta</span></td>
-        <td><p>The time step.</p>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuRadiusAgent_GetRadius_" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.GetRadius*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRadiusAgent_GetRadius" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.GetRadius">GetRadius()</h4>
+  <div class="markdown level1 summary"><p>Get the radius of an agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override float GetRadius()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The radius of the agent.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Move_System_Single_">KaijuAgent.Move(Single)</a></div>
+  <div><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetRadius">KaijuAgent.GetRadius()</a></div>
+  <a id="KaijuSolutions_Agents_KaijuRadiusAgent_Setup_" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.Setup*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRadiusAgent_Setup" data-uid="KaijuSolutions.Agents.KaijuRadiusAgent.Setup">Setup()</h4>
+  <div class="markdown level1 summary"><p>Initialize the agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Setup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Setup">KaijuAgent.Setup()</a></div>
 </article>
           </div>
           

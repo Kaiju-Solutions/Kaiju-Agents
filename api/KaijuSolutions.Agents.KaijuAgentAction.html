@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuMovementManager | Kaiju Multiplayer Engine</title>
+    <title>Delegate KaijuAgentAction | Kaiju Multiplayer Engine</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuMovementManager | Kaiju Multiplayer Engine ">
+    <meta name="title" content="Delegate KaijuAgentAction | Kaiju Multiplayer Engine ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,78 +76,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuAgentAction">
   
   
-  <h1 id="KaijuSolutions_Agents_Movement_KaijuMovementManager" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager" class="text-break">Class KaijuMovementManager
+  <h1 id="KaijuSolutions_Agents_KaijuAgentAction" data-uid="KaijuSolutions.Agents.KaijuAgentAction" class="text-break">Delegate KaijuAgentAction
   </h1>
-  <div class="markdown level0 summary"><p>Cache movement objects for reuse.</p>
+  <div class="markdown level0 summary"><p>An action for an agent.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">KaijuMovementManager</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_KaijuAgentAction_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class KaijuMovementManager</code></pre>
-  </div>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Get*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Get__1" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Get``1">Get&lt;T&gt;()</h4>
-  <div class="markdown level1 summary"><p>Get a movement instance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Get&lt;T&gt;()
-    where T : KaijuMovement</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><p>An instance of the movement.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of movement.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Return_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Return*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_Return__1___0_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.Return``1(``0)">Return&lt;T&gt;(T)</h4>
-  <div class="markdown level1 summary"><p>Return a movement to the cache.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Return&lt;T&gt;(T movement)
-    where T : KaijuMovement</code></pre>
+    <pre><code class="lang-csharp hljs">public delegate void KaijuAgentAction(KaijuAgent agent);</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -160,25 +101,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">movement</span></td>
-        <td><p>The movement being returned.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of movement.</p>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent.</p>
 </td>
       </tr>
     </tbody>

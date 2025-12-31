@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuWanderMovement | Kaiju Multiplayer Engine</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuWanderMovement | Kaiju Multiplayer Engine ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement" class="text-break">Class KaijuWanderMovement
+  </h1>
+  <div class="markdown level0 summary"><p>Wander steering behaviour.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></div>
+    <div class="level2"><span class="xref">KaijuWanderMovement</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted">KaijuMovement.OnStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStartedGlobal">KaijuMovement.OnStartedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStopped">KaijuMovement.OnStopped</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStoppedGlobal">KaijuMovement.OnStoppedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformed">KaijuMovement.OnPerformed</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformedGlobal">KaijuMovement.OnPerformedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">KaijuMovement.Agent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Weight">KaijuMovement.Weight</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_">KaijuMovement.Initialize(KaijuAgent, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Started">KaijuMovement.Started()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Stopped">KaijuMovement.Stopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Performed">KaijuMovement.Performed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Done">KaijuMovement.Done()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Return">KaijuMovement.Return()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuWanderMovement : KaijuMovement</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single)">KaijuWanderMovement(KaijuAgent, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a wonder movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuWanderMovement(KaijuAgent agent, float distance = 5F, float radius = 1F, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>How far out to generate the wander circle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius of the wander circle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Center*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Center">Center</h4>
+  <div class="markdown level1 summary"><p>The center point of the circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Center { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center3_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Center3*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center3" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Center3">Center3</h4>
+  <div class="markdown level1 summary"><p>The center point of the circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Center3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Distance_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Distance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Distance" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Distance">Distance</h4>
+  <div class="markdown level1 summary"><p>How far out to generate the wander circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Radius_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Radius*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Radius" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Radius">Radius</h4>
+  <div class="markdown level1 summary"><p>The radius of the wander circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Radius { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Target*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Target">Target</h4>
+  <div class="markdown level1 summary"><p>The target calculated along the circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Target { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target3_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Target3*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target3" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Target3">Target3</h4>
+  <div class="markdown level1 summary"><p>The target calculated along the circle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Target3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single)">Get(KaijuAgent, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a wander movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuWanderMovement Get(KaijuAgent agent, float distance = 5F, float radius = 1F, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this will be assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>How far out to generate the wander circle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius of the wander circle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a></td>
+        <td><p>Get a wander movement for the agent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Move*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Get the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector2 Move(Vector2 position, float delta)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">delta</span></td>
+        <td><p>The time step.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The calculated movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move_Vector2_System_Single_">KaijuMovement.Move(Vector2, Single)</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Reset_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Reset*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Reset" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Perform any needed reset operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Reset()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Reset">KaijuMovement.Reset()</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Setup_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Setup*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Setup" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Setup">Setup()</h4>
+  <div class="markdown level1 summary"><p>Handle any additional setup.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Setup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Setup">KaijuMovement.Setup()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
