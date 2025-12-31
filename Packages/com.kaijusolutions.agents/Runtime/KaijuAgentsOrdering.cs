@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents
@@ -74,6 +76,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (Transform target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance(target);
                 if (nearest != null && current >= distance)
                 {
@@ -100,6 +107,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (T target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance(target);
                 if (nearest != null && current >= distance)
                 {
@@ -126,6 +138,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (GameObject target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance(target);
                 if (nearest != null && current >= distance)
                 {
@@ -326,6 +343,42 @@ namespace KaijuSolutions.Agents
         /// <param name="targets">The targets to get the nearest of.</param>
         /// <param name="distance">The distance to the nearest target.</param>
         /// <returns>The nearest instance from the targets to the position. Will be the starting position if the targets list is empty.</returns>
+        public static Vector3 Nearest3(this Vector2 position, [NotNull] IEnumerable<Vector3> targets, out float distance) => position.Expand().Nearest3(targets, out distance);
+        
+        /// <summary>
+        /// The nearest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <param name="distance">The distance to the nearest target.</param>
+        /// <returns>The nearest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static Transform Nearest3(this Vector2 position, [NotNull] IEnumerable<Transform> targets, out float distance) => position.Expand().Nearest3(targets, out distance);
+        
+        /// <summary>
+        /// The nearest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <param name="distance">The distance to the nearest target.</param>
+        /// <returns>The nearest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static T Nearest3<T>(this Vector2 position, [NotNull] IEnumerable<T> targets, out float distance) where T : Component => position.Expand().Nearest3(targets, out distance);
+        
+        /// <summary>
+        /// The nearest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <param name="distance">The distance to the nearest target.</param>
+        /// <returns>The nearest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static GameObject Nearest3(this Vector2 position, [NotNull] IEnumerable<GameObject> targets, out float distance) => position.Expand().Nearest3(targets, out distance);
+        
+        /// <summary>
+        /// The nearest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the nearest target instance to.</param>
+        /// <param name="targets">The targets to get the nearest of.</param>
+        /// <param name="distance">The distance to the nearest target.</param>
+        /// <returns>The nearest instance from the targets to the position. Will be the starting position if the targets list is empty.</returns>
         public static Vector3 Nearest3(this Vector3 position, [NotNull] IEnumerable<Vector3> targets, out float distance)
         {
             Vector3? nearest = null;
@@ -358,6 +411,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (Transform target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance3(target);
                 if (nearest != null && current >= distance)
                 {
@@ -384,6 +442,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (T target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance3(target);
                 if (nearest != null && current >= distance)
                 {
@@ -410,6 +473,11 @@ namespace KaijuSolutions.Agents
             distance = float.MaxValue;
             foreach (GameObject target in targets)
             {
+                if (target == null)
+                {
+                    continue;
+                }
+                
                 float current = position.Distance3(target);
                 if (nearest != null && current >= distance)
                 {
@@ -839,7 +907,43 @@ namespace KaijuSolutions.Agents
         /// <param name="targets">The targets to get the farthest from.</param>
         /// <param name="distance">The distance to the farthest target.</param>
         /// <returns>The farthest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
-        public static GameObject Farthest([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, out float distance) => position.transform.position.Flatten().Farthest(targets, out distance);
+        public static GameObject Farthest([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, out float distance) => position.transform.position.Flatten().Farthest(targets, out distance);       
+        
+        /// <summary>
+        /// The farthest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the farthest target instance from.</param>
+        /// <param name="targets">The targets to get the farthest from.</param>
+        /// <param name="distance">The distance to the farthest target.</param>
+        /// <returns>The farthest instance from the targets to the position. Will be the starting position if the targets list is empty.</returns>
+        public static Vector3 Farthest3(this Vector2 position, [NotNull] IEnumerable<Vector3> targets, out float distance) => position.Expand().Farthest3(targets, out distance);        
+        
+        /// <summary>
+        /// The farthest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the farthest target instance from.</param>
+        /// <param name="targets">The targets to get the farthest from.</param>
+        /// <param name="distance">The distance to the farthest target.</param>
+        /// <returns>The farthest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static Transform Farthest3(this Vector2 position, [NotNull] IEnumerable<Transform> targets, out float distance) => position.Expand().Farthest3(targets, out distance);
+        
+        /// <summary>
+        /// The farthest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the farthest target instance from.</param>
+        /// <param name="targets">The targets to get the farthest from.</param>
+        /// <param name="distance">The distance to the farthest target.</param>
+        /// <returns>The farthest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static T Farthest3<T>(this Vector2 position, [NotNull] IEnumerable<T> targets, out float distance) where T : Component => position.Expand().Farthest3(targets, out distance);
+        
+        /// <summary>
+        /// The farthest instance across all three axes to a position.
+        /// </summary>
+        /// <param name="position">The position to get the farthest target instance from.</param>
+        /// <param name="targets">The targets to get the farthest from.</param>
+        /// <param name="distance">The distance to the farthest target.</param>
+        /// <returns>The farthest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
+        public static GameObject Farthest3(this Vector2 position, [NotNull] IEnumerable<GameObject> targets, out float distance) => position.Expand().Farthest3(targets, out distance);
         
         /// <summary>
         /// The farthest instance across all three axes to a position.
@@ -1052,5 +1156,271 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance to the farthest target.</param>
         /// <returns>The farthest instance from the targets to the position. Will be NULL if the targets list is empty.</returns>
         public static GameObject Farthest3([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, out float distance) => position.transform.position.Farthest3(targets, out distance);
+        
+        /// <summary>
+        /// The sorter for Vector2 distance in descending order.
+        /// </summary>
+        private static readonly DistanceSorter Sorter = new ();
+        
+        /// <summary>
+        /// Sort targets from a position.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance(this Vector2 position, [NotNull] Vector2[] targets, bool farthest = false)
+        {
+            Sorter.Set(position, farthest);
+            Array.Sort(targets, Sorter);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static void SortDistance(this Vector2 position, [NotNull] List<Vector2> targets, bool farthest = false)
+        {
+            Sorter.Set(position, farthest);
+            targets.Sort(Sorter);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public static Vector2[] SortDistance(this Vector2 position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        {
+            Sorter.Set(position, farthest);
+            return targets.OrderBy(x => x, Sorter).ToArray();
+        }
+    }
+    
+    /// <summary>
+    /// Sort by distance.
+    /// </summary>
+    public sealed class DistanceSorter : IComparer<Vector2>, IComparer<Vector3>, IComparer<Transform>, IComparer<Component>, IComparer<GameObject>
+    {
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Vector3 Position3
+        {
+            get => Position.Expand();
+            set => Position = value.Flatten();
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Transform PositionTransform
+        {
+            set => Position = value.Flatten();
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Transform PositionComponent
+        {
+            set => Position = value.Flatten();
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Transform PositionGameObject
+        {
+            set => Position = value.Flatten();
+        }
+        
+        /// <summary>
+        /// The position to compare against.
+        /// </summary>
+        public Vector2 Position;
+        
+        /// <summary>
+        /// If this should sort by farthest items first.
+        /// </summary>
+        public bool Farthest;
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        public DistanceSorter()
+        {
+            Position = Vector2.zero;
+            Farthest = false;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public DistanceSorter(Vector2 position, bool farthest = false)
+        {
+            Position = position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public DistanceSorter(Vector3 position, bool farthest = false)
+        {
+            Position = position.Flatten();
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public DistanceSorter([NotNull] Transform position, bool farthest = false)
+        {
+            Position = position.Flatten();
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public DistanceSorter([NotNull] Component position, bool farthest = false)
+        {
+            Position = position.Flatten();
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Create the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public DistanceSorter([NotNull] GameObject position, bool farthest = false)
+        {
+            Position = position.Flatten();
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set(Vector2 position, bool farthest = false)
+        {
+            Position = position;
+            Farthest = farthest;
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set(Vector3 position, bool farthest = false)
+        {
+            Set(position.Flatten(), farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] Transform position, bool farthest = false)
+        {
+            Set(position.Flatten(), farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] Component position, bool farthest = false)
+        {
+            Set(position.Flatten(), farthest);
+        }
+        
+        /// <summary>
+        /// Set values for the sorter.
+        /// </summary>
+        /// <param name="position">The position to compare against.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        public void Set([NotNull] GameObject position, bool farthest = false)
+        {
+            Set(position.Flatten(), farthest);
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Vector2 x, Vector2 y)
+        {
+            float a = Position.Distance(x);
+            float b = Position.Distance(y);
+            int order = a < b ? -1 : b < a ? 1 : 0;
+            return Farthest ? -order : order;
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Vector3 x, Vector3 y)
+        {
+            return Compare(x.Flatten(), y.Flatten());
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Transform x, Transform y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.Flatten(), y.Flatten());
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(Component x, Component y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.Flatten(), y.Flatten());
+        }
+        
+        /// <summary>
+        /// Compare the two instances.
+        /// </summary>
+        /// <param name="x">The first instance.</param>
+        /// <param name="y">The second instance.</param>
+        /// <returns>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</returns>
+        public int Compare(GameObject x, GameObject y)
+        {
+            // NULL entries come last.
+            return x == null ? y == null ? 0 : 1 : y == null ? -1 : Compare(x.Flatten(), y.Flatten());
+        }
     }
 }
