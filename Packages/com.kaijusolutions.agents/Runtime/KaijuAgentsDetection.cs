@@ -2772,6 +2772,45 @@ namespace KaijuSolutions.Agents
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector2 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcRaycast(direction.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector2 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector2 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
         public static int ArcRaycast(this Vector3 position, Vector2 direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcRaycast(direction.Expand(), hits, angle, distance, mask, triggers);
         
         /// <summary>
@@ -2844,6 +2883,45 @@ namespace KaijuSolutions.Agents
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector3 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcRaycast(direction.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector3 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast(this Vector3 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
         public static int ArcRaycast([NotNull] this Transform position, Vector2 direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcRaycast(direction.Expand(), hits, angle, distance, mask, triggers);
         
         /// <summary>
@@ -2858,6 +2936,45 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
         public static int ArcRaycast([NotNull] this Transform position, Vector3 direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcRaycast(direction, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Transform position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcRaycast(direction.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Transform position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Transform position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
@@ -2900,6 +3017,45 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
         /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Component position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Component position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this Component position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
         /// <param name="position">The starting position of the cast which will be cast in its forward direction.</param>
         /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
         /// <param name="angle">The angle of the arc in degrees.</param>
@@ -2938,6 +3094,45 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
         public static int ArcRaycast([NotNull] this GameObject position, Vector3 direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this GameObject position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this GameObject position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
+        
+        /// <summary>
+        /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
+        /// </summary>
+        /// <param name="position">The starting position of the cast.</param>
+        /// <param name="direction">The direction denoting the center of the arc of casts.</param>
+        /// <param name="hits">The hits detected from the arc, stored from left to right.</param>
+        /// <param name="angle">The angle of the arc in degrees.</param>
+        /// <param name="distance">The distance for the casts.</param>
+        /// <param name="mask">The optional layer mask.</param>
+        /// <param name="triggers">How the casts should handle hitting triggers.</param>
+        /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
+        public static int ArcRaycast([NotNull] this GameObject position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcRaycast(direction.transform.forward, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple raycasts given by the length of the hits array evenly spread across the angle given.
