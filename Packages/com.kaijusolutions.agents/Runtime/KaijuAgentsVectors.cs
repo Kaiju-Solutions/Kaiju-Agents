@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// General Kaiju Agents functions.
+    /// General Kaiju Agents functions. The majority of this class contains extension methods for vectors, transforms, components, and GameObjects.
     /// </summary>
     public static partial class KaijuAgents
     {
