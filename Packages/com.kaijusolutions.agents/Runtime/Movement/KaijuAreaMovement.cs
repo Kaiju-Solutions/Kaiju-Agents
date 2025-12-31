@@ -168,7 +168,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Render the visualization of the movement.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations(Vector3 position)
+        protected override void EditorRenderVisualizations(Vector3 position)
         {
             Handles.DrawWireDisc(position, Vector3.up, Distance, 0);
         }

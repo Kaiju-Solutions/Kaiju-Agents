@@ -260,13 +260,13 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected override Color VisualizationColor() => KaijuMovementManager.ObstacleAvoidanceColor;
+        protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorObstacleAvoidanceColor;
         
         /// <summary>
         /// Render the visualization of the movement.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations(Vector3 position)
+        protected override void EditorRenderVisualizations(Vector3 position)
         {
             position += new Vector3(0, Height, 0);
             foreach (RaycastHit hit in _hits)

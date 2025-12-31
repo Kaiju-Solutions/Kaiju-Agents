@@ -117,7 +117,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        public virtual void Visualize(Vector3 position) { }
+        public virtual void EditorVisualize(Vector3 position) { }
 #endif
         /// <summary>
         /// Get a description of the object.

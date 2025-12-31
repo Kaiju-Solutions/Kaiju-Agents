@@ -71,48 +71,44 @@ namespace KaijuSolutions.Agents
         /// Helper empty agents array for returning defaults.
         /// </summary>
         private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
-        /// <summary>
-        /// Cache to help reduce garbage with single identifier methods.
-        /// </summary>
-        private static readonly uint[] SingleCache = { 0 };
 #if UNITY_EDITOR
         /// <summary>
-        /// All currently selected agents.
+        /// All currently selected agents in the editor.
         /// </summary>
-        private readonly HashSet<KaijuAgent> _selectedAgents = new();
+        private readonly HashSet<KaijuAgent> _editorSelectedAgents = new();
         
         /// <summary>
-        /// Add a label of text in the scene view.
+        /// Add a label of text in the scene view in the editor.
         /// </summary>
         /// <param name="position">The position to set it at.</param>
         /// <param name="text">The label itself</param>
-        public static void Label(Vector3 position, [NotNull] string text)
+        public static void EditorLabel(Vector3 position, [NotNull] string text)
         {
-            Handles.Label(position + new Vector3(0, LabelOffset, 0), text, AgentsLabelStyle);
+            Handles.Label(position + new Vector3(0, EditorLabelOffset, 0), text, EditorAgentsLabelStyle);
         }
         
         /// <summary>
-        /// Add a label of text in the scene view.
+        /// Add a label of text in the scene view in the editor.
         /// </summary>
         /// <param name="position">The position to set it at.</param>
         /// <param name="text">The label itself</param>
         /// <param name="color">The color for the text.</param>
-        public static void Label(Vector3 position, [NotNull] string text, Color color)
+        public static void EditorLabel(Vector3 position, [NotNull] string text, Color color)
         {
-            AgentsLabelStyle.normal.textColor = color;
-            _agentsLabelStyle.active.textColor = color;
-            _agentsLabelStyle.hover.textColor = color;
-            Handles.Label(position + new Vector3(0, LabelOffset, 0), text, _agentsLabelStyle);
+            EditorAgentsLabelStyle.normal.textColor = color;
+            _editorAgentsLabelStyle.active.textColor = color;
+            _editorAgentsLabelStyle.hover.textColor = color;
+            Handles.Label(position + new Vector3(0, EditorLabelOffset, 0), text, _editorAgentsLabelStyle);
         }
         
         /// <summary>
-        /// The label style to use for handles.
+        /// The label style to use for handles in the editor.
         /// </summary>
-        private static GUIStyle AgentsLabelStyle
+        private static GUIStyle EditorAgentsLabelStyle
         {
             get
             {
-                _agentsLabelStyle ??= new(GUI.skin.label)
+                _editorAgentsLabelStyle ??= new(GUI.skin.label)
                 {
                     normal =
                     {
@@ -131,93 +127,93 @@ namespace KaijuSolutions.Agents
                     alignment = TextAnchor.MiddleCenter
                 };
                 
-                return _agentsLabelStyle;
+                return _editorAgentsLabelStyle;
             }
         }
         
         /// <summary>
-        /// The label style to use for handles.
+        /// The label style to use for handles in the editor.
         /// </summary>
-        private static GUIStyle _agentsLabelStyle;
+        private static GUIStyle _editorAgentsLabelStyle;
         
         /// <summary>
-        /// The key for how much to offset labels.
+        /// The key for how much to offset labels in the editor.
         /// </summary>
-        private const string OffsetKey = "KAIJU_AGENTS_LABEL_OFFSET";
+        private const string EditorOffsetKey = "KAIJU_AGENTS_LABEL_OFFSET";
         
         /// <summary>
-        /// The offset for label placement.
+        /// The offset for label placement in the editor.
         /// </summary>
-        public static float LabelOffset
+        public static float EditorLabelOffset
         {
-            get => _labelOffset ?? EditorPrefs.GetFloat(OffsetKey, 2.5f);
+            get => _editorLabelOffset ?? EditorPrefs.GetFloat(EditorOffsetKey, 2.5f);
             set
             {
-                _labelOffset = value;
-                EditorPrefs.SetFloat(OffsetKey, _labelOffset.Value);
+                _editorLabelOffset = value;
+                EditorPrefs.SetFloat(EditorOffsetKey, _editorLabelOffset.Value);
             }
         }
         
         /// <summary>
-        /// The offset for label placement.
+        /// The offset for label placement in the editor.
         /// </summary>
-        private static float? _labelOffset;
+        private static float? _editorLabelOffset;
         
         /// <summary>
-        /// Reset the offset for label placement.
+        /// Reset the offset for label placement in the editor.
         /// </summary>
-        public static void ResetLabelOffset()
+        public static void EditorResetLabelOffset()
         {
-            EditorPrefs.DeleteKey(OffsetKey);
+            EditorPrefs.DeleteKey(EditorOffsetKey);
         }
         
         /// <summary>
-        /// The key for what color <see cref="KaijuAgent"/> visualizations should be.
+        /// The key for what color <see cref="KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
-        private const string AgentKey = "KAIJU_AGENTS_COLOR_AGENT";
+        private const string EditorAgentKey = "KAIJU_AGENTS_COLOR_AGENT";
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> visualizations should be.
+        /// What color <see cref="KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
-        public static Color AgentColor
+        public static Color EditorAgentColor
         {
             get
             {
-                if (_agentColor.HasValue)
+                if (_editorAgentColor.HasValue)
                 {
-                    return _agentColor.Value;
+                    return _editorAgentColor.Value;
                 }
                 
-                _agentColor = LoadColor(AgentKey, Color.white);
-                return _agentColor.Value;
+                _editorAgentColor = EditorLoadColor(EditorAgentKey, Color.white);
+                return _editorAgentColor.Value;
             }
             set
             {
-                _agentColor = value;
-                SaveColor(AgentKey, _agentColor.Value);
+                _editorAgentColor = value;
+                EditorSaveColor(EditorAgentKey, _editorAgentColor.Value);
             }
         }
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> visualizations should be.
+        /// What color <see cref="KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
-        private static Color? _agentColor;
+        private static Color? _editorAgentColor;
         
         /// <summary>
-        /// Reset the seek color.
+        /// Reset the agent color in the editor.
         /// </summary>
-        public static void ResetAgentColor()
+        public static void EditorResetAgentColor()
         {
-            ResetColor(AgentKey);
+            EditorResetColor(EditorAgentKey);
         }
         
         /// <summary>
-        /// Load a color from preferences.
+        /// Load a color from preferences in the editor.
         /// </summary>
         /// <param name="key">The color key to retrieve.</param>
         /// <param name="fallback">The fallback color if this is a default value.</param>
         /// <returns>The color loaded from preferences.</returns>
-        public static Color LoadColor([NotNull] string key, Color fallback)
+        public static Color EditorLoadColor([NotNull] string key, Color fallback)
         {
             float r = EditorPrefs.GetFloat($"{key}_R", fallback.r);
             float g = EditorPrefs.GetFloat($"{key}_G", fallback.g);
@@ -227,11 +223,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Save a color to preferences.
+        /// Save a color to preferences in the editor.
         /// </summary>
         /// <param name="key">The color key to save.</param>
         /// <param name="color">The color to set.</param>
-        public static void SaveColor([NotNull] string key, Color color)
+        public static void EditorSaveColor([NotNull] string key, Color color)
         {
             EditorPrefs.SetFloat($"{key}_R", color.r);
             EditorPrefs.SetFloat($"{key}_G", color.g);
@@ -240,10 +236,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Reset a color to preferences.
+        /// Reset a color to preferences in the editor.
         /// </summary>
         /// <param name="key">The color key to reset.</param>
-        public static void ResetColor([NotNull] string key)
+        public static void EditorResetColor([NotNull] string key)
         {
             EditorPrefs.DeleteKey($"{key}_R");
             EditorPrefs.DeleteKey($"{key}_G");
@@ -263,8 +259,8 @@ namespace KaijuSolutions.Agents
             PhysicsAgents.Clear();
             AgentIdentifiers.Clear();
             DisabledAgents.Clear();
-            _ = AgentColor;
-            _agentsLabelStyle = null;
+            _ = EditorAgentColor;
+            _editorAgentsLabelStyle = null;
         }
 #endif
         /// <summary>
@@ -344,7 +340,7 @@ namespace KaijuSolutions.Agents
 #if UNITY_EDITOR
             if (_instance)
             {
-                _instance._selectedAgents.Remove(agent);
+                _instance._editorSelectedAgents.Remove(agent);
             }
 #endif
         }
@@ -459,7 +455,7 @@ namespace KaijuSolutions.Agents
         /// Validate the identifiers of an agent in the editor. There is no use for manually calling this.
         /// </summary>
         /// <param name="agent">The agent.</param>
-        public static void ValidateIdentifiers(KaijuAgent agent)
+        public static void EditorValidateIdentifiers(KaijuAgent agent)
         {
             // Store empty instances.
             HashSet<uint> empty = new(AgentIdentifiers.Count);
@@ -528,7 +524,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void SelectionChanged()
         {
-            _selectedAgents.Clear();
+            _editorSelectedAgents.Clear();
             
             if (!Application.isPlaying)
             {
@@ -539,7 +535,7 @@ namespace KaijuSolutions.Agents
             {
                 if (t.GetComponent<KaijuAgent>() is { } a)
                 {
-                    _selectedAgents.Add(a);
+                    _editorSelectedAgents.Add(a);
                 }
             }
         }
@@ -606,32 +602,32 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            KaijuMovementManager.VisualizationsTextMode mode = KaijuMovementManager.VisualizationsText;
+            KaijuMovementManager.EditorVisualizationsTextMode mode = KaijuMovementManager.EditorEditorVisualizationsText;
             
-            if (!KaijuMovementManager.VisualizationsActive)
+            if (!KaijuMovementManager.EditorVisualizationsActive)
             {
-                bool text = AllAgents.Count > 1 && mode is KaijuMovementManager.VisualizationsTextMode.All or KaijuMovementManager.VisualizationsTextMode.Selected;
-                Visualize(_selectedAgents, text, text);
+                bool text = AllAgents.Count > 1 && mode is KaijuMovementManager.EditorVisualizationsTextMode.All or KaijuMovementManager.EditorVisualizationsTextMode.Selected;
+                EditorVisualize(_editorSelectedAgents, text, text);
                 return;
             }
             
-            bool all = AllAgents.Count > 1 &&  mode is KaijuMovementManager.VisualizationsTextMode.All;
-            Visualize(AllAgents, all, all || mode is KaijuMovementManager.VisualizationsTextMode.Selected);
+            bool all = AllAgents.Count > 1 &&  mode is KaijuMovementManager.EditorVisualizationsTextMode.All;
+            EditorVisualize(AllAgents, all, all || mode is KaijuMovementManager.EditorVisualizationsTextMode.Selected);
         }
         
         /// <summary>
-        /// Handle visualizations for agents.
+        /// Handle visualizations for agents in the editor.
         /// </summary>
         /// <param name="agents">The agents to render visualizations for.</param>
         /// <param name="all">If text should be run for all agents in this.</param>
         /// <param name="selected">If text should be run for selected agents in this.</param>
-        private void Visualize([NotNull] ISet<KaijuAgent> agents, bool all, bool selected)
+        private void EditorVisualize([NotNull] ISet<KaijuAgent> agents, bool all, bool selected)
         {
             foreach (KaijuAgent agent in agents)
             {
                 if (agent)
                 {
-                    agent.Visualize(all || (selected && _selectedAgents.Contains(agent)));
+                    agent.EditorVisualize(all || (selected && _editorSelectedAgents.Contains(agent)));
                 }
             }
         }

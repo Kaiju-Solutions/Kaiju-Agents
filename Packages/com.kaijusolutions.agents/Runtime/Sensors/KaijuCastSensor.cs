@@ -128,19 +128,19 @@ namespace KaijuSolutions.Agents.Sensors
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
 #if UNITY_EDITOR
         /// <summary>
-        /// The visualizations color for hits.
+        /// The visualizations color for hits in the editor.
         /// </summary>
         [Header("Visualizations")]
-        [Tooltip("The visualizations color for hits.")]
+        [Tooltip("The visualizations color for hits in the editor.")]
         [SerializeField]
-        private Color hitColor = Color.red;
+        private Color editorHit = Color.red;
         
         /// <summary>
-        /// The visualizations color for misses.
+        /// The visualizations color for misses in the editor.
         /// </summary>
-        [Tooltip("The visualizations color for misses.")]
+        [Tooltip("The visualizations color for misses in the editor.")]
         [SerializeField]
-        private Color missColor = Color.green;
+        private Color editorMiss = Color.green;
 #endif
         /// <summary>
         /// The total number of casts which hit something.
@@ -226,12 +226,12 @@ namespace KaijuSolutions.Agents.Sensors
         /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="KaijuSensor.Agent"/>.</param>
         /// </summary>
-        public override void Visualize(Vector3 position)
+        public override void EditorVisualize(Vector3 position)
         {
             Vector3 p = Position3;
             for (int i = 0; i < _hits.Length; i++)
             {
-                Handles.color = _hits[i].HasValue ? hitColor : missColor;
+                Handles.color = _hits[i].HasValue ? editorHit : editorMiss;
                 Handles.DrawLine(p, _positions[i]);
             }
         }

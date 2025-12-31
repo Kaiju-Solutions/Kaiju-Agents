@@ -165,13 +165,13 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected override Color VisualizationColor() => KaijuMovementManager.SeparationColor;
+        protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorSeparationColor;
         
         /// <summary>
         /// Render the visualization of the movement.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
-        protected override void RenderVisualizations(Vector3 position)
+        protected override void EditorRenderVisualizations(Vector3 position)
         {
             Handles.DrawWireDisc(position, Vector3.up, Distance, 0);
             foreach (KaijuAgent agent in _interacting)

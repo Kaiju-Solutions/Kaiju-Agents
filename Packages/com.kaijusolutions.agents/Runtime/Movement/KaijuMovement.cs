@@ -153,7 +153,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        public void Visualize(Vector3 position)
+        public void EditorVisualize(Vector3 position)
         {
             // Nothing to visualize if no agents.
             if (Done())
@@ -161,21 +161,21 @@ namespace KaijuSolutions.Agents.Movement
                 return;
             }
             
-            Handles.color = VisualizationColor();
-            RenderVisualizations(position);
+            Handles.color = EditorVisualizationColor();
+            EditorRenderVisualizations(position);
         }
         
         /// <summary>
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected virtual Color VisualizationColor() => Color.white;
+        protected virtual Color EditorVisualizationColor() => Color.white;
         
         /// <summary>
         /// Render the visualization of the movement.
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
-        protected virtual void RenderVisualizations(Vector3 position) { }
+        protected virtual void EditorRenderVisualizations(Vector3 position) { }
 #endif
         /// <summary>
         /// Get a description of the object.

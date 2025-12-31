@@ -142,7 +142,7 @@ namespace KaijuSolutions.Agents.Movement
         /// Get the color for visualizations.
         /// </summary>
         /// <returns>The color for visualizations</returns>
-        protected override Color VisualizationColor() => KaijuMovementManager.FleeColor;
+        protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorFleeColor;
 #endif
         /// <summary>
         /// Get a description of the object.

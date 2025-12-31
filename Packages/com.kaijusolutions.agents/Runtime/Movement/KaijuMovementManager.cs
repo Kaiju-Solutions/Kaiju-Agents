@@ -17,397 +17,397 @@ namespace KaijuSolutions.Agents.Movement
         private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
 #if UNITY_EDITOR
         /// <summary>
-        /// The key for the seek color preference.
+        /// The key for the seek color preference in the editor.
         /// </summary>
-        private const string SeekKey = "KAIJU_AGENTS_COLOR_SEEK";
+        private const string EditorSeekKey = "KAIJU_AGENTS_COLOR_SEEK";
         
         /// <summary>
-        /// The key for the seek color preference.
+        /// The key for the seek color preference in the editor.
         /// </summary>
-        private const string PursueKey = "KAIJU_AGENTS_COLOR_PURSUE";
+        private const string EditorPursueKey = "KAIJU_AGENTS_COLOR_PURSUE";
         
         /// <summary>
-        /// The key for the seek color preference.
+        /// The key for the seek color preference in the editor.
         /// </summary>
-        private const string FleeKey = "KAIJU_AGENTS_COLOR_FLEE";
+        private const string EditorFleeKey = "KAIJU_AGENTS_COLOR_FLEE";
         
         /// <summary>
-        /// The key for the seek color preference.
+        /// The key for the seek color preference in the editor.
         /// </summary>
-        private const string EvadeKey = "KAIJU_AGENTS_COLOR_EVADE";
+        private const string EditorEvadeKey = "KAIJU_AGENTS_COLOR_EVADE";
         
         /// <summary>
-        /// The key for the wander color preference.
+        /// The key for the wander color preference in the editor.
         /// </summary>
-        private const string WanderKey = "KAIJU_AGENTS_COLOR_WANDER";
+        private const string EditorWanderKey = "KAIJU_AGENTS_COLOR_WANDER";
         
         /// <summary>
-        /// The key for the separation color preference.
+        /// The key for the separation color preference in the editor.
         /// </summary>
-        private const string SeparationKey = "KAIJU_AGENTS_COLOR_SEPARATION";
+        private const string EditorSeparationKey = "KAIJU_AGENTS_COLOR_SEPARATION";
         
         /// <summary>
-        /// The key for the obstacle avoidance color preference.
+        /// The key for the obstacle avoidance color preference in the editor.
         /// </summary>
-        private const string ObstacleAvoidanceKey = "KAIJU_AGENTS_OBSTACLE_AVOIDANCE_COLOR";
+        private const string EditorObstacleAvoidanceKey = "KAIJU_AGENTS_OBSTACLE_AVOIDANCE_COLOR";
         
         /// <summary>
-        /// Color for seek visuals.
+        /// Color for seek visuals in the editor.
         /// </summary>
-        public static Color SeekColor
+        public static Color EditorSeekColor
         {
             get
             {
-                if (_seekColor.HasValue)
+                if (_editorSeekColor.HasValue)
                 {
-                    return _seekColor.Value;
+                    return _editorSeekColor.Value;
                 }
                 
-                _seekColor = KaijuAgentsManager.LoadColor(SeekKey, Color.green);
-                return _seekColor.Value;
+                _editorSeekColor = KaijuAgentsManager.EditorLoadColor(EditorSeekKey, Color.green);
+                return _editorSeekColor.Value;
             }
             set
             {
-                _seekColor = value;
-                KaijuAgentsManager.SaveColor(SeekKey, _seekColor.Value);
+                _editorSeekColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorSeekKey, _editorSeekColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for seek visuals.
+        /// Color for seek visuals in the editor.
         /// </summary>
-        private static Color? _seekColor;
+        private static Color? _editorSeekColor;
         
         /// <summary>
-        /// Color for pursue visuals.
+        /// Color for pursue visuals in the editor.
         /// </summary>
-        public static Color PursueColor
+        public static Color EditorPursueColor
         {
             get
             {
-                if (_pursueColor.HasValue)
+                if (_editorPursueColor.HasValue)
                 {
-                    return _pursueColor.Value;
+                    return _editorPursueColor.Value;
                 }
                 
-                _pursueColor = KaijuAgentsManager.LoadColor(PursueKey, Color.cyan);
-                return _pursueColor.Value;
+                _editorPursueColor = KaijuAgentsManager.EditorLoadColor(EditorPursueKey, Color.cyan);
+                return _editorPursueColor.Value;
             }
             set
             {
-                _pursueColor = value;
-                KaijuAgentsManager.SaveColor(PursueKey, _pursueColor.Value);
+                _editorPursueColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorPursueKey, _editorPursueColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for purse visuals.
+        /// Color for purse visuals in the editor.
         /// </summary>
-        private static Color? _pursueColor;
+        private static Color? _editorPursueColor;
         
         /// <summary>
-        /// Color for flee visuals.
+        /// Color for flee visuals in the editor.
         /// </summary>
-        public static Color FleeColor
+        public static Color EditorFleeColor
         {
             get
             {
-                if (_fleeColor.HasValue)
+                if (_editorFleeColor.HasValue)
                 {
-                    return _fleeColor.Value;
+                    return _editorFleeColor.Value;
                 }
                 
-                _fleeColor = KaijuAgentsManager.LoadColor(FleeKey, Color.red);
-                return _fleeColor.Value;
+                _editorFleeColor = KaijuAgentsManager.EditorLoadColor(EditorFleeKey, Color.red);
+                return _editorFleeColor.Value;
             }
             set
             {
-                _fleeColor = value;
-                KaijuAgentsManager.SaveColor(FleeKey, _fleeColor.Value);
+                _editorFleeColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorFleeKey, _editorFleeColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for flee visuals.
+        /// Color for flee visuals in the editor.
         /// </summary>
-        private static Color? _fleeColor;
+        private static Color? _editorFleeColor;
         
         /// <summary>
-        /// Color for evade visuals.
+        /// Color for evade visuals in the editor.
         /// </summary>
-        public static Color EvadeColor
+        public static Color EditorEvadeColor
         {
             get
             {
-                if (_evadeColor.HasValue)
+                if (_editorEvadeColor.HasValue)
                 {
-                    return _evadeColor.Value;
+                    return _editorEvadeColor.Value;
                 }
                 
-                _evadeColor = KaijuAgentsManager.LoadColor(EvadeKey, Color.orange);
-                return _evadeColor.Value;
+                _editorEvadeColor = KaijuAgentsManager.EditorLoadColor(EditorEvadeKey, Color.orange);
+                return _editorEvadeColor.Value;
             }
             set
             {
-                _evadeColor = value;
-                KaijuAgentsManager.SaveColor(EvadeKey, _evadeColor.Value);
+                _editorEvadeColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorEvadeKey, _editorEvadeColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for evade visuals.
+        /// Color for evade visuals in the editor.
         /// </summary>
-        private static Color? _evadeColor;
+        private static Color? _editorEvadeColor;
         
         /// <summary>
-        /// Color for wander visuals.
+        /// Color for wander visuals in the editor.
         /// </summary>
-        public static Color WanderColor
+        public static Color EditorWanderColor
         {
             get
             {
-                if (_wanderColor.HasValue)
+                if (_editorWanderColor.HasValue)
                 {
-                    return _wanderColor.Value;
+                    return _editorWanderColor.Value;
                 }
                 
-                _wanderColor = KaijuAgentsManager.LoadColor(WanderKey, Color.yellow);
-                return _wanderColor.Value;
+                _editorWanderColor = KaijuAgentsManager.EditorLoadColor(EditorWanderKey, Color.yellow);
+                return _editorWanderColor.Value;
             }
             set
             {
-                _wanderColor = value;
-                KaijuAgentsManager.SaveColor(WanderKey, _wanderColor.Value);
+                _editorWanderColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorWanderKey, _editorWanderColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for wander visuals.
+        /// Color for wander visuals in the editor.
         /// </summary>
-        private static Color? _wanderColor;
+        private static Color? _editorWanderColor;
         
         /// <summary>
-        /// Color for separation visuals.
+        /// Color for separation visuals in the editor.
         /// </summary>
-        public static Color SeparationColor
+        public static Color EditorSeparationColor
         {
             get
             {
-                if (_separationColor.HasValue)
+                if (_editorSeparationColor.HasValue)
                 {
-                    return _separationColor.Value;
+                    return _editorSeparationColor.Value;
                 }
                 
-                _separationColor = KaijuAgentsManager.LoadColor(SeparationKey, Color.violet);
-                return _separationColor.Value;
+                _editorSeparationColor = KaijuAgentsManager.EditorLoadColor(EditorSeparationKey, Color.violet);
+                return _editorSeparationColor.Value;
             }
             set
             {
-                _separationColor = value;
-                KaijuAgentsManager.SaveColor(SeparationKey, _separationColor.Value);
+                _editorSeparationColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorSeparationKey, _editorSeparationColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for separation visuals.
+        /// Color for separation visuals in the editor.
         /// </summary>
-        private static Color? _separationColor;
+        private static Color? _editorSeparationColor;
         
         /// <summary>
-        /// Color for obstacle avoidance visuals.
+        /// Color for obstacle avoidance visuals in the editor.
         /// </summary>
-        public static Color ObstacleAvoidanceColor
+        public static Color EditorObstacleAvoidanceColor
         {
             get
             {
-                if (_obstacleAvoidanceColor.HasValue)
+                if (_editorObstacleAvoidanceColor.HasValue)
                 {
-                    return _obstacleAvoidanceColor.Value;
+                    return _editorObstacleAvoidanceColor.Value;
                 }
                 
-                _obstacleAvoidanceColor = KaijuAgentsManager.LoadColor(ObstacleAvoidanceKey, Color.brown);
-                return _obstacleAvoidanceColor.Value;
+                _editorObstacleAvoidanceColor = KaijuAgentsManager.EditorLoadColor(EditorObstacleAvoidanceKey, Color.brown);
+                return _editorObstacleAvoidanceColor.Value;
             }
             set
             {
-                _obstacleAvoidanceColor = value;
-                KaijuAgentsManager.SaveColor(ObstacleAvoidanceKey, _obstacleAvoidanceColor.Value);
+                _editorObstacleAvoidanceColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorObstacleAvoidanceKey, _editorObstacleAvoidanceColor.Value);
             }
         }
         
         /// <summary>
-        /// Color for obstacle avoidance visuals.
+        /// Color for obstacle avoidance visuals in the editor.
         /// </summary>
-        private static Color? _obstacleAvoidanceColor;
+        private static Color? _editorObstacleAvoidanceColor;
         
         /// <summary>
-        /// Sync all colors.
+        /// Sync all colors in the editor.
         /// </summary>
-        public static void SyncColors()
+        public static void EditorSyncColors()
         {
-            _ = SeekColor;
-            _ = PursueColor;
-            _ = FleeColor;
-            _ = EvadeColor;
-            _ = WanderKey;
-            _ = SeparationColor;
-            _ = ObstacleAvoidanceColor;
+            _ = EditorSeekColor;
+            _ = EditorPursueColor;
+            _ = EditorFleeColor;
+            _ = EditorEvadeColor;
+            _ = EditorWanderKey;
+            _ = EditorSeparationColor;
+            _ = EditorObstacleAvoidanceColor;
         }
         
         /// <summary>
-        /// Reset all colors.
+        /// Reset all colors in the editor.
         /// </summary>
-        public static void ResetColors()
+        public static void EditorResetColors()
         {
-            ResetSeekColor();
-            ResetPursueColor();
-            ResetFleeColor();
-            ResetEvadeColor();
-            ResetWanderColor();
-            ResetSeparationColor();
-            ResetObstacleAvoidanceColor();
+            EditorResetSeekColor();
+            EditorResetPursueColor();
+            EditorResetFleeColor();
+            EditorResetEvadeColor();
+            EditorResetWanderColor();
+            EditorResetSeparationColor();
+            EditorResetObstacleAvoidanceColor();
         }
         
         /// <summary>
-        /// Reset the seek color.
+        /// Reset the seek color in the editor.
         /// </summary>
-        public static void ResetSeekColor()
+        public static void EditorResetSeekColor()
         {
-            KaijuAgentsManager.ResetColor(SeekKey);
+            KaijuAgentsManager.EditorResetColor(EditorSeekKey);
         }
         
         /// <summary>
-        /// Reset the pursue color.
+        /// Reset the pursue color in the editor.
         /// </summary>
-        public static void ResetPursueColor()
+        public static void EditorResetPursueColor()
         {
-            KaijuAgentsManager.ResetColor(PursueKey);
+            KaijuAgentsManager.EditorResetColor(EditorPursueKey);
         }
         
         /// <summary>
-        /// Reset the seek color.
+        /// Reset the seek color in the editor.
         /// </summary>
-        public static void ResetFleeColor()
+        public static void EditorResetFleeColor()
         {
-            KaijuAgentsManager.ResetColor(FleeKey);
+            KaijuAgentsManager.EditorResetColor(EditorFleeKey);
         }
         
         /// <summary>
-        /// Reset the evade color.
+        /// Reset the evade color in the editor.
         /// </summary>
-        public static void ResetEvadeColor()
+        public static void EditorResetEvadeColor()
         {
-            KaijuAgentsManager.ResetColor(EvadeKey);
+            KaijuAgentsManager.EditorResetColor(EditorEvadeKey);
         }
         
         /// <summary>
-        /// Reset the wander color.
+        /// Reset the wander color in the editor.
         /// </summary>
-        public static void ResetWanderColor()
+        public static void EditorResetWanderColor()
         {
-            KaijuAgentsManager.ResetColor(WanderKey);
+            KaijuAgentsManager.EditorResetColor(EditorWanderKey);
         }
         
         /// <summary>
-        /// Reset the separation color.
+        /// Reset the separation color in the editor.
         /// </summary>
-        public static void ResetSeparationColor()
+        public static void EditorResetSeparationColor()
         {
-            KaijuAgentsManager.ResetColor(SeparationKey);
+            KaijuAgentsManager.EditorResetColor(EditorSeparationKey);
         }
         
         /// <summary>
-        /// Reset the obstacle avoidance color.
+        /// Reset the obstacle avoidance color in the editor.
         /// </summary>
-        public static void ResetObstacleAvoidanceColor()
+        public static void EditorResetObstacleAvoidanceColor()
         {
-            KaijuAgentsManager.ResetColor(ObstacleAvoidanceKey);
+            KaijuAgentsManager.EditorResetColor(EditorObstacleAvoidanceKey);
         }
         
         /// <summary>
-        /// The key for if all visualizations should be rendered or only the selected agent.
+        /// The key for if all editor visualizations should be rendered or only the selected agent.
         /// </summary>
-        private const string VisualizationsActiveKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
+        private const string EditorVisualizationsActiveKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
         
         /// <summary>
-        /// Handle if all visualizations should be rendered or only the selected agent.
+        /// Handle if all editor visualizations should be rendered or only the selected agent.
         /// </summary>
-        public static bool VisualizationsActive
+        public static bool EditorVisualizationsActive
         {
             get
             {
-                if (_visualizationsAll.HasValue)
+                if (_editorVisualizationsAll.HasValue)
                 {
-                    return _visualizationsAll.Value;
+                    return _editorVisualizationsAll.Value;
                 }
                 
-                _visualizationsAll = EditorPrefs.GetBool(VisualizationsActiveKey, true);
-                return _visualizationsAll.Value;
+                _editorVisualizationsAll = EditorPrefs.GetBool(EditorVisualizationsActiveKey, true);
+                return _editorVisualizationsAll.Value;
             }
             set
             {
-                _visualizationsAll = value;
-                EditorPrefs.SetBool(VisualizationsActiveKey, _visualizationsAll.Value);
+                _editorVisualizationsAll = value;
+                EditorPrefs.SetBool(EditorVisualizationsActiveKey, _editorVisualizationsAll.Value);
             }
         }
         
         /// <summary>
-        /// Handle if all visualizations should be rendered or only the selected agent.
+        /// Handle if all editor visualizations should be rendered or only the selected agent.
         /// </summary>
-        private static bool? _visualizationsAll;
+        private static bool? _editorVisualizationsAll;
         
         /// <summary>
-        /// Reset if all visualizations should be rendered or only the selected agent.
+        /// Reset if all editor visualizations should be rendered or only the selected agent.
         /// </summary>
-        public static void ResetVisualizationsActive()
+        public static void EditorResetVisualizationsActive()
         {
-            EditorPrefs.DeleteKey(VisualizationsActiveKey);
+            EditorPrefs.DeleteKey(EditorVisualizationsActiveKey);
         }
         
         /// <summary>
-        /// The key for how text should be displayed with visualizations.
+        /// The key for how text should be displayed with editor visualizations.
         /// </summary>
-        private const string VisualizationsTextKey = "KAIJU_AGENTS_VISUALIZATIONS_TEXT";
+        private const string EditorVisualizationsTextKey = "KAIJU_AGENTS_VISUALIZATIONS_TEXT";
         
         /// <summary>
-        ///  How text should be displayed with visualizations.
+        ///  How text should be displayed with editor visualizations.
         /// </summary>
-        public static VisualizationsTextMode VisualizationsText
+        public static EditorVisualizationsTextMode EditorEditorVisualizationsText
         {
             get
             {
-                if (_visualizationsText.HasValue)
+                if (_editorVisualizationsText.HasValue)
                 {
-                    return _visualizationsText.Value;
+                    return _editorVisualizationsText.Value;
                 }
                 
-                _visualizationsText = (VisualizationsTextMode)EditorPrefs.GetInt(VisualizationsTextKey, (int)VisualizationsTextMode.All);
-                return _visualizationsText.Value;
+                _editorVisualizationsText = (EditorVisualizationsTextMode)EditorPrefs.GetInt(EditorVisualizationsTextKey, (int)EditorVisualizationsTextMode.All);
+                return _editorVisualizationsText.Value;
             }
             set
             {
-                _visualizationsText = value;
-                EditorPrefs.SetInt(VisualizationsTextKey, (int)_visualizationsText.Value);
+                _editorVisualizationsText = value;
+                EditorPrefs.SetInt(EditorVisualizationsTextKey, (int)_editorVisualizationsText.Value);
             }
         }
         
         /// <summary>
-        /// How text should be displayed with visualizations.
+        /// How text should be displayed with editor visualizations.
         /// </summary>
-        private static VisualizationsTextMode? _visualizationsText;
+        private static EditorVisualizationsTextMode? _editorVisualizationsText;
         
         /// <summary>
-        /// Reset how text should be displayed with visualizations.
+        /// Reset how text should be displayed with editor visualizations.
         /// </summary>
-        public static void ResetVisualizationsText()
+        public static void EditorResetVisualizationsText()
         {
-            EditorPrefs.DeleteKey(VisualizationsTextKey);
+            EditorPrefs.DeleteKey(EditorVisualizationsTextKey);
         }
         
         /// <summary>
-        /// Visualizations text modes.
+        /// Editor visualizations text modes.
         /// </summary>
-        public enum VisualizationsTextMode
+        public enum EditorVisualizationsTextMode
         {
             /// <summary>
             /// Display all text fields.
@@ -432,9 +432,9 @@ namespace KaijuSolutions.Agents.Movement
         private static void InitOnPlayMode()
         {
             Movements.Clear();
-            SyncColors();
-            _ = VisualizationsActive;
-            _ = VisualizationsText;
+            EditorSyncColors();
+            _ = EditorVisualizationsActive;
+            _ = EditorEditorVisualizationsText;
         }
 #endif
         /// <summary>

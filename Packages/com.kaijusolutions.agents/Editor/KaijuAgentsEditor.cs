@@ -132,23 +132,23 @@ internal static class KaijuAgentsEditor
                 
                 // Add visualization configurations.
                 container.Add(Header("Visualizations"));
-                container.Add(ToggleSetting("Active", () => KaijuMovementManager.VisualizationsActive, value => KaijuMovementManager.VisualizationsActive = value, KaijuMovementManager.ResetVisualizationsActive, refreshActions, "If all visualizations should be rendered or only the selected agent."));
-                container.Add(EnumSetting("Text Mode", () => KaijuMovementManager.VisualizationsText, value => KaijuMovementManager.VisualizationsText = value, KaijuMovementManager.ResetVisualizationsActive, refreshActions, "How text should be displayed with visualizations."));
-                container.Add(FloatSetting("Label Offset", () => KaijuAgentsManager.LabelOffset, value => KaijuAgentsManager.LabelOffset = value, KaijuAgentsManager.ResetLabelOffset, refreshActions, "How much to offset labels in the scene view."));
+                container.Add(ToggleSetting("Active", () => KaijuMovementManager.EditorVisualizationsActive, value => KaijuMovementManager.EditorVisualizationsActive = value, KaijuMovementManager.EditorResetVisualizationsActive, refreshActions, "If all visualizations should be rendered or only the selected agent."));
+                container.Add(EnumSetting("Text Mode", () => KaijuMovementManager.EditorEditorVisualizationsText, value => KaijuMovementManager.EditorEditorVisualizationsText = value, KaijuMovementManager.EditorResetVisualizationsText, refreshActions, "How text should be displayed with visualizations."));
+                container.Add(FloatSetting("Label Offset", () => KaijuAgentsManager.EditorLabelOffset, value => KaijuAgentsManager.EditorLabelOffset = value, KaijuAgentsManager.EditorResetLabelOffset, refreshActions, "How much to offset labels in the scene view."));
                 
                 // Add options for all colors
                 container.Add(Header("Colors"));
-                container.Add(ColorSetting("Agents", () => KaijuAgentsManager.AgentColor, color => KaijuAgentsManager.AgentColor = color, KaijuAgentsManager.ResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
-                container.Add(ColorSetting("Seek", () => KaijuMovementManager.SeekColor, color => KaijuMovementManager.SeekColor = color, KaijuMovementManager.ResetSeekColor, refreshActions, "The color for seek visualizations."));
-                container.Add(ColorSetting("Pursue", () => KaijuMovementManager.PursueColor, color => KaijuMovementManager.PursueColor = color, KaijuMovementManager.ResetPursueColor, refreshActions, "The color for pursue visualizations."));
-                container.Add(ColorSetting("Flee", () => KaijuMovementManager.FleeColor, color => KaijuMovementManager.FleeColor = color, KaijuMovementManager.ResetFleeColor, refreshActions, "The color for flee visualizations."));
-                container.Add(ColorSetting("Evade", () => KaijuMovementManager.EvadeColor, color => KaijuMovementManager.EvadeColor = color, KaijuMovementManager.ResetEvadeColor, refreshActions, "The color for evade visualizations."));
-                container.Add(ColorSetting("Wander", () => KaijuMovementManager.WanderColor, color => KaijuMovementManager.WanderColor = color, KaijuMovementManager.ResetWanderColor, refreshActions, "The color for wander visualizations."));
-                container.Add(ColorSetting("Separation", () => KaijuMovementManager.SeparationColor, color => KaijuMovementManager.SeparationColor = color, KaijuMovementManager.ResetSeparationColor, refreshActions, "The color for separation visualizations."));
-                container.Add(ColorSetting("Obstacle Avoidance", () => KaijuMovementManager.ObstacleAvoidanceColor, color => KaijuMovementManager.ObstacleAvoidanceColor = color, KaijuMovementManager.ResetObstacleAvoidanceColor, refreshActions, "The color for obstacle avoidance visualizations."));
+                container.Add(ColorSetting("Agents", () => KaijuAgentsManager.EditorAgentColor, color => KaijuAgentsManager.EditorAgentColor = color, KaijuAgentsManager.EditorResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
+                container.Add(ColorSetting("Seek", () => KaijuMovementManager.EditorSeekColor, color => KaijuMovementManager.EditorSeekColor = color, KaijuMovementManager.EditorResetSeekColor, refreshActions, "The color for seek visualizations."));
+                container.Add(ColorSetting("Pursue", () => KaijuMovementManager.EditorPursueColor, color => KaijuMovementManager.EditorPursueColor = color, KaijuMovementManager.EditorResetPursueColor, refreshActions, "The color for pursue visualizations."));
+                container.Add(ColorSetting("Flee", () => KaijuMovementManager.EditorFleeColor, color => KaijuMovementManager.EditorFleeColor = color, KaijuMovementManager.EditorResetFleeColor, refreshActions, "The color for flee visualizations."));
+                container.Add(ColorSetting("Evade", () => KaijuMovementManager.EditorEvadeColor, color => KaijuMovementManager.EditorEvadeColor = color, KaijuMovementManager.EditorResetEvadeColor, refreshActions, "The color for evade visualizations."));
+                container.Add(ColorSetting("Wander", () => KaijuMovementManager.EditorWanderColor, color => KaijuMovementManager.EditorWanderColor = color, KaijuMovementManager.EditorResetWanderColor, refreshActions, "The color for wander visualizations."));
+                container.Add(ColorSetting("Separation", () => KaijuMovementManager.EditorSeparationColor, color => KaijuMovementManager.EditorSeparationColor = color, KaijuMovementManager.EditorResetSeparationColor, refreshActions, "The color for separation visualizations."));
+                container.Add(ColorSetting("Obstacle Avoidance", () => KaijuMovementManager.EditorObstacleAvoidanceColor, color => KaijuMovementManager.EditorObstacleAvoidanceColor = color, KaijuMovementManager.EditorResetObstacleAvoidanceColor, refreshActions, "The color for obstacle avoidance visualizations."));
                 
                 // Add a full reset button.
-                Button resetAllButton = new(KaijuMovementManager.ResetColors)
+                Button resetAllButton = new(KaijuMovementManager.EditorResetColors)
                 {
                     text = "Reset All Colors",
                     style =

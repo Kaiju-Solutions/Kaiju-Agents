@@ -101,18 +101,18 @@ namespace KaijuSolutions.Agents.Sensors
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
 #if UNITY_EDITOR
         /// <summary>
-        /// The visualizations color.
+        /// The visualizations color in the editor.
         /// </summary>
         [Header("Visualizations")]
-        [Tooltip("The visualizations color.")]
+        [Tooltip("The visualizations color in the editor.")]
         [SerializeField]
-        private Color color = Color.white;
+        private Color editorColor = Color.white;
         
         /// <summary>
-        /// If the visualizations for the line of sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
+        /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
         /// </summary>
-        [Tooltip("If the visualizations for the line of sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
-        public bool fromAgent = true;
+        [Tooltip("If the visualizations in the editor for the line-of-sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
+        public bool editorFromAgent = true;
 #endif
         /// <summary>
         /// The objects which this can detect.
@@ -186,12 +186,12 @@ namespace KaijuSolutions.Agents.Sensors
         /// Allow for visualizing in the editor.
         /// <param name="position">The position of the <see cref="KaijuSensor.Agent"/>.</param>
         /// </summary>
-        public override void Visualize(Vector3 position)
+        public override void EditorVisualize(Vector3 position)
         {
-            Handles.color = color;
+            Handles.color = editorColor;
             
             Vector3 p = Position3;
-            p = new(p.x, fromAgent ? position.y : p.y, p.z);
+            p = new(p.x, editorFromAgent ? position.y : p.y, p.z);
             
             foreach (T observed in _observed)
             {

@@ -1554,17 +1554,17 @@ namespace KaijuSolutions.Agents
             // Validate all identifiers when playing.
             if (Application.isPlaying)
             {
-                KaijuAgentsManager.ValidateIdentifiers(this);
+                KaijuAgentsManager.EditorValidateIdentifiers(this);
             }
             
             Setup();
         }
         
         /// <summary>
-        /// Visualize this agent.
+        /// Visualize this agent in the editor.
         /// </summary>
         /// <param name="text">If the text for this agent should be visualized.</param>
-        public void Visualize(bool text)
+        public void EditorVisualize(bool text)
         {
             Vector3 p = transform.position;
             
@@ -1573,7 +1573,7 @@ namespace KaijuSolutions.Agents
             Vector3? v = LookVector3;
             if (moving || v.HasValue)
             {
-                Handles.color = KaijuAgentsManager.AgentColor;
+                Handles.color = KaijuAgentsManager.EditorAgentColor;
             }
             
             // Draw the movement vector.
@@ -1584,7 +1584,7 @@ namespace KaijuSolutions.Agents
             
             if (text)
             {
-                KaijuAgentsManager.Label(p, name, KaijuAgentsManager.AgentColor);
+                KaijuAgentsManager.EditorLabel(p, name, KaijuAgentsManager.EditorAgentColor);
             }
             
             // Show where the agent is looking.
@@ -1596,13 +1596,13 @@ namespace KaijuSolutions.Agents
             // Visualize all movements.
             foreach (KaijuMovement movement in _movements)
             {
-                movement.Visualize(p);
+                movement.EditorVisualize(p);
             }
             
             // Visualize all sensors.
             foreach (KaijuSensor sensor in _sensors)
             {
-                sensor.Visualize(p);
+                sensor.EditorVisualize(p);
             }
         }
 #endif
