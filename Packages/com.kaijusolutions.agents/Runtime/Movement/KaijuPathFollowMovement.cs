@@ -811,5 +811,62 @@ namespace KaijuSolutions.Agents.Movement
             }
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Path Follow Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {Target.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Path Distance: {PathDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector2 from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target.</returns>
+        public static implicit operator Vector2?([NotNull] KaijuPathFollowMovement t) => t.Target;
+        
+        /// <summary>
+        /// Implicit conversion to a Vector2 from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target.</returns>
+        public static implicit operator Vector2([NotNull] KaijuPathFollowMovement t) => t.Target;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector3 from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target.</returns>
+        public static implicit operator Vector3?([NotNull] KaijuPathFollowMovement t) => t.Target3;
+        
+        /// <summary>
+        /// Implicit conversion to a Vector3 from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target.</returns>
+        public static implicit operator Vector3([NotNull] KaijuPathFollowMovement t) => t.Target3;
+        
+        /// <summary>
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</returns>
+        public static implicit operator Transform([NotNull] KaijuPathFollowMovement t) => t.TargetTransform;
+        
+        /// <summary>
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</returns>
+        public static implicit operator GameObject([NotNull] KaijuPathFollowMovement t) => t.TargetGameObject;
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/> from the target.
+        /// </summary>
+        /// <param name="t">The target movement.</param>
+        /// <returns>The target <see cref="KaijuAgent"/> from the target.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuPathFollowMovement t) => t.TargetAgent;
     }
 }
