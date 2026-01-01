@@ -19,7 +19,11 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The previous position of the target.
         /// </summary>
-        public Vector3 Previous3 => new(Previous.x, 0, Previous.y);
+        public Vector3 Previous3
+        {
+            get => new(Previous.x, 0, Previous.y);
+            set => Previous = value.Flatten();
+        }
         
         /// <summary>
         /// The predicted future target.

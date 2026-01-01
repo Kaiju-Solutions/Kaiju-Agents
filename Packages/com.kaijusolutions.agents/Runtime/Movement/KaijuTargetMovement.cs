@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector2 Target
         {
-            get => _transform ? _transform.position.Flatten() : _vector ?? (Agent ? Agent.transform.position : Vector2.zero);
+            get => _transform ? _transform.position.Flatten() : _vector ?? (Agent ? Agent.transform.position.Flatten() : Vector2.zero);
             set
             {
                 _transform = null;
@@ -29,7 +29,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector3 Target3
         {
-            get => _transform ? _transform.position : _vector.HasValue ? new(_vector.Value.x, 0, _vector.Value.y) : Agent ? Agent.transform.position : Vector3.zero;
+            get => _transform ? _transform.position : _vector?.Expand() ?? (Agent ? Agent.transform.position : Vector3.zero);
             set
             {
                 _transform = null;
@@ -56,11 +56,7 @@ namespace KaijuSolutions.Agents.Movement
         public GameObject TargetGameObject
         {
             get => _transform.gameObject;
-            set
-            {
-                _transform = value.transform;
-                _vector = null;
-            }
+            set => TargetTransform = value.transform;
         }
         
         /// <summary>
@@ -69,7 +65,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuAgent TargetAgent
         {
             get => _transform ? _transform.GetComponent<KaijuAgent>() : null;
-            set => TargetComponent = value;
+            set => TargetTransform = value.transform;
         }
         
         /// <summary>
@@ -77,11 +73,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Component TargetComponent
         {
-            set
-            {
-                _transform = value.transform;
-                _vector = null;
-            }
+            set => TargetTransform = value.transform;
         }
         
         /// <summary>
