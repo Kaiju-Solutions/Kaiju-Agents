@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using KaijuSolutions.Agents.Extension;
+using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

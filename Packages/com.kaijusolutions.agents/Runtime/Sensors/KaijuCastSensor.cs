@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using KaijuSolutions.Agents.Extension;
+using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;

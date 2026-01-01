@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Extension methods to see if there is a direct line of sight between two positions across all axes. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.

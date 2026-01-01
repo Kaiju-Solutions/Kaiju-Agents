@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Extension methods to get the 2D distance across the X and Z axes. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Comparer class to sort by distance along the X and Z axes. Used in the extension methods found in <see cref="KaijuAgentsSortDistance"/>.

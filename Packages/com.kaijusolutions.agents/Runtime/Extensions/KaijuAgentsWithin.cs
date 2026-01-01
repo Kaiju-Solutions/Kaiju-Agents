@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Extension methods to see if points are within a given distance of each other along the X and Z axes. These methods are inclusive of the distance to check. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

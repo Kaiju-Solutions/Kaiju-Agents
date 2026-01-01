@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Extension methods for sorting objects by their distance to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in <see cref="KaijuAgentsFlatten"/>.

@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Extension
+namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
     /// Extension methods to get the nearest object to a given position along all three axes. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
