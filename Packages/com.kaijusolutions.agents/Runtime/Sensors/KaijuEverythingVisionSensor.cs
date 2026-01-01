@@ -57,7 +57,7 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
             
-            return false;
+            return matchers.Count < 1;
         }
         
         /// <summary>
