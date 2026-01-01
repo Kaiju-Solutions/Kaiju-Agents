@@ -132,15 +132,13 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         [Header("Visualizations")]
         [Tooltip("The visualizations color for hits in the editor.")]
-        [SerializeField]
-        private Color editorHit = Color.red;
+        public Color editorHit = Color.red;
         
         /// <summary>
         /// The visualizations color for misses in the editor.
         /// </summary>
         [Tooltip("The visualizations color for misses in the editor.")]
-        [SerializeField]
-        private Color editorMiss = Color.green;
+        public Color editorMiss = Color.green;
 #endif
         /// <summary>
         /// The total number of casts which hit something.

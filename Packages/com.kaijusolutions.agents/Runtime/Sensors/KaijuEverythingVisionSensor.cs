@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned.
+    /// Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned. While this sensor can be highly versatile, if performance is a concern, it is recommended to extend <see cref="KaijuVisionSensor{T}"/> for a specific component type you are interested in rather than using this.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR

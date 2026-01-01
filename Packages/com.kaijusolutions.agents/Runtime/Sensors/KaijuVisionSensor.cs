@@ -85,6 +85,14 @@ namespace KaijuSolutions.Agents.Sensors
         private float radius;
         
         /// <summary>
+        /// Any vertical offset to add to the line-of-sight checks. This can be useful if you for instance have targets which are a few units high but their origins are at their bases.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Any vertical offset to add to the line-of-sight checks. This can be useful if you for instance have targets which are a few units high but their origins are at their bases.")]
+#endif
+        public float offset;
+        
+        /// <summary>
         /// What layers to collide with on the line-of-sight checks.
         /// </summary>
 #if UNITY_EDITOR
@@ -105,8 +113,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         [Header("Visualizations")]
         [Tooltip("The visualizations color in the editor.")]
-        [SerializeField]
-        private Color editorColor = Color.white;
+        public Color editorColor = Color.white;
         
         /// <summary>
         /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
@@ -156,6 +163,7 @@ namespace KaijuSolutions.Agents.Sensors
             Vector3 p3 = t.position;
             Vector2 p = p3.Flatten();
             Vector2 f = t.forward.Flatten();
+            Vector3 y = new(0, offset, 0);
             
             // Loop through all observable objects.
             foreach (T observable in Observables ?? DefaultObservables())
@@ -166,7 +174,7 @@ namespace KaijuSolutions.Agents.Sensors
                 Vector2 o = o3.Flatten();
                 
                 // Perform checks.
-                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3, out RaycastHit _, radius, mask, triggers)))
+                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3 + y, out RaycastHit _, radius, mask, triggers)))
                 {
                     _observed.Add(observable);
                 }
@@ -192,10 +200,11 @@ namespace KaijuSolutions.Agents.Sensors
             
             Vector3 p = Position3;
             p = new(p.x, editorFromAgent ? position.y : p.y, p.z);
+            Vector3 y = new(0, offset, 0);
             
             foreach (T observed in _observed)
             {
-                Handles.DrawLine(p, observed.transform.position);
+                Handles.DrawLine(p, observed.transform.position + y);
             }
             
             p = new(p.x, position.y, p.z);
