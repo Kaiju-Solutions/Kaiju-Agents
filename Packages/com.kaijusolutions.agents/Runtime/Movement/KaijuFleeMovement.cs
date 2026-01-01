@@ -136,7 +136,6 @@ namespace KaijuSolutions.Agents.Movement
         protected override Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta)
         {
             return position.Flee(target, speed);
-            //return position.Direction(target).normalized * speed;
         }
 #if UNITY_EDITOR
         /// <summary>
