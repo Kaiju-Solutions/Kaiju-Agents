@@ -3,7 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 using UnityEngine.AI;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
@@ -688,10 +690,13 @@ namespace KaijuSolutions.Agents.Movement
                 return;
             }
             
-            // Calculate the new path.
-            if (!NavMesh.CalculatePath(Agent.Position3, Target3, NavMesh.AllAreas, _navMeshPath))
+            // Update that the position has been accounted for.
+            Previous3 = Target3;
+            
+            // Calculate the new path. If it fails, it means the point is off of the navigation mesh.
+            int mask = _filter?.areaMask ?? _mask ?? NavMesh.AllAreas;
+            if (!NavMesh.SamplePosition(Previous3, out NavMeshHit hit, float.MaxValue, mask) || !NavMesh.CalculatePath(Agent.Position3, hit.position, mask, _navMeshPath))
             {
-                Debug.LogError($"{Agent.name} - Kaiju Follow Path Movement - Failed to calculate a path from {Agent.Position3} to {Target3}", Agent);
                 return;
             }
             
@@ -763,7 +768,48 @@ namespace KaijuSolutions.Agents.Movement
             return position.Seek(Target, Agent.MoveSpeed);
         }
 #if UNITY_EDITOR
-        // TODO.
+        /// <summary>
+        /// Get the color for visualizations.
+        /// </summary>
+        /// <returns>The color for visualizations</returns>
+        protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorPathFollowColor;
+        
+        /// <summary>
+        /// Render the visualization of the movement.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// </summary>
+        protected override void EditorRenderVisualizations(Vector3 position)
+        {
+            // If no path, render straight to the target.
+            if (_path.Count < 1)
+            {
+                Handles.DrawLine(position, Previous3);
+            }
+            else
+            {
+                // Otherwise, render the entire path.
+                Handles.DrawLine(position, _path[0]);
+                for (int i = 0; i < _path.Count - 1; i++)
+                {
+                    Handles.DrawLine(_path[i], _path[i + 1]);
+                }
+                
+                Handles.DrawLine(_path[^1], Previous3);
+            }
+            
+            // Show the offset from the actual target to the current position.
+            Vector3 t = Target3;
+            if (t != Previous3)
+            {
+                Handles.DrawLine(Previous3, t);
+            }
+            
+            // Draw the auto calculate distance.
+            if (_autoCalculateDistance.HasValue)
+            {
+                Handles.DrawWireDisc(Previous3, Vector3.up, _autoCalculateDistance.Value, 0);
+            }
+        }
 #endif
     }
 }

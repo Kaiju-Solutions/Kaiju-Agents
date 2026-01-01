@@ -37,6 +37,9 @@ public class Target : MonoBehaviour
                 case MoveType.ObstacleAvoidance:
                     agent.ObstacleAvoidance(clear: false);
                     break;
+                case MoveType.FollowPath:
+                    agent.PathFollow(this, autoCalculateDistance: 2, clear: false);
+                    break;
             }
         }
         
@@ -59,6 +62,7 @@ public class Target : MonoBehaviour
         Evade,
         Wander,
         Separate,
-        ObstacleAvoidance
+        ObstacleAvoidance,
+        FollowPath
     }
 }
