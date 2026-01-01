@@ -135,7 +135,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         protected override Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta)
         {
-            return position.Seek(speed, target);
+            return position.Seek(target, speed);
         }
 #if UNITY_EDITOR
         /// <summary>
