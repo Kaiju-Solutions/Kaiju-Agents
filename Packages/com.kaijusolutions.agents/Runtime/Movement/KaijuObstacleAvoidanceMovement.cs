@@ -230,7 +230,7 @@ namespace KaijuSolutions.Agents.Movement
                 if (position.Distance(h) < f.Distance(h))
                 {
                     // Perform a seek.
-                    movement += (f - position).normalized * Agent.MoveSpeed;
+                    movement += position.Seek(Agent.MoveSpeed, f);
                 }
             }
             
