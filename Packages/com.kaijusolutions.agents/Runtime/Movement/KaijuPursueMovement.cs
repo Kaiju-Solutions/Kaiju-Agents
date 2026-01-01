@@ -32,9 +32,9 @@ namespace KaijuSolutions.Agents.Movement
         public Vector3 Future3 => new(Future.x, 0, Future.y);
 #if UNITY_EDITOR
         /// <summary>
-        /// Points to render.
+        /// Points to render in the editor.
         /// </summary>
-        private  Vector3[] _rendering = new Vector3[6];
+        private readonly Vector3[] _editorRendering = new Vector3[6];
 #endif
         /// <summary>
         /// Get a pursue movement.
@@ -221,15 +221,15 @@ namespace KaijuSolutions.Agents.Movement
             else
             {
                 // Agent to target.
-                _rendering[0] = position;
-                _rendering[1] = t;
+                _editorRendering[0] = position;
+                _editorRendering[1] = t;
                 // Agent to forecast.
-                _rendering[2] = position;
-                _rendering[3] = f;
+                _editorRendering[2] = position;
+                _editorRendering[3] = f;
                 // Target to forecast.
-                _rendering[4] = t;
-                _rendering[5] = f;
-                Handles.DrawLines(_rendering);
+                _editorRendering[4] = t;
+                _editorRendering[5] = f;
+                Handles.DrawLines(_editorRendering);
             }
             
             RenderDistance(t);
