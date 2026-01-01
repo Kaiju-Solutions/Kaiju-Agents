@@ -8,7 +8,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Sensor to perform ray or sphere casts.
+    /// Sensor to perform ray or sphere casts. This will cast from this transform in the forward direction of this transform.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR

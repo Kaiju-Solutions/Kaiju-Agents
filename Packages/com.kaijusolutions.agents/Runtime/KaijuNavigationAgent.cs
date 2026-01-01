@@ -21,17 +21,17 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the agent's movement.
         /// </summary>
+        public NavMeshAgent Nav => nav;
+        
+        /// <summary>
+        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the agent's movement.
+        /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The navigation mesh agent which controls the agent's movement.")]
         [HideInInspector]
 #endif
         [SerializeField]
         private NavMeshAgent nav;
-        
-        /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the agent's movement.
-        /// </summary>
-        public NavMeshAgent Nav => nav;
         
         /// <summary>
         /// Get the radius of an agent.
@@ -45,7 +45,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Callback when the movement speed has changed.
         /// </summary>
-        protected override void ChangedMoveSpeed()
+        private void ChangedMoveSpeed()
         {
             if (nav)
             {
@@ -56,7 +56,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Callback when the movement acceleration has changed.
         /// </summary>
-        protected override void ChangedMoveAcceleration()
+        private void ChangedMoveAcceleration()
         {
             if (!nav)
             {
@@ -70,7 +70,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Callback when the look speed has changed.
         /// </summary>
-        protected override void ChangedLookSpeed()
+        private void ChangedLookSpeed()
         {
             if (nav)
             {
@@ -81,7 +81,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Callback when the autorotate has changed.
         /// </summary>
-        protected override void ChangedAutoRotate()
+        private void ChangedAutoRotate()
         {
             if (nav)
             {
@@ -90,14 +90,16 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Callback for when the look target has changed.
+        /// This function is called when the object becomes enabled and active.
         /// </summary>
-        protected override void ChangedLookTarget()
+        protected override void OnEnable()
         {
-            if (nav)
-            {
-                nav.updateRotation = AutoRotate && !Looking;
-            }
+            OnMoveSpeed += ChangedMoveSpeed;
+            OnMoveAcceleration += ChangedMoveAcceleration;
+            OnLookSpeed += ChangedLookSpeed;
+            OnAutoRotate += ChangedAutoRotate;
+            OnLookTarget += ChangedAutoRotate;
+            base.OnEnable();
         }
         
         /// <summary>
@@ -105,7 +107,13 @@ namespace KaijuSolutions.Agents
         /// </summary>
         protected override void OnDisable()
         {
-            if (nav)
+            OnMoveSpeed -= ChangedMoveSpeed;
+            OnMoveAcceleration -= ChangedMoveAcceleration;
+            OnLookSpeed -= ChangedLookSpeed;
+            OnAutoRotate -= ChangedAutoRotate;
+            OnLookTarget -= ChangedAutoRotate;
+            
+            if (nav && nav.isOnNavMesh)
             {
                 nav.ResetPath();
                 nav.isStopped = true;
@@ -126,6 +134,12 @@ namespace KaijuSolutions.Agents
             nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
             nav.angularSpeed = LookSpeed;
             nav.updateRotation = AutoRotate && !Looking;
+            
+            if (!nav.isOnNavMesh)
+            {
+                return;
+            }
+            
             nav.ResetPath();
             nav.isStopped = true;
             nav.enabled = true;

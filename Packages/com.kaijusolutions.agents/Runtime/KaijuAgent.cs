@@ -166,7 +166,6 @@ namespace KaijuSolutions.Agents
             set
             {
                 moveSpeed = Mathf.Max(value, 0);
-                ChangedMoveSpeed();
                 OnMoveSpeed?.Invoke();
                 OnMoveSpeedGlobal?.Invoke(this);
             }
@@ -184,11 +183,6 @@ namespace KaijuSolutions.Agents
         private float moveSpeed = 10f;
         
         /// <summary>
-        /// Callback when the movement speed has changed.
-        /// </summary>
-        protected virtual void ChangedMoveSpeed() { }
-        
-        /// <summary>
         /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
         /// </summary>
         public float MoveAcceleration
@@ -197,7 +191,6 @@ namespace KaijuSolutions.Agents
             set
             {
                 moveAcceleration = Mathf.Max(value, 0);
-                ChangedMoveAcceleration();
                 OnMoveAcceleration?.Invoke();
                 OnMoveAccelerationGlobal?.Invoke(this);
             }
@@ -214,11 +207,6 @@ namespace KaijuSolutions.Agents
         private float moveAcceleration;
         
         /// <summary>
-        /// Callback when the movement acceleration has changed.
-        /// </summary>
-        protected virtual void ChangedMoveAcceleration() { }
-        
-        /// <summary>
         /// The maximum look speed of the agent in degrees per second.
         /// </summary>
         public float LookSpeed
@@ -227,7 +215,6 @@ namespace KaijuSolutions.Agents
             set
             {
                 lookSpeed = Mathf.Max(value, 0);
-                ChangedLookSpeed();
                 OnLookSpeed?.Invoke();
                 OnLookSpeedGlobal?.Invoke(this);
             }
@@ -245,11 +232,6 @@ namespace KaijuSolutions.Agents
         private float lookSpeed;
         
         /// <summary>
-        /// Callback when the look speed has changed.
-        /// </summary>
-        protected virtual void ChangedLookSpeed() { }
-        
-        /// <summary>
         /// If the agent should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
         public bool AutoRotate
@@ -258,7 +240,6 @@ namespace KaijuSolutions.Agents
             set
             {
                 autoRotate = value;
-                ChangedAutoRotate();
                 OnAutoRotate?.Invoke();
                 OnAutoRotateGlobal?.Invoke(this);
             }
@@ -311,11 +292,6 @@ namespace KaijuSolutions.Agents
                 OnSensorDisabled?.Invoke(sensor);
             }
         }
-        
-        /// <summary>
-        /// Callback when the autorotate has changed.
-        /// </summary>
-        protected virtual void ChangedAutoRotate() { }
         
         /// <summary>
         /// Identifiers for this agent.
@@ -429,7 +405,6 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = null;
                 _lookTransform = null;
                 _wasLooking = false;
-                ChangedLookTarget();
                 OnLookTarget?.Invoke();
                 OnLookTargetGlobal?.Invoke(this);
             }
@@ -469,7 +444,6 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = null;
                 _lookTransform = null;
                 _wasLooking = false;
-                ChangedLookTarget();
                 OnLookTarget?.Invoke();
                 OnLookTargetGlobal?.Invoke(this);
             }
@@ -522,7 +496,6 @@ namespace KaijuSolutions.Agents
                 _lookVector3 = null;
                 _lookTransform = null;
                 _wasLooking = false;
-                ChangedLookTarget();
                 OnLookTarget?.Invoke();
                 OnLookTargetGlobal?.Invoke(this);
             }
@@ -576,7 +549,6 @@ namespace KaijuSolutions.Agents
                 _lookVector = null;
                 _lookTransform = null;
                 _wasLooking = false;
-                ChangedLookTarget();
                 OnLookTarget?.Invoke();
                 OnLookTargetGlobal?.Invoke(this);
             }
@@ -596,7 +568,6 @@ namespace KaijuSolutions.Agents
                 _lookVector = null;
                 _lookVector3 = null;
                 _wasLooking = false;
-                ChangedLookTarget();
                 OnLookTarget?.Invoke();
                 OnLookTargetGlobal?.Invoke(this);
             }
@@ -618,11 +589,6 @@ namespace KaijuSolutions.Agents
         {
             set => LookTransform = value.transform;
         }
-        
-        /// <summary>
-        /// Callback for when the look target has changed.
-        /// </summary>
-        protected virtual void ChangedLookTarget() { }
         
         /// <summary>
         /// The agent to move in relation to.
@@ -1752,7 +1718,6 @@ namespace KaijuSolutions.Agents
                 if (_wasLooking)
                 {
                     _wasLooking = false;
-                    ChangedLookTarget();
                     OnLookTarget?.Invoke();
                     OnLookTargetGlobal?.Invoke(this);
                 }
