@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Target
   agent: {fileID: 462820017}
-  type: 1
+  type: 3
 --- !u!1 &1602475871
 GameObject:
   m_ObjectHideFlags: 0

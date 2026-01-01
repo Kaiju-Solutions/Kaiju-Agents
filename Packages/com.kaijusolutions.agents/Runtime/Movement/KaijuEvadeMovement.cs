@@ -182,19 +182,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>The calculated movement.</returns>
         protected override Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta)
         {
-            // Calculate target values.
-            Vector2 targetVelocity = target.Velocity(Previous, delta);
-            float targetSpeed = target.Speed(Previous, delta);
-            
-            // Predict where the target will be.
-            Future = target + targetVelocity * ((target - position).magnitude / (speed + targetSpeed));
-            
-            // Flee predicting the target.
-            Vector2 move = base.Calculate(position, speed, Future, delta);
-            
-            // Update the previous position.
+            Vector2 pursue = position.Evade(target, Previous, speed, delta, out Vector2 future);
+            Future = future;
             Previous = target;
-            return move;
+            return pursue;
         }
 #if UNITY_EDITOR
         /// <summary>
