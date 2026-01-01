@@ -628,14 +628,18 @@ namespace KaijuSolutions.Agents.Movement
             // Clear the old path.
             _path.Clear();
             
-            // Nothing to do if no agent.
-            if (!Agent)
+            // Nothing to do if no agent of target.
+            if (!Agent || (!_vector3.HasValue && !_transform))
             {
                 return;
             }
             
             // Calculate the new path.
-            NavMesh.CalculatePath(Agent.Position3, Target3, NavMesh.AllAreas, _navMeshPath);
+            if (!NavMesh.CalculatePath(Agent.Position3, Target3, NavMesh.AllAreas, _navMeshPath))
+            {
+                Debug.LogError($"{Agent.name} - Kaiju Follow Path Movement - Failed to calculate a path from {Agent.Position3} to {Target3}", Agent);
+                return;
+            }
             
             // Copy the path.
             Vector3[] points = new Vector3[_navMeshPath.corners.Length];
