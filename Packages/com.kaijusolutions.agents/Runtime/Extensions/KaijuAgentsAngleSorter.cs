@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Comparer class to sort by angle. Used in the extension methods found in <see cref="KaijuAgentsSorAngle"/>.
+    /// Comparer class to sort by angle in degrees from a position towards a target around the global Y axis. Used in the extension methods found in <see cref="KaijuAgentsSortAngle"/>.
     /// </summary>
     public sealed class KaijuAgentsAngleSorter : IComparer<Vector2>, IComparer<Vector3>, IComparer<Transform>, IComparer<Component>, IComparer<GameObject>
     {
