@@ -90,10 +90,10 @@
       <section><p>Vision sensor to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard vision sensors as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html">KaijuCastSensor</a></h4>
-      <section><p>Sensor to perform ray or sphere casts.</p>
+      <section><p>Sensor to perform ray or sphere casts. This will cast from this transform in the forward direction of this transform.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html">KaijuEverythingVisionSensor</a></h4>
-      <section><p>Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned.</p>
+      <section><p>Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned. While this sensor can be highly versatile, if performance is a concern, it is recommended to extend <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a> for a specific component type you are interested in rather than using this.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></h4>
       <section><p>Base sensor class.</p>
