@@ -24,11 +24,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsAngle.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsAngle.html",
-          "hash": "VnIGoE7jjYOplDQ8c+Qvj10+SHcjonnj65eglz7md24="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.html",
+          "hash": "sqRuA7XWRVikmrhAIzDiiftpZEowuPaYDJNsmca8gmk="
         }
       },
       "is_incremental": false,
@@ -36,11 +36,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsArcRaycast.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsArcRaycast.html",
-          "hash": "l1eBwfhrk2Weoq6RzFsdkvXvGG0lNCUnU73bRDO5NCY="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsArcRaycast.html",
+          "hash": "gA3zRLvmVKNR2rTOIh91T4YTHTTU9SZhjKgZBgcU09Y="
         }
       },
       "is_incremental": false,
@@ -48,11 +48,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsArcSphereCast.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsArcSphereCast.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsArcSphereCast.html",
-          "hash": "nXh+TfDWBBVcR2rsif12DseDrf3+yzOarnNuHk4JDpc="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsArcSphereCast.html",
+          "hash": "dLfxcCgeYVdzfYBwTW7Z1D8xclKUtHDVgiiRdORPI94="
         }
       },
       "is_incremental": false,
@@ -60,11 +60,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBetween.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBetween.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBetween.html",
-          "hash": "vDYsTys7YLud3ZWVyplGqA9BAjXiIThFGuKRLuNT1aU="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBetween.html",
+          "hash": "Bw9yT6si7MLRCUbPA0Gr/m/hSvXrSCXW2XpmCkMY9+c="
         }
       },
       "is_incremental": false,
@@ -72,11 +72,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBetween3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBetween3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBetween3.html",
-          "hash": "sBjx+l5XnYUC8Mm5+CosCyhJrOy3vqgCvg1r5tru51Q="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBetween3.html",
+          "hash": "SKXN1/vnjY9Cf1IQ98zvWM2Ce3vDLeqolSZJUwXqmMM="
         }
       },
       "is_incremental": false,
@@ -84,11 +84,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBeyond.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBeyond.html",
-          "hash": "Q6EvxTzQcUAB1uMzUfIABVgZ4kWssOsjLb51gKzcZok="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond.html",
+          "hash": "s2yqbdyeUVUQwOklPQGcTVBK6H9BCt/l1Z/sn+2vAGo="
         }
       },
       "is_incremental": false,
@@ -96,11 +96,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBeyond3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsBeyond3.html",
-          "hash": "E1m2JNThkmg89w/3pFdH5hjxURl/PTKQcADG+RdhwjU="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond3.html",
+          "hash": "cNrPs4cpwcxwqpGihFno6BthYkyDpcq/Xb11xrOLLco="
         }
       },
       "is_incremental": false,
@@ -108,11 +108,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDirection.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDirection.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDirection.html",
-          "hash": "UAIyZ1mGplkPeB9LFNrIhIitNOYoR4ltw4AloZdfiXU="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDirection.html",
+          "hash": "Vw6y/QYxT+nFQq0yvgiHxkA7JTbsrT/yhQZq5JDASQ0="
         }
       },
       "is_incremental": false,
@@ -120,11 +120,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDirection3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDirection3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDirection3.html",
-          "hash": "rgJnRkrQgSPAOwkmCGA+PYbPAS1yXOM94+DaGpXEztA="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDirection3.html",
+          "hash": "dFF55uurYkPxF99bffiRFouDQHMyFobdPwZVfRzlQb0="
         }
       },
       "is_incremental": false,
@@ -132,11 +132,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance.html",
-          "hash": "DRlhPEgZNZV+9a8UXHJ4PuMHjbkZJV6Pb9yr1vgGiq8="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance.html",
+          "hash": "rcceS/hMWfU6lTSf1gAat+3BBn+WGB9h+YvesvWwAN4="
         }
       },
       "is_incremental": false,
@@ -144,11 +144,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance3.html",
-          "hash": "OCzziPWP7cKhjozM2XA4OUQ0wCKqwN+WI9GIGN9HmMY="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3.html",
+          "hash": "mJZhSnlDloqOkc1tKGCReKuAf1cipMWwXQmXp5+ThsM="
         }
       },
       "is_incremental": false,
@@ -156,11 +156,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance3Sorter.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3Sorter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistance3Sorter.html",
-          "hash": "LnoBrEW4vkTF0esh7zXM+SICXqxrFZcp7h2d7aRmZIc="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3Sorter.html",
+          "hash": "dPz1FHtx+2SF6V1FeHR+v6WUOESqpSt4kI+K+kyXRbg="
         }
       },
       "is_incremental": false,
@@ -168,11 +168,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistanceSorter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsDistanceSorter.html",
-          "hash": "kKOgxi61obuZShVf2P6jt7Tt5v2CMTtvQQAVR1cJMdo="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistanceSorter.html",
+          "hash": "vnWUNfo2jfNBXjAgfTEMS0j0lN/QP/DKct/QCqprjJc="
         }
       },
       "is_incremental": false,
@@ -180,11 +180,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsExpand.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsExpand.html",
-          "hash": "FHuyicJCFDC2zoEXmmkJc3IOHjgMNkm670hDqFFVmC4="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html",
+          "hash": "zsnNJWpcym1+Lu9FHnsjghDplfXVcwK+DNC9qh7ribc="
         }
       },
       "is_incremental": false,
@@ -192,11 +192,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsExtractPoints.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsExtractPoints.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsExtractPoints.html",
-          "hash": "oEDPFO8eTar10PS+lTw0rrrmDXmuMhmSWyc61d2MZCI="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsExtractPoints.html",
+          "hash": "fyzh1GlKeAv8qDVj4dNZkhW3homODu1kj+KBtGu5xqI="
         }
       },
       "is_incremental": false,
@@ -204,11 +204,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFarthest.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFarthest.html",
-          "hash": "8GR/9/TR6lVdWjrX+WhrfwCETGUEgXyWxMgEOj7md84="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest.html",
+          "hash": "C7BsOCRGthXuFZ9KurvYhi/CvZxlX5WdmvnjJYc6C8Q="
         }
       },
       "is_incremental": false,
@@ -216,11 +216,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFarthest3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFarthest3.html",
-          "hash": "pWuYgCQf4LF4TzsHfm+vBqnwkFDu/FT1pau6c3w2q4s="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest3.html",
+          "hash": "nWLodJjkiyOQgvZKISiqkVDmg+KrGHqmlva/b4eDvss="
         }
       },
       "is_incremental": false,
@@ -228,11 +228,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFlatten.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsFlatten.html",
-          "hash": "NLPcFEfz2jD4ay0kWiH3MtoZ7iOaqjtPkCsUlw3BluQ="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html",
+          "hash": "RlEhd5l8ZASr0nQdy2qif2qrMmMRY1o/AV30wEjSOjE="
         }
       },
       "is_incremental": false,
@@ -240,11 +240,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsHasSight.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsHasSight.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsHasSight.html",
-          "hash": "iVJxO+j28i6eEtWzhyaZ1v0l2EkcN45Q6gZ3+tWPQPI="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsHasSight.html",
+          "hash": "qfC0HXZTZl+34flPiqqso+oCMnVU9xLnEkIXUC8818Y="
         }
       },
       "is_incremental": false,
@@ -252,11 +252,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsInView.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsInView.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsInView.html",
-          "hash": "dSNoGUe33JYOUGxNRYAAzpqYBxJrw6fW1JfMbMlV+cY="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsInView.html",
+          "hash": "MHRMSHl6/v9HWsHvPTywu2l1UPM5Y56bVb2u57vHnc0="
         }
       },
       "is_incremental": false,
@@ -264,11 +264,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsNearest.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNearest.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsNearest.html",
-          "hash": "AuVZsRf5WKiOd+vmGHgZkzZRmUb9KbN5Z6vBaqQ8UOY="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNearest.html",
+          "hash": "ciGe0bL4FyyE4Rf4MI5Np0GnkrHiGgZO0Kc2RDeydSM="
         }
       },
       "is_incremental": false,
@@ -276,11 +276,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsNearest3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNearest3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsNearest3.html",
-          "hash": "16LHjZ9qjlz5LyD9feGpOCPkq/q+CvgV7X+ZY78qbhE="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNearest3.html",
+          "hash": "EGAy737SrylbyzLnHkNfoHdlFAL8ghTyPcr8ZugtOjU="
         }
       },
       "is_incremental": false,
@@ -288,11 +288,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsRaycast.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsRaycast.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsRaycast.html",
-          "hash": "9S1CtZdCE8OtbZRMy+DeFCF24C12iRtKNZFCyzsFtiU="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsRaycast.html",
+          "hash": "YoHGKg2NiYjP6tDmR++6Qcm5uPr334uJScfglEyTdbA="
         }
       },
       "is_incremental": false,
@@ -300,11 +300,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance.html",
-          "hash": "tm+X/38SjMvMIfyhBvUhl8oE/bIfIgFS8W8alr4boLQ="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.html",
+          "hash": "uT3+2fiEhG4N3vWZQDRpGbF+vkcDDa8umlTuRSUipN0="
         }
       },
       "is_incremental": false,
@@ -312,11 +312,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSortDistance3.html",
-          "hash": "1lJSK6a2CB0lV6YmZZd0LDWgnAnPXgJjFWe7UUGhBdI="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.html",
+          "hash": "EzdsxzzxEDwV0NVfTqVT9cJ5a1XIvb3SytpxkESM4KY="
         }
       },
       "is_incremental": false,
@@ -324,11 +324,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSpeed.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSpeed.html",
-          "hash": "GtpsMU1oUK2QP5/JLPsDWoUzjZjH8zO+PLvKmw8ajMQ="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed.html",
+          "hash": "t3JkBAlO7q7FpEpy+HfN+vZGp3FtCNR3mrVO8M1djuk="
         }
       },
       "is_incremental": false,
@@ -336,11 +336,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSpeed3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSpeed3.html",
-          "hash": "Q0rBwrwdBKBrpxiJHeL6CP+r0IthhyZruWLUEevRpkM="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed3.html",
+          "hash": "eZtNAnBZ/jkbOo3FZOGi4aA1YnQQ0DmyDuoTnHMCIP0="
         }
       },
       "is_incremental": false,
@@ -348,11 +348,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSphereCast.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSphereCast.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsSphereCast.html",
-          "hash": "5Cx/0tsdUeokrYYLahJPSIb4SbcXUNuqPc7VUMnioQk="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSphereCast.html",
+          "hash": "DTHEYZeLzUpfkmsSaUvEHE08bbeVjGtcVS1v8tDS/oE="
         }
       },
       "is_incremental": false,
@@ -360,11 +360,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsVelocity.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsVelocity.html",
-          "hash": "P8lwMCTIiuCypmaimV/MGsFPcjcIgYsmmaWfXwgvo1g="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity.html",
+          "hash": "y+7cHr5HhPEpTVZ3JpLFH10Kqx9/ll5HT7lD7Hqyp1w="
         }
       },
       "is_incremental": false,
@@ -372,11 +372,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsVelocity3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsVelocity3.html",
-          "hash": "8k9UZeFF3MNFKceHNXKaf2ufpB07NEaTOUftxVjx4sg="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity3.html",
+          "hash": "/fK0aU7pUn8hLdz8JP2WDy/YX5Cl7hkByTuu9mC0uTA="
         }
       },
       "is_incremental": false,
@@ -384,11 +384,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsWithin.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsWithin.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsWithin.html",
-          "hash": "Yu39zs83HUY6tYw9Xw307iWztI2U9JziLFJz3ow4z9c="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsWithin.html",
+          "hash": "XjymKpdN8STUOX9XBWScuEsGplQAMmlt9IWLRKHLt00="
         }
       },
       "is_incremental": false,
@@ -396,11 +396,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsWithin3.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsWithin3.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.KaijuAgentsWithin3.html",
-          "hash": "beGrG4Jn2Vxk8J5mE0P2ChZFiJpoaqSAuitRMJfb8iE="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsWithin3.html",
+          "hash": "1F1b3IJsyU1s67eRw8qkGWdjMYmk9tMScBZJL0Ra7Fc="
         }
       },
       "is_incremental": false,
@@ -408,11 +408,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/KaijuSolutions.Agents.Extension.yml",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/KaijuSolutions.Agents.Extension.html",
-          "hash": "xA5vRKdA8XeZgCPBv/m/FU21uvqJVAq1fxwvYcpo2oY="
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.html",
+          "hash": "lti2a6az+nRvJiRT2cYEqdboWHRXyyiEw8iAwTBCJWM="
         }
       },
       "is_incremental": false,
@@ -509,6 +509,42 @@
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgentsManager.html",
           "hash": "k2pVsZ5Vf+OI053wTNDiPu/6MVb8arUkdjmXc50lzFU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMatcher.KaijuAgentsMatcherMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMatcher.KaijuAgentsMatcherMode.html",
+          "hash": "4r9x7P0gvboIZrHqKofWODizxB1Q8ajXil5Ly2tuvJk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMatcher.html",
+          "hash": "OPI1ix+0gp9v0Mz8XCNb1ToWoLkG9JzqbTHiRptPO4w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMultiMatcher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgentsMultiMatcher.html",
+          "hash": "m3HYfWqMCmZ00/NMUQSc0xHqb+z11Eco9FSzFZcy9xg="
         }
       },
       "is_incremental": false,
@@ -832,7 +868,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html",
-          "hash": "7scYiFm2SUY7MD+S+prsEsUHyTn/sKIOY5YzfBJXNDw="
+          "hash": "nfHn5zkb6xqGFEdhl9px0VIu343DUR42k2xJ25v6LMw="
         }
       },
       "is_incremental": false,
@@ -868,7 +904,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.html",
-          "hash": "y7mqqpSIWI5kU+RyF6iuJqaCpjn/22rOHO1w8MRCtXk="
+          "hash": "lBwBjhP3obrTJrP/ytANDJ+7pzxpzKna7DXEP0ZFzl4="
         }
       },
       "is_incremental": false,
@@ -880,7 +916,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.html",
-          "hash": "n+2v/vHwW277uiiiMUiaymwwXlS81/1WRCUOTjfm8Wo="
+          "hash": "+U+F0HdSXicAQbNKMak4ww2p7xJrPApmpup9XMlkK94="
         }
       },
       "is_incremental": false,
@@ -892,7 +928,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "WxEP3HDcy+lY0TJJJ2/Yu8t24uZH3QElzMCODAVFZ+w="
+          "hash": "N9jckd/XaSA9WhPlEcb7KqBGWIJSGK8o14YGzZQISOA="
         }
       },
       "is_incremental": false,
@@ -1028,7 +1064,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 75,
+          "total_file_count": 79,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

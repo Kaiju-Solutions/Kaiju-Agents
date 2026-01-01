@@ -81,7 +81,7 @@
   
   <h1 id="KaijuSolutions_Agents_Sensors_KaijuEverythingVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor" class="text-break">Class KaijuEverythingVisionSensor
   </h1>
-  <div class="markdown level0 summary"><p>Vision sensor based on transforms, allowing it to see anything.</p>
+  <div class="markdown level0 summary"><p>Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -123,9 +123,6 @@
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">KaijuVisionSensor&lt;Transform&gt;.Observed</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_DefaultObservables">KaijuVisionSensor&lt;Transform&gt;.DefaultObservables()</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Run">KaijuVisionSensor&lt;Transform&gt;.Run()</a>
@@ -380,6 +377,61 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class KaijuEverythingVisionSensor : KaijuVisionSensor&lt;Transform&gt;</code></pre>
   </div>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuEverythingVisionSensor_Matcher_" data-uid="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.Matcher*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuEverythingVisionSensor_Matcher" data-uid="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.Matcher">Matcher</h4>
+  <div class="markdown level1 summary"><p>What to match names of the objects to provide extra filtering. Note this only applies to collecting default observables and not if you set any observables explicitly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;KaijuAgentsMultiMatcher&gt; Matcher { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgentsMultiMatcher.html">KaijuAgentsMultiMatcher</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuEverythingVisionSensor_DefaultObservables_" data-uid="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.DefaultObservables*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuEverythingVisionSensor_DefaultObservables" data-uid="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.DefaultObservables">DefaultObservables()</h4>
+  <div class="markdown level1 summary"><p>If there are no explicitly defined observable objects, define how to query for default observables.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Transform&gt; DefaultObservables()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td><p>All active instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">KaijuSolutions.Agents.Sensors.KaijuVisionSensor&lt;Transform&gt;.DefaultObservables()</span></div>
 </article>
           </div>
           

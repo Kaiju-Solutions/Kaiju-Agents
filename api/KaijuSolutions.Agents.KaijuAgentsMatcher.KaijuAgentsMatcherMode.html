@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace KaijuSolutions.Agents.Sensors | Kaiju Agents</title>
+    <title>Enum KaijuAgentsMatcher.KaijuAgentsMatcherMode | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace KaijuSolutions.Agents.Sensors | Kaiju Agents ">
+    <meta name="title" content="Enum KaijuAgentsMatcher.KaijuAgentsMatcherMode | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,31 +76,72 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Sensors">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuAgentsMatcher.KaijuAgentsMatcherMode">
   
-  <h1 id="KaijuSolutions_Agents_Sensors" data-uid="KaijuSolutions.Agents.Sensors" class="text-break">Namespace KaijuSolutions.Agents.Sensors
+  
+  <h1 id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode" data-uid="KaijuSolutions.Agents.KaijuAgentsMatcher.KaijuAgentsMatcherMode" class="text-break">Enum KaijuAgentsMatcher.KaijuAgentsMatcherMode
   </h1>
-  <div class="markdown level0 summary"><p>Sensors for use with Kaiju Agents.</p>
+  <div class="markdown level0 summary"><p>How for matchers to compare.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum KaijuAgentsMatcherMode</code></pre>
+  </div>
+  <h3 id="fields">Fields
   </h3>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></h4>
-      <section><p>Vision sensor to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard vision sensors as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html">KaijuCastSensor</a></h4>
-      <section><p>Sensor to perform ray or sphere casts.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html">KaijuEverythingVisionSensor</a></h4>
-      <section><p>Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></h4>
-      <section><p>Base sensor class.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a></h4>
-      <section><p>Allow for visual detection of a component type.</p>
-</section>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_Contained">Contained</td>
+        <td><p>The <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span> must contain value being compared against.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_Contains">Contains</td>
+        <td><p>The <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span> must be contained within the value being compared against.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_EndedWith">EndedWith</td>
+        <td><p>The <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span> must start with the value being compared against.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_EndsWith">EndsWith</td>
+        <td><p>The value being compared against must end with the <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_Equal">Equal</td>
+        <td><p>Must be equal.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_NotEqual">NotEqual</td>
+        <td><p>Must be not equal.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_StartedWith">StartedWith</td>
+        <td><p>The <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span> must start with the value being compared against.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcherMode_StartsWith">StartsWith</td>
+        <td><p>The value being compared against must start with the <span class="xref">KaijuSolutions.Agents.KaijuAgentsMatcher.match</span>.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
 </article>
           </div>
           

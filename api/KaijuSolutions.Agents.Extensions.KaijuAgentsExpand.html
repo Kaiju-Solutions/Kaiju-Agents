@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace KaijuSolutions.Agents.Sensors | Kaiju Agents</title>
+    <title>Class KaijuAgentsExpand | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace KaijuSolutions.Agents.Sensors | Kaiju Agents ">
+    <meta name="title" content="Class KaijuAgentsExpand | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,31 +76,70 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Sensors">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand">
   
-  <h1 id="KaijuSolutions_Agents_Sensors" data-uid="KaijuSolutions.Agents.Sensors" class="text-break">Namespace KaijuSolutions.Agents.Sensors
+  
+  <h1 id="KaijuSolutions_Agents_Extensions_KaijuAgentsExpand" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand" class="text-break">Class KaijuAgentsExpand
   </h1>
-  <div class="markdown level0 summary"><p>Sensors for use with Kaiju Agents.</p>
+  <div class="markdown level0 summary"><p>Extension method to expand a 2D vector across the X and Z axes to all three axes, setting the Y axis to zero.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsExpand</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extensions.html">KaijuSolutions.Agents.Extensions</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class KaijuAgentsExpand</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></h4>
-      <section><p>Vision sensor to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard vision sensors as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html">KaijuCastSensor</a></h4>
-      <section><p>Sensor to perform ray or sphere casts.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html">KaijuEverythingVisionSensor</a></h4>
-      <section><p>Vision sensor based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></h4>
-      <section><p>Base sensor class.</p>
-</section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a></h4>
-      <section><p>Allow for visual detection of a component type.</p>
-</section>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.Expand*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.Expand(Vector2)">Expand(Vector2)</h4>
+  <div class="markdown level1 summary"><p>Expand an XZ vector to all three axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Expand(this Vector2 vector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">vector</span></td>
+        <td><p>The vector to expand.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The XZ vector expanded to all three axes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
