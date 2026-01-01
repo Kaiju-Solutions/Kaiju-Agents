@@ -11,873 +11,1102 @@ namespace KaijuSolutions.Agents.Extensions
     /// </summary>
     public static class KaijuAgentsSortDistance3
     {
+#if UNITY_EDITOR
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            Sorter.Position = Vector3.zero;
+            Sorter.Farthest = false;
+            Sorter.Forward = null;
+            Sorter.Mode = null;
+        }
+#endif
         /// <summary>
         /// The sorter for distance.
         /// </summary>
-        private static readonly KaijuAgentsDistance3Sorter Sorter3 = new (Vector3.zero);
+        private static readonly KaijuAgentsDistance3Sorter Sorter = new(Vector3.zero);
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] Vector3[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] List<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector3[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Vector2[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] Transform[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] List<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Transform[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Vector3[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>(this Vector2 position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>(this Vector2 position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static T[] SortDistance3<T>(this Vector2 position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Transform[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] GameObject[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance<T>(this Vector2 position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector2 position, [NotNull] List<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance<T>(this Vector2 position, [NotNull] List<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static GameObject[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static T[] SortDistance<T>(this Vector2 position, [NotNull] IEnumerable<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] Vector2[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector2 position, [NotNull] List<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector2[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static GameObject[] SortDistance3(this Vector2 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] Vector3[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector3[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Vector2[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] Transform[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] List<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Transform[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Vector3[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>(this Vector3 position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>(this Vector3 position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static T[] SortDistance3<T>(this Vector3 position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static Transform[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] GameObject[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance<T>(this Vector3 position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3(this Vector3 position, [NotNull] List<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance<T>(this Vector3 position, [NotNull] List<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static GameObject[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static T[] SortDistance<T>(this Vector3 position, [NotNull] IEnumerable<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector2[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static void SortDistance3(this Vector3 position, [NotNull] List<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward);
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector2[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on.</param>
+        public static GameObject[] SortDistance3(this Vector3 position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward);
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector3[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector3[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector2[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] Transform[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Transform[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector3[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this Transform position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this Transform position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static T[] SortDistance3<T>([NotNull] this Transform position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Transform[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] GameObject[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this Transform position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this Transform position, [NotNull] List<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static GameObject[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static T[] SortDistance<T>([NotNull] this Transform position, [NotNull] IEnumerable<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector2[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Transform position, [NotNull] List<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector2[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static GameObject[] SortDistance3([NotNull] this Transform position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Sorter.Set(position, farthest, mode, forward ?? position.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector3[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector3[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector2[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] Transform[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Transform[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector3[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this Component position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this Component position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static T[] SortDistance3<T>([NotNull] this Component position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Transform[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] GameObject[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this Component position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this Component position, [NotNull] List<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this Component position, [NotNull] List<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static GameObject[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static T[] SortDistance<T>([NotNull] this Component position, [NotNull] IEnumerable<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector2[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this Component position, [NotNull] List<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector2[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static GameObject[] SortDistance3([NotNull] this Component position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector3[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Vector3[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector2[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector2> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Transform[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static Transform[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Transform> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Vector3[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Vector3> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this GameObject position, [NotNull] T[] targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3<T>([NotNull] this GameObject position, [NotNull] List<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static T[] SortDistance3<T>([NotNull] this GameObject position, [NotNull] IEnumerable<T> targets, bool farthest = false) where T : Component
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static Transform[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<Transform> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] GameObject[] targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this GameObject position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            Array.Sort(targets, Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes.
+        /// Sort targets from a position.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance<T>([NotNull] this GameObject position, [NotNull] List<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            targets.Sort(Sorter3);
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
         }
         
         /// <summary>
-        /// Sort targets from a position across all axes. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
         /// </summary>
         /// <param name="position">The position to sort in relation to.</param>
         /// <param name="targets">The targets to sort.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
-        public static GameObject[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false)
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static T[] SortDistance<T>([NotNull] this GameObject position, [NotNull] IEnumerable<T> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
         {
-            Sorter3.Set(position, farthest);
-            return targets.OrderBy(x => x, Sorter3).ToArray();
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
+        }
+        
+        /// <summary>
+        /// Sort targets from a position.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+        {
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            Array.Sort(targets, Sorter);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static void SortDistance3([NotNull] this GameObject position, [NotNull] List<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+        {
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            targets.Sort(Sorter);
+        }
+        
+        /// <summary>
+        /// Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.
+        /// </summary>
+        /// <param name="position">The position to sort in relation to.</param>
+        /// <param name="targets">The targets to sort.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="forward">The forward direction to break ties on. If NULL, the position's forward will be used.</param>
+        public static GameObject[] SortDistance3([NotNull] this GameObject position, [NotNull] IEnumerable<GameObject> targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+        {
+            Transform t = position.transform;
+            Sorter.Set(t.position, farthest, mode, forward ?? t.forward.Flatten());
+            return targets.OrderBy(x => x, Sorter).ToArray();
         }
     }
 }
