@@ -120,12 +120,66 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target.
         /// </summary>
-        public float CurrentDistance => Vector2.Distance(Target, Agent.Position);
+        public float CurrentDistance => Done() ? 0 : Target.Distance(Agent.Position);
         
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
         /// </summary>
-        public float CurrentDistance3 => Vector3.Distance(Target3, Agent.Position3);
+        public float CurrentDistance3 => Done() ? 0 : Target3.Distance3(Agent.Position3);
+        
+        /// <summary>
+        /// The total distance from the <see cref="KaijuAgent"/> along the <see cref="Path"/> to the <see cref="Target"/> along the X and Z axes.
+        /// </summary>
+        public float PathDistance
+        {
+            get
+            {
+                if (Done())
+                {
+                    return 0;
+                }
+                
+                float distance = 0;
+                if (_path.Count > 0)
+                {
+                    distance += Agent.Position.Distance(_path[0].Flatten());
+
+                    for (int i = 0; i < _path.Count - 1; i++)
+                    {
+                        distance += _path[i].Flatten().Distance(_path[i + 1].Flatten());
+                    }
+                }
+                
+                return distance + Target.Distance(_path[^1].Flatten());
+            }
+        }
+        
+        /// <summary>
+        /// The total distance from the <see cref="KaijuAgent"/> along the <see cref="Path"/> to the <see cref="Target3"/> along all three axes.
+        /// </summary>
+        public float PathDistance3
+        {
+            get
+            {
+                if (Done())
+                {
+                    return 0;
+                }
+                
+                float distance = 0;
+                if (_path.Count > 0)
+                {
+                    distance += Agent.Position3.Distance3(_path[0]);
+
+                    for (int i = 0; i < _path.Count - 1; i++)
+                    {
+                        distance += _path[i].Distance3(_path[i + 1]);
+                    }
+                }
+                
+                return distance + Target3.Distance3(_path[^1]);
+            }
+        }
         
         /// <summary>
         /// The distance at which we can consider this behaviour done.
@@ -708,5 +762,8 @@ namespace KaijuSolutions.Agents.Movement
             // Lastly, seek towards the final target.
             return position.Seek(Target, Agent.MoveSpeed);
         }
+#if UNITY_EDITOR
+        // TODO.
+#endif
     }
 }

@@ -146,6 +146,7 @@ internal static class KaijuAgentsEditor
                 container.Add(ColorSetting("Wander", () => KaijuMovementManager.EditorWanderColor, color => KaijuMovementManager.EditorWanderColor = color, KaijuMovementManager.EditorResetWanderColor, refreshActions, "The color for wander visualizations."));
                 container.Add(ColorSetting("Separation", () => KaijuMovementManager.EditorSeparationColor, color => KaijuMovementManager.EditorSeparationColor = color, KaijuMovementManager.EditorResetSeparationColor, refreshActions, "The color for separation visualizations."));
                 container.Add(ColorSetting("Obstacle Avoidance", () => KaijuMovementManager.EditorObstacleAvoidanceColor, color => KaijuMovementManager.EditorObstacleAvoidanceColor = color, KaijuMovementManager.EditorResetObstacleAvoidanceColor, refreshActions, "The color for obstacle avoidance visualizations."));
+                container.Add(ColorSetting("Path Following", () => KaijuMovementManager.EditorPathFollowColor, color => KaijuMovementManager.EditorPathFollowColor = color, KaijuMovementManager.EditorResetPathFollowColor, refreshActions, "The color for path following visualizations."));
                 
                 // Add a full reset button.
                 Button resetAllButton = new(KaijuMovementManager.EditorResetColors)

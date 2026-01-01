@@ -88,12 +88,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target.
         /// </summary>
-        public float CurrentDistance => Vector2.Distance(Target, Agent.Position);
+        public float CurrentDistance => Done() ? 0 : Target.Distance(Agent.Position);
         
         /// <summary>
         /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
         /// </summary>
-        public float CurrentDistance3 => Vector3.Distance(Target3, Agent.Position3);
+        public float CurrentDistance3 => Done() ? 0 : Target3.Distance3(Agent.Position3);
         
         /// <summary>
         /// The internal <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> value.

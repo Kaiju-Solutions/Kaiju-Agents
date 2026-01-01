@@ -52,6 +52,11 @@ namespace KaijuSolutions.Agents.Movement
         private const string EditorObstacleAvoidanceKey = "KAIJU_AGENTS_OBSTACLE_AVOIDANCE_COLOR";
         
         /// <summary>
+        /// The key for the path following color preference in the editor.
+        /// </summary>
+        private const string EditorPathFollowKey = "KAIJU_AGENTS_PATH_FOLLOWING_COLOR";
+        
+        /// <summary>
         /// Color for seek visuals in the editor.
         /// </summary>
         public static Color EditorSeekColor
@@ -225,7 +230,7 @@ namespace KaijuSolutions.Agents.Movement
                     return _editorObstacleAvoidanceColor.Value;
                 }
                 
-                _editorObstacleAvoidanceColor = KaijuAgentsManager.EditorLoadColor(EditorObstacleAvoidanceKey, Color.brown);
+                _editorObstacleAvoidanceColor = KaijuAgentsManager.EditorLoadColor(EditorObstacleAvoidanceKey, Color.deepPink);
                 return _editorObstacleAvoidanceColor.Value;
             }
             set
@@ -241,6 +246,33 @@ namespace KaijuSolutions.Agents.Movement
         private static Color? _editorObstacleAvoidanceColor;
         
         /// <summary>
+        /// Color for path following visuals in the editor.
+        /// </summary>
+        public static Color EditorPathFollowColor
+        {
+            get
+            {
+                if (_editorPathFollowColor.HasValue)
+                {
+                    return _editorPathFollowColor.Value;
+                }
+                
+                _editorPathFollowColor = KaijuAgentsManager.EditorLoadColor(EditorPathFollowKey, Color.brown);
+                return _editorPathFollowColor.Value;
+            }
+            set
+            {
+                _editorPathFollowColor = value;
+                KaijuAgentsManager.EditorSaveColor(EditorPathFollowKey, _editorPathFollowColor.Value);
+            }
+        }
+        
+        /// <summary>
+        /// Color for path following visuals in the editor.
+        /// </summary>
+        private static Color? _editorPathFollowColor;
+        
+        /// <summary>
         /// Sync all colors in the editor.
         /// </summary>
         public static void EditorSyncColors()
@@ -252,6 +284,7 @@ namespace KaijuSolutions.Agents.Movement
             _ = EditorWanderKey;
             _ = EditorSeparationColor;
             _ = EditorObstacleAvoidanceColor;
+            _ = EditorPathFollowColor;
         }
         
         /// <summary>
@@ -266,6 +299,7 @@ namespace KaijuSolutions.Agents.Movement
             EditorResetWanderColor();
             EditorResetSeparationColor();
             EditorResetObstacleAvoidanceColor();
+            EditorResetPathFollowColor();
         }
         
         /// <summary>
@@ -322,6 +356,14 @@ namespace KaijuSolutions.Agents.Movement
         public static void EditorResetObstacleAvoidanceColor()
         {
             KaijuAgentsManager.EditorResetColor(EditorObstacleAvoidanceKey);
+        }
+        
+        /// <summary>
+        /// Reset the obstacle avoidance color in the editor.
+        /// </summary>
+        public static void EditorResetPathFollowColor()
+        {
+            KaijuAgentsManager.EditorResetColor(EditorPathFollowKey);
         }
         
         /// <summary>
