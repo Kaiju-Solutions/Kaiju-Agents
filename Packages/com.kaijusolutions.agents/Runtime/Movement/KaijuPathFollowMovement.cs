@@ -731,7 +731,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the movement is done or not.</returns>
         public override bool Done()
         {
-            return base.Done() || (!_transform && _vector3 == null);
+            return base.Done() || (!_transform && _vector3 == null) || Agent.Position.Within(Target, _distance);
         }
         
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
@@ -50,7 +51,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the movement is done or not.</returns>
         public override bool Done()
         {
-            return base.Done() || CurrentDistance <= Distance;
+            return base.Done() || Agent.Position.Within(Target, Distance);
         }
         
         /// <summary>
