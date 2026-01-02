@@ -343,34 +343,65 @@ namespace KaijuSolutions.Agents.Extensions
                 return 1;
             }
             
-            // Both the method, and a direct path, require at least two points.
+            // Both the method, and a direct path in the case of a failure, require at least two points.
             if (path.Length < 2)
             {
                 Array.Resize(ref path, 2);
             }
             
-            // Get the closest point on the navigable areas.
-            if (NavMesh.SamplePosition(start, out NavMeshHit startHit, float.MaxValue, mask) && NavMesh.SamplePosition(goal, out NavMeshHit goalHit, float.MaxValue, mask) && NavMesh.CalculatePath(startHit.position, goalHit.position, mask, Path))
+            // Get the closest point on the navigable areas. If failed, likely for there being no navigation meshes, just get the start and goal points.
+            if (!NavMesh.SamplePosition(start, out NavMeshHit startHit, float.MaxValue, mask) || !NavMesh.SamplePosition(goal, out NavMeshHit goalHit, float.MaxValue, mask) || !NavMesh.CalculatePath(startHit.position, goalHit.position, mask, Path))
             {
-                // The non-alloc method is used, but there is no way of knowing what size we truly need. Hence, if the array is filled, we don't know if it just fit or ran out of size, so double and repeat.
-                while (true)
-                {
-                    int size = Path.GetCornersNonAlloc(path);
-                    if (size >= path.Length)
-                    {
-                        Array.Resize(ref path, path.Length * 2);
-                        continue;
-                    }
-                    
-                    Path.ClearCorners();
-                    return size;
-                }
+                path[0] = start;
+                path[1] = goal;
+                return 2;
             }
             
-            // If failed, likely for there being no navigation meshes, just get the start and goal points.
-            path[0] = start;
-            path[1] = goal;
-            return 2;
+            // The non-alloc method is used, but there is no way of knowing what size we truly need. Hence, if the array is filled, we don't know if it just fit or ran out of size, so double and repeat.
+            int size;
+            while (true)
+            {
+                size = Path.GetCornersNonAlloc(path);
+                if (size >= path.Length)
+                {
+                    Array.Resize(ref path, path.Length * 2);
+                    continue;
+                }
+                
+                Path.ClearCorners();
+                break;
+            }
+            
+            // If the start is different, insert it at the start.
+            if (start != startHit.position)
+            {
+                if (path.Length < ++size)
+                {
+                    Array.Resize(ref path, size);
+                }
+                
+                // Shuffle everything one to the right.
+                for (int i = size - 1; i > 0; i--)
+                {
+                    path[i] = path[i - 1];
+                }
+                
+                // Insert the starting point.
+                path[0] = start;
+            }
+            
+            // Do the same with the goal, inserting at the end.
+            if (goal != goalHit.position)
+            {
+                if (path.Length < ++size)
+                {
+                    Array.Resize(ref path, size);
+                }
+                
+                path[size - 1] = goal;
+            }
+            
+            return size;
         }
         
         /// <summary>
