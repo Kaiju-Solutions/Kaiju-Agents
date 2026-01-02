@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Sensors
                     return;
                 }
 #endif
-                Reset();
+                Cleanup();
             }
         }
         
@@ -195,7 +195,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// Perform any needed resetting of the sensor.
         /// </summary>
-        protected override void Reset()
+        protected override void Cleanup()
         {
             // With no angle, we can only do a single cast.
             if (angle <= 0)
@@ -216,7 +216,7 @@ namespace KaijuSolutions.Agents.Sensors
             // When playing, ensure the arrays are the proper size.
             if (Application.isPlaying)
             {
-                Reset();
+                Cleanup();
             }
         }
         

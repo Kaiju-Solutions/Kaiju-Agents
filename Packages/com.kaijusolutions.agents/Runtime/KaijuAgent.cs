@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Actuators;
 using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
@@ -154,6 +155,21 @@ namespace KaijuSolutions.Agents
         public event KaijuSensorAction OnSensorDisabled;
         
         /// <summary>
+        /// Callback for when an actuator has been run.
+        /// </summary>
+        public event KaijuActuatorAction OnAct;
+        
+        /// <summary>
+        /// Callback for when an actuator has been enabled.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorEnabled;
+        
+        /// <summary>
+        /// Callback for when an actuator has been disabled.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorDisabled;
+        
+        /// <summary>
         /// If this agent should move with the physics system.
         /// </summary>
         public virtual bool PhysicsAgent => false;
@@ -208,7 +224,7 @@ namespace KaijuSolutions.Agents
         private float moveAcceleration;
         
         /// <summary>
-        /// The maximum look speed of the agent in degrees per second.
+        /// The look speed of the agent in degrees per second.
         /// </summary>
         public float LookSpeed
         {
@@ -222,11 +238,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// The look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Looking")]
-        [Tooltip("The maximum look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
+        [Tooltip("The look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [Min(0)]
         [SerializeField]
@@ -291,6 +307,45 @@ namespace KaijuSolutions.Agents
             if (_sensors.Remove(sensor))
             {
                 OnSensorDisabled?.Invoke(sensor);
+            }
+        }
+        
+        /// <summary>
+        /// All actuators attached to this agent.
+        /// </summary>
+        public IReadOnlyCollection<KaijuActuator> Actuators => _actuators;
+        
+        /// <summary>
+        /// The number of actuators attached to this agent.
+        /// </summary>
+        public int ActuatorsCount => _actuators.Count;
+        
+        /// <summary>
+        /// All actuators attached to this agent.
+        /// </summary>
+        private readonly HashSet<KaijuActuator> _actuators = new();
+        
+        /// <summary>
+        /// Register an actuator.
+        /// </summary>
+        /// <param name="actuator">The actuators to register.</param>
+        public void RegisterActuator(KaijuActuator actuator)
+        {
+            if (_actuators.Add(actuator))
+            {
+                OnActuatorEnabled?.Invoke(actuator);
+            }
+        }
+        
+        /// <summary>
+        /// Unregister an actuator.
+        /// </summary>
+        /// <param name="actuator">The sensor to unregister.</param>
+        public void UnregisterActuator(KaijuActuator actuator)
+        {
+            if (_actuators.Remove(actuator))
+            {
+                OnActuatorDisabled?.Invoke(actuator);
             }
         }
         
@@ -621,7 +676,7 @@ namespace KaijuSolutions.Agents
         public bool Looking => LookVector.HasValue;
         
         /// <summary>
-        /// Check if we were looking in the last frame and if it now gone, indicating it was destroyed externally.
+        /// Check if we were looking in the last frame, and if we now do not have a look target in the current frame, it indicates that the target was destroyed externally.
         /// </summary>
         private bool _wasLooking;
         
@@ -1755,6 +1810,12 @@ namespace KaijuSolutions.Agents
             {
                 sensor.EditorVisualize(p);
             }
+            
+            // Visualize all actuators.
+            foreach (KaijuActuator actuator in _actuators)
+            {
+                actuator.EditorVisualize(p);
+            }
         }
 #endif
         /// <summary>
@@ -1882,7 +1943,14 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void Act()
         {
-            // TODO - Run actuators.
+            foreach (KaijuActuator actuator in _actuators)
+            {
+                // Invoke any actuators which have finished.
+                if (actuator.Handle())
+                {
+                    OnAct?.Invoke(actuator);
+                }
+            }
         }
         
         /// <summary>

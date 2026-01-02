@@ -184,7 +184,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// Perform any needed resetting of the sensor.
         /// </summary>
-        protected override void Reset()
+        protected override void Cleanup()
         {
             Observables = null;
             _observed.Clear();

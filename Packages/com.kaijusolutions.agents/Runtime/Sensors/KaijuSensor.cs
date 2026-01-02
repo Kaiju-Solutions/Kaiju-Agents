@@ -71,7 +71,7 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
             
-            Reset();
+            Cleanup();
             Agent.RegisterSensor(this);
             OnEnabled?.Invoke();
             OnEnabledGlobal?.Invoke(this);
@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents.Sensors
                 Agent.UnregisterSensor(this);
             }
             
-            Reset();
+            Cleanup();
             OnDisabled?.Invoke();
             OnDisabledGlobal?.Invoke(this);
         }
@@ -111,7 +111,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// Perform any needed resetting of the sensor.
         /// </summary>
-        protected virtual void Reset() { }
+        protected virtual void Cleanup() { }
 #if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing in the editor.

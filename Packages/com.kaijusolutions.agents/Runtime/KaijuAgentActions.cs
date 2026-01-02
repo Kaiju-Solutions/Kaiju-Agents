@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Actuators;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 
@@ -44,6 +45,19 @@ namespace KaijuSolutions.Agents
     /// An action for an agent and a sensor.
     /// </summary>
     /// <param name="agent">The agent.</param>
-    /// <param name="movement">The sensor.</param>
+    /// <param name="sensor">The sensor.</param>
     public delegate void KaijuAgentSensorAction([NotNull] KaijuAgent agent, [NotNull] KaijuSensor sensor);
+    
+    /// <summary>
+    /// An action for an actuator.
+    /// </summary>
+    /// <param name="actuator">The actuator.</param>
+    public delegate void KaijuActuatorAction([NotNull] KaijuActuator actuator);
+    
+    /// <summary>
+    /// An action for an agent and an actuator.
+    /// </summary>
+    /// <param name="agent">The agent.</param>
+    /// <param name="actuator">The actuator.</param>
+    public delegate void KaijuAgentActuatorAction([NotNull] KaijuAgent agent, [NotNull] KaijuActuator actuator);
 }
