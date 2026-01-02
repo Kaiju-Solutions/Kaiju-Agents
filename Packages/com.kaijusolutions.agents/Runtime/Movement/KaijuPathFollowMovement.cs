@@ -695,8 +695,11 @@ namespace KaijuSolutions.Agents.Movement
                 return;
             }
             
+            // Update the previous position for future automatic updates.
             Previous3 = Target3;
-            Agent.Position3.FindPath(Target3, _path, Mask);
+            
+            // Get the path.
+            Agent.Position3.FindPath(Target3, _path, Mask, Agent.GetRadius(), Agent.mask, Agent.triggers);
         }
         
         /// <summary>

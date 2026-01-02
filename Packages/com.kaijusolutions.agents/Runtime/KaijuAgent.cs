@@ -363,6 +363,24 @@ namespace KaijuSolutions.Agents
 #endif
         [SerializeField]
         private List<uint> identifiers = new();
+
+        /// <summary>
+        /// The layers to use for navigation string-pulling.
+        /// </summary>
+#if UNITY_EDITOR
+        [Header("Navigation")]
+        [Tooltip("The layers to use for navigation string-pulling.")]
+#endif
+        public LayerMask mask = -5;
+        
+        /// <summary>
+        /// How string-pulling should consider triggers.
+        /// </summary>
+#if UNITY_EDITOR
+        [Header("Navigation")]
+        [Tooltip("How string-pulling should consider triggers.")]
+#endif
+        public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
         /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
@@ -1551,17 +1569,17 @@ namespace KaijuSolutions.Agents
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="mask">The mask for what layers should the rays hit.</param>
+        /// <param name="layerMask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1, bool clear = true)
+        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? layerMask = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
+            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, layerMask, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1572,19 +1590,19 @@ namespace KaijuSolutions.Agents
         /// Path following.
         /// </summary>
         /// <param name="target">The position to pathfind to.</param>
-        /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
+        /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, mask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1595,19 +1613,19 @@ namespace KaijuSolutions.Agents
         /// Path following.
         /// </summary>
         /// <param name="target">The position to pathfind to.</param>
-        /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
+        /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, mask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1618,19 +1636,19 @@ namespace KaijuSolutions.Agents
         /// Path following.
         /// </summary>
         /// <param name="target">The position to pathfind to.</param>
-        /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
+        /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, mask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1641,19 +1659,19 @@ namespace KaijuSolutions.Agents
         /// Path following.
         /// </summary>
         /// <param name="target">The position to pathfind to.</param>
-        /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
+        /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, mask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
