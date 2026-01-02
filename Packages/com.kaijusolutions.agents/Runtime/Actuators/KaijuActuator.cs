@@ -20,7 +20,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Global callback for when this has started to execute.
         /// </summary>
-        public event KaijuActuatorAction OnStartedGlobal;
+        public static event KaijuActuatorAction OnStartedGlobal;
         
         /// <summary>
         /// Callback for when this is continuing to execute.
@@ -30,7 +30,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Global callback for when this is continuing to execute.
         /// </summary>
-        public event KaijuActuatorAction OnExecutingGlobal;
+        public static event KaijuActuatorAction OnExecutingGlobal;
         
         /// <summary>
         /// Callback for when this has successfully fully completed its action.
@@ -40,7 +40,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Global callback for when this has successfully fully completed its action.
         /// </summary>
-        public event KaijuActuatorAction OnDoneGlobal;
+        public static event KaijuActuatorAction OnDoneGlobal;
         
         /// <summary>
         /// Callback for when this has been interrupted during its execution, cancelling the execution.
@@ -50,7 +50,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Global callback for when this has been interrupted during its execution, cancelling the execution.
         /// </summary>
-        public event KaijuActuatorAction OnInterruptedGlobal;
+        public static event KaijuActuatorAction OnInterruptedGlobal;
         
         /// <summary>
         /// Callback for when this has failed its execution.
@@ -60,7 +60,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Global callback when this has failed its execution.
         /// </summary>
-        public event KaijuActuatorAction OnFailedGlobal;
+        public static event KaijuActuatorAction OnFailedGlobal;
         
         /// <summary>
         /// Callback for when this has finishing becoming enabled.

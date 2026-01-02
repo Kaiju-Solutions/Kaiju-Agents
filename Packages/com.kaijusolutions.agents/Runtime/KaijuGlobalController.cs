@@ -12,7 +12,6 @@ namespace KaijuSolutions.Agents
     /// If you override either <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html">OnEnable</see> or <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html">OnDisable</see>, you must call their respective base methods for binding and cleanup.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 4)]
-    [RequireComponent(typeof(KaijuAgent))]
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
@@ -44,6 +43,70 @@ namespace KaijuSolutions.Agents
             KaijuAgent.OnDisabledGlobal += OnAgentDisabled;
             KaijuAgent.OnDestroyedGlobal += OnAgentDestroyed;
             KaijuAgent.OnAutomaticSenseGlobal += OnAgentAutomaticSense;
+            
+            // Bind all movement callbacks to overload.
+            KaijuMovement.OnStartedGlobal += OnMovementStarted;
+            KaijuMovement.OnStoppedGlobal += OnMovementStopped;
+            KaijuMovement.OnPerformedGlobal += OnMovementPerformed;
+            
+            // Bind all sensor events to overload.
+            KaijuSensor.OnSenseGlobal += OnSensorSense;
+            KaijuSensor.OnEnabledGlobal += OnSensorEnabled;
+            KaijuSensor.OnDisabledGlobal += OnSensorDisabled;
+            
+            // Bind all actuator events to overload.
+            KaijuActuator.OnStartedGlobal += OnActuatorStarted;
+            KaijuActuator.OnExecutingGlobal += OnAcutatorExecting;
+            KaijuActuator.OnDoneGlobal += OnActuatorDone;
+            KaijuActuator.OnInterruptedGlobal += OnActuatorInterrupted;
+            KaijuActuator.OnFailedGlobal += OnActuatorFailed;
+            KaijuActuator.OnEnabledGlobal += OnActuatorEnabled;
+            KaijuActuator.OnDisabledGlobal += OnActuatorDisabled;
+        }
+        
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        protected virtual void OnDisable()
+        {
+            // Unbind all base methods to overload.
+            OnPreSetPositionGlobal -= OnAllPreSetPosition;
+            OnSetPositionGlobal -= OnAllSetPosition;
+            OnPreSetOrientationGlobal -= OnAllPreSetOrientation;
+            OnSetOrientationGlobal -= OnAllSetOrientation;
+            OnPreSetScaleGlobal -= OnAllPreSetScale;
+            OnSetScaleGlobal -= OnAllSetScale;
+            
+            // Unbind to all agent events to overload.
+            KaijuAgent.OnMoveSpeedGlobal -= OnAgentMoveSpeed;
+            KaijuAgent.OnMoveAccelerationGlobal -= OnAgentMoveAcceleration;
+            KaijuAgent.OnLookSpeedGlobal -= OnAgentLookSpeed;
+            KaijuAgent.OnAutoRotateGlobal -= OnAgentAutoRotate;
+            KaijuAgent.OnLookTargetGlobal -= OnAgentLookTarget;
+            KaijuAgent.OnMoveGlobal -= OnAgentMove;
+            KaijuAgent.OnEnabledGlobal -= OnAgentEnabled;
+            KaijuAgent.OnDisabledGlobal -= OnAgentDisabled;
+            KaijuAgent.OnDestroyedGlobal -= OnAgentDestroyed;
+            KaijuAgent.OnAutomaticSenseGlobal -= OnAgentAutomaticSense;
+            
+            // Unbind all movement callbacks to overload.
+            KaijuMovement.OnStartedGlobal -= OnMovementStarted;
+            KaijuMovement.OnStoppedGlobal -= OnMovementStopped;
+            KaijuMovement.OnPerformedGlobal -= OnMovementPerformed;
+            
+            // Unbind all sensor events to overload.
+            KaijuSensor.OnSenseGlobal -= OnSense;
+            KaijuSensor.OnEnabledGlobal -= OnSensorEnabled;
+            KaijuSensor.OnDisabledGlobal -= OnSensorDisabled;
+            
+            // Unbind all actuator events to overload.
+            KaijuActuator.OnStartedGlobal -= OnActuatorStarted;
+            KaijuActuator.OnExecutingGlobal -= OnAcutatorExecting;
+            KaijuActuator.OnDoneGlobal -= OnActuatorDone;
+            KaijuActuator.OnInterruptedGlobal -= OnActuatorInterrupted;
+            KaijuActuator.OnFailedGlobal -= OnActuatorFailed;
+            KaijuActuator.OnEnabledGlobal -= OnActuatorEnabled;
+            KaijuActuator.OnDisabledGlobal -= OnActuatorDisabled;
         }
         
         /// <summary>
@@ -141,32 +204,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="agent">The agent.</param>
         protected virtual void OnAgentAutomaticSense(KaijuAgent agent) { }
-        
-        /// <summary>
-        /// This function is called when the behaviour becomes disabled.
-        /// </summary>
-        protected virtual void OnDisable()
-        {
-            // Unbind all base methods to overload.
-            OnPreSetPositionGlobal -= OnAllPreSetPosition;
-            OnSetPositionGlobal -= OnAllSetPosition;
-            OnPreSetOrientationGlobal -= OnAllPreSetOrientation;
-            OnSetOrientationGlobal -= OnAllSetOrientation;
-            OnPreSetScaleGlobal -= OnAllPreSetScale;
-            OnSetScaleGlobal -= OnAllSetScale;
-            
-            // Bind to all agent events to overload.
-            KaijuAgent.OnMoveSpeedGlobal -= OnAgentMoveSpeed;
-            KaijuAgent.OnMoveAccelerationGlobal -= OnAgentMoveAcceleration;
-            KaijuAgent.OnLookSpeedGlobal -= OnAgentLookSpeed;
-            KaijuAgent.OnAutoRotateGlobal -= OnAgentAutoRotate;
-            KaijuAgent.OnLookTargetGlobal -= OnAgentLookTarget;
-            KaijuAgent.OnMoveGlobal -= OnAgentMove;
-            KaijuAgent.OnEnabledGlobal -= OnAgentEnabled;
-            KaijuAgent.OnDisabledGlobal -= OnAgentDisabled;
-            KaijuAgent.OnDestroyedGlobal -= OnAgentDestroyed;
-            KaijuAgent.OnAutomaticSenseGlobal -= OnAgentAutomaticSense;
-        }
         
         /// <summary>
         /// Get a description of the object.

@@ -102,6 +102,58 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        protected virtual void OnDisable()
+        {
+            // Unbind the local methods.
+            OnPreSetPosition -= OnAgentPreSetPosition;
+            OnSetPosition -= OnAgentSetPosition;
+            OnPreSetOrientation -= OnAgentPreSetOrientation;
+            OnSetOrientation -= OnAgentSetOrientation;
+            OnPreSetScale -= OnAgentPreSetScale;
+            OnSetScale -= OnAgentSetScale;
+            
+            if (agent == null)
+            {
+                return;
+            }
+            
+            // Unbind all base methods to overload.
+            agent.OnPreSetPosition -= OnAgentPreSetPosition;
+            agent.OnSetPosition -= OnAgentSetPosition;
+            agent.OnPreSetOrientation -= OnAgentPreSetOrientation;
+            agent.OnSetOrientation -= OnAgentSetOrientation;
+            agent.OnPreSetScale -= OnAgentPreSetScale;
+            agent.OnSetScale -= OnAgentSetScale;
+            
+            // Bind to all agent events to overload.
+            agent.OnMoveSpeed -= OnMoveSpeed;
+            agent.OnMoveAcceleration -= OnMoveAcceleration;
+            agent.OnLookSpeed -= OnLookSpeed;
+            agent.OnAutoRotate -= OnAutoRotate;
+            agent.OnLookTarget -= OnLookTarget;
+            agent.OnMove -= OnMove;
+            agent.OnEnabled -= OnEnabled;
+            agent.OnDisabled -= OnDisabled;
+            agent.OnDestroyed -= OnDestroyed;
+            agent.OnMovementStarted -= OnMovementStarted;
+            agent.OnMovementStopped -= OnMovementStopped;
+            agent.OnMovementPerformed -= OnMovementPerformed;
+            agent.OnAutomaticSense -= OnAutomaticSense;
+            agent.OnSense -= OnSense;
+            agent.OnSensorEnabled -= OnSensorEnabled;
+            agent.OnSensorDisabled -= OnSensorDisabled;
+            agent.OnActuatorEnabled -= OnActuatorEnabled;
+            agent.OnActuatorDisabled -= OnActuatorDisabled;
+            agent.OnActuatorStarted -= OnActuatorStarted;
+            agent.OnActuatorExecuting -= OnActuatorExecuting;
+            agent.OnActuatorDone -= OnActuatorDone;
+            agent.OnActuatorInterrupted -= OnActuatorInterrupted;
+            agent.OnActuatorFailed -= OnActuatorFailed;
+        }
+        
+        /// <summary>
         /// Callback for before the <see cref="Agent"/>'s position has been set.
         /// </summary>
         protected virtual void OnAgentPreSetPosition() { }
@@ -258,58 +310,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="actuator">The actuator.</param>
         protected virtual void OnActuatorFailed(KaijuActuator actuator) { }
-        
-        /// <summary>
-        /// This function is called when the behaviour becomes disabled.
-        /// </summary>
-        protected virtual void OnDisable()
-        {
-            // Unbind the local methods.
-            OnPreSetPosition -= OnAgentPreSetPosition;
-            OnSetPosition -= OnAgentSetPosition;
-            OnPreSetOrientation -= OnAgentPreSetOrientation;
-            OnSetOrientation -= OnAgentSetOrientation;
-            OnPreSetScale -= OnAgentPreSetScale;
-            OnSetScale -= OnAgentSetScale;
-            
-            if (agent == null)
-            {
-                return;
-            }
-            
-            // Unbind all base methods to overload.
-            agent.OnPreSetPosition -= OnAgentPreSetPosition;
-            agent.OnSetPosition -= OnAgentSetPosition;
-            agent.OnPreSetOrientation -= OnAgentPreSetOrientation;
-            agent.OnSetOrientation -= OnAgentSetOrientation;
-            agent.OnPreSetScale -= OnAgentPreSetScale;
-            agent.OnSetScale -= OnAgentSetScale;
-            
-            // Bind to all agent events to overload.
-            agent.OnMoveSpeed -= OnMoveSpeed;
-            agent.OnMoveAcceleration -= OnMoveAcceleration;
-            agent.OnLookSpeed -= OnLookSpeed;
-            agent.OnAutoRotate -= OnAutoRotate;
-            agent.OnLookTarget -= OnLookTarget;
-            agent.OnMove -= OnMove;
-            agent.OnEnabled -= OnEnabled;
-            agent.OnDisabled -= OnDisabled;
-            agent.OnDestroyed -= OnDestroyed;
-            agent.OnMovementStarted -= OnMovementStarted;
-            agent.OnMovementStopped -= OnMovementStopped;
-            agent.OnMovementPerformed -= OnMovementPerformed;
-            agent.OnAutomaticSense -= OnAutomaticSense;
-            agent.OnSense -= OnSense;
-            agent.OnSensorEnabled -= OnSensorEnabled;
-            agent.OnSensorDisabled -= OnSensorDisabled;
-            agent.OnActuatorEnabled -= OnActuatorEnabled;
-            agent.OnActuatorDisabled -= OnActuatorDisabled;
-            agent.OnActuatorStarted -= OnActuatorStarted;
-            agent.OnActuatorExecuting -= OnActuatorExecuting;
-            agent.OnActuatorDone -= OnActuatorDone;
-            agent.OnActuatorInterrupted -= OnActuatorInterrupted;
-            agent.OnActuatorFailed -= OnActuatorFailed;
-        }
         
         /// <summary>
         /// Get a description of the object.

@@ -13,32 +13,32 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Callback for this movement starting.
         /// </summary>
-        public KaijuAction OnStarted;
+        public event KaijuAction OnStarted;
         
         /// <summary>
         /// Global callback for this movement starting.
         /// </summary>
-        public KaijuMovementAction OnStartedGlobal;
+        public static event KaijuMovementAction OnStartedGlobal;
         
         /// <summary>
         /// Callback for this movement stopping.
         /// </summary>
-        public KaijuAction OnStopped;
+        public event KaijuAction OnStopped;
         
         /// <summary>
         /// Global callback for this movement stopping.
         /// </summary>
-        public KaijuMovementAction OnStoppedGlobal;
+        public static event KaijuMovementAction OnStoppedGlobal;
         
         /// <summary>
         /// Callback for this movement being performed.
         /// </summary>
-        public KaijuAction OnPerformed;
+        public event KaijuAction OnPerformed;
         
         /// <summary>
         /// Global callback for this movement being performed.
         /// </summary>
-        public KaijuMovementAction OnPerformedGlobal;
+        public static event KaijuMovementAction OnPerformedGlobal;
         
         /// <summary>
         /// The agent the movement is assigned to.

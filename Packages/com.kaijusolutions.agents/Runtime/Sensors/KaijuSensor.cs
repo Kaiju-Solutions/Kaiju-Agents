@@ -20,7 +20,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// Global callback for when this sensor has been run.
         /// </summary>
-        public event KaijuSensorAction OnSenseGlobal;
+        public static event KaijuSensorAction OnSenseGlobal;
         
         /// <summary>
         /// Callback for when this has finishing becoming enabled.
