@@ -198,7 +198,7 @@ namespace KaijuSolutions.Agents.Movement
         private float? _autoCalculateDistance;
         
         /// <summary>
-        /// The previous position of the target.
+        /// The previous position of the <see cref="Target3"/>.
         /// </summary>
         public Vector2 Previous
         {
@@ -207,7 +207,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The previous position of the target.
+        /// The previous position of the <see cref="Target3"/>.
         /// </summary>
         public Vector3 Previous3;
         
@@ -261,7 +261,7 @@ namespace KaijuSolutions.Agents.Movement
         private NavMeshQueryFilter? _filter;
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -282,7 +282,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -303,7 +303,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -324,7 +324,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -345,7 +345,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -366,7 +366,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -387,7 +387,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -408,7 +408,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a path following movement.
+        /// Get a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -429,7 +429,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -443,7 +443,7 @@ namespace KaijuSolutions.Agents.Movement
         }
 
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -457,7 +457,7 @@ namespace KaijuSolutions.Agents.Movement
         }
 
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to pathfind to.</param>
@@ -471,7 +471,7 @@ namespace KaijuSolutions.Agents.Movement
         }
 
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to pathfind to.</param>
@@ -485,7 +485,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -499,7 +499,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
@@ -513,7 +513,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to pathfind to.</param>
@@ -527,7 +527,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a path following movement.
+        /// Create a <see cref="KaijuPathFollowMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to pathfind to.</param>
@@ -541,7 +541,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -559,7 +559,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -577,7 +577,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -595,7 +595,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -613,7 +613,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -631,7 +631,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -649,7 +649,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
@@ -667,7 +667,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>

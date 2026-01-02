@@ -5,12 +5,12 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Base movement class for moving away from a single target.
+    /// Base <see cref="KaijuMovement"/> class for moving away from a single target.
     /// </summary>
     public abstract class KaijuLeavingMovement : KaijuTargetMovement
     {
         /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
+        /// Create a <see cref="KaijuLeavingMovement"/> for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move away from.</param>
@@ -19,7 +19,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuLeavingMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 20, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
+        /// Create a <see cref="KaijuLeavingMovement"/> for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move away from.</param>
@@ -28,7 +28,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuLeavingMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 20, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// Create a <see cref="KaijuLeavingMovement"/> for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move away from.</param>
@@ -37,7 +37,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuLeavingMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 20, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a leaving movement for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
+        /// Create a <see cref="KaijuLeavingMovement"/> for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move away from.</param>

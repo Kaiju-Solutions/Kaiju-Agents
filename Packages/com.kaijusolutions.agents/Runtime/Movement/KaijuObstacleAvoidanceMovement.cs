@@ -95,7 +95,7 @@ namespace KaijuSolutions.Agents.Movement
         private readonly List<Vector3> _misses = new(3);
         
         /// <summary>
-        /// Get an obstacle avoidance movement.
+        /// Get a <see cref="KaijuObstacleAvoidanceMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
@@ -106,7 +106,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="mask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a <see cref="KaijuObstacleAvoidanceMovement"/> for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
@@ -120,7 +120,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create an obstacle avoidance movement.
+        /// Create a <see cref="KaijuObstacleAvoidanceMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
@@ -137,7 +137,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>

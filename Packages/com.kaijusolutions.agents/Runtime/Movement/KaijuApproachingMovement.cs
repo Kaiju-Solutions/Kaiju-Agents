@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Base movement class for moving towards a single target.
+    /// Base <see cref="KaijuMovement"/> class for moving towards a single target.
     /// </summary>
     public abstract class KaijuApproachingMovement : KaijuTargetMovement
     {

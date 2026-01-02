@@ -10,13 +10,13 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuSeekMovement : KaijuApproachingMovement
     {
         /// <summary>
-        /// Get a seek movement.
+        /// Get a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a seek movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
@@ -30,13 +30,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a seek movement.
+        /// Get a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a seek movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
@@ -50,13 +50,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a seek movement.
+        /// Get a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a seek movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
@@ -70,13 +70,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a seek movement.
+        /// Get a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a seek movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
@@ -90,7 +90,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a seek movement.
+        /// Create a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to seek to.</param>
@@ -99,7 +99,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a seek movement.
+        /// Create a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to seek to.</param>
@@ -108,7 +108,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a seek movement.
+        /// Create a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to seek to.</param>
@@ -117,7 +117,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a seek movement.
+        /// Create a <see cref="KaijuSeekMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to seek to.</param>
