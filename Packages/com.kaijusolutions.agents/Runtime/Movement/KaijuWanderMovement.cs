@@ -48,7 +48,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The center point of the circle.
         /// </summary>
-        public Vector3 Center3 => new(Center.x, 0, Center.y);
+        public Vector3 Center3 => Center.Expand();
         
         /// <summary>
         /// The target calculated along the circle.
@@ -58,7 +58,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The target calculated along the circle.
         /// </summary>
-        public Vector3 Target3 =>  new(Target.x, 0, Target.y);
+        public Vector3 Target3 =>  Target.Expand();
         
         /// <summary>
         /// Get a <see cref="KaijuWanderMovement"/>.

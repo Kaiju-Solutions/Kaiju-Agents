@@ -433,7 +433,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The current velocity of the <see cref="KaijuAgent"/>.
         /// </summary>
-        public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
+        public Vector3 Velocity3 => Velocity.Expand();
         
         /// <summary>
         /// Get the forward direction of this <see cref="KaijuAgent"/> based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward"/>.

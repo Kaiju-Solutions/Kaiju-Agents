@@ -21,7 +21,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector3 Previous3
         {
-            get => new(Previous.x, 0, Previous.y);
+            get => Previous.Expand();
             set => Previous = value.Flatten();
         }
         
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The predicted future <see cref="KaijuTargetMovement.Target"/>.
         /// </summary>
-        public Vector3 Future3 => new(Future.x, 0, Future.y);
+        public Vector3 Future3 => Future.Expand();
 #if UNITY_EDITOR
         /// <summary>
         /// Points to render in the editor.
