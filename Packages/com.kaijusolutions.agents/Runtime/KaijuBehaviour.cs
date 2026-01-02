@@ -8,6 +8,7 @@ namespace KaijuSolutions.Agents
     /// <summary>
     /// Base extended behaviour providing convenient helpers methods, mainly in relation to position and orientation.
     /// </summary>
+    [DefaultExecutionOrder(int.MinValue + 5)]
 #if UNITY_EDITOR
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]

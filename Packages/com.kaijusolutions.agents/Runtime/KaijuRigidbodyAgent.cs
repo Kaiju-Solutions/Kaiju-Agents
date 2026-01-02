@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the agent.
+        /// Initialize the agent. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Perform agent movement.
+        /// Perform agent movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

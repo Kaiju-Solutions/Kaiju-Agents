@@ -176,16 +176,16 @@ namespace KaijuSolutions.Agents.Actuators
             }
             
             _isRunning = false;
+            Agent?.ActuatorInterrupted(this);
             OnInterrupted?.Invoke();
             OnInterruptedGlobal?.Invoke(this);
             _state = KaijuActuatorState.Done;
         }
         
         /// <summary>
-        /// Run this actuator if it should be.
+        /// Run this actuator if it should be. There is no point in manually calling this.
         /// </summary>
-        /// <returns>If the actuator ran or not, or has just now finished running.</returns>
-        public bool Handle()
+        public void Handle()
         {
             // If we should not be running, there is nothing to do.
             if (!_shouldRun)
@@ -193,7 +193,7 @@ namespace KaijuSolutions.Agents.Actuators
                 // If this was stopped externally while it was still executing, send events for why it is done.
                 if (!_isRunning)
                 {
-                    return false;
+                    return ;
                 }
                 
                 _isRunning = false;
@@ -201,17 +201,20 @@ namespace KaijuSolutions.Agents.Actuators
                 {
                     case KaijuActuatorState.Done:
                     default:
+                        Agent?.ActuatorDone(this);
                         OnDone?.Invoke();
                         OnDoneGlobal?.Invoke(this);
-                        return true;
+                        return;
                     case KaijuActuatorState.Executing:
+                        Agent?.ActuatorInterrupted(this);
                         OnInterrupted?.Invoke();
                         OnInterruptedGlobal?.Invoke(this);
-                        return true;
+                        return;
                     case KaijuActuatorState.Failed:
+                        Agent?.ActuatorFailed(this);
                         OnFailed?.Invoke();
                         OnFailedGlobal?.Invoke(this);
-                        return true;
+                        return;
                 }
             }
             
@@ -219,6 +222,7 @@ namespace KaijuSolutions.Agents.Actuators
             if (!_isRunning)
             {
                 _isRunning = true;
+                Agent?.ActuatorStarted(this);
                 OnStarted?.Invoke();
                 OnStartedGlobal?.Invoke(this);
             }
@@ -229,9 +233,10 @@ namespace KaijuSolutions.Agents.Actuators
             // Nothing else to do if still executing.
             if (_state == KaijuActuatorState.Executing)
             {
+                Agent?.ActuatorExecuting(this);
                 OnExecuting?.Invoke();
                 OnExecutingGlobal?.Invoke(this);
-                return true;
+                return;
             }
             
             // Otherwise, this has finished, so stop for the next update.
@@ -241,16 +246,16 @@ namespace KaijuSolutions.Agents.Actuators
             // Handle if it was done or failed.
             if (_state == KaijuActuatorState.Done)
             {
+                Agent?.ActuatorDone(this);
                 OnDone?.Invoke();
                 OnDoneGlobal?.Invoke(this);
             }
             else
             {
+                Agent?.ActuatorFailed(this);
                 OnFailed?.Invoke();
                 OnFailedGlobal?.Invoke(this);
             }
-            
-            return true;
         }
         
         /// <summary>

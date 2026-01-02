@@ -93,14 +93,14 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Run the sensor.
+        /// Run the sensor. There is no point in manually calling this.
         /// </summary>
         public void Sense()
         {
             Run();
+            Agent?.SensorRun(this);
             OnSense?.Invoke();
             OnSenseGlobal?.Invoke(this);
-            Agent.SensorRun(this);
         }
         
         /// <summary>

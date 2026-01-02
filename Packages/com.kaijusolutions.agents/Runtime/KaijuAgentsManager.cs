@@ -20,7 +20,7 @@ namespace KaijuSolutions.Agents
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Agents Manager", int.MaxValue)]
 #endif
-    public class KaijuAgentsManager : MonoBehaviour
+    public class KaijuAgentsManager : KaijuBehaviour
     {
         /// <summary>
         /// The singleton manager instance.

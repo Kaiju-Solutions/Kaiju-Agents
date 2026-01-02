@@ -155,11 +155,6 @@ namespace KaijuSolutions.Agents
         public event KaijuSensorAction OnSensorDisabled;
         
         /// <summary>
-        /// Callback for when an actuator has been run.
-        /// </summary>
-        public event KaijuActuatorAction OnAct;
-        
-        /// <summary>
         /// Callback for when an actuator has been enabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorEnabled;
@@ -168,6 +163,31 @@ namespace KaijuSolutions.Agents
         /// Callback for when an actuator has been disabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorDisabled;
+        
+        /// <summary>
+        /// Callback for when an actuator has started to execute.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorStarted;
+        
+        /// <summary>
+        /// Callback for when an actuator is continuing to execute.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorExecuting;
+        
+        /// <summary>
+        /// Callback for when an actuator has successfully fully completed its action.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorDone;
+        
+        /// <summary>
+        /// Callback for when an actuator has been interrupted during its execution, cancelling the execution.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorInterrupted;
+        
+        /// <summary>
+        /// Callback for when an actuator has failed its execution.
+        /// </summary>
+        public event KaijuActuatorAction OnActuatorFailed;
         
         /// <summary>
         /// If this agent should move with the physics system.
@@ -287,7 +307,7 @@ namespace KaijuSolutions.Agents
         private readonly HashSet<KaijuSensor> _sensors = new();
         
         /// <summary>
-        /// Register a sensor.
+        /// Register a sensor. There is no point in manually calling this.
         /// </summary>
         /// <param name="sensor">The sensor to register.</param>
         public void RegisterSensor(KaijuSensor sensor)
@@ -299,7 +319,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister a sensor.
+        /// Unregister a sensor. There is no point in manually calling this.
         /// </summary>
         /// <param name="sensor">The sensor to unregister.</param>
         public void UnregisterSensor(KaijuSensor sensor)
@@ -326,7 +346,7 @@ namespace KaijuSolutions.Agents
         private readonly HashSet<KaijuActuator> _actuators = new();
         
         /// <summary>
-        /// Register an actuator.
+        /// Register an actuator. There is no point in manually calling this.
         /// </summary>
         /// <param name="actuator">The actuators to register.</param>
         public void RegisterActuator(KaijuActuator actuator)
@@ -338,7 +358,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister an actuator.
+        /// Unregister an actuator. There is no point in manually calling this.
         /// </summary>
         /// <param name="actuator">The sensor to unregister.</param>
         public void UnregisterActuator(KaijuActuator actuator)
@@ -727,7 +747,7 @@ namespace KaijuSolutions.Agents
         public abstract float GetRadius();
         
         /// <summary>
-        /// Initialize the agent.
+        /// Initialize the agent. There is no point in manually calling this.
         /// </summary>
         public virtual void Setup()
         {
@@ -742,7 +762,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Calculate the velocity for the next update.
+        /// Calculate the velocity for the next update. There is no point in manually calling this.
         /// <param name="delta">The time step.</param>
         /// </summary>
         public void CalculateVelocity(float delta)
@@ -826,7 +846,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Spawn this agent if it is not currently spawned.
+        /// Spawn this agent if it is not currently spawned. There is no point in manually calling this.
         /// </summary>
         public void Spawn()
         {
@@ -1785,7 +1805,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Visualize this agent in the editor.
+        /// Visualize this agent in the editor. There is no point in manually calling this.
         /// </summary>
         /// <param name="text">If the text for this agent should be visualized.</param>
         public void EditorVisualize(bool text)
@@ -1837,7 +1857,7 @@ namespace KaijuSolutions.Agents
         }
 #endif
         /// <summary>
-        /// Perform agent movement.
+        /// Perform agent movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public abstract void Move(float delta);
@@ -1931,7 +1951,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Execute all automatically-running sensors.
+        /// Execute all automatically-running sensors. There is no point in manually calling this.
         /// </summary>
         public void SenseAutomatic()
         {
@@ -1948,7 +1968,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Called by a sensor when it has been run.
+        /// Called by a sensor when it has been run. There is no point in manually calling this.
         /// </summary>
         /// <param name="sensor">The sensor which has been run.</param>
         public void SensorRun([NotNull] KaijuSensor sensor)
@@ -1957,22 +1977,64 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Execute all actuators.
+        /// Execute all actuators. There is no point in manually calling this.
         /// </summary>
         public void Act()
         {
             foreach (KaijuActuator actuator in _actuators)
             {
                 // Invoke any actuators which have finished.
-                if (actuator.Handle())
-                {
-                    OnAct?.Invoke(actuator);
-                }
+                actuator.Handle();
             }
         }
         
         /// <summary>
-        /// Handle look actions.
+        /// Allow for actuators to trigger that they have started. There is no point in manually calling this.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        public void ActuatorStarted(KaijuActuator actuator)
+        {
+            OnActuatorStarted?.Invoke(actuator);
+        }
+        
+        /// <summary>
+        /// Allow for actuators to trigger that they are executing. There is no point in manually calling this.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        public void ActuatorExecuting(KaijuActuator actuator)
+        {
+            OnActuatorExecuting?.Invoke(actuator);
+        }
+        
+        /// <summary>
+        /// Allow for actuators to trigger that they are done. There is no point in manually calling this.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        public void ActuatorDone(KaijuActuator actuator)
+        {
+            OnActuatorDone?.Invoke(actuator);
+        }
+        
+        /// <summary>
+        /// Allow for actuators to trigger that they were interrupted. There is no point in manually calling this.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        public void ActuatorInterrupted(KaijuActuator actuator)
+        {
+            OnActuatorInterrupted?.Invoke(actuator);
+        }
+        
+        /// <summary>
+        /// Allow for actuators to trigger that they failed. There is no point in manually calling this.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        public void ActuatorFailed(KaijuActuator actuator)
+        {
+            OnActuatorFailed?.Invoke(actuator);
+        }
+        
+        /// <summary>
+        /// Handle look actions. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public void Look(float delta)

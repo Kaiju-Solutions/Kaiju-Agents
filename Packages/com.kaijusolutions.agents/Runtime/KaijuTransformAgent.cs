@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuTransformAgent : KaijuRadiusAgent
     {
         /// <summary>
-        /// Perform agent movement.
+        /// Perform agent movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

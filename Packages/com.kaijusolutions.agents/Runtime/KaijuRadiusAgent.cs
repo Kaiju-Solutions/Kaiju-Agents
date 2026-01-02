@@ -88,7 +88,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the agent.
+        /// Initialize the agent. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {

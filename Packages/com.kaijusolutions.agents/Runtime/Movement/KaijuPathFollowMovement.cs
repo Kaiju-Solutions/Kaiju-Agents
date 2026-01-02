@@ -709,12 +709,13 @@ namespace KaijuSolutions.Agents.Movement
         {
             base.Reset();
             _path.Clear();
+            _path.Capacity = 0;
             _autoCalculateDistance = null;
             Previous3 = Vector3.zero;
             _mask = null;
             _filter = null;
         }
-
+        
         /// <summary>
         /// Determine if the movement is done or not.
         /// </summary>
