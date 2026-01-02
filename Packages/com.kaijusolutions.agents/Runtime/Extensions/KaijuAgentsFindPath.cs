@@ -24,6 +24,276 @@ namespace KaijuSolutions.Agents.Extensions
         /// The path object.
         /// </summary>
         private static readonly NavMeshPath Path = new();
+
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal.Expand(), ref path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, IList<Vector2> path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal.Expand(), path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, IList<Vector2> path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask);
+
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal.Expand(), ref path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, IList<Vector3> path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal.Expand(), path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector2 goal, IList<Vector3> path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask);
+
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal, ref path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal, ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, IList<Vector2> path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal, path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, IList<Vector2> path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal, path, filter.areaMask);
+
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal, ref path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal, ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, IList<Vector3> path, int mask = NavMesh.AllAreas) => start.Expand().FindPath(goal, path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector2 start, Vector3 goal, IList<Vector3> path, NavMeshQueryFilter filter) => start.Expand().FindPath(goal, path, filter.areaMask);
+
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas) => start.FindPath(goal.Expand(), ref path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter) => start.FindPath(goal.Expand(), ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector2 goal, IList<Vector2> path, int mask = NavMesh.AllAreas) => start.FindPath(goal.Expand(), path, mask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector2 goal, IList<Vector2> path, NavMeshQueryFilter filter) => start.FindPath(goal.Expand(), path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas)
+        {
+            // Get the path in all dimensions.
+            Vector3[] path3 = new Vector3[1];
+            int count = start.FindPath(goal, ref path3, mask);
+            
+            // Ensure we have the size.
+            if (path.Length < count)
+            {
+                Array.Resize(ref path, count);
+            }
+            
+            // Flatten the path.
+            for (int i = 0; i < count; i++)
+            {
+                path[i] = path3[i].Flatten();
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter) => start.FindPath(goal, ref path, filter.areaMask);
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="mask">The area mask to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector3 goal, IList<Vector2> path, int mask = NavMesh.AllAreas)
+        {
+            path.Clear();
+            Vector3[] points = new Vector3[1];
+            int count = start.FindPath(goal, ref points, mask);
+            for (int i = 0; i < count; i++)
+            {
+                path.Add(points[i].Flatten());
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Find a path from the starting to the end position.
+        /// </summary>
+        /// <param name="start">The starting position.</param>
+        /// <param name="goal">The goal position.</param>
+        /// <param name="path">The path to update.</param>
+        /// <param name="filter">The area filter to consider for pathfinding.</param>
+        /// <returns>The number of points along the found path.</returns>
+        public static int FindPath(this Vector3 start, Vector3 goal, IList<Vector2> path, NavMeshQueryFilter filter) => start.FindPath(goal, path, filter.areaMask);
         
         /// <summary>
         /// Find a path from the starting to the end position.
