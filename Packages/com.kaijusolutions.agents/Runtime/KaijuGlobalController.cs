@@ -56,7 +56,7 @@ namespace KaijuSolutions.Agents
             
             // Bind all actuator events to overload.
             KaijuActuator.OnStartedGlobal += OnActuatorStarted;
-            KaijuActuator.OnExecutingGlobal += OnAcutatorExecting;
+            KaijuActuator.OnExecutingGlobal += OnActuatorExecuting;
             KaijuActuator.OnDoneGlobal += OnActuatorDone;
             KaijuActuator.OnInterruptedGlobal += OnActuatorInterrupted;
             KaijuActuator.OnFailedGlobal += OnActuatorFailed;
@@ -95,13 +95,13 @@ namespace KaijuSolutions.Agents
             KaijuMovement.OnPerformedGlobal -= OnMovementPerformed;
             
             // Unbind all sensor events to overload.
-            KaijuSensor.OnSenseGlobal -= OnSense;
+            KaijuSensor.OnSenseGlobal -= OnSensorSense;
             KaijuSensor.OnEnabledGlobal -= OnSensorEnabled;
             KaijuSensor.OnDisabledGlobal -= OnSensorDisabled;
             
             // Unbind all actuator events to overload.
             KaijuActuator.OnStartedGlobal -= OnActuatorStarted;
-            KaijuActuator.OnExecutingGlobal -= OnAcutatorExecting;
+            KaijuActuator.OnExecutingGlobal -= OnActuatorExecuting;
             KaijuActuator.OnDoneGlobal -= OnActuatorDone;
             KaijuActuator.OnInterruptedGlobal -= OnActuatorInterrupted;
             KaijuActuator.OnFailedGlobal -= OnActuatorFailed;
@@ -204,6 +204,84 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="agent">The agent.</param>
         protected virtual void OnAgentAutomaticSense(KaijuAgent agent) { }
+        
+        /// <summary>
+        /// Global callback for a <see cref="KaijuMovement"/> starting.
+        /// </summary>
+        /// <param name="movement">The movement.</param>
+        protected virtual void OnMovementStarted(KaijuMovement movement) { }
+        
+        /// <summary>
+        /// Global callback for a <see cref="KaijuMovement"/> stopping.
+        /// </summary>
+        /// <param name="movement">The movement.</param>
+        protected virtual void OnMovementStopped(KaijuMovement movement) { }
+        
+        /// <summary>
+        /// Global callback for a <see cref="KaijuMovement"/> being performed.
+        /// </summary>
+        /// <param name="movement">The movement.</param>
+        protected virtual void OnMovementPerformed(KaijuMovement movement) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuSensor"/> has been run.
+        /// </summary>
+        /// <param name="sensor">The sensor.</param>
+        protected virtual void OnSensorSense(KaijuSensor sensor) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuSensor"/> has been enabled.
+        /// </summary>
+        /// <param name="sensor">The sensor.</param>
+        protected virtual void OnSensorEnabled(KaijuSensor sensor) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuSensor"/> has been disabled.
+        /// </summary>
+        /// <param name="sensor">The sensor.</param>
+        protected virtual void OnSensorDisabled(KaijuSensor sensor) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has started to execute.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorStarted(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> is continuing to execute.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorExecuting(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has successfully fully completed its action.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorDone(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorInterrupted(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has failed its execution.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorFailed(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has finishing becoming enabled.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorEnabled(KaijuActuator actuator) { }
+        
+        /// <summary>
+        /// Global callback for when a <see cref="KaijuActuator"/> has finishing becoming disabled.
+        /// </summary>
+        /// <param name="actuator">The actuator.</param>
+        protected virtual void OnActuatorDisabled(KaijuActuator actuator) { }
         
         /// <summary>
         /// Get a description of the object.
