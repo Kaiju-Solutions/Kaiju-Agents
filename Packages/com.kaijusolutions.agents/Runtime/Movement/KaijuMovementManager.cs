@@ -367,12 +367,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The key for if all editor visualizations should be rendered or only the selected agent.
+        /// The key for if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
         private const string EditorVisualizationsActiveKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
         
         /// <summary>
-        /// Handle if all editor visualizations should be rendered or only the selected agent.
+        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
         public static bool EditorVisualizationsActive
         {
@@ -394,12 +394,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Handle if all editor visualizations should be rendered or only the selected agent.
+        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
         private static bool? _editorVisualizationsAll;
         
         /// <summary>
-        /// Reset if all editor visualizations should be rendered or only the selected agent.
+        /// Reset if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
         public static void EditorResetVisualizationsActive()
         {
@@ -457,7 +457,7 @@ namespace KaijuSolutions.Agents.Movement
             All = 0,
             
             /// <summary>
-            /// Only display text fields of the selected agent.
+            /// Only display text fields of the selected <see cref="KaijuAgent"/>.
             /// </summary>
             Selected = 1,
             

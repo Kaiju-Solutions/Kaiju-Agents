@@ -123,21 +123,21 @@ namespace KaijuSolutions.Agents
         }
 #endif
         /// <summary>
-        /// Assign a component, validating if it meets requirements.
+        /// Assign a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>, validating if it meets requirements.
         /// </summary>
-        /// <param name="go">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to assign the component to.</param>
-        /// <param name="current">The currently assigned value of the component to validate.</param>
-        /// <param name="self">If the component can be attached to the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <param name="children">If the component can be in the children of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <param name="parents">If the component can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <typeparam name="T">The type of component to assign.</typeparam>
+        /// <param name="go">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to assign the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to.</param>
+        /// <param name="current">The currently assigned value of the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to validate.</param>
+        /// <param name="self">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be attached to the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <param name="children">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be in the children of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <param name="parents">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <typeparam name="T">The type of <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to assign.</typeparam>
         /// <returns>If a new assignment was made.</returns>
         public static bool AssignComponent<T>([NotNull] this GameObject go, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
         {
             // If one currently exists, see if it meets our requirements to be assigned.
             if (current != null)
             {
-                // Grab the component's GameObject.
+                // Grab the <see href="https://docs.unity3d.com/Manual/Components.html">component</see>'s <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
                 GameObject other = current.gameObject;
                 
                 // If it is itself.
@@ -154,7 +154,7 @@ namespace KaijuSolutions.Agents
                 }
             }
             
-            // Check on the GameObject itself.
+            // Check on the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> itself.
             if (self && go.TryGetComponent(out current))
             {
                 return true;
@@ -180,7 +180,7 @@ namespace KaijuSolutions.Agents
                 }
             }
             
-            // Try and add the component.
+            // Try and add the <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
             if (!self)
             {
                 return false;
@@ -192,14 +192,14 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Assign a component, validating if it meets requirements.
+        /// Assign a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>, validating if it meets requirements.
         /// </summary>
-        /// <param name="c">A component of the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to assign the component to.</param>
-        /// <param name="current">The currently assigned value of the component to validate.</param>
-        /// <param name="self">If the component can be attached to the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <param name="children">If the component can be in the children of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <param name="parents">If the component can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <typeparam name="T">The type of component to assign.</typeparam>
+        /// <param name="c">A <see href="https://docs.unity3d.com/Manual/Components.html">component</see> of the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to assign the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to.</param>
+        /// <param name="current">The currently assigned value of the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to validate.</param>
+        /// <param name="self">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be attached to the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <param name="children">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be in the children of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <param name="parents">If the <see href="https://docs.unity3d.com/Manual/Components.html">component</see> can be in the parents of the calling <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <typeparam name="T">The type of <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to assign.</typeparam>
         /// <returns>If a new assignment was made.</returns>
         public static bool AssignComponent<T>([NotNull] this Component c, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
         {
@@ -207,12 +207,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Spawn an agent.
+        /// Spawn an <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="type">The type of agent to spawn.</param>
-        /// <param name="position">The position to spawn the agent at.</param>
-        /// <param name="orientation">The orientation to spawn the agent at.</param>
-        /// <param name="cached">If this should try to load a cached agent or not.</param>
+        /// <param name="type">The type of <see cref="KaijuAgent"/> to spawn.</param>
+        /// <param name="position">The position to spawn the <see cref="KaijuAgent"/> at.</param>
+        /// <param name="orientation">The orientation to spawn the <see cref="KaijuAgent"/> at.</param>
+        /// <param name="cached">If this should try to load a cached <see cref="KaijuAgent"/> or not.</param>
         /// <param name="prefab"></param>
         /// <param name="name"></param>
         /// <param name="body"></param>
@@ -222,7 +222,7 @@ namespace KaijuSolutions.Agents
         {
             KaijuAgent agent;
             
-            // If we can use a cached agent, do so.
+            // If we can use a cached <see cref="KaijuAgent"/>, do so.
             if (cached)
             {
                 agent = type switch
@@ -233,7 +233,7 @@ namespace KaijuSolutions.Agents
                     _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>()
                 };
                 
-                // If there is a cached agent, work with it.
+                // If there is a cached <see cref="KaijuAgent"/>, work with it.
                 if (agent != null)
                 {
                     // Set values.
@@ -245,13 +245,13 @@ namespace KaijuSolutions.Agents
                     // Set the colors if this conforms to the standard setup.
                     SetMaterials(root, body, eyes);
                     
-                    // Reactive this agent.
+                    // Reactive this <see cref="KaijuAgent"/>.
                     agent.Spawn();
                     return agent;
                 }
             }
             
-            // Load the agent if it is a prefab.
+            // Load the <see cref="KaijuAgent"/> if it is a prefab.
             if (prefab != null)
             {
                 agent = Object.Instantiate(prefab, position ?? Vector3.zero, orientation ?? Quaternion.identity);
@@ -262,7 +262,7 @@ namespace KaijuSolutions.Agents
                 return agent;
             }
             
-            // Create the agent for scratch otherwise.
+            // Create the <see cref="KaijuAgent"/> for scratch otherwise.
             GameObject go = new(name ?? "Agent")
             {
                 transform =
@@ -301,7 +301,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Try to set the materials.
         /// </summary>
-        /// <param name="root">The root transform.</param>
+        /// <param name="root">The root <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
         /// <param name="body">The color for the body.</param>
         /// <param name="eyes">The color for the eyes.</param>
         private static void SetMaterials([NotNull] Transform root, Color? body = null, Color? eyes = null)
@@ -354,15 +354,15 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Create a capsule for the default agents.
+        /// Create a capsule for the default <see cref="KaijuAgent"/>s.
         /// </summary>
-        /// <param name="parent">The parent transform.</param>
+        /// <param name="parent">The parent <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
         /// <param name="position">The local position.</param>
         /// <param name="orientation">The local orientation.</param>
         /// <param name="scale">The local scale.</param>
         /// <param name="color">The color.</param>
         /// <param name="name">The name.</param>
-        /// <returns>The transform of the spawned object.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> of the spawned object.</returns>
         private static Transform CreateCapsule(Transform parent, Vector3 position, Quaternion orientation, Vector3 scale, Color color, string name)
         {
             // Add the body visuals.

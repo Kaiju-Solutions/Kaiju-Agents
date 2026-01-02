@@ -8,9 +8,9 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Allow for visual detection of a component type.
+    /// Allow for visual detection of a <see href="https://docs.unity3d.com/Manual/Components.html">component</see> type.
     /// </summary>
-    /// <typeparam name="T">The type of component.</typeparam>
+    /// <typeparam name="T">The type of <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.</typeparam>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
@@ -117,7 +117,7 @@ namespace KaijuSolutions.Agents.Sensors
         public Color editorColor = Color.white;
         
         /// <summary>
-        /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the sensor's position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the sensor's X and Z positions.
+        /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSensor.Agent"/>'s position or from the <see cref="KaijuSensor"/>'s position. The range and view arc are always drawn from the <see cref="KaijuSensor.Agent"/>'s Y height and the <see cref="KaijuSensor"/>'s X and Z positions.
         /// </summary>
         [Tooltip("If the visualizations in the editor for the line-of-sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
         public bool editorFromAgent = true;
@@ -152,7 +152,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Run the sensor.
+        /// Run the <see cref="KaijuSensor"/>.
         /// </summary>
         protected override void Run()
         {
@@ -183,7 +183,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Perform any needed resetting of the sensor.
+        /// Perform any needed resetting of the <see cref="KaijuSensor"/>.
         /// </summary>
         protected override void Cleanup()
         {
@@ -241,21 +241,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuVisionSensor{T}"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuVisionSensor<T>([NotNull] GameObject o) => o.GetComponent<KaijuVisionSensor<T>>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuVisionSensor{T}"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuVisionSensor<T>([NotNull] Transform t) => t.GetComponent<KaijuVisionSensor<T>>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The sensor.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the sensor if there was one.</returns>
+        /// <param name="s">The <see cref="KaijuVisionSensor{T}"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuVisionSensor{T}"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuVisionSensor<T> s) => s.Agent;
     }
 }

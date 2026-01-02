@@ -13,7 +13,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Base Kaiju Agent class.
+    /// Base <see cref="KaijuAgent"/> class.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -75,12 +75,12 @@ namespace KaijuSolutions.Agents
         public static event KaijuAgentAction OnLookTargetGlobal;
         
         /// <summary>
-        /// Callback for when this agent has moved.
+        /// Callback for when this <see cref="KaijuAgent"/> has moved.
         /// </summary>
         public event KaijuAction OnMove;
         
         /// <summary>
-        /// Global callback for when this agent has moved.
+        /// Global callback for when this <see cref="KaijuAgent"/> has moved.
         /// </summary>
         public static event KaijuAgentAction OnMoveGlobal;
         
@@ -130,72 +130,72 @@ namespace KaijuSolutions.Agents
         public event KaijuMovementAction OnMovementPerformed;
         
         /// <summary>
-        /// Callback for when all automatic sensors have finished being executed.
+        /// Callback for when all automatic <see cref="KaijuSensor"/>s have finished being executed.
         /// </summary>
         public event KaijuAction OnAutomaticSense;
         
         /// <summary>
-        /// Global callback for when all automatic sensors have finished being executed.
+        /// Global callback for when all automatic <see cref="KaijuSensor"/>s have finished being executed.
         /// </summary>
         public static event KaijuAgentAction OnAutomaticSenseGlobal;
         
         /// <summary>
-        /// Callback for when a sensor has been run.
+        /// Callback for when a <see cref="KaijuSensor"/> has been run.
         /// </summary>
         public event KaijuSensorAction OnSense;
         
         /// <summary>
-        /// Callback for when a sensor has been enabled.
+        /// Callback for when a <see cref="KaijuSensor"/> has been enabled.
         /// </summary>
         public event KaijuSensorAction OnSensorEnabled;
         
         /// <summary>
-        /// Callback for when a sensor has been disabled.
+        /// Callback for when a <see cref="KaijuSensor"/> has been disabled.
         /// </summary>
         public event KaijuSensorAction OnSensorDisabled;
         
         /// <summary>
-        /// Callback for when an actuator has been enabled.
+        /// Callback for when an <see cref="KaijuActuator"/> has been enabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorEnabled;
         
         /// <summary>
-        /// Callback for when an actuator has been disabled.
+        /// Callback for when an <see cref="KaijuActuator"/> has been disabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorDisabled;
         
         /// <summary>
-        /// Callback for when an actuator has started to execute.
+        /// Callback for when an <see cref="KaijuActuator"/> has started to execute.
         /// </summary>
         public event KaijuActuatorAction OnActuatorStarted;
         
         /// <summary>
-        /// Callback for when an actuator is continuing to execute.
+        /// Callback for when an <see cref="KaijuActuator"/> is continuing to execute.
         /// </summary>
         public event KaijuActuatorAction OnActuatorExecuting;
         
         /// <summary>
-        /// Callback for when an actuator has successfully fully completed its action.
+        /// Callback for when an <see cref="KaijuActuator"/> has successfully fully completed its action.
         /// </summary>
         public event KaijuActuatorAction OnActuatorDone;
         
         /// <summary>
-        /// Callback for when an actuator has been interrupted during its execution, cancelling the execution.
+        /// Callback for when an <see cref="KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
         /// </summary>
         public event KaijuActuatorAction OnActuatorInterrupted;
         
         /// <summary>
-        /// Callback for when an actuator has failed its execution.
+        /// Callback for when an <see cref="KaijuActuator"/> has failed its execution.
         /// </summary>
         public event KaijuActuatorAction OnActuatorFailed;
         
         /// <summary>
-        /// If this agent should move with the physics system.
+        /// If this <see cref="KaijuAgent"/> should move with the physics system.
         /// </summary>
         public virtual bool PhysicsAgent => false;
         
         /// <summary>
-        /// The maximum move speed of the agent in units per second.
+        /// The maximum move speed of the <see cref="KaijuAgent"/> in units per second.
         /// </summary>
         public float MoveSpeed
         {
@@ -209,7 +209,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The maximum move speed of the agent in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// The maximum move speed of the <see cref="KaijuAgent"/> in units per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Movement")]
@@ -220,7 +220,7 @@ namespace KaijuSolutions.Agents
         private float moveSpeed = 10f;
         
         /// <summary>
-        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.
+        /// The maximum move acceleration of the <see cref="KaijuAgent"/> in units per second. Setting to zero yields instant acceleration.
         /// </summary>
         public float MoveAcceleration
         {
@@ -234,7 +234,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// The maximum move acceleration of the <see cref="KaijuAgent"/> in units per second. Setting to zero yields instant acceleration. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration. Note that modifying this at runtime via the inspector will not trigger the callback.")]
@@ -244,7 +244,7 @@ namespace KaijuSolutions.Agents
         private float moveAcceleration;
         
         /// <summary>
-        /// The look speed of the agent in degrees per second.
+        /// The look speed of the <see cref="KaijuAgent"/> in degrees per second.
         /// </summary>
         public float LookSpeed
         {
@@ -258,7 +258,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The look speed of the agent in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// The look speed of the <see cref="KaijuAgent"/> in degrees per second. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Looking")]
@@ -269,7 +269,7 @@ namespace KaijuSolutions.Agents
         private float lookSpeed;
         
         /// <summary>
-        /// If the agent should automatically rotate towards where it is moving when no look target is set.
+        /// If the <see cref="KaijuAgent"/> should automatically rotate towards where it is moving when no look target is set.
         /// </summary>
         public bool AutoRotate
         {
@@ -283,7 +283,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// If the agent should automatically rotate towards where it is moving when no look target is set. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// If the <see cref="KaijuAgent"/> should automatically rotate towards where it is moving when no look target is set. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("If the agent should automatically rotate towards where it is moving when no look target is set. Note that modifying this at runtime via the inspector will not trigger the callback.")]
@@ -292,24 +292,24 @@ namespace KaijuSolutions.Agents
         private bool autoRotate = true;
         
         /// <summary>
-        /// All sensors attached to this agent.
+        /// All <see cref="KaijuSensor"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         public IReadOnlyCollection<KaijuSensor> Sensors => _sensors;
         
         /// <summary>
-        /// The number of sensors attached to this agent.
+        /// The number of <see cref="KaijuSensor"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         public int SensorsCount => _sensors.Count;
         
         /// <summary>
-        /// All sensors attached to this agent.
+        /// All <see cref="KaijuSensor"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         private readonly HashSet<KaijuSensor> _sensors = new();
         
         /// <summary>
-        /// Register a sensor. There is no point in manually calling this.
+        /// Register a <see cref="KaijuSensor"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The sensor to register.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/> to register.</param>
         public void RegisterSensor(KaijuSensor sensor)
         {
             if (_sensors.Add(sensor))
@@ -319,9 +319,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister a sensor. There is no point in manually calling this.
+        /// Unregister a <see cref="KaijuSensor"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The sensor to unregister.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/> to unregister.</param>
         public void UnregisterSensor(KaijuSensor sensor)
         {
             if (_sensors.Remove(sensor))
@@ -331,24 +331,24 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// All actuators attached to this agent.
+        /// All <see cref="KaijuActuator"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         public IReadOnlyCollection<KaijuActuator> Actuators => _actuators;
         
         /// <summary>
-        /// The number of actuators attached to this agent.
+        /// The number of <see cref="KaijuActuator"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         public int ActuatorsCount => _actuators.Count;
         
         /// <summary>
-        /// All actuators attached to this agent.
+        /// All <see cref="KaijuActuator"/>s attached to this <see cref="KaijuAgent"/>.
         /// </summary>
         private readonly HashSet<KaijuActuator> _actuators = new();
         
         /// <summary>
-        /// Register an actuator. There is no point in manually calling this.
+        /// Register an <see cref="KaijuActuator"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuators to register.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>s to register.</param>
         public void RegisterActuator(KaijuActuator actuator)
         {
             if (_actuators.Add(actuator))
@@ -358,9 +358,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister an actuator. There is no point in manually calling this.
+        /// Unregister an <see cref="KaijuActuator"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The sensor to unregister.</param>
+        /// <param name="actuator">The <see cref="KaijuSensor"/> to unregister.</param>
         public void UnregisterActuator(KaijuActuator actuator)
         {
             if (_actuators.Remove(actuator))
@@ -370,12 +370,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Identifiers for this agent.
+        /// Identifiers for this <see cref="KaijuAgent"/>.
         /// </summary>
         public IReadOnlyList<uint> Identifiers => identifiers;
         
         /// <summary>
-        /// Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// Identifiers for this <see cref="KaijuAgent"/>. Note that modifying this at runtime via the inspector will not trigger the callback.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Configuration")]
@@ -403,7 +403,7 @@ namespace KaijuSolutions.Agents
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
-        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
+        /// The manual control vector for the <see cref="KaijuAgent"/>'s movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector2 Control
         {
@@ -412,7 +412,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
+        /// The manual control vector for the <see cref="KaijuAgent"/>'s movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector3 Control3
         {
@@ -421,37 +421,37 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
+        /// The manual control vector for the <see cref="KaijuAgent"/>'s movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         private Vector2 _control = Vector2.zero;
         
         /// <summary>
-        /// The current velocity of the agent.
+        /// The current velocity of the <see cref="KaijuAgent"/>.
         /// </summary>
         public Vector2 Velocity { get; private set; }
         
         /// <summary>
-        /// The current velocity of the agent.
+        /// The current velocity of the <see cref="KaijuAgent"/>.
         /// </summary>
         public Vector3 Velocity3 => new(Velocity.x, 0, Velocity.y);
         
         /// <summary>
-        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward"/>.
+        /// Get the forward direction of this <see cref="KaijuAgent"/> based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward"/>.
         /// </summary>
         public Vector3 MoveForward => Velocity == Vector2.zero ? Forward : Velocity3;
         
         /// <summary>
-        /// All movements the agent is currently performing.
+        /// All movements the <see cref="KaijuAgent"/> is currently performing.
         /// </summary>
         private readonly List<KaijuMovement> _movements = new();
         
         /// <summary>
-        /// All movements the agent is currently performing.
+        /// All movements the <see cref="KaijuAgent"/> is currently performing.
         /// </summary>
         public IReadOnlyList<KaijuMovement> Movements => _movements.AsReadOnly();
         
         /// <summary>
-        /// The total number movements the agent is currently performing.
+        /// The total number movements the <see cref="KaijuAgent"/> is currently performing.
         /// </summary>
         public int MovementsCount => _movements.Count;
         
@@ -481,7 +481,7 @@ namespace KaijuSolutions.Agents
         private Vector3? _lookVector3;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to look at.
+        /// The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> to look at.
         /// </summary>
         private Transform _lookTransform;
         
@@ -649,7 +649,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to look at.
+        /// The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> to look at.
         /// </summary>
         public Transform LookTransform
         {
@@ -677,7 +677,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The component to look at.
+        /// The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to look at.
         /// </summary>
         public Component LookComponent
         {
@@ -685,7 +685,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The agent to move in relation to.
+        /// The <see cref="KaijuAgent"/> to move in relation to.
         /// </summary>
         public KaijuAgent TargetAgent
         {
@@ -694,7 +694,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The component to look at.
+        /// The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to look at.
         /// </summary>
         public Component TargetComponent
         {
@@ -709,7 +709,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// If the agent is currently looking at something.
+        /// If the <see cref="KaijuAgent"/> is currently looking at something.
         /// </summary>
         public bool Looking => LookVector.HasValue;
         
@@ -719,7 +719,7 @@ namespace KaijuSolutions.Agents
         private bool _wasLooking;
         
         /// <summary>
-        /// Get the distance from the agent to the target which is being looked at.
+        /// Get the distance from the <see cref="KaijuAgent"/> to the target which is being looked at.
         /// </summary>
         public float LookDistance => LookVector3?.Distance(transform) ?? 0;
         
@@ -741,13 +741,13 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get the radius of an agent.
+        /// Get the radius of an <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <returns>The radius of the agent.</returns>
+        /// <returns>The radius of the <see cref="KaijuAgent"/>.</returns>
         public abstract float GetRadius();
         
         /// <summary>
-        /// Initialize the agent. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public virtual void Setup()
         {
@@ -846,7 +846,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Spawn this agent if it is not currently spawned. There is no point in manually calling this.
+        /// Spawn this <see cref="KaijuAgent"/> if it is not currently spawned. There is no point in manually calling this.
         /// </summary>
         public void Spawn()
         {
@@ -855,7 +855,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Despawn this agent.
+        /// Despawn this <see cref="KaijuAgent"/>.
         /// </summary>
         public void Despawn()
         {
@@ -877,10 +877,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// If this agent has an identifier.
+        /// If this <see cref="KaijuAgent"/> has an identifier.
         /// </summary>
         /// <param name="identifier">The identifier to check.</param>
-        /// <returns>If this agent has the identifier.</returns>
+        /// <returns>If this <see cref="KaijuAgent"/> has the identifier.</returns>
         public bool HasIdentifier(uint identifier)
         {
             foreach (uint i in identifiers)
@@ -895,10 +895,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// If this agent has any one of a set of identifiers.
+        /// If this <see cref="KaijuAgent"/> has any one of a set of identifiers.
         /// </summary>
         /// <param name="collection">The identifiers to check.</param>
-        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        /// <returns>If this <see cref="KaijuAgent"/> has any one of a set of identifiers.</returns>
         public bool HasAnyIdentifier(IEnumerable<uint> collection)
         {
             foreach (uint identifier in collection)
@@ -913,7 +913,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Add an identifier to this agent.
+        /// Add an identifier to this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="identifier">The identifier to set.</param>
         /// <returns>If the identifier was added.</returns>
@@ -930,7 +930,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Add identifiers to this agent.
+        /// Add identifiers to this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="collection">The identifiers to add.</param>
         /// <returns>If any of the identifiers were added.</returns>
@@ -949,7 +949,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Remove an identifier from this agent.
+        /// Remove an identifier from this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="identifier">The identifier to remove.</param>
         /// <returns>If the identifier was removed.</returns>
@@ -966,7 +966,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Remove identifiers from this agent.
+        /// Remove identifiers from this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="collection">The identifiers to remove.</param>
         /// <returns>If any of the identifiers were removed.</returns>
@@ -985,7 +985,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Set an identifier to this agent.
+        /// Set an identifier to this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="identifier">The identifier to set.</param>
         public void SetIdentifier(uint identifier)
@@ -995,10 +995,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// If this agent has any one of a set of identifiers.
+        /// If this <see cref="KaijuAgent"/> has any one of a set of identifiers.
         /// </summary>
         /// <param name="collection">The identifiers to check.</param>
-        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        /// <returns>If this <see cref="KaijuAgent"/> has any one of a set of identifiers.</returns>
         public void SetIdentifiers(IEnumerable<uint> collection)
         {
             ClearIdentifiers();
@@ -1023,10 +1023,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Stop a movement of this agent.
+        /// Stop a movement of this <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="movement">The movement to stop.</param>
-        /// <returns>True if this movement has been stopped, otherwise this movement was not a part of this agent and was not stopped.</returns>
+        /// <returns>True if this movement has been stopped, otherwise this movement was not a part of this <see cref="KaijuAgent"/> and was not stopped.</returns>
         public bool Stop(KaijuMovement movement)
         {
             for (int i = 0; i < _movements.Count; i++)
@@ -1161,9 +1161,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Stop an existing target movement in relation to a component.
+        /// Stop an existing target movement in relation to a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
         /// </summary>
-        /// <param name="c">The component to stop moving in relation to.</param>
+        /// <param name="c">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to stop moving in relation to.</param>
         /// <returns>The number of target movements which were stopped.</returns>
         public int Stop([NotNull] Component c)
         {
@@ -1190,7 +1190,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1212,7 +1212,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1234,7 +1234,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1256,7 +1256,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1278,7 +1278,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1300,7 +1300,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1322,7 +1322,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1344,7 +1344,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
         {
@@ -1366,7 +1366,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1388,7 +1388,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1410,7 +1410,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1432,7 +1432,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the flee be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1454,7 +1454,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
         public KaijuEvadeMovement Evade(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1476,7 +1476,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1498,7 +1498,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1520,7 +1520,7 @@ namespace KaijuSolutions.Agents
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
         {
@@ -1542,7 +1542,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The wander movement.</returns>
         public KaijuWanderMovement Wander(float distance = 5, float radius = 1, float weight = 1, bool clear = true)
         {
@@ -1559,13 +1559,13 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Separate from other agents.
+        /// Separate from other <see cref="KaijuAgent"/>s.
         /// </summary>
-        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="collection">What types of agents to avoid.</param>
+        /// <param name="collection">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuSeparationMovement Separation(float distance = 10, float coefficient = 0, ICollection<uint> collection = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1583,7 +1583,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Avoid obstacles.
         /// </summary>
-        /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="KaijuObstacleAvoidanceMovement.Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
@@ -1591,7 +1591,7 @@ namespace KaijuSolutions.Agents
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="layerMask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? layerMask = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1614,7 +1614,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1637,7 +1637,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1660,7 +1660,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1683,7 +1683,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1706,7 +1706,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1729,7 +1729,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1752,7 +1752,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1775,7 +1775,7 @@ namespace KaijuSolutions.Agents
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
         {
             if (clear)
@@ -1805,14 +1805,14 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Visualize this agent in the editor. There is no point in manually calling this.
+        /// Visualize this <see cref="KaijuAgent"/> in the editor. There is no point in manually calling this.
         /// </summary>
-        /// <param name="text">If the text for this agent should be visualized.</param>
+        /// <param name="text">If the text for this <see cref="KaijuAgent"/> should be visualized.</param>
         public void EditorVisualize(bool text)
         {
             Vector3 p = transform.position;
             
-            // If the agent is moving or has an explicit looking target, it has some visuals of its own.
+            // If the <see cref="KaijuAgent"/> is moving or has an explicit looking target, it has some visuals of its own.
             bool moving = Velocity != Vector2.zero;
             Vector3? v = LookVector3;
             if (moving || v.HasValue)
@@ -1831,7 +1831,7 @@ namespace KaijuSolutions.Agents
                 KaijuAgentsManager.EditorLabel(p, name, KaijuAgentsManager.EditorAgentColor);
             }
             
-            // Show where the agent is looking.
+            // Show where the <see cref="KaijuAgent"/> is looking.
             if (v.HasValue)
             {
                 Handles.DrawLine(p, v.Value);
@@ -1843,13 +1843,13 @@ namespace KaijuSolutions.Agents
                 movement.EditorVisualize(p);
             }
             
-            // Visualize all sensors.
+            // Visualize all <see cref="KaijuSensor"/>s.
             foreach (KaijuSensor sensor in _sensors)
             {
                 sensor.EditorVisualize(p);
             }
             
-            // Visualize all actuators.
+            // Visualize all <see cref="KaijuActuator"/>s.
             foreach (KaijuActuator actuator in _actuators)
             {
                 actuator.EditorVisualize(p);
@@ -1857,18 +1857,18 @@ namespace KaijuSolutions.Agents
         }
 #endif
         /// <summary>
-        /// Perform agent movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public abstract void Move(float delta);
         
         /// <summary>
-        /// Get a sensor of a given type.
+        /// Get a <see cref="KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="ignore">The optional set of sensors to ignore from this search, meaning only a sensor not in this set can be returned.</param>
-        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of sensor.</typeparam>
-        /// <returns>The first sensor found of the given type or NULL if there are none found.</returns>
+        /// <param name="ignore">The optional set of <see cref="KaijuSensor"/>s to ignore from this search, meaning only a <see cref="KaijuSensor"/> not in this set can be returned.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
+        /// <returns>The first <see cref="KaijuSensor"/> found of the given type or NULL if there are none found.</returns>
         public T GetSensor<T>(ISet<T> ignore = null, bool automatic = true) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -1886,11 +1886,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all sensor of a given type.
+        /// Get all <see cref="KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of sensor.</typeparam>
-        /// <returns>The set of sensors found.</returns>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
+        /// <returns>The set of <see cref="KaijuSensor"/>s found.</returns>
         public HashSet<T> GetSensors<T>(bool automatic = true) where T : KaijuSensor
         {
             HashSet<T> sensors = new();
@@ -1899,12 +1899,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all sensor of a given type.
+        /// Get all <see cref="KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="sensors">The set of sensors to add the executed sensors to. If you wish to have this cleared, you must manually do so before.</param>
-        /// <param name="automatic">If you also want to allow the return of automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of sensor.</typeparam>
-        /// <returns>The number of sensors added to the set.</returns>
+        /// <param name="sensors">The set of <see cref="KaijuSensor"/>s to add the executed <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuSensor"/>s added to the set.</returns>
         public int GetSensors<T>([NotNull] ISet<T> sensors, bool automatic = true) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -1923,12 +1923,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Manually run all sensors of a type attached to this agent.
+        /// Manually run all <see cref="KaijuSensor"/>s of a type attached to this <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="sensors">The optional set of sensors to add the executed sensors to. If you wish to have this cleared, you must manually do so before.</param>
-        /// <param name="automatic">If you also want to run automatic sensors, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of sensor.</typeparam>
-        /// <returns>The number of sensors which were run.</returns>
+        /// <param name="sensors">The optional set of <see cref="KaijuSensor"/>s to add the executed <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to run automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuSensor"/>s which were run.</returns>
         public int Sense<T>(ICollection<T> sensors = null, bool automatic = false) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -1951,7 +1951,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Execute all automatically-running sensors. There is no point in manually calling this.
+        /// Execute all automatically-running <see cref="KaijuSensor"/>s. There is no point in manually calling this.
         /// </summary>
         public void SenseAutomatic()
         {
@@ -1968,66 +1968,66 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Called by a sensor when it has been run. There is no point in manually calling this.
+        /// Called by a <see cref="KaijuSensor"/> when it has been run. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The sensor which has been run.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/> which has been run.</param>
         public void SensorRun([NotNull] KaijuSensor sensor)
         {
             OnSense?.Invoke(sensor);
         }
         
         /// <summary>
-        /// Execute all actuators. There is no point in manually calling this.
+        /// Execute all <see cref="KaijuActuator"/>s. There is no point in manually calling this.
         /// </summary>
         public void Act()
         {
             foreach (KaijuActuator actuator in _actuators)
             {
-                // Invoke any actuators which have finished.
+                // Invoke any <see cref="KaijuActuator"/>s which have finished.
                 actuator.Handle();
             }
         }
         
         /// <summary>
-        /// Allow for actuators to trigger that they have started. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuActuator"/>s to trigger that they have started. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         public void ActuatorStarted(KaijuActuator actuator)
         {
             OnActuatorStarted?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for actuators to trigger that they are executing. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuActuator"/>s to trigger that they are executing. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         public void ActuatorExecuting(KaijuActuator actuator)
         {
             OnActuatorExecuting?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for actuators to trigger that they are done. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuActuator"/>s to trigger that they are done. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         public void ActuatorDone(KaijuActuator actuator)
         {
             OnActuatorDone?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for actuators to trigger that they were interrupted. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuActuator"/>s to trigger that they were interrupted. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         public void ActuatorInterrupted(KaijuActuator actuator)
         {
             OnActuatorInterrupted?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for actuators to trigger that they failed. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuActuator"/>s to trigger that they failed. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         public void ActuatorFailed(KaijuActuator actuator)
         {
             OnActuatorFailed?.Invoke(actuator);
@@ -2099,111 +2099,111 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] GameObject o) => o.GetComponent<KaijuAgent>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] Transform t) => t.GetComponent<KaijuAgent>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuController"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The <see cref="KaijuController"/> attached to the agent if there was one.</returns>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
+        /// <returns>The <see cref="KaijuController"/> attached to the <see cref="KaijuAgent"/> if there was one.</returns>
         public static implicit operator KaijuController([NotNull] KaijuAgent a) => a.GetComponent<KaijuController>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuGlobalController"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The <see cref="KaijuGlobalController"/> attached to the agent if there was one.</returns>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
+        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see cref="KaijuAgent"/> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
         
         /// <summary>
         /// Implicit conversion to a short integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator short([NotNull] KaijuAgent a) => (short)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable short integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator short?([NotNull] KaijuAgent a) => (short?)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to an unsigned short integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator ushort([NotNull] KaijuAgent a) => (ushort)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned short integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator ushort?([NotNull] KaijuAgent a) => (ushort?)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to an integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator int([NotNull] KaijuAgent a) => a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator int?([NotNull] KaijuAgent a) => a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to an unsigned integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator uint([NotNull] KaijuAgent a) => (uint)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator uint?([NotNull] KaijuAgent a) => (uint?)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a long integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator long([NotNull] KaijuAgent a) => a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable long integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator long?([NotNull] KaijuAgent a) => a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to an unsigned long integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator ulong([NotNull] KaijuAgent a) => (ulong)a._movements.Count;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned long integer based on the number of <see cref="Movements"/>.
         /// </summary>
-        /// <param name="a">The agent.</param>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The number of <see cref="Movements"/>.</returns>
         public static implicit operator ulong?([NotNull] KaijuAgent a) => (ulong?)a._movements.Count;
     }

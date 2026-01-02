@@ -32,7 +32,7 @@ namespace KaijuSolutions.Agents
             OnPreSetScaleGlobal += OnAllPreSetScale;
             OnSetScaleGlobal += OnAllSetScale;
             
-            // Bind to all agent events to overload.
+            // Bind to all <see cref="KaijuAgent"/> events to overload.
             KaijuAgent.OnMoveSpeedGlobal += OnAgentMoveSpeed;
             KaijuAgent.OnMoveAccelerationGlobal += OnAgentMoveAcceleration;
             KaijuAgent.OnLookSpeedGlobal += OnAgentLookSpeed;
@@ -49,12 +49,12 @@ namespace KaijuSolutions.Agents
             KaijuMovement.OnStoppedGlobal += OnMovementStopped;
             KaijuMovement.OnPerformedGlobal += OnMovementPerformed;
             
-            // Bind all sensor events to overload.
+            // Bind all <see cref="KaijuSensor"/> events to overload.
             KaijuSensor.OnSenseGlobal += OnSensorSense;
             KaijuSensor.OnEnabledGlobal += OnSensorEnabled;
             KaijuSensor.OnDisabledGlobal += OnSensorDisabled;
             
-            // Bind all actuator events to overload.
+            // Bind all <see cref="KaijuActuator"/> events to overload.
             KaijuActuator.OnStartedGlobal += OnActuatorStarted;
             KaijuActuator.OnExecutingGlobal += OnActuatorExecuting;
             KaijuActuator.OnDoneGlobal += OnActuatorDone;
@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents
             OnPreSetScaleGlobal -= OnAllPreSetScale;
             OnSetScaleGlobal -= OnAllSetScale;
             
-            // Unbind to all agent events to overload.
+            // Unbind to all <see cref="KaijuAgent"/> events to overload.
             KaijuAgent.OnMoveSpeedGlobal -= OnAgentMoveSpeed;
             KaijuAgent.OnMoveAccelerationGlobal -= OnAgentMoveAcceleration;
             KaijuAgent.OnLookSpeedGlobal -= OnAgentLookSpeed;
@@ -94,12 +94,12 @@ namespace KaijuSolutions.Agents
             KaijuMovement.OnStoppedGlobal -= OnMovementStopped;
             KaijuMovement.OnPerformedGlobal -= OnMovementPerformed;
             
-            // Unbind all sensor events to overload.
+            // Unbind all <see cref="KaijuSensor"/> events to overload.
             KaijuSensor.OnSenseGlobal -= OnSensorSense;
             KaijuSensor.OnEnabledGlobal -= OnSensorEnabled;
             KaijuSensor.OnDisabledGlobal -= OnSensorDisabled;
             
-            // Unbind all actuator events to overload.
+            // Unbind all <see cref="KaijuActuator"/> events to overload.
             KaijuActuator.OnStartedGlobal -= OnActuatorStarted;
             KaijuActuator.OnExecutingGlobal -= OnActuatorExecuting;
             KaijuActuator.OnDoneGlobal -= OnActuatorDone;
@@ -112,97 +112,97 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Global callback for before a <see cref="KaijuBehaviour"/>'s position has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllPreSetPosition(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global callback for when the <see cref="KaijuBehaviour"/>'s position has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllSetPosition(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global callback for before the <see cref="KaijuBehaviour"/>'s orientation has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllPreSetOrientation(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global callback for when the <see cref="KaijuBehaviour"/>'s orientation has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllSetOrientation(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global callback for before the <see cref="KaijuBehaviour"/>'s scale has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllPreSetScale(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global callback for when the <see cref="KaijuBehaviour"/>'s scale has been set.
         /// </summary>
-        /// <param name="behaviour">The behaviour.</param>
+        /// <param name="behaviour">The <see cref="KaijuBehaviour"/>.</param>
         protected virtual void OnAllSetScale(KaijuBehaviour behaviour) { }
         
         /// <summary>
         /// Global movement speed changed callback for an <see cref="KaijuAgent"/>
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentMoveSpeed(KaijuAgent agent) { }
         
         /// <summary>
         /// Global movement acceleration changed callback for an <see cref="KaijuAgent"/>
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentMoveAcceleration(KaijuAgent agent) { }
         
         /// <summary>
         /// Global look speed changed callback for an <see cref="KaijuAgent"/>
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentLookSpeed(KaijuAgent agent) { }
         
         /// <summary>
         /// Global autorotation changed callback for an <see cref="KaijuAgent"/>
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentAutoRotate(KaijuAgent agent) { }
         
         /// <summary>
         /// Global callback for when the look target has been set for an <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentLookTarget(KaijuAgent agent) { }
         
         /// <summary>
         /// Global callback for when an <see cref="KaijuAgent"/> has moved.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentMove(KaijuAgent agent) { }
         
         /// <summary>
         /// Global callback for when the a <see cref="KaijuAgent"/> has finishing becoming enabled.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentEnabled(KaijuAgent agent) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuAgent"/> has finishing becoming disabled.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentDisabled(KaijuAgent agent) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuAgent"/> has finishing becoming destroyed.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentDestroyed(KaijuAgent agent) { }
         
         /// <summary>
-        /// Global callback for when all automatic sensors have finished being executed for a <see cref="KaijuAgent"/>.
+        /// Global callback for when all automatic <see cref="KaijuSensor"/>s have finished being executed for a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="agent">The agent.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         protected virtual void OnAgentAutomaticSense(KaijuAgent agent) { }
         
         /// <summary>
@@ -226,61 +226,61 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Global callback for when a <see cref="KaijuSensor"/> has been run.
         /// </summary>
-        /// <param name="sensor">The sensor.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
         protected virtual void OnSensorSense(KaijuSensor sensor) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuSensor"/> has been enabled.
         /// </summary>
-        /// <param name="sensor">The sensor.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
         protected virtual void OnSensorEnabled(KaijuSensor sensor) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuSensor"/> has been disabled.
         /// </summary>
-        /// <param name="sensor">The sensor.</param>
+        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
         protected virtual void OnSensorDisabled(KaijuSensor sensor) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has started to execute.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorStarted(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> is continuing to execute.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorExecuting(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has successfully fully completed its action.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorDone(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorInterrupted(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has failed its execution.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorFailed(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has finishing becoming enabled.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorEnabled(KaijuActuator actuator) { }
         
         /// <summary>
         /// Global callback for when a <see cref="KaijuActuator"/> has finishing becoming disabled.
         /// </summary>
-        /// <param name="actuator">The actuator.</param>
+        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected virtual void OnActuatorDisabled(KaijuActuator actuator) { }
         
         /// <summary>
@@ -296,28 +296,28 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The controller attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] GameObject o) => o.GetComponent<KaijuGlobalController>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The controller attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] Transform t) => t.GetComponent<KaijuGlobalController>();
         
         /// <summary>
         /// Implicit conversion from a <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="a">The <see cref="KaijuAgent"/>.</param>
-        /// <returns>The controller attached to the <see cref="KaijuAgent"/> if there was one.</returns>
+        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see cref="KaijuAgent"/> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="c">The controller.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the controller if there was one.</returns>
+        /// <param name="c">The <see cref="KaijuGlobalController"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to The <see cref="KaijuGlobalController"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuGlobalController c) => c.GetComponent<KaijuAgent>();
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods to extract the point vectors from hits. These do not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods to extract the point vectors from hits. These do not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsExtractPoints
     {
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -20,7 +20,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector2 position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -31,7 +31,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector2 position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector2 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -53,7 +53,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector2 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -64,7 +64,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector2 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.Expand().ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -75,7 +75,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector3 position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -121,7 +121,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -132,7 +132,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector3 position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -143,7 +143,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector3 position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -154,7 +154,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints(this Vector3 position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -165,7 +165,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -176,7 +176,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -187,7 +187,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -198,7 +198,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -209,7 +209,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed in its forward direction.</param>
         /// <param name="hits">The hits from casting.</param>
@@ -219,7 +219,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Transform position, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.position.ExtractPoints(position.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -230,7 +230,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Component position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -241,7 +241,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Component position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -252,7 +252,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Component position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -263,7 +263,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Component position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -274,7 +274,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this Component position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed in its forward direction.</param>
         /// <param name="hits">The hits from casting.</param>
@@ -288,7 +288,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -299,7 +299,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this GameObject position, Vector2 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.Expand(), hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -310,7 +310,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this GameObject position, Vector3 direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -321,7 +321,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this GameObject position, [NotNull] Transform direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -332,7 +332,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this GameObject position, [NotNull] Component direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed.</param>
         /// <param name="direction">The central direction of the casting.</param>
@@ -343,7 +343,7 @@ namespace KaijuSolutions.Agents.Extensions
         public static void ExtractPoints([NotNull] this GameObject position, [NotNull] GameObject direction, [NotNull] RaycastHit?[] hits, [NotNull] Vector3[] positions, float angle = 360f, float distance = float.MaxValue) => position.transform.position.ExtractPoints(direction.transform.forward, hits, positions, angle, distance);
         
         /// <summary>
-        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your agent only needs position vectors or to help perform debugging.
+        /// Extract the point vectors from hits. This does not perform any actual casting. For casting, see <see cref="KaijuAgentsArcRaycast"/> and <see cref="KaijuAgentsArcSphereCast"/>. This can be useful if your <see cref="KaijuAgent"/> only needs position vectors or to help perform debugging.
         /// </summary>
         /// <param name="position">The starting position where the casting were performed in its forward direction.</param>
         /// <param name="hits">The hits from casting.</param>

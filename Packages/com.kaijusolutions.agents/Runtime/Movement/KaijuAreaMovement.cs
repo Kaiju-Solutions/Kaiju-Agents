@@ -7,12 +7,12 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Movement which looks for handling other agents in a given area.
+    /// Movement which looks for handling other <see cref="KaijuAgent"/>s in a given area.
     /// </summary>
     public abstract class KaijuAreaMovement : KaijuMovement
     {
         /// <summary>
-        /// The distance to interact with other agents from.
+        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
         /// </summary>
         public float Distance
         {
@@ -21,17 +21,17 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance to interact with other agents from.
+        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
         /// </summary>
         private float _distance = float.MaxValue;
         
         /// <summary>
-        /// What types of agents to avoid.
+        /// What types of <see cref="KaijuAgent"/>s to avoid.
         /// </summary>
         public readonly HashSet<uint> Identifiers = new();
         
         /// <summary>
-        /// Clear all identifiers of agents to interact with.
+        /// Clear all identifiers of <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         public void ClearIdentifiers()
         {
@@ -39,7 +39,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Set the identifier of agents to interact with.
+        /// Set the identifier of <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifier">The identifier to set.</param>
         public void SetIdentifier(uint identifier)
@@ -49,7 +49,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Set the identifier of agents to interact with.
+        /// Set the identifier of <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifiers">The identifiers to set.</param>
         public void SetIdentifiers([NotNull] ICollection<uint> identifiers)
@@ -59,7 +59,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Add an identifier for agents to interact with.
+        /// Add an identifier for <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifier">The identifier to add.</param>
         /// <returns>If the identifier was added.</returns>
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Add identifiers for agents to interact with.
+        /// Add identifiers for <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifiers">The identifiers to add.</param>
         /// <returns>If any of the identifiers were added.</returns>
@@ -89,7 +89,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Remove an identifier for agents to interact with.
+        /// Remove an identifier for <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifier">The identifier to remove.</param>
         /// <returns>If the identifier was removed.</returns>
@@ -99,7 +99,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Remove identifiers for agents to interact with.
+        /// Remove identifiers for <see cref="KaijuAgent"/>s to interact with.
         /// </summary>
         /// <param name="identifiers">The identifiers to remove.</param>
         /// <returns>If any of the identifiers were removed.</returns>
@@ -121,11 +121,11 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get an area movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other agents from.</param>
-        /// <param name="identifiers">What types of agents to avoid.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get an area movement for the agent.</returns>
+        /// <returns>Get an area movement for the <see cref="KaijuAgent"/>.</returns>
         public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1) : base(agent, weight)
         {
             Initialize(agent, distance, identifiers, weight);
@@ -134,9 +134,9 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other agents from.</param>
-        /// <param name="identifiers">What types of agents to avoid.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1)
         {

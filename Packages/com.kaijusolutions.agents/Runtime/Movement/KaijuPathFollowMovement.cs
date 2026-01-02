@@ -45,7 +45,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to move in relation to.
+        /// The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> to move in relation to.
         /// </summary>
         public Transform TargetTransform
         {
@@ -78,7 +78,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The component to move in relation to.
+        /// The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.
         /// </summary>
         public Component TargetComponent
         {
@@ -86,7 +86,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The internal <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> value.
+        /// The internal <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> value.
         /// </summary>
         private Transform _transform;
         
@@ -263,7 +263,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -284,7 +284,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -305,7 +305,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -326,7 +326,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -347,7 +347,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -368,7 +368,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -389,7 +389,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -410,7 +410,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -431,7 +431,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -445,7 +445,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -459,7 +459,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -473,8 +473,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to pathfind to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to pathfind to.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -487,7 +487,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -501,7 +501,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -515,7 +515,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
@@ -529,8 +529,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a path following movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to pathfind to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to pathfind to.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -543,8 +543,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -561,8 +561,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -579,8 +579,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -597,8 +597,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -615,8 +615,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -633,8 +633,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -651,8 +651,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -669,8 +669,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
@@ -689,7 +689,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public void CalculatePath()
         {
-            // Nothing to do if no agent of target.
+            // Nothing to do if no <see cref="KaijuAgent"/> of target.
             if (!Agent || (!_vector3.HasValue && !_transform))
             {
                 return;
@@ -812,38 +812,38 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector2 from the target.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector2?([NotNull] KaijuPathFollowMovement t) => t.Target;
         
         /// <summary>
-        /// Implicit conversion to a Vector2 from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector2([NotNull] KaijuPathFollowMovement t) => t.Target;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector3 from the target.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector3?([NotNull] KaijuPathFollowMovement t) => t.Target3;
         
         /// <summary>
-        /// Implicit conversion to a Vector3 from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector3([NotNull] KaijuPathFollowMovement t) => t.Target3;
         
         /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</returns>
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</returns>
         public static implicit operator Transform([NotNull] KaijuPathFollowMovement t) => t.TargetTransform;
         
         /// <summary>

@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuObstacleAvoidanceMovement : KaijuMovement
     {
         /// <summary>
-        /// The distance from a wall the agent should maintain.
+        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
         {
@@ -22,7 +22,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance from a wall the agent should maintain.
+        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
         /// </summary>
         private float _avoidance;
         
@@ -97,8 +97,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get an obstacle avoidance movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
@@ -106,7 +106,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="mask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get an obstacle avoidance movement for the agent.</returns>
+        /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
@@ -122,8 +122,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create an obstacle avoidance movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
@@ -139,8 +139,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>

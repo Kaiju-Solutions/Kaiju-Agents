@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Vision sensor to see <see cref="KaijuAgent"/>s. By default, this is more efficient than standard vision sensors as it accesses the cached <see cref="KaijuAgent"/>s from <see cref="KaijuAgentsManager.Agents"/>.
+    /// Vision <see cref="KaijuSensor"/> to see <see cref="KaijuAgent"/>s. By default, this is more efficient than standard vision <see cref="KaijuSensor"/>s as it accesses the cached <see cref="KaijuAgent"/>s from <see cref="KaijuAgentsManager.Agents"/>.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
@@ -37,21 +37,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuAgentsVisionSensor([NotNull] GameObject o) => o.GetComponent<KaijuAgentsVisionSensor>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuAgentsVisionSensor([NotNull] Transform t) => t.GetComponent<KaijuAgentsVisionSensor>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The sensor.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the sensor if there was one.</returns>
+        /// <param name="s">The <see cref="KaijuAgentsVisionSensor"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuAgentsVisionSensor"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuAgentsVisionSensor s) => s.Agent;
     }
 }

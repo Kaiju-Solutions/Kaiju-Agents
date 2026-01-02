@@ -7,7 +7,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods for sorting objects by their distance to a given position along all three axes. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods for sorting objects by their distance to a given position along all three axes. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsSortDistance3
     {

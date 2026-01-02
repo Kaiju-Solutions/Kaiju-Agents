@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods to perform ray casting along an arc. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods to perform ray casting along an arc. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsArcRaycast
     {

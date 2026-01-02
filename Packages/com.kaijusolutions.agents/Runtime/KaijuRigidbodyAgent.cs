@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Kaiju Agent which moves via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
+    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -18,12 +18,12 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuRigidbodyAgent : KaijuRadiusAgent
     {
         /// <summary>
-        /// If this agent should move with the physics system.
+        /// If this <see cref="KaijuAgent"/> should move with the physics system.
         /// </summary>
         public override bool PhysicsAgent => true;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the agent's movement.
+        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuAgent"/>'s movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The rigidbody which controls the agent's movement.")]
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents
         private Rigidbody body;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the agent's movement.
+        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuAgent"/>'s movement.
         /// </summary>
         public Rigidbody Body => body;
         
@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the agent. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Perform agent movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)
@@ -89,22 +89,22 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Implicit conversion to get the <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
         /// </summary>
-        /// <param name="a">The agent.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> of the agent.</returns>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> of the <see cref="KaijuAgent"/>.</returns>
         public static implicit operator Rigidbody([NotNull] KaijuRigidbodyAgent a) => a.body;
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuRigidbodyAgent([NotNull] GameObject o) => o.GetComponent<KaijuRigidbodyAgent>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuRigidbodyAgent([NotNull] Transform t) => t.GetComponent<KaijuRigidbodyAgent>();
     }
 }

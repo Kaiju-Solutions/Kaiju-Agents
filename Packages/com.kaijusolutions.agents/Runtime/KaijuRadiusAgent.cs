@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// An agent type which tries to get its radius from colliders or otherwise manually assigns them.
+    /// An <see cref="KaijuAgent"/> type which tries to get its radius from colliders or otherwise manually assigns them.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
     public abstract class KaijuRadiusAgent : KaijuAgent
     {
         /// <summary>
-        /// The radius of this agent. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.
+        /// The radius of this <see cref="KaijuAgent"/>. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.
         /// </summary>
         public float Radius
         {
@@ -25,7 +25,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The radius of this agent. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.
+        /// The radius of this <see cref="KaijuAgent"/>. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The radius of this agent. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.")]
@@ -35,9 +35,9 @@ namespace KaijuSolutions.Agents
         private float radius = 0.5f;
         
         /// <summary>
-        /// Get the radius of an agent.
+        /// Get the radius of an <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <returns>The radius of the agent.</returns>
+        /// <returns>The radius of the <see cref="KaijuAgent"/>.</returns>
         public override float GetRadius()
         {
             return Radius;
@@ -89,7 +89,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the agent. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -101,14 +101,14 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuRadiusAgent([NotNull] GameObject o) => o.GetComponent<KaijuRadiusAgent>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuRadiusAgent([NotNull] Transform t) => t.GetComponent<KaijuRadiusAgent>();
     }
 }

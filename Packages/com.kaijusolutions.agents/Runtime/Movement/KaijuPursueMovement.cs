@@ -47,7 +47,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a pursue movement for the agent.</returns>
+        /// <returns>Get a pursue movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
@@ -67,7 +67,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a pursue movement for the agent.</returns>
+        /// <returns>Get a pursue movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a pursue movement for the agent.</returns>
+        /// <returns>Get a pursue movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
@@ -107,7 +107,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the pursue be considered successful.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a pursue movement for the agent.</returns>
+        /// <returns>Get a pursue movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuPursueMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1)
         {
             KaijuPursueMovement movement = KaijuMovementManager.Get<KaijuPursueMovement>();
@@ -123,7 +123,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -132,7 +132,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -141,8 +141,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The GameObject to pursue to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
@@ -150,8 +150,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a pursue movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to pursue to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to pursue to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuPursueMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
@@ -179,8 +179,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Calculate the movement.
         /// </summary>
-        /// <param name="position">The agent's current position.</param>
-        /// <param name="speed">The agent's maximum movement speed.</param>
+        /// <param name="position">The <see cref="KaijuAgent"/>'s current position.</param>
+        /// <param name="speed">The <see cref="KaijuAgent"/>'s maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
@@ -215,10 +215,10 @@ namespace KaijuSolutions.Agents.Movement
             }
             else
             {
-                // Agent to target.
+                // <see cref="KaijuAgent"/> to target.
                 _editorRendering[0] = position;
                 _editorRendering[1] = t;
-                // Agent to forecast.
+                // <see cref="KaijuAgent"/> to forecast.
                 _editorRendering[2] = position;
                 _editorRendering[3] = f;
                 // Target to forecast.

@@ -1,27 +1,27 @@
 ﻿namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// The type of agent to spawn.
+    /// The type of <see cref="KaijuAgent"/> to spawn.
     /// </summary>
     public enum KaijuAgentType
     {
         /// <summary>
-        /// Agents which move via the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// <see cref="KaijuAgent"/>s which move via the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         Transform,
         
         /// <summary>
-        /// Agents which move via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
+        /// <see cref="KaijuAgent"/>s which move via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
         /// </summary>
         Rigidbody,
         
         /// <summary>
-        /// Agents which move via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
+        /// <see cref="KaijuAgent"/>s which move via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
         /// </summary>
         Character,
         
         /// <summary>
-        /// Agents which move via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
+        /// <see cref="KaijuAgent"/>s which move via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see>.
         /// </summary>
         Navigation
     }

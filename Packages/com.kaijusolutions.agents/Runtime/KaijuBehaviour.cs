@@ -702,32 +702,32 @@ namespace KaijuSolutions.Agents
         public Matrix4x4 WorldToLocal => transform.worldToLocalMatrix;
         
         /// <summary>
-        /// A normalized vector representing the blue axis of the transform in world space.
+        /// A normalized vector representing the blue axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Forward => transform.forward;
         
         /// <summary>
-        /// A normalized vector representing the negative blue axis of the transform in world space.
+        /// A normalized vector representing the negative blue axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Backwards => -transform.forward;
         
         /// <summary>
-        /// A normalized vector representing the green axis of the transform in world space.
+        /// A normalized vector representing the green axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Up => transform.up;
         
         /// <summary>
-        /// A normalized vector representing the negative green axis of the transform in world space.
+        /// A normalized vector representing the negative green axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Down => -transform.up;
         
         /// <summary>
-        /// A normalized vector representing the red axis of the transform in world space.
+        /// A normalized vector representing the red axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Right => transform.right;
         
         /// <summary>
-        /// A normalized vector representing the negative red axis of the transform in world space.
+        /// A normalized vector representing the negative red axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
         public Vector3 Left => -transform.right;
         
@@ -747,7 +747,7 @@ namespace KaijuSolutions.Agents
         public int ChildCount => transform.childCount;
         
         /// <summary>
-        /// Has the transform changed since the last time the flag was set to 'false'?
+        /// Has the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>changed since the last time the flag was set to 'false'?
         /// </summary>
         public bool HasChanged => transform.hasChanged;
         
@@ -757,7 +757,7 @@ namespace KaijuSolutions.Agents
         public int HierarchyCount => transform.hierarchyCount;
         
         /// <summary>
-        /// The transform capacity of the transform's hierarchy data structure.
+        /// The<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>capacity of the transform's hierarchy data structure.
         /// </summary>
         public int HierarchyCapacity
         {
@@ -766,7 +766,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Integer identifying the layer the GameObject is assigned to.
+        /// Integer identifying the layer the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> is assigned to.
         /// </summary>
         public int Layer
         {
@@ -775,22 +775,22 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The number of components on the GameObject as an integer value.
+        /// The number of <see href="https://docs.unity3d.com/Manual/Components.html">component</see>s on the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> as an integer value.
         /// </summary>
         public int ComponentCount => gameObject.GetComponentCount();
         
         /// <summary>
-        /// The active state of the GameObject in the Scene hierarchy. True if active, false if inactive.
+        /// The active state of the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> in the Scene hierarchy. True if active, false if inactive.
         /// </summary>
         public bool ActiveInHierarchy => gameObject.activeInHierarchy;
         
         /// <summary>
-        /// The local active state of the GameObject. True if active, false if inactive.
+        /// The local active state of the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>. True if active, false if inactive.
         /// </summary>
         public bool ActiveSelf => gameObject.activeSelf;
         
         /// <summary>
-        /// Whether there are any Static Editor Flags set for the GameObject.
+        /// Whether there are any Static Editor Flags set for the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         public bool IsStatic
         {
@@ -799,7 +799,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The Scene that contains the GameObject.
+        /// The Scene that contains the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         public Scene Scene => gameObject.scene;
         
@@ -815,77 +815,77 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Implicit conversion to a float from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator float([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a nullable float from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator float?([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a double from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator double([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a nullable double from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Orientation"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator double?([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
-        /// Implicit conversion to a Vector2 from the <see cref="Position"/>.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the <see cref="Position"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector2([NotNull] KaijuBehaviour b) => b.Position;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector2 from the <see cref="Position"/>.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the <see cref="Position"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector2?([NotNull] KaijuBehaviour b) => b.Position;
         
         /// <summary>
-        /// Implicit conversion to a Vector3 from the <see cref="Position3"/>.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the <see cref="Position3"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector3([NotNull] KaijuBehaviour b) => b.Position3;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector3 from the <see cref="Position3"/>.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the <see cref="Position3"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position3"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position3"/>.</returns>
         public static implicit operator Vector3?([NotNull] KaijuBehaviour b) => b.Position3;
         
         /// <summary>
         /// Implicit conversion to a Quaternion from the <see cref="OrientationQuaternion"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Quaternion([NotNull] KaijuBehaviour b) => b.OrientationQuaternion;
         
         /// <summary>
         /// Implicit conversion to a nullable Quaternion from the <see cref="OrientationQuaternion"/>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The agent's <see cref="Position3"/>.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position3"/>.</returns>
         public static implicit operator Quaternion?([NotNull] KaijuBehaviour b) => b.OrientationQuaternion;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the behaviour.</returns>
         public static implicit operator GameObject([NotNull] KaijuBehaviour b) => b.gameObject;
         
@@ -893,41 +893,41 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The behaviour attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuBehaviour"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuBehaviour([NotNull] GameObject o) => o.GetComponent<KaijuBehaviour>();
         
         /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the behaviour.</returns>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> of the behaviour.</returns>
         public static implicit operator Transform([NotNull] KaijuBehaviour b) => b.transform;
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The behaviour attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuBehaviour"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuBehaviour([NotNull] Transform t) => t.GetComponent<KaijuBehaviour>();
         
         /// <summary>
         /// Implicit conversion to a Boolean if the behaviour is active.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
         /// <returns>If the behaviour is active.</returns>
         public static implicit operator bool(KaijuBehaviour b) => b != null && b.isActiveAndEnabled;
         
         /// <summary>
         /// Implicit conversion to a nullable Boolean if the behaviour is active.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
         /// <returns>If the behaviour is active.</returns>
         public static implicit operator bool?(KaijuBehaviour b) =>  b != null && b.isActiveAndEnabled;
         
         /// <summary>
         /// Implicit conversion to a string.
         /// </summary>
-        /// <param name="b">The behaviour.</param>
+        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
         public static implicit operator string([NotNull] KaijuBehaviour b) => b.ToString();
     }

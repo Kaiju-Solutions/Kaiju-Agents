@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods to get the speed at which an object is travelling along all three axes. Methods without a delta time value will use Time.deltaTime. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods to get the speed at which an object is travelling along all three axes. Methods without a delta time value will use Time.deltaTime. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsSpeed3
     {

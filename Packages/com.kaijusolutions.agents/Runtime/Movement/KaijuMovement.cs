@@ -41,7 +41,7 @@ namespace KaijuSolutions.Agents.Movement
         public static event KaijuMovementAction OnPerformedGlobal;
         
         /// <summary>
-        /// The agent the movement is assigned to.
+        /// The <see cref="KaijuAgent"/> the movement is assigned to.
         /// </summary>
         public KaijuAgent Agent;
 
@@ -62,7 +62,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuMovement([NotNull] KaijuAgent agent, float weight = 1)
         {
@@ -72,7 +72,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this movement.</param>
         protected void Initialize([NotNull] KaijuAgent agent, float weight = 1)
         {
@@ -127,7 +127,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the movement is done or not.</returns>
         public virtual bool Done()
         {
-            // If the agent is not assigned, there is no movement.
+            // If the <see cref="KaijuAgent"/> is not assigned, there is no movement.
             return !Agent;
         }
         
@@ -155,7 +155,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public void EditorVisualize(Vector3 position)
         {
-            // Nothing to visualize if no agents.
+            // Nothing to visualize if no <see cref="KaijuAgent"/>s.
             if (Done())
             {
                 return;
@@ -194,10 +194,10 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator KaijuAgent([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the assigned <see cref="Agent"/>.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> from the assigned <see cref="Agent"/>.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> of the assigned <see cref="Agent"/>.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> of the assigned <see cref="Agent"/>.</returns>
         public static implicit operator Transform([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
@@ -208,31 +208,31 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator GameObject([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a Vector2 from the assigned <see cref="Agent"/>'s position.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The Vector2 from the assigned <see cref="Agent"/>'s position.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector2([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector2 from the assigned <see cref="Agent"/>'s position.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The Vector2 from the assigned <see cref="Agent"/>'s position.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector2?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a Vector3 from the assigned <see cref="Agent"/>'s position.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The Vector3 from the assigned <see cref="Agent"/>'s position.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector3([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector3 from the assigned <see cref="Agent"/>'s position.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The Vector3 from the assigned <see cref="Agent"/>'s position.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector3?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>

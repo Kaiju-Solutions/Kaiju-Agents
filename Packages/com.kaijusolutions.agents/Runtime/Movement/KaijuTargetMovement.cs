@@ -38,7 +38,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> to move in relation to.
+        /// The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> to move in relation to.
         /// </summary>
         public Transform TargetTransform
         {
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The component to move in relation to.
+        /// The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.
         /// </summary>
         public Component TargetComponent
         {
@@ -96,7 +96,7 @@ namespace KaijuSolutions.Agents.Movement
         public float CurrentDistance3 => Done() ? 0 : Target3.Distance3(Agent.Position3);
         
         /// <summary>
-        /// The internal <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> value.
+        /// The internal <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> value.
         /// </summary>
         private Transform _transform;
         
@@ -111,9 +111,9 @@ namespace KaijuSolutions.Agents.Movement
         private float _distance;
         
         /// <summary>
-        /// Create the target movement for a Vector2.
+        /// Create the target movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -124,9 +124,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create the target movement for a Vector3.
+        /// Create the target movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -139,7 +139,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -150,10 +150,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create the target movement for a component.
+        /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
         protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1) : base(agent, weight)
@@ -165,7 +165,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -179,7 +179,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -193,7 +193,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
@@ -207,8 +207,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="target">The component to move in relation to.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this movement.</param>
         public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1)
@@ -252,8 +252,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Calculate the movement.
         /// </summary>
-        /// <param name="position">The agent's current position.</param>
-        /// <param name="speed">The agent's maximum movement speed.</param>
+        /// <param name="position">The <see cref="KaijuAgent"/>'s current position.</param>
+        /// <param name="speed">The <see cref="KaijuAgent"/>'s maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated movement.</returns>
@@ -293,38 +293,38 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector2 from the target.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector2?([NotNull] KaijuTargetMovement t) => t.Target;
         
         /// <summary>
-        /// Implicit conversion to a Vector2 from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector2([NotNull] KaijuTargetMovement t) => t.Target;
         
         /// <summary>
-        /// Implicit conversion to a nullable Vector3 from the target.
+        /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector3?([NotNull] KaijuTargetMovement t) => t.Target3;
         
         /// <summary>
-        /// Implicit conversion to a Vector3 from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
         /// <returns>The target.</returns>
         public static implicit operator Vector3([NotNull] KaijuTargetMovement t) => t.Target3;
         
         /// <summary>
-        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> from the target.
+        /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</returns>
+        /// <returns>The target <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</returns>
         public static implicit operator Transform([NotNull] KaijuTargetMovement t) => t.TargetTransform;
         
         /// <summary>

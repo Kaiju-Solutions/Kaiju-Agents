@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods to get the direction along all three axes from one position to another. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods to get the direction along all three axes from one position to another. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsDirection3
     {

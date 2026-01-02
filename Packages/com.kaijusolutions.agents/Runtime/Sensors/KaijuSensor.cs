@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Base sensor class.
+    /// Base <see cref="KaijuSensor"/> class.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
@@ -14,12 +14,12 @@ namespace KaijuSolutions.Agents.Sensors
     public abstract class KaijuSensor : KaijuBehaviour
     {
         /// <summary>
-        /// Callback for when this sensor has been run.
+        /// Callback for when this <see cref="KaijuSensor"/> has been run.
         /// </summary>
         public event KaijuAction OnSense;
         
         /// <summary>
-        /// Global callback for when this sensor has been run.
+        /// Global callback for when this <see cref="KaijuSensor"/> has been run.
         /// </summary>
         public static event KaijuSensorAction OnSenseGlobal;
         
@@ -44,7 +44,7 @@ namespace KaijuSolutions.Agents.Sensors
         public static event KaijuSensorAction OnDisabledGlobal;
         
         /// <summary>
-        /// If this sensor should be run automatically.
+        /// If this <see cref="KaijuSensor"/> should be run automatically.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("If this sensor should be run automatically.")]
@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents.Sensors
         public bool automatic = true;
         
         /// <summary>
-        /// The agent this sensor is assigned to.
+        /// The <see cref="KaijuAgent"/> this <see cref="KaijuSensor"/> is assigned to.
         /// </summary>
         public KaijuAgent Agent { get; private set; }
         
@@ -94,7 +94,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Run the sensor. There is no point in manually calling this.
+        /// Run the <see cref="KaijuSensor"/>. There is no point in manually calling this.
         /// </summary>
         public void Sense()
         {
@@ -105,12 +105,12 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Run the sensor.
+        /// Run the <see cref="KaijuSensor"/>.
         /// </summary>
         protected abstract void Run();
         
         /// <summary>
-        /// Perform any needed resetting of the sensor.
+        /// Perform any needed resetting of the <see cref="KaijuSensor"/>.
         /// </summary>
         protected virtual void Cleanup() { }
 #if UNITY_EDITOR
@@ -133,21 +133,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuSensor([NotNull] GameObject o) => o.GetComponent<KaijuSensor>();
         
         /// <summary>
-        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
-        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuSensor([NotNull] Transform t) => t.GetComponent<KaijuSensor>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The sensor.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the sensor if there was one.</returns>
+        /// <param name="s">The <see cref="KaijuSensor"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuSensor"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuSensor s) => s.Agent;
     }
 }

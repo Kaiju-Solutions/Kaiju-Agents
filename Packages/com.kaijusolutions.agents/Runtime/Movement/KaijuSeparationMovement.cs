@@ -27,24 +27,24 @@ namespace KaijuSolutions.Agents.Movement
         private float _coefficient = float.MaxValue;
         
         /// <summary>
-        /// The agents currently detected this movement is moving in relation to.
+        /// The <see cref="KaijuAgent"/>s currently detected this movement is moving in relation to.
         /// </summary>
         public IReadOnlyCollection<KaijuAgent> Interacting => _interacting;
         
         /// <summary>
-        /// The agents currently detected this movement is moving in relation to.
+        /// The <see cref="KaijuAgent"/>s currently detected this movement is moving in relation to.
         /// </summary>
         private readonly HashSet<KaijuAgent> _interacting = new();
         
         /// <summary>
         /// Get a separation movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of agents to avoid.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
-        /// <returns>Get a separation movement for the agent.</returns>
+        /// <returns>Get a separation movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
@@ -60,10 +60,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a separation movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of agents to avoid.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuSeparationMovement([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1) : base(agent, distance, identifiers, weight)
         {
@@ -73,10 +73,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize the movement.
         /// </summary>
-        /// <param name="agent">The agent this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other agents from.</param>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of agents to avoid.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         private void Initialize([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
         {
@@ -105,7 +105,7 @@ namespace KaijuSolutions.Agents.Movement
             Vector2 movement = Vector2.zero;
             _interacting.Clear();
             
-            // Compare with all other agents.
+            // Compare with all other <see cref="KaijuAgent"/>s.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
             {
                 // Ignore ourselves.
@@ -114,7 +114,7 @@ namespace KaijuSolutions.Agents.Movement
                     continue;
                 }
                 
-                // Get the direction to the target agent from the current agent's position.
+                // Get the direction to the target <see cref="KaijuAgent"/> from the current <see cref="KaijuAgent"/>'s position.
                 Vector2 direction = agent.Direction(position);
                 
                 // See if this is within our distance to consider.

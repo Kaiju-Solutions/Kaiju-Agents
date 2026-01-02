@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
-    /// Extension methods to see if points are beyond a given distance of each other along all three axes. These methods are inclusive of the distance to check. Any Vector2 values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
+    /// Extension methods to see if points are beyond a given distance of each other along all three axes. These methods are inclusive of the distance to check. Any <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> values will be expanded via the <see cref="KaijuAgentsExpand.Expand"/> method.
     /// </summary>
     public static class KaijuAgentsBeyond3
     {
