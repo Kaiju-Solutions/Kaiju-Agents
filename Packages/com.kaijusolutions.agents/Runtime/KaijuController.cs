@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents
     /// Simply override the methods you need to use callbacks without needing to worry about binding.
     /// If you override either <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html">OnEnable</see> or <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html">OnDisable</see>, you must call their respective base methods for binding and cleanup.
     /// </summary>
-    [DefaultExecutionOrder(int.MinValue + 4)]
+    [DefaultExecutionOrder(int.MinValue + 5)]
     [RequireComponent(typeof(KaijuAgent))]
 #if UNITY_EDITOR
     [SelectionBase]
@@ -132,32 +132,32 @@ namespace KaijuSolutions.Agents
         protected virtual void OnAgentSetScale() { }
         
         /// <summary>
-        /// Movement speed changed callback.
+        /// Movement speed changed callback for the <see cref="Agent"/>.
         /// </summary>
         protected virtual void OnMoveSpeed() { }
         
         /// <summary>
-        /// Movement acceleration changed callback.
+        /// Movement acceleration changed callback for the <see cref="Agent"/>.
         /// </summary>
         protected virtual void OnMoveAcceleration() { }
         
         /// <summary>
-        /// Look speed changed callback.
+        /// Look speed changed callback for the <see cref="Agent"/>.
         /// </summary>
         protected virtual void OnLookSpeed() { }
         
         /// <summary>
-        /// Autorotation changed callback.
+        /// Autorotation changed callback for the <see cref="Agent"/>.
         /// </summary>
         protected virtual void OnAutoRotate() { }
         
         /// <summary>
-        /// Callback for when the look target has been set.
+        /// Callback for when the look target has been set for the <see cref="Agent"/>.
         /// </summary>
         protected virtual void OnLookTarget() { }
         
         /// <summary>
-        /// Callback for when this agent has moved.
+        /// Callback for when the <see cref="Agent"/> has moved.
         /// </summary>
         protected virtual void OnMove() { }
         
@@ -167,12 +167,12 @@ namespace KaijuSolutions.Agents
         protected virtual void OnEnabled() { }
         
         /// <summary>
-        /// Callback for when <see cref="Agent"/> has finishing becoming disabled.
+        /// Callback for when the <see cref="Agent"/> has finishing becoming disabled.
         /// </summary>
         protected virtual void OnDisabled() { }
         
         /// <summary>
-        /// Callback for when this has finishing becoming destroyed.
+        /// Callback for when the <see cref="Agent"/> has finishing becoming destroyed.
         /// </summary>
         protected virtual void OnDestroyed() { }
         
