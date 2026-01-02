@@ -7,7 +7,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Movement which looks for handling other <see cref="KaijuAgent"/>s in a given area.
+    /// <see cref="KaijuMovement"/> which looks for handling other <see cref="KaijuAgent"/>s in a given area.
     /// </summary>
     public abstract class KaijuAreaMovement : KaijuMovement
     {
@@ -124,7 +124,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get an area movement for the <see cref="KaijuAgent"/>.</returns>
         public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1) : base(agent, weight)
         {
@@ -132,12 +132,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the movement.
+        /// Initialize the movement <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1)
         {
             base.Initialize(agent, weight);
@@ -165,7 +165,7 @@ namespace KaijuSolutions.Agents.Movement
         }
 #if UNITY_EDITOR
         /// <summary>
-        /// Render the visualization of the movement.
+        /// Render the visualization of the <see cref="KaijuMovement"/>.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)

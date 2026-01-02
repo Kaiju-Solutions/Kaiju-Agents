@@ -7,12 +7,12 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Cache movement objects for reuse.
+    /// Cache <see cref="KaijuMovement"/> objects for reuse.
     /// </summary>
     public static class KaijuMovementManager
     {
         /// <summary>
-        /// Cache of all movement instances.
+        /// Cache of all <see cref="KaijuMovement"/> instances.
         /// </summary>
         private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
 #if UNITY_EDITOR
@@ -480,10 +480,10 @@ namespace KaijuSolutions.Agents.Movement
         }
 #endif
         /// <summary>
-        /// Get a movement instance.
+        /// Get a <see cref="KaijuMovement"/> instance.
         /// </summary>
-        /// <typeparam name="T">The type of movement.</typeparam>
-        /// <returns>An instance of the movement.</returns>
+        /// <typeparam name="T">The type of <see cref="KaijuMovement"/>.</typeparam>
+        /// <returns>An instance of the <see cref="KaijuMovement"/>.</returns>
         public static T Get<T>() where T : KaijuMovement
         {
             if (Movements.TryGetValue(typeof(T), out Queue<KaijuMovement> movements) && movements.TryDequeue(out KaijuMovement result) && result is T valid)
@@ -495,10 +495,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Return a movement to the cache.
+        /// Return a <see cref="KaijuMovement"/> to the cache.
         /// </summary>
-        /// <param name="movement">The movement being returned.</param>
-        /// <typeparam name="T">The type of movement.</typeparam>
+        /// <param name="movement">The <see cref="KaijuMovement"/> being returned.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuMovement"/>.</typeparam>
         public static void Return<T>(T movement) where T : KaijuMovement
         {
             if (!Movements.TryGetValue(typeof(T), out Queue<KaijuMovement> queue))

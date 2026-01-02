@@ -66,7 +66,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a wander movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = 1)
         {
@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = 1) : base(agent, weight)
         {
             Configure(agent, distance, radius);
@@ -132,11 +132,11 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the movement.
+        /// Get the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
-        /// <returns>The calculated movement.</returns>
+        /// <returns>The calculated move vector.</returns>
         public override Vector2 Move(Vector2 position, float delta)
         {
             // Get the center of the circle.
@@ -159,7 +159,7 @@ namespace KaijuSolutions.Agents.Movement
         protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorWanderColor;
         
         /// <summary>
-        /// Render the visualization of the movement.
+        /// Render the visualization of the <see cref="KaijuMovement"/>.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)

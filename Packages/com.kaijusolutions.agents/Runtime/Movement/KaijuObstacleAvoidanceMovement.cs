@@ -105,7 +105,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="mask">The mask for what layers should the rays hit.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
         {
@@ -130,14 +130,14 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="mask">The mask for what layers should the rays hit.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1) : base(agent, weight)
         {
             Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
         }
         
         /// <summary>
-        /// Initialize the movement.
+        /// Initialize the movement <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
@@ -147,7 +147,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="mask">The mask for what layers should the rays hit.</param>
-        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         protected void Initialize([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
         {
             base.Initialize(agent, weight);
@@ -180,11 +180,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the movement.
+        /// Get the <see cref="KaijuMovement"/>.
         /// </summary>
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
-        /// <returns>The calculated movement.</returns>
+        /// <returns>The calculated move vector.</returns>
+        /// <returns>The calculated move vector.</returns>
         public override Vector2 Move(Vector2 position, float delta)
         {
             _hits.Clear();
@@ -263,7 +264,7 @@ namespace KaijuSolutions.Agents.Movement
         protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorObstacleAvoidanceColor;
         
         /// <summary>
-        /// Render the visualization of the movement.
+        /// Render the visualization of the <see cref="KaijuMovement"/>.
         /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)
