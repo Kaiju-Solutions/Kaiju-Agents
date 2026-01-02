@@ -58,5 +58,105 @@ namespace KaijuSolutions.Agents
             
             return true;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Agents Multi-Matcher - Matchers: {Matchers.Count}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion to a string.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator string([NotNull] KaijuAgentsMultiMatcher m) => m.ToString();
+        
+        /// <summary>
+        /// Implicit conversion to a short integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator short([NotNull] KaijuAgentsMultiMatcher m) => (short)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable short integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator short?([NotNull] KaijuAgentsMultiMatcher m) => (short?)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned short integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator ushort([NotNull] KaijuAgentsMultiMatcher m) => (ushort)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned short integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator ushort?([NotNull] KaijuAgentsMultiMatcher m) => (ushort?)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator int([NotNull] KaijuAgentsMultiMatcher m) => m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator int?([NotNull] KaijuAgentsMultiMatcher m) => m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator uint([NotNull] KaijuAgentsMultiMatcher m) => (uint)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator uint?([NotNull] KaijuAgentsMultiMatcher m) => (uint?)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a long integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator long([NotNull] KaijuAgentsMultiMatcher m) => m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable long integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator long?([NotNull] KaijuAgentsMultiMatcher m) => m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned long integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator ulong([NotNull] KaijuAgentsMultiMatcher m) => (ulong)m.matchers.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned long integer based on the number of <see cref="Matchers"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The number of <see cref="Matchers"/>.</returns>
+        public static implicit operator ulong?([NotNull] KaijuAgentsMultiMatcher m) => (ulong?)m.matchers.Count;
     }
 }

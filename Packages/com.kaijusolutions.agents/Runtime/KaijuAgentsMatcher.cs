@@ -78,6 +78,36 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Agents Matcher - Match: {match} - Mode: {mode}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion to a string from the <see cref="Match"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The string from the <see cref="Match"/>.</returns>
+        public static implicit operator string([NotNull] KaijuAgentsMatcher m) => m.match;
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgentsMatcherMode"/> from the <see cref="mode"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The <see cref="KaijuAgentsMatcherMode"/> from the <see cref="mode"/>.</returns>
+        public static implicit operator KaijuAgentsMatcherMode([NotNull] KaijuAgentsMatcher m) => m.mode;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable <see cref="KaijuAgentsMatcherMode"/> from the <see cref="mode"/>.
+        /// </summary>
+        /// <param name="m">The matcher.</param>
+        /// <returns>The <see cref="KaijuAgentsMatcherMode"/> from the <see cref="mode"/>.</returns>
+        public static implicit operator KaijuAgentsMatcherMode?([NotNull] KaijuAgentsMatcher m) => m.mode;
+        
+        /// <summary>
         /// How for matchers to compare.
         /// </summary>
         public enum KaijuAgentsMatcherMode

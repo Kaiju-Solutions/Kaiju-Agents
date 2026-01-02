@@ -2122,5 +2122,89 @@ namespace KaijuSolutions.Agents
         /// <param name="a">The agent.</param>
         /// <returns>The <see cref="KaijuGlobalController"/> attached to the agent if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
+        
+        /// <summary>
+        /// Implicit conversion to a short integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator short([NotNull] KaijuAgent a) => (short)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable short integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator short?([NotNull] KaijuAgent a) => (short?)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned short integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator ushort([NotNull] KaijuAgent a) => (ushort)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned short integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator ushort?([NotNull] KaijuAgent a) => (ushort?)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator int([NotNull] KaijuAgent a) => a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator int?([NotNull] KaijuAgent a) => a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator uint([NotNull] KaijuAgent a) => (uint)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator uint?([NotNull] KaijuAgent a) => (uint?)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a long integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator long([NotNull] KaijuAgent a) => a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable long integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator long?([NotNull] KaijuAgent a) => a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned long integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator ulong([NotNull] KaijuAgent a) => (ulong)a._movements.Count;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned long integer based on the number of <see cref="Movements"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The number of <see cref="Movements"/>.</returns>
+        public static implicit operator ulong?([NotNull] KaijuAgent a) => (ulong?)a._movements.Count;
     }
 }

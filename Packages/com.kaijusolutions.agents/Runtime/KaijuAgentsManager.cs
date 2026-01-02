@@ -640,5 +640,89 @@ namespace KaijuSolutions.Agents
         {
             return $"Kaiju Agents Manager - Agents: {AgentsCount}";
         }
+        
+        /// <summary>
+        /// Implicit conversion to a short integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator short(KaijuAgentsManager m) => (short)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable short integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator short?(KaijuAgentsManager m) => (short?)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned short integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator ushort(KaijuAgentsManager m) => (ushort)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned short integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator ushort?(KaijuAgentsManager m) => (ushort?)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to an integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator int(KaijuAgentsManager m) => AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator int?(KaijuAgentsManager m) => AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator uint(KaijuAgentsManager m) => (uint)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator uint?(KaijuAgentsManager m) => (uint?)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a long integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator long(KaijuAgentsManager m) => AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable long integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator long?(KaijuAgentsManager m) => AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to an unsigned long integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator ulong(KaijuAgentsManager m) => (ulong)AgentsCount;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable unsigned long integer based <see cref="AgentsCount"/>.
+        /// </summary>
+        /// <param name="m">The agent manager.</param>
+        /// <returns><see cref="AgentsCount"/>.</returns>
+        public static implicit operator ulong?(KaijuAgentsManager m) => (ulong?)AgentsCount;
     }
 }
