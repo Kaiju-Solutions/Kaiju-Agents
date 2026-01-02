@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Delegate KaijuAgentSensorAction | Kaiju Agents</title>
+    <title>Delegate KaijuAgentActuatorAction | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Delegate KaijuAgentSensorAction | Kaiju Agents ">
+    <meta name="title" content="Delegate KaijuAgentActuatorAction | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,19 +76,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuAgentSensorAction">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuAgentActuatorAction">
   
   
-  <h1 id="KaijuSolutions_Agents_KaijuAgentSensorAction" data-uid="KaijuSolutions.Agents.KaijuAgentSensorAction" class="text-break">Delegate KaijuAgentSensorAction
+  <h1 id="KaijuSolutions_Agents_KaijuAgentActuatorAction" data-uid="KaijuSolutions.Agents.KaijuAgentActuatorAction" class="text-break">Delegate KaijuAgentActuatorAction
   </h1>
-  <div class="markdown level0 summary"><p>An action for an agent and a sensor.</p>
+  <div class="markdown level0 summary"><p>An action for an agent and an actuator.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_KaijuAgentSensorAction_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_KaijuAgentActuatorAction_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public delegate void KaijuAgentSensorAction(KaijuAgent agent, KaijuSensor sensor);</code></pre>
+    <pre><code class="lang-csharp hljs">public delegate void KaijuAgentActuatorAction(KaijuAgent agent, KaijuActuator actuator);</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -107,9 +107,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">KaijuSensor</span></td>
-        <td><span class="parametername">sensor</span></td>
-        <td><p>The sensor.</p>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The actuator.</p>
 </td>
       </tr>
     </tbody>

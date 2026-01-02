@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuCastSensor | Kaiju Agents</title>
+    <title>Class KaijuActuator | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuCastSensor | Kaiju Agents ">
+    <meta name="title" content="Class KaijuActuator | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,50 +76,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator">
   
   
-  <h1 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor" class="text-break">Class KaijuCastSensor
+  <h1 id="KaijuSolutions_Agents_Actuators_KaijuActuator" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator" class="text-break">Class KaijuActuator
   </h1>
-  <div class="markdown level0 summary"><p>Sensor to perform ray or sphere casts. This will cast from this transform in the forward direction of this transform.</p>
+  <div class="markdown level0 summary"><p>Base actuator class.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
-    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></div>
-    <div class="level3"><span class="xref">KaijuCastSensor</span></div>
+    <div class="level2"><span class="xref">KaijuActuator</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnSense">KaijuSensor.OnSense</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnSenseGlobal">KaijuSensor.OnSenseGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabled">KaijuSensor.OnEnabled</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabledGlobal">KaijuSensor.OnEnabledGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabled">KaijuSensor.OnDisabled</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabledGlobal">KaijuSensor.OnDisabledGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_automatic">KaijuSensor.automatic</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">KaijuSensor.Agent</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Sense">KaijuSensor.Sense()</a>
-    </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
     </div>
@@ -331,116 +303,22 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Sensors.html">KaijuSolutions.Agents.Sensors</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Actuators.html">KaijuSolutions.Agents.Actuators</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_Actuators_KaijuActuator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KaijuCastSensor : KaijuSensor</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class KaijuActuator : KaijuBehaviour</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_editorHit" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.editorHit">editorHit</h4>
-  <div class="markdown level1 summary"><p>The visualizations color for hits in the editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Color editorHit</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Color</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_editorMiss" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.editorMiss">editorMiss</h4>
-  <div class="markdown level1 summary"><p>The visualizations color for misses in the editor.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Color editorMiss</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Color</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_mask" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.mask">mask</h4>
-  <div class="markdown level1 summary"><p>What layers to collide with on the casts.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LayerMask mask</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">LayerMask</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_triggers" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.triggers">triggers</h4>
-  <div class="markdown level1 summary"><p>How casts should handle hitting triggers.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public QueryTriggerInteraction triggers</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">QueryTriggerInteraction</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Angle_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Angle*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Angle" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Angle">Angle</h4>
-  <div class="markdown level1 summary"><p>What angle to cast along.</p>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Agent_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Agent*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Agent" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Agent">Agent</h4>
+  <div class="markdown level1 summary"><p>The agent this actuator is assigned to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Angle { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuAgent Agent { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -452,177 +330,40 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Casts_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Casts*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Casts" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Casts">Casts</h4>
-  <div class="markdown level1 summary"><p>The number of casts to make. These will be evenly distributed across the <span class="xref">KaijuSolutions.Agents.Sensors.KaijuCastSensor.angle</span>, unless there is only one cast in which case it will cast directly forward.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Casts { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance">Distance</h4>
-  <div class="markdown level1 summary"><p>How far to cast.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Hits*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Hits">Hits</h4>
-  <div class="markdown level1 summary"><p>The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;RaycastHit?&gt; Hits { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HitsTotal_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HitsTotal*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HitsTotal" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HitsTotal">HitsTotal</h4>
-  <div class="markdown level1 summary"><p>The total number of casts which hit something.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int HitsTotal { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions">Positions</h4>
-  <div class="markdown level1 summary"><p>The positions corresponding to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>, with <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> that missed being set to the maximum casting distance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3&gt; Positions { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius">Radius</h4>
-  <div class="markdown level1 summary"><p>The radius of the casts.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float Radius { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Single</span></td>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Cleanup_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Cleanup*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Cleanup" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Cleanup">Cleanup()</h4>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Begin_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Begin*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Begin" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Begin">Begin()</h4>
+  <div class="markdown level1 summary"><p>If the actuator should act in its next execution step.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Begin()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Cleanup_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Cleanup*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Cleanup" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Cleanup">Cleanup()</h4>
   <div class="markdown level1 summary"><p>Perform any needed resetting of the sensor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Cleanup()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void Cleanup()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Cleanup">KaijuSensor.Cleanup()</a></div>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_EditorVisualize_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.EditorVisualize*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_EditorVisualize_Vector3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.EditorVisualize(Vector3)">EditorVisualize(Vector3)</h4>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_EditorVisualize_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.EditorVisualize*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_EditorVisualize_Vector3_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.EditorVisualize(Vector3)">EditorVisualize(Vector3)</h4>
   <div class="markdown level1 summary"><p>Allow for visualizing in the editor.
-<param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+<param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html#KaijuSolutions_Agents_Actuators_KaijuActuator_Agent">Agent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void EditorVisualize(Vector3 position)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void EditorVisualize(Vector3 position)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -641,19 +382,389 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_EditorVisualize_Vector3_">KaijuSensor.EditorVisualize(Vector3)</a></div>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run">Run()</h4>
-  <div class="markdown level1 summary"><p>Run the sensor.</p>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_End_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.End*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_End" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.End">End()</h4>
+  <div class="markdown level1 summary"><p>End the execution of this actuator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void Run()</code></pre>
+    <pre><code class="lang-csharp hljs">public void End()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Run">KaijuSensor.Run()</a></div>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Handle_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Handle*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Handle" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Handle">Handle()</h4>
+  <div class="markdown level1 summary"><p>Run this actuator if it should be.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Handle()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the actuator ran or not, or has just now finished running.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Run_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Run*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Run" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Run">Run()</h4>
+  <div class="markdown level1 summary"><p>Run the actuator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract KaijuActuatorState Run()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuatorState.html">KaijuActuatorState</a></td>
+        <td><p>The state of the actuator&apos;s progress.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDisabled" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnDisabled">OnDisabled</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has finishing becoming disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnDisabled</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDisabledGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnDisabledGlobal">OnDisabledGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this has finishing becoming disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnDisabledGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDone" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnDone">OnDone</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has successfully fully completed its action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnDone</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDoneGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnDoneGlobal">OnDoneGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this has successfully fully completed its action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnDoneGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnEnabled" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnEnabled">OnEnabled</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has finishing becoming enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnEnabled</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnEnabledGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnEnabledGlobal">OnEnabledGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this has finishing becoming enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnEnabledGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnExecuting" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnExecuting">OnExecuting</h4>
+  <div class="markdown level1 summary"><p>Callback for when this is continuing to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnExecuting</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnExecutingGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnExecutingGlobal">OnExecutingGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this is continuing to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnExecutingGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnFailed" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnFailed">OnFailed</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has failed its execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnFailed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnFailedGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnFailedGlobal">OnFailedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback when this has failed its execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnFailedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnInterrupted" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnInterrupted">OnInterrupted</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has been interrupted during its execution, cancelling the execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnInterrupted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnInterruptedGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnInterruptedGlobal">OnInterruptedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this has been interrupted during its execution, cancelling the execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnInterruptedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnStarted" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnStarted">OnStarted</h4>
+  <div class="markdown level1 summary"><p>Callback for when this has started to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuAction OnStarted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnStartedGlobal" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.OnStartedGlobal">OnStartedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this has started to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnStartedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

@@ -24,11 +24,59 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Actuators.KaijuActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Actuators.KaijuActuator.html",
+          "hash": "G/HxBCHjeQ+hcdKlPKKNQeCX3G1+toGy/q+gHds9GOE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Actuators.KaijuActuatorState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Actuators.KaijuActuatorState.html",
+          "hash": "U+yOCpJSCS7LhlZvrkDgtz2PDUJkwH6ne+mzcjUFi3Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Actuators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Actuators.html",
+          "hash": "pQ7zIASuCXMRtjtPHUArsZQarTWDc+BJcWOiNWoD/Zg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.yml",
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.html",
           "hash": "ACEn50GN2BBfMgiL2vCNS7fZBo9DZImsU3EnVjL1Ibo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html",
+          "hash": "3PJZ5PebiSdTn5dGSK9WpeHJD+qWwASTkEg9mmULW+0="
         }
       },
       "is_incremental": false,
@@ -160,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3Sorter.html",
-          "hash": "dPz1FHtx+2SF6V1FeHR+v6WUOESqpSt4kI+K+kyXRbg="
+          "hash": "8nHV3C26F1Rc049+DhDdShg2tQFexZS/I4YCR1qAJVM="
         }
       },
       "is_incremental": false,
@@ -172,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsDistanceSorter.html",
-          "hash": "vnWUNfo2jfNBXjAgfTEMS0j0lN/QP/DKct/QCqprjJc="
+          "hash": "SoV0lQTR8idvnLYUGXMKnzRg/Tq1UPh/V0bmrp8EtN0="
         }
       },
       "is_incremental": false,
@@ -233,6 +281,18 @@
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest3.html",
           "hash": "nWLodJjkiyOQgvZKISiqkVDmg+KrGHqmlva/b4eDvss="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.html",
+          "hash": "UJqcV93ygzsE69IrGVIBEkovwCuksB8Bv3dSP3SDNhQ="
         }
       },
       "is_incremental": false,
@@ -348,11 +408,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.html",
+          "hash": "2S0do3NwAATV10Alp3fYtv9duOH/TnGOhaXQRFhyq+Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.yml",
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.html",
-          "hash": "uT3+2fiEhG4N3vWZQDRpGbF+vkcDDa8umlTuRSUipN0="
+          "hash": "KPuXbgTz4yAfsNm6a0QpqwkwxlK7/PBmvLwOBdzg+Xc="
         }
       },
       "is_incremental": false,
@@ -364,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.html",
-          "hash": "EzdsxzzxEDwV0NVfTqVT9cJ5a1XIvb3SytpxkESM4KY="
+          "hash": "EJvUbq37Mtn3ssvAmb/mTr1CKQwWZH2dou70m/g6Liw="
         }
       },
       "is_incremental": false,
@@ -456,11 +528,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html",
+          "hash": "6hcL2ZqsDr+q4T7Ihms4aR+yko2w6MTPyi09CTcD2cI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Extensions.yml",
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.html",
-          "hash": "Tf6vYvFk+3MjUFI0NDME/pujaNQTQi5EPVdhG5RkW1M="
+          "hash": "pgj54Juchh8rFDqelMa2qkPL9AUJ+Z5NFLzfY5ulr44="
         }
       },
       "is_incremental": false,
@@ -480,11 +564,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuActuatorAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuActuatorAction.html",
+          "hash": "gtCHQOGRwybpvfracsIJRFlBo9CYDZl/PAbDFxjLEFQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgent.yml",
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgent.html",
-          "hash": "ZT8vVdAhMtcyBsz1q9bdihsT4vbGyFTo6Fc5G82YWSY="
+          "hash": "2Y5VfSajefulSftG1D5Kf8726ZQyL/O9ljQACbIWTYk="
         }
       },
       "is_incremental": false,
@@ -497,6 +593,18 @@
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgentAction.html",
           "hash": "A16apVs9GWZHQiSBEHqreevVAlVY4BI5iUL2wuEwvlk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.KaijuAgentActuatorAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.KaijuAgentActuatorAction.html",
+          "hash": "cK3ygP4A/2VK6pB/SHhTmhJVODzZdJT5pcYQ2XRsOGs="
         }
       },
       "is_incremental": false,
@@ -520,7 +628,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgentSensorAction.html",
-          "hash": "mcJql21OkemWFBkzEWSR7bvzJX6I3vZDPMnQP/J4+is="
+          "hash": "CjVdv4j+q/z737GtIW0RxiaqNFWFLMIpItqQkmvcTNg="
         }
       },
       "is_incremental": false,
@@ -604,7 +712,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuBehaviour.html",
-          "hash": "umP0VCvkjoAS0n6LyYeFFf/wMrz10ce8OIZb4cW3Rxc="
+          "hash": "6mWSWPi7wzWNrNVw150+3keY8lZbWc1XqgYelrdWfv8="
         }
       },
       "is_incremental": false,
@@ -628,7 +736,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuCharacterAgent.html",
-          "hash": "PuIRpI1rAzhrHKTxiyaK5mnVJeqIaWp9fzjzP5ykzq8="
+          "hash": "xeIarAcFx82IJbFjjKFWOJVrUMfXLYGC/w9vdHclPBg="
         }
       },
       "is_incremental": false,
@@ -652,7 +760,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuNavigationAgent.html",
-          "hash": "XnbldhD8BoMgWbj3oPFw8o0Bd8L2wViC8huhtaA09gY="
+          "hash": "CGbD/Gr4c9aZnYpB1RHH+t42Kl2HYR6Dot+ex5bbtDQ="
         }
       },
       "is_incremental": false,
@@ -664,7 +772,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuRadiusAgent.html",
-          "hash": "LFe0XhCy8nRsdZlIOwgPhqQMNGSkynnkGbtuY4+Cczw="
+          "hash": "pDIQDCTv8O5asg2sHVNiCvMbGe4n7gDbLzGjx51Xjac="
         }
       },
       "is_incremental": false,
@@ -676,7 +784,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html",
-          "hash": "dPxjpg5V72RGor/3gJQmQuWwvR/wHyUx07iO3QekrgI="
+          "hash": "t3ys85u5OGZ+8Mx5Y1Pt1Fv7DPfjINklqkOFC1MfapU="
         }
       },
       "is_incremental": false,
@@ -700,7 +808,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuTransformAgent.html",
-          "hash": "wEfJ6Ba++lXziLo0O3PgXqEHPrlnJh1fprwruw06nJ4="
+          "hash": "zs3H6qYfJCQOl4C00cneVAIbOGIr3DM7TRy7bY2enmU="
         }
       },
       "is_incremental": false,
@@ -736,7 +844,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html",
-          "hash": "f/J9jC0z3rLU9N03RojQhdy7sd7cL+9jhmstvrVrAA4="
+          "hash": "D2kcqGjBoIUg2dVSbZgwuvtnL9M1Fiw+Jjni9juX/XI="
         }
       },
       "is_incremental": false,
@@ -772,7 +880,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovement.html",
-          "hash": "krNf7obqJJAg109eHYvR7tWbx1LLJH0cRYQsRJUVZ8I="
+          "hash": "U1McT2KkepqEa3c5jwXImsB2kiXuyml7Fv9tnftyuwE="
         }
       },
       "is_incremental": false,
@@ -796,7 +904,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuMovementManager.html",
-          "hash": "lGubo5jK+/L4IuTeyFshYE5mJA7DN5tmxaYmKtRmlJw="
+          "hash": "Oqn2VcBZrSww3YH2u7o9Dp84QAjqYuC56lrxrlw7H/A="
         }
       },
       "is_incremental": false,
@@ -816,11 +924,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html",
+          "hash": "hJ8w7+Xs+fjgx701PG7LsHECSwAToOuJcvrARrlRjcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.yml",
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.KaijuPursueMovement.html",
-          "hash": "GJ5c9RQhCbCdo7UXFfqA+R4fDGxOFJTjTWFPGaBORp8="
+          "hash": "UN55pe1zkx+wIo4AttrDKloxGfGZCzQBAdlb+SE/jZU="
         }
       },
       "is_incremental": false,
@@ -880,7 +1000,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Movement.html",
-          "hash": "grDnjmBfH31GbX6v2UzXp8wDHG8aOTX4CkGYVh9LRcM="
+          "hash": "CGlBhhuvGAql3k3SPI/weE3znQzcUVE8/0YvU3HvehM="
         }
       },
       "is_incremental": false,
@@ -892,7 +1012,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html",
-          "hash": "KTsP3eT40f+B5K7tN4QcL7t/+f/6+gesV3jAC8PjPBw="
+          "hash": "YLwuiJ4yTMkDfykRgEXGvfxOyTdPpD89M1e8U76bs9s="
         }
       },
       "is_incremental": false,
@@ -904,7 +1024,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html",
-          "hash": "09NOzw936WpzkkarG1Z+MWVRmZZAW6S+ABetVHSRP5s="
+          "hash": "kn7DrLed/gBIoQnbHEDPgrW9RsSiEci90v/72fYdqP4="
         }
       },
       "is_incremental": false,
@@ -916,7 +1036,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html",
-          "hash": "leMRhOdnWIDUaX5JtBb8pa6DIyOvPGfjgoP2nL0ilEs="
+          "hash": "QvDqh3g7/hQzpUbgNKtTFtmT+edGIxN1aEdrXTQgahE="
         }
       },
       "is_incremental": false,
@@ -928,7 +1048,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuSensor.html",
-          "hash": "tLKrgyDYJUoGXpiLtL5+IDn8EVxa18lRHA2u5DsGzsI="
+          "hash": "n1v1gdIYdonFKa5Vuuan9VMDmLr0E+A1581rUWQBKCY="
         }
       },
       "is_incremental": false,
@@ -940,7 +1060,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html",
-          "hash": "su6URAsw/D5j1GxloOlXm87O9v8ktKzmiprGt3uhNzs="
+          "hash": "eupKbmQ6WPJ84s+uxlMmaTx/0vTTAg2c2LrXwYqGUBw="
         }
       },
       "is_incremental": false,
@@ -964,7 +1084,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.html",
-          "hash": "+U+F0HdSXicAQbNKMak4ww2p7xJrPApmpup9XMlkK94="
+          "hash": "ULBN5weKuIQXoUnrHfuAz5TdMRwwwi6SKUOFhS6grnY="
         }
       },
       "is_incremental": false,
@@ -976,7 +1096,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "yjI0sT29oiswDO7Ta23xSIy2XxEtmtd2VMfOhB8M6kI="
+          "hash": "n9PakdY4kGOnL84SGYofKi05aKn9ghc7/ivlKN3xzTQ="
         }
       },
       "is_incremental": false,
@@ -1112,7 +1232,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 83,
+          "total_file_count": 94,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

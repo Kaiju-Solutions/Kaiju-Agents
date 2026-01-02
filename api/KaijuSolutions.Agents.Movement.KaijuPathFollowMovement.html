@@ -1,0 +1,2563 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuPathFollowMovement | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuPathFollowMovement | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement" class="text-break">Class KaijuPathFollowMovement
+  </h1>
+  <div class="markdown level0 summary"><p>Path following steering behaviour.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></div>
+    <div class="level2"><span class="xref">KaijuPathFollowMovement</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted">KaijuMovement.OnStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStartedGlobal">KaijuMovement.OnStartedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStopped">KaijuMovement.OnStopped</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStoppedGlobal">KaijuMovement.OnStoppedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformed">KaijuMovement.OnPerformed</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformedGlobal">KaijuMovement.OnPerformedGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">KaijuMovement.Agent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Weight">KaijuMovement.Weight</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_">KaijuMovement.Initialize(KaijuAgent, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Setup">KaijuMovement.Setup()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Started">KaijuMovement.Started()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Stopped">KaijuMovement.Stopped()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Performed">KaijuMovement.Performed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Return">KaijuMovement.Return()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualize_Vector3_">KaijuMovement.EditorVisualize(Vector3)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuPathFollowMovement : KaijuMovement</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Component, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Component target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Component_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Component,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Component, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Component target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, GameObject, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, GameObject target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, GameObject, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, GameObject target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Vector2, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Vector2, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Vector2 target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Vector3, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__ctor_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">KaijuPathFollowMovement(KaijuAgent, Vector3, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuPathFollowMovement(KaijuAgent agent, Vector3 target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Previous3" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Previous3">Previous3</h4>
+  <div class="markdown level1 summary"><p>The previous position of the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Previous3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_AutoCalculateDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.AutoCalculateDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_AutoCalculateDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.AutoCalculateDistance">AutoCalculateDistance</h4>
+  <div class="markdown level1 summary"><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? AutoCalculateDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CurrentDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CurrentDistance">CurrentDistance</h4>
+  <div class="markdown level1 summary"><p>The current distance between the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CurrentDistance { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance3_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CurrentDistance3*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance3" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CurrentDistance3">CurrentDistance3</h4>
+  <div class="markdown level1 summary"><p>The current distance between the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and the target across all axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CurrentDistance3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Distance_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Distance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Distance" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Distance">Distance</h4>
+  <div class="markdown level1 summary"><p>The distance at which we can consider this behaviour done.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Distance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Filter_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Filter*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Filter" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Filter">Filter</h4>
+  <div class="markdown level1 summary"><p>Filter for the navigation calculations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavMeshQueryFilter? Filter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">NavMeshQueryFilter</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Mask_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Mask*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Mask" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Mask">Mask</h4>
+  <div class="markdown level1 summary"><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Mask { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_MaskAssigned_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.MaskAssigned*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_MaskAssigned" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.MaskAssigned">MaskAssigned</h4>
+  <div class="markdown level1 summary"><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaskAssigned { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Path_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Path*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Path" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Path">Path</h4>
+  <div class="markdown level1 summary"><p>The path of points to follow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3&gt; Path { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.PathDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.PathDistance">PathDistance</h4>
+  <div class="markdown level1 summary"><p>The total distance from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> along the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html#KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Path">Path</a> to the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html#KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target">Target</a> along the X and Z axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PathDistance { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance3_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.PathDistance3*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance3" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.PathDistance3">PathDistance3</h4>
+  <div class="markdown level1 summary"><p>The total distance from the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> along the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html#KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Path">Path</a> to the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html#KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target3">Target3</a> along all three axes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PathDistance3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Previous_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Previous*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Previous" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Previous">Previous</h4>
+  <div class="markdown level1 summary"><p>The previous position of the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Previous { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Target*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Target">Target</h4>
+  <div class="markdown level1 summary"><p>The position to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Target { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target3_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Target3*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target3" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Target3">Target3</h4>
+  <div class="markdown level1 summary"><p>The position to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Target3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetAgent_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetAgent*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetAgent" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetAgent">TargetAgent</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgent TargetAgent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetComponent_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetComponent*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetComponent" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetComponent">TargetComponent</h4>
+  <div class="markdown level1 summary"><p>The component to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component TargetComponent { set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetGameObject_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetGameObject*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetGameObject" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetGameObject">TargetGameObject</h4>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject TargetGameObject { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetTransform_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetTransform*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetTransform" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.TargetTransform">TargetTransform</h4>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> to move in relation to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform TargetTransform { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CalculatePath_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CalculatePath*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CalculatePath" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.CalculatePath">CalculatePath()</h4>
+  <div class="markdown level1 summary"><p>Calculate the path to the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CalculatePath()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Done_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Done*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Done" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Done">Done()</h4>
+  <div class="markdown level1 summary"><p>Determine if the movement is done or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Done()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the movement is done or not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Done">KaijuMovement.Done()</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorRenderVisualizations_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.EditorRenderVisualizations*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorRenderVisualizations_Vector3_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.EditorRenderVisualizations(Vector3)">EditorRenderVisualizations(Vector3)</h4>
+  <div class="markdown level1 summary"><p>Render the visualization of the movement.
+<param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void EditorRenderVisualizations(Vector3 position)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorRenderVisualizations_Vector3_">KaijuMovement.EditorRenderVisualizations(Vector3)</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorVisualizationColor_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.EditorVisualizationColor*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorVisualizationColor" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.EditorVisualizationColor">EditorVisualizationColor()</h4>
+  <div class="markdown level1 summary"><p>Get the color for visualizations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Color EditorVisualizationColor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><p>The color for visualizations</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualizationColor">KaijuMovement.EditorVisualizationColor()</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Component_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Component,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Component, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Component target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Component_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Component,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Component, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Component target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_GameObject_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,GameObject,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, GameObject, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, GameObject target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, GameObject, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, GameObject target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Vector2_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Vector2,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Vector2, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Vector2, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Vector2 target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Vector3_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Vector3,NavMeshQueryFilter,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Vector3, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Int32_System_Single_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Get(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Int32,System.Single,System.Nullable{System.Single},System.Single)">Get(KaijuAgent, Vector3, Int32, Single, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a path following movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static KaijuPathFollowMovement Get(KaijuAgent agent, Vector3 target, int mask = default(int), float distance = 0.1F, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The position to pathfind to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance from the target to consider this movement done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_NavMeshQueryFilter_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,NavMeshQueryFilter,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Component, Single, NavMeshQueryFilter, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Component target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Component_System_Single_System_Int32_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Component,System.Single,System.Int32,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Component, Single, Int32, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Component target, float distance, int mask = default(int), float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_NavMeshQueryFilter_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,NavMeshQueryFilter,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, GameObject, Single, NavMeshQueryFilter, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, GameObject target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_GameObject_System_Single_System_Int32_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,GameObject,System.Single,System.Int32,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, GameObject, Single, Int32, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, GameObject target, float distance, int mask = default(int), float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_NavMeshQueryFilter_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,NavMeshQueryFilter,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Vector2, Single, NavMeshQueryFilter, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector2 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector2_System_Single_System_Int32_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector2,System.Single,System.Int32,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Vector2, Single, Int32, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector2 target, float distance, int mask = default(int), float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_NavMeshQueryFilter_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,NavMeshQueryFilter,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Vector3, Single, NavMeshQueryFilter, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector3 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Filter for the navigation calculations.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_Vector3_System_Single_System_Int32_System_Nullable_System_Single__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,Vector3,System.Single,System.Int32,System.Nullable{System.Single},System.Single)">Initialize(KaijuAgent, Vector3, Single, Int32, Nullable&lt;Single&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(KaijuAgent agent, Vector3 target, float distance, int mask = default(int), float? autoCalculateDistance = null, float weight = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The agent this is assigned to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">target</span></td>
+        <td><p>The component to move in relation to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">distance</span></td>
+        <td><p>The distance to consider this move done.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">autoCalculateDistance</span></td>
+        <td><p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">weight</span></td>
+        <td><p>The weight of this movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Move*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Get the movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Vector2 Move(Vector2 position, float delta)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">delta</span></td>
+        <td><p>The time step.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The calculated movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Move_Vector2_System_Single_">KaijuMovement.Move(Vector2, Single)</a></div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Reset_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Reset*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Reset" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Perform any needed reset operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Reset()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Reset">KaijuMovement.Reset()</a></div>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__GameObject" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~GameObject">Implicit(KaijuPathFollowMovement to GameObject)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator GameObject(KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><p>The target <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuPathFollowMovement to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The target <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> from the target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__System_Nullable_Vector2_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~System.Nullable{Vector2}">Implicit(KaijuPathFollowMovement to Nullable&lt;Vector2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector2 from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2? (KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__System_Nullable_Vector3_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~System.Nullable{Vector3}">Implicit(KaijuPathFollowMovement to Nullable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector3 from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3? (KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__Transform" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~Transform">Implicit(KaijuPathFollowMovement to Transform)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a> from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Transform(KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The target <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__Vector2" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~Vector2">Implicit(KaijuPathFollowMovement to Vector2)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector2 from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2(KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_op_Implicit_KaijuSolutions_Agents_Movement_KaijuPathFollowMovement__Vector3" data-uid="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.op_Implicit(KaijuSolutions.Agents.Movement.KaijuPathFollowMovement)~Vector3">Implicit(KaijuPathFollowMovement to Vector3)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector3 from the target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(KaijuPathFollowMovement t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The target movement.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

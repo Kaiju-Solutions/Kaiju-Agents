@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsFindPath | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsFindPath | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath" class="text-break">Class KaijuAgentsFindPath
+  </h1>
+  <div class="markdown level0 summary"><p>Extension methods for finding a path.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsFindPath</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extensions.html">KaijuSolutions.Agents.Extensions</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class KaijuAgentsFindPath</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector2, Vector2, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector2},System.Int32)">FindPath(Vector2, Vector2, IList&lt;Vector2&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector2, Vector2, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector3},System.Int32)">FindPath(Vector2, Vector2, IList&lt;Vector3&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector2, ref Vector2[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,System.Int32)">FindPath(Vector2, Vector2, ref Vector2[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector2, ref Vector3[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,System.Int32)">FindPath(Vector2, Vector2, ref Vector3[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector2, Vector3, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector2},System.Int32)">FindPath(Vector2, Vector3, IList&lt;Vector2&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector2, Vector3, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector3},System.Int32)">FindPath(Vector2, Vector3, IList&lt;Vector3&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector3, ref Vector2[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,System.Int32)">FindPath(Vector2, Vector3, ref Vector2[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector3, ref Vector3[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,System.Int32)">FindPath(Vector2, Vector3, ref Vector3[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector3, Vector2, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,IList{Vector2},System.Int32)">FindPath(Vector3, Vector2, IList&lt;Vector2&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector2, ref Vector2[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,System.Int32)">FindPath(Vector3, Vector2, ref Vector2[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector3, Vector3, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector2},System.Int32)">FindPath(Vector3, Vector3, IList&lt;Vector2&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector3, Vector3, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector3},System.Int32)">FindPath(Vector3, Vector3, IList&lt;Vector3&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector3, ref Vector2[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,System.Int32)">FindPath(Vector3, Vector3, ref Vector2[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector3, ref Vector3[], NavMeshQueryFilter)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,System.Int32)">FindPath(Vector3, Vector3, ref Vector3[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

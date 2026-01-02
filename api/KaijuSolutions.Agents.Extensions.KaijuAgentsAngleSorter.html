@@ -1,0 +1,3348 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsAngleSorter | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsAngleSorter | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter" class="text-break">Class KaijuAgentsAngleSorter
+  </h1>
+  <div class="markdown level0 summary"><p>Comparer class to sort by angle in degrees from a position towards a target around the global Y axis. Used in the extension methods found in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.html">KaijuAgentsSortAngle</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsAngleSorter</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extensions.html">KaijuSolutions.Agents.Extensions</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class KaijuAgentsAngleSorter : IComparer&lt;Vector2&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor">KaijuAgentsAngleSorter()</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Component_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Component,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Component, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Component position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_GameObject_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(GameObject,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(GameObject, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(GameObject position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Transform_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Transform,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Transform, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Transform position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector2_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector2,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector2, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector2 position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector2_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector2,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector2, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector2 position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector2_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector2,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector2, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector2 position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector2_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector2,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector2, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector2 position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector2_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector2,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector2, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector2 position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector3_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector3,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector3, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector3 position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector3_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector3,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector3, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector3 position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector3_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector3,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector3, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector3 position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector3_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector3,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector3, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector3 position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__ctor_Vector3_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.#ctor(Vector3,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">KaijuAgentsAngleSorter(Vector3, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAgentsAngleSorter(Vector3 position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Farthest" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Farthest">Farthest</h4>
+  <div class="markdown level1 summary"><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Farthest</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Forward" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Forward">Forward</h4>
+  <div class="markdown level1 summary"><p>The forward direction to compare with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Forward</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Mode" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Mode">Mode</h4>
+  <div class="markdown level1 summary"><p>How to handle sorting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuAngleSortMode Mode</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Position" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Position">Position</h4>
+  <div class="markdown level1 summary"><p>The position to compare against.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Position</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Position3_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Position3*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Position3" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Position3">Position3</h4>
+  <div class="markdown level1 summary"><p>The position to compare against.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 Position3 { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionComponent_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionComponent*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionComponent" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionComponent">PositionComponent</h4>
+  <div class="markdown level1 summary"><p>The position to compare against. The forward direction will be taken from this as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Component PositionComponent { set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionGameObject_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionGameObject*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionGameObject" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionGameObject">PositionGameObject</h4>
+  <div class="markdown level1 summary"><p>The position to compare against. The forward direction will be taken from this as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject PositionGameObject { set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionTransform_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionTransform*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_PositionTransform" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.PositionTransform">PositionTransform</h4>
+  <div class="markdown level1 summary"><p>The position to compare against. The forward direction will be taken from this as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform PositionTransform { set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_Component_Component_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare(Component,Component)">Compare(Component, Component)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Compare(Component x, Component y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_GameObject_GameObject_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare(GameObject,GameObject)">Compare(GameObject, GameObject)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Compare(GameObject x, GameObject y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_Transform_Transform_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare(Transform,Transform)">Compare(Transform, Transform)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Compare(Transform x, Transform y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_Vector2_Vector2_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare(Vector2,Vector2)">Compare(Vector2, Vector2)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Compare(Vector2 x, Vector2 y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Compare_Vector3_Vector3_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Compare(Vector3,Vector3)">Compare(Vector3, Vector3)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Compare(Vector3 x, Vector3 y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_CompareAngle_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.CompareAngle*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_CompareAngle_Vector2_Vector2_Vector2_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.CompareAngle(Vector2,Vector2,Vector2,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode)">CompareAngle(Vector2, Vector2, Vector2, Vector2, KaijuAngleSortMode)</h4>
+  <div class="markdown level1 summary"><p>Compare the two instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CompareAngle(Vector2 position, Vector2 forward, Vector2 x, Vector2 y, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The first instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The second instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Less than zero if the first instance comes first, zero if they are equal, or greater than zero if the second comes first.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Component_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Component,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Component, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Component position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_GameObject_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(GameObject,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(GameObject, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(GameObject position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against with its forward being used for the direction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Transform_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Transform,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Transform, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Transform position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector2_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector2,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector2, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector2 position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector2_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector2,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector2, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector2 position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector2_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector2,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector2, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector2 position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector2_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector2,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector2, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector2 position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector2_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector2,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector2, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector2 position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector3_Component_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector3,Component,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector3, Component, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector3 position, Component forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector3_GameObject_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector3,GameObject,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector3, GameObject, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector3 position, GameObject forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector3_Transform_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector3,Transform,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector3, Transform, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector3 position, Transform forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector3_Vector2_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector3,Vector2,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector3, Vector2, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector3 position, Vector2 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_Set_Vector3_Vector3_KaijuSolutions_Agents_Extensions_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.Set(Vector3,Vector3,KaijuSolutions.Agents.Extensions.KaijuAngleSortMode,System.Nullable{System.Boolean})">Set(Vector3, Vector3, KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Set values for the sorter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Vector3 position, Vector3 forward, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to compare against.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward direction to compare with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__System_Nullable_Vector2_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit(KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter)~System.Nullable{Vector2}">Implicit(KaijuAgentsAngleSorter to Nullable&lt;Vector2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector2 from the position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2? (KaijuAgentsAngleSorter s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The sorter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__System_Nullable_Vector3_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit(KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter)~System.Nullable{Vector3}">Implicit(KaijuAgentsAngleSorter to Nullable&lt;Vector3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a nullable Vector3 from the position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3? (KaijuAgentsAngleSorter s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The sorter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__System_String" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit(KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter)~System.String">Implicit(KaijuAgentsAngleSorter to String)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string (KaijuAgentsAngleSorter s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The sorter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__Vector2" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit(KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter)~Vector2">Implicit(KaijuAgentsAngleSorter to Vector2)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector2 from the position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector2(KaijuAgentsAngleSorter s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The sorter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter_op_Implicit_KaijuSolutions_Agents_Extensions_KaijuAgentsAngleSorter__Vector3" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.op_Implicit(KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter)~Vector3">Implicit(KaijuAgentsAngleSorter to Vector3)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a Vector3 from the position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Vector3(KaijuAgentsAngleSorter s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The sorter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The string from the <span class="xref">KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.ToString</span> method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
