@@ -1503,5 +1503,40 @@ namespace KaijuSolutions.Agents.Extensions
         {
             return $"Kaiju Agents Distance Sorter - Position: {Position}";
         }
+        
+        /// <summary>
+        /// Implicit conversion to a string.
+        /// </summary>
+        /// <param name="s">The sorter.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator string([NotNull] KaijuAgentsDistance3Sorter s) => s.ToString();
+        
+        /// <summary>
+        /// Implicit conversion to a Vector2 from the position.
+        /// </summary>
+        /// <param name="s">The sorter.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator Vector2([NotNull] KaijuAgentsDistance3Sorter s) => s.Position2;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector2 from the position.
+        /// </summary>
+        /// <param name="s">The sorter.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator Vector2?([NotNull] KaijuAgentsDistance3Sorter s) => s.Position2;
+        
+        /// <summary>
+        /// Implicit conversion to a Vector3 from the position.
+        /// </summary>
+        /// <param name="s">The sorter.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator Vector3([NotNull] KaijuAgentsDistance3Sorter s) => s.Position;
+        
+        /// <summary>
+        /// Implicit conversion to a nullable Vector3 from the position.
+        /// </summary>
+        /// <param name="s">The sorter.</param>
+        /// <returns>The string from the <see cref="ToString"/> method.</returns>
+        public static implicit operator Vector3?([NotNull] KaijuAgentsDistance3Sorter s) => s.Position;
     }
 }

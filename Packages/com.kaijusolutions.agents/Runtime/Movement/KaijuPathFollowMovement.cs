@@ -219,7 +219,20 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// A bitfield mask specifying which navigation mesh areas can be used for the path.
         /// </summary>
-        public int? Mask
+        public int Mask
+        {
+            get => _mask ?? _filter?.areaMask ?? NavMesh.AllAreas;
+            set
+            {
+                _mask = value;
+                _filter = null;
+            }
+        }
+        
+        /// <summary>
+        /// A bitfield mask specifying which navigation mesh areas can be used for the path.
+        /// </summary>
+        public int? MaskAssigned
         {
             get => _mask;
             set
@@ -681,35 +694,14 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public void CalculatePath()
         {
-            // Clear the old path.
-            _path.Clear();
-            
             // Nothing to do if no agent of target.
             if (!Agent || (!_vector3.HasValue && !_transform))
             {
                 return;
             }
             
-            // Update that the position has been accounted for.
             Previous3 = Target3;
-            
-            // Calculate the new path. If it fails, it means the point is off of the navigation mesh.
-            int mask = _filter?.areaMask ?? _mask ?? NavMesh.AllAreas;
-            if (!NavMesh.SamplePosition(Previous3, out NavMeshHit hit, float.MaxValue, mask) || !NavMesh.CalculatePath(Agent.Position3, hit.position, mask, _navMeshPath))
-            {
-                return;
-            }
-            
-            // Copy the path.
-            Vector3[] points = new Vector3[_navMeshPath.corners.Length];
-            _navMeshPath.GetCornersNonAlloc(points);
-            for (int index = 0; index < points.Length; index++)
-            {
-                _path.Add(_navMeshPath.corners[index]);
-            }
-            
-            // Clear the now no-longer-used navigation path.
-            _navMeshPath.ClearCorners();
+            Agent.Position3.FindPath(Target3, _path, Mask);
         }
         
         /// <summary>
