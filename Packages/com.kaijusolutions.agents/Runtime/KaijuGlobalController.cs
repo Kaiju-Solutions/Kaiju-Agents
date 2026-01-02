@@ -318,6 +318,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="c">The controller.</param>
         /// <returns>The <see cref="KaijuAgent"/> attached to the controller if there was one.</returns>
-        public static implicit operator KaijuGlobalController([NotNull] KaijuController c) => c.GetComponent<KaijuAgent>();
+        public static implicit operator KaijuAgent([NotNull] KaijuGlobalController c) => c.GetComponent<KaijuAgent>();
     }
 }

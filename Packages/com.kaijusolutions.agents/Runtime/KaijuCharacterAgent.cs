@@ -138,5 +138,19 @@ namespace KaijuSolutions.Agents
         /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> of the agent.</returns>
         public static implicit operator CharacterController([NotNull] KaijuCharacterAgent a) => a.character;
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuCharacterAgent([NotNull] GameObject o) => o.GetComponent<KaijuCharacterAgent>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuCharacterAgent([NotNull] Transform t) => t.GetComponent<KaijuCharacterAgent>();
     }
 }

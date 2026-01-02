@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Sensors
 {
@@ -127,5 +128,26 @@ namespace KaijuSolutions.Agents.Sensors
         {
             return $"Kaiju Sensor {name} - Agent: {(Agent ? Agent.name : "None")}";
         }
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuSensor([NotNull] GameObject o) => o.GetComponent<KaijuSensor>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
+        /// <returns>The sensor attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuSensor([NotNull] Transform t) => t.GetComponent<KaijuSensor>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="s">The sensor.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the sensor if there was one.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuSensor s) => s.Agent;
     }
 }

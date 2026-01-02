@@ -92,5 +92,19 @@ namespace KaijuSolutions.Agents
         /// <param name="a">The agent.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> of the agent.</returns>
         public static implicit operator Rigidbody([NotNull] KaijuRigidbodyAgent a) => a.body;
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuRigidbodyAgent([NotNull] GameObject o) => o.GetComponent<KaijuRigidbodyAgent>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuRigidbodyAgent([NotNull] Transform t) => t.GetComponent<KaijuRigidbodyAgent>();
     }
 }

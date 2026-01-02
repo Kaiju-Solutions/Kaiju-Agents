@@ -2108,5 +2108,19 @@ namespace KaijuSolutions.Agents
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
         /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] Transform t) => t.GetComponent<KaijuAgent>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuController"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The <see cref="KaijuController"/> attached to the agent if there was one.</returns>
+        public static implicit operator KaijuController([NotNull] KaijuAgent a) => a.GetComponent<KaijuController>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuGlobalController"/>.
+        /// </summary>
+        /// <param name="a">The agent.</param>
+        /// <returns>The <see cref="KaijuGlobalController"/> attached to the agent if there was one.</returns>
+        public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
     }
 }

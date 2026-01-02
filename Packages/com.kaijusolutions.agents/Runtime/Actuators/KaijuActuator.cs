@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Actuators
 {
@@ -275,6 +276,26 @@ namespace KaijuSolutions.Agents.Actuators
         /// </summary>
         public virtual void EditorVisualize(Vector3 position) { }
 #endif
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The actuator attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuActuator([NotNull] GameObject o) => o.GetComponent<KaijuActuator>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
+        /// <returns>The actuator attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuActuator([NotNull] Transform t) => t.GetComponent<KaijuActuator>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="a">The actuator.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the actuator if there was one.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuActuator a) => a.Agent;
     }
     
     /// <summary>
