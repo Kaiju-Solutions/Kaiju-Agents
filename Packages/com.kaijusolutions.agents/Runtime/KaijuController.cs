@@ -1,4 +1,5 @@
-﻿using KaijuSolutions.Agents.Actuators;
+﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Actuators;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
@@ -309,5 +310,42 @@ namespace KaijuSolutions.Agents
             agent.OnActuatorInterrupted -= OnActuatorInterrupted;
             agent.OnActuatorFailed -= OnActuatorFailed;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Agent Controller {name}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The controller attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuController([NotNull] GameObject o) => o.GetComponent<KaijuController>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see>.</param>
+        /// <returns>The controller attached to the <see href="https://docs.unity3d.com/Manual/class-Transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuController([NotNull] Transform t) => t.GetComponent<KaijuController>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
+        /// <returns>The controller attached to the <see cref="KaijuAgent"/> if there was one.</returns>
+        public static implicit operator KaijuController([NotNull] KaijuAgent a) => a.GetComponent<KaijuController>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="c">The controller.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the controller if there was one.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuController c) => c.agent;
     }
 }
