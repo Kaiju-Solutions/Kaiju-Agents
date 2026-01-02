@@ -106,11 +106,6 @@ namespace KaijuSolutions.Agents.Movement
         private readonly List<Vector3> _path = new();
         
         /// <summary>
-        /// The structure to get the navigation information from.
-        /// </summary>
-        private readonly NavMeshPath _navMeshPath = new();
-        
-        /// <summary>
         /// The distance at which we can consider this behaviour done.
         /// </summary>
         public float Distance
