@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Samples.Movement
@@ -70,6 +71,11 @@ namespace KaijuSolutions.Agents.Samples.Movement
         public bool clear = true;
         
         /// <summary>
+        /// Cache old movements so they can be removed before running the new movement.
+        /// </summary>
+        private readonly Dictionary<KaijuAgent, KaijuMovement> _cache = new();
+        
+        /// <summary>
         /// Ensure there is at least one agent assigned.
         /// </summary>
         private void AssignAgent()
@@ -136,18 +142,24 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
             foreach (KaijuAgent agent in agents)
             {
+                if (_cache.TryGetValue(agent, out KaijuMovement movement))
+                {
+                    agent.Stop(movement);
+                    _cache.Remove(agent);
+                }
+                
                 if (agent)
                 {
-                    Assign(agent);
+                    _cache.Add(agent, Assign(agent));
                 }
             }
-            
         }
         
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
-        public abstract void Assign([NotNull] KaijuAgent agent);
+        /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
+        protected abstract KaijuMovement Assign([NotNull] KaijuAgent agent);
     }
 }

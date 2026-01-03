@@ -385,11 +385,11 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
 
         /// <summary>
-        /// The layers to use for navigation string-pulling.
+        /// The layers to use for <see cref="KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuObstacleAvoidanceMovement"/>.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Navigation")]
-        [Tooltip("The layers to use for navigation string-pulling.")]
+        [Tooltip("The layers to use for navigation string-pulling and obstacle avoidance.")]
 #endif
         public LayerMask mask = -5;
         
@@ -1588,17 +1588,16 @@ namespace KaijuSolutions.Agents
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="layerMask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? layerMask = null, float weight = 1, bool clear = true)
+        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, layerMask, weight);
+            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);

@@ -70,11 +70,6 @@ namespace KaijuSolutions.Agents.Movement
         public float Horizontal;
         
         /// <summary>
-        /// The mask for what layers should the rays hit.
-        /// </summary>
-        public LayerMask? Mask;
-        
-        /// <summary>
         /// The points hit by the rays.
         /// </summary>
         public IReadOnlyList<RaycastHit> Hits => _hits;
@@ -104,18 +99,17 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="mask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuObstacleAvoidanceMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
+        public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, float weight = 1)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
             if (movement == null)
             {
-                return new(agent, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
+                return new(agent, avoidance, distance, sideDistance, angle, height, horizontal, weight);
             }
             
-            movement.Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
+            movement.Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, weight);
             return movement;
         }
         
@@ -129,11 +123,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="mask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1) : base(agent, weight)
+        public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, float weight = 1) : base(agent, weight)
         {
-            Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, mask, weight);
+            Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, weight);
         }
         
         /// <summary>
@@ -146,9 +139,8 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="mask">The mask for what layers should the rays hit.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected void Initialize([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, LayerMask? mask = null, float weight = 1)
+        protected void Initialize([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, float weight = 1)
         {
             base.Initialize(agent, weight);
             Avoidance = avoidance;
@@ -157,7 +149,6 @@ namespace KaijuSolutions.Agents.Movement
             Angle = angle;
             Height = height;
             Horizontal = horizontal;
-            Mask = mask;
             _hits.Clear();
             _misses.Clear();
         }
@@ -174,7 +165,6 @@ namespace KaijuSolutions.Agents.Movement
             Angle = 0;
             Height = 0;
             Horizontal = 0;
-            Mask = null;
             _hits.Clear();
             _misses.Clear();
         }
@@ -247,7 +237,7 @@ namespace KaijuSolutions.Agents.Movement
         private void Raycast(Vector3 start, Vector3 direction, float distance)
         {
             Vector3 end = direction.normalized * distance + start;
-            if (Mask.HasValue ? Physics.Linecast(start, end, out RaycastHit hit, Mask.Value) : Physics.Linecast(start, end, out hit))
+            if (Physics.Linecast(start, end, out RaycastHit hit, Agent.mask))
             {
                 _hits.Add(hit);
             }
