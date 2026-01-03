@@ -3180,7 +3180,6 @@ MonoBehaviour:
   avoidanceSideDistance: 0
   avoidanceAngle: 15
   avoidanceHorizontal: 0
-  seekDistance: 2
 --- !u!1 &1910111043
 GameObject:
   m_ObjectHideFlags: 0

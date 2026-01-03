@@ -85,8 +85,10 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
             // Get the sensor and actuator once so we do not need to repeatedly call for them.
             _sensor = Agent.GetSensor<KaijuEverythingVisionSensor>();
             _actuator = Agent.GetActuator<KaijuEverythingAttackActuator>();
+            
+            // Start an initial search.
+            StartSearching();
         }
-        
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSensor"/> has been run.

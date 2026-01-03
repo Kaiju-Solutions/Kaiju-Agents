@@ -140,7 +140,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             // Get the center of the circle.
-            Center = Agent.Velocity.normalized * _distance + position;
+            Center = Agent.MoveForward.Flatten().normalized * _distance + position;
             
             // Get a random angle in Radians (0 to 2PI).
             float angle = Random.Range(0f, Mathf.PI * 2);
