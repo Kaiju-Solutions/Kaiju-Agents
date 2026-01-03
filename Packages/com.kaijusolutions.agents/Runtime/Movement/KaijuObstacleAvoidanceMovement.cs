@@ -13,6 +13,36 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuObstacleAvoidanceMovement : KaijuMovement
     {
         /// <summary>
+        /// The default <see cref="Avoidance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultAvoidance = 2;
+        
+        /// <summary>
+        /// The default <see cref="Distance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultDistance = 5;
+        
+        /// <summary>
+        /// The default <see cref="SideDistance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultSideDistance = 0;
+        
+        /// <summary>
+        /// The default <see cref="Angle"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultAngle = 15;
+        
+        /// <summary>
+        /// The default <see cref="Height"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultHeight = 1;
+        
+        /// <summary>
+        /// The default <see cref="Horizontal"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// </summary>
+        public const float DefaultHorizontal = 0;
+        
+        /// <summary>
         /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
@@ -101,7 +131,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuObstacleAvoidanceMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, float weight = DefaultWeight)
+        public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance, float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
             if (movement == null)
@@ -124,7 +154,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, float weight = DefaultWeight) : base(agent, weight)
+        public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, weight);
         }
@@ -140,7 +170,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected void Initialize([NotNull] KaijuAgent agent, float avoidance = 2, float distance = 5, float sideDistance = 0,float angle = 15, float height = 1, float horizontal = 0, float weight = DefaultWeight)
+        protected void Initialize([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
         {
             base.Initialize(agent, weight);
             Avoidance = avoidance;

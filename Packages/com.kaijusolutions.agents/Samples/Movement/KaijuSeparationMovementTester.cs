@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float distance = 10;
+        private float distance = KaijuSeparationMovement.DefaultDistance;
         
         /// <summary>
         /// The coefficient to use for inverse square law separation. Zero will use linear separation.
@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(0)]
         [SerializeField]
-        private float coefficient;
+        private float coefficient = KaijuSeparationMovement.DefaultCoefficient;
         
         /// <summary>
         /// What types of <see cref="KaijuAgent"/>s to avoid.

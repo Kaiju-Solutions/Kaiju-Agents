@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float distance = 0.1f;
+        private float distance = KaijuApproachingMovement.DefaultDistance;
         
         /// <summary>
         /// A bitfield mask specifying which navigation mesh areas can be used for the path.
@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         [Tooltip("A bitfield mask specifying which navigation mesh areas can be used for the path.")]
 #endif
         [SerializeField]
-        private int mask = NavMesh.AllAreas;
+        private int mask = KaijuPathFollowMovement.DefaultMask;
         
         /// <summary>
         /// The distance to automatically recalculate the path from.
@@ -61,7 +61,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(0)]
         [SerializeField]
-        private float autoCalculateDistance = 1;
+        private float autoCalculateDistance = KaijuPathFollowMovement.DefaultAutoCalculateDistance;
         
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.

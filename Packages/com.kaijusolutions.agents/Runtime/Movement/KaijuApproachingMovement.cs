@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuApproachingMovement : KaijuTargetMovement
     {
         /// <summary>
-        /// The default <see cref="KaijuTargetMovement.Distance"/> of <see cref="KaijuApproachingMovement"/>s.
+        /// The default <see cref="KaijuTargetMovement.Distance"/> of <see cref="KaijuApproachingMovement"/>s and <see cref="KaijuPathFollowMovement"/>s.
         /// </summary>
         public const float DefaultDistance = 0.1f;
         

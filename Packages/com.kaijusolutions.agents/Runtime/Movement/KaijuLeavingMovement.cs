@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The default  <see cref="KaijuTargetMovement.Distance"/> of <see cref="KaijuLeavingMovement"/>s.
         /// </summary>
-        public const float DefaultDistance = 0.1f;
+        public const float DefaultDistance = 20;
         
         /// <summary>
         /// Create a <see cref="KaijuLeavingMovement"/> for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.

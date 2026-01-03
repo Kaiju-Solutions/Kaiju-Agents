@@ -59,7 +59,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float weight = 1;
+        private float weight = KaijuMovement.DefaultWeight;
         
         /// <summary>
         /// If this should clear other <see cref="Agents.Movement.KaijuMovement"/>.

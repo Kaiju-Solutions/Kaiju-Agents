@@ -32,7 +32,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(0)]
         [SerializeField]
-        private float distance = 20;
+        private float distance = KaijuWanderMovement.DefaultDistance;
         
         /// <summary>
         /// The radius of the wander circle.
@@ -51,7 +51,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// </summary>
         [Min(0)]
         [SerializeField]
-        private float radius = 1;
+        private float radius = KaijuWanderMovement.DefaultRadius;
         
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.

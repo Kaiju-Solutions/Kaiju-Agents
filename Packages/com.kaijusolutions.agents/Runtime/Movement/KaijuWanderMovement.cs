@@ -13,6 +13,16 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuWanderMovement : KaijuMovement
     {
         /// <summary>
+        /// The default <see cref="Distance"/> for <see cref="KaijuWanderMovement"/>s.
+        /// </summary>
+        public const float DefaultDistance = 20;
+        
+        /// <summary>
+        /// The default <see cref="Radius"/> for <see cref="KaijuWanderMovement"/>s.
+        /// </summary>
+        public const float DefaultRadius = 1;
+        
+        /// <summary>
         /// How far out to generate the wander circle.
         /// </summary>
         public float Distance
@@ -68,7 +78,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuWanderMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = DefaultWeight)
+        public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight)
         {
             KaijuWanderMovement movement = KaijuMovementManager.Get<KaijuWanderMovement>();
             if (movement == null)
@@ -88,7 +98,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = DefaultWeight) : base(agent, weight)
+        public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight) : base(agent, weight)
         {
             Configure(agent, distance, radius);
         }
@@ -99,7 +109,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// </summary>
-        private void Configure([NotNull] KaijuAgent agent, float distance = 5, float radius = 1)
+        private void Configure([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius)
         {
             if (distance <= 0 && radius <= 0)
             {

@@ -32,7 +32,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float avoidance = 2;
+        private float avoidance = KaijuObstacleAvoidanceMovement.DefaultAvoidance;
         
         /// <summary>
         /// The distance for rays.
@@ -51,7 +51,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float distance = 5;
+        private float distance = KaijuObstacleAvoidanceMovement.DefaultDistance;
         
         /// <summary>
         /// The distance of the side rays. Zero or less will use the <see cref="Distance"/>.
@@ -70,7 +70,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(0)]
         [SerializeField]
-        private float sideDistance;
+        private float sideDistance = KaijuObstacleAvoidanceMovement.DefaultSideDistance;
         
         /// <summary>
         /// The angle for rays.
@@ -78,7 +78,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #if UNITY_EDITOR
         [Tooltip("The angle for the rays.")]
 #endif
-        public float angle = 15;
+        public float angle = KaijuObstacleAvoidanceMovement.DefaultAngle;
         
         /// <summary>
         /// The height offset for the rays.
@@ -86,7 +86,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #if UNITY_EDITOR
         [Tooltip("The height offset for the rays.")]
 #endif
-        public float height = 1;
+        public float height = KaijuObstacleAvoidanceMovement.DefaultHeight;
         
         /// <summary>
         /// The horizontal shift for the side rays.
@@ -94,7 +94,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #if UNITY_EDITOR
         [Tooltip("The horizontal shift for the side rays.")]
 #endif
-        public float horizontal;
+        public float horizontal = KaijuObstacleAvoidanceMovement.DefaultHorizontal;
         
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.

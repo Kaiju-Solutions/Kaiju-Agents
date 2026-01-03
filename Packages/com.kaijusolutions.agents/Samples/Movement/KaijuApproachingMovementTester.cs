@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using KaijuSolutions.Agents.Movement;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Samples.Movement
 {
@@ -29,7 +30,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
-        private float distance = 0.1f;
+        private float distance = KaijuApproachingMovement.DefaultDistance;
         
         /// <summary>
         /// Get a description of the object.
