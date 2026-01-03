@@ -38,6 +38,15 @@ namespace KaijuSolutions.Agents.Movement
         private float weight = KaijuMovement.DefaultWeight;
         
         /// <summary>
+        /// The default behaviour for if new <see cref="KaijuMovement"/>s should clear all other current <see cref="KaijuMovement"/>s and become the only one the <see cref="KaijuAgent"/> is performing.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("The default behaviour for if new movements should clear all other current movements and become the only one the agent is performing.")]
+#endif
+        [SerializeField]
+        public bool clear = true;
+        
+        /// <summary>
         /// The default distance at which we can consider <see cref="KaijuSeekMovement"/>, <see cref="KaijuPursueMovement"/>, and <see cref="KaijuPathFollowMovement"/> behaviours done.
         /// </summary>
         public float ApproachingDistance
@@ -117,7 +126,7 @@ namespace KaijuSolutions.Agents.Movement
         private float wanderRadius = KaijuWanderMovement.DefaultRadius;
         
         /// <summary>
-        /// The coefficient to use for inverse square law separation. Zero will use linear separation.
+        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
         /// </summary>
         public float SeparationDistance
         {
@@ -126,18 +135,18 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Separation")]
-        [Tooltip("The distance to interact with other agents from.")]
+        [Tooltip("The default distance to interact with other agents from.")]
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
         private float separationDistance = KaijuSeparationMovement.DefaultDistance;
         
         /// <summary>
-        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
         /// </summary>
         public float SeparationCoefficient
         {
@@ -146,17 +155,17 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The coefficient to use for inverse square law separation. Zero will use linear separation.
+        /// The default coefficient to use for inverse square law separation. Zero will use linear separation.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The coefficient to use for inverse square law separation. Zero will use linear separation.")]
+        [Tooltip("The default coefficient to use for inverse square law separation. Zero will use linear separation.")]
 #endif
         [Min(0)]
         [SerializeField]
         private float separationCoefficient = KaijuSeparationMovement.DefaultCoefficient;
         
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The default distance from a wall the <see cref="KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
         {
@@ -165,18 +174,18 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The default distance from a wall the <see cref="KaijuAgent"/> should maintain.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Obstacle Avoidance")]
-        [Tooltip("The distance from a wall the agent should maintain.")]
+        [Tooltip("The default distance from a wall the agent should maintain.")]
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
         private float avoidance = KaijuObstacleAvoidanceMovement.DefaultAvoidance;
         
         /// <summary>
-        /// The distance for rays.
+        /// The default distance for rays.
         /// </summary>
         public float AvoidanceDistance
         {
@@ -185,17 +194,17 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance for rays.
+        /// The default distance for rays.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The distance for rays.")]
+        [Tooltip("The default distance for rays.")]
 #endif
         [Min(float.Epsilon)]
         [SerializeField]
         private float avoidanceDistance = KaijuObstacleAvoidanceMovement.DefaultDistance;
         
         /// <summary>
-        /// The distance of the side rays. Zero or less will use the <see cref="AvoidanceDistance"/>.
+        /// The default distance of the side rays. Zero or less will use the <see cref="AvoidanceDistance"/>.
         /// </summary>
         public float AvoidanceSideDistance
         {
@@ -204,66 +213,66 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance of the side rays. Zero or less will use the <see cref="AvoidanceDistance"/>.
+        /// The default distance of the side rays. Zero or less will use the <see cref="AvoidanceDistance"/>.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The distance of the side rays. Zero or less will use the distance.")]
+        [Tooltip("The default distance of the side rays. Zero or less will use the distance.")]
 #endif
         [Min(0)]
         [SerializeField]
         private float avoidanceSideDistance = KaijuObstacleAvoidanceMovement.DefaultSideDistance;
         
         /// <summary>
-        /// The angle for rays.
+        /// The default angle for rays.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The angle for the rays.")]
+        [Tooltip("The default angle for the rays.")]
 #endif
         public float avoidanceAngle = KaijuObstacleAvoidanceMovement.DefaultAngle;
         
         /// <summary>
-        /// The height offset for the rays.
+        /// The default height offset for the rays.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The height offset for the rays.")]
+        [Tooltip("The default height offset for the rays.")]
 #endif
         public float avoidanceHeight = KaijuObstacleAvoidanceMovement.DefaultHeight;
         
         /// <summary>
-        /// The horizontal shift for the side rays.
+        /// The default horizontal shift for the side rays.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The horizontal shift for the side rays.")]
+        [Tooltip("The default horizontal shift for the side rays.")]
 #endif
         public float avoidanceHorizontal = KaijuObstacleAvoidanceMovement.DefaultHorizontal;
         
         /// <summary>
-        /// A bitfield mask specifying which navigation mesh areas can be used for the path.
+        /// The default bitfield mask specifying which navigation mesh areas can be used for the path.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Path Finding")]
-        [Tooltip("A bitfield mask specifying which navigation mesh areas can be used for the path.")]
+        [Tooltip("The default bitfield mask specifying which navigation mesh areas can be used for the path.")]
 #endif
         public int areaMask = KaijuPathFollowMovement.DefaultMask;
         
         /// <summary>
-        /// The layers to use for <see cref="KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuObstacleAvoidanceMovement"/>.
+        /// The default layers to use for <see cref="KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuObstacleAvoidanceMovement"/>.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The layers to use for path following string-pulling and obstacle avoidance.")]
+        [Tooltip("The default layers to use for path following string-pulling and obstacle avoidance.")]
 #endif
         public LayerMask collisionMask = KaijuMovementConfiguration.DefaultMask;
         
         /// <summary>
-        /// How string-pulling should consider triggers.
+        /// How string-pulling should consider triggers by default.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("How string-pulling should consider triggers.")]
+        [Tooltip("How string-pulling should consider triggers by default.")]
 #endif
         public QueryTriggerInteraction collisionTriggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
-        /// The distance to automatically recalculate the path from.
+        /// The default distance to automatically recalculate the path from.
         /// </summary>
         public float PathAutoCalculateDistance
         {
@@ -272,10 +281,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance to automatically recalculate the path from.
+        /// The default distance to automatically recalculate the path from.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The distance to automatically recalculate the path from.")]
+        [Tooltip("The default distance to automatically recalculate the path from.")]
 #endif
         [Min(0)]
         [SerializeField]
