@@ -117,7 +117,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = 1) : base(agent, weight)
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             Target = target;
             Distance = distance;
@@ -130,7 +130,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = 1) : base(agent, weight)
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             Target3 = target;
             Distance = distance;
@@ -143,7 +143,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = 1) : base(agent, weight)
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             TargetGameObject = target;
             Distance = distance;
@@ -156,7 +156,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1) : base(agent, weight)
+        protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             TargetComponent = target;
             Distance = distance;
@@ -169,7 +169,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = DefaultWeight)
         {
             Target = target;
             Distance = distance;
@@ -183,7 +183,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = DefaultWeight)
         {
             Target3 = target;
             Distance = distance;
@@ -197,7 +197,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = DefaultWeight)
         {
             TargetGameObject = target;
             Distance = distance;
@@ -211,7 +211,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = DefaultWeight)
         {
             TargetComponent = target;
             Distance = distance;

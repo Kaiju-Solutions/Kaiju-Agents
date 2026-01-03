@@ -435,9 +435,14 @@ namespace KaijuSolutions.Agents
         public Vector3 Velocity3 => Velocity.Expand();
         
         /// <summary>
-        /// Get the forward direction of this <see cref="KaijuAgent"/> based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward"/>.
+        /// Get the forward direction of this <see cref="KaijuAgent"/> along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
         /// </summary>
-        public Vector3 MoveForward => Velocity == Vector2.zero ? Forward : Velocity3;
+        public Vector2 MoveForward => Velocity == Vector2.zero ? Forward : Velocity;
+        
+        /// <summary>
+        /// Get the forward direction of this <see cref="KaijuAgent"/> based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
+        /// </summary>
+        public Vector3 MoveForward3 => Velocity == Vector2.zero ? Forward3 : Velocity3;
         
         /// <summary>
         /// All movements the <see cref="KaijuAgent"/> is currently performing.

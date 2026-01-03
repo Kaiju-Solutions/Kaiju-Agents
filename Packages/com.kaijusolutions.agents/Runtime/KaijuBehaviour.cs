@@ -702,9 +702,14 @@ namespace KaijuSolutions.Agents
         public Matrix4x4 WorldToLocal => transform.worldToLocalMatrix;
         
         /// <summary>
+        /// A normalized vector representing the blue axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space along the X and Z axes.
+        /// </summary>
+        public Vector2 Forward => Forward3.Flatten();
+        
+        /// <summary>
         /// A normalized vector representing the blue axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.
         /// </summary>
-        public Vector3 Forward => transform.forward;
+        public Vector3 Forward3 => transform.forward;
         
         /// <summary>
         /// A normalized vector representing the negative blue axis of the<see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>in world space.

@@ -11,6 +11,11 @@ namespace KaijuSolutions.Agents.Movement
     public abstract class KaijuMovement
     {
         /// <summary>
+        /// The default <see cref="Weight"/> for <see cref="KaijuMovement"/>.
+        /// </summary>
+        public const float DefaultWeight = 1;
+        
+        /// <summary>
         /// Callback for this <see cref="KaijuMovement"/> starting.
         /// </summary>
         public event KaijuAction OnStarted;
@@ -64,7 +69,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuMovement([NotNull] KaijuAgent agent, float weight = 1)
+        public KaijuMovement([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
             Initialize(agent, weight);
         }
@@ -74,7 +79,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected void Initialize([NotNull] KaijuAgent agent, float weight = 1)
+        protected void Initialize([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
             Agent = agent;
             Weight = weight;

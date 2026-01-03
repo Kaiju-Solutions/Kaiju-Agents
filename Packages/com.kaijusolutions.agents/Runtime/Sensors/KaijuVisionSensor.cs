@@ -216,7 +216,7 @@ namespace KaijuSolutions.Agents.Sensors
             if (angle < 360f)
             {
                 float half = angle / 2;
-                Vector3 forward = Forward;
+                Vector3 forward = Forward3;
                 Vector3 left = Quaternion.AngleAxis(-half, Vector3.up) * forward;
                 Vector3 right = Quaternion.AngleAxis(half, Vector3.up) * forward;
                 Handles.DrawWireArc(p, Vector3.up, left, angle, distance, 0);

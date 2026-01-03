@@ -45,7 +45,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuSeparationMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
+        public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
             if (movement == null)
@@ -65,7 +65,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuSeparationMovement([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1) : base(agent, distance, identifiers, weight)
+        public KaijuSeparationMovement([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = DefaultWeight) : base(agent, distance, identifiers, weight)
         {
             Initialize(agent, distance, coefficient, identifiers, weight);
         }
@@ -78,7 +78,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        private void Initialize([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = 1)
+        private void Initialize([NotNull] KaijuAgent agent, float distance = 10, float coefficient = 0, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             Initialize(agent, distance, identifiers, weight);
             Coefficient = coefficient;

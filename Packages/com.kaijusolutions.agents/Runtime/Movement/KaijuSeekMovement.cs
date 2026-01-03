@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1)
+        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
             if (movement == null)
@@ -37,7 +37,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1)
+        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
             if (movement == null)
@@ -57,7 +57,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1)
+        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
             if (movement == null)
@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">At what distance from the target should the seek be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuSeekMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1)
+        public static KaijuSeekMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuSeekMovement movement = KaijuMovementManager.Get<KaijuSeekMovement>();
             if (movement == null)
@@ -96,7 +96,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a <see cref="KaijuSeekMovement"/>.
@@ -105,7 +105,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The position to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a <see cref="KaijuSeekMovement"/>.
@@ -114,7 +114,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Create a <see cref="KaijuSeekMovement"/>.
@@ -123,7 +123,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to seek to.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = 0.1f, float weight = 1) : base(agent, target, distance, weight) { }
+        public KaijuSeekMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
         /// Calculate the movement.

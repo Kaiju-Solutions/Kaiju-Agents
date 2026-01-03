@@ -68,7 +68,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get a <see cref="KaijuWanderMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = 1)
+        public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = DefaultWeight)
         {
             KaijuWanderMovement movement = KaijuMovementManager.Get<KaijuWanderMovement>();
             if (movement == null)
@@ -88,7 +88,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = 1) : base(agent, weight)
+        public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = 5, float radius = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Configure(agent, distance, radius);
         }
@@ -140,7 +140,7 @@ namespace KaijuSolutions.Agents.Movement
         public override Vector2 Move(Vector2 position, float delta)
         {
             // Get the center of the circle.
-            Center = Agent.MoveForward.Flatten().normalized * _distance + position;
+            Center = Agent.MoveForward * _distance + position;
             
             // Get a random angle in Radians (0 to 2PI).
             float angle = Random.Range(0f, Mathf.PI * 2);

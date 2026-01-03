@@ -269,7 +269,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector2 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector2 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -290,7 +290,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector3 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector3 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -311,7 +311,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Component target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Component target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -332,7 +332,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, GameObject target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, GameObject target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -353,7 +353,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -374,7 +374,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -395,7 +395,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -416,7 +416,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1)
+        public static KaijuPathFollowMovement Get([NotNull] KaijuAgent agent, GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             KaijuPathFollowMovement movement = KaijuMovementManager.Get<KaijuPathFollowMovement>();
             if (movement == null)
@@ -437,7 +437,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector2 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector2 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, mask, autoCalculateDistance, weight);
         }
@@ -451,7 +451,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector3 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector3 target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, mask, autoCalculateDistance, weight);
         }
@@ -465,7 +465,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, mask, autoCalculateDistance, weight);
         }
@@ -479,7 +479,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] Component target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] Component target, int mask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, mask, autoCalculateDistance, weight);
         }
@@ -493,7 +493,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, filter, autoCalculateDistance, weight);
         }
@@ -507,7 +507,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, filter, autoCalculateDistance, weight);
         }
@@ -521,7 +521,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, filter, autoCalculateDistance, weight);
         }
@@ -535,7 +535,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1) : base(agent, weight)
+        public KaijuPathFollowMovement([NotNull] KaijuAgent agent, [NotNull] Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, target, distance, filter, autoCalculateDistance, weight);
         }
@@ -549,7 +549,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -567,7 +567,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -585,7 +585,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -603,7 +603,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="mask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, int mask = NavMesh.AllAreas, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -621,7 +621,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -639,7 +639,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -657,7 +657,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;
@@ -675,7 +675,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = 1)
+        public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = 1, float weight = DefaultWeight)
         {
             AutoCalculateDistance = autoCalculateDistance;
             Distance = distance;

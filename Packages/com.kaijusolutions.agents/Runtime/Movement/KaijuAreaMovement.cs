@@ -126,7 +126,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
         /// <returns>Get an <see cref="KaijuAreaMovement"/> for the <see cref="KaijuAgent"/>.</returns>
-        public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1) : base(agent, weight)
+        public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, distance, identifiers, weight);
         }
@@ -138,7 +138,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = 1)
+        protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             base.Initialize(agent, weight);
             Distance = distance;
