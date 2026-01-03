@@ -22,7 +22,16 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {
-            return agent.Flee(this, Distance, Weight, clear);
+            return agent.Flee(transform, Distance, Weight, clear);
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Flee Movement Tester {name}";
         }
     }
 }

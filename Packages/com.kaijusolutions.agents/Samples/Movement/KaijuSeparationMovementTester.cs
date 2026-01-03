@@ -77,5 +77,14 @@ namespace KaijuSolutions.Agents.Samples.Movement
         {
             return agent.Separation(distance, coefficient, identifiers, Weight, clear);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Separation Movement Tester {name}";
+        }
     }
 }

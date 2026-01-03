@@ -62,5 +62,14 @@ namespace KaijuSolutions.Agents.Samples.Movement
         {
             return agent.Wander(distance, radius, Weight, clear);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Wander Movement Tester {name}";
+        }
     }
 }

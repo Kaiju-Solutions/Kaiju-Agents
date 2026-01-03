@@ -22,7 +22,16 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {
-            return agent.Pursue(this, Distance, Weight, clear);
+            return agent.Pursue(transform, Distance, Weight, clear);
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Pursue Movement Tester {name}";
         }
     }
 }

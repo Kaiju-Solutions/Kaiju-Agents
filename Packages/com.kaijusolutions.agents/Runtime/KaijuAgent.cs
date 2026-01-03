@@ -1613,7 +1613,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1636,7 +1636,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1659,7 +1659,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1682,7 +1682,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1705,7 +1705,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1728,7 +1728,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1751,7 +1751,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {
@@ -1774,7 +1774,7 @@ namespace KaijuSolutions.Agents
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = null, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
         {
             if (clear)
             {

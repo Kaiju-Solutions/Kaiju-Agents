@@ -19,7 +19,12 @@
 	"keywords": [
 		"Agents",
 		"AI",
-		"Artificial Intelligence"
+		"Artificial Intelligence",
+		"Steering Behaviours",
+		"Navigation",
+		"Pathfinding",
+		"Sensors",
+		"Actuators"
 	],
 	"samples": [
 		{

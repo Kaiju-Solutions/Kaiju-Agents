@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
-    public abstract class KaijuMovementTester : MonoBehaviour
+    public abstract class KaijuMovementTester : KaijuBehaviour
     {
         /// <summary>
         /// The <see cref="KaijuAgent"/>s to test the <see cref="Agents.Movement.KaijuMovement"/> of.
@@ -161,5 +161,14 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected abstract KaijuMovement Assign([NotNull] KaijuAgent agent);
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Movement Tester {name}";
+        }
     }
 }

@@ -30,5 +30,14 @@ namespace KaijuSolutions.Agents.Samples.Movement
         [Min(float.Epsilon)]
         [SerializeField]
         private float distance = 0.1f;
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Approaching Movement Tester {name}";
+        }
     }
 }

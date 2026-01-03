@@ -105,5 +105,14 @@ namespace KaijuSolutions.Agents.Samples.Movement
         {
             return agent.ObstacleAvoidance(avoidance, distance, SideDistance, angle, height, horizontal, Weight, clear);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Obstacle Avoidance Movement Tester {name}";
+        }
     }
 }
