@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Vision <see cref="KaijuSensor"/> based on transforms, allowing it to see anything. You can optionally filter objects by name to limit what is returned. While this <see cref="KaijuSensor"/> can be highly versatile, if performance is a concern, it is recommended to extend <see cref="KaijuVisionSensor{T}"/> for a specific <see href="https://docs.unity3d.com/Manual/Components.html">component</see> type you are interested in rather than using this.
+    /// <see cref="KaijuVisionSensor{T}"/> based on <see href="https://docs.unity3d.com/Manual/class-Transform.html">transforms</see>, allowing it to see anything. You can optionally filter objects by name to limit what is returned. While this <see cref="KaijuSensor"/> can be highly versatile, if performance is a concern, it is recommended to extend <see cref="KaijuVisionSensor{T}"/> for a specific <see href="https://docs.unity3d.com/Manual/Components.html">component</see> type you are interested in rather than using this.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR

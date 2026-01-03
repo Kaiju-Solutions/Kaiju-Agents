@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Vision <see cref="KaijuSensor"/> to see <see cref="KaijuAgent"/>s. By default, this is more efficient than standard vision <see cref="KaijuSensor"/>s as it accesses the cached <see cref="KaijuAgent"/>s from <see cref="KaijuAgentsManager.Agents"/>.
+    /// <see cref="KaijuVisionSensor{T}"/> to see <see cref="KaijuAgent"/>s. By default, this is more efficient than standard <see cref="KaijuVisionSensor{T}"/>s as it accesses the cached <see cref="KaijuAgent"/>s from <see cref="KaijuAgentsManager.Agents"/>.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR

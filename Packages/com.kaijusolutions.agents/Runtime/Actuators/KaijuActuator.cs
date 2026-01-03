@@ -96,17 +96,17 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// If the <see cref="KaijuActuator"/> is currently running.
         /// </summary>
-        private bool _isRunning;
+        public bool IsRunning { get; private set; }
         
         /// <summary>
         /// The last state of the <see cref="KaijuActuator"/>.
         /// </summary>
-        private KaijuActuatorState _state = KaijuActuatorState.Done;
+        public KaijuActuatorState State { get; private set; } = KaijuActuatorState.Done;
         
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (Agent == null)
             {
@@ -120,8 +120,8 @@ namespace KaijuSolutions.Agents.Actuators
             }
             
             _shouldRun = false;
-            _isRunning = false;
-            _state = KaijuActuatorState.Done;
+            IsRunning = false;
+            State = KaijuActuatorState.Done;
             Cleanup();
             Agent.RegisterActuator(this);
             OnEnabled?.Invoke();
@@ -131,7 +131,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (Agent != null)
             {
@@ -139,8 +139,8 @@ namespace KaijuSolutions.Agents.Actuators
             }
             
             _shouldRun = false;
-            _isRunning = false;
-            _state = KaijuActuatorState.Done;
+            IsRunning = false;
+            State = KaijuActuatorState.Done;
             Cleanup();
             OnDisabled?.Invoke();
             OnDisabledGlobal?.Invoke(this);
@@ -163,7 +163,7 @@ namespace KaijuSolutions.Agents.Actuators
             if (!_shouldRun)
             {
                 // This should never happen, but to be safe, ensure this is not flagged.
-                _isRunning = false;
+                IsRunning = false;
                 return;
             }
             
@@ -171,16 +171,16 @@ namespace KaijuSolutions.Agents.Actuators
             _shouldRun = false;
             
             // If this was started but did not yet finish, indicate we have interrupted its execution.
-            if (!_isRunning)
+            if (!IsRunning)
             {
                 return;
             }
             
-            _isRunning = false;
+            IsRunning = false;
             Agent?.ActuatorInterrupted(this);
             OnInterrupted?.Invoke();
             OnInterruptedGlobal?.Invoke(this);
-            _state = KaijuActuatorState.Done;
+            State = KaijuActuatorState.Done;
         }
         
         /// <summary>
@@ -192,13 +192,13 @@ namespace KaijuSolutions.Agents.Actuators
             if (!_shouldRun)
             {
                 // If this was stopped externally while it was still executing, send events for why it is done.
-                if (!_isRunning)
+                if (!IsRunning)
                 {
                     return ;
                 }
                 
-                _isRunning = false;
-                switch (_state)
+                IsRunning = false;
+                switch (State)
                 {
                     case KaijuActuatorState.Done:
                     default:
@@ -220,19 +220,19 @@ namespace KaijuSolutions.Agents.Actuators
             }
             
             // If this is the first step for it, indicate so.
-            if (!_isRunning)
+            if (!IsRunning)
             {
-                _isRunning = true;
+                IsRunning = true;
                 Agent?.ActuatorStarted(this);
                 OnStarted?.Invoke();
                 OnStartedGlobal?.Invoke(this);
             }
             
-            // Run the <see cref="KaijuActuator"/>.
-            _state = Run();
+            // Run this.
+            State = Run();
             
             // Nothing else to do if still executing.
-            if (_state == KaijuActuatorState.Executing)
+            if (State == KaijuActuatorState.Executing)
             {
                 Agent?.ActuatorExecuting(this);
                 OnExecuting?.Invoke();
@@ -242,10 +242,10 @@ namespace KaijuSolutions.Agents.Actuators
             
             // Otherwise, this has finished, so stop for the next update.
             _shouldRun = false;
-            _isRunning = false;
+            IsRunning = false;
             
             // Handle if it was done or failed.
-            if (_state == KaijuActuatorState.Done)
+            if (State == KaijuActuatorState.Done)
             {
                 Agent?.ActuatorDone(this);
                 OnDone?.Invoke();

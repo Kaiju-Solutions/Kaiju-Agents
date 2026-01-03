@@ -397,7 +397,6 @@ namespace KaijuSolutions.Agents
         /// How string-pulling should consider triggers.
         /// </summary>
 #if UNITY_EDITOR
-        [Header("Navigation")]
         [Tooltip("How string-pulling should consider triggers.")]
 #endif
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;

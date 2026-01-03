@@ -59,7 +59,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (Agent == null)
             {
@@ -81,7 +81,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (Agent != null)
             {
