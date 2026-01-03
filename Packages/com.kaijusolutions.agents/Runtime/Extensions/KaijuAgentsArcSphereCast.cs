@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Extensions
@@ -20,7 +21,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector2 position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector2 position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -34,7 +35,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector2 position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector2 position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -48,7 +49,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector2 position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector2 position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -62,7 +63,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector2 position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector2 position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -76,7 +77,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector2 position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector2 position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.Expand().ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -90,7 +91,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector3 position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector3 position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -104,7 +105,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector3 position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int ArcSphereCast(this Vector3 position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             switch (hits.Length)
             {
@@ -164,7 +165,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector3 position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector3 position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -178,7 +179,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector3 position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector3 position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -192,7 +193,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast(this Vector3 position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast(this Vector3 position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -206,7 +207,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -220,7 +221,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -234,7 +235,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -248,7 +249,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -262,7 +263,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -275,7 +276,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Transform position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(position.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Transform position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.position.ArcSphereCast(position.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -289,7 +290,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Component position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -303,7 +304,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Component position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -317,7 +318,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Component position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -331,7 +332,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Component position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -345,7 +346,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this Component position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -358,7 +359,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this Component position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int ArcSphereCast([NotNull] this Component position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             Transform t = position.transform;
             return t.position.ArcSphereCast(t.forward, radius, hits, angle, distance, mask, triggers);
@@ -376,7 +377,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this GameObject position, Vector2 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.Expand(), radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -390,7 +391,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this GameObject position, Vector3 direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -404,7 +405,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] Transform direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -418,7 +419,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] Component direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -432,7 +433,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
+        public static int ArcSphereCast([NotNull] this GameObject position, [NotNull] GameObject direction, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => position.transform.position.ArcSphereCast(direction.transform.forward, radius, hits, angle, distance, mask, triggers);
         
         /// <summary>
         /// Perform multiple sphere casts given by the length of the hits array evenly spread across the angle given.
@@ -445,7 +446,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="mask">The optional layer mask.</param>
         /// <param name="triggers">How the casts should handle hitting triggers.</param>
         /// <returns>The number of rays which reported a hit, which will match the number of non-null entries in the hit array.</returns>
-        public static int ArcSphereCast([NotNull] this GameObject position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int ArcSphereCast([NotNull] this GameObject position, float radius, [NotNull] RaycastHit?[] hits, float angle = 360f, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             Transform t = position.transform;
             return t.position.ArcSphereCast(t.forward, radius, hits, angle, distance, mask, triggers);

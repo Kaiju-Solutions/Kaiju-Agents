@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -56,7 +57,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -69,7 +70,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -82,7 +83,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -95,7 +96,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
 
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -108,7 +109,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -121,7 +122,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -134,7 +135,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -147,7 +148,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector2 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
 
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -160,7 +161,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -173,7 +174,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -186,7 +187,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -199,7 +200,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
 
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -212,7 +213,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -225,7 +226,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -238,7 +239,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -251,7 +252,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector2 start, Vector3 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.Expand().FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
 
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -264,7 +265,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), ref path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -277,7 +278,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -290,7 +291,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector2 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector2 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), path, mask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -303,7 +304,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector2 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector2 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal.Expand(), path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -316,7 +317,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             // Get the path in all dimensions.
             int count = start.FindPath(goal, ref _points, mask, radius, sightMask, triggers);
@@ -347,7 +348,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -360,7 +361,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector2> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             // Use the cached array.
             path.Clear();
@@ -391,7 +392,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector2> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -404,7 +405,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             // Nothing to do if these are the same points.
             if (start == goal)
@@ -548,7 +549,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, ref path, filter.areaMask, radius, sightMask, triggers);
         
         /// <summary>
         /// Find a path from the starting to the end position.
@@ -561,7 +562,7 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector3> path, int mask = NavMesh.AllAreas, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
         {
             // Use the cached array.
             path.Clear();
@@ -592,6 +593,6 @@ namespace KaijuSolutions.Agents.Extensions
         /// <param name="sightMask">The optional layer mask for path string-pulling checks.</param>
         /// <param name="triggers">How the path string-pulling checks should handle hitting triggers.</param>
         /// <returns>The number of points along the found path.</returns>
-        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
+        public static int FindPath(this Vector3 start, Vector3 goal, List<Vector3> path, NavMeshQueryFilter filter, float? radius = null, int sightMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal) => start.FindPath(goal, path, filter.areaMask, radius, sightMask, triggers);
     }
 }

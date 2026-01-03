@@ -375,31 +375,23 @@ namespace KaijuSolutions.Agents
         public IReadOnlyList<uint> Identifiers => identifiers;
         
         /// <summary>
-        /// Identifiers for this <see cref="KaijuAgent"/>. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// The default movement values for this <see cref="KaijuAgent"/>.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Configuration")]
+        [Tooltip("The default movement values for this agent.")]
+#endif
+        [SerializeField]
+        public KaijuMovementConfiguration configuration;
+        
+        /// <summary>
+        /// Identifiers for this <see cref="KaijuAgent"/>. Note that modifying this at runtime via the inspector will not trigger the callback.
+        /// </summary>
+#if UNITY_EDITOR
         [Tooltip("Identifiers for this agent. Note that modifying this at runtime via the inspector will not trigger the callback.")]
 #endif
         [SerializeField]
         private List<uint> identifiers = new();
-
-        /// <summary>
-        /// The layers to use for <see cref="KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuObstacleAvoidanceMovement"/>.
-        /// </summary>
-#if UNITY_EDITOR
-        [Header("Navigation")]
-        [Tooltip("The layers to use for navigation string-pulling and obstacle avoidance.")]
-#endif
-        public LayerMask mask = -5;
-        
-        /// <summary>
-        /// How string-pulling should consider triggers.
-        /// </summary>
-#if UNITY_EDITOR
-        [Tooltip("How string-pulling should consider triggers.")]
-#endif
-        public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
         /// The manual control vector for the <see cref="KaijuAgent"/>'s movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
@@ -1616,16 +1608,18 @@ namespace KaijuSolutions.Agents
         /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1639,16 +1633,18 @@ namespace KaijuSolutions.Agents
         /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1662,16 +1658,18 @@ namespace KaijuSolutions.Agents
         /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1685,16 +1683,18 @@ namespace KaijuSolutions.Agents
         /// <param name="areaMask">A bitfield mask specifying which navigation mesh areas can be used for the path.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1708,16 +1708,18 @@ namespace KaijuSolutions.Agents
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1731,16 +1733,18 @@ namespace KaijuSolutions.Agents
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1754,16 +1758,18 @@ namespace KaijuSolutions.Agents
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1777,16 +1783,18 @@ namespace KaijuSolutions.Agents
         /// <param name="filter">Filter for the navigation calculations.</param>
         /// <param name="distance">The distance from the target to consider this movement done.</param>
         /// <param name="autoCalculateDistance">The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</param>
+        /// <param name="collisionMask">The collision mask for string-pulling line-of-sight checks.</param>
+        /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
         {
             if (clear)
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, weight);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);

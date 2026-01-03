@@ -100,6 +100,11 @@ namespace KaijuSolutions.Agents.Movement
         public float Horizontal;
         
         /// <summary>
+        /// While layers the rays should hit.
+        /// </summary>
+        public LayerMask Mask = KaijuMovementConfiguration.DefaultMask;
+        
+        /// <summary>
         /// The points hit by the rays.
         /// </summary>
         public IReadOnlyList<RaycastHit> Hits => _hits;
@@ -195,6 +200,7 @@ namespace KaijuSolutions.Agents.Movement
             Angle = 0;
             Height = 0;
             Horizontal = 0;
+            Mask = -5;
             _hits.Clear();
             _misses.Clear();
         }
@@ -267,7 +273,7 @@ namespace KaijuSolutions.Agents.Movement
         private void Raycast(Vector3 start, Vector3 direction, float distance)
         {
             Vector3 end = direction.normalized * distance + start;
-            if (Physics.Linecast(start, end, out RaycastHit hit, Agent.mask))
+            if (Physics.Linecast(start, end, out RaycastHit hit, Mask))
             {
                 _hits.Add(hit);
             }

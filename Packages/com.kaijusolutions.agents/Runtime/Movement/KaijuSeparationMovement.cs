@@ -34,7 +34,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The coefficient to use for inverse square law separation. Zero will use linear separation.
         /// </summary>
-        private float _coefficient = float.MaxValue;
+        private float _coefficient;
         
         /// <summary>
         /// The <see cref="KaijuAgent"/>s currently detected this movement is moving in relation to.

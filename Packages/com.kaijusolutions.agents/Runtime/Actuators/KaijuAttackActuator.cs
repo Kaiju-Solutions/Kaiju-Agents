@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Actuators
@@ -78,7 +79,7 @@ namespace KaijuSolutions.Agents.Actuators
 #if UNITY_EDITOR
         [Tooltip("The layers to use for ray casting.")]
 #endif
-        public LayerMask mask = -5;
+        public LayerMask mask = KaijuMovementConfiguration.DefaultMask;
         
         /// <summary>
         /// How string-pulling should consider triggers.

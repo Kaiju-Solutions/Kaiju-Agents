@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace KaijuSolutions.Agents.Samples.Movement
 {
@@ -41,8 +40,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #if UNITY_EDITOR
         [Tooltip("A bitfield mask specifying which navigation mesh areas can be used for the path.")]
 #endif
-        [SerializeField]
-        private int mask = KaijuPathFollowMovement.DefaultMask;
+        public LayerMask mask = KaijuPathFollowMovement.DefaultMask;
         
         /// <summary>
         /// The distance to automatically recalculate the path from.
@@ -64,13 +62,23 @@ namespace KaijuSolutions.Agents.Samples.Movement
         private float autoCalculateDistance = KaijuPathFollowMovement.DefaultAutoCalculateDistance;
         
         /// <summary>
+        /// The collision mask for string-pulling line-of-sight checks.
+        /// </summary>
+        public int collisionMask = KaijuMovementConfiguration.DefaultMask;
+        
+        /// <summary>
+        /// How line-of-sight checks should handle triggers.
+        /// </summary>
+        public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
+        
+        /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {
-            return agent.PathFollow(transform, mask, distance, autoCalculateDistance, Weight, clear);
+            return agent.PathFollow(transform, mask, distance, autoCalculateDistance, collisionMask, triggers, Weight, clear);
         }
         
         /// <summary>

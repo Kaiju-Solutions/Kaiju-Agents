@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
+using KaijuSolutions.Agents.Movement;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -99,7 +100,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("What layers to collide with on the line-of-sight checks.")]
 #endif
-        public LayerMask mask = -5;
+        public LayerMask mask = KaijuMovementConfiguration.DefaultMask;
         
         /// <summary>
         /// How line-of-sight checks should handle hitting triggers.
