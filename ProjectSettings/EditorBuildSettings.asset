@@ -4,19 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Kaiju Multiplayer Engine - Standalone.unity
-    guid: 173844b028a997649a78f187185065d2
-  - enabled: 0
-    path: Assets/Kaiju Multiplayer Engine - Netcode for GameObjects.unity
-    guid: 295036934f800ea439012cfdee6929d7
-  - enabled: 0
-    path: Assets/Kaiju Multiplayer Engine - FishNet.unity
-    guid: ca169b023fdab7149a21c01d527f41cc
-  - enabled: 0
-    path: Assets/Kaiju Multiplayer Engine - PurrNet.unity
-    guid: a7a48e43ef584e248b358acaebe05d04
+  m_Scenes: []
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ac2e9bec2e581d54eb5002277b387897, type: 2}
   m_UseUCBPForAssetBundles: 0

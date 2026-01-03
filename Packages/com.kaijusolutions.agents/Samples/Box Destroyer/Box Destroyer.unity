@@ -241,6 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89382300}
   - component: {fileID: 89382299}
+  - component: {fileID: 89382301}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -314,6 +315,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &89382301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89382297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a66e7839c8843bd977d82b29c900f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Utilities.KaijuDeveloperUI
+  width: 200
 --- !u!1 &89395234
 GameObject:
   m_ObjectHideFlags: 0
