@@ -3043,7 +3043,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -3100,8 +3100,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 89382300}
-  - {fileID: 1884755501}
   - {fileID: 2041853408}
+  - {fileID: 1884755501}
   - {fileID: 2120904305}
   - {fileID: 63294175}
   - {fileID: 1411884019}

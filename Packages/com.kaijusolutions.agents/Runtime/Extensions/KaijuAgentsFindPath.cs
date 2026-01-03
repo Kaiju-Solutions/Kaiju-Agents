@@ -418,10 +418,22 @@ namespace KaijuSolutions.Agents.Extensions
                 return 1;
             }
             
-            // Both the method, and a direct path in the case of a failure, require at least two points.
+            // All other methods below, require at least two points.
             if (path.Length < 2)
             {
                 Array.Resize(ref path, 2);
+            }
+            
+            // If we have a direction line of sight to the goal, just move there instead of finding a larger path.
+            if (radius.HasValue)
+            {
+                Vector3 offset = new(0, radius.Value, 0);
+                if ((start + offset).HasSight(goal + offset, out RaycastHit _, radius.Value, sightMask, triggers))
+                {
+                    path[0] = start;
+                    path[1] = goal;
+                    return 2;
+                }
             }
             
             // Get the closest point on the navigable areas. If failed, likely for there being no navigation meshes, just get the start and goal points.
