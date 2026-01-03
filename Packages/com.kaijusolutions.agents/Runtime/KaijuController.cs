@@ -229,21 +229,21 @@ namespace KaijuSolutions.Agents
         protected virtual void OnDestroyed() { }
         
         /// <summary>
-        /// Callback for when a movement has started.
+        /// Callback for when a <see cref="KaijuMovement"/> has started.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementStarted(KaijuMovement movement) { }
         
         /// <summary>
-        /// Callback for when a movement has stopped.
+        /// Callback for when a <see cref="KaijuMovement"/> has stopped.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementStopped(KaijuMovement movement) { }
         
         /// <summary>
-        /// Callback for when a movement has been performed.
+        /// Callback for when a <see cref="KaijuMovement"/> has been performed.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementPerformed(KaijuMovement movement) { }
         
         /// <summary>

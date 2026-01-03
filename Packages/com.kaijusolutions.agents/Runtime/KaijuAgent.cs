@@ -115,17 +115,17 @@ namespace KaijuSolutions.Agents
         public static event KaijuAgentAction OnDestroyedGlobal;
         
         /// <summary>
-        /// Callback for when a movement has started.
+        /// Callback for when a <see cref="KaijuMovement"/> has started.
         /// </summary>
         public event KaijuMovementAction OnMovementStarted;
         
         /// <summary>
-        /// Callback for when a movement has stopped.
+        /// Callback for when a <see cref="KaijuMovement"/> has stopped.
         /// </summary>
         public event KaijuMovementAction OnMovementStopped;
         
         /// <summary>
-        /// Callback for when a movement has been performed.
+        /// Callback for when a <see cref="KaijuMovement"/> has been performed.
         /// </summary>
         public event KaijuMovementAction OnMovementPerformed;
         
@@ -1899,7 +1899,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Get all <see cref="KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="sensors">The set of <see cref="KaijuSensor"/>s to add the executed <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="sensors">The set of <see cref="KaijuSensor"/>s to add the found <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
         /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
         /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
         /// <returns>The number of <see cref="KaijuSensor"/>s added to the set.</returns>
@@ -1912,6 +1912,63 @@ namespace KaijuSolutions.Agents
             foreach (KaijuSensor sensor in _sensors)
             {
                 if ((automatic || !sensor.automatic) && sensor.GetType() == type && sensor is T cast && sensors.Add(cast))
+                {
+                    count++;
+                }
+            }
+            
+            return count;
+        }
+        
+        /// <summary>
+        /// Get a <see cref="KaijuActuator"/> of a given type.
+        /// </summary>
+        /// <param name="ignore">The optional set of <see cref="KaijuActuator"/>s to ignore from this search, meaning only a <see cref="KaijuActuator"/> not in this set can be returned.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
+        /// <returns>The first <see cref="KaijuActuator"/> found of the given type or NULL if there are none found.</returns>
+        public T GetActuator<T>(ISet<T> ignore = null) where T : KaijuActuator
+        {
+            // Use an explicit type to only run exact matches.
+            Type type = typeof(T);
+            
+            foreach (KaijuActuator actuator in _actuators)
+            {
+                if (actuator.GetType() == type && actuator is T cast && (ignore == null || !ignore.Contains(cast)))
+                {
+                    return cast;
+                }
+            }
+            
+            return null;
+        }
+        
+        /// <summary>
+        /// Get all <see cref="KaijuActuator"/> of a given type.
+        /// </summary>
+        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
+        /// <returns>The set of <see cref="KaijuActuator"/>s found.</returns>
+        public HashSet<T> GetActuators<T>() where T : KaijuActuator
+        {
+            HashSet<T> actuators = new();
+            GetActuators(actuators);
+            return actuators;
+        }
+        
+        /// <summary>
+        /// Get all <see cref="KaijuActuator"/> of a given type.
+        /// </summary>
+        /// <param name="actuators">The set of <see cref="KaijuActuator"/>s to add the found <see cref="KaijuActuator"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuActuator"/>s added to the set.</returns>
+        public int GetActuators<T>([NotNull] ISet<T> actuators) where T : KaijuActuator
+        {
+            // Use an explicit type to only run exact matches.
+            Type type = typeof(T);
+            int count = 0;
+            
+            foreach (KaijuActuator actuator in _actuators)
+            {
+                if (actuator.GetType() == type && actuator is T cast && actuators.Add(cast))
                 {
                     count++;
                 }
@@ -1981,7 +2038,6 @@ namespace KaijuSolutions.Agents
         {
             foreach (KaijuActuator actuator in _actuators)
             {
-                // Invoke any <see cref="KaijuActuator"/>s which have finished.
                 actuator.Handle();
             }
         }

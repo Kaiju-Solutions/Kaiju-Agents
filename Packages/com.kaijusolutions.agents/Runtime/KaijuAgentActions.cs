@@ -25,14 +25,14 @@ namespace KaijuSolutions.Agents
     /// <summary>
     /// An action for a movement.
     /// </summary>
-    /// <param name="movement">The movement.</param>
+    /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
     public delegate void KaijuMovementAction([NotNull] KaijuMovement movement);
     
     /// <summary>
     /// An action for an <see cref="KaijuAgent"/> and a movement.
     /// </summary>
     /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
-    /// <param name="movement">The movement.</param>
+    /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
     public delegate void KaijuAgentMovementAction([NotNull] KaijuAgent agent, [NotNull] KaijuMovement movement);
     
     /// <summary>

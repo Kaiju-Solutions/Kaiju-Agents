@@ -208,19 +208,19 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Global callback for a <see cref="KaijuMovement"/> starting.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementStarted(KaijuMovement movement) { }
         
         /// <summary>
         /// Global callback for a <see cref="KaijuMovement"/> stopping.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementStopped(KaijuMovement movement) { }
         
         /// <summary>
         /// Global callback for a <see cref="KaijuMovement"/> being performed.
         /// </summary>
-        /// <param name="movement">The movement.</param>
+        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
         protected virtual void OnMovementPerformed(KaijuMovement movement) { }
         
         /// <summary>

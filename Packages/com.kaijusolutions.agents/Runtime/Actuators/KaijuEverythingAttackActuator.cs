@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Actuators
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
-    [AddComponentMenu("Kaiju Solutions/Agents/Actuators/Kaiju Everything Attack Sensor", 7)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Actuators/Kaiju Everything Attack Actuator", 7)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
@@ -74,10 +74,11 @@ namespace KaijuSolutions.Agents.Actuators
         /// Handle the hit logic.
         /// </summary>
         /// <param name="hit">The hit details.</param>
+        /// <param name="t">The transform currently being checked. This may not be the same as the one in the hit parameter in the case of checking parents.</param>
         /// <returns>If the attack was a success or not.</returns>
-        protected override bool HandleHit(RaycastHit hit)
+        protected override bool HandleHit(RaycastHit hit, [NotNull] Transform t)
         {
-            if (!Matched(hit.transform.name))
+            if (!Matched(t.name))
             {
                 return false;
             }
@@ -85,11 +86,11 @@ namespace KaijuSolutions.Agents.Actuators
             // Disable or destroy the target based on the setting.
             if (disableHits)
             {
-                transform.gameObject.SetActive(false);
+                t.gameObject.SetActive(false);
             }
             else
             {
-                Destroy(transform.gameObject);
+                Destroy(t.gameObject);
             }
             
             return true;

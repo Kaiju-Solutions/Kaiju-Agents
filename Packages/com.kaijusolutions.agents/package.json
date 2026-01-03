@@ -29,7 +29,7 @@
 	"samples": [
 		{
 			"displayName": "Materials",
-			"description": "Contains materials used in the other samples.",
+			"description": "Contains materials used in the other samples.\n\nIf materials appear pink, from the top menu, go to \"Window > Rendering > Render Pipeline Converter\", choose \"Built-in to URP\" or \"Built-in to HDRP\", select all materials, click \"Initialize Converters\", and lastly click \"Convert Assets\".",
 			"path": "Samples~/Materials"
 		},
 		{

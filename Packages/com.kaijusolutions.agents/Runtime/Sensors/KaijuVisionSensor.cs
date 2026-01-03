@@ -205,7 +205,10 @@ namespace KaijuSolutions.Agents.Sensors
             
             foreach (T observed in _observed)
             {
-                Handles.DrawLine(p, observed.transform.position + y);
+                if (observed)
+                {
+                    Handles.DrawLine(p, observed.transform.position + y);
+                }
             }
             
             p = new(p.x, position.y, p.z);

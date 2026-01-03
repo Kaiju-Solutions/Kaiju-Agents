@@ -89,9 +89,18 @@ namespace KaijuSolutions.Agents.Actuators
         public QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal;
         
         /// <summary>
+        /// Often, a child collider may be hit. This will continue to perform the <see cref="HandleHit"/> method against all parent objects to handle this case.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Often, a child collider may be hit. This will continue to perform the handle hit method against all parent objects to handle this case.")]
+#endif
+        public bool checkParents = true;
+        
+        /// <summary>
         /// The <see href="https://docs.unity3d.com/ScriptReference/LineRenderer.html">line renderer</see> for visualizing the attacks.
         /// </summary>
 #if UNITY_EDITOR
+        [Header("Visualizations")]
         [Tooltip("The line renderer for visualizing the attacks.")]
 #endif
         [SerializeField]
@@ -180,7 +189,23 @@ namespace KaijuSolutions.Agents.Actuators
             {
                 LastPoint = hit.point;
                 LastTarget = hit.transform;
-                state = HandleHit(hit) ? KaijuActuatorState.Done : KaijuActuatorState.Failed;
+                state = HandleHit(hit, LastTarget) ? KaijuActuatorState.Done : KaijuActuatorState.Failed;
+                
+                // If it failed on this, check parents.
+                if (state == KaijuActuatorState.Failed && checkParents)
+                {
+                    Transform parent = LastTarget.parent;
+                    while (parent)
+                    {
+                        state = HandleHit(hit, parent) ? KaijuActuatorState.Done : KaijuActuatorState.Failed;
+                        if (state == KaijuActuatorState.Done)
+                        {
+                            break;
+                        }
+                        
+                        parent = parent.parent;
+                    }
+                }
             }
             
             // Set the visuals if there are any.
@@ -230,8 +255,9 @@ namespace KaijuSolutions.Agents.Actuators
         /// Handle the hit logic.
         /// </summary>
         /// <param name="hit">The hit details.</param>
+        /// <param name="t">The transform currently being checked. This may not be the same as the one in the hit parameter in the case of checking parents.</param>
         /// <returns>If the attack was a success or not.</returns>
-        protected abstract bool HandleHit(RaycastHit hit);
+        protected abstract bool HandleHit(RaycastHit hit, [NotNull] Transform t);
         
         /// <summary>
         /// Perform any needed resetting of the <see cref="KaijuActuator"/>.
