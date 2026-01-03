@@ -5,7 +5,8 @@
 	"unity": "6000.3",
 	"description": "Rapidly prototype AI agents.",
 	"dependencies": {
-		"com.unity.modules.ai": "latest"
+		"com.unity.modules.ai": "latest",
+		"com.unity.inputsystem": "1.17.0"
 	},
 	"author": {
 		"name": "Kaiju Solutions Inc.",
@@ -36,6 +37,16 @@
 			"displayName": "Movement",
 			"description": "Contains scenes showing off agent movements.\n\nYou must also import the \"Materials\" sample for this to work.",
 			"path": "Samples~/Movement"
+		},
+		{
+			"displayName": "Keyboard",
+			"description": "Contains a basic sample showing keyboard agent controls. Move the agent using WASD or the arrow keys.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Keyboard"
+		},
+		{
+			"displayName": "Box Destroyer",
+			"description": "Demonstrates an agent which roams until it detects a box, after which it will approach and destroy the box.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Box Destroyer"
 		}
 	]
 }

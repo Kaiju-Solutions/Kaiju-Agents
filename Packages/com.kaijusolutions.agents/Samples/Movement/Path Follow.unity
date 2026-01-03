@@ -387,7 +387,6 @@ GameObject:
   m_Component:
   - component: {fileID: 89382300}
   - component: {fileID: 89382299}
-  - component: {fileID: 89382298}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -395,14 +394,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!81 &89382298
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89382297}
-  m_Enabled: 1
 --- !u!20 &89382299
 Camera:
   m_ObjectHideFlags: 0
@@ -2706,11 +2697,8 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
+  configuration: {fileID: 0}
   identifiers: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 51
-  triggers: 0
   radius: 0.5
 --- !u!4 &1884755501
 Transform:
@@ -2984,8 +2972,12 @@ MonoBehaviour:
   weight: 1
   clear: 1
   distance: 0.1
-  mask: -1
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   autoCalculateDistance: 1
+  collisionMask: -5
+  triggers: 0
 --- !u!23 &2041853406
 MeshRenderer:
   m_ObjectHideFlags: 0

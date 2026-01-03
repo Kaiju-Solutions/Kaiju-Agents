@@ -1,0 +1,16 @@
+﻿{
+  "name": "com.kaijusolutions.agents.samples.keyboard",
+  "references": [
+    "com.kaijusolutions.agents",
+    "Unity.InputSystem"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
