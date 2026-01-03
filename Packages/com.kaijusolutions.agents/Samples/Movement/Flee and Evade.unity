@@ -432,11 +432,8 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
+  configuration: {fileID: 0}
   identifiers: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 51
-  triggers: 0
   radius: 0.5
 --- !u!1 &574302612
 GameObject:
@@ -471,11 +468,8 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
+  configuration: {fileID: 0}
   identifiers: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 51
-  triggers: 0
   radius: 0.5
 --- !u!4 &574302614
 Transform:

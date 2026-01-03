@@ -47,6 +47,10 @@
 			"displayName": "Box Destroyer",
 			"description": "Demonstrates an agent which roams until it detects a box, after which it will approach and destroy the box.\n\nYou must also import the \"Materials\" sample for this to work.",
 			"path": "Samples~/Box Destroyer"
+		},{
+			"displayName": "Exercise 1 - Cleaner",
+			"description": "An exercise to get you familiar with Kaiju Agents. You will need to complete an agent to keep floor tiles clean.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Exercise 1 - Cleaner"
 		}
 	]
 }

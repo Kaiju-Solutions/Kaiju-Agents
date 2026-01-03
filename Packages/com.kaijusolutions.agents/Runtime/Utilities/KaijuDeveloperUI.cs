@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace KaijuSolutions.Agents.Utilities
 {
     /// <summary>
-    /// Helpful developer UI.
+    /// Helpful developer UI. This displays buttons to select cameras on the left side and buttons to select scenes on the right side.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 4)]
@@ -139,17 +139,37 @@ namespace KaijuSolutions.Agents.Utilities
             current = Padding;
             float scenesWidth = Mathf.Min(width, max - camerasWidth);
             float x = screenWidth - scenesWidth - Padding;
+            
+            // Display a reset button for the current scene first.
+            Scene active = SceneManager.GetActiveScene();
+            if (GUI.Button(new(x, current, scenesWidth, Height), "Reset"))
+            {
+#if UNITY_EDITOR
+                SceneManager.LoadScene(active.path);
+#else
+                SceneManager.LoadScene(active.buildIndex);
+#endif
+            }
+            
             int count = SceneManager.sceneCountInBuildSettings;
             for (int i = 0; i < count; i++)
             {
-                if (GUI.Button(new(x, current, scenesWidth, Height),  SceneManager.GetSceneByBuildIndex(i).name))
-                {
-                    SceneManager.LoadScene(i);
-                }
-                
                 if (current + Padding + Height >= screenHeight)
                 {
                     return;
+                }
+                
+                Scene scene = SceneManager.GetSceneByBuildIndex(i);
+                if (active == scene)
+                {
+                    continue;
+                }
+                
+                current += Padding + Height;
+                
+                if (GUI.Button(new(x, current, scenesWidth, Height), scene.name))
+                {
+                    SceneManager.LoadScene(i);
                 }
             }
         }

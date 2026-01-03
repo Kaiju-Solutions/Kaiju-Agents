@@ -352,14 +352,14 @@ namespace KaijuSolutions.Agents
         /// <returns>A cached <see cref="KaijuAgent"/> if one is found, otherwise NULL.</returns>
         public static KaijuAgent GetCached<T>() where T : KaijuAgent
         {
-            // Nothing to do if no cached <see cref="KaijuAgent"/>s.
+            // Nothing to do if no cached agents.
             Type type = typeof(T);
             if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
             {
                 return null;
             }
             
-            // Get the cached <see cref="KaijuAgent"/>.
+            // Get the cached agent.
             KaijuAgent agent = set.First();
             set.Remove(agent);
             
@@ -562,22 +562,22 @@ namespace KaijuSolutions.Agents
         {
             float delta = Time.deltaTime;
             
-            // All <see cref="KaijuAgent"/>s calculate their velocity.
+            // All agents calculate their velocity.
             foreach (KaijuAgent agent in AllAgents)
             {
                 agent.CalculateVelocity(delta);
             }
             
-            // Step all physics <see cref="KaijuAgent"/>s.
+            // Step all physics agents.
             Move(PhysicsAgents, delta);
             
-            // Run automatic <see cref="KaijuSensor"/>s.
+            // Run automatic sensors.
             foreach (KaijuAgent agent in AllAgents)
             {
                 agent.SenseAutomatic();
             }
             
-            // Run <see cref="KaijuActuator"/>s.
+            // Run actuators.
             foreach (KaijuAgent agent in AllAgents)
             {
                 agent.Act();
