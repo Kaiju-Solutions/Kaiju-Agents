@@ -1188,14 +1188,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
-            
-            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
+
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1210,14 +1211,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1232,14 +1234,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1254,14 +1257,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The seek movement to the target.</returns>
-        public KaijuSeekMovement Seek([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuSeekMovement Seek([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuSeekMovement movement = KaijuSeekMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1276,14 +1280,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue(Vector2 target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1298,14 +1303,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue(Vector3 target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1320,14 +1326,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue([NotNull] GameObject target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1342,14 +1349,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuPursueMovement Pursue([NotNull] Component target, float distance = 0.1f, float weight = 1, bool clear = true)
+        public KaijuPursueMovement Pursue([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPursueMovement movement = KaijuPursueMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1364,14 +1372,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1386,14 +1395,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1408,14 +1418,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1430,14 +1441,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The flee movement to the target.</returns>
-        public KaijuFleeMovement Flee([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuFleeMovement Flee([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuFleeMovement movement = KaijuFleeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1452,36 +1464,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The pursue movement to the target.</returns>
-        public KaijuEvadeMovement Evade(Vector2 target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
-            _movements.Add(movement);
-            movement.Started();
-            OnMovementStarted?.Invoke(movement);
-            return movement;
-        }
-        
-        /// <summary>
-        /// Evade from a target.
-        /// </summary>
-        /// <param name="target">The target.</param>
-        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
-        /// <param name="weight">The weight of this movement.</param>
-        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade(Vector3 target, float distance = 20, float weight = 1, bool clear = true)
-        {
-            if (clear)
-            {
-                Stop();
-            }
-            
-            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1496,14 +1487,15 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade([NotNull] GameObject target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1518,14 +1510,38 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The evade movement to the target.</returns>
-        public KaijuEvadeMovement Evade([NotNull] Component target, float distance = 20, float weight = 1, bool clear = true)
+        public KaijuEvadeMovement Evade([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, distance, weight);
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
+            _movements.Add(movement);
+            movement.Started();
+            OnMovementStarted?.Invoke(movement);
+            return movement;
+        }
+        
+        /// <summary>
+        /// Evade from a target.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
+        /// <param name="weight">The weight of this movement.</param>
+        /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
+        /// <returns>The evade movement to the target.</returns>
+        public KaijuEvadeMovement Evade([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
+        {
+            if (clear ?? (!configuration || configuration.clear))
+            {
+                Stop();
+            }
+            
+            float d = distance ?? (configuration ? configuration.LeavingDistance : KaijuLeavingMovement.DefaultDistance);
+            KaijuEvadeMovement movement = KaijuEvadeMovement.Get(this, target, d, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1540,14 +1556,16 @@ namespace KaijuSolutions.Agents
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
         /// <returns>The wander movement.</returns>
-        public KaijuWanderMovement Wander(float distance = 5, float radius = 1, float weight = 1, bool clear = true)
+        public KaijuWanderMovement Wander(float? distance = null, float? radius = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuWanderMovement movement = KaijuWanderMovement.Get(this, distance, radius, weight);
+            float d = distance ?? (configuration ? configuration.WanderDistance : KaijuWanderMovement.DefaultDistance);
+            float r = radius ?? (configuration ? configuration.WanderRadius : KaijuWanderMovement.DefaultRadius);
+            KaijuWanderMovement movement = KaijuWanderMovement.Get(this, d, r, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1562,14 +1580,16 @@ namespace KaijuSolutions.Agents
         /// <param name="collection">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuSeparationMovement Separation(float distance = 10, float coefficient = 0, ICollection<uint> collection = null, float weight = 1, bool clear = true)
+        public KaijuSeparationMovement Separation(float? distance = null, float? coefficient = null, ICollection<uint> collection = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, distance, coefficient, collection, weight);
+            float d = distance ?? (configuration ? configuration.SeparationDistance : KaijuSeparationMovement.DefaultDistance);
+            float c = coefficient ?? (configuration ? configuration.SeparationCoefficient : KaijuSeparationMovement.DefaultCoefficient);
+            KaijuSeparationMovement movement = KaijuSeparationMovement.Get(this, d, c, collection, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1587,14 +1607,20 @@ namespace KaijuSolutions.Agents
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float avoidance = 2, float distance = 5, float sideDistance = 0, float angle = 15, float height = 1, float horizontal = 0, float weight = 1, bool clear = true)
+        public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float? avoidance = null, float? distance = null, float? sideDistance = null, float? angle = null, float? height = null, float? horizontal = null, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, avoidance, distance, sideDistance, angle, height, horizontal, weight);
+            float av = avoidance ?? (configuration ? configuration.Avoidance : KaijuObstacleAvoidanceMovement.DefaultAvoidance);
+            float d = distance ?? (configuration ? configuration.AvoidanceDistance : KaijuObstacleAvoidanceMovement.DefaultDistance);
+            float s = sideDistance ?? (configuration ? configuration.AvoidanceSideDistance : KaijuObstacleAvoidanceMovement.DefaultSideDistance);
+            float an = angle ?? (configuration ? configuration.avoidanceAngle : KaijuObstacleAvoidanceMovement.DefaultAngle);
+            float he = height ?? (configuration ? configuration.avoidanceHeight : KaijuObstacleAvoidanceMovement.DefaultHeight);
+            float ho = horizontal ?? (configuration ? configuration.avoidanceHorizontal : KaijuObstacleAvoidanceMovement.DefaultHorizontal);
+            KaijuObstacleAvoidanceMovement movement = KaijuObstacleAvoidanceMovement.Get(this, av, d, s, an, he, ho, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1612,14 +1638,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1637,14 +1664,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1662,14 +1690,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1687,14 +1716,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, areaMask, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1712,14 +1742,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1737,14 +1768,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1762,14 +1794,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);
@@ -1787,14 +1820,15 @@ namespace KaijuSolutions.Agents
         /// <param name="triggers">How line-of-sight checks should handle triggers.</param>
         /// <param name="weight">The weight of this movement.</param>
         /// <param name="clear">If this should clear all other current movement and become the only one the <see cref="KaijuAgent"/> is performing.</param>
-        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float distance = 0.1f, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = 1, bool clear = true)
+        public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
-            if (clear)
+            if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
             }
             
-            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, distance, autoCalculateDistance, collisionMask, triggers, weight);
+            float d = distance ?? (configuration ? configuration.ApproachingDistance : KaijuApproachingMovement.DefaultDistance);
+            KaijuPathFollowMovement movement = KaijuPathFollowMovement.Get(this, target, filter, d, autoCalculateDistance, collisionMask, triggers, weight ?? (configuration ? configuration.Weight : KaijuMovement.DefaultWeight));
             _movements.Add(movement);
             movement.Started();
             OnMovementStarted?.Invoke(movement);

@@ -3109,11 +3109,8 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
+  configuration: {fileID: 11400000, guid: 411ecf83ac215ce44a92b14d21d24e4c, type: 2}
   identifiers: 
-  mask:
-    serializedVersion: 2
-    m_Bits: 51
-  triggers: 0
   radius: 0.5
 --- !u!4 &1884755501
 Transform:
@@ -3173,13 +3170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: com.kaijusolutions.agents.samples.boxdestroyer::KaijuSolutions.Agents.Samples.BoxDestroyer.BoxDestroyerController
   agent: {fileID: 1884755500}
-  wanderDistance: 5
-  wanderRadius: 1
-  avoidance: 2
-  avoidanceDistance: 5
-  avoidanceSideDistance: 0
-  avoidanceAngle: 15
-  avoidanceHorizontal: 0
 --- !u!1 &1910111043
 GameObject:
   m_ObjectHideFlags: 0

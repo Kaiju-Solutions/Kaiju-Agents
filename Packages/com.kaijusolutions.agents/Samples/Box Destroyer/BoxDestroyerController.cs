@@ -12,62 +12,6 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
     public class BoxDestroyerController : KaijuController
     {
         /// <summary>
-        /// How far out to generate the wander circle.
-        /// </summary>
-        [Header("Wander")]
-        [Tooltip("How far out to generate the wander circle.")]
-        [Min(0)]
-        [SerializeField]
-        private float wanderDistance = 5;
-        
-        /// <summary>
-        /// The radius of the wander circle.
-        /// </summary>
-        [Tooltip("The radius of the wander circle.")]
-        [Min(0)]
-        [SerializeField]
-        private float wanderRadius = 1;
-        
-        /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
-        /// </summary>
-        [Header("Obstacle Avoidance")]
-        [Tooltip("The distance from a wall the agent should maintain.")]
-        [Min(float.Epsilon)]
-        [SerializeField]
-        private float avoidance = 2;
-        
-        /// <summary>
-        /// The distance for rays.
-        /// </summary>
-        [Tooltip("The distance for rays.")]
-        [Min(float.Epsilon)]
-        [SerializeField]
-        private float avoidanceDistance = 5;
-        
-        /// <summary>
-        /// The distance of the side rays. Zero or less will use the <see cref="avoidanceDistance"/>.
-        /// </summary>
-        [Tooltip("The distance of the side rays. Zero or less will use the distance.")]
-        [Min(0)]
-        [SerializeField]
-        private float avoidanceSideDistance;
-        
-        /// <summary>
-        /// The angle for rays.
-        /// </summary>
-        [Tooltip("The angle for the rays.")]
-        [SerializeField]
-        private float avoidanceAngle = 15;
-        
-        /// <summary>
-        /// The horizontal shift for the side rays.
-        /// </summary>
-        [Tooltip("The horizontal shift for the side rays.")]
-        [SerializeField]
-        private float avoidanceHorizontal;
-        
-        /// <summary>
         /// Cache the sensor.
         /// </summary>
         private KaijuEverythingVisionSensor _sensor;
@@ -97,7 +41,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         protected override void OnSense(KaijuSensor sensor)
         {
             // Nothing for us to do if we did not see any boxes.
-            // We know this is our only sensor for this basic agent, which is why we don't check its the same one.
+            // We know this is our only sensor for this basic agent, which is why we don't check if it is the same one.
             if (_sensor.ObservedCount < 1)
             {
                 return;
@@ -162,10 +106,11 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
             _sensor.automatic = true;
             
             // Start wandering around until a box is found.
-            Agent.Wander(wanderDistance, wanderRadius);
+            Agent.Wander();
             
             // Add an obstacle avoidance to ensure we do not wander out of the walled area. Start this at above the height of the boxes to ignore them.
-            Agent.ObstacleAvoidance(avoidance, avoidanceDistance, avoidanceSideDistance, avoidanceAngle, 1.5f, avoidanceHorizontal, 1, false);
+            // Don't clear so we don't erase the wandering behaviour we just added.
+            Agent.ObstacleAvoidance(clear: false);
         }
     }
 }
