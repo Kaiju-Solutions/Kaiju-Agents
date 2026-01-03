@@ -501,7 +501,7 @@ namespace KaijuSolutions.Agents.Extensions
                 if (radius.HasValue)
                 {
                     Vector3 offset = new(0, radius.Value, 0);
-                    Vector3 goalOffset = start + offset;
+                    Vector3 goalOffset = goal + offset;
                     for (int i = size - 2; i > 0; i--)
                     {
                         if (!goalOffset.HasSight(path[i] + offset, out RaycastHit _, radius.Value, sightMask, triggers))
