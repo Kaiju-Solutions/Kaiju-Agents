@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Actuators
@@ -9,7 +10,7 @@ namespace KaijuSolutions.Agents.Actuators
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
-    [AddComponentMenu("Kaiju Solutions/Agents/Actuators/Kaiju Everything Vision Sensor", 7)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Actuators/Kaiju Everything Attack Sensor", 7)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
 #endif
@@ -93,5 +94,35 @@ namespace KaijuSolutions.Agents.Actuators
             
             return true;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Attack Everything Actuator {name} - Agent: {(Agent ? Agent.name : "None")}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The <see cref="KaijuEverythingAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuEverythingAttackActuator([NotNull] GameObject o) => o.GetComponent<KaijuEverythingAttackActuator>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuEverythingAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuEverythingAttackActuator([NotNull] Transform t) => t.GetComponent<KaijuEverythingAttackActuator>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="s">The <see cref="KaijuEverythingAttackActuator"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuEverythingAttackActuator"/> if there was one.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuEverythingAttackActuator s) => s.Agent;
     }
 }

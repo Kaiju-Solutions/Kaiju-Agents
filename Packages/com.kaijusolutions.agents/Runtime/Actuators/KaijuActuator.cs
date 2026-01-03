@@ -277,6 +277,15 @@ namespace KaijuSolutions.Agents.Actuators
         public virtual void EditorVisualize(Vector3 position) { }
 #endif
         /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Actuator {name} - Agent: {(Agent ? Agent.name : "None")}";
+        }
+        
+        /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>

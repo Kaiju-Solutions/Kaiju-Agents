@@ -1,4 +1,5 @@
-﻿using KaijuSolutions.Agents.Extensions;
+﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Actuators
@@ -279,5 +280,35 @@ namespace KaijuSolutions.Agents.Actuators
         {
             _charging = 0;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Attack Actuator {name} - Agent: {(Agent ? Agent.name : "None")}";
+        }
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The <see cref="KaijuAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuAttackActuator([NotNull] GameObject o) => o.GetComponent<KaijuAttackActuator>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The <see cref="KaijuAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuAttackActuator([NotNull] Transform t) => t.GetComponent<KaijuAttackActuator>();
+        
+        /// <summary>
+        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// </summary>
+        /// <param name="s">The <see cref="KaijuAttackActuator"/>.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuAttackActuator"/> if there was one.</returns>
+        public static implicit operator KaijuAgent([NotNull] KaijuAttackActuator s) => s.Agent;
     }
 }
