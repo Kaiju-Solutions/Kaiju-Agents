@@ -22,9 +22,9 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         private KaijuEverythingAttackActuator _actuator;
         
         /// <summary>
-        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
+        /// Callback for when the <see cref="KaijuController.Agent"/> has finishing becoming enabled.
         /// </summary>
-        private void Start()
+        protected override void OnEnabled()
         {
             // Get the sensor and actuator once so we do not need to repeatedly call for them.
             _sensor = Agent.GetSensor<KaijuEverythingVisionSensor>();

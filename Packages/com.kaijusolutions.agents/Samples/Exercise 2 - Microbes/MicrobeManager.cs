@@ -92,13 +92,13 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private int startingEnergy = 10;
         
         /// <summary>
-        /// he chances of spawning an <see cref="EnergyPickup"/> pickup every second.
+        /// How many seconds between <see cref="EnergyPickup"/> spawns.
         /// </summary>
         [Header("Spawning")]
-        [Tooltip("The chances of spawning an energy pickup every second.")]
-        [Range(0, 1)]
+        [Tooltip("How many seconds between energy pickup spawns.")]
+        [Min(0)]
         [SerializeField]
-        private float energyChance = 0.05f;
+        private float energyRate = 1;
         
         /// <summary>
         /// The range in each axis to spawn within.
@@ -106,6 +106,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         [Tooltip("The range in each axis to spawn within.")]
         [SerializeField]
         private Vector2 spawning = new(-45, 45);
+        
+        /// <summary>
+        /// The elapsed time for the energy spawning.
+        /// </summary>
+        private float _elapsed;
         
         /// <summary>
         /// Get the color for a species.
@@ -207,10 +212,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         private void FixedUpdate()
         {
-            if (Random.value <= energyChance * Time.deltaTime)
+            _elapsed += Time.deltaTime;
+            if (_elapsed < energyRate)
             {
-                SpawnEnergy();
+                return;
             }
+            
+            _elapsed = 0;
+            SpawnEnergy();
         }
     }
 }

@@ -59,7 +59,7 @@ namespace KaijuSolutions.Agents
             base.Setup();
             gameObject.AssignComponent(ref body);
             body.centerOfMass = Vector3.zero;
-            body.constraints = body.constraints | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            body.freezeRotation = true;
             body.linearDamping = 0;
             body.angularDamping = 0;
             body.interpolation = RigidbodyInterpolation.Interpolate;
@@ -75,9 +75,6 @@ namespace KaijuSolutions.Agents
         public override void Move(float delta)
         {
             body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
-            
-            // Ensure the agent is not spinning outside of our own looking.
-            body.angularVelocity = Vector3.zero;
         }
         
         /// <summary>

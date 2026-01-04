@@ -51,6 +51,10 @@
 			"displayName": "Exercise 1 - Cleaner",
 			"description": "An exercise to get you familiar with Kaiju Agents. You will need to complete an agent to keep floor tiles clean.\n\nYou must also import the \"Materials\" sample for this to work.",
 			"path": "Samples~/Exercise 1 - Cleaner"
+		},{
+			"displayName": "Exercise 2 - Microbes",
+			"description": "An exercise scenario featuring microbes which can mate with and eat each other.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Exercise 2 - Microbes"
 		}
 	]
 }

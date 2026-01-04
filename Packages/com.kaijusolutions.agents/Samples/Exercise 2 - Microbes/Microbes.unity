@@ -280,8 +280,8 @@ Transform:
   m_GameObject: {fileID: 1146332930}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -52, y: 1, z: 0}
-  m_LocalScale: {x: 5, y: 2, z: 109}
+  m_LocalPosition: {x: -50, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394895330}
@@ -392,8 +392,8 @@ Transform:
   m_GameObject: {fileID: 1151884605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -52}
-  m_LocalScale: {x: 108, y: 2, z: 5}
+  m_LocalPosition: {x: 0, y: 1, z: -50}
+  m_LocalScale: {x: 101, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394895330}
@@ -582,8 +582,8 @@ Transform:
   m_GameObject: {fileID: 1471068855}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 52}
-  m_LocalScale: {x: 108, y: 2, z: 5}
+  m_LocalPosition: {x: 0, y: 1, z: 50}
+  m_LocalScale: {x: 101, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394895330}
@@ -621,9 +621,9 @@ MonoBehaviour:
   energyPrefab: {fileID: 8027974131668265028, guid: 72253b8526679a34ca353adeee189882, type: 3}
   energy: 100
   cooldown: 5
-  startingMicrobes: 5
-  startingEnergy: 10
-  energyChance: 0.05
+  startingMicrobes: 30
+  startingEnergy: 50
+  energyRate: 1
   spawning: {x: -45, y: 45}
   species:
   - {r: 1, g: 0, b: 0, a: 1}
@@ -673,8 +673,8 @@ Transform:
   m_GameObject: {fileID: 1749702879}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52, y: 1, z: 0}
-  m_LocalScale: {x: 5, y: 2, z: 109}
+  m_LocalPosition: {x: 50, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 394895330}

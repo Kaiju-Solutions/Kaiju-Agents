@@ -14,6 +14,26 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     public class Microbe : KaijuController
     {
         /// <summary>
+        /// Callback for this microbe eating.
+        /// </summary>
+        public event KaijuAction OnEat;
+        
+        /// <summary>
+        /// Global callback for this microbe eating.
+        /// </summary>
+        public event MircobeAction OnEatGlobal;
+        
+        /// <summary>
+        /// Callback for this microbe mating.
+        /// </summary>
+        public event KaijuAction OnMate;
+        
+        /// <summary>
+        /// Global callback for this microbe mating.
+        /// </summary>
+        public event MircobeAction OnMateGlobal;
+        
+        /// <summary>
         /// All microbes currently in the world.
         /// </summary>
         public static IReadOnlyCollection<Microbe> All => Active;
@@ -120,7 +140,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             // Spawn with an energy level between the two microbes and directly between the microbes.
             Spawn(MicrobeManager.MicrobePrefab, (_energy + other._energy) / 2, (Position + other.Position) / 2, Agent.Identifiers[0]);
             other.Cooldown = Cooldown = MicrobeManager.Cooldown;
-            // TODO - Callbacks.
+            
+            // Run callbacks.
+            OnMate?.Invoke();
+            OnMateGlobal?.Invoke(this);
+            other.OnMate?.Invoke();
+            OnMateGlobal?.Invoke(other);
         }
         
         /// <summary>
@@ -142,7 +167,9 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             // Despawn the other agent.
             other.Agent.Despawn();
             
-            // TODO - Callbacks.
+            // Run callbacks.
+            OnEat?.Invoke();
+            OnEatGlobal?.Invoke(this);
             return true;
         }
         
@@ -173,7 +200,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         {
             base.OnEnable();
             Active.Add(this);
-            // TODO - Callbacks.
         }
         
         /// <summary>
@@ -185,7 +211,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             Cooldown = 0;
             Active.Remove(this);
             base.OnDisable();
-            // TODO - Callbacks.
         }
         
         /// <summary>
@@ -193,11 +218,25 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         private void FixedUpdate()
         {
+            float delta = Time.deltaTime;
+            
             // Every tick, see if we are out of energy and if so remove this microbe.
-            Energy -= Decay * Time.deltaTime;
+            Energy -= Decay * delta;
             if (_energy <= 0)
             {
                 Agent.Despawn();
+                return;
+            }
+            
+            if (!OnCooldown)
+            {
+                return;
+            }
+            
+            Cooldown -= Time.deltaTime;
+            if (Cooldown < 0)
+            {
+                Cooldown = 0;
             }
         }
         
