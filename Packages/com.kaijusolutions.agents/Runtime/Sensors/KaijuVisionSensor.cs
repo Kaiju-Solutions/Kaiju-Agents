@@ -63,9 +63,9 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
 #if UNITY_EDITOR
         [Header("Line-of-Sight")]
-        [Tooltip("What angle the vision detection should cover.")]
+        [Tooltip("If line-of-sight checks should be made for the vision. Turning off line-of-sight checks will return items within the view arc based on the angle and distance.")]
 #endif
-        public bool lineOfSight = true;
+        public bool lineOfSight;
         
         /// <summary>
         /// The radius of the line-of-sight checks.

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using KaijuSolutions.Agents.Sensors;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
@@ -28,11 +29,42 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void OnEat() { }
         
         /// <summary>
+        /// Called when a <see cref="MicrobeVisionSensor"/> has been run.
+        /// </summary>
+        /// <param name="microbeSensor">The <see cref="MicrobeVisionSensor"/> which was run.</param>
+        private void OnMicrobeSensor(MicrobeVisionSensor microbeSensor) { }
+        
+        /// <summary>
+        /// Called when a <see cref="EnergyVisionSensor"/> has been run.
+        /// </summary>
+        /// <param name="energySensor">The <see cref="EnergyVisionSensor"/> which was run.</param>
+        private void OnEnergySensor(EnergyVisionSensor energySensor) { }
+        
+        /// <summary>
+        /// Callback for when a <see cref="KaijuSensor"/> has been run.
+        /// </summary>
+        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
+        protected override void OnSense(KaijuSensor sensor)
+        {
+            // Run methods for either of the sensors.
+            if (sensor is MicrobeVisionSensor microbeSensor)
+            {
+                OnMicrobeSensor(microbeSensor);
+            }
+            else if (sensor is EnergyVisionSensor energySensor)
+            {
+                OnEnergySensor(energySensor);
+            }
+        }
+
+        /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
         protected override void OnValidate()
         {
             base.OnValidate();
+            
+            // The microbe must on this object.
             if (microbe == null || microbe.transform != transform)
             {
                 microbe = GetComponent<Microbe>();
