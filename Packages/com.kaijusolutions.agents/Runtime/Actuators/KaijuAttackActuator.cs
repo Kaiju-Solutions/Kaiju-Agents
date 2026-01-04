@@ -110,7 +110,7 @@ namespace KaijuSolutions.Agents.Actuators
         [Tooltip("The line renderer for visualizing the attacks.")]
 #endif
         [SerializeField]
-        private LineRenderer lineRenderer;
+        protected LineRenderer lineRenderer;
         
         /// <summary>
         /// How long the <see cref="lineRenderer"/> should be visible in seconds.

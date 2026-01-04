@@ -109,6 +109,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public event TrooperAmmoAction OnAmmoGlobal;
         
         /// <summary>
+        /// All troopers currently active.
+        /// </summary>
+        public static IReadOnlyCollection<Trooper> All => Active;
+        
+        /// <summary>
+        /// All active troopers.
+        /// </summary>
+        private static readonly HashSet<Trooper> Active = new();
+        
+        /// <summary>
         /// All troopers currently active for team one.
         /// </summary>
         public static IReadOnlyCollection<Trooper> AllOne => ActiveOne;
@@ -139,6 +149,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Active.Clear();
             ActiveOne.Clear();
             ActiveTwo.Clear();
         }
@@ -247,6 +258,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // Assign to the correct team.
             agent.SetIdentifier(team);
             trooper.TeamOne = spawnPoint.TeamOne;
+            Active.Add(trooper);
             if (trooper.TeamOne)
             {
                 ActiveTwo.Remove(trooper);
@@ -309,6 +321,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             Ammo = CaptureTheFlagManager.Ammo;
             
             // Assign to the correct team.
+            Active.Add(this);
             if (TeamOne)
             {
                 ActiveTwo.Remove(this);
@@ -329,6 +342,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             base.OnDisable();
             
             // Remove from any active pools.
+            Active.Remove(this);
             ActiveOne.Remove(this);
             ActiveTwo.Remove(this);
             

@@ -48,6 +48,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             }
             
             _ammo = CaptureTheFlagManager.Ammo;
+            
+            // Make the weapon colors match the team.
+            if (lineRenderer)
+            {
+                lineRenderer.startColor = lineRenderer.endColor = _trooper.TeamOne ? CaptureTheFlagManager.ColorOne : CaptureTheFlagManager.ColorTwo;
+            }
         }
         
         /// <summary>
