@@ -19,22 +19,27 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// Callback for this microbe eating.
         /// </summary>
-        public event KaijuAction OnEat;
+        public event MicrobeAction OnEat;
+        
+        /// <summary>
+        /// Callback for this microbe being eaten.
+        /// </summary>
+        public event MicrobeAction OnEaten;
         
         /// <summary>
         /// Global callback for this microbe eating.
         /// </summary>
-        public event MircobeAction OnEatGlobal;
+        public event MultiMicrobeAction OnEatGlobal;
         
         /// <summary>
         /// Callback for this microbe mating.
         /// </summary>
-        public event KaijuAction OnMate;
+        public event MicrobeAction OnMate;
         
         /// <summary>
         /// Global callback for this microbe mating.
         /// </summary>
-        public event MircobeAction OnMateGlobal;
+        public event MultiMicrobeAction OnMateGlobal;
         
         /// <summary>
         /// All microbes currently in the world.
@@ -150,10 +155,9 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             other.Cooldown = Cooldown = MicrobeManager.Cooldown;
             
             // Run callbacks.
-            OnMate?.Invoke();
-            OnMateGlobal?.Invoke(this);
-            other.OnMate?.Invoke();
-            OnMateGlobal?.Invoke(other);
+            OnMate?.Invoke(other);
+            other.OnMate?.Invoke(this);
+            OnMateGlobal?.Invoke(this, other);
         }
         
         /// <summary>
@@ -176,8 +180,9 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             other.Agent.Despawn();
             
             // Run callbacks.
-            OnEat?.Invoke();
-            OnEatGlobal?.Invoke(this);
+            OnEat?.Invoke(other);
+            other.OnEaten?.Invoke(this);
+            OnEatGlobal?.Invoke(this, other);
             return true;
         }
         

@@ -17,7 +17,55 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 25)]
     public class Trooper : KaijuController
     {
-        // TODO - Event definitions.
+        /// <summary>
+        /// Callback for hitting another trooper.
+        /// </summary>
+        public event TrooperAction OnHitTrooper;
+        
+        /// <summary>
+        /// Callback for getting hit by another trooper.
+        /// </summary>
+        public event TrooperAction OnHitByTrooper;
+        
+        /// <summary>
+        /// Global callback for one agent hitting another.
+        /// </summary>
+        public static MultiTrooperAction OnTrooperHitGlobal;
+        
+        /// <summary>
+        /// Callback for eliminated another trooper.
+        /// </summary>
+        public event TrooperAction OnEliminatedTrooper;
+        
+        /// <summary>
+        /// Callback for getting eliminated by another trooper.
+        /// </summary>
+        public event TrooperAction OnEliminatedByTrooper;
+        
+        /// <summary>
+        /// Global callback for one trooper eliminating another.
+        /// </summary>
+        public static event MultiTrooperAction OnTrooperEliminatedGlobal;
+        
+        /// <summary>
+        /// Callback for picking up a <see cref="HealthPickup"/>.
+        /// </summary>
+        public event HealthAction OnHealth;
+        
+        /// <summary>
+        /// Global callback for picking up a <see cref="HealthPickup"/>.
+        /// </summary>
+        public event TrooperHealthAction OnHealthGlobal;
+        
+        /// <summary>
+        /// Callback for picking up a <see cref="AmmoPickup"/>.
+        /// </summary>
+        public event AmmoAction OnAmmo;
+        
+        /// <summary>
+        /// Global callback for picking up a <see cref="AmmoPickup"/>.
+        /// </summary>
+        public event TrooperAmmoAction OnAmmoGlobal;
         
         /// <summary>
         /// All troopers currently active for team one.
@@ -90,7 +138,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public bool HasAmmo => _blaster != null && _blaster.Ammo > 0;
         
         /// <summary>
-        /// If the <see cref="BlasterActuator"/> has any ammo is is not <see cref="KaijuAttackActuator.OnCooldown"/>.
+        /// If the <see cref="BlasterActuator"/> has any ammo and is not <see cref="KaijuAttackActuator.OnCooldown"/>.
         /// </summary>
         public bool CanAttack => HasAmmo && !_blaster.OnCooldown;
         
@@ -148,15 +196,23 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <param name="attacker">The trooper that dealt the damage.</param>
         public void TakeDamage([NotNull] Trooper attacker)
         {
+            // Lower the health.
             Health -= CaptureTheFlagManager.Damage;
             
+            // If still alive, send hit callbacks.
             if (Health > 0)
             {
-                // TODO - Hit events.
+                attacker.OnHitTrooper?.Invoke(this);
+                OnHitByTrooper?.Invoke(attacker);
+                OnTrooperEliminatedGlobal?.Invoke(attacker, this);
                 return;
             }
             
-            // TODO - Killed events.
+            // Otherwise, eliminate this trooper and invoke eliminated callbacks.
+            Agent.Despawn();
+            attacker.OnEliminatedTrooper?.Invoke(this);
+            OnEliminatedByTrooper?.Invoke(attacker);
+            OnTrooperEliminatedGlobal?.Invoke(attacker, this);
         }
         
         /// <summary>
@@ -274,9 +330,10 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                     
                     health.Interact();
                     Health = Mathf.Max(Health + value, max);
-                    // TODO - Events.
+                    OnHealth?.Invoke(health);
+                    OnHealthGlobal?.Invoke(this, health);
                 }
-                else
+                else if (number is AmmoPickup ammo)
                 {
                     // No point in using it if we already have the maximum ammo.
                     int max = CaptureTheFlagManager.Ammo;
@@ -285,9 +342,10 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                         return;
                     }
                     
-                    number.Interact();
+                    ammo.Interact();
                     Ammo = Mathf.Max(Ammo + value, max);
-                    // TODO - Events.
+                    OnAmmo?.Invoke(ammo);
+                    OnAmmoGlobal?.Invoke(this, ammo);
                 }
                 
                 return;

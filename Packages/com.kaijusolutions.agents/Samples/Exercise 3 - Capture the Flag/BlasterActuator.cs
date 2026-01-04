@@ -6,7 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// The blaster for use by <see cref="Trooper"/>s.
     /// </summary>
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 26)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Blaster Actuator", 26)]
     public class BlasterActuator : KaijuAttackActuator
     {
         /// <summary>
