@@ -68,6 +68,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         private int ammo;
         
         /// <summary>
+        /// How close to a <see cref="Trooper"/>'s own base to capture a <see cref="Flag"/> they are carrying.
+        /// </summary>
+        public static float CaptureDistance => Instance.captureDistance;
+        
+        /// <summary>
+        /// How close to a <see cref="Trooper"/>'s own base to capture a <see cref="Flag"/> they are carrying.
+        /// </summary>
+        [Tooltip("How close to a trooper's own base to capture a flag they are carrying.")]
+        [Min(float.Epsilon)]
+        [SerializeField]
+        private float captureDistance = 1f;
+        
+        /// <summary>
         /// The time in seconds for <see cref="Trooper"/>s to respawn.
         /// </summary>
         public static float Respawn => Instance.respawn;

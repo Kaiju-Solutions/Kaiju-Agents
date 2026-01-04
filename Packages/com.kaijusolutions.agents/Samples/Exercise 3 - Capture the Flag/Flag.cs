@@ -12,6 +12,40 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     public class Flag : Pickup
     {
         /// <summary>
+        /// Get the location of a team's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        /// <param name="teamOne">If this is team one's base being requested.</param>
+        /// <returns>The location of the team's base.</returns>
+        public static Vector3 Base3(bool teamOne) => Base(teamOne).Expand();
+        
+        /// <summary>
+        /// Get the location of a team's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        /// <param name="teamOne">If this is team one's base being requested.</param>
+        /// <returns>The location of the team's base.</returns>
+        public static Vector2 Base(bool teamOne) => teamOne ? TeamOneBase : TeamTwoBase;
+        
+        /// <summary>
+        /// The location of team one's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        public static Vector3 TeamOneBase3 => TeamOneBase.Expand();
+        
+        /// <summary>
+        /// The location of team one's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        public static Vector2 TeamOneBase => TeamOneFlag != null ? TeamOneFlag._position : Vector2.zero;
+        
+        /// <summary>
+        /// The location of team two's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        public static Vector3 TeamTwoBase3 => TeamTwoBase.Expand();
+        
+        /// <summary>
+        /// The location of team two's base, being where their flag spawns and where to return captured flags to.
+        /// </summary>
+        public static Vector2 TeamTwoBase => TeamTwoFlag != null ? TeamTwoFlag._position : Vector2.zero;
+        
+        /// <summary>
         /// Both flags for easy access.
         /// </summary>
         public static IReadOnlyCollection<Flag> Flags => Both;
@@ -146,15 +180,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // If this is the same team, the flag is being returned.
             if (trooper.TeamOne == TeamOne)
             {
-                t.parent = null;
-                t.position = _position.Expand();
-                t.rotation = _rotation;
-                
-                // Enable all triggers, even though they already should be at this point.
-                foreach (Collider c in Colliders)
-                {
-                    c.enabled = true;
-                }
+                Return();
             }
             else
             {
@@ -171,6 +197,23 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             }
             
             return true;
+        }
+        
+        /// <summary>
+        /// Return the flag to its base.
+        /// </summary>
+        public void Return()
+        {
+            Transform t = transform;
+            t.parent = null;
+            t.position = _position.Expand();
+            t.rotation = _rotation;
+            
+            // Enable all triggers.
+            foreach (Collider c in Colliders)
+            {
+                c.enabled = true;
+            }
         }
         
         /// <summary>

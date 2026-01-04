@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Actuators;
+using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
@@ -58,6 +59,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public event TrooperFlagAction OnFlagDroppedGlobal;
         
         /// <summary>
+        /// Callback for when this agent picking up the <see cref="Flag"/>.
+        /// </summary>
+        public event FlagAction OnFlagPickedUp;
+        
+        /// <summary>
+        /// Global callback for when this agent picking up the <see cref="Flag"/>.
+        /// </summary>
+        public event TrooperFlagAction OnFlagPickedUpGlobal;
+        
+        /// <summary>
         /// Callback for when this agent returned the <see cref="Flag"/>.
         /// </summary>
         public event FlagAction OnFlagReturned;
@@ -68,14 +79,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public event TrooperFlagAction OnFlagReturnedGlobal;
         
         /// <summary>
-        /// Callback for when this agent picking up the <see cref="Flag"/>.
+        /// Callback for when this agent captured the <see cref="Flag"/>.
         /// </summary>
-        public event FlagAction OnFlagPickedUp;
+        public event FlagAction OnFlagCaptured;
         
         /// <summary>
-        /// Global callback for when this agent picking up the <see cref="Flag"/>.
+        /// Global callback for when this agent captured the <see cref="Flag"/>.
         /// </summary>
-        public event TrooperFlagAction OnFlagPickedUpGlobal;
+        public event TrooperFlagAction OnFlagCapturedGlobal;
         
         /// <summary>
         /// Callback for picking up a <see cref="HealthPickup"/>.
@@ -141,6 +152,26 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// What team this trooper is on.
         /// </summary>
         public bool TeamOne { get; private set; } = true;
+        
+        /// <summary>
+        /// Get the location of this trooper's own base.
+        /// </summary>
+        public Vector2 OwnBase => Flag.Base(TeamOne);
+        
+        /// <summary>
+        /// Get the location of this trooper's  own base.
+        /// </summary>
+        public Vector3 OwnBase3 => Flag.Base3(TeamOne);
+        
+        /// <summary>
+        /// Get the location of the other team's base.
+        /// </summary>
+        public Vector2 EnemyBase => Flag.Base(!TeamOne);
+        
+        /// <summary>
+        /// Get the location of the other team's base.
+        /// </summary>
+        public Vector3 EnemyBase3 => Flag.Base3(!TeamOne);
         
         /// <summary>
         /// The <see cref="BlasterActuator"/> of the trooper.
@@ -420,6 +451,23 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             _flag = flag;
             OnFlagPickedUp?.Invoke(_flag);
             OnFlagPickedUpGlobal?.Invoke(this, _flag);
+        }
+        
+        /// <summary>
+        /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
+        /// </summary>
+        private void FixedUpdate()
+        {
+            // Try to capture the flag.
+            if (_flag == null || Position.Distance(OwnBase) > CaptureTheFlagManager.CaptureDistance)
+            {
+                return;
+            }
+            
+            _flag.Return();
+            OnFlagCaptured?.Invoke(_flag);
+            OnFlagCapturedGlobal?.Invoke(this, _flag);
+            _flag = null;
         }
     }
 }
