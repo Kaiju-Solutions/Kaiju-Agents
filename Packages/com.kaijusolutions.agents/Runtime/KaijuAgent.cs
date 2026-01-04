@@ -565,7 +565,7 @@ namespace KaijuSolutions.Agents
                     }
                     else if (_spin.HasValue)
                     {
-                        angle = Orientation + _spin.Value * (lookSpeed > 0 ? lookSpeed : 1);
+                        angle = (Orientation + _spin.Value * lookSpeed) * Mathf.Deg2Rad;
                     }
                     else
                     {
@@ -620,7 +620,7 @@ namespace KaijuSolutions.Agents
                 }
                 else if (_spin.HasValue)
                 {
-                    angle = Orientation + _spin.Value * (lookSpeed > 0 ? lookSpeed : 1);
+                    angle = (Orientation + _spin.Value * lookSpeed) * Mathf.Deg2Rad;
                 }
                 else
                 {
@@ -628,7 +628,7 @@ namespace KaijuSolutions.Agents
                 }
                 
                 Vector3 p = Position3;
-                return p + new Vector3(Mathf.Sin(angle), p.y, Mathf.Cos(angle)) * float.MaxValue;
+                return p + new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
             }
             set
             {
