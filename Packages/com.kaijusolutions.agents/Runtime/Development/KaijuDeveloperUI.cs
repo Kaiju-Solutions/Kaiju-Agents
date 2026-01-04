@@ -3,13 +3,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace KaijuSolutions.Agents.Utilities
+namespace KaijuSolutions.Agents.Development
 {
     /// <summary>
     /// Helpful developer UI. This displays buttons to select cameras on the left side and buttons to select scenes on the right side.
     /// </summary>
     [DisallowMultipleComponent]
-    [DefaultExecutionOrder(int.MinValue + 4)]
+    [DefaultExecutionOrder(int.MaxValue)]
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
@@ -145,28 +145,32 @@ namespace KaijuSolutions.Agents.Utilities
             if (GUI.Button(new(x, current, scenesWidth, Height), "Reset"))
             {
 #if UNITY_EDITOR
+                // In the editor, our scene might not be in the build, so load it by path.
                 SceneManager.LoadScene(active.path);
 #else
                 SceneManager.LoadScene(active.buildIndex);
 #endif
             }
             
+            // Display buttons for all other scenes.
             int count = SceneManager.sceneCountInBuildSettings;
             for (int i = 0; i < count; i++)
             {
+                // If there is not enough space, stop.
                 if (current + Padding + Height >= screenHeight)
                 {
                     return;
                 }
                 
+                // Ensure this is not the same scene we currently have loaded.
                 Scene scene = SceneManager.GetSceneByBuildIndex(i);
                 if (active == scene)
                 {
                     continue;
                 }
                 
+                // Display the button.
                 current += Padding + Height;
-                
                 if (GUI.Button(new(x, current, scenesWidth, Height), scene.name))
                 {
                     SceneManager.LoadScene(i);

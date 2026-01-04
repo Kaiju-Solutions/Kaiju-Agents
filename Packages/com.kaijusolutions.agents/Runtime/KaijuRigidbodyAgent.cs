@@ -75,6 +75,9 @@ namespace KaijuSolutions.Agents
         public override void Move(float delta)
         {
             body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
+            
+            // Ensure the agent is not spinning outside of our own looking.
+            body.angularVelocity = Vector3.zero;
         }
         
         /// <summary>

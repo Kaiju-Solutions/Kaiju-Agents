@@ -222,7 +222,7 @@ namespace KaijuSolutions.Agents
         {
             KaijuAgent agent;
             
-            // If we can use a cached <see cref="KaijuAgent"/>, do so.
+            // If we can use a cached agent, do so.
             if (cached)
             {
                 agent = type switch
@@ -233,7 +233,7 @@ namespace KaijuSolutions.Agents
                     _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>()
                 };
                 
-                // If there is a cached <see cref="KaijuAgent"/>, work with it.
+                // If there is a cached agent, work with it.
                 if (agent != null)
                 {
                     // Set values.
@@ -245,13 +245,13 @@ namespace KaijuSolutions.Agents
                     // Set the colors if this conforms to the standard setup.
                     SetMaterials(root, body, eyes);
                     
-                    // Reactive this <see cref="KaijuAgent"/>.
+                    // Reactive this agent.
                     agent.Spawn();
                     return agent;
                 }
             }
             
-            // Load the <see cref="KaijuAgent"/> if it is a prefab.
+            // Load the agent if it is a prefab.
             if (prefab != null)
             {
                 agent = Object.Instantiate(prefab, position ?? Vector3.zero, orientation ?? Quaternion.identity);
@@ -262,7 +262,7 @@ namespace KaijuSolutions.Agents
                 return agent;
             }
             
-            // Create the <see cref="KaijuAgent"/> for scratch otherwise.
+            // Create the agent for scratch otherwise.
             GameObject go = new(name ?? "Agent")
             {
                 transform =
