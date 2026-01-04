@@ -324,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
   moveSpeed: 10
   moveAcceleration: 0
-  lookSpeed: 0
+  lookSpeed: 20
   autoRotate: 1
   configuration: {fileID: 0}
   identifiers: 

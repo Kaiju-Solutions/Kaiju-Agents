@@ -490,7 +490,7 @@ namespace KaijuSolutions.Agents
             set
             {
                 _spin = value.HasValue ? Mathf.Clamp(value.Value, -1, 1) : null;
-                _lookAngle = value;
+                _lookAngle = null;
                 _lookVector = null;
                 _lookVector3 = null;
                 _lookTransform = null;
@@ -565,7 +565,7 @@ namespace KaijuSolutions.Agents
                     }
                     else if (_spin.HasValue)
                     {
-                        angle = Orientation + _spin.Value * lookSpeed;
+                        angle = Orientation + _spin.Value * (lookSpeed > 0 ? lookSpeed : 1);
                     }
                     else
                     {
@@ -620,7 +620,7 @@ namespace KaijuSolutions.Agents
                 }
                 else if (_spin.HasValue)
                 {
-                    angle = Orientation + _spin.Value * lookSpeed;
+                    angle = Orientation + _spin.Value * (lookSpeed > 0 ? lookSpeed : 1);
                 }
                 else
                 {
@@ -629,7 +629,6 @@ namespace KaijuSolutions.Agents
                 
                 Vector3 p = Position3;
                 return p + new Vector3(Mathf.Sin(angle), p.y, Mathf.Cos(angle)) * float.MaxValue;
-
             }
             set
             {

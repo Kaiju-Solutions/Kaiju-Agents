@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Samples.Keyboard
 {
     /// <summary>
-    /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent.
+    /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent, and Q and E to turn the agent.
     /// </summary>
     [AddComponentMenu("Kaiju Solutions/Agents/Samples/Keyboard Controller", 15)]
     public class KeyboardController : KaijuController
@@ -57,6 +57,33 @@ namespace Samples.Keyboard
             }
 #endif
             Agent.Control = movement;
+#if !ENABLE_LEGACY_INPUT_MANAGER
+            if (UnityEngine.InputSystem.Keyboard.current.eKey.isPressed && !UnityEngine.InputSystem.Keyboard.current.qKey.isPressed)
+            {
+                Agent.Spin = 1;
+            }
+            else if (UnityEngine.InputSystem.Keyboard.current.qKey.isPressed && !UnityEngine.InputSystem.Keyboard.current.eKey.isPressed)
+            {
+                Agent.Spin = -1;
+            }
+            else
+            {
+                Agent.Spin = null;
+            }
+#else
+            if (Input.GetKey(KeyCode.E) && !Input.GetKey(KeyCode.Q))
+            {
+                Agent.Spin = 1;
+            }
+            else if (Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.E))
+            {
+                Agent.Spin = -1;
+            }
+            else
+            {
+                Agent.Spin = null;
+            }
+#endif
         }
     }
 }
