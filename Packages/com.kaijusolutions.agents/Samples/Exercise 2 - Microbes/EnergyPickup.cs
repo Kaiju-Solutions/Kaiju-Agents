@@ -9,22 +9,22 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// Simple energy element which can spawn in the world which <see cref="Microbe"/>s can walk into to pick up.
     /// </summary>
     [RequireComponent(typeof(Collider))]
-    public class Energy : KaijuBehaviour
+    public class EnergyPickup : KaijuBehaviour
     {
         /// <summary>
         /// All energies currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<Energy> All => Active;
+        public static IReadOnlyCollection<EnergyPickup> All => Active;
         
         /// <summary>
         /// The active energy elements.
         /// </summary>
-        private static readonly HashSet<Energy> Active = new();
+        private static readonly HashSet<EnergyPickup> Active = new();
         
         /// <summary>
         /// The disabled energy elements.
         /// </summary>
-        private static readonly HashSet<Energy> Unactive = new();
+        private static readonly HashSet<EnergyPickup> Unactive = new();
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -59,10 +59,10 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <param name="energyPrefab">The prefab to spawn.</param>
         /// <param name="value">The energy value to set.</param>
         /// <param name="position">The position to spawn the energy pickup at.</param>
-        public static void Spawn([NotNull] Energy energyPrefab, float value, Vector2 position)
+        public static void Spawn([NotNull] EnergyPickup energyPrefab, float value, Vector2 position)
         {
             // If there are none cached, we need to spawn a new one.
-            Energy spawned;
+            EnergyPickup spawned;
             if (Unactive.Count < 1)
             {
                 spawned = Instantiate(energyPrefab);

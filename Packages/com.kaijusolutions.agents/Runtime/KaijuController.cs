@@ -99,6 +99,9 @@ namespace KaijuSolutions.Agents
             agent.OnActuatorDone += OnActuatorDone;
             agent.OnActuatorInterrupted += OnActuatorInterrupted;
             agent.OnActuatorFailed += OnActuatorFailed;
+            
+            // Manually run the enabled call.
+            OnEnabled();
         }
         
         /// <summary>

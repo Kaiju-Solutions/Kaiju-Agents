@@ -72,7 +72,7 @@ namespace KaijuSolutions.Agents
                 // Cache the material if playing.
                 if (Application.isPlaying)
                 {
-                    Materials.Add(color, material);
+                    Materials.TryAdd(color, material);
                 }
                 
                 return material;
@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents
                 return material;
             }
 #endif
-            Materials.Add(color, material);
+            Materials.TryAdd(color, material);
             return material;
         }
         

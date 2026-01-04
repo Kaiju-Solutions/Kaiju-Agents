@@ -35,25 +35,22 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The current energy of this microbe.
         /// This will <see cref="Decay"/> every second, and this microbe needs energy to stay alive.
-        /// Walk into <see cref="Energy"/> pickups to restore this.
+        /// Walk into <see cref="EnergyPickup"/> pickups to restore this.
         /// Microbes with higher energy levels than other microbes can eat them.
         /// </summary>
         public float Energy
         {
-            get => energy;
-            set => energy = Mathf.Max(value, 0);
+            get => _energy;
+            set => _energy = Mathf.Max(value, 0);
         }
         
         /// <summary>
         /// The current energy of this microbe.
         /// This will <see cref="Decay"/> every second, and this microbe needs energy to stay alive.
-        /// Walk into <see cref="Energy"/> pickups to restore this.
+        /// Walk into <see cref="EnergyPickup"/> pickups to restore this.
         /// Microbes with higher energy levels than other microbes can eat them.
         /// </summary>
-        [Tooltip("The current energy of this microbe. This will decay every second, and this microbe needs energy to stay alive. Walk into energy pickups to restore this. Microbes with higher energy levels than other microbes can eat them.")]
-        [Min(0)]
-        [SerializeField]
-        private float energy = 100;
+        private float _energy;
         
         /// <summary>
         /// How much <see cref="Energy"/> this microbe loses per second.
@@ -82,19 +79,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The time in seconds the microbe needs to wait before it can <see cref="Mate"/> again.
         /// </summary>
-        public float Cooldown
-        {
-            get => cooldown;
-            set => cooldown = Mathf.Max(value, 0);
-        }
-        
-        /// <summary>
-        /// The time in seconds the microbe needs to wait before it can <see cref="Mate"/> again.
-        /// </summary>
-        [Tooltip("The time in seconds the microbe needs to wait before it can mate again.")]
-        [Min(0)]
-        [SerializeField]
-        private float cooldown = 5;
+        public float Cooldown { get; private set; }
         
         /// <summary>
         /// See if this microbe is compatible to mate with another microbe.
@@ -132,7 +117,9 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 return;
             }
             
-            // TODO - Spawn based on manager parameters.
+            // Spawn with an energy level between the two microbes and directly between the microbes.
+            Spawn(MicrobeManager.MicrobePrefab, (_energy + other._energy) / 2, (Position + other.Position) / 2, Agent.Identifiers[0]);
+            other.Cooldown = Cooldown = MicrobeManager.Cooldown;
             // TODO - Callbacks.
         }
         
@@ -144,13 +131,13 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private bool Eat([NotNull] Microbe other)
         {
             // Cannot eat potential mates and need to have more energy than them.
-            if (!Eatable(other) || energy <= other.energy)
+            if (!Eatable(other) || _energy <= other._energy)
             {
                 return false;
             }
             
             // Take all of their energy.
-            energy += other.energy;
+            _energy += other._energy;
             
             // Despawn the other agent.
             other.Agent.Despawn();
@@ -164,22 +151,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         /// <param name="microbePrefab">The prefab to spawn.</param>
         /// <param name="energy">The energy level to spawn with.</param>
-        /// <param name="cooldown">The mating cooldown time.</param>
         /// <param name="position">The position to spawn the microbe at.</param>
         /// <param name="identifier">The microbe identifier type.</param>
-        /// <param name="color">The microbe color.</param>
-        public static void Spawn(KaijuAgent microbePrefab, float energy, float cooldown, Vector2 position, int identifier, Color color)
+        public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
             // Spawn the agent.
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.identity, true, microbePrefab, $"Microbe {identifier}", color);
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier));
             if (!agent.TryGetComponent(out Microbe microbe))
             {
                 microbe = agent.gameObject.AddComponent<Microbe>();
             }
             
-            // Set the microbe values.
+            // Set the microbe's initial energy.
             microbe.Energy = energy;
-            microbe.Cooldown = cooldown;
         }
         
         /// <summary>
@@ -197,7 +181,8 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         protected override void OnDisable()
         {
-            energy = 0;
+            _energy = 0;
+            Cooldown = 0;
             Active.Remove(this);
             base.OnDisable();
             // TODO - Callbacks.
@@ -210,7 +195,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         {
             // Every tick, see if we are out of energy and if so remove this microbe.
             Energy -= Decay * Time.deltaTime;
-            if (energy <= 0)
+            if (_energy <= 0)
             {
                 Agent.Despawn();
             }
@@ -272,12 +257,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             }
             
             // Otherwise, see if it is an energy pickup and if so gather its energy.
-            if (!other.TryGetComponent(out Energy pickup))
+            if (!other.TryGetComponent(out EnergyPickup pickup))
             {
                 return;
             }
             
-            energy += pickup.Value;
+            _energy += pickup.Value;
             pickup.gameObject.SetActive(false);
         }
     }
