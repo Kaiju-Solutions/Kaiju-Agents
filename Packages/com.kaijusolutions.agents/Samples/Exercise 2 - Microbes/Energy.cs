@@ -77,7 +77,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             Unactive.Remove(spawned);
             spawned.Position = position;
             spawned.Value = value;
-            spawned.OnValidate();
             spawned.enabled = true;
             spawned.gameObject.SetActive(true);
         }
@@ -98,18 +97,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         {
             Active.Remove(this);
             Unactive.Add(this);
-        }
-        
-        /// <summary>
-        /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
-        /// </summary>
-        private void OnValidate()
-        {
-            // Ensure all colliders are triggers.
-            foreach (Collider c in GetComponentsInChildren<Collider>())
-            {
-                c.isTrigger = true;
-            }
         }
     }
 }

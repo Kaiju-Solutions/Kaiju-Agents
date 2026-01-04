@@ -71,6 +71,21 @@ namespace KaijuSolutions.Agents
         /// Helper empty <see cref="KaijuAgent"/>s array for returning defaults.
         /// </summary>
         private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
+        
+        /// <summary>
+        /// Pending <see cref="KaijuAgent"/>s to handle the spawning of.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> PendingAdditions = new();
+        
+        /// <summary>
+        /// Pending <see cref="KaijuAgent"/>s to handle the removal of.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> PendingRemovals = new();
+        
+        /// <summary>
+        /// Pending <see cref="KaijuAgent"/>s to handle the removal of and cache.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> PendingCachedRemovals = new();
 #if UNITY_EDITOR
         /// <summary>
         /// All currently selected <see cref="KaijuAgent"/>s in the editor.
@@ -259,6 +274,9 @@ namespace KaijuSolutions.Agents
             PhysicsAgents.Clear();
             AgentIdentifiers.Clear();
             DisabledAgents.Clear();
+            PendingAdditions.Clear();
+            PendingRemovals.Clear();
+            PendingCachedRemovals.Clear();
             _ = EditorAgentColor;
             _editorAgentsLabelStyle = null;
         }
@@ -282,23 +300,8 @@ namespace KaijuSolutions.Agents
                     DisabledAgents.Remove(type);
                 }
             }
-            
-            AllAgents.Add(agent);
-            
-            // Add identifiers.
-            foreach (uint identifier in agent.Identifiers)
-            {
-                AddIdentifier(agent, identifier);
-            }
-            
-            if (agent.PhysicsAgent)
-            {
-                PhysicsAgents.Add(agent);
-            }
-            else
-            {
-                TickAgents.Add(agent);
-            }
+
+            PendingAdditions.Add(agent);
         }
         
         /// <summary>
@@ -308,26 +311,91 @@ namespace KaijuSolutions.Agents
         /// <param name="cache">If this <see cref="KaijuAgent"/> should be cached.</param>
         public static void Unregister(KaijuAgent agent, bool cache = true)
         {
-            AllAgents.Remove(agent);
-            
-            // Remove identifiers.
-            foreach (uint identifier in agent.Identifiers)
+            if (cache)
             {
-                RemoveIdentifier(agent, identifier);
-            }
-            
-            if (agent.PhysicsAgent)
-            {
-                PhysicsAgents.Remove(agent);
+                PendingCachedRemovals.Add(agent);
             }
             else
             {
-                TickAgents.Remove(agent);
+                PendingRemovals.Add(agent);
+            }
+#if UNITY_EDITOR
+            if (_instance)
+            {
+                _instance._editorSelectedAgents.Remove(agent);
+            }
+#endif
+        }
+        
+        /// <summary>
+        /// Handle all pending agents.
+        /// </summary>
+        private void HandlePending()
+        {
+            foreach (KaijuAgent agent in PendingAdditions)
+            {
+                AllAgents.Add(agent);
+                
+                // Add identifiers.
+                foreach (uint identifier in agent.Identifiers)
+                {
+                    AddIdentifier(agent, identifier);
+                }
+                
+                if (agent.PhysicsAgent)
+                {
+                    PhysicsAgents.Add(agent);
+                }
+                else
+                {
+                    TickAgents.Add(agent);
+                }
             }
             
-            // Cache for reuse.
-            if (cache)
+            PendingAdditions.Clear();
+            
+            foreach (KaijuAgent agent in PendingRemovals)
             {
+                AllAgents.Remove(agent);
+                
+                // Remove identifiers.
+                foreach (uint identifier in agent.Identifiers)
+                {
+                    RemoveIdentifier(agent, identifier);
+                }
+                
+                if (agent.PhysicsAgent)
+                {
+                    PhysicsAgents.Remove(agent);
+                }
+                else
+                {
+                    TickAgents.Remove(agent);
+                }
+            }
+            
+            PendingRemovals.Clear();
+            
+            foreach (KaijuAgent agent in PendingCachedRemovals)
+            {
+                AllAgents.Remove(agent);
+                
+                // Remove identifiers.
+                foreach (uint identifier in agent.Identifiers)
+                {
+                    RemoveIdentifier(agent, identifier);
+                }
+                
+                if (agent.PhysicsAgent)
+                {
+                    PhysicsAgents.Remove(agent);
+                }
+                else
+                {
+                    TickAgents.Remove(agent);
+                }
+                
+                // Cache for reuse.
                 Type type = agent.GetType();
                 if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
                 {
@@ -337,12 +405,8 @@ namespace KaijuSolutions.Agents
                 
                 set.Add(agent);
             }
-#if UNITY_EDITOR
-            if (_instance)
-            {
-                _instance._editorSelectedAgents.Remove(agent);
-            }
-#endif
+            
+            PendingCachedRemovals.Clear();
         }
         
         /// <summary>
@@ -545,6 +609,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void Update()
         {
+            HandlePending();
+            
             float delta = Time.deltaTime;
             
             Move(TickAgents, delta);
@@ -560,6 +626,8 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void FixedUpdate()
         {
+            HandlePending();
+            
             float delta = Time.deltaTime;
             
             // All agents calculate their velocity.

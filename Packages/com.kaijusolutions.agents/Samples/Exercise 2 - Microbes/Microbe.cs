@@ -8,6 +8,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// <summary>
     /// Microbes which can mate with and eat each other.
     /// </summary>
+    [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(KaijuRigidbodyAgent))]
     public class Microbe : KaijuController
@@ -122,20 +123,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// Mate with another microbe.
         /// </summary>
-        /// <param name="other"></param>
-        /// <returns>If the mating was successful.</returns>
-        public bool Mate([NotNull] Microbe other)
+        /// <param name="other">The other microbe to mate with.</param>
+        private void Mate([NotNull] Microbe other)
         {
             // Need to be compatible and both not on cooldown.
             if (!Compatible(other) || OnCooldown || other.OnCooldown)
             {
-                return false;
+                return;
             }
             
-            // TODO - Distance check.
             // TODO - Spawn based on manager parameters.
             // TODO - Callbacks.
-            return true;
         }
         
         /// <summary>
@@ -143,15 +141,13 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         /// <param name="other">The other microbe to eat.</param>
         /// <returns>If the other microbe was eaten.</returns>
-        public bool Eat([NotNull] Microbe other)
+        private bool Eat([NotNull] Microbe other)
         {
             // Cannot eat potential mates and need to have more energy than them.
             if (!Eatable(other) || energy <= other.energy)
             {
                 return false;
             }
-            
-            // TODO - Distance check.
             
             // Take all of their energy.
             energy += other.energy;
@@ -218,6 +214,71 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             {
                 Agent.Despawn();
             }
+        }
+        
+        /// <summary>
+        /// OnCollisionEnter is called when this collider/rigidbody has begun touching another rigidbody/collider. This function can be a coroutine.
+        /// </summary>
+        /// <param name="other">The collision data associated with this collision.</param>
+        private void OnCollisionEnter(Collision other)
+        {
+            HandleContacts(other.transform);
+        }
+        
+        /// <summary>
+        /// OnCollisionStay is called once per frame for every Collider or Rigidbody that touches another Collider or Rigidbody. This function can be a coroutine.
+        /// </summary>
+        /// <param name="other">The Collision data associated with this collision.</param>
+        private void OnCollisionStay(Collision other)
+        {
+            HandleContacts(other.transform);
+        }
+        
+        /// <summary>
+        /// When a GameObject collides with another GameObject, Unity calls OnTriggerEnter. This function can be a coroutine.
+        /// </summary>
+        /// <param name="other">The other Collider involved in this collision.</param>
+        private void OnTriggerEnter(Collider other)
+        {
+            HandleContacts(other.transform);
+            
+        }
+        
+        /// <summary>
+        /// OnTriggerStay is called once per physics update for every Collider other that is touching the trigger. This function can be a coroutine.
+        /// </summary>
+        /// <param name="other">The other Collider involved in this collision.</param>
+        private void OnTriggerStay(Collider other)
+        {
+            HandleContacts(other.transform);
+        }
+        
+        /// <summary>
+        /// Handle all contacts to see what we have contacted with.
+        /// </summary>
+        /// <param name="other">The other object interacted with.</param>
+        private void HandleContacts(Transform other)
+        {
+            // If it was a microbe, try to eat it or mate with it.
+            if (other.TryGetComponent(out Microbe microbe))
+            {
+                if (Eat(microbe))
+                {
+                    return;
+                }
+                
+                Mate(microbe);
+                return;
+            }
+            
+            // Otherwise, see if it is an energy pickup and if so gather its energy.
+            if (!other.TryGetComponent(out Energy pickup))
+            {
+                return;
+            }
+            
+            energy += pickup.Value;
+            pickup.gameObject.SetActive(false);
         }
     }
 }
