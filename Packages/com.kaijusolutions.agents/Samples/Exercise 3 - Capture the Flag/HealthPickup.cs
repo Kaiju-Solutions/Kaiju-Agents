@@ -6,7 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// <see cref="Pickup"/> to restore <see cref="Trooper.Health"/>.
     /// </summary>
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 25)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 30)]
     public class HealthPickup : NumberPickup
     {
         /// <summary>
@@ -18,6 +18,15 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// Cache currently active items.
         /// </summary>
         private static readonly HashSet<HealthPickup> Cache = new();
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            Cache.Clear();
+        }
         
         /// <summary>
         /// Additional behaviour for when the active state of this has changed.

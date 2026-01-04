@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using KaijuSolutions.Agents.Sensors;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
     /// <summary>
     /// Sensor to detect <see cref="EnergyPickup"/>s
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Energy Vision Sensor", 21)]
     public class EnergyVisionSensor : KaijuVisionSensor<EnergyPickup>
     {
         /// <summary>
