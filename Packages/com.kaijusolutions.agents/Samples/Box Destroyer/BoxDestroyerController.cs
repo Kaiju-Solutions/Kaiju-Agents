@@ -9,6 +9,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
     /// <summary>
     /// Simple <see cref="KaijuController"/> to destroy boxes.
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Samples/Box Destroyer Controller", 16)]
     public class BoxDestroyerController : KaijuController
     {
         /// <summary>

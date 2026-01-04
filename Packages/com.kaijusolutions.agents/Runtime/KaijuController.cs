@@ -34,18 +34,18 @@ namespace KaijuSolutions.Agents
 #endif
         [SerializeField]
         private KaijuAgent agent;
-#if UNITY_EDITOR
+        
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             if (agent == null || agent.transform != transform)
             {
                 agent = GetComponent<KaijuAgent>();
             }
         }
-#endif
+        
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>

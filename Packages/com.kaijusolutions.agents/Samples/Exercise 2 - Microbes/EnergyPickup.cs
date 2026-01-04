@@ -9,6 +9,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// Simple energy element which can spawn in the world which <see cref="Microbe"/>s can walk into to pick up.
     /// </summary>
     [RequireComponent(typeof(Collider))]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Energy Pickup", 20)]
     public class EnergyPickup : KaijuBehaviour
     {
         /// <summary>

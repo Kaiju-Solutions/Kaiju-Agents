@@ -1,0 +1,38 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace KaijuSolutions.Agents.Exercises.CTF
+{
+    /// <summary>
+    /// <see cref="Pickup"/> to restore <see cref="Trooper.Health"/>.
+    /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 25)]
+    public class HealthPickup : NumberPickup
+    {
+        /// <summary>
+        /// Get all active health pickups.
+        /// </summary>
+        public static IReadOnlyCollection<HealthPickup> All => Cache;
+        
+        /// <summary>
+        /// Cache currently active items.
+        /// </summary>
+        private static readonly HashSet<HealthPickup> Cache = new();
+        
+        /// <summary>
+        /// Additional behaviour for when the active state of this has changed.
+        /// </summary>
+        /// <param name="active">If this is currently active or not.</param>
+        protected override void OnSetActive(bool active)
+        {
+            if (active)
+            {
+                Cache.Add(this);
+            }
+            else
+            {
+                Cache.Remove(this);
+            }
+        }
+    }
+}

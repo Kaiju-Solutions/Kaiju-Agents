@@ -6,6 +6,7 @@ namespace Samples.Keyboard
     /// <summary>
     /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent.
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Samples/Keyboard Controller", 15)]
     public class KeyboardController : KaijuController
     {
         /// <summary>
