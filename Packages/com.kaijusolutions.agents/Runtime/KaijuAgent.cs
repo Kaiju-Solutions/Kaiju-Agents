@@ -565,7 +565,8 @@ namespace KaijuSolutions.Agents
                     }
                     else if (_spin.HasValue)
                     {
-                        angle = (Orientation + _spin.Value * lookSpeed) * Mathf.Deg2Rad;
+                        float spin = lookSpeed > 0 ? Mathf.Min(lookSpeed, 179) : 179;
+                        angle = (Orientation + _spin.Value * spin) * Mathf.Deg2Rad;
                     }
                     else
                     {
@@ -620,7 +621,8 @@ namespace KaijuSolutions.Agents
                 }
                 else if (_spin.HasValue)
                 {
-                    angle = (Orientation + _spin.Value * lookSpeed) * Mathf.Deg2Rad;
+                    float spin = lookSpeed > 0 ? Mathf.Min(lookSpeed, 179) : 179;
+                    angle = (Orientation + _spin.Value * spin) * Mathf.Deg2Rad;
                 }
                 else
                 {
