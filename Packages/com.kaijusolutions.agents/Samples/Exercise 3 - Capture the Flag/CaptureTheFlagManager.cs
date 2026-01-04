@@ -7,7 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// Manager for <see cref="Trooper"/>s to play capture the flag.
     /// </summary>
     [DefaultExecutionOrder(int.MaxValue)]
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Capture the Flag Manager", 33)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Capture the Flag Manager", 31)]
     public class CaptureTheFlagManager : KaijuGlobalController
     {
         /// <summary>
@@ -40,6 +40,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Min(1)]
         [SerializeField]
         private int health;
+        
+        /// <summary>
+        /// The damage the <see cref="BlasterActuator"/>s deal to <see cref="Trooper"/>s.
+        /// </summary>
+        public static int Damage => Instance.damage;
+        
+        /// <summary>
+        /// The damage the <see cref="BlasterActuator"/>s deal to <see cref="Trooper"/>s.
+        /// </summary>
+        [Tooltip("The damage the blasters deals to troopers.")]
+        [Min(1)]
+        [SerializeField]
+        private int damage;
         
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Ammo"/> of <see cref="Trooper"/>s for their blaster.

@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace KaijuSolutions.Agents.Exercises.Microbes
@@ -199,7 +198,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         private void SpawnEnergy()
         {
-            EnergyPickup.Spawn(energyPrefab, energy, RandomPosition);
+            EnergyPickup.Spawn(energyPrefab, RandomPosition);
         }
         
         /// <summary>

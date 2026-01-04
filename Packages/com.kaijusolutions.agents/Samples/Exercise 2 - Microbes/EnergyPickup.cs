@@ -38,29 +38,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         }
         
         /// <summary>
-        /// How much energy this will restore to a <see cref="Microbe"/>.
-        /// </summary>
-        public float Value
-        {
-            get => energy;
-            set => energy = Mathf.Max(value, float.Epsilon);
-        }
-        
-        /// <summary>
-        /// How much energy this will restore to a <see cref="Microbe"/>.
-        /// </summary>
-        [Tooltip("How much energy this will restore to a microbe.")]
-        [Min(float.Epsilon)]
-        [SerializeField]
-        private float energy = 10;
-        
-        /// <summary>
         /// Spawn an energy.
         /// </summary>
         /// <param name="energyPrefab">The prefab to spawn.</param>
         /// <param name="value">The energy value to set.</param>
         /// <param name="position">The position to spawn the energy pickup at.</param>
-        public static void Spawn([NotNull] EnergyPickup energyPrefab, float value, Vector2 position)
+        public static void Spawn([NotNull] EnergyPickup energyPrefab, Vector2 position)
         {
             // If there are none cached, we need to spawn a new one.
             EnergyPickup spawned;
@@ -69,7 +52,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 spawned = Instantiate(energyPrefab);
                 spawned.name = "Energy";
                 spawned.Position = position;
-                spawned.Value = value;
                 return;
             }
             
@@ -77,7 +59,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             spawned = Unactive.First();
             Unactive.Remove(spawned);
             spawned.Position = position;
-            spawned.Value = value;
             spawned.enabled = true;
             spawned.gameObject.SetActive(true);
         }

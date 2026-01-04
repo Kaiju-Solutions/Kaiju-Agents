@@ -14,7 +14,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(KaijuRigidbodyAgent))]
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 27)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 25)]
     public class Trooper : KaijuController
     {
         // TODO - Event definitions.
@@ -64,7 +64,35 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         public bool TeamOne { get; private set; } = true;
         
-        // TODO - Cache the blaster.
+        /// <summary>
+        /// The <see cref="BlasterActuator"/> of the trooper.
+        /// </summary>
+        private BlasterActuator _blaster;
+        
+        /// <summary>
+        /// The ammo for this <see cref="Trooper"/>'s <see cref="BlasterActuator"/>.
+        /// </summary>
+        public int Ammo
+        {
+            get => _blaster != null ? _blaster.Ammo : 0;
+            private set
+            {
+                if (_blaster != null)
+                {
+                    _blaster.Ammo = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        /// If the <see cref="BlasterActuator"/> has any ammo.
+        /// </summary>
+        public bool HasAmmo => _blaster != null && _blaster.Ammo > 0;
+        
+        /// <summary>
+        /// If the <see cref="BlasterActuator"/> has any ammo is is not <see cref="KaijuAttackActuator.OnCooldown"/>.
+        /// </summary>
+        public bool CanAttack => HasAmmo && !_blaster.OnCooldown;
         
         /// <summary>
         /// Spawn a trooper.
@@ -109,16 +137,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 ActiveTwo.Add(trooper);
             }
             
-            // TODO - Set trooper health and ammo to max.
+            // Set trooper health and ammo to max.
+            trooper.Health = CaptureTheFlagManager.Health;
+            trooper.Ammo = CaptureTheFlagManager.Ammo;
         }
         
         /// <summary>
         /// Take damage from another trooper.
         /// </summary>
-        /// <param name="attacker"></param>
+        /// <param name="attacker">The trooper that dealt the damage.</param>
         public void TakeDamage([NotNull] Trooper attacker)
         {
-            // TODO - Subtract our health by the damage amount.
+            Health -= CaptureTheFlagManager.Damage;
+            
             if (Health > 0)
             {
                 // TODO - Hit events.
@@ -128,9 +159,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // TODO - Killed events.
         }
         
-        // TODO - Method for aiming the blaster vertically.
-        
-        // TODO - Method for shooting the blaster, being a wrapper around setting it to act.
+        /// <summary>
+        /// Fire the <see cref="BlasterActuator"/>.
+        /// </summary>
+        public void Attack()
+        {
+            if (_blaster != null)
+            {
+                _blaster.Begin();
+            }
+        }
         
         /// <summary>
         /// This function is called when the object becomes enabled and active.
@@ -139,7 +177,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             base.OnEnable();
             Health = CaptureTheFlagManager.Health;
-            // TODO - Reset to the max ammo.
+            Ammo = CaptureTheFlagManager.Ammo;
             
             // Assign to the correct team.
             if (TeamOne)
@@ -165,8 +203,9 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             ActiveOne.Remove(this);
             ActiveTwo.Remove(this);
             
+            // Reset values.
             Health = 0;
-            // TODO - Reset to no ammo.
+            Ammo = 0;
         }
         
         /// <summary>
@@ -175,7 +214,11 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
         protected override void OnActuatorEnabled(KaijuActuator actuator)
         {
-            // TODO - Get the blaster actuator
+            // Get the blaster.
+            if (actuator is BlasterActuator blaster)
+            {
+                _blaster = blaster;
+            }
         }
         
         /// <summary>
@@ -235,7 +278,15 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 }
                 else
                 {
-                    // TODO - Pickup ammo.
+                    // No point in using it if we already have the maximum ammo.
+                    int max = CaptureTheFlagManager.Ammo;
+                    if (Ammo >= max)
+                    {
+                        return;
+                    }
+                    
+                    number.Interact();
+                    Ammo = Mathf.Max(Ammo + value, max);
                     // TODO - Events.
                 }
                 

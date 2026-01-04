@@ -312,7 +312,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 return;
             }
             
-            _energy += pickup.Value;
+            _energy += MicrobeManager.Energy;
             pickup.gameObject.SetActive(false);
         }
     }

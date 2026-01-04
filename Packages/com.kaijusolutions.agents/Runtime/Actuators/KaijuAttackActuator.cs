@@ -36,6 +36,11 @@ namespace KaijuSolutions.Agents.Actuators
         private float charge;
         
         /// <summary>
+        /// If this <see cref="KaijuAttackActuator"/> is currently cooling down.
+        /// </summary>
+        public bool OnCooldown => _cooling > 0;
+        
+        /// <summary>
         /// The time it takes to cooldown after the attack in seconds before it can be performed again.
         /// </summary>
         public float Cooldown
@@ -157,6 +162,12 @@ namespace KaijuSolutions.Agents.Actuators
         /// <returns>The state of the <see cref="KaijuActuator"/>'s progress.</returns>
         protected override KaijuActuatorState Run()
         {
+            // We cannot use this if the preconditions are not met.
+            if (!PreConditions())
+            {
+                return KaijuActuatorState.Failed;
+            }
+            
             // Wait for the cooling down to happen, which happens outside of this method.
             if (_cooling > 0)
             {
@@ -219,6 +230,7 @@ namespace KaijuSolutions.Agents.Actuators
                 _lineTimer = visible;
             }
             
+            PostActions(state == KaijuActuatorState.Done);
             return state;
         }
         
@@ -251,6 +263,18 @@ namespace KaijuSolutions.Agents.Actuators
                 _cooling -= Time.deltaTime;
             }
         }
+        
+        /// <summary>
+        /// Any conditions which must be passed to begin running the actuator. This does not need to account for the <see cref="Charge"/> or <see cref="Cooldown"/>.
+        /// </summary>
+        /// <returns>If the conditions to run this were passed.</returns>
+        protected virtual bool PreConditions() => true;
+        
+        /// <summary>
+        /// Any final actions to perform after the actuator has performed.
+        /// </summary>
+        /// <param name="success">If it succeeded or not.</param>
+        protected virtual void PostActions(bool success) { }
         
         /// <summary>
         /// Handle the hit logic.
