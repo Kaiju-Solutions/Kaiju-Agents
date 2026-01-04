@@ -48,6 +48,36 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public static event MultiTrooperAction OnTrooperEliminatedGlobal;
         
         /// <summary>
+        /// Callback for when this agent dropped the <see cref="Flag"/>.
+        /// </summary>
+        public event FlagAction OnFlagDropped;
+        
+        /// <summary>
+        /// Global callback for when this agent dropped the <see cref="Flag"/>.
+        /// </summary>
+        public event TrooperFlagAction OnFlagDroppedGlobal;
+        
+        /// <summary>
+        /// Callback for when this agent returned the <see cref="Flag"/>.
+        /// </summary>
+        public event FlagAction OnFlagReturned;
+        
+        /// <summary>
+        /// Global callback for when this agent returned the <see cref="Flag"/>.
+        /// </summary>
+        public event TrooperFlagAction OnFlagReturnedGlobal;
+        
+        /// <summary>
+        /// Callback for when this agent picking up the <see cref="Flag"/>.
+        /// </summary>
+        public event FlagAction OnFlagPickedUp;
+        
+        /// <summary>
+        /// Global callback for when this agent picking up the <see cref="Flag"/>.
+        /// </summary>
+        public event TrooperFlagAction OnFlagPickedUpGlobal;
+        
+        /// <summary>
         /// Callback for picking up a <see cref="HealthPickup"/>.
         /// </summary>
         public event HealthAction OnHealth;
@@ -282,7 +312,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             }
             
             _flag.Drop();
-            // TODO - Dropped events.
+            OnFlagDropped?.Invoke(_flag);
+            OnFlagDroppedGlobal?.Invoke(this, _flag);
             _flag = null;
         }
         
@@ -381,12 +412,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             if (TeamOne == flag.TeamOne)
             {
-                // TODO - Return events.
+                OnFlagReturned?.Invoke(_flag);
+                OnFlagReturnedGlobal?.Invoke(this, _flag);
                 return;
             }
             
             _flag = flag;
-            // TODO - Pickup events.
+            OnFlagPickedUp?.Invoke(_flag);
+            OnFlagPickedUpGlobal?.Invoke(this, _flag);
         }
     }
 }
