@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
@@ -71,8 +72,9 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// What to do when interacted with.
         /// </summary>
+        /// <param name="trooper">The <see cref="Trooper"/> interracting with this.</param>
         /// <returns>If the interaction was successful or not.</returns>
-        public override bool Interact()
+        public override bool Interact([NotNull] Trooper trooper)
         {
             // Can't interact if cooling down.
             if (OnCooldown)

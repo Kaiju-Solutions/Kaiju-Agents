@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
@@ -13,8 +15,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// What to do when interacted with.
         /// </summary>
+        /// <param name="trooper">The <see cref="Trooper"/> interracting with this.</param>
         /// <returns>If the interaction was successful or not.</returns>
-        public abstract bool Interact();
+        public abstract bool Interact([NotNull] Trooper trooper);
+        
+        /// <summary>
+        /// All colliders attached to this.
+        /// </summary>
+        protected IReadOnlyList<Collider> Colliders => _colliders;
         
         /// <summary>
         /// All colliders attached to this.
@@ -24,7 +32,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             // Ensure all colliders are triggers.
             if (_colliders != null)
@@ -42,7 +50,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             foreach (Collider c in GetComponentsInChildren<Collider>())
             {

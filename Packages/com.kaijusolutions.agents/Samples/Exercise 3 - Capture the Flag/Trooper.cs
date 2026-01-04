@@ -118,6 +118,11 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         private BlasterActuator _blaster;
         
         /// <summary>
+        /// The flag being carried.
+        /// </summary>
+        private Flag _flag;
+        
+        /// <summary>
         /// The ammo for this <see cref="Trooper"/>'s <see cref="BlasterActuator"/>.
         /// </summary>
         public int Ammo
@@ -141,6 +146,13 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// If the <see cref="BlasterActuator"/> has any ammo and is not <see cref="KaijuAttackActuator.OnCooldown"/>.
         /// </summary>
         public bool CanAttack => HasAmmo && !_blaster.OnCooldown;
+        
+        /// <summary>
+        /// Where to store the flag when picking it up.
+        /// </summary>
+        [field: Tooltip("Where to store the flag when picking it up.")]
+        [field: SerializeField]
+        public Transform FlagPosition { get; private set; }
         
         /// <summary>
         /// Spawn a trooper.
@@ -262,6 +274,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // Reset values.
             Health = 0;
             Ammo = 0;
+            
+            // Drop the flag if this trooper is carrying it.
+            if (_flag == null)
+            {
+                return;
+            }
+            
+            _flag.Drop();
+            // TODO - Dropped events.
+            _flag = null;
         }
         
         /// <summary>
@@ -328,7 +350,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                         return;
                     }
                     
-                    health.Interact();
+                    health.Interact(this);
                     Health = Mathf.Max(Health + value, max);
                     OnHealth?.Invoke(health);
                     OnHealthGlobal?.Invoke(this, health);
@@ -342,7 +364,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                         return;
                     }
                     
-                    ammo.Interact();
+                    ammo.Interact(this);
                     Ammo = Mathf.Max(Ammo + value, max);
                     OnAmmo?.Invoke(ammo);
                     OnAmmoGlobal?.Invoke(this, ammo);
@@ -351,7 +373,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return;
             }
             
-            // TODO - Flag pickup.
+            // The last option is this being a flag.
+            if (pickup is not Flag flag || !flag.Interact(this))
+            {
+                return;
+            }
+            
+            if (TeamOne == flag.TeamOne)
+            {
+                // TODO - Return events.
+                return;
+            }
+            
+            _flag = flag;
+            // TODO - Pickup events.
         }
     }
 }

@@ -1,0 +1,205 @@
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents.Extensions;
+using UnityEngine;
+
+namespace KaijuSolutions.Agents.Exercises.CTF
+{
+    /// <summary>
+    /// The flags themselves for <see cref="Trooper"/>s to try and capture.
+    /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Flag", 29)]
+    public class Flag : Pickup
+    {
+        /// <summary>
+        /// Both flags for easy access.
+        /// </summary>
+        public static IReadOnlyCollection<Flag> Flags => Both;
+        
+        /// <summary>
+        /// Store both flags for easy access.
+        /// </summary>
+        private static readonly HashSet<Flag> Both = new();
+        
+        /// <summary>
+        /// Team one's flag.
+        /// </summary>
+        public static Flag TeamOneFlag;
+        
+        /// <summary>
+        /// Team two's flag.
+        /// </summary>
+        public static Flag TeamTwoFlag;
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            TeamOneFlag = null;
+            TeamTwoFlag = null;
+            Both.Clear();
+        }
+        
+        /// <summary>
+        /// If this is team one's flag.
+        /// </summary>
+        [field: Tooltip("If this is team one's flag.")]
+        [field: SerializeField]
+        public bool TeamOne { get; private set; } = true;
+        
+        /// <summary>
+        /// The home position of the flag.
+        /// </summary>
+        private Vector2 _position;
+        
+        /// <summary>
+        /// The home orientation of the flag.
+        /// </summary>
+        private Quaternion _rotation;
+        
+        /// <summary>
+        /// This function is called when the object becomes enabled and active.
+        /// </summary>
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            
+            // Ensure this is assigned.
+            AssignFlag();
+            
+            // Cache the spawn position.
+            _position = Position;
+            _rotation = OrientationQuaternion;
+        }
+        
+        /// <summary>
+        /// Ensure this flag is validly assigned.
+        /// </summary>
+        private void AssignFlag()
+        {
+            if (TeamOne)
+            {
+                if (TeamTwoFlag == this)
+                {
+                    TeamTwoFlag = null;
+                }
+                
+                if (TeamOneFlag != null && TeamOneFlag != this)
+                {
+                    Both.Remove(this);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    TeamOneFlag = this;
+                    Both.Add(this);
+                }
+            }
+            else
+            {
+                if (TeamOneFlag == this)
+                {
+                    Both.Remove(this);
+                    TeamOneFlag = null;
+                }
+                
+                if (TeamTwoFlag != null && TeamTwoFlag != this)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    TeamTwoFlag = this;
+                    Both.Add(this);
+                }
+            }
+        }
+        
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            Both.Remove(this);
+            if (TeamOneFlag == this)
+            {
+                TeamOneFlag = null;
+            }
+            
+            if (TeamTwoFlag == this)
+            {
+                TeamTwoFlag = null;
+            }
+        }
+        
+        /// <summary>
+        /// What to do when interacted with.
+        /// </summary>
+        /// <param name="trooper">The <see cref="Trooper"/> interracting with this.</param>
+        /// <returns>If the interaction was successful or not.</returns>
+        public override bool Interact([NotNull] Trooper trooper)
+        {
+            Transform t = transform;
+            
+            // If this is the same team, the flag is being returned.
+            if (trooper.TeamOne == TeamOne)
+            {
+                t.parent = null;
+                t.position = _position.Expand();
+                t.rotation = _rotation;
+                
+                // Enable all triggers, even though they already should be at this point.
+                foreach (Collider c in Colliders)
+                {
+                    c.enabled = true;
+                }
+            }
+            else
+            {
+                // Otherwise, it is being picked up.
+                t.parent = trooper.FlagPosition;
+                t.localPosition = Vector3.zero;
+                t.localRotation = Quaternion.identity;
+                
+                // Disable all triggers.
+                foreach (Collider c in Colliders)
+                {
+                    c.enabled = false;
+                }
+            }
+            
+            return true;
+        }
+        
+        /// <summary>
+        /// Drop this flag.
+        /// </summary>
+        public void Drop()
+        {
+            Transform t = transform;
+            t.parent = null;
+            Vector3 p = t.position;
+            t.position = new(p.x, 0, p.z);
+            
+            foreach (Collider c in Colliders)
+            {
+                c.enabled = true;
+            }
+        }
+        
+        /// <summary>
+        /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
+        /// </summary>
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            
+            if (Application.isPlaying)
+            {
+                AssignFlag();
+            }
+        }
+    }
+}

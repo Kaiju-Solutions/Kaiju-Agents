@@ -6,7 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// <see cref="Pickup"/> to restore ammo.
     /// </summary>
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 28)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Ammo Pickup", 28)]
     public class AmmoPickup : NumberPickup
     {
         /// <summary>
