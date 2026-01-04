@@ -28,6 +28,14 @@ namespace KaijuSolutions.Agents
         private CharacterController character;
         
         /// <summary>
+        /// If gravity should be applied to the <see cref="KaijuAgent"/>.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("If gravity should be applied to the agent.")]
+#endif
+        public bool gravity;
+        
+        /// <summary>
         /// The cached gravity of the <see cref="KaijuAgent"/>.
         /// </summary>
         private float _velocityY;
@@ -108,15 +116,23 @@ namespace KaijuSolutions.Agents
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)
         {
-            // When on the ground, keep a minimal velocity to stay grounded, and add it when in the air.
-            float gravity = Physics.gravity.y * delta;
-            if (Character.isGrounded)
+            // Handle gravity if it is enabled.
+            if (gravity)
             {
-                _velocityY = gravity;
+                // When on the ground, keep a minimal velocity to stay grounded, and add it when in the air.
+                float g = Physics.gravity.y * delta;
+                if (Character.isGrounded)
+                {
+                    _velocityY = g;
+                }
+                else
+                {
+                    _velocityY += g;
+                }
             }
             else
             {
-                _velocityY += gravity;
+                _velocityY = 0;
             }
             
             Vector2 scaled = Velocity * delta;

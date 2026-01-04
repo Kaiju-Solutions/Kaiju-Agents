@@ -412,9 +412,10 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Get a cached <see cref="KaijuAgent"/> to spawn.
         /// </summary>
+        /// <param name="components">All components which must be found on the <see cref="KaijuAgent"/>. This will check in children as well.</param>
         /// <typeparam name="T">The type of <see cref="KaijuAgent"/>.</typeparam>
         /// <returns>A cached <see cref="KaijuAgent"/> if one is found, otherwise NULL.</returns>
-        public static KaijuAgent GetCached<T>() where T : KaijuAgent
+        public static T GetCached<T>(ICollection<Type> components = null) where T : KaijuAgent
         {
             // Nothing to do if no cached agents.
             Type type = typeof(T);
@@ -423,16 +424,70 @@ namespace KaijuSolutions.Agents
                 return null;
             }
             
-            // Get the cached agent.
-            KaijuAgent agent = set.First();
-            set.Remove(agent);
+            KaijuAgent agent = null;
+            if (components == null)
+            {
+                // Get the first cached agent if we don't care about components.
+                agent = set.First();
+                set.Remove(agent);
+            }
+            else
+            {
+                // Otherwise, search to find a candidate agent which meets our component requirements.
+                foreach (KaijuAgent candidate in set)
+                {
+                    // Get all types on the agent and its children. As this object is inactive, get all inactive items.
+                    Component[] attached = candidate.GetComponentsInChildren<Component>(includeInactive: true);
+                    Type[] types = new Type[attached.Length];
+                    for (int i = 0; i < attached.Length; i++)
+                    {
+                        types[i] = attached[i].GetType();
+                    }
+                    
+                    // See if this agent has all the components we need.
+                    bool valid = true;
+                    foreach (Type c in components)
+                    {
+                        // For each component, assume it does not have it until it is found.
+                        valid = false;
+                        foreach (Type exists in types)
+                        {
+                            if (c != exists)
+                            {
+                                continue;
+                            }
+                            
+                            // If we found a match, stop looking for that one.
+                            valid = true;
+                            break;
+                        }
+                        
+                        // If the component was not found, rule this out as a candidate and try the next one.
+                        if (!valid)
+                        {
+                            break;
+                        }
+                    }
+                    
+                    // If this candidate passsed the requirements, use it.
+                    if (!valid)
+                    {
+                        continue;
+                    }
+                    
+                    agent = candidate;
+                    set.Remove(candidate);
+                    break;
+                }
+            }
             
+            // If this set is now empty, remove it.
             if (set.Count < 1)
             {
                 DisabledAgents.Remove(type);
             }
             
-            return agent;
+            return agent != null ? agent as T : null;
         }
         
         /// <summary>

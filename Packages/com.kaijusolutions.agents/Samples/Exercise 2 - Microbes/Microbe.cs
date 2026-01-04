@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
@@ -42,6 +44,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// The active microbes.
         /// </summary>
         private static readonly HashSet<Microbe> Active = new();
+        
+        /// <summary>
+        /// Cache the microbe type which is needed from cached agents.
+        /// </summary>
+        private static readonly Type[] Types = { typeof(Microbe) };
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -183,11 +190,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
             // Spawn the agent.
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier));
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, Types);
             if (!agent.TryGetComponent(out Microbe microbe))
             {
                 microbe = agent.gameObject.AddComponent<Microbe>();
             }
+            
+            // Set the identifier.
+            agent.SetIdentifier(identifier);
             
             // Set the microbe's initial energy.
             microbe.Energy = energy;

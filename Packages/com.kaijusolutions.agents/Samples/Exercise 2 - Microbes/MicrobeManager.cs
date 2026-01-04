@@ -70,7 +70,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// The time in seconds <see cref="Microbe"/>s need to wait before they can <see cref="Microbe.Mate"/> again.
         /// </summary>
         [Tooltip("The time in seconds microbes need to wait before they can mate again.")]
-        [Min(0)]
+        [Min(float.Epsilon)]
         [SerializeField]
         private float cooldown = 5;
         

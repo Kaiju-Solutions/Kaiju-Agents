@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
@@ -213,12 +214,13 @@ namespace KaijuSolutions.Agents
         /// <param name="position">The position to spawn the <see cref="KaijuAgent"/> at.</param>
         /// <param name="orientation">The orientation to spawn the <see cref="KaijuAgent"/> at.</param>
         /// <param name="cached">If this should try to load a cached <see cref="KaijuAgent"/> or not.</param>
-        /// <param name="prefab"></param>
-        /// <param name="name"></param>
-        /// <param name="body"></param>
-        /// <param name="eyes"></param>
-        /// <returns></returns>
-        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null)
+        /// <param name="prefab">A prefab to spawn in, either if using cached agents is disabled or one cannot be found rather than creating a default agent.</param>
+        /// <param name="name">The name to give the spawned agent.</param>
+        /// <param name="body">The color to assign the body visuals. This only works if there is an immediate child named "Body" like with the default agents.</param>
+        /// <param name="eyes">The color to assign the eye visuals. This only works if there is an immediate child named "Eyes" under the "Body" like with the default agents.</param>
+        /// <param name="components">All component types to ensure are added to the agent. A cached agent will only be used if it has all of these components, and otherwise will create a new agent with all components instead. This will check in children as well.</param>
+        /// <returns>The spawned <see cref="KaijuAgent"/>.</returns>
+        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection<Type> components = null)
         {
             KaijuAgent agent;
             
@@ -227,9 +229,9 @@ namespace KaijuSolutions.Agents
             {
                 agent = type switch
                 {
-                    KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(),
-                    KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(),
-                    KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(),
+                    KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(components),
+                    KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(components),
+                    KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(components),
                     _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>()
                 };
                 
@@ -274,8 +276,31 @@ namespace KaijuSolutions.Agents
             switch (type)
             {
                 case KaijuAgentType.Rigidbody:
-                    go.AddComponent<Rigidbody>();
+                    Rigidbody rb = go.AddComponent<Rigidbody>();
+                    
+                    // Apply default parameters for newly created rigidbodies.
+                    rb.centerOfMass = Vector3.zero;
+                    rb.linearDamping = 0;
+                    rb.angularDamping = 0;
+                    rb.interpolation = RigidbodyInterpolation.Interpolate;
+                    rb.isKinematic = false;
+                    rb.linearVelocity = Vector3.zero;
+                    rb.angularVelocity = Vector3.zero;
+                    
+                    // While the Y position does not need to be constrained, we will assume to keep it off for basic examples to start.
+                    rb.constraints = RigidbodyConstraints.FreezePositionY;
+                    
+                    // Then, apply the rotation freezing which needs to stay on.
+                    rb.freezeRotation = true;
+                    
+                    // Likewise, you can use gravity with agents, but assume to keep it off to start.
+                    rb.useGravity = false;
+                    
+                    // Start with the most precise collision detection mode by default, and this can be changed as needed.
+                    rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
                     agent = go.AddComponent<KaijuRigidbodyAgent>();
+                    
+                    // While rigidbody agents do not technically need a collider, if you are using one over a transform agent, you likely want one.
                     go.AddComponent<CapsuleCollider>();
                     break;
                 case KaijuAgentType.Character:
@@ -283,8 +308,14 @@ namespace KaijuSolutions.Agents
                     agent = go.AddComponent<KaijuCharacterAgent>();
                     break;
                 case KaijuAgentType.Navigation:
-                    go.AddComponent<NavMeshAgent>();
+                    NavMeshAgent nav =  go.AddComponent<NavMeshAgent>();
                     agent = go.AddComponent<KaijuNavigationAgent>();
+                    
+                    // Match parameters by default.
+                    nav.speed = agent.MoveSpeed;
+                    float acceleration = agent.MoveAcceleration;
+                    nav.acceleration = acceleration <= 0 ? float.MaxValue : acceleration;
+                    nav.angularSpeed = agent.LookSpeed;
                     break;
                 case KaijuAgentType.Transform:
                 default:
