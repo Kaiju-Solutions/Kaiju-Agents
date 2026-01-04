@@ -354,28 +354,6 @@ namespace KaijuSolutions.Agents
             
             PendingAdditions.Clear();
             
-            foreach (KaijuAgent agent in PendingRemovals)
-            {
-                AllAgents.Remove(agent);
-                
-                // Remove identifiers.
-                foreach (uint identifier in agent.Identifiers)
-                {
-                    RemoveIdentifier(agent, identifier);
-                }
-                
-                if (agent.PhysicsAgent)
-                {
-                    PhysicsAgents.Remove(agent);
-                }
-                else
-                {
-                    TickAgents.Remove(agent);
-                }
-            }
-            
-            PendingRemovals.Clear();
-            
             foreach (KaijuAgent agent in PendingCachedRemovals)
             {
                 AllAgents.Remove(agent);
@@ -407,6 +385,40 @@ namespace KaijuSolutions.Agents
             }
             
             PendingCachedRemovals.Clear();
+            
+            foreach (KaijuAgent agent in PendingRemovals)
+            {
+                AllAgents.Remove(agent);
+                
+                // Remove identifiers.
+                foreach (uint identifier in agent.Identifiers)
+                {
+                    RemoveIdentifier(agent, identifier);
+                }
+                
+                if (agent.PhysicsAgent)
+                {
+                    PhysicsAgents.Remove(agent);
+                }
+                else
+                {
+                    TickAgents.Remove(agent);
+                }
+                
+                // Ensure this is not cached.
+                Type type = agent.GetType();
+                if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
+                {
+                    continue;
+                }
+                
+                if (set.Remove(agent) && set.Count < 1)
+                {
+                    DisabledAgents.Remove(type);
+                }
+            }
+            
+            PendingRemovals.Clear();
         }
         
         /// <summary>

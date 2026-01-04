@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace KaijuSolutions.Agents.Exercises.Microbes
@@ -6,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// <summary>
     /// Manager for spawning <see cref="Microbe"/>s and <see cref="Energy"/> components.
     /// </summary>
+    [DefaultExecutionOrder(int.MaxValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Microbe Manager", 23)]
     public class MicrobeManager : KaijuBehaviour
     {
@@ -165,6 +167,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 {
                     SpawnMicrobe();
                 }
+            }
+        }
+        
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled.
+        /// </summary>
+        private void OnDisable()
+        {
+            if (_instance == this)
+            {
+                _instance = null;
             }
         }
         

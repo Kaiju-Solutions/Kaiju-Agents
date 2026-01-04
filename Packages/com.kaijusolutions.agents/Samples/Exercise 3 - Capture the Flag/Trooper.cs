@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Actuators;
 using UnityEngine;
@@ -19,9 +20,39 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         // TODO - Event definitions.
         
         /// <summary>
-        /// Cache the microbe type which is needed from cached agents.
+        /// All troopers currently active for team one.
+        /// </summary>
+        public static IReadOnlyCollection<Trooper> AllOne => ActiveOne;
+        
+        /// <summary>
+        /// The active troopers for team one.
+        /// </summary>
+        private static readonly HashSet<Trooper> ActiveOne = new();
+        
+        /// <summary>
+        /// All troopers currently active for team two.
+        /// </summary>
+        public static IReadOnlyCollection<Trooper> AllTwo => ActiveTwo;
+        
+        /// <summary>
+        /// The active troopers for team two.
+        /// </summary>
+        private static readonly HashSet<Trooper> ActiveTwo = new();
+        
+        /// <summary>
+        /// Cache the trooper type which is needed from cached agents.
         /// </summary>
         private static readonly Type[] Types = { typeof(Trooper) };
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            ActiveOne.Clear();
+            ActiveTwo.Clear();
+        }
         
         /// <summary>
         /// The current health of this trooper.
@@ -42,18 +73,18 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <param name="spawnPoint">The <see cref="SpawnPoint"/> to spawn the trooper at.</param>
         public static void Spawn([NotNull] KaijuAgent trooperPrefab, [NotNull] SpawnPoint spawnPoint)
         {
-            // Get team values. TODO - Colors from manager.
+            // Get team values.
             uint team;
             Color color;
             if (spawnPoint.TeamOne)
             {
                 team = 1;
-                color = Color.red;
+                color = CaptureTheFlagManager.ColorOne;
             }
             else
             {
                 team = 2;
-                color = Color.blue;
+                color = CaptureTheFlagManager.ColorTwo;
             }
             
             // Spawn the agent.
@@ -64,9 +95,21 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 trooper = agent.gameObject.AddComponent<Trooper>();
             }
             
-            trooper.TeamOne = spawnPoint.TeamOne;
-            // TODO - Set trooper health and ammo to max.
+            // Assign to the correct team.
             agent.SetIdentifier(team);
+            trooper.TeamOne = spawnPoint.TeamOne;
+            if (trooper.TeamOne)
+            {
+                ActiveTwo.Remove(trooper);
+                ActiveOne.Add(trooper);
+            }
+            else
+            {
+                ActiveOne.Remove(trooper);
+                ActiveTwo.Add(trooper);
+            }
+            
+            // TODO - Set trooper health and ammo to max.
         }
         
         /// <summary>
@@ -95,7 +138,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         protected override void OnEnable()
         {
             base.OnEnable();
-            // TODO - Reset to the max health and ammo.
+            Health = CaptureTheFlagManager.Health;
+            // TODO - Reset to the max ammo.
+            
+            // Assign to the correct team.
+            if (TeamOne)
+            {
+                ActiveTwo.Remove(this);
+                ActiveOne.Add(this);
+            }
+            else
+            {
+                ActiveOne.Remove(this);
+                ActiveTwo.Add(this);
+            }
         }
         
         /// <summary>
@@ -105,8 +161,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             base.OnDisable();
             
+            // Remove from any active pools.
+            ActiveOne.Remove(this);
+            ActiveTwo.Remove(this);
+            
             Health = 0;
-            // TODO - Reset to the max ammo.
+            // TODO - Reset to no ammo.
         }
         
         /// <summary>
@@ -152,7 +212,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             if (pickup is NumberPickup number)
             {
                 // If we can't interact with it, there is nothing to do.
-                if (!number.Interact())
+                if (number.OnCooldown)
                 {
                     return;
                 }
@@ -162,7 +222,15 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 // Handle it as the proper type.
                 if (number is HealthPickup health)
                 {
-                    Health += value; // TODO - Clamp to the maximum health.
+                    // No point in using it if we already have the maximum health.
+                    int max = CaptureTheFlagManager.Health;
+                    if (Health >= max)
+                    {
+                        return;
+                    }
+                    
+                    health.Interact();
+                    Health = Mathf.Max(Health + value, max);
                     // TODO - Events.
                 }
                 else
