@@ -33,7 +33,15 @@ namespace KaijuSolutions.Agents
         /// The mode for how to compare the <see cref="match"/> value.
         /// </summary>
 #if UNITY_EDITOR
-        [Tooltip("The mode for how to compare the match value.")]
+        [Tooltip("The mode for how to compare the match value.\n" +
+                 "Equal - Must be equal.\n" +
+                 "Not Equal - Must be not equal.\n" +
+                 "Contains - The \"match\" must be contained within the value being compared against.\n" +
+                 "Contained - The \"match\" must contain value being compared against.\n" +
+                 "Starts With - The value being compared against must start with the \"match\".\n" +
+                 "Started With - The \"match\" must start with the value being compared against.\n" +
+                 "Ends With - The value being compared against must end with the \"match\".\n" +
+                 "Ended With - The \"match\" must end with the value being compared against.\n")]
 #endif
         public KaijuAgentsMatcherMode mode;
         

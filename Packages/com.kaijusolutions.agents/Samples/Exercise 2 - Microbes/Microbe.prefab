@@ -261,7 +261,7 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
-  configuration: {fileID: 0}
+  configuration: {fileID: 11400000, guid: 40c6c068c0b82d846af944e9c4bc7573, type: 2}
   identifiers: 
   radius: 0.5
   body: {fileID: 1584163208989239398}

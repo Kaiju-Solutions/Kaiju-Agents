@@ -6327,7 +6327,7 @@ MonoBehaviour:
   moveAcceleration: 0
   lookSpeed: 0
   autoRotate: 1
-  configuration: {fileID: 0}
+  configuration: {fileID: 11400000, guid: a4dc4f2f48451674eaf299cc8d061668, type: 2}
   identifiers: 
   radius: 0.5
 --- !u!4 &1884755501

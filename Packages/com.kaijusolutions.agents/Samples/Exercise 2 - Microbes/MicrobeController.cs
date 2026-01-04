@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         protected override void OnEnabled()
         {
-            Agent.Wander(5);
+            Agent.Wander();
         }
     }
 }

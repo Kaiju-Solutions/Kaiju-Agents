@@ -32,10 +32,10 @@ namespace KaijuSolutions.Agents.Exercises.Cleaner
         public bool Dirty { get; private set; }
         
         /// <summary>
-        /// The chance that every second this floor tile could become dirty.
+        /// The chance that every second this floor tile could become dirty. Note that as this is randomly calculated every fraction of a second, a value of one does not actually guarantee the tile will become dirty every second.
         /// </summary>
-        [field: Tooltip("The chance that every second this floor tile could become dirty.")]
-        [field: Range(0, 1)]
+        [field: Tooltip("The chance that every second this floor tile could become dirty. Note that as this is randomly calculated every fraction of a second, a value of one does not actually guarantee the tile will become dirty every second.")]
+        [field: Min(float.Epsilon)]
         [field: SerializeField]
         public float Chance { get; private set; } = 0.01f;
         
