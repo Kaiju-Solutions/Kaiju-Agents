@@ -9,7 +9,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// Allow for visual detection of a <see href="https://docs.unity3d.com/Manual/Components.html">component</see> type.
+    /// <see cref="KaijuSensor"/> to allow for visual detection of a <see href="https://docs.unity3d.com/Manual/Components.html">component</see> type.
     /// </summary>
     /// <typeparam name="T">The type of <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.</typeparam>
     [DefaultExecutionOrder(int.MinValue)]

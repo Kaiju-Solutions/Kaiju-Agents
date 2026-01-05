@@ -41,13 +41,13 @@ namespace KaijuSolutions.Agents.Movement
         private readonly Vector3[] _editorRendering = new Vector3[6];
 #endif
         /// <summary>
-        /// Get a <see cref="KaijuEvadeMovement"/>.
+        /// Get an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuEvadeMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get an evade movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -61,13 +61,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a <see cref="KaijuEvadeMovement"/>.
+        /// Get an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuEvadeMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get an evade movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -81,13 +81,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a <see cref="KaijuEvadeMovement"/>.
+        /// Get an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuEvadeMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get an evade movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -101,13 +101,13 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get a <see cref="KaijuEvadeMovement"/>.
+        /// Get an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="target">The target.</param>
         /// <param name="distance">At what distance from the target should the evade be considered successful.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuEvadeMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get an evade movement for the <see cref="KaijuAgent"/>.</returns>
         public new static KaijuEvadeMovement Get([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
         {
             KaijuEvadeMovement movement = KaijuMovementManager.Get<KaijuEvadeMovement>();
@@ -121,7 +121,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a <see cref="KaijuEvadeMovement"/>.
+        /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to evade from.</param>
@@ -130,7 +130,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuEvadeMovement"/>.
+        /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The position to evade from.</param>
@@ -139,7 +139,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuEvadeMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuEvadeMovement"/>.
+        /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to evade from.</param>
@@ -148,7 +148,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuEvadeMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuEvadeMovement"/>.
+        /// Create an evade movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to evade from.</param>

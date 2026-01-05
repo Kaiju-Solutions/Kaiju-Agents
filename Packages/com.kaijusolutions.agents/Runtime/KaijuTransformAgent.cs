@@ -39,14 +39,14 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuTransformAgent([NotNull] GameObject o) => o.GetComponent<KaijuTransformAgent>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuTransformAgent([NotNull] Transform t) => t.GetComponent<KaijuTransformAgent>();
     }
 }

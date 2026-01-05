@@ -6,52 +6,52 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Base <see cref="KaijuMovement"/> class.
+    /// Base movement class.
     /// </summary>
     public abstract class KaijuMovement
     {
         /// <summary>
-        /// The default <see cref="Weight"/> for <see cref="KaijuMovement"/>.
+        /// The default <see cref="Weight"/> for movement.
         /// </summary>
         public const float DefaultWeight = 1;
         
         /// <summary>
-        /// Callback for this <see cref="KaijuMovement"/> starting.
+        /// Callback for this movement starting.
         /// </summary>
         public event KaijuAction OnStarted;
         
         /// <summary>
-        /// Global callback for this <see cref="KaijuMovement"/> starting.
+        /// Global callback for this movement starting.
         /// </summary>
         public static event KaijuMovementAction OnStartedGlobal;
         
         /// <summary>
-        /// Callback for this <see cref="KaijuMovement"/> stopping.
+        /// Callback for this movement stopping.
         /// </summary>
         public event KaijuAction OnStopped;
         
         /// <summary>
-        /// Global callback for this <see cref="KaijuMovement"/> stopping.
+        /// Global callback for this movement stopping.
         /// </summary>
         public static event KaijuMovementAction OnStoppedGlobal;
         
         /// <summary>
-        /// Callback for this <see cref="KaijuMovement"/> being performed.
+        /// Callback for this movement being performed.
         /// </summary>
         public event KaijuAction OnPerformed;
         
         /// <summary>
-        /// Global callback for this <see cref="KaijuMovement"/> being performed.
+        /// Global callback for this movement being performed.
         /// </summary>
         public static event KaijuMovementAction OnPerformedGlobal;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> the <see cref="KaijuMovement"/> is assigned to.
+        /// The <see cref="KaijuAgent"/> the movement is assigned to.
         /// </summary>
         public KaijuAgent Agent;
 
         /// <summary>
-        /// The weight of this <see cref="KaijuMovement"/>.
+        /// The weight of this movement.
         /// </summary>
         public float Weight
         {
@@ -60,25 +60,25 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The weight of this <see cref="KaijuMovement"/>.
+        /// The weight of this movement.
         /// </summary>
         private float _weight;
         
         /// <summary>
-        /// Create The <see cref="KaijuMovement"/>.
+        /// Create The movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this movement.</param>
         public KaijuMovement([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
             Initialize(agent, weight);
         }
         
         /// <summary>
-        /// Initialize The <see cref="KaijuMovement"/>.
+        /// Initialize The movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this movement.</param>
         protected void Initialize([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
             Agent = agent;
@@ -92,7 +92,7 @@ namespace KaijuSolutions.Agents.Movement
         protected virtual void Setup() { }
         
         /// <summary>
-        /// Get the <see cref="KaijuMovement"/>.
+        /// Get the movement.
         /// </summary>
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// <param name="delta">The time step.</param>
@@ -127,9 +127,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Determine if the <see cref="KaijuMovement"/> is done or not.
+        /// Determine if the movement is done or not.
         /// </summary>
-        /// <returns>If the <see cref="KaijuMovement"/> is done or not.</returns>
+        /// <returns>If the movement is done or not.</returns>
         public virtual bool Done()
         {
             // If the agent is not assigned, there is nothing to do.
@@ -137,7 +137,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Return this <see cref="KaijuMovement"/>.
+        /// Return this movement.
         /// </summary>
         public void Return()
         {
@@ -177,7 +177,7 @@ namespace KaijuSolutions.Agents.Movement
         protected virtual Color EditorVisualizationColor() => Color.white;
         
         /// <summary>
-        /// Render the visualization of the <see cref="KaijuMovement"/>.
+        /// Render the visualization of the movement.
         /// <param name="position">The position of the <see cref="Agent"/>.</param>
         /// </summary>
         protected virtual void EditorRenderVisualizations(Vector3 position) { }
@@ -194,98 +194,98 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Implicit conversion to an <see cref="KaijuAgent"/> from the assigned <see cref="Agent"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see cref="KaijuAgent"/>.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> from the assigned <see cref="Agent"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> of the assigned <see cref="Agent"/>.</returns>
         public static implicit operator Transform([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> from the assigned <see cref="Agent"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the assigned <see cref="Agent"/>.</returns>
         public static implicit operator GameObject([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector2([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector2?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector3([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the assigned <see cref="Agent"/>'s position.</returns>
         public static implicit operator Vector3?([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>
         /// Implicit conversion to a Boolean to see if the <see cref="Agent"/> is assigned.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>If the <see cref="Agent"/> is assigned.</returns>
         public static implicit operator bool([NotNull] KaijuMovement m) => m.Done();
         
         /// <summary>
         /// Implicit conversion to a nullable Boolean to see if the <see cref="Agent"/> is assigned.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>If the <see cref="Agent"/> is assigned.</returns>
         public static implicit operator bool?([NotNull] KaijuMovement m) => m.Done();
         
         /// <summary>
         /// Implicit conversion to a string.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
         public static implicit operator string([NotNull] KaijuMovement m) => m.ToString();
         
         /// <summary>
         /// Implicit conversion to a float from the <see cref="Weight"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see cref="Weight"/>.</returns>
         public static implicit operator float([NotNull] KaijuMovement m) => m.Weight;
         
         /// <summary>
         /// Implicit conversion to a nullable float from the <see cref="Weight"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see cref="Weight"/>.</returns>
         public static implicit operator float?([NotNull] KaijuMovement m) => m.Weight;
         
         /// <summary>
         /// Implicit conversion to a double from the <see cref="Weight"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see cref="Weight"/>.</returns>
         public static implicit operator double([NotNull] KaijuMovement m) => m.Weight;
         
         /// <summary>
         /// Implicit conversion to a nullable double from the <see cref="Weight"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="m">The movement.</param>
         /// <returns>The <see cref="Weight"/>.</returns>
         public static implicit operator double?([NotNull] KaijuMovement m) => m.Weight;
     }

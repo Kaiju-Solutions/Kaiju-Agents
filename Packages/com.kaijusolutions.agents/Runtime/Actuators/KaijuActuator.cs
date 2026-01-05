@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Actuators
 {
     /// <summary>
-    /// Base <see cref="KaijuActuator"/> class.
+    /// Base actuator class.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
@@ -84,22 +84,22 @@ namespace KaijuSolutions.Agents.Actuators
         public static event KaijuActuatorAction OnDisabledGlobal;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> this <see cref="KaijuActuator"/> is assigned to.
+        /// The <see cref="KaijuAgent"/> this actuator is assigned to.
         /// </summary>
         public KaijuAgent Agent { get; private set; }
         
         /// <summary>
-        /// If this <see cref="KaijuActuator"/> should run.
+        /// If this actuator should run.
         /// </summary>
         private bool _shouldRun;
         
         /// <summary>
-        /// If the <see cref="KaijuActuator"/> is currently running.
+        /// If the actuator is currently running.
         /// </summary>
         public bool IsRunning { get; private set; }
         
         /// <summary>
-        /// The last state of the <see cref="KaijuActuator"/>.
+        /// The last state of the actuator.
         /// </summary>
         public KaijuActuatorState State { get; private set; } = KaijuActuatorState.Done;
         
@@ -147,7 +147,7 @@ namespace KaijuSolutions.Agents.Actuators
         }
         
         /// <summary>
-        /// If the <see cref="KaijuActuator"/> should act in its next execution step.
+        /// If the actuator should act in its next execution step.
         /// </summary>
         public void Begin()
         {
@@ -155,7 +155,7 @@ namespace KaijuSolutions.Agents.Actuators
         }
         
         /// <summary>
-        /// End the execution of this <see cref="KaijuActuator"/>.
+        /// End the execution of this actuator.
         /// </summary>
         public void End()
         {
@@ -184,7 +184,7 @@ namespace KaijuSolutions.Agents.Actuators
         }
         
         /// <summary>
-        /// Run this <see cref="KaijuActuator"/> if it should be. There is no point in manually calling this.
+        /// Run this actuator if it should be. There is no point in manually calling this.
         /// </summary>
         public void Handle()
         {
@@ -260,13 +260,13 @@ namespace KaijuSolutions.Agents.Actuators
         }
         
         /// <summary>
-        /// Run the <see cref="KaijuActuator"/>.
+        /// Run the actuator.
         /// </summary>
-        /// <returns>The state of the <see cref="KaijuActuator"/>'s progress.</returns>
+        /// <returns>The state of the actuator's progress.</returns>
         protected abstract KaijuActuatorState Run();
         
         /// <summary>
-        /// Perform any needed resetting of the <see cref="KaijuActuator"/>.
+        /// Perform any needed resetting of the actuator.
         /// </summary>
         protected virtual void Cleanup() { }
 #if UNITY_EDITOR
@@ -289,41 +289,41 @@ namespace KaijuSolutions.Agents.Actuators
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The actuator attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuActuator([NotNull] GameObject o) => o.GetComponent<KaijuActuator>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The actuator attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuActuator([NotNull] Transform t) => t.GetComponent<KaijuActuator>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="a">The <see cref="KaijuActuator"/>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuActuator"/> if there was one.</returns>
+        /// <param name="a">The actuator.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the actuator if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuActuator a) => a.Agent;
     }
     
     /// <summary>
-    /// The result of running an <see cref="KaijuActuator"/>.
+    /// The result of running an actuator.
     /// </summary>
     public enum KaijuActuatorState
     {
         /// <summary>
-        /// If an <see cref="KaijuActuator"/> is still executing. 
+        /// If an actuator is still executing. 
         /// </summary>
         Executing = 0,
         
         /// <summary>
-        /// If an <see cref="KaijuActuator"/> has finished running.
+        /// If an actuator has finished running.
         /// </summary>
         Done = 1,
         
         /// <summary>
-        /// If an <see cref="KaijuActuator"/> has failed.
+        /// If an actuator has failed.
         /// </summary>
         Failed = 2
     }

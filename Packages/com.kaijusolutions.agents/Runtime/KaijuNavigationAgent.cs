@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see>.
+    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -19,12 +19,12 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuNavigationAgent : KaijuAgent
     {
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuAgent"/>'s movement.
         /// </summary>
         public NavMeshAgent Nav => nav;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuAgent"/>'s movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The navigation mesh agent which controls the agent's movement.")]
@@ -165,24 +165,24 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Implicit conversion to get the <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see>.
+        /// Implicit conversion to get the <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
         /// </summary>
-        /// <param name="a">The <see cref="KaijuAgent"/>.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh <see cref="KaijuAgent"/></see> of the <see cref="KaijuAgent"/>.</returns>
+        /// <param name="a">The agent.</param>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent of the agent.</returns>
         public static implicit operator NavMeshAgent([NotNull] KaijuNavigationAgent a) => a.nav;
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuNavigationAgent([NotNull] GameObject o) => o.GetComponent<KaijuNavigationAgent>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The agent attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuNavigationAgent([NotNull] Transform t) => t.GetComponent<KaijuNavigationAgent>();
     }
 }

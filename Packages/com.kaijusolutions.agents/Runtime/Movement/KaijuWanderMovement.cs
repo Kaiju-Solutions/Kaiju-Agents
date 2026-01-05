@@ -13,12 +13,12 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuWanderMovement : KaijuMovement
     {
         /// <summary>
-        /// The default <see cref="Distance"/> for <see cref="KaijuWanderMovement"/>s.
+        /// The default <see cref="Distance"/> for wander movements.
         /// </summary>
         public const float DefaultDistance = 20;
         
         /// <summary>
-        /// The default <see cref="Radius"/> for <see cref="KaijuWanderMovement"/>s.
+        /// The default <see cref="Radius"/> for wander movements.
         /// </summary>
         public const float DefaultRadius = 1;
         
@@ -71,13 +71,13 @@ namespace KaijuSolutions.Agents.Movement
         public Vector3 Target3 =>  Target.Expand();
         
         /// <summary>
-        /// Get a <see cref="KaijuWanderMovement"/>.
+        /// Get a wander movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuWanderMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a wander movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight)
         {
             KaijuWanderMovement movement = KaijuMovementManager.Get<KaijuWanderMovement>();

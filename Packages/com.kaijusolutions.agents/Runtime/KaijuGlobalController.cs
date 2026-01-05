@@ -296,21 +296,21 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The global controller attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] GameObject o) => o.GetComponent<KaijuGlobalController>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The global controller attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] Transform t) => t.GetComponent<KaijuGlobalController>();
         
         /// <summary>
         /// Implicit conversion from a <see cref="KaijuAgent"/>.
         /// </summary>
         /// <param name="a">The <see cref="KaijuAgent"/>.</param>
-        /// <returns>The <see cref="KaijuGlobalController"/> attached to the <see cref="KaijuAgent"/> if there was one.</returns>
+        /// <returns>The global controller attached to the <see cref="KaijuAgent"/> if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
         
         /// <summary>

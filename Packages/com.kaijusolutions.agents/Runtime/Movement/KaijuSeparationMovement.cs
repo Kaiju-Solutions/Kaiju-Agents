@@ -13,12 +13,12 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuSeparationMovement : KaijuAreaMovement
     {
         /// <summary>
-        /// The default <see cref="KaijuAreaMovement.Distance"/> for <see cref="KaijuSeparationMovement"/>s.
+        /// The default <see cref="KaijuAreaMovement.Distance"/> for separation movements.
         /// </summary>
         public const float DefaultDistance = 10;
         
         /// <summary>
-        /// The default <see cref="Coefficient"/> for <see cref="KaijuSeparationMovement"/>s.
+        /// The default <see cref="Coefficient"/> for separation movements.
         /// </summary>
         public const float DefaultCoefficient = 10;
         
@@ -47,14 +47,14 @@ namespace KaijuSolutions.Agents.Movement
         private readonly HashSet<KaijuAgent> _interacting = new();
         
         /// <summary>
-        /// Get a <see cref="KaijuSeparationMovement"/>.
+        /// Get a separation movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
         /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuSeparationMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get a separation movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
@@ -68,7 +68,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a <see cref="KaijuSeparationMovement"/>.
+        /// Create a separation movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>

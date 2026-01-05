@@ -820,77 +820,77 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Implicit conversion to a float from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator float([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a nullable float from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator float?([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a double from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator double([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a nullable double from the <see cref="Orientation"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Orientation"/>.</returns>
         public static implicit operator double?([NotNull] KaijuBehaviour b) => b.Orientation;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the <see cref="Position"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector2([NotNull] KaijuBehaviour b) => b.Position;
         
         /// <summary>
         /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see> from the <see cref="Position"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector2?([NotNull] KaijuBehaviour b) => b.Position;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the <see cref="Position3"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Vector3([NotNull] KaijuBehaviour b) => b.Position3;
         
         /// <summary>
         /// Implicit conversion to a nullable <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see> from the <see cref="Position3"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position3"/>.</returns>
         public static implicit operator Vector3?([NotNull] KaijuBehaviour b) => b.Position3;
         
         /// <summary>
         /// Implicit conversion to a Quaternion from the <see cref="OrientationQuaternion"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position"/>.</returns>
         public static implicit operator Quaternion([NotNull] KaijuBehaviour b) => b.OrientationQuaternion;
         
         /// <summary>
         /// Implicit conversion to a nullable Quaternion from the <see cref="OrientationQuaternion"/>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see cref="KaijuAgent"/>'s <see cref="Position3"/>.</returns>
         public static implicit operator Quaternion?([NotNull] KaijuBehaviour b) => b.OrientationQuaternion;
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> of the behaviour.</returns>
         public static implicit operator GameObject([NotNull] KaijuBehaviour b) => b.gameObject;
         
@@ -898,13 +898,13 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuBehaviour"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The behaviour attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuBehaviour([NotNull] GameObject o) => o.GetComponent<KaijuBehaviour>();
         
         /// <summary>
         /// Implicit conversion to a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> of the behaviour.</returns>
         public static implicit operator Transform([NotNull] KaijuBehaviour b) => b.transform;
         
@@ -912,27 +912,27 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuBehaviour"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The behaviour attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuBehaviour([NotNull] Transform t) => t.GetComponent<KaijuBehaviour>();
         
         /// <summary>
         /// Implicit conversion to a Boolean if the behaviour is active.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>If the behaviour is active.</returns>
         public static implicit operator bool(KaijuBehaviour b) => b != null && b.isActiveAndEnabled;
         
         /// <summary>
         /// Implicit conversion to a nullable Boolean if the behaviour is active.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>If the behaviour is active.</returns>
         public static implicit operator bool?(KaijuBehaviour b) =>  b != null && b.isActiveAndEnabled;
         
         /// <summary>
         /// Implicit conversion to a string.
         /// </summary>
-        /// <param name="b">The <see cref="KaijuBehaviour"/>.</param>
+        /// <param name="b">The behaviour.</param>
         /// <returns>The string from the <see cref="ToString"/> method.</returns>
         public static implicit operator string([NotNull] KaijuBehaviour b) => b.ToString();
     }

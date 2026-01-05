@@ -109,21 +109,21 @@ namespace KaijuSolutions.Agents.Actuators
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuEverythingAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The everything attack actuator attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuEverythingAttackActuator([NotNull] GameObject o) => o.GetComponent<KaijuEverythingAttackActuator>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuEverythingAttackActuator"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The everything attack actuator attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuEverythingAttackActuator([NotNull] Transform t) => t.GetComponent<KaijuEverythingAttackActuator>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The <see cref="KaijuEverythingAttackActuator"/>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuEverythingAttackActuator"/> if there was one.</returns>
+        /// <param name="s">The everything attack actuator.</param>
+        /// <returns>The <see cref="KaijuAgent"/> attached to the everything attack actuator if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuEverythingAttackActuator s) => s.Agent;
     }
 }

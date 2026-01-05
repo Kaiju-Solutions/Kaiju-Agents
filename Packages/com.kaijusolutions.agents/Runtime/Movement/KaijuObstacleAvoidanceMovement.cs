@@ -125,7 +125,7 @@ namespace KaijuSolutions.Agents.Movement
         private readonly List<Vector3> _misses = new(3);
         
         /// <summary>
-        /// Get a <see cref="KaijuObstacleAvoidanceMovement"/>.
+        /// Get an obstacle avoidance movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
@@ -135,7 +135,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
         /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a <see cref="KaijuObstacleAvoidanceMovement"/> for the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuAgent"/>.</returns>
         public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance, float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
@@ -149,7 +149,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Create a <see cref="KaijuObstacleAvoidanceMovement"/>.
+        /// Create an obstacle avoidance movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>

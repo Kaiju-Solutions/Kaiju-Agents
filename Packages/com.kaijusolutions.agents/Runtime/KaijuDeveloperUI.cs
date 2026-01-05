@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace KaijuSolutions.Agents.Development
+namespace KaijuSolutions.Agents
 {
     /// <summary>
     /// Helpful developer UI. This displays buttons to select cameras on the left side and buttons to select scenes on the right side.

@@ -15,7 +15,7 @@ namespace KaijuSolutions.Agents.Movement
         public const float DefaultDistance = 0.1f;
         
         /// <summary>
-        /// Create a <see cref="KaijuApproachingMovement"/> for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
+        /// Create an approaching movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move towards.</param>
@@ -24,7 +24,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuApproachingMovement"/> for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
+        /// Create an approaching movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move towards.</param>
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuApproachingMovement([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuApproachingMovement"/> for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// Create an approaching movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move towards.</param>
@@ -42,7 +42,7 @@ namespace KaijuSolutions.Agents.Movement
         public KaijuApproachingMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
         /// <summary>
-        /// Create a <see cref="KaijuApproachingMovement"/> for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
+        /// Create an approaching movement for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move towards.</param>
