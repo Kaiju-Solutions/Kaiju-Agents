@@ -6,7 +6,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// <see cref="Pickup"/> class which will restore some numeric value before going on cooldown.
     /// </summary>
-    [RequireComponent(typeof(MeshFilter))]
     public abstract class NumberPickup : Pickup
     {
         /// <summary>
@@ -24,6 +23,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         protected override void OnEnable()
         {
+            base.OnEnable();
+            
             // Start with no cooldown.
             Cooldown = 0;
             SetActive();
