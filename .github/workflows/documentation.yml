@@ -134,74 +134,80 @@ jobs:
       - name: Documentation Folder Contents After Build
         run: |
           Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
-        shell: pwsh
-
-      # Write custom names to the API table of contents.
-      - name: Update API Names
+        shell: pwsh# Reorder the API TOC and write custom names.
+      - name: Update API TOC Order and Names
         shell: pwsh
         run: |
           $tocFile = "Documentation/api/toc.yml"
           $namespacesDir = "Documentation/namespaces"
+          $orderFile = "Documentation/toc_order.txt"
 
-          # 1. Check if the toc.yml file exists.
+          # --- PRE-CHECKS ---
           if (-not (Test-Path $tocFile -PathType Leaf)) {
-              Write-Host "TOC file not found at '$tocFile'. Skipping name update."
+              Write-Host "TOC file not found at '$tocFile'. Skipping update."
               exit 0
           }
 
-          # 2. Check if the namespaces directory exists.
-          if (-not (Test-Path $namespacesDir -PathType Container)) {
-              Write-Host "Namespaces directory not found at '$namespacesDir'. Skipping name update."
-              exit 0
-          }
-
-          # 3. Load all .txt files and create mappings for replacement.
-          $namespaceFiles = Get-ChildItem -Path $namespacesDir -Filter *.txt
-          if ($namespaceFiles.Count -eq 0) {
-              Write-Host "No namespace mapping files (.txt) found in '$namespacesDir'. Skipping name update."
-              exit 0
-          }
-
-          $nameMappings = @{}
-          foreach ($file in $namespaceFiles) {
-              $originalName = $file.BaseName
-              # Read the content as a single, trimmed string.
-              $niceName = (Get-Content $file.FullName -Raw).Trim()
-              if (-not [string]::IsNullOrWhiteSpace($niceName)) {
-                  $nameMappings[$originalName] = $niceName
-                  Write-Host "Found mapping: '$originalName' -> '$niceName'"
-              }
-          }
-
-          if ($nameMappings.Count -eq 0) {
-              Write-Host "No valid name mappings were loaded. Skipping replacement."
-              exit 0
-          }
-
-          # 4. Read the TOC file and update each entry.
-          # Essentially turns every entry of "name: My.Namespace" into "name: Nice Name" where "Nice Name" was loaded from "Documentation/namespaces/My.Namespace.txt".
+          # Read the current TOC content
           $tocContent = Get-Content $tocFile -Raw
-          $originalTocContent = $tocContent
-          foreach ($originalName in $nameMappings.Keys) {
-              $niceName = $nameMappings[$originalName]
-              # This regex matches "name: " followed by the exact namespace.
-              # The negative lookahead (?!\S) ensures it doesn't match a substring of a longer namespace (e.g., it matches "name: My.Namespace" but not "name: My.Namespace.Sub").
-              $pattern = "(name:\s+)$([regex]::Escape($originalName))(?!\S)"
-              if ($tocContent -match $pattern) {
-                  Write-Host "Updating name for '$originalName' in TOC."
-                  $tocContent = $tocContent -creplace $pattern, "name: $niceName"
-              } else {
-                  Write-Host "Name '$originalName' not found in TOC for replacement."
+
+          # --- PART 1: REORDERING ---
+          if (Test-Path $orderFile -PathType Leaf) {
+              Write-Host "Found TOC order file. Reordering entries..."
+              $desiredOrder = Get-Content $orderFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+
+              # Split the TOC into individual blocks. 
+              # This regex splits before "- uid:" ensuring we capture the full block for each entry.
+              $tocEntries = $tocContent -split '(?m)^(?=- uid:)' | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+
+              $sortedEntries = $tocEntries | Sort-Object {
+                  # Extract the UID from the current block to find its index in the order file
+                  if ($_ -match "uid:\s*(\S+)") {
+                      $uid = $matches[1]
+                      $index = $desiredOrder.IndexOf($uid)
+                      # If UID is found in the order file, use its index. Otherwise, push it to the end (9999).
+                      if ($index -ne -1) { $index } else { 9999 }
+                  } else {
+                      9999
+                  }
               }
+
+              # Rebuild the TOC content.
+              $tocContent = $sortedEntries -join ""
+              Write-Host "TOC reordered."
+          } else {
+              Write-Host "No '$orderFile' found. Skipping reorder."
           }
 
-          # Write content back to the file only if changes were made.
-          if ($originalTocContent -ne $tocContent) {
-              Write-Host "Writing updated names to '$tocFile'."
-              Set-Content -Path $tocFile -Value $tocContent
-          } else {
-              Write-Host "No changes were made to the TOC file."
+          # Apply renames.
+          if (Test-Path $namespacesDir -PathType Container) {
+              $namespaceFiles = Get-ChildItem -Path $namespacesDir -Filter *.txt
+              
+              if ($namespaceFiles.Count -gt 0) {
+                  $nameMappings = @{}
+                  foreach ($file in $namespaceFiles) {
+                      $originalName = $file.BaseName
+                      $niceName = (Get-Content $file.FullName -Raw).Trim()
+                      if (-not [string]::IsNullOrWhiteSpace($niceName)) {
+                          $nameMappings[$originalName] = $niceName
+                      }
+                  }
+          
+                  foreach ($originalName in $nameMappings.Keys) {
+                      $niceName = $nameMappings[$originalName]
+                      # Regex matches "name: " followed by the exact namespace, ensuring no partial matches.
+                      $pattern = "(name:\s+)$([regex]::Escape($originalName))(?!\S)"
+                      if ($tocContent -match $pattern) {
+                          Write-Host "Updating name for '$originalName'."
+                          $tocContent = $tocContent -creplace $pattern, "name: $niceName"
+                      }
+                  }
+              }
           }
+          
+          # --- SAVE CHANGES ---
+          Set-Content -Path $tocFile -Value $tocContent
+          Write-Host "Updated '$tocFile' successfully."
 
       # Write the contents of the specified YML file to the log.
       - name: Show API YML Contents

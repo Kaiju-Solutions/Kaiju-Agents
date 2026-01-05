@@ -1,0 +1,8 @@
+﻿KaijuSolutions.Agents
+KaijuSolutions.Agents.Movement
+KaijuSolutions.Agents.Sensors
+KaijuSolutions.Agents.Actuators
+KaijuSolutions.Agents.Extensions
+KaijuSolutions.Agents.Exercises.Cleaner
+KaijuSolutions.Agents.Exercises.Microbes
+KaijuSolutions.Agents.Exercises.CTF
