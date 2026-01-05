@@ -20,7 +20,7 @@ namespace KaijuSolutions.Agents
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/agents.html")]
 #endif
     public abstract class KaijuAgent : KaijuBehaviour
     {

@@ -8,6 +8,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// </summary>
     [RequireComponent(typeof(Trooper))]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper Controller", 24)]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#trooper-controller")]
     public class TrooperController : KaijuController
     {
         /// <summary>

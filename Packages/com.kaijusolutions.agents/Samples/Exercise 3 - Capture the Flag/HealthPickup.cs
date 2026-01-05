@@ -6,6 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// <see cref="Pickup"/> to restore <see cref="Trooper.Health"/>.
     /// </summary>
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#health-pickup")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Health Pickup", 34)]
     public class HealthPickup : NumberPickup
     {

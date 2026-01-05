@@ -1,3 +1,40 @@
 items:
 - name: Getting Started
   href: getting-started.md
+- name: Components
+  href: components.md
+  items:
+    - name: Agents
+      href: agents.md
+    - name: Sensors
+      href: sensors.md
+    - name: Actuators
+      href: actuators.md
+    - name: Controllers
+      href: controllers.md
+    - name: Manager
+      href: manager.md
+    - name: Developer UI
+      href: developer-ui.md
+- name: Movement
+  href: movement.md
+- name: Exporting
+  href: exporting.md
+- name: Samples
+  href: samples.md
+  items:
+    - name: Movement
+      href: sample-movement.md
+    - name: Keyboard
+      href: keyboard.md
+    - name: Box Destroyer
+      href: box-destroyer.md
+- name: Exercises
+  href: exercises.md
+  items:
+    - name: Cleaner
+      href: cleaner.md
+    - name: Microbes
+      href: microbes.md
+    - name: Capture the Flag
+      href: capture-the-flag.md

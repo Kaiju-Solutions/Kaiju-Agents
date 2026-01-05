@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/Sensors/Kaiju Cast Sensor", 6)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/sensors.html#cast-sensor")]
 #endif
     public class KaijuCastSensor : KaijuSensor
     {

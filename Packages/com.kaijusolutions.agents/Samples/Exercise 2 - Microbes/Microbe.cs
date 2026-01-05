@@ -13,6 +13,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(KaijuRigidbodyAgent))]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/microbes.html#microbe")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Microbe", 19)]
     public class Microbe : KaijuController
     {

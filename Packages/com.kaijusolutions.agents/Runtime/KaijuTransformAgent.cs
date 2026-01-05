@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Transform Agent", 0)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/agents.html")]
 #endif
     public sealed class KaijuTransformAgent : KaijuRadiusAgent
     {

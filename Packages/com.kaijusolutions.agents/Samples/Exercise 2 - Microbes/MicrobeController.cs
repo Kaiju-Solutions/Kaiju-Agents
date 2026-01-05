@@ -7,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// Basic controller for you to get started with.
     /// </summary>
     [RequireComponent(typeof(Microbe))]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/microbes.html#microbe-controller")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Microbe Controller", 18)]
     public class MicrobeController : KaijuController
     {

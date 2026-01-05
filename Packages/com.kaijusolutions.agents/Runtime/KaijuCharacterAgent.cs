@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Character Agent", 2)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/agents.html")]
 #endif
     [RequireComponent(typeof(CharacterController))]
     public sealed class KaijuCharacterAgent : KaijuAgent

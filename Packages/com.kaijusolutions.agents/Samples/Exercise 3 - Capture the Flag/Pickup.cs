@@ -10,6 +10,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [DefaultExecutionOrder(int.MinValue)]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Collider))]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html")]
     public abstract class Pickup : KaijuBehaviour
     {
         /// <summary>

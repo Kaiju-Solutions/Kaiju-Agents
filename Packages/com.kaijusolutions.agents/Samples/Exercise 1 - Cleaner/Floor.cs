@@ -9,6 +9,7 @@ namespace KaijuSolutions.Agents.Exercises.Cleaner
     /// From there, you will want to move the agent towards a dirty tile if it sensed one.
     /// Once close enough to the dirty floor tile, you will need to create a <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> which can call the <see cref="Clean"/> method.
     /// </summary>
+    [HelpURL("https://agents.kaijusolutions.ca/manual/cleaner.html#floor")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Cleaner/Floor", 17)]
     [RequireComponent(typeof(MeshRenderer))]
     public class Floor : KaijuBehaviour

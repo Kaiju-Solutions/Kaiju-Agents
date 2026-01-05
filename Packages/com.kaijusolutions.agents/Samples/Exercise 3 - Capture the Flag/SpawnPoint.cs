@@ -12,6 +12,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [RequireComponent(typeof(Collider))]
     [DefaultExecutionOrder(int.MinValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Spawn Point", 36)]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#spawn-point")]
     public class SpawnPoint : KaijuBehaviour, IComparable<SpawnPoint>
     {
         /// <summary>

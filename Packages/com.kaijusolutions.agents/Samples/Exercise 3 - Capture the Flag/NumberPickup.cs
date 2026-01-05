@@ -6,6 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// <see cref="Pickup"/> class which will restore some numeric value before going on cooldown.
     /// </summary>
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html")]
     public abstract class NumberPickup : Pickup
     {
         /// <summary>

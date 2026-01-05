@@ -16,6 +16,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(KaijuRigidbodyAgent))]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper", 25)]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#trooper")]
     public class Trooper : KaijuController
     {
         /// <summary>

@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/Sensors/Kaiju Agents Vision Sensor", 4)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/sensors.html#agents-vision-sensor")]
 #endif
     public class KaijuAgentsVisionSensor : KaijuVisionSensor<KaijuAgent>
     {

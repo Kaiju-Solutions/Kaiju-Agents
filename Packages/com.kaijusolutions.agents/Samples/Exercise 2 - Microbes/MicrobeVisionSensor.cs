@@ -7,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// <summary>
     /// Sensor to detect <see cref="Microbe"/>s
     /// </summary>
+    [HelpURL("https://agents.kaijusolutions.ca/manual/microbes.html#microbe-vision-sensor")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Microbe Vision Sensor", 20)]
     public class MicrobeVisionSensor : KaijuVisionSensor<Microbe>
     {

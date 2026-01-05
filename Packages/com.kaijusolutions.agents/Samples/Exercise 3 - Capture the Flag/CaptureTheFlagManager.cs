@@ -7,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// Manager for <see cref="Trooper"/>s to play capture the flag.
     /// </summary>
     [DisallowMultipleComponent]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#capture-the-flag-manager")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Capture the Flag Manager", 31)]
     public class CaptureTheFlagManager : KaijuGlobalController
     {

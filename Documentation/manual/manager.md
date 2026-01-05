@@ -1,3 +1,3 @@
-# Getting Started
+﻿# Manager
 
 Documentation coming soon.

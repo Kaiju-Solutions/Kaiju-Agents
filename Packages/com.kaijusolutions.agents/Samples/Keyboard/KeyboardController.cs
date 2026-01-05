@@ -6,7 +6,11 @@ namespace Samples.Keyboard
     /// <summary>
     /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent, and Q and E to turn the agent.
     /// </summary>
+    [DisallowMultipleComponent]
+#if UNITY_EDITOR
+    [HelpURL("https://agents.kaijusolutions.ca/manual/keyboard.html")]
     [AddComponentMenu("Kaiju Solutions/Agents/Samples/Keyboard Controller", 15)]
+#endif
     public class KeyboardController : KaijuController
     {
         /// <summary>

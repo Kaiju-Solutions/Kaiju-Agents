@@ -7,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// <summary>
     /// Sensor to detect <see cref="EnergyPickup"/>s
     /// </summary>
+    [HelpURL("https://agents.kaijusolutions.ca/manual/microbes.html#energy-vision-sensor")]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Energy Vision Sensor", 21)]
     public class EnergyVisionSensor : KaijuVisionSensor<EnergyPickup>
     {
