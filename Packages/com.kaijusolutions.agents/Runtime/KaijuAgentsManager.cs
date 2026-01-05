@@ -749,32 +749,13 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void OnDrawGizmos()
         {
-            KaijuMovementManager.EditorVisualizationsTextMode mode = KaijuMovementManager.EditorEditorVisualizationsText;
+            bool labels = AllAgents.Count > 1 && KaijuMovementManager.EditorVisualizationsLabels;
             
-            if (!KaijuMovementManager.EditorVisualizationsActive)
-            {
-                bool text = AllAgents.Count > 1 && mode is KaijuMovementManager.EditorVisualizationsTextMode.All or KaijuMovementManager.EditorVisualizationsTextMode.Selected;
-                EditorVisualize(_editorSelectedAgents, text, text);
-                return;
-            }
-            
-            bool all = AllAgents.Count > 1 &&  mode is KaijuMovementManager.EditorVisualizationsTextMode.All;
-            EditorVisualize(AllAgents, all, all || mode is KaijuMovementManager.EditorVisualizationsTextMode.Selected);
-        }
-        
-        /// <summary>
-        /// Handle visualizations for <see cref="KaijuAgent"/>s in the editor.
-        /// </summary>
-        /// <param name="agents">The <see cref="KaijuAgent"/>s to render visualizations for.</param>
-        /// <param name="all">If text should be run for all <see cref="KaijuAgent"/>s in this.</param>
-        /// <param name="selected">If text should be run for selected <see cref="KaijuAgent"/>s in this.</param>
-        private void EditorVisualize([NotNull] ISet<KaijuAgent> agents, bool all, bool selected)
-        {
-            foreach (KaijuAgent agent in agents)
+            foreach (KaijuAgent agent in KaijuMovementManager.EditorVisualizationsAll ? AllAgents : _editorSelectedAgents)
             {
                 if (agent)
                 {
-                    agent.EditorVisualize(all || (selected && _editorSelectedAgents.Contains(agent)));
+                    agent.EditorVisualize(labels);
                 }
             }
         }

@@ -369,12 +369,12 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The key for if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
-        private const string EditorVisualizationsActiveKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
+        private const string EditorVisualizationsAllKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
         
         /// <summary>
         /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
-        public static bool EditorVisualizationsActive
+        public static bool EditorVisualizationsAll
         {
             get
             {
@@ -383,13 +383,13 @@ namespace KaijuSolutions.Agents.Movement
                     return _editorVisualizationsAll.Value;
                 }
                 
-                _editorVisualizationsAll = EditorPrefs.GetBool(EditorVisualizationsActiveKey, true);
+                _editorVisualizationsAll = EditorPrefs.GetBool(EditorVisualizationsAllKey, true);
                 return _editorVisualizationsAll.Value;
             }
             set
             {
                 _editorVisualizationsAll = value;
-                EditorPrefs.SetBool(EditorVisualizationsActiveKey, _editorVisualizationsAll.Value);
+                EditorPrefs.SetBool(EditorVisualizationsAllKey, _editorVisualizationsAll.Value);
             }
         }
         
@@ -401,70 +401,49 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Reset if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
         /// </summary>
-        public static void EditorResetVisualizationsActive()
+        public static void EditorResetVisualizationsAll()
         {
-            EditorPrefs.DeleteKey(EditorVisualizationsActiveKey);
+            EditorPrefs.DeleteKey(EditorVisualizationsAllKey);
         }
         
         /// <summary>
-        /// The key for how text should be displayed with editor visualizations.
+        /// The key for how labels should be displayed with editor visualizations.
         /// </summary>
-        private const string EditorVisualizationsTextKey = "KAIJU_AGENTS_VISUALIZATIONS_TEXT";
+        private const string EditorVisualizationsLabelsKey = "KAIJU_AGENTS_VISUALIZATIONS_LABELS";
         
         /// <summary>
-        ///  How text should be displayed with editor visualizations.
+        /// If labels should be displayed with editor visualizations.
         /// </summary>
-        public static EditorVisualizationsTextMode EditorEditorVisualizationsText
+        public static bool EditorVisualizationsLabels
         {
             get
             {
-                if (_editorVisualizationsText.HasValue)
+                if (_editorVisualizationsLabels.HasValue)
                 {
-                    return _editorVisualizationsText.Value;
+                    return _editorVisualizationsLabels.Value;
                 }
                 
-                _editorVisualizationsText = (EditorVisualizationsTextMode)EditorPrefs.GetInt(EditorVisualizationsTextKey, (int)EditorVisualizationsTextMode.All);
-                return _editorVisualizationsText.Value;
+                _editorVisualizationsLabels = EditorPrefs.GetBool(EditorVisualizationsLabelsKey, true);
+                return _editorVisualizationsLabels.Value;
             }
             set
             {
-                _editorVisualizationsText = value;
-                EditorPrefs.SetInt(EditorVisualizationsTextKey, (int)_editorVisualizationsText.Value);
+                _editorVisualizationsLabels = value;
+                EditorPrefs.SetBool(EditorVisualizationsLabelsKey, _editorVisualizationsLabels.Value);
             }
         }
         
         /// <summary>
-        /// How text should be displayed with editor visualizations.
+        /// If labels should be displayed with editor visualizations.
         /// </summary>
-        private static EditorVisualizationsTextMode? _editorVisualizationsText;
+        private static bool? _editorVisualizationsLabels;
         
         /// <summary>
-        /// Reset how text should be displayed with editor visualizations.
+        /// Reset if labels should be displayed with editor visualizations.
         /// </summary>
-        public static void EditorResetVisualizationsText()
+        public static void EditorResetVisualizationsLabels()
         {
-            EditorPrefs.DeleteKey(EditorVisualizationsTextKey);
-        }
-        
-        /// <summary>
-        /// Editor visualizations text modes.
-        /// </summary>
-        public enum EditorVisualizationsTextMode
-        {
-            /// <summary>
-            /// Display all text fields.
-            /// </summary>
-            All = 0,
-            
-            /// <summary>
-            /// Only display text fields of the selected <see cref="KaijuAgent"/>.
-            /// </summary>
-            Selected = 1,
-            
-            /// <summary>
-            /// Don't display any text fields.
-            /// </summary>
-            None = 2
+            EditorPrefs.DeleteKey(EditorVisualizationsLabelsKey);
         }
         
         /// <summary>
@@ -475,8 +454,8 @@ namespace KaijuSolutions.Agents.Movement
         {
             Movements.Clear();
             EditorSyncColors();
-            _ = EditorVisualizationsActive;
-            _ = EditorEditorVisualizationsText;
+            _ = EditorVisualizationsAll;
+            _ = EditorVisualizationsLabels;
         }
 #endif
         /// <summary>

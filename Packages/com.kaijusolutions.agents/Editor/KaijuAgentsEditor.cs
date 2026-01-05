@@ -132,11 +132,11 @@ internal static class KaijuAgentsEditor
                 
                 // Add visualization configurations.
                 container.Add(Header("Visualizations"));
-                container.Add(ToggleSetting("Active", () => KaijuMovementManager.EditorVisualizationsActive, value => KaijuMovementManager.EditorVisualizationsActive = value, KaijuMovementManager.EditorResetVisualizationsActive, refreshActions, "If all visualizations should be rendered or only the selected agent."));
-                container.Add(EnumSetting("Text Mode", () => KaijuMovementManager.EditorEditorVisualizationsText, value => KaijuMovementManager.EditorEditorVisualizationsText = value, KaijuMovementManager.EditorResetVisualizationsText, refreshActions, "How text should be displayed with visualizations."));
+                container.Add(ToggleSetting("All Agents", () => KaijuMovementManager.EditorVisualizationsAll, value => KaijuMovementManager.EditorVisualizationsAll = value, KaijuMovementManager.EditorResetVisualizationsAll, refreshActions, "If all visualizations should be rendered for all agents or only the selected agent."));
+                container.Add(ToggleSetting("Labels", () => KaijuMovementManager.EditorVisualizationsLabels, value => KaijuMovementManager.EditorVisualizationsLabels = value, KaijuMovementManager.EditorResetVisualizationsLabels, refreshActions, "If labels should be displayed for the agents. If there is only one agent in the scene, no label is displayed regardless of this setting."));
                 container.Add(FloatSetting("Label Offset", () => KaijuAgentsManager.EditorLabelOffset, value => KaijuAgentsManager.EditorLabelOffset = value, KaijuAgentsManager.EditorResetLabelOffset, refreshActions, "How much to offset labels in the scene view."));
                 
-                // Add options for all colors
+                // Add options for all colors for visualizations.
                 container.Add(Header("Colors"));
                 container.Add(ColorSetting("Agents", () => KaijuAgentsManager.EditorAgentColor, color => KaijuAgentsManager.EditorAgentColor = color, KaijuAgentsManager.EditorResetAgentColor, refreshActions, "The color for visualizations which are directly part of the agent."));
                 container.Add(ColorSetting("Seek", () => KaijuMovementManager.EditorSeekColor, color => KaijuMovementManager.EditorSeekColor = color, KaijuMovementManager.EditorResetSeekColor, refreshActions, "The color for seek visualizations."));
@@ -228,66 +228,6 @@ internal static class KaijuAgentsEditor
         void Refresh()
         {
             toggle.value = get();
-        }
-    }
-    
-    /// <summary>
-    /// Add an enum setting element.
-    /// </summary>
-    /// <param name="label">The label to use.</param>
-    /// <param name="get">The getter method.</param>
-    /// <param name="set">The setter method.</param>
-    /// <param name="reset">The resetting method.</param>
-    /// <param name="refresh">What to apply when refreshing.</param>
-    /// <param name="tooltip">What tooltip to add.</param>
-    /// <typeparam name="T">The type of enum.</typeparam>
-    /// <returns>An enum settings element.</returns>
-    private static VisualElement EnumSetting<T>(string label, Func<T> get, Action<T> set, Action reset, List<Action> refresh, string tooltip = null) where T : Enum
-    {
-        // Set the base styling.
-        VisualElement row = new()
-        {
-            style =
-            {
-                flexDirection = FlexDirection.Row,
-                marginBottom = 5
-            },
-            tooltip = tooltip
-        };
-        
-        // Define the enum field itself.
-        EnumField enumField = new(label, get())
-        {
-            style =
-            {
-                flexGrow = 1
-            }
-        };
-        enumField.RegisterValueChangedCallback(evt => set((T)evt.newValue));
-        
-        // Bind refresh actions.
-        refresh.Add(Refresh);
-        
-        // Create the reset button.
-        Button resetButton = new(() =>
-        {
-            reset();
-            Refresh();
-        })
-        {
-            text = "Reset"
-        };
-        
-        // Add each to the fields.
-        row.Add(enumField);
-        row.Add(resetButton);
-        
-        return row;
-        
-        // Refresh command.
-        void Refresh()
-        {
-            enumField.value = get();
         }
     }
 
