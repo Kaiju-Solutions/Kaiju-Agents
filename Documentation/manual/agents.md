@@ -9,6 +9,8 @@ There are four types of agents each derived from the [`KaijuAgent` class](https:
 4. [Navigation](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuNavigationAgent.html) - Moves by a [navigation mesh agent component](https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html), and like the [transform agent](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuTransformAgent.html "Transform Agent"), does not fire collision or trigger events.
     - **Note that _all four_ agent types can fully perform navigation and pathfinding, not just the [navigation agent](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuNavigationAgent.html)**
 
+Agents must be added to root-level [GameObjects](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject"), and cannot be nested under other [GameObjects](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject"). One agent is allowed per [GameObject](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject").
+
 ## Movement
 
 Each agent can set their speed and acceleration for performing [movements](https://agents.kaijusolutions.ca/manual/movement.html) in addition to the look speed. This can be done via the [inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html "Inspector Window") or via the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent").
@@ -18,3 +20,7 @@ Additionally, the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuS
 ## Controlling Agents
 
 There is a lot of flexibility as to how you can add intelligent behaviour to agents! The most common method is creating a class which extends from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html "MonoBehaviour") (or the extended version provided with Kaiju Agents, [`KaijuBehaviour`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuBehaviour.html "KaijuBehaviour") instead) and listening for callbacks, accessing properties, and calling methods from the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent"). As this workflow is so common, the [controller classes](https://agents.kaijusolutions.ca/manual/controllers.html) provide starting points to do this.
+
+## Identifiers
+
+For easy comparing of agent types, you can set identifiers for agents, allowing for easy querying with the [manager](https://agents.kaijusolutions.ca/manual/manager.html) as well as with the included [agents vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#agents-vision-sensor "Agents Vision Sensor").

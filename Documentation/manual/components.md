@@ -2,7 +2,7 @@
 
 Kaiju Agents works by breaking agents apart into several components being:
 
-1. The [agents](https://agents.kaijusolutions.ca/manual/agents.md "Agent") themselves.
+1. The [agents](https://agents.kaijusolutions.ca/manual/agents.md "Agents") themselves.
 2. [Sensors](https://agents.kaijusolutions.ca/manual/sensors.md "Sensors") to read the environment.
 3. [Actuators](https://agents.kaijusolutions.ca/manual/sensors.md "Sensors") to interact with the environment.
 

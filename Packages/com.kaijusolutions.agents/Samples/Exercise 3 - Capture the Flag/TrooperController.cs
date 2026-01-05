@@ -140,7 +140,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             base.OnValidate();
             
-            // The microbe must on this object.
+            // The trooper must on this object.
             if (trooper == null || trooper.transform != transform)
             {
                 trooper = GetComponent<Trooper>();
@@ -157,7 +157,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 trooper = GetComponent<Trooper>();
                 if (trooper == null)
                 {
-                    Debug.LogError("Microbe Controller - No microbe on this GameObject.", this);
+                    Debug.LogError("Trooper Controller - No trooper on this GameObject.", this);
                 }
             }
             
