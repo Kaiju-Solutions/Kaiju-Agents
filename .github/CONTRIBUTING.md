@@ -1,6 +1,6 @@
 ﻿# Contributing
 
-Thank you for your interest in contributing to this Kaiju Agents. All types of contributions are encouraged and valued.
+Thank you for your interest in contributing to Kaiju Agents! All types of contributions are encouraged and valued.
 
 ## Reporting Issues
 
