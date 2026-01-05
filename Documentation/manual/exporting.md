@@ -1,3 +1,0 @@
-﻿# Exporting
-
-Documentation coming soon.

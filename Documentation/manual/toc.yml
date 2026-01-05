@@ -20,8 +20,6 @@ items:
   href: movement.md
 - name: Extensions
   href: extensions.md
-- name: Exporting
-  href: exporting.md
 - name: Samples
   href: samples.md
   items:

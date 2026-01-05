@@ -1,3 +1,20 @@
 ﻿# Agents
 
-Documentation coming soon.
+There are four types of agents each derived from the [`KaijuAgent` class](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent"), with the different types defining what drives the [movement](https://agents.kaijusolutions.ca/manual/movement.html "Movement") of the agent:
+
+1. [Transform](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuTransformAgent.html "Transform Agent") - Moves directly with the [transform](https://docs.unity3d.com/Manual/class-transform.html "Transform"). This agent does not collide with object or cause any collision or trigger events to be fired.
+2. [Rigidbody](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html "Rigidbody Agent") - Moves respecting physics using a [rigidbody component](https://docs.unity3d.com/Manual/rigidbody-physics-section.html "Rigidbody"), allowing for the collisions and their related events to be activated by this agent.
+    - **If you are unsure of which agent type to use for your use case, it is recommeneded you choose this type to start.**
+3. [Character](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuCharacterAgent.html) - Moves with a [character controller component](https://docs.unity3d.com/Manual/character-control-section.html "Character Controller"). In general, this behaves about the same as the [rigidbody agent](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html "Rigidbody Agent").
+4. [Navigation](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuNavigationAgent.html) - Moves by a [navigation mesh agent component](https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html), and like the [transform agent](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuTransformAgent.html "Transform Agent"), does not fire collision or trigger events.
+    - **Note that _all four_ agent types can fully perform navigation and pathfinding, not just the [navigation agent](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuNavigationAgent.html)**
+
+## Movement
+
+Each agent can set their speed and acceleration for performing [movements](https://agents.kaijusolutions.ca/manual/movement.html) in addition to the look speed. This can be done via the [inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html "Inspector Window") or via the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent").
+
+Additionally, the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent") provides methods exposing how perform all the [movements](https://agents.kaijusolutions.ca/manual/movement.html). These [movement](https://agents.kaijusolutions.ca/manual/movement.html) methods can have their parameters explicitly passed to them. If not passed, all parameters will default to that of the [movement configuration](https://agents.kaijusolutions.ca/manual/movement.html#configuration) assigned to the agent. If no [movement configuration](https://agents.kaijusolutions.ca/manual/movement.html#configuration) is assigned, the values will fallback to the default values outlined in the constant defined in each [movement](https://agents.kaijusolutions.ca/manual/movement.html) class.
+
+## Controlling Agents
+
+There is a lot of flexibility as to how you can add intelligent behaviour to agents! The most common method is creating a class which extends from [`MonoBehaviour`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html "MonoBehaviour") (or the extended version provided with Kaiju Agents, [`KaijuBehaviour`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuBehaviour.html "KaijuBehaviour") instead) and listening for callbacks, accessing properties, and calling methods from the [`KaijuAgent` API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgent.html "KaijuAgent"). As this workflow is so common, the [controller classes](https://agents.kaijusolutions.ca/manual/controllers.html) provide starting points to do this.

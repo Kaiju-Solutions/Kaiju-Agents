@@ -1,6 +1,6 @@
 ﻿# Kaiju Agents
 
-**Framework to quickly prototype AI agents in Unity aim at researchers and educators.**
+**Framework to quickly prototype AI agents in Unity aimed at researchers and educators.**
 
 Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
@@ -9,7 +9,7 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
   - Vision sensors based on line-of-sight and casting provided.
   - Casting-based actuator to destroy objects included.
 - Full movement and navigation framework.
-  - Includes seek, flee, pursue, evade, separation, and obstacle avoidance steering behaviours.
+  - Includes seek, flee, pursue, evade, wander, separation, and obstacle avoidance steering behaviours.
   - Full navigation and pathfinding built on top of Unity's navigation meshes.
 - Multiple agent types.
   - Have your agents move via a rigidbody, character controller, navigation mesh agent, or directly with the transform.
@@ -34,17 +34,17 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
     - Alternatively, see the [template project](#template-project "Template Project").
 4. In Unity, from the top menu, go to `Window > Package Management > Package Manager` and click the `+` icon in the top left followed by `Install package from git URL...`. Paste in one of the below options:
 
-**Latest Release - Recommended**
+#### Latest Release - Recommended
 
 ```text
 https://github.com/KaijuSolutions/Kaiju-Agents.git#release
 ```
 
-**Specific Release**
+#### Specific Release
 
 Replace the `#release` in the latest release installation with the version number of the given [release](https://github.com/KaijuSolutions/Kaiju-Agents/releases "Kaiju Agents Releases").
 
-**Development**
+#### Development
 
 This will pull directly from the master branch, and is not recommended unless there is a specific feature needed not yet in the latest release.
 
@@ -54,7 +54,7 @@ https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolut
 
 ## Template Project
 
-The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the repository](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") to get started. Note that this still requires you install [Git](https://git-scm.com/install "Git Download") to pull the latest version of Kaiju Agents into the project.
+The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the template project repository](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") to get started. Note that this still requires you install [Git](https://git-scm.com/install "Git Download") for the project to pull the latest release of Kaiju Agents into itself.
 
 ## Next Steps
 
