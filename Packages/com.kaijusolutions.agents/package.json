@@ -18,6 +18,7 @@
 	"licensesUrl": "https://agents.kaijusolutions.ca/license",
 	"license": "MIT License",
 	"keywords": [
+		"Kaiju Solutions",
 		"Agents",
 		"AI",
 		"Artificial Intelligence",
@@ -53,8 +54,12 @@
 			"path": "Samples~/Exercise 1 - Cleaner"
 		},{
 			"displayName": "Exercise 2 - Microbes",
-			"description": "An exercise scenario featuring microbes which can mate with and eat each other.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"description": "An exercise featuring microbes which can mate with and eat each other.\n\nYou must also import the \"Materials\" sample for this to work.",
 			"path": "Samples~/Exercise 2 - Microbes"
+		},{
+			"displayName": "Exercise 3 - Capture the Flag",
+			"description": "An exercise featuring two teams of troopers with blasters competing in a game of capture the flag.\n\nYou must also import the \"Materials\" sample for this to work.",
+			"path": "Samples~/Exercise 3 - Capture the Flag"
 		}
 	]
 }

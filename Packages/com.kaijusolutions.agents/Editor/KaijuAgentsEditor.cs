@@ -167,7 +167,18 @@ internal static class KaijuAgentsEditor
                 container.Add(resetAllButton);
                 root.Add(container);
             },
-            keywords = new HashSet<string>(new[] { "Kaiju", "Agents", "AI", "Artificial Intelligence" })
+            keywords = new HashSet<string>(new[]
+            {
+                "Kaiju Solutions",
+                "Agents",
+                "AI",
+                "Artificial Intelligence",
+                "Steering Behaviours",
+                "Navigation",
+                "Pathfinding",
+                "Sensors",
+                "Actuators"
+            })
         };
     }
     
