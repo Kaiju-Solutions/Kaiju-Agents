@@ -63,7 +63,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         private void SetActive()
         {
-            bool active = OnCooldown;
+            bool active = !OnCooldown;
             
             foreach (Collider c in Colliders)
             {

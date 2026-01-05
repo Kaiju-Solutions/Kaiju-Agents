@@ -139,7 +139,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Tooltip("The number of troopers per team.")]
         [Min(1)]
         [SerializeField]
-        private int size = 10;
+        private int size = 11;
         
         /// <summary>
         /// The color for team one.
@@ -189,7 +189,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             }
             
             // There needs to be a point to spawn them.
-            SpawnPoint point = SpawnPoint.RandomSpawn(teamOne);
+            SpawnPoint point = SpawnPoint.NextSpawnPoint(teamOne);
             if (point == null)
             {
                 Debug.LogError($"Capture the Flag Manager - No spawn points for team {(teamOne ? "one" : "two")}.");

@@ -423,7 +423,7 @@ namespace KaijuSolutions.Agents.Movement
                     return _editorVisualizationsLabels.Value;
                 }
                 
-                _editorVisualizationsLabels = EditorPrefs.GetBool(EditorVisualizationsLabelsKey, true);
+                _editorVisualizationsLabels = EditorPrefs.GetBool(EditorVisualizationsLabelsKey, false);
                 return _editorVisualizationsLabels.Value;
             }
             set

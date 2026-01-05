@@ -732,6 +732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 539515302}
   - {fileID: 1409667479}
   - {fileID: 818029916}
   m_Father: {fileID: 0}
@@ -2900,6 +2901,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526958779}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &539515301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 539515302}
+  m_Layer: 0
+  m_Name: Middle Pickups
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &539515302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539515301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 890106301}
+  m_Father: {fileID: 135667713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &543276304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5307,6 +5340,68 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &844444988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 890106301}
+    m_Modifications:
+    - target: {fileID: 2976986063458362693, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_Name
+      value: 'Middle Health Pickup 1 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+--- !u!4 &844444989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
+  m_PrefabInstance: {fileID: 844444988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &855080312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5761,6 +5856,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3690507987484193812, guid: de030cf2f1aa78048996ebcdd83f4120, type: 3}
   m_PrefabInstance: {fileID: 876762182}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &890106300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 890106301}
+  m_Layer: 0
+  m_Name: Middle Health Pickups
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &890106301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890106300}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 844444989}
+  m_Father: {fileID: 539515302}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960202276
 GameObject:
   m_ObjectHideFlags: 0
@@ -13849,7 +13976,7 @@ MonoBehaviour:
   cooldown: 10
   captureDistance: 1
   respawn: 5
-  size: 10
+  size: 11
   colorOne: {r: 1, g: 0, b: 0, a: 1}
   colorTwo: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &2129424923

@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
@@ -11,65 +12,52 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     [RequireComponent(typeof(Collider))]
     [DefaultExecutionOrder(int.MinValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Spawn Point", 36)]
-    public class SpawnPoint : KaijuBehaviour
+    public class SpawnPoint : KaijuBehaviour, IComparable<SpawnPoint>
     {
         /// <summary>
-        /// Get a random point to spawn at, prioritizing open points first.
+        /// Get the next point to spawn at, prioritizing open points first.
         /// </summary>
         /// <param name="teamOne">If this is for team one.</param>
         /// <returns>The point to spawn at or NULL if there is none.</returns>
-        public static SpawnPoint RandomSpawn(bool teamOne) => teamOne ? RandomSpawn(OpenOneCache, OccupiedOneCache) : RandomSpawn(OpenTwoCache, OccupiedTwoCache);
+        public static SpawnPoint NextSpawnPoint(bool teamOne) => teamOne ? NextSpawnPoint(OpenOneCache, OccupiedOneCache) : NextSpawnPoint(OpenTwoCache, OccupiedTwoCache);
         
         /// <summary>
-        /// Get a random point to spawn at, prioritizing open points first.
+        /// Get the next point to spawn at, prioritizing open points first.
         /// </summary>
         /// <param name="open">The open points.</param>
         /// <param name="occupied">The occupied fallback points.</param>
         /// <returns>The point to spawn at or NULL if there is none.</returns>
-        private static SpawnPoint RandomSpawn([NotNull] HashSet<SpawnPoint> open, [NotNull] HashSet<SpawnPoint> occupied) => open.Count > 0 ? RandomSpawn(open) : occupied.Count > 0 ? RandomSpawn(occupied) : null;
+        private static SpawnPoint NextSpawnPoint([NotNull] SortedSet<SpawnPoint> open, [NotNull] SortedSet<SpawnPoint> occupied) => open.Count > 0 ? NextSpawnPoint(open) : occupied.Count > 0 ? NextSpawnPoint(occupied) : null;
         
         /// <summary>
-        /// Get a random point from a cache.
+        /// Get the next point from a cache.
         /// </summary>
         /// <param name="cache">The cache to get a point from.</param>
         /// <returns>The point to spawn at.</returns>
-        private static SpawnPoint RandomSpawn([NotNull] HashSet<SpawnPoint> cache)
+        private static SpawnPoint NextSpawnPoint([NotNull] SortedSet<SpawnPoint> cache)
         {
-            RandomHelper.Clear();
-            foreach (SpawnPoint point in cache)
-            {
-                RandomHelper.Add(point);
-            }
-
-            SpawnPoint value = RandomHelper[Random.Range(0, RandomHelper.Count)];
-            RandomHelper.Clear();
-            return value;
+            return cache.First();
         }
-        
-        /// <summary>
-        /// Helper for random positions to avoid allocations.
-        /// </summary>
-        private static readonly List<SpawnPoint> RandomHelper = new();
         
         /// <summary>
         /// All spawn points for team one which are currently not occupied by an agent.
         /// </summary>
-        private static readonly HashSet<SpawnPoint> OpenOneCache = new();
+        private static readonly SortedSet<SpawnPoint> OpenOneCache = new();
         
         /// <summary>
         /// All spawn points for team two which are currently not occupied by an agent.
         /// </summary>
-        private static readonly HashSet<SpawnPoint> OpenTwoCache = new();
+        private static readonly SortedSet<SpawnPoint> OpenTwoCache = new();
         
         /// <summary>
         /// All spawn points for team one which are currently occupied by an agent.
         /// </summary>
-        private static readonly HashSet<SpawnPoint> OccupiedOneCache = new();
+        private static readonly SortedSet<SpawnPoint> OccupiedOneCache = new();
         
         /// <summary>
         /// All spawn points for team two which are currently occupied by an agent.
         /// </summary>
-        private static readonly HashSet<SpawnPoint> OccupiedTwoCache = new();
+        private static readonly SortedSet<SpawnPoint> OccupiedTwoCache = new();
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -81,8 +69,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             OpenTwoCache.Clear();
             OccupiedOneCache.Clear();
             OccupiedTwoCache.Clear();
-            RandomHelper.Clear();
-            RandomHelper.Capacity = 0;
         }
 
         /// <summary>
@@ -303,6 +289,80 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             {
                 OccupiedTwoCache.Add(this);
             }
+        }
+        
+        /// <summary>
+        /// Compare to another instance for sorting.
+        /// </summary>
+        /// <param name="other">The other instance.</param>
+        /// <returns>Less than one if this instance should be first, greater than one if the other instance should be first, or zero if these are the same instance.</returns>
+        public int CompareTo(SpawnPoint other)
+        {
+            // Handle NULL values.
+            if (this == null)
+            {
+                return other == null ? 0 : 1;
+            }
+            
+            if (other == null)
+            {
+                return -1;
+            }
+            
+            // Get positions to compare.
+            Vector3 pA = Position3;
+            Vector3 pB = other.Position3;
+            
+            // Handle based on the X position.
+            int order = ComparePositions(pA.x, pB.x);
+            if (order != 0)
+            {
+                return order;
+            }
+            
+            // Then try Z.
+            order = ComparePositions(pA.z, pB.z);
+            if (order != 0)
+            {
+                return order;
+            }
+            
+            // Lastly Y.
+            order = ComparePositions(pA.y, pB.y);
+            if (order != 0)
+            {
+                return order;
+            }
+            
+            // If perfectly in the same position, check enabled states.
+            if (!isActiveAndEnabled)
+            {
+                if (other.isActiveAndEnabled)
+                {
+                    return 1;
+                }
+            }
+            else if (!other.isActiveAndEnabled)
+            {
+                return -1;
+            }
+            
+            // Then, try by names. If still the same, check their instance IDs.
+            order = string.Compare(name, other.name, StringComparison.Ordinal);
+            return order != 0 ? order : GetInstanceID().CompareTo(other.GetInstanceID());
+        }
+        
+        /// <summary>
+        /// Compare first by absolute value, then positive before negative.
+        /// </summary>
+        /// <param name="a">The first value.</param>
+        /// <param name="b">The second value.</param>
+        /// <returns>Less than one if the first instance should be first, greater than y if the second instance should be first, or zero if these are the same instance.</returns>
+        private static int ComparePositions(float a, float b)
+        {
+            float aA = Mathf.Abs(a);
+            float bA = Mathf.Abs(b);
+            return aA < bA ? -1 : bA < aA ? 1 : a < b ? -1 : b < a ? 1 : 0;
         }
     }
 }
