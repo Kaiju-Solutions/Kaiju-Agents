@@ -80,13 +80,14 @@
   
   <h1 id="KaijuSolutions_Agents" data-uid="KaijuSolutions.Agents" class="text-break">Namespace KaijuSolutions.Agents
   </h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Core library functionality.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></h4>
-      <section><p>Base <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> class.</p>
+      <section><p>Base agent class.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgents.html">KaijuAgents</a></h4>
       <section><p>Methods to help with <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> creation.</p>
@@ -111,13 +112,16 @@
 Simply override the methods you need to use callbacks without needing to worry about binding.
 If you override either <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html" target="_blank">OnEnable</a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html" target="_blank">OnDisable</a>, you must call their respective base methods for binding and cleanup.</p>
 </section>
+      <h4><a class="xref" href="KaijuSolutions.Agents.KaijuDeveloperUI.html">KaijuDeveloperUI</a></h4>
+      <section><p>Helpful developer UI. This displays buttons to select cameras on the left side and buttons to select scenes on the right side.</p>
+</section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></h4>
       <section><p>Base class to inherit for easy interaction with all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s in the scene.
 Simply override the methods you need to use callbacks without needing to worry about binding.
 If you override either <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html" target="_blank">OnEnable</a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html" target="_blank">OnDisable</a>, you must call their respective base methods for binding and cleanup.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuNavigationAgent.html">KaijuNavigationAgent</a></h4>
-      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html" target="_blank">navigation mesh <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></a>.</p>
+      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html" target="_blank">navigation mesh agent</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html">KaijuRadiusAgent</a></h4>
       <section><p>An <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> type which tries to get its radius from colliders or otherwise manually assigns them.</p>

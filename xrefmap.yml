@@ -573,37 +573,6 @@ references:
   fullName.vb: KaijuSolutions.Agents.Actuators.KaijuEverythingAttackActuator.Widening
   nameWithType: KaijuEverythingAttackActuator.Implicit
   nameWithType.vb: KaijuEverythingAttackActuator.Widening
-- uid: KaijuSolutions.Agents.Development
-  name: KaijuSolutions.Agents.Development
-  href: api/KaijuSolutions.Agents.Development.html
-  commentId: N:KaijuSolutions.Agents.Development
-  fullName: KaijuSolutions.Agents.Development
-  nameWithType: KaijuSolutions.Agents.Development
-- uid: KaijuSolutions.Agents.Development.KaijuDeveloperUI
-  name: KaijuDeveloperUI
-  href: api/KaijuSolutions.Agents.Development.KaijuDeveloperUI.html
-  commentId: T:KaijuSolutions.Agents.Development.KaijuDeveloperUI
-  fullName: KaijuSolutions.Agents.Development.KaijuDeveloperUI
-  nameWithType: KaijuDeveloperUI
-- uid: KaijuSolutions.Agents.Development.KaijuDeveloperUI.dynamicCameras
-  name: dynamicCameras
-  href: api/KaijuSolutions.Agents.Development.KaijuDeveloperUI.html#KaijuSolutions_Agents_Development_KaijuDeveloperUI_dynamicCameras
-  commentId: F:KaijuSolutions.Agents.Development.KaijuDeveloperUI.dynamicCameras
-  fullName: KaijuSolutions.Agents.Development.KaijuDeveloperUI.dynamicCameras
-  nameWithType: KaijuDeveloperUI.dynamicCameras
-- uid: KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width
-  name: Width
-  href: api/KaijuSolutions.Agents.Development.KaijuDeveloperUI.html#KaijuSolutions_Agents_Development_KaijuDeveloperUI_Width
-  commentId: P:KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width
-  fullName: KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width
-  nameWithType: KaijuDeveloperUI.Width
-- uid: KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width*
-  name: Width
-  href: api/KaijuSolutions.Agents.Development.KaijuDeveloperUI.html#KaijuSolutions_Agents_Development_KaijuDeveloperUI_Width_
-  commentId: Overload:KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Development.KaijuDeveloperUI.Width
-  nameWithType: KaijuDeveloperUI.Width
 - uid: KaijuSolutions.Agents.Exercises.Cleaner
   name: KaijuSolutions.Agents.Exercises.Cleaner
   href: api/KaijuSolutions.Agents.Exercises.Cleaner.html
@@ -26573,6 +26542,31 @@ references:
   fullName.vb: KaijuSolutions.Agents.KaijuController.Widening
   nameWithType: KaijuController.Implicit
   nameWithType.vb: KaijuController.Widening
+- uid: KaijuSolutions.Agents.KaijuDeveloperUI
+  name: KaijuDeveloperUI
+  href: api/KaijuSolutions.Agents.KaijuDeveloperUI.html
+  commentId: T:KaijuSolutions.Agents.KaijuDeveloperUI
+  fullName: KaijuSolutions.Agents.KaijuDeveloperUI
+  nameWithType: KaijuDeveloperUI
+- uid: KaijuSolutions.Agents.KaijuDeveloperUI.dynamicCameras
+  name: dynamicCameras
+  href: api/KaijuSolutions.Agents.KaijuDeveloperUI.html#KaijuSolutions_Agents_KaijuDeveloperUI_dynamicCameras
+  commentId: F:KaijuSolutions.Agents.KaijuDeveloperUI.dynamicCameras
+  fullName: KaijuSolutions.Agents.KaijuDeveloperUI.dynamicCameras
+  nameWithType: KaijuDeveloperUI.dynamicCameras
+- uid: KaijuSolutions.Agents.KaijuDeveloperUI.Width
+  name: Width
+  href: api/KaijuSolutions.Agents.KaijuDeveloperUI.html#KaijuSolutions_Agents_KaijuDeveloperUI_Width
+  commentId: P:KaijuSolutions.Agents.KaijuDeveloperUI.Width
+  fullName: KaijuSolutions.Agents.KaijuDeveloperUI.Width
+  nameWithType: KaijuDeveloperUI.Width
+- uid: KaijuSolutions.Agents.KaijuDeveloperUI.Width*
+  name: Width
+  href: api/KaijuSolutions.Agents.KaijuDeveloperUI.html#KaijuSolutions_Agents_KaijuDeveloperUI_Width_
+  commentId: Overload:KaijuSolutions.Agents.KaijuDeveloperUI.Width
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuDeveloperUI.Width
+  nameWithType: KaijuDeveloperUI.Width
 - uid: KaijuSolutions.Agents.KaijuGlobalController
   name: KaijuGlobalController
   href: api/KaijuSolutions.Agents.KaijuGlobalController.html
