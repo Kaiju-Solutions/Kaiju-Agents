@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// The flags themselves for <see cref="Trooper"/>s to try and capture.
     /// </summary>
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Flag", 29)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Flag", 35)]
     public class Flag : Pickup
     {
         /// <summary>

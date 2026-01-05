@@ -5,9 +5,12 @@ using Random = UnityEngine.Random;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
+    /// <summary>
+    /// Points which <see cref="Trooper"/>s can spawn at.
+    /// </summary>
     [RequireComponent(typeof(Collider))]
     [DefaultExecutionOrder(int.MinValue)]
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Spawn Point", 30)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Spawn Point", 36)]
     public class SpawnPoint : KaijuBehaviour
     {
         /// <summary>
@@ -32,18 +35,21 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <returns>The point to spawn at.</returns>
         private static SpawnPoint RandomSpawn([NotNull] HashSet<SpawnPoint> cache)
         {
-            _randomHelper.Clear();
+            RandomHelper.Clear();
             foreach (SpawnPoint point in cache)
             {
-                _randomHelper.Add(point);
+                RandomHelper.Add(point);
             }
 
-            SpawnPoint value = _randomHelper[Random.Range(0, _randomHelper.Count)];
-            _randomHelper.Clear();
+            SpawnPoint value = RandomHelper[Random.Range(0, RandomHelper.Count)];
+            RandomHelper.Clear();
             return value;
         }
         
-        private readonly static List<SpawnPoint> _randomHelper = new();
+        /// <summary>
+        /// Helper for random positions to avoid allocations.
+        /// </summary>
+        private static readonly List<SpawnPoint> RandomHelper = new();
         
         /// <summary>
         /// All spawn points for team one which are currently not occupied by an agent.
@@ -75,8 +81,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             OpenTwoCache.Clear();
             OccupiedOneCache.Clear();
             OccupiedTwoCache.Clear();
-            _randomHelper.Clear();
-            _randomHelper.Capacity = 0;
+            RandomHelper.Clear();
+            RandomHelper.Capacity = 0;
         }
 
         /// <summary>

@@ -30,10 +30,23 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         private Collider[] _colliders;
         
         /// <summary>
+        /// All renderers attached to this.
+        /// </summary>
+        protected IReadOnlyList<MeshRenderer> Renderers => _renderers;
+        
+        /// <summary>
+        /// All renderers attached to this.
+        /// </summary>
+        private MeshRenderer[] _renderers;
+        
+        /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
         protected virtual void OnEnable()
         {
+            // Gather all renderers.
+            _renderers ??= GetComponentsInChildren<MeshRenderer>();
+            
             // Ensure all colliders are triggers.
             if (_colliders != null)
             {

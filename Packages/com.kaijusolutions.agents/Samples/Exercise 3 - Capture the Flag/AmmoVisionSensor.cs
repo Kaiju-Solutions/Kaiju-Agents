@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using KaijuSolutions.Agents.Sensors;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
     /// Sensor for <see cref="AmmoPickup"/>s.
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Ammo Vision Sensor", 30)]
     public class AmmoVisionSensor : KaijuVisionSensor<AmmoPickup>
     {
         /// <summary>

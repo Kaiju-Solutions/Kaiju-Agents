@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
     /// Sensor to get all friendly <see cref="Trooper"/>s.
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper Team Vision Sensor", 29)]
     public class TrooperTeamVisionSensor : TrooperVisionSensor
     {
         /// <summary>

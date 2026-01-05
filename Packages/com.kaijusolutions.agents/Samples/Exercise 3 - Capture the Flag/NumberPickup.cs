@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
@@ -37,24 +36,10 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public float Cooldown { get; private set; }
         
         /// <summary>
-        /// All colliders attached to this which will be disabled when on cooldown.
-        /// </summary>
-        private Collider[] _colliders;
-        
-        /// <summary>
-        /// All renderers attached to this which will be hidden when on cooldown.
-        /// </summary>
-        private MeshRenderer[] _renderers;
-        
-        /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
-        private void OnEnable()
+        protected override void OnEnable()
         {
-            // Ensure we have components.
-            _colliders ??= GetComponentsInChildren<Collider>();
-            _renderers ??= GetComponentsInChildren<MeshRenderer>();
-            
             // Start with no cooldown.
             Cooldown = 0;
             SetActive();
@@ -95,12 +80,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             bool active = OnCooldown;
             
-            foreach (Collider c in _colliders)
+            foreach (Collider c in Colliders)
             {
                 c.enabled = active;
             }
             
-            foreach (MeshRenderer r in _renderers)
+            foreach (MeshRenderer r in Renderers)
             {
                 r.enabled = active;
             }

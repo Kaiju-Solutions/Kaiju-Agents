@@ -7,6 +7,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// Sensor to get all <see cref="Trooper"/>s.
     /// </summary>
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Trooper Vision Sensor", 27)]
     public class TrooperVisionSensor : KaijuVisionSensor<Trooper>
     {
         /// <summary>
