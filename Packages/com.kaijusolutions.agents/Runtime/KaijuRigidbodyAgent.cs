@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Rigidbody Agent", 1)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     [RequireComponent(typeof(Rigidbody))]
     public sealed class KaijuRigidbodyAgent : KaijuRadiusAgent

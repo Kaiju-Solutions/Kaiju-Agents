@@ -15,7 +15,7 @@ namespace KaijuSolutions.Agents.Sensors
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public abstract class KaijuVisionSensor<T> : KaijuSensor where T : Component
     {

@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public abstract class KaijuController : KaijuBehaviour
     {

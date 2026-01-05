@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     [DefaultExecutionOrder(int.MaxValue)]
 #if UNITY_EDITOR
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public abstract class KaijuMovementTester : KaijuBehaviour
     {

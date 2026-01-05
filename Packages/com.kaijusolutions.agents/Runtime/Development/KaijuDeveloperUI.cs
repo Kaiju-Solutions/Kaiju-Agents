@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Development
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public class KaijuDeveloperUI : KaijuGlobalController
     {

@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents
     [SelectionBase]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Navigation Agent", 3)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     [RequireComponent(typeof(NavMeshAgent))]
     public sealed class KaijuNavigationAgent : KaijuAgent

@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/Samples/Movement/Kaiju Path Follow Movement Tester", 14)]
     [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca/manual/getting-started.html")]
+    [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public class KaijuPathFollowMovementTester : KaijuMovementTester
     {
