@@ -312,6 +312,17 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         }
         
         /// <summary>
+        /// Cancel trying to fire the <see cref="BlasterActuator"/>.
+        /// </summary>
+        public void StopAttacking()
+        {
+            if (_blaster != null)
+            {
+                _blaster.End();
+            }
+        }
+        
+        /// <summary>
         /// This function is called when the object becomes enabled and active.
         /// </summary>
         protected override void OnEnable()
