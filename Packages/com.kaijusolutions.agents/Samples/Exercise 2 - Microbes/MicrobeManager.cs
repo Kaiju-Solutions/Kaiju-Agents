@@ -18,7 +18,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The singleton manager instance.
         /// </summary>
-        public static MicrobeManager Instance => _instance ? _instance : new GameObject("Microbes Manager"){isStatic = true}.AddComponent<MicrobeManager>();
+        public static MicrobeManager Instance
+        {
+            get
+            {
+                if (_instance != null)
+                {
+                    return _instance;
+                }
+                
+                MicrobeManager manager = FindAnyObjectByType<MicrobeManager>();
+                return manager != null ? manager : new GameObject("Microbe Manager") { isStatic = true }.AddComponent<MicrobeManager>();
+            }
+        }
         
         /// <summary>
         /// Handle manually resetting the domain.

@@ -30,8 +30,20 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The singleton manager instance.
         /// </summary>
-        public static KaijuAgentsManager Instance => _instance ? _instance : new GameObject("Kaiju Agents Manager"){isStatic = true}.AddComponent<KaijuAgentsManager>();
-        
+        public static KaijuAgentsManager Instance
+        {
+            get
+            {
+                if (_instance != null)
+                {
+                    return _instance;
+                }
+                
+                KaijuAgentsManager manager = FindAnyObjectByType<KaijuAgentsManager>();
+                return manager != null ? manager : new GameObject("Kaiju Agents Manager") { isStatic = true }.AddComponent<KaijuAgentsManager>();
+            }
+        }
+
         /// <summary>
         /// Cache <see cref="KaijuAgent"/>s paired to their identifiers.
         /// </summary>

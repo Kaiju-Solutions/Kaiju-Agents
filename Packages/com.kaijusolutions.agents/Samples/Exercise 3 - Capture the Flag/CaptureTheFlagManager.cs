@@ -18,7 +18,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The singleton manager instance.
         /// </summary>
-        public static CaptureTheFlagManager Instance => _instance ? _instance : new GameObject("Capture the Flag Manager"){isStatic = true}.AddComponent<CaptureTheFlagManager>();
+        public static CaptureTheFlagManager Instance
+        {
+            get
+            {
+                if (_instance != null)
+                {
+                    return _instance;
+                }
+                
+                CaptureTheFlagManager manager = FindAnyObjectByType<CaptureTheFlagManager>();
+                return manager != null ? manager : new GameObject("Capture the Flag Manager") { isStatic = true }.AddComponent<CaptureTheFlagManager>();
+            }
+        }
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -184,7 +196,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return false;
             }
             
-            Debug.Log(prefab != null, this);
             Trooper.Spawn(prefab, point);
             return true;
         }
