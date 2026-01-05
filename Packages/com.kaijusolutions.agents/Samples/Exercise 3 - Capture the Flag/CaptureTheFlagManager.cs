@@ -7,7 +7,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// Manager for <see cref="Trooper"/>s to play capture the flag.
     /// </summary>
     [DisallowMultipleComponent]
-    [DefaultExecutionOrder(int.MaxValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Capture the Flag Manager", 31)]
     public class CaptureTheFlagManager : KaijuGlobalController
     {
@@ -22,12 +21,21 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public static CaptureTheFlagManager Instance => _instance ? _instance : new GameObject("Capture the Flag Manager"){isStatic = true}.AddComponent<CaptureTheFlagManager>();
         
         /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void InitOnPlayMode()
+        {
+            _instance = null;
+        }
+        
+        /// <summary>
         /// The prefab for <see cref="Trooper"/>s.
         /// </summary>
         [Header("Troopers")]
         [Tooltip("The prefab for troopers.")]
         [SerializeField]
-        private KaijuAgent trooperPrefab;
+        private KaijuAgent prefab;
         
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Health"/> of <see cref="Trooper"/>s.
@@ -176,7 +184,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return false;
             }
             
-            Trooper.Spawn(trooperPrefab, point);
+            Debug.Log(prefab != null, this);
+            Trooper.Spawn(prefab, point);
             return true;
         }
         
