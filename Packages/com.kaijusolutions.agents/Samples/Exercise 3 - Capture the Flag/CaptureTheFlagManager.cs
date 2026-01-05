@@ -196,7 +196,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return false;
             }
             
-            Trooper.Spawn(prefab, point);
+            point.SpawnOccupy(Trooper.Spawn(prefab, point));
             return true;
         }
         

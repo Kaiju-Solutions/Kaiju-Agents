@@ -231,7 +231,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         /// <param name="trooperPrefab">The trooper prefab to spawn.</param>
         /// <param name="spawnPoint">The <see cref="SpawnPoint"/> to spawn the trooper at.</param>
-        public static void Spawn([NotNull] KaijuAgent trooperPrefab, [NotNull] SpawnPoint spawnPoint)
+        /// <returns>The spawned trooper.</returns>
+        public static Trooper Spawn([NotNull] KaijuAgent trooperPrefab, [NotNull] SpawnPoint spawnPoint)
         {
             // Get team values.
             uint team;
@@ -273,6 +274,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // Set trooper health and ammo to max.
             trooper.Health = CaptureTheFlagManager.Health;
             trooper.Ammo = CaptureTheFlagManager.Ammo;
+            return trooper;
         }
         
         /// <summary>

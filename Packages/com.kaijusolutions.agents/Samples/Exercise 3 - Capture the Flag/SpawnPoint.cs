@@ -284,5 +284,25 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 }
             }
         }
+        
+        /// <summary>
+        /// Manually occupy this on a spawn as physics collisions won't pick it up right away.
+        /// </summary>
+        /// <param name="trooper"></param>
+        public void SpawnOccupy(Trooper trooper)
+        {
+            _within.Add(trooper);
+            OpenOneCache.Remove(this);
+            OpenTwoCache.Remove(this);
+            
+            if (TeamOne)
+            {
+                OccupiedOneCache.Add(this);
+            }
+            else
+            {
+                OccupiedTwoCache.Add(this);
+            }
+        }
     }
 }
