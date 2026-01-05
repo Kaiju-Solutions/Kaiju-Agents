@@ -18,6 +18,8 @@ items:
       href: developer-ui.md
 - name: Movement
   href: movement.md
+- name: Extensions
+  href: extensions.md
 - name: Exporting
   href: exporting.md
 - name: Samples

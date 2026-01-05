@@ -238,7 +238,7 @@ jobs:
               $originalContent = Get-Content $file.FullName -Raw
 
               # Clean all internal links.
-              $newContent = $originalContent -creplace 'https?://multiplayer\.kaijusolutions\.ca', ''
+              $newContent = $originalContent -creplace 'https?://agents\.kaijusolutions\.ca', ''
 
               # This makes URLs cleaner, e.g., '.../topic/index.html' becomes '.../topic/'.
               $newContent = $newContent -creplace '/index\.html#', '#'

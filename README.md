@@ -2,7 +2,7 @@
 
 **Framework to quickly prototype AI agents in Unity aim at researchers and educators.**
 
-Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development processes and also be used for education. Some of the key features of Kaiju Agents are:
+Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
 - Modularized sensor-agent-actuator framework to allow for dynamic agent customization.
   - Have sensors run automatically or manually poll them.
@@ -19,6 +19,8 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
   - Implement custom visualizations for your own sensors and actuators.
 - Event-driven architecture.
   - A multitude of C# events allow you to listen for all agent-related actions allowing for rapid and decoupled development.
+- Powerful extension methods to speed up your development.
+  - Helpful methods to easy work with vectors, positions, rotations, distances, area-checks, line-of-sight, and more.
 - Samples and exercises.
   - Sample scenes provided showcasing all agent movements and an example full agent controller.
   - Several exercises tailored to help you learn Kaiju Agents or use in an education environment.
@@ -52,4 +54,8 @@ https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolut
 
 ## Template Project
 
-The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the repository](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") to get started.
+The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the repository](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") to get started. Note that this still requires you install [Git](https://git-scm.com/install "Git Download") to pull the latest version of Kaiju Agents into the project.
+
+## Next Steps
+
+See the [getting started documentation](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started") to get up and running with Kaiju Agents.
