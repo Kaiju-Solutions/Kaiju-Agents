@@ -79,7 +79,24 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="agents">Agents</h1>
 
-<p>Documentation coming soon.</p>
+<p>There are four types of agents each derived from the <a href="/api/KaijuSolutions.Agents.KaijuAgent.html" title="KaijuAgent"><code>KaijuAgent</code> class</a>, with the different types defining what drives the <a href="/manual/movement.html" title="Movement">movement</a> of the agent:</p>
+<ol>
+<li><a href="/api/KaijuSolutions.Agents.KaijuTransformAgent.html" title="Transform Agent">Transform</a> - Moves directly with the <a href="https://docs.unity3d.com/Manual/class-transform.html" title="Transform" target="_blank">transform</a>. This agent does not collide with object or cause any collision or trigger events to be fired.</li>
+<li><a href="/api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html" title="Rigidbody Agent">Rigidbody</a> - Moves respecting physics using a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" title="Rigidbody" target="_blank">rigidbody component</a>, allowing for the collisions and their related events to be activated by this agent.<ul>
+<li><strong>If you are unsure of which agent type to use for your use case, it is recommeneded you choose this type to start.</strong></li>
+</ul>
+</li>
+<li><a href="/api/KaijuSolutions.Agents.KaijuCharacterAgent.html">Character</a> - Moves with a <a href="https://docs.unity3d.com/Manual/character-control-section.html" title="Character Controller" target="_blank">character controller component</a>. In general, this behaves about the same as the <a href="/api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html" title="Rigidbody Agent">rigidbody agent</a>.</li>
+<li><a href="/api/KaijuSolutions.Agents.KaijuNavigationAgent.html">Navigation</a> - Moves by a <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html" target="_blank">navigation mesh agent component</a>, and like the <a href="/api/KaijuSolutions.Agents.KaijuTransformAgent.html" title="Transform Agent">transform agent</a>, does not fire collision or trigger events.<ul>
+<li><strong>Note that <em>all four</em> agent types can fully perform navigation and pathfinding, not just the <a href="/api/KaijuSolutions.Agents.KaijuNavigationAgent.html">navigation agent</a></strong></li>
+</ul>
+</li>
+</ol>
+<h2 id="movement">Movement</h2>
+<p>Each agent can set their speed and acceleration for performing <a href="/manual/movement.html">movements</a> in addition to the look speed. This can be done via the <a href="https://docs.unity3d.com/Manual/UsingTheInspector.html" title="Inspector Window" target="_blank">inspector</a> or via the <a href="/api/KaijuSolutions.Agents.KaijuAgent.html" title="KaijuAgent"><code>KaijuAgent</code> API</a>.</p>
+<p>Additionally, the <a href="/api/KaijuSolutions.Agents.KaijuAgent.html" title="KaijuAgent"><code>KaijuAgent</code> API</a> provides methods exposing how perform all the <a href="/manual/movement.html">movements</a>. These <a href="/manual/movement.html">movement</a> methods can have their parameters explicitly passed to them. If not passed, all parameters will default to that of the <a href="/manual/movement.html#configuration">movement configuration</a> assigned to the agent. If no <a href="/manual/movement.html#configuration">movement configuration</a> is assigned, the values will fallback to the default values outlined in the constant defined in each <a href="/manual/movement.html">movement</a> class.</p>
+<h2 id="controlling-agents">Controlling Agents</h2>
+<p>There is a lot of flexibility as to how you can add intelligent behaviour to agents! The most common method is creating a class which extends from <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html" title="MonoBehaviour" target="_blank"><code>MonoBehaviour</code></a> (or the extended version provided with Kaiju Agents, <a href="/api/KaijuSolutions.Agents.KaijuBehaviour.html" title="KaijuBehaviour"><code>KaijuBehaviour</code></a> instead) and listening for callbacks, accessing properties, and calling methods from the <a href="/api/KaijuSolutions.Agents.KaijuAgent.html" title="KaijuAgent"><code>KaijuAgent</code> API</a>. As this workflow is so common, the <a href="/manual/controllers.html">controller classes</a> provide starting points to do this.</p>
 </article>
           </div>
           

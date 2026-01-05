@@ -1624,7 +1624,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "dVGtY/gjkw8truMVawTQshmHfcao1UQxgVlAIZIyQ7U="
+          "hash": "8Tm/sE+PEFpe3jcoc/eiU817FVAhxIABYujEwFoMJmg="
         }
       },
       "is_incremental": false,
@@ -1648,7 +1648,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/actuators.html",
-          "hash": "O+1NzlRzt188LOPKuVbLIrcnFOf1Vt9ikVXzsVCDqc0="
+          "hash": "YTyuhp9kWG4yV/oas9sF2MqoyMKr+aEgpILtkTCTdeY="
         }
       },
       "is_incremental": false,
@@ -1660,7 +1660,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/agents.html",
-          "hash": "Uj574pQNb1D2r0yNgnOgo55AET6/Jvdpm3g3kbXtX28="
+          "hash": "pQsLjjOSiEONYU30WHmRxfoc9Wx3TVvI5hzyusEJbvc="
         }
       },
       "is_incremental": false,
@@ -1684,7 +1684,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/cleaner.html",
-          "hash": "1RTdmrUm5hVoiKNzmNk4dED/jtryOEMrY170ot7NmE4="
+          "hash": "pPGCZNWmwWtshYC65+apPVVTcHBYrUfFSOYyfXviBEM="
         }
       },
       "is_incremental": false,
@@ -1696,7 +1696,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/components.html",
-          "hash": "TOHiHBF9vme9Fq4ZHQItOeTjh9f1uNQN/z5DXOIwSQo="
+          "hash": "8zUgMXeMfi5xRsAxEWyFbKS3Zab9xfMZw4WpGLOYAk8="
         }
       },
       "is_incremental": false,
@@ -1728,11 +1728,23 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/exporting.md",
+      "source_relative_path": "manual/exercises.md",
       "output": {
         ".html": {
-          "relative_path": "manual/exporting.html",
-          "hash": "HkTfoqrcPT4chanEuetsTgPmjq0db+wJE8jx7yuNAUY="
+          "relative_path": "manual/exercises.html",
+          "hash": "hILTCr8v+GDiD5lA5h5i8fCHFKMkK+CbjmLnRKIlTxY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/extensions.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/extensions.html",
+          "hash": "/0u8A9smYpi+Wh1qjsv+lRmXR0uC+Vz7/XaRLOIcJ+A="
         }
       },
       "is_incremental": false,
@@ -1744,7 +1756,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/getting-started.html",
-          "hash": "dsRXDKNLVRNGAIblW+no9WdbSr0LzrxBOalEMuVUrEs="
+          "hash": "EJs5G1hv0sDBuCiyy1S3gihDoeu0HdxGUzQMkRTqJX8="
         }
       },
       "is_incremental": false,
@@ -1780,7 +1792,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/microbes.html",
-          "hash": "MBdhxoovbbxM+jCuSin5cfpWPuhpmwqiTDKmTjsZjTM="
+          "hash": "hVvUF5vpnkAoU2Nd3drx8pxTi35WBst6FwOHRjikvcM="
         }
       },
       "is_incremental": false,
@@ -1792,7 +1804,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/movement.html",
-          "hash": "1n4GjBZykQSm27Beg7j4JNvCPhS15631fgmEiMmfeHI="
+          "hash": "s0uTseg3Nm+RvWkh+y5Rowt+cDIccygVcoNdBCUzEZQ="
         }
       },
       "is_incremental": false,
@@ -1828,7 +1840,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/sensors.html",
-          "hash": "9ju0+fWroEAlN0QuBKNds2UR9kcpeyblcOgFhKMZIXA="
+          "hash": "IHbEUGeJFRzoex1Rt0kNY1CoXAam4jQPGV4yxta+AL0="
         }
       },
       "is_incremental": false,
@@ -1843,7 +1855,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "ksODCKTiuVTH1I9Dgg3HZben12NmOwOIaANzKEGM1nw="
+          "hash": "pBb/9eE6/5+DOwtK5IkXVYMYbgumK1Gc3zOGeNenxv4="
         }
       },
       "is_incremental": false,
@@ -1901,7 +1913,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 20,
+          "total_file_count": 21,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

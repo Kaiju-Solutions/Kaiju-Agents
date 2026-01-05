@@ -662,7 +662,7 @@
   "index.html": {
     "href": "index.html",
     "title": "Kaiju Agents | Kaiju Agents",
-    "keywords": "Kaiju Agents Framework to quickly prototype AI agents in Unity aim at researchers and educators. Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development processes and also be used for education. Some of the key features of Kaiju Agents are: Modularized sensor-agent-actuator framework to allow for dynamic agent customization. Have sensors run automatically or manually poll them. Vision sensors based on line-of-sight and casting provided. Casting-based actuator to destroy objects included. Full movement and navigation framework. Includes seek, flee, pursue, evade, separation, and obstacle avoidance steering behaviours. Full navigation and pathfinding built on top of Unity's navigation meshes. Multiple agent types. Have your agents move via a rigidbody, character controller, navigation mesh agent, or directly with the transform. Pathfinding and navigation work with all agents types, not just the navigation mesh agents! Extensive visualizations. Highly configurable visualizations for agents and their movements in the editor. Implement custom visualizations for your own sensors and actuators. Event-driven architecture. A multitude of C# events allow you to listen for all agent-related actions allowing for rapid and decoupled development. Samples and exercises. Sample scenes provided showcasing all agent movements and an example full agent controller. Several exercises tailored to help you learn Kaiju Agents or use in an education environment. Installation Install Git . Install Unity version 6.3+ Create a new Unity project or open an existing one. Alternatively, see the template project . In Unity, from the top menu, go to Window > Package Management > Package Manager and click the + icon in the top left followed by Install package from git URL... . Paste in one of the below options: Latest Release - Recommended https://github.com/KaijuSolutions/Kaiju-Agents.git#release Specific Release Replace the #release in the latest release installation with the version number of the given release . Development This will pull directly from the master branch, and is not recommended unless there is a specific feature needed not yet in the latest release. https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents Template Project The Kaiju Agents template project comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply download or clone the repository to get started."
+    "keywords": "Kaiju Agents Framework to quickly prototype AI agents in Unity aimed at researchers and educators. Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are: Modularized sensor-agent-actuator framework to allow for dynamic agent customization. Have sensors run automatically or manually poll them. Vision sensors based on line-of-sight and casting provided. Casting-based actuator to destroy objects included. Full movement and navigation framework. Includes seek, flee, pursue, evade, wander, separation, and obstacle avoidance steering behaviours. Full navigation and pathfinding built on top of Unity's navigation meshes. Multiple agent types. Have your agents move via a rigidbody, character controller, navigation mesh agent, or directly with the transform. Pathfinding and navigation work with all agents types, not just the navigation mesh agents! Extensive visualizations. Highly configurable visualizations for agents and their movements in the editor. Implement custom visualizations for your own sensors and actuators. Event-driven architecture. A multitude of C# events allow you to listen for all agent-related actions allowing for rapid and decoupled development. Powerful extension methods to speed up your development. Helpful methods to easy work with vectors, positions, rotations, distances, area-checks, line-of-sight, and more. Samples and exercises. Sample scenes provided showcasing all agent movements and an example full agent controller. Several exercises tailored to help you learn Kaiju Agents or use in an education environment. Installation Install Git . Install Unity version 6.3+ Create a new Unity project or open an existing one. Alternatively, see the template project . In Unity, from the top menu, go to Window > Package Management > Package Manager and click the + icon in the top left followed by Install package from git URL... . Paste in one of the below options: Latest Release - Recommended https://github.com/KaijuSolutions/Kaiju-Agents.git#release Specific Release Replace the #release in the latest release installation with the version number of the given release . Development This will pull directly from the master branch, and is not recommended unless there is a specific feature needed not yet in the latest release. https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents Template Project The Kaiju Agents template project comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply download or clone the template project repository to get started. Note that this still requires you install Git for the project to pull the latest release of Kaiju Agents into itself. Next Steps See the getting started documentation to get up and running with Kaiju Agents."
   },
   "license/index.html": {
     "href": "license/index.html",
@@ -672,12 +672,12 @@
   "manual/actuators.html": {
     "href": "manual/actuators.html",
     "title": "Actuators | Kaiju Agents",
-    "keywords": "Actuators Documentation coming soon."
+    "keywords": "Actuators Documentation coming soon. Attack Actuator Documentation coming soon. Everything Attack Actuator Documentation coming soon."
   },
   "manual/agents.html": {
     "href": "manual/agents.html",
     "title": "Agents | Kaiju Agents",
-    "keywords": "Agents Documentation coming soon."
+    "keywords": "Agents There are four types of agents each derived from the KaijuAgent class , with the different types defining what drives the movement of the agent: Transform - Moves directly with the transform . This agent does not collide with object or cause any collision or trigger events to be fired. Rigidbody - Moves respecting physics using a rigidbody component , allowing for the collisions and their related events to be activated by this agent. If you are unsure of which agent type to use for your use case, it is recommeneded you choose this type to start. Character - Moves with a character controller component . In general, this behaves about the same as the rigidbody agent . Navigation - Moves by a navigation mesh agent component , and like the transform agent , does not fire collision or trigger events. Note that all four agent types can fully perform navigation and pathfinding, not just the navigation agent Movement Each agent can set their speed and acceleration for performing movements in addition to the look speed. This can be done via the inspector or via the KaijuAgent API . Additionally, the KaijuAgent API provides methods exposing how perform all the movements . These movement methods can have their parameters explicitly passed to them. If not passed, all parameters will default to that of the movement configuration assigned to the agent. If no movement configuration is assigned, the values will fallback to the default values outlined in the constant defined in each movement class. Controlling Agents There is a lot of flexibility as to how you can add intelligent behaviour to agents! The most common method is creating a class which extends from MonoBehaviour (or the extended version provided with Kaiju Agents, KaijuBehaviour instead) and listening for callbacks, accessing properties, and calling methods from the KaijuAgent API . As this workflow is so common, the controller classes provide starting points to do this."
   },
   "manual/box-destroyer.html": {
     "href": "manual/box-destroyer.html",
@@ -687,12 +687,12 @@
   "manual/cleaner.html": {
     "href": "manual/cleaner.html",
     "title": "Cleaner | Kaiju Agents",
-    "keywords": "Cleaner Documentation coming soon."
+    "keywords": "Cleaner Documentation coming soon. Floor Documentation coming soon."
   },
   "manual/components.html": {
     "href": "manual/components.html",
     "title": "Components | Kaiju Agents",
-    "keywords": "Components Documentation coming soon."
+    "keywords": "Components Kaiju Agents works by breaking agents apart into several components being: The agents themselves. Sensors to read the environment. Actuators to interact with the environment. All of these components have a multitude of C# events you can listen to for designing behaviours. For your convenience, controllers abstract classes have been made which automatically listen to all of these events. This allows for easily extending from controller and overriding the methods for the callbacks you are interested in, allowing you to listen to the C# events you are interested in without worrying about bindings. All scenes will also have an agent manager which is automatically added to the scene as needed. This is a singleton meaning only one instance ever exists. If you are looking to create a basic script inheriting from MonoBehaviour , you may consider inheriting from the KaijuBehaviour class instead. KaijuBehaviour class itself inherits from MonoBehaviour and has many additioal properties to speed up your development."
   },
   "manual/controllers.html": {
     "href": "manual/controllers.html",
@@ -704,15 +704,20 @@
     "title": "Developer UI | Kaiju Agents",
     "keywords": "Developer UI Documentation coming soon."
   },
-  "manual/exporting.html": {
-    "href": "manual/exporting.html",
-    "title": "Exporting | Kaiju Agents",
-    "keywords": "Exporting Documentation coming soon."
+  "manual/exercises.html": {
+    "href": "manual/exercises.html",
+    "title": "Exercises | Kaiju Agents",
+    "keywords": "Exercises Documentation coming soon."
+  },
+  "manual/extensions.html": {
+    "href": "manual/extensions.html",
+    "title": "Extensions | Kaiju Agents",
+    "keywords": "Extensions Documentation coming soon."
   },
   "manual/getting-started.html": {
     "href": "manual/getting-started.html",
     "title": "Getting Started | Kaiju Agents",
-    "keywords": "Getting Started Documentation coming soon."
+    "keywords": "Getting Started To get started with Kaiju Agents, follow the installation instructions or use the template project . Recommendations To make your workflow more convenient, it is recommended to set the game view to Play Unfocused . This setting can be found towards the center-right of the game view . This is recommended as agent visualizations are only shown in the scene view , and either of the other two modes in the game view can result in having your scene view minimized depending on your editor layout. If you wish to work with pathfinding and navigation, it is recommended you install the AI navigation package which allows for an easy component-based navigation mesh creation process. To check if it is installed in your project, from the top menu, go to Window > Package Management > Package Manager . Under the Installed tab, look for AI Navigation under Packages - Unity . If it is not installed, click on the Unity Registry Tab , select AI Navigation , and click Install . Samples If this is your first time using Kaiju Agents, it is recommended you explore the provided samples . See the samples documentation for instructions on importing them to your project. If you downloaded the template project , these will already been in the assets folder. Next Steps To add your first agent into a scene, right click in the hierarchy window and go to Kaiju Solutions > Agents and click any of the options, with the Kaiju Transform Agent being the most basic. You can also access this creation process from the top menu by going to either GameObject or Tools and following the same steps. To learn how the agent works and how you can control it, head to the components documentation . Exercises Once you are familiar with the various components provided by Kaiju Agents, for practice you can try completing several exercises . Each exercise is more complicated than the last, providing an efficient learning experience for Kaiju Agents. Exporting Code releated to visualizations only works in the Unity editor, and hence related code is stripped if you export a build. All properties and methods in the scripting API which can only be run in the editor are prefixed with Editor . If you are writing any code accessing their editor-only properties or methods, you will need to exclude that code from buids. This can be done in two ways: If the entire script is not needed for your build, simply nest the script under any folder named Editor . If the script is needed in your build, you need to use preprocessor directives to wrap the editor-only code."
   },
   "manual/keyboard.html": {
     "href": "manual/keyboard.html",
@@ -727,12 +732,12 @@
   "manual/microbes.html": {
     "href": "manual/microbes.html",
     "title": "Microbes | Kaiju Agents",
-    "keywords": "Microbes Documentation coming soon."
+    "keywords": "Microbes Documentation coming soon. Microbe Controller Documentation coming soon. Microbe Documentation coming soon. Energy Pickup Documentation coming soon. Sensors Documentation coming soon. Microbe Vision Sensor Documentation coming soon. Energy Vision Sensor Documentation coming soon. Microbe Manager Documentation coming soon."
   },
   "manual/movement.html": {
     "href": "manual/movement.html",
     "title": "Movement | Kaiju Agents",
-    "keywords": "Movement Documentation coming soon."
+    "keywords": "Movement Documentation coming soon. Configuration Documentation coming soon. Seek Documentation coming soon. Pursue Documentation coming soon. Flee Documentation coming soon. Evade Documentation coming soon. Wander Documentation coming soon. Separation Documentation coming soon. Obstacle Avoidance Documentation coming soon. Path Following Documentation coming soon."
   },
   "manual/sample-movement.html": {
     "href": "manual/sample-movement.html",
@@ -747,6 +752,6 @@
   "manual/sensors.html": {
     "href": "manual/sensors.html",
     "title": "Sensors | Kaiju Agents",
-    "keywords": "Sensors Documentation coming soon."
+    "keywords": "Sensors Documentation coming soon. Vision Sensor Documentation coming soon. Agents Vision Sensor Documentation coming soon. Everything Vision Sensor Documentation coming soon. Cast Sensor Documentation coming soon."
   }
 }
