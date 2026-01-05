@@ -1,11 +1,11 @@
 ﻿# Actuators
 
-Documentation coming soon.
+Acutators are all extended from the [`KaijuAcutator` class](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Acutators.KaijuAcutators.html "KaijuAcutator") implementing the [`Run()` method](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuActuator.html#KaijuSolutions_Agents_Actuators_KaijuActuator_Run "KaijuAcutator - Run"). Acutators must be directly attached to or within the child [GameObjects](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject") of an [agent](https://agents.kaijusolutions.ca/manual/agents.md "Agents"). Acutators are run by calling the [`Begin()` method](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuActuator.html#KaijuSolutions_Agents_Actuators_KaijuActuator_Begin "KaijuAcutator - Begin").
 
 ## Attack Actuator
 
-Documentation coming soon.
+The [`KaijuAttackActuator`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html "KaijuAttackActuator") is the base class for creating actuators that fire a ray in the forward direction. This ray fires for a set distance and will try to hit a given [component](https://docs.unity3d.com/Manual/Components.html "Component") type. If the given [component](https://docs.unity3d.com/Manual/Components.html "Component") type is found, the [`HandleHit(RaycastHit, Transform)` method](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html#KaijuSolutions_Agents_Actuators_KaijuAttackActuator_HandleHit_RaycastHit_Transform_ "KaijuAttackActuator - HandleHit(RaycastHit, Transform)") is called. A [LineRenderer](https://docs.unity3d.com/ScriptReference/LineRenderer.html "LineRenderer") can optionally be assigned to the attack actuator to visualize the ray.
 
 ### Everything Attack Actuator
 
-Documentation coming soon.
+The [`KaijuEverythingAttackActuator`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuEverythingAttackActuator.html) is an implementation of the [`KaijuAttackActuator`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html "KaijuAttackActuator") which calls [`HandleHit(RaycastHit, Transform)` method](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html#KaijuSolutions_Agents_Actuators_KaijuAttackActuator_HandleHit_RaycastHit_Transform_ "KaijuAttackActuator - HandleHit(RaycastHit, Transform)") on all [transforms](https://docs.unity3d.com/Manual/class-transform.html "Transform"). This will either disable or destroy the hit [GameObject](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject"). A name filter allows for filtering specific ojects, similar to the [everything vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#everything-vision-sensor "Everything Vision Sensor").
