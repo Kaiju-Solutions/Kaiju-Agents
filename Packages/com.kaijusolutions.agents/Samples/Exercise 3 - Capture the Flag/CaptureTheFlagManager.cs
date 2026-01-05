@@ -6,6 +6,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// <summary>
     /// Manager for <see cref="Trooper"/>s to play capture the flag.
     /// </summary>
+    [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MaxValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Capture the Flag Manager", 31)]
     public class CaptureTheFlagManager : KaijuGlobalController

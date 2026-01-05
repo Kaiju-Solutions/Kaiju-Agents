@@ -84,6 +84,13 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public bool TeamOne { get; private set; } = true;
         
         /// <summary>
+        /// The part of the flag to color as being part of the team.
+        /// </summary>
+        [Tooltip("The part of the flag to color as being part of the team.")]
+        [SerializeField]
+        private MeshRenderer visual;
+        
+        /// <summary>
         /// The home position of the flag.
         /// </summary>
         private Vector2 _position;
@@ -129,6 +136,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 {
                     TeamOneFlag = this;
                     Both.Add(this);
+                    visual.material = KaijuAgents.GetMaterial(CaptureTheFlagManager.ColorOne);
                 }
             }
             else
@@ -147,6 +155,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 {
                     TeamTwoFlag = this;
                     Both.Add(this);
+                    visual.material = KaijuAgents.GetMaterial(CaptureTheFlagManager.ColorTwo);
                 }
             }
         }
