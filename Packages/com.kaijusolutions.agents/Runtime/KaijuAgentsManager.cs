@@ -709,12 +709,6 @@ namespace KaijuSolutions.Agents
             
             float delta = Time.deltaTime;
             
-            // All agents calculate their velocity.
-            foreach (KaijuAgent agent in AllAgents)
-            {
-                agent.CalculateVelocity(delta);
-            }
-            
             // Step all physics agents.
             Move(PhysicsAgents, delta);
             
@@ -728,6 +722,12 @@ namespace KaijuSolutions.Agents
             foreach (KaijuAgent agent in AllAgents)
             {
                 agent.Act();
+            }
+            
+            // All agents calculate their velocity.
+            foreach (KaijuAgent agent in AllAgents)
+            {
+                agent.CalculateVelocity(delta);
             }
         }
         
