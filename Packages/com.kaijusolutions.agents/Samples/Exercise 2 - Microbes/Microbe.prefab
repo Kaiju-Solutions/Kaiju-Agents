@@ -190,13 +190,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2169226680292673670}
-  - component: {fileID: 1584163208989239398}
-  - component: {fileID: 5871291829752055646}
-  - component: {fileID: 4048541148613101826}
-  - component: {fileID: 8428177763666846322}
   - component: {fileID: -7285491202088821057}
   - component: {fileID: 1245224778185196274}
   - component: {fileID: 214782256947000050}
+  - component: {fileID: 8428177763666846322}
+  - component: {fileID: 5871291829752055646}
+  - component: {fileID: 1584163208989239398}
+  - component: {fileID: 4048541148613101826}
   m_Layer: 0
   m_Name: Microbe
   m_TagString: Untagged
@@ -220,90 +220,6 @@ Transform:
   - {fileID: 6999033946653022446}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1584163208989239398
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695107738923841220}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 116
-  m_CollisionDetection: 2
---- !u!114 &5871291829752055646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695107738923841220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 057715d317b047cb803be654775a0421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuRigidbodyAgent
-  moveSpeed: 10
-  moveAcceleration: 0
-  lookSpeed: 0
-  autoRotate: 1
-  configuration: {fileID: 11400000, guid: 40c6c068c0b82d846af944e9c4bc7573, type: 2}
-  identifiers: 
-  radius: 0.5
-  body: {fileID: 1584163208989239398}
---- !u!136 &4048541148613101826
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695107738923841220}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8428177763666846322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8695107738923841220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86021c8cac9048a8b27c3f2bc01d3c1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.microbes::KaijuSolutions.Agents.Exercises.Microbes.Microbe
-  agent: {fileID: 5871291829752055646}
-  decay: 5
 --- !u!114 &-7285491202088821057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +282,87 @@ MonoBehaviour:
   triggers: 0
   editorColor: {r: 1, g: 1, b: 1, a: 1}
   editorFromAgent: 1
+--- !u!114 &8428177763666846322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695107738923841220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86021c8cac9048a8b27c3f2bc01d3c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.microbes::KaijuSolutions.Agents.Exercises.Microbes.Microbe
+  agent: {fileID: 5871291829752055646}
+  decay: 5
+--- !u!114 &5871291829752055646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695107738923841220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057715d317b047cb803be654775a0421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuRigidbodyAgent
+  moveSpeed: 10
+  moveAcceleration: 0
+  lookSpeed: 0
+  autoRotate: 1
+  configuration: {fileID: 11400000, guid: 40c6c068c0b82d846af944e9c4bc7573, type: 2}
+  identifiers: 
+  radius: 0.5
+  body: {fileID: 1584163208989239398}
+--- !u!54 &1584163208989239398
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695107738923841220}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 116
+  m_CollisionDetection: 2
+--- !u!136 &4048541148613101826
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695107738923841220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

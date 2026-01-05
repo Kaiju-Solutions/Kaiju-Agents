@@ -240,18 +240,5 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 c.enabled = true;
             }
         }
-        
-        /// <summary>
-        /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
-        /// </summary>
-        protected override void OnValidate()
-        {
-            base.OnValidate();
-            
-            if (Application.isPlaying)
-            {
-                AssignFlag();
-            }
-        }
     }
 }

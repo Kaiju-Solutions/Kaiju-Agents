@@ -10,22 +10,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     public abstract class NumberPickup : Pickup
     {
         /// <summary>
-        /// The value to restore with this pickup.
-        /// </summary>
-        [field: Tooltip("The value to restore with this pickup.")]
-        [field: Min(1)]
-        [field: SerializeField]
-        public int Value { get; private set; } = 100;
-        
-        /// <summary>
-        /// How long in seconds this will be <see cref="OnCooldown"/> before it can be used again.
-        /// </summary>
-        [Tooltip("How long in seconds this will be on cooldown before it can be used again.")]
-        [Min(float.Epsilon)]
-        [SerializeField]
-        private float cooldown = 10;
-        
-        /// <summary>
         /// If this pickup is currently on a cooldown.
         /// </summary>
         public bool OnCooldown => Cooldown > 0;
@@ -50,7 +34,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         private void OnDisable()
         {
-            Cooldown = cooldown;
+            Cooldown = 0;
             SetActive();
         }
 
@@ -68,7 +52,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             }
             
             // Put this on cooldown if it was interacted with.
-            Cooldown = cooldown;
+            Cooldown = CaptureTheFlagManager.Cooldown;
             SetActive();
             return true;
         }

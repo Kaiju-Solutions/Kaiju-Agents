@@ -40,7 +40,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Tooltip("The maximum and starting health of troopers.")]
         [Min(1)]
         [SerializeField]
-        private int health;
+        private int health = 100;
         
         /// <summary>
         /// The damage the <see cref="BlasterActuator"/>s deal to <see cref="Trooper"/>s.
@@ -53,7 +53,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Tooltip("The damage the blasters deals to troopers.")]
         [Min(1)]
         [SerializeField]
-        private int damage;
+        private int damage = 10;
         
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Ammo"/> of <see cref="Trooper"/>s for their blaster.
@@ -66,7 +66,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Tooltip("The maximum and starting ammo of troopers for their blaster.")]
         [Min(1)]
         [SerializeField]
-        private int ammo;
+        private int ammo = 30;
+        
+        /// <summary>
+        /// The cooldown timer for <see cref="HealthPickup"/>s and <see cref="AmmoPickup"/>s.
+        /// </summary>
+        public static float Cooldown => Instance.cooldown;
+        
+        /// <summary>
+        /// The cooldown timer for <see cref="HealthPickup"/>s and <see cref="AmmoPickup"/>s.
+        /// </summary>
+        [Tooltip("The cooldown timer for health and ammo pickups.")]
+        [Min(float.Epsilon)]
+        [SerializeField]
+        private float cooldown = 10;
         
         /// <summary>
         /// How close to a <see cref="Trooper"/>'s own base to capture a <see cref="Flag"/> they are carrying.
@@ -106,7 +119,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         [Tooltip("The number of troopers per team.")]
         [Min(1)]
         [SerializeField]
-        private int size = 5;
+        private int size = 10;
         
         /// <summary>
         /// The color for team one.

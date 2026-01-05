@@ -424,8 +424,6 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 {
                     return;
                 }
-
-                int value = number.Value;
                 
                 // Handle it as the proper type.
                 if (number is HealthPickup health)
@@ -438,7 +436,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                     }
                     
                     health.Interact(this);
-                    Health = Mathf.Max(Health + value, max);
+                    Health = max;
                     OnHealth?.Invoke(health);
                     OnHealthGlobal?.Invoke(this, health);
                 }
@@ -452,7 +450,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                     }
                     
                     ammo.Interact(this);
-                    Ammo = Mathf.Max(Ammo + value, max);
+                    Ammo = max;
                     OnAmmo?.Invoke(ammo);
                     OnAmmoGlobal?.Invoke(this, ammo);
                 }

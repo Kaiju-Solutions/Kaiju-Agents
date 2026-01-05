@@ -7,7 +7,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
     /// Manager for spawning <see cref="Microbe"/>s and <see cref="Energy"/> components.
     /// </summary>
     [DisallowMultipleComponent]
-    [DefaultExecutionOrder(int.MaxValue)]
     [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Microbes/Microbe Manager", 23)]
     public class MicrobeManager : KaijuBehaviour
     {
