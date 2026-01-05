@@ -134,7 +134,9 @@ jobs:
       - name: Documentation Folder Contents After Build
         run: |
           Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
-        shell: pwsh# Reorder the API TOC and write custom names.
+        shell: pwsh
+      
+      # Reorder the API TOC and write custom names.
       - name: Update API TOC Order and Names
         shell: pwsh
         run: |
