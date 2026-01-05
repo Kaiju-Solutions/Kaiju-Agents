@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuMovementConfiguration | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuMovementConfiguration | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration" class="text-break">Class KaijuMovementConfiguration
+  </h1>
+  <div class="markdown level0 summary"><p>Allow for defining <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a> settings for <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s to use as default values.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuMovementConfiguration</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuMovementConfiguration : ScriptableObject</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_areaMask" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.areaMask">areaMask</h4>
+  <div class="markdown level1 summary"><p>The default bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int areaMask</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceAngle" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.avoidanceAngle">avoidanceAngle</h4>
+  <div class="markdown level1 summary"><p>The default angle for rays.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float avoidanceAngle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceHeight" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.avoidanceHeight">avoidanceHeight</h4>
+  <div class="markdown level1 summary"><p>The default height offset for the rays.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float avoidanceHeight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceHorizontal" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.avoidanceHorizontal">avoidanceHorizontal</h4>
+  <div class="markdown level1 summary"><p>The default horizontal shift for the side rays.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float avoidanceHorizontal</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_clear" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.clear">clear</h4>
+  <div class="markdown level1 summary"><p>The default behaviour for if new <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>s should clear all other current <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>s and become the only one the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> is performing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool clear</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_collisionMask" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.collisionMask">collisionMask</h4>
+  <div class="markdown level1 summary"><p>The default layers to use for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a> string-pulling and <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LayerMask collisionMask</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">LayerMask</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_collisionTriggers" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.collisionTriggers">collisionTriggers</h4>
+  <div class="markdown level1 summary"><p>How string-pulling should consider triggers by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public QueryTriggerInteraction collisionTriggers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_DefaultMask" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.DefaultMask">DefaultMask</h4>
+  <div class="markdown level1 summary"><p>The default collision layer mask.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DefaultMask = -5</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ApproachingDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ApproachingDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ApproachingDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ApproachingDistance">ApproachingDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance at which we can consider <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeekMovement.html">KaijuSeekMovement</a>, <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPursueMovement.html">KaijuPursueMovement</a>, and <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement.html">KaijuPathFollowMovement</a> behaviours done.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ApproachingDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Avoidance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Avoidance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Avoidance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Avoidance">Avoidance</h4>
+  <div class="markdown level1 summary"><p>The default distance from a wall the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should maintain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Avoidance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AvoidanceDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AvoidanceDistance">AvoidanceDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance for rays.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AvoidanceDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceSideDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AvoidanceSideDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceSideDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AvoidanceSideDistance">AvoidanceSideDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance of the side rays. Zero or less will use the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceDistance">AvoidanceDistance</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AvoidanceSideDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.LeavingDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.LeavingDistance">LeavingDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance at which we can consider <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuFleeMovement.html">KaijuFleeMovement</a> and <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html">KaijuEvadeMovement</a> behaviours done.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float LeavingDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_PathAutoCalculateDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.PathAutoCalculateDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_PathAutoCalculateDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.PathAutoCalculateDistance">PathAutoCalculateDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance to automatically recalculate the path from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PathAutoCalculateDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationCoefficient_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationCoefficient*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationCoefficient" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationCoefficient">SeparationCoefficient</h4>
+  <div class="markdown level1 summary"><p>The default distance to interact with other <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SeparationCoefficient { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationDistance">SeparationDistance</h4>
+  <div class="markdown level1 summary"><p>The default distance to interact with other <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float SeparationDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.WanderDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.WanderDistance">WanderDistance</h4>
+  <div class="markdown level1 summary"><p>How far out to generate the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a> circles by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float WanderDistance { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderRadius_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.WanderRadius*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderRadius" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.WanderRadius">WanderRadius</h4>
+  <div class="markdown level1 summary"><p>The radius of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a> circles by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float WanderRadius { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Weight_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Weight*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Weight" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Weight">Weight</h4>
+  <div class="markdown level1 summary"><p>The default weight of all <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Weight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

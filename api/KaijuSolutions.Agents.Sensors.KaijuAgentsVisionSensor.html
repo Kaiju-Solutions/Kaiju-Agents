@@ -81,7 +81,7 @@
   
   <h1 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor" class="text-break">Class KaijuAgentsVisionSensor
   </h1>
-  <div class="markdown level0 summary"><p>Vision sensor to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard vision sensors as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a> to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a>s as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -326,6 +326,9 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
     </div>
     <div>
@@ -404,7 +407,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
         <td><p>All active <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
 </td>
       </tr>
@@ -412,6 +415,137 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">KaijuSolutions.Agents.Sensors.KaijuVisionSensor&lt;KaijuSolutions.Agents.KaijuAgent&gt;.DefaultObservables()</span></div>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_GameObject__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(GameObject)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">Implicit(GameObject to KaijuAgentsVisionSensor)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgentsVisionSensor(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuAgentsVisionSensor to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuAgentsVisionSensor s)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_Transform__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(Transform)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">Implicit(Transform to KaijuAgentsVisionSensor)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgentsVisionSensor(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

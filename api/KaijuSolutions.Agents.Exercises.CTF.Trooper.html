@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Trooper | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Trooper | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Exercises_CTF_Trooper" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper" class="text-break">Class Trooper
+  </h1>
+  <div class="markdown level0 summary"><p>Troopers who aim to capture the enemy flag and defend their own.
+They have a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html#KaijuSolutions_Agents_Exercises_CTF_Trooper_Health">Health</a> value and have a blaster to battle the other team with.
+Walking into either the flag, a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.HealthPickup.html">HealthPickup</a> or an <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.AmmoPickup.html">AmmoPickup</a> will automatically interact with them.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.KaijuController.html">KaijuController</a></div>
+    <div class="level3"><span class="xref">Trooper</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_Agent">KaijuController.Agent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentPreSetPosition">KaijuController.OnAgentPreSetPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentSetPosition">KaijuController.OnAgentSetPosition()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentPreSetOrientation">KaijuController.OnAgentPreSetOrientation()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentSetOrientation">KaijuController.OnAgentSetOrientation()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentPreSetScale">KaijuController.OnAgentPreSetScale()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAgentSetScale">KaijuController.OnAgentSetScale()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMoveSpeed">KaijuController.OnMoveSpeed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMoveAcceleration">KaijuController.OnMoveAcceleration()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnLookSpeed">KaijuController.OnLookSpeed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAutoRotate">KaijuController.OnAutoRotate()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnLookTarget">KaijuController.OnLookTarget()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMove">KaijuController.OnMove()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnEnabled">KaijuController.OnEnabled()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnDisabled">KaijuController.OnDisabled()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnDestroyed">KaijuController.OnDestroyed()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMovementStarted_KaijuSolutions_Agents_Movement_KaijuMovement_">KaijuController.OnMovementStarted(KaijuMovement)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMovementStopped_KaijuSolutions_Agents_Movement_KaijuMovement_">KaijuController.OnMovementStopped(KaijuMovement)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnMovementPerformed_KaijuSolutions_Agents_Movement_KaijuMovement_">KaijuController.OnMovementPerformed(KaijuMovement)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnAutomaticSense">KaijuController.OnAutomaticSense()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnSense_KaijuSensor_">KaijuController.OnSense(KaijuSensor)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnSensorEnabled_KaijuSensor_">KaijuController.OnSensorEnabled(KaijuSensor)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnSensorDisabled_KaijuSensor_">KaijuController.OnSensorDisabled(KaijuSensor)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorDisabled_KaijuActuator_">KaijuController.OnActuatorDisabled(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorStarted_KaijuActuator_">KaijuController.OnActuatorStarted(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorExecuting_KaijuActuator_">KaijuController.OnActuatorExecuting(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorDone_KaijuActuator_">KaijuController.OnActuatorDone(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorInterrupted_KaijuActuator_">KaijuController.OnActuatorInterrupted(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorFailed_KaijuActuator_">KaijuController.OnActuatorFailed(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal">KaijuBehaviour.OnPreSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition">KaijuBehaviour.OnSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal">KaijuBehaviour.OnSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation">KaijuBehaviour.OnPreSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal">KaijuBehaviour.OnPreSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation">KaijuBehaviour.OnSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal">KaijuBehaviour.OnSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale">KaijuBehaviour.OnPreSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal">KaijuBehaviour.OnPreSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScale">KaijuBehaviour.OnSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal">KaijuBehaviour.OnSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">KaijuBehaviour.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">KaijuBehaviour.Position3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition">KaijuBehaviour.LocalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3">KaijuBehaviour.LocalPosition3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_X">KaijuBehaviour.X</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalX">KaijuBehaviour.LocalX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Y">KaijuBehaviour.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalY">KaijuBehaviour.LocalY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Z">KaijuBehaviour.Z</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalZ">KaijuBehaviour.LocalZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">KaijuBehaviour.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">KaijuBehaviour.LocalOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles">KaijuBehaviour.OrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles">KaijuBehaviour.LocalOrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">KaijuBehaviour.OrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion">KaijuBehaviour.LocalOrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">KaijuBehaviour.OrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">KaijuBehaviour.LocalOrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">KaijuBehaviour.OrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">KaijuBehaviour.LocalOrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">KaijuBehaviour.OrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">KaijuBehaviour.LocalOrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX">KaijuBehaviour.OrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX">KaijuBehaviour.LocalOrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY">KaijuBehaviour.OrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY">KaijuBehaviour.LocalOrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ">KaijuBehaviour.OrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ">KaijuBehaviour.LocalOrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW">KaijuBehaviour.OrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW">KaijuBehaviour.LocalOrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScale">KaijuBehaviour.LocalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX">KaijuBehaviour.LocalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY">KaijuBehaviour.LocalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ">KaijuBehaviour.LocalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScale">KaijuBehaviour.GlobalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX">KaijuBehaviour.GlobalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY">KaijuBehaviour.GlobalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ">KaijuBehaviour.GlobalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld">KaijuBehaviour.LocalToWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal">KaijuBehaviour.WorldToLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Up">KaijuBehaviour.Up</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Down">KaijuBehaviour.Down</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Right">KaijuBehaviour.Right</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Left">KaijuBehaviour.Left</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Parent">KaijuBehaviour.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Root">KaijuBehaviour.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ChildCount">KaijuBehaviour.ChildCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HasChanged">KaijuBehaviour.HasChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount">KaijuBehaviour.HierarchyCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity">KaijuBehaviour.HierarchyCapacity</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Layer">KaijuBehaviour.Layer</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ComponentCount">KaijuBehaviour.ComponentCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy">KaijuBehaviour.ActiveInHierarchy</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf">KaijuBehaviour.ActiveSelf</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_IsStatic">KaijuBehaviour.IsStatic</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.html">KaijuSolutions.Agents.Exercises.CTF</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Trooper : KaijuController</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnTrooperHitGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnTrooperHitGlobal">OnTrooperHitGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for one agent hitting another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MultiTrooperAction OnTrooperHitGlobal</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.MultiTrooperAction.html">MultiTrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_All_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.All*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_All" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.All">All</h4>
+  <div class="markdown level1 summary"><p>All troopers currently active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Trooper&gt; All { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllOne_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.AllOne*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllOne" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.AllOne">AllOne</h4>
+  <div class="markdown level1 summary"><p>All troopers currently active for team one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Trooper&gt; AllOne { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllTwo_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.AllTwo*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllTwo" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.AllTwo">AllTwo</h4>
+  <div class="markdown level1 summary"><p>All troopers currently active for team two.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Trooper&gt; AllTwo { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Ammo_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Ammo*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Ammo" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Ammo">Ammo</h4>
+  <div class="markdown level1 summary"><p>The ammo for this <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>&apos;s <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html">BlasterActuator</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Ammo { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_CanAttack_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.CanAttack*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_CanAttack" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.CanAttack">CanAttack</h4>
+  <div class="markdown level1 summary"><p>If the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html">BlasterActuator</a> has any ammo and is not <see cref="!:KaijuAttackActuator.OnCooldown"></see>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanAttack { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.EnemyBase*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.EnemyBase">EnemyBase</h4>
+  <div class="markdown level1 summary"><p>Get the location of the other team&apos;s base.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 EnemyBase { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase3_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.EnemyBase3*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase3" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.EnemyBase3">EnemyBase3</h4>
+  <div class="markdown level1 summary"><p>Get the location of the other team&apos;s base.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 EnemyBase3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_FlagPosition_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.FlagPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_FlagPosition" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.FlagPosition">FlagPosition</h4>
+  <div class="markdown level1 summary"><p>Where to store the flag when picking it up.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform FlagPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_HasAmmo_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.HasAmmo*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_HasAmmo" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.HasAmmo">HasAmmo</h4>
+  <div class="markdown level1 summary"><p>If the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html">BlasterActuator</a> has any ammo.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasAmmo { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Health_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Health*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Health" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Health">Health</h4>
+  <div class="markdown level1 summary"><p>The current health of this trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Health { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OwnBase*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OwnBase">OwnBase</h4>
+  <div class="markdown level1 summary"><p>Get the location of this trooper&apos;s own base.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 OwnBase { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase3_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OwnBase3*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase3" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OwnBase3">OwnBase3</h4>
+  <div class="markdown level1 summary"><p>Get the location of this trooper&apos;s  own base.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 OwnBase3 { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamOne_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.TeamOne*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamOne" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.TeamOne">TeamOne</h4>
+  <div class="markdown level1 summary"><p>What team this trooper is on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TeamOne { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Attack_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Attack*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Attack" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Attack">Attack()</h4>
+  <div class="markdown level1 summary"><p>Fire the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html">BlasterActuator</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Attack()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnActuatorEnabled_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnActuatorEnabled*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnActuatorEnabled_KaijuActuator_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnActuatorEnabled(KaijuActuator)">OnActuatorEnabled(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Callback for when an <see cref="!:KaijuActuator"></see> has been enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnActuatorEnabled(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_OnActuatorEnabled_KaijuActuator_">KaijuController.OnActuatorEnabled(KaijuActuator)</a></div>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Spawn_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Spawn*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Spawn_KaijuSolutions_Agents_KaijuAgent_KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.Spawn(KaijuSolutions.Agents.KaijuAgent,KaijuSolutions.Agents.Exercises.CTF.SpawnPoint)">Spawn(KaijuAgent, SpawnPoint)</h4>
+  <div class="markdown level1 summary"><p>Spawn a trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Trooper Spawn(KaijuAgent trooperPrefab, SpawnPoint spawnPoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">trooperPrefab</span></td>
+        <td><p>The trooper prefab to spawn.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.SpawnPoint.html">SpawnPoint</a></td>
+        <td><span class="parametername">spawnPoint</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.SpawnPoint.html">SpawnPoint</a> to spawn the trooper at.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a></td>
+        <td><p>The spawned trooper.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_StopAttacking_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.StopAttacking*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_StopAttacking" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.StopAttacking">StopAttacking()</h4>
+  <div class="markdown level1 summary"><p>Cancel trying to fire the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html">BlasterActuator</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void StopAttacking()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TakeDamage_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.TakeDamage*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TakeDamage_KaijuSolutions_Agents_Exercises_CTF_Trooper_" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.TakeDamage(KaijuSolutions.Agents.Exercises.CTF.Trooper)">TakeDamage(Trooper)</h4>
+  <div class="markdown level1 summary"><p>Take damage from another trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void TakeDamage(Trooper attacker)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a></td>
+        <td><span class="parametername">attacker</span></td>
+        <td><p>The trooper that dealt the damage.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnAmmo" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnAmmo">OnAmmo</h4>
+  <div class="markdown level1 summary"><p>Callback for picking up a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.AmmoPickup.html">AmmoPickup</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event AmmoAction OnAmmo</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.AmmoAction.html">AmmoAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnAmmoGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnAmmoGlobal">OnAmmoGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for picking up a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.AmmoPickup.html">AmmoPickup</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperAmmoAction OnAmmoGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperAmmoAction.html">TrooperAmmoAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnEliminatedByTrooper" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnEliminatedByTrooper">OnEliminatedByTrooper</h4>
+  <div class="markdown level1 summary"><p>Callback for getting eliminated by another trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperAction OnEliminatedByTrooper</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperAction.html">TrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnEliminatedTrooper" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnEliminatedTrooper">OnEliminatedTrooper</h4>
+  <div class="markdown level1 summary"><p>Callback for eliminated another trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperAction OnEliminatedTrooper</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperAction.html">TrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagCaptured" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagCaptured">OnFlagCaptured</h4>
+  <div class="markdown level1 summary"><p>Callback for when this agent captured the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event FlagAction OnFlagCaptured</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.FlagAction.html">FlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagCapturedGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagCapturedGlobal">OnFlagCapturedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this agent captured the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperFlagAction OnFlagCapturedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperFlagAction.html">TrooperFlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagDropped" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagDropped">OnFlagDropped</h4>
+  <div class="markdown level1 summary"><p>Callback for when this agent dropped the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event FlagAction OnFlagDropped</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.FlagAction.html">FlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagDroppedGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagDroppedGlobal">OnFlagDroppedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this agent dropped the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperFlagAction OnFlagDroppedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperFlagAction.html">TrooperFlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagPickedUp" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagPickedUp">OnFlagPickedUp</h4>
+  <div class="markdown level1 summary"><p>Callback for when this agent picking up the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event FlagAction OnFlagPickedUp</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.FlagAction.html">FlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagPickedUpGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagPickedUpGlobal">OnFlagPickedUpGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this agent picking up the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperFlagAction OnFlagPickedUpGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperFlagAction.html">TrooperFlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagReturned" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagReturned">OnFlagReturned</h4>
+  <div class="markdown level1 summary"><p>Callback for when this agent returned the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event FlagAction OnFlagReturned</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.FlagAction.html">FlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagReturnedGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnFlagReturnedGlobal">OnFlagReturnedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for when this agent returned the <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Flag.html">Flag</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperFlagAction OnFlagReturnedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperFlagAction.html">TrooperFlagAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHealth" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnHealth">OnHealth</h4>
+  <div class="markdown level1 summary"><p>Callback for picking up a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.HealthPickup.html">HealthPickup</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event HealthAction OnHealth</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.HealthAction.html">HealthAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHealthGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnHealthGlobal">OnHealthGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for picking up a <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.HealthPickup.html">HealthPickup</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperHealthAction OnHealthGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperHealthAction.html">TrooperHealthAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHitByTrooper" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnHitByTrooper">OnHitByTrooper</h4>
+  <div class="markdown level1 summary"><p>Callback for getting hit by another trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperAction OnHitByTrooper</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperAction.html">TrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHitTrooper" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnHitTrooper">OnHitTrooper</h4>
+  <div class="markdown level1 summary"><p>Callback for hitting another trooper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event TrooperAction OnHitTrooper</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperAction.html">TrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnTrooperEliminatedGlobal" data-uid="KaijuSolutions.Agents.Exercises.CTF.Trooper.OnTrooperEliminatedGlobal">OnTrooperEliminatedGlobal</h4>
+  <div class="markdown level1 summary"><p>Global callback for one trooper eliminating another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static event MultiTrooperAction OnTrooperEliminatedGlobal</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.MultiTrooperAction.html">MultiTrooperAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

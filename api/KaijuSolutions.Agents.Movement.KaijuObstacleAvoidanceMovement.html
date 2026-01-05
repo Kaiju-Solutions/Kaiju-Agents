@@ -93,6 +93,9 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_DefaultWeight">KaijuMovement.DefaultWeight</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted">KaijuMovement.OnStarted</a>
     </div>
     <div>
@@ -150,13 +153,13 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Nullable_LayerMask__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Nullable{LayerMask},System.Single)">KaijuObstacleAvoidanceMovement(KaijuAgent, Single, Single, Single, Single, Single, Single, Nullable&lt;LayerMask&gt;, Single)</h4>
-  <div class="markdown level1 summary"><p>Create an obstacle avoidance movement.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">KaijuObstacleAvoidanceMovement(KaijuAgent, Single, Single, Single, Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KaijuObstacleAvoidanceMovement(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 0F, float angle = 15F, float height = 1F, float horizontal = 0F, LayerMask? mask = null, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuObstacleAvoidanceMovement(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 5F, float angle = 15F, float height = 1F, float horizontal = 0F, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -171,13 +174,13 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">avoidance</span></td>
-        <td><p>The distance from a wall the agent should maintain.</p>
+        <td><p>The distance from a wall the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should maintain.</p>
 </td>
       </tr>
       <tr>
@@ -211,15 +214,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">LayerMask</span>&gt;</td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>The mask for what layers should the rays hit.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -233,6 +230,144 @@
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Angle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultAngle" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultAngle">DefaultAngle</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Angle">Angle</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultAngle = 15F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultAvoidance" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultAvoidance">DefaultAvoidance</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Avoidance">Avoidance</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultAvoidance = 2F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultDistance">DefaultDistance</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Distance">Distance</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultDistance = 5F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultHeight" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultHeight">DefaultHeight</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Height">Height</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultHeight = 1F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultHorizontal" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultHorizontal">DefaultHorizontal</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Horizontal">Horizontal</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultHorizontal = 0F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultSideDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.DefaultSideDistance">DefaultSideDistance</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html#KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_SideDistance">SideDistance</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultSideDistance = 0F</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -296,12 +431,12 @@
     </tbody>
   </table>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Mask" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Mask">Mask</h4>
-  <div class="markdown level1 summary"><p>The mask for what layers should the rays hit.</p>
+  <div class="markdown level1 summary"><p>While layers the rays should hit.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LayerMask? Mask</code></pre>
+    <pre><code class="lang-csharp hljs">public LayerMask Mask</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -313,7 +448,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">LayerMask</span>&gt;</td>
+        <td><span class="xref">LayerMask</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -322,7 +457,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Avoidance_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Avoidance*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Avoidance" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Avoidance">Avoidance</h4>
-  <div class="markdown level1 summary"><p>The distance from a wall the agent should maintain.</p>
+  <div class="markdown level1 summary"><p>The distance from a wall the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should maintain.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -387,7 +522,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">RaycastHit</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">RaycastHit</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -411,7 +546,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -444,7 +579,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_EditorRenderVisualizations_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.EditorRenderVisualizations*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_EditorRenderVisualizations_Vector3_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.EditorRenderVisualizations(Vector3)">EditorRenderVisualizations(Vector3)</h4>
-  <div class="markdown level1 summary"><p>Render the visualization of the movement.
+  <div class="markdown level1 summary"><p>Render the visualization of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.
 <param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -499,13 +634,13 @@
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualizationColor">KaijuMovement.EditorVisualizationColor()</a></div>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Get*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Nullable_LayerMask__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Nullable{LayerMask},System.Single)">Get(KaijuAgent, Single, Single, Single, Single, Single, Single, Nullable&lt;LayerMask&gt;, Single)</h4>
-  <div class="markdown level1 summary"><p>Get an obstacle avoidance movement.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">Get(KaijuAgent, Single, Single, Single, Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static KaijuObstacleAvoidanceMovement Get(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 0F, float angle = 15F, float height = 1F, float horizontal = 0F, LayerMask? mask = null, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public static KaijuObstacleAvoidanceMovement Get(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 5F, float angle = 15F, float height = 1F, float horizontal = 0F, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -520,13 +655,13 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">avoidance</span></td>
-        <td><p>The distance from a wall the agent should maintain.</p>
+        <td><p>The distance from a wall the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should maintain.</p>
 </td>
       </tr>
       <tr>
@@ -560,15 +695,9 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">LayerMask</span>&gt;</td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>The mask for what layers should the rays hit.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -584,19 +713,19 @@
     <tbody>
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a></td>
-        <td><p>Get an obstacle avoidance movement for the agent.</p>
+        <td><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.html">KaijuObstacleAvoidanceMovement</a> for the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Initialize_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Initialize*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Nullable_LayerMask__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Nullable{LayerMask},System.Single)">Initialize(KaijuAgent, Single, Single, Single, Single, Single, Single, Nullable&lt;LayerMask&gt;, Single)</h4>
-  <div class="markdown level1 summary"><p>Initialize the movement.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Initialize(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">Initialize(KaijuAgent, Single, Single, Single, Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initialize the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected void Initialize(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 0F, float angle = 15F, float height = 1F, float horizontal = 0F, LayerMask? mask = null, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">protected void Initialize(KaijuAgent agent, float avoidance = 2F, float distance = 5F, float sideDistance = 5F, float angle = 15F, float height = 1F, float horizontal = 0F, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -611,13 +740,13 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">avoidance</span></td>
-        <td><p>The distance from a wall the agent should maintain.</p>
+        <td><p>The distance from a wall the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should maintain.</p>
 </td>
       </tr>
       <tr>
@@ -651,22 +780,16 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">LayerMask</span>&gt;</td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>The mask for what layers should the rays hit.</p>
-</td>
-      </tr>
-      <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Move*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
-  <div class="markdown level1 summary"><p>Get the movement.</p>
+  <div class="markdown level1 summary"><p>Get the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -708,7 +831,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Vector2</span></td>
-        <td><p>The calculated movement.</p>
+        <td><p>The calculated move vector.</p>
 </td>
       </tr>
     </tbody>

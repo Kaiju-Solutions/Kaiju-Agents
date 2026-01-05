@@ -86,13 +86,13 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></h4>
-      <section><p>Base Kaiju Agent class.</p>
+      <section><p>Base <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> class.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgents.html">KaijuAgents</a></h4>
       <section><p>Methods to help with <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> creation.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></h4>
-      <section><p>Manager agents.</p>
+      <section><p>Manager <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsMatcher.html">KaijuAgentsMatcher</a></h4>
       <section><p>Helper to allow for matching and comparing objects.</p>
@@ -104,19 +104,29 @@
       <section><p>Base extended behaviour providing convenient helpers methods, mainly in relation to position and orientation.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuCharacterAgent.html">KaijuCharacterAgent</a></h4>
-      <section><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/Manual/character-control-section.html" target="_blank">chracter controller</a>.</p>
+      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/Manual/character-control-section.html" target="_blank">chracter controller</a>.</p>
+</section>
+      <h4><a class="xref" href="KaijuSolutions.Agents.KaijuController.html">KaijuController</a></h4>
+      <section><p>Base class to inherit for easy interaction with a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.
+Simply override the methods you need to use callbacks without needing to worry about binding.
+If you override either <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html" target="_blank">OnEnable</a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html" target="_blank">OnDisable</a>, you must call their respective base methods for binding and cleanup.</p>
+</section>
+      <h4><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></h4>
+      <section><p>Base class to inherit for easy interaction with all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s in the scene.
+Simply override the methods you need to use callbacks without needing to worry about binding.
+If you override either <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html" target="_blank">OnEnable</a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html" target="_blank">OnDisable</a>, you must call their respective base methods for binding and cleanup.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuNavigationAgent.html">KaijuNavigationAgent</a></h4>
-      <section><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html" target="_blank">navigation mesh agent</a>.</p>
+      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html" target="_blank">navigation mesh <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html">KaijuRadiusAgent</a></h4>
-      <section><p>An agent type which tries to get its radius from colliders or otherwise manually assigns them.</p>
+      <section><p>An <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> type which tries to get its radius from colliders or otherwise manually assigns them.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></h4>
-      <section><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
+      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuTransformAgent.html">KaijuTransformAgent</a></h4>
-      <section><p>Kaiju Agent which moves via the <a href="https://docs.unity3d.com/Manual/class-Transform.html" target="_blank">transform</a>.</p>
+      <section><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
 </section>
     <h3 id="enums">Enums
   </h3>
@@ -124,7 +134,7 @@
       <section><p>How for matchers to compare.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentType.html">KaijuAgentType</a></h4>
-      <section><p>The type of agent to spawn.</p>
+      <section><p>The type of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to spawn.</p>
 </section>
     <h3 id="delegates">Delegates
   </h3>
@@ -132,19 +142,19 @@
       <section><p>An empty action.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></h4>
-      <section><p>An action for an actuator.</p>
+      <section><p>An action for an <see cref="!:KaijuActuator"></see>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentAction.html">KaijuAgentAction</a></h4>
-      <section><p>An action for an agent.</p>
+      <section><p>An action for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentActuatorAction.html">KaijuAgentActuatorAction</a></h4>
-      <section><p>An action for an agent and an actuator.</p>
+      <section><p>An action for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and an <see cref="!:KaijuActuator"></see>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentMovementAction.html">KaijuAgentMovementAction</a></h4>
-      <section><p>An action for an agent and a movement.</p>
+      <section><p>An action for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and a movement.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuAgentSensorAction.html">KaijuAgentSensorAction</a></h4>
-      <section><p>An action for an agent and a sensor.</p>
+      <section><p>An action for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> and a <see cref="!:KaijuSensor"></see>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviourAction.html">KaijuBehaviourAction</a></h4>
       <section><p>An action for a behaviour.</p>
@@ -153,7 +163,7 @@
       <section><p>An action for a movement.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.KaijuSensorAction.html">KaijuSensorAction</a></h4>
-      <section><p>An action for a sensor.</p>
+      <section><p>An action for a <see cref="!:KaijuSensor"></see>.</p>
 </section>
 </article>
           </div>

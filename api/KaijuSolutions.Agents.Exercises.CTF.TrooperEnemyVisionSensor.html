@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum KaijuMovementManager.EditorVisualizationsTextMode | Kaiju Agents</title>
+    <title>Class TrooperEnemyVisionSensor | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum KaijuMovementManager.EditorVisualizationsTextMode | Kaiju Agents ">
+    <meta name="title" content="Class TrooperEnemyVisionSensor | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,47 +76,61 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorVisualizationsTextMode">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Exercises.CTF.TrooperEnemyVisionSensor">
   
   
-  <h1 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsTextMode" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementManager.EditorVisualizationsTextMode" class="text-break">Enum KaijuMovementManager.EditorVisualizationsTextMode
+  <h1 id="KaijuSolutions_Agents_Exercises_CTF_TrooperEnemyVisionSensor" data-uid="KaijuSolutions.Agents.Exercises.CTF.TrooperEnemyVisionSensor" class="text-break">Class TrooperEnemyVisionSensor
   </h1>
-  <div class="markdown level0 summary"><p>Editor visualizations text modes.</p>
+  <div class="markdown level0 summary"><p>Sensor to get all enemy <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>s.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Movement.html">KaijuSolutions.Agents.Movement</a></h6>
-  
-  <h5 id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsTextMode_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum EditorVisualizationsTextMode</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html">TrooperVisionSensor</a></div>
+    <div class="level2"><span class="xref">TrooperEnemyVisionSensor</span></div>
   </div>
-  <h3 id="fields">Fields
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html#KaijuSolutions_Agents_Exercises_CTF_TrooperVisionSensor_Attached">TrooperVisionSensor.Attached</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.html">KaijuSolutions.Agents.Exercises.CTF</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Exercises_CTF_TrooperEnemyVisionSensor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TrooperEnemyVisionSensor : TrooperVisionSensor</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
+  <a id="KaijuSolutions_Agents_Exercises_CTF_TrooperEnemyVisionSensor_DefaultObservables_" data-uid="KaijuSolutions.Agents.Exercises.CTF.TrooperEnemyVisionSensor.DefaultObservables*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_CTF_TrooperEnemyVisionSensor_DefaultObservables" data-uid="KaijuSolutions.Agents.Exercises.CTF.TrooperEnemyVisionSensor.DefaultObservables">DefaultObservables()</h4>
+  <div class="markdown level1 summary"><p>If there are no explicitly defined observable objects, define how to query for default observables.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;Trooper&gt; DefaultObservables()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Type</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsTextMode_All">All</td>
-        <td><p>Display all text fields.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsTextMode_None">None</td>
-        <td><p>Don&apos;t display any text fields.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="KaijuSolutions_Agents_Movement_KaijuMovementManager_EditorVisualizationsTextMode_Selected">Selected</td>
-        <td><p>Only display text fields of the selected agent.</p>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>&gt;</td>
+        <td><p>All active <a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.Trooper.html">Trooper</a>s on the other team.</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html#KaijuSolutions_Agents_Exercises_CTF_TrooperVisionSensor_DefaultObservables">TrooperVisionSensor.DefaultObservables()</a></div>
 </article>
           </div>
           

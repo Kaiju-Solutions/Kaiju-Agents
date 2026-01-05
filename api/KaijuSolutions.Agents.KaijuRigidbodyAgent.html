@@ -81,7 +81,7 @@
   
   <h1 id="KaijuSolutions_Agents_KaijuRigidbodyAgent" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent" class="text-break">Class KaijuRigidbodyAgent
   </h1>
-  <div class="markdown level0 summary"><p>Kaiju Agent which moves via a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> which moves via a <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -179,13 +179,25 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnSensorDisabled">KaijuAgent.OnSensorDisabled</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnAct">KaijuAgent.OnAct</a>
-    </div>
-    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorEnabled">KaijuAgent.OnActuatorEnabled</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorDisabled">KaijuAgent.OnActuatorDisabled</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorStarted">KaijuAgent.OnActuatorStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorExecuting">KaijuAgent.OnActuatorExecuting</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorDone">KaijuAgent.OnActuatorDone</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorInterrupted">KaijuAgent.OnActuatorInterrupted</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_OnActuatorFailed">KaijuAgent.OnActuatorFailed</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_MoveSpeed">KaijuAgent.MoveSpeed</a>
@@ -227,6 +239,9 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Identifiers">KaijuAgent.Identifiers</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_configuration">KaijuAgent.configuration</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Control">KaijuAgent.Control</a>
     </div>
     <div>
@@ -240,6 +255,9 @@
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_MoveForward">KaijuAgent.MoveForward</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_MoveForward3">KaijuAgent.MoveForward3</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Movements">KaijuAgent.Movements</a>
@@ -302,31 +320,31 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_HasIdentifier_System_UInt32_">KaijuAgent.HasIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_HasAnyIdentifier_IEnumerable_System_UInt32__">KaijuAgent.HasAnyIdentifier(IEnumerable&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_HasAnyIdentifier_System_Collections_Generic_IEnumerable_System_UInt32__">KaijuAgent.HasAnyIdentifier(IEnumerable&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_AddIdentifier_System_UInt32_">KaijuAgent.AddIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_AddIdentifiers_IEnumerable_System_UInt32__">KaijuAgent.AddIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_AddIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__">KaijuAgent.AddIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RemoveIdentifier_System_UInt32_">KaijuAgent.RemoveIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RemoveIdentifiers_IEnumerable_System_UInt32__">KaijuAgent.RemoveIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RemoveIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__">KaijuAgent.RemoveIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_SetIdentifier_System_UInt32_">KaijuAgent.SetIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_SetIdentifiers_IEnumerable_System_UInt32__">KaijuAgent.SetIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_SetIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__">KaijuAgent.SetIdentifiers(IEnumerable&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop">KaijuAgent.Stop()</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop_KaijuMovement_">KaijuAgent.Stop(KaijuMovement)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop_KaijuSolutions_Agents_Movement_KaijuMovement_">KaijuAgent.Stop(KaijuMovement)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Stop__1">KaijuAgent.Stop&lt;T&gt;()</a>
@@ -350,100 +368,109 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_StopLooking">KaijuAgent.StopLooking()</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector2_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Vector2, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector2_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Seek(Vector2, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector3_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Vector3, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Vector3_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Seek(Vector3, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_GameObject_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(GameObject, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_GameObject_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Seek(GameObject, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Component_System_Single_System_Single_System_Boolean_">KaijuAgent.Seek(Component, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Seek_Component_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Seek(Component, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Vector2_System_Single_System_Single_System_Boolean_">KaijuAgent.Pursue(Vector2, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Vector2_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Pursue(Vector2, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Vector3_System_Single_System_Single_System_Boolean_">KaijuAgent.Pursue(Vector3, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Vector3_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Pursue(Vector3, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_GameObject_System_Single_System_Single_System_Boolean_">KaijuAgent.Pursue(GameObject, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_GameObject_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Pursue(GameObject, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Component_System_Single_System_Single_System_Boolean_">KaijuAgent.Pursue(Component, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Pursue_Component_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Pursue(Component, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Vector2_System_Single_System_Single_System_Boolean_">KaijuAgent.Flee(Vector2, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Vector2_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Flee(Vector2, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Vector3_System_Single_System_Single_System_Boolean_">KaijuAgent.Flee(Vector3, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Vector3_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Flee(Vector3, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_GameObject_System_Single_System_Single_System_Boolean_">KaijuAgent.Flee(GameObject, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_GameObject_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Flee(GameObject, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Component_System_Single_System_Single_System_Boolean_">KaijuAgent.Flee(Component, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Flee_Component_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Flee(Component, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Vector2_System_Single_System_Single_System_Boolean_">KaijuAgent.Evade(Vector2, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Vector2_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Evade(Vector2, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Vector3_System_Single_System_Single_System_Boolean_">KaijuAgent.Evade(Vector3, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Vector3_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Evade(Vector3, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_GameObject_System_Single_System_Single_System_Boolean_">KaijuAgent.Evade(GameObject, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_GameObject_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Evade(GameObject, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Component_System_Single_System_Single_System_Boolean_">KaijuAgent.Evade(Component, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Evade_Component_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Evade(Component, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Wander_System_Single_System_Single_System_Single_System_Boolean_">KaijuAgent.Wander(Single, Single, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Wander_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Wander(Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Separation_System_Single_System_Single_ICollection_System_UInt32__System_Single_System_Boolean_">KaijuAgent.Separation(Single, Single, ICollection&lt;UInt32&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Separation_System_Nullable_System_Single__System_Nullable_System_Single__System_Collections_Generic_ICollection_System_UInt32__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.Separation(Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, ICollection&lt;UInt32&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ObstacleAvoidance_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Nullable_LayerMask__System_Single_System_Boolean_">KaijuAgent.ObstacleAvoidance(Single, Single, Single, Single, Single, Single, Nullable&lt;LayerMask&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ObstacleAvoidance_System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.ObstacleAvoidance(Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector2_System_Int32_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Vector2, Int32, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector2_System_Int32_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Vector2, Int32, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector3_System_Int32_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Vector3, Int32, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector3_System_Int32_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Vector3, Int32, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Component_System_Int32_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Component, Int32, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Component_System_Int32_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Component, Int32, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_GameObject_System_Int32_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(GameObject, Int32, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_GameObject_System_Int32_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(GameObject, Int32, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector2_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Vector2, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector2_NavMeshQueryFilter_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Vector2, NavMeshQueryFilter, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector3_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Vector3, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Vector3_NavMeshQueryFilter_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Vector3, NavMeshQueryFilter, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Component_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(Component, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_Component_NavMeshQueryFilter_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(Component, NavMeshQueryFilter, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_GameObject_NavMeshQueryFilter_System_Single_System_Nullable_System_Single__System_Single_System_Boolean_">KaijuAgent.PathFollow(GameObject, NavMeshQueryFilter, Single, Nullable&lt;Single&gt;, Single, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_PathFollow_GameObject_NavMeshQueryFilter_System_Nullable_System_Single__System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_System_Nullable_System_Single__System_Nullable_System_Boolean__">KaijuAgent.PathFollow(GameObject, NavMeshQueryFilter, Nullable&lt;Single&gt;, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction, Nullable&lt;Single&gt;, Nullable&lt;Boolean&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_EditorVisualize_System_Boolean_">KaijuAgent.EditorVisualize(Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensor__1_ISet___0__System_Boolean_">KaijuAgent.GetSensor&lt;T&gt;(ISet&lt;T&gt;, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensor__1_System_Collections_Generic_ISet___0__System_Boolean_">KaijuAgent.GetSensor&lt;T&gt;(ISet&lt;T&gt;, Boolean)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensors__1_System_Boolean_">KaijuAgent.GetSensors&lt;T&gt;(Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensors__1_ISet___0__System_Boolean_">KaijuAgent.GetSensors&lt;T&gt;(ISet&lt;T&gt;, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetSensors__1_System_Collections_Generic_ISet___0__System_Boolean_">KaijuAgent.GetSensors&lt;T&gt;(ISet&lt;T&gt;, Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Sense__1_ICollection___0__System_Boolean_">KaijuAgent.Sense&lt;T&gt;(ICollection&lt;T&gt;, Boolean)</a>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetActuator__1_System_Collections_Generic_ISet___0__">KaijuAgent.GetActuator&lt;T&gt;(ISet&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetActuators__1">KaijuAgent.GetActuators&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GetActuators__1_System_Collections_Generic_ISet___0__">KaijuAgent.GetActuators&lt;T&gt;(ISet&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Sense__1_System_Collections_Generic_ICollection___0__System_Boolean_">KaijuAgent.Sense&lt;T&gt;(ICollection&lt;T&gt;, Boolean)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_SenseAutomatic">KaijuAgent.SenseAutomatic()</a>
@@ -453,6 +480,21 @@
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Act">KaijuAgent.Act()</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ActuatorStarted_KaijuActuator_">KaijuAgent.ActuatorStarted(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ActuatorExecuting_KaijuActuator_">KaijuAgent.ActuatorExecuting(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ActuatorDone_KaijuActuator_">KaijuAgent.ActuatorDone(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ActuatorInterrupted_KaijuActuator_">KaijuAgent.ActuatorInterrupted(KaijuActuator)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_ActuatorFailed_KaijuActuator_">KaijuAgent.ActuatorFailed(KaijuActuator)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Look_System_Single_">KaijuAgent.Look(Single)</a>
@@ -617,6 +659,9 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
     </div>
     <div>
@@ -678,7 +723,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Body_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Body*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Body" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Body">Body</h4>
-  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> which controls the agent&apos;s movement.</p>
+  <div class="markdown level1 summary"><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> which controls the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&apos;s movement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -702,7 +747,7 @@
   </table>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_PhysicsAgent_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.PhysicsAgent*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_PhysicsAgent" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.PhysicsAgent">PhysicsAgent</h4>
-  <div class="markdown level1 summary"><p>If this agent should move with the physics system.</p>
+  <div class="markdown level1 summary"><p>If this <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should move with the physics system.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -730,7 +775,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Move_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Move*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Move_System_Single_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Move(System.Single)">Move(Single)</h4>
-  <div class="markdown level1 summary"><p>Perform agent movement.</p>
+  <div class="markdown level1 summary"><p>Perform <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> movement. There is no point in manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -759,7 +804,7 @@
   <div><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Move_System_Single_">KaijuAgent.Move(Single)</a></div>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Setup_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Setup*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_Setup" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.Setup">Setup()</h4>
-  <div class="markdown level1 summary"><p>Initialize the agent.</p>
+  <div class="markdown level1 summary"><p>Initialize the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>. There is no point in manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -770,6 +815,49 @@
   <div><a class="xref" href="KaijuSolutions.Agents.KaijuRadiusAgent.html#KaijuSolutions_Agents_KaijuRadiusAgent_Setup">KaijuRadiusAgent.Setup()</a></div>
   <h3 id="operators">Operators
   </h3>
+  <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_GameObject__KaijuSolutions_Agents_KaijuRigidbodyAgent" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuRigidbodyAgent">Implicit(GameObject to KaijuRigidbodyAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuRigidbodyAgent(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit*"></a>
   <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_KaijuSolutions_Agents_KaijuRigidbodyAgent__Rigidbody" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(KaijuSolutions.Agents.KaijuRigidbodyAgent)~Rigidbody">Implicit(KaijuRigidbodyAgent to Rigidbody)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to get the <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a>.</p>
@@ -792,7 +880,7 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></td>
         <td><span class="parametername">a</span></td>
-        <td><p>The agent.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -808,7 +896,50 @@
     <tbody>
       <tr>
         <td><span class="xref">Rigidbody</span></td>
-        <td><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> of the agent.</p>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html" target="_blank">rigidbody</a> of the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuRigidbodyAgent_op_Implicit_Transform__KaijuSolutions_Agents_KaijuRigidbodyAgent" data-uid="KaijuSolutions.Agents.KaijuRigidbodyAgent.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuRigidbodyAgent">Implicit(Transform to KaijuRigidbodyAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuRigidbodyAgent(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuRigidbodyAgent.html">KaijuRigidbodyAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
 </td>
       </tr>
     </tbody>

@@ -72,7 +72,61 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="kaiju-agents">Kaiju Agents</h1>
 
-<p>TODO</p>
+<p><strong>Framework to quickly prototype AI agents in Unity aim at researchers and educators.</strong></p>
+<p>Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development processes and also be used for education. Some of the key features of Kaiju Agents are:</p>
+<ul>
+<li>Modularized sensor-agent-actuator framework to allow for dynamic agent customization.<ul>
+<li>Have sensors run automatically or manually poll them.</li>
+<li>Vision sensors based on line-of-sight and casting provided.</li>
+<li>Casting-based actuator to destroy objects included.</li>
+</ul>
+</li>
+<li>Full movement and navigation framework.<ul>
+<li>Includes seek, flee, pursue, evade, separation, and obstacle avoidance steering behaviours.</li>
+<li>Full navigation and pathfinding built on top of Unity&#39;s navigation meshes.</li>
+</ul>
+</li>
+<li>Multiple agent types.<ul>
+<li>Have your agents move via a rigidbody, character controller, navigation mesh agent, or directly with the transform.<ul>
+<li>Pathfinding and navigation work with all agents types, not just the navigation mesh agents!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Extensive visualizations.<ul>
+<li>Highly configurable visualizations for agents and their movements in the editor.</li>
+<li>Implement custom visualizations for your own sensors and actuators.</li>
+</ul>
+</li>
+<li>Event-driven architecture.<ul>
+<li>A multitude of C# events allow you to listen for all agent-related actions allowing for rapid and decoupled development.</li>
+</ul>
+</li>
+<li>Samples and exercises.<ul>
+<li>Sample scenes provided showcasing all agent movements and an example full agent controller.</li>
+<li>Several exercises tailored to help you learn Kaiju Agents or use in an education environment.</li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ol>
+<li>Install <a href="https://git-scm.com/install" title="Git Download" target="_blank">Git</a>.</li>
+<li>Install <a href="https://unity.com/download" title="Unity Download" target="_blank">Unity</a> version 6.3+</li>
+<li>Create a new Unity project or open an existing one.<ul>
+<li>Alternatively, see the <a href="#template-project" title="Template Project">template project</a>.</li>
+</ul>
+</li>
+<li>In Unity, from the top menu, go to <code>Window &gt; Package Management &gt; Package Manager</code> and click the <code>+</code> icon in the top left followed by <code>Install package from git URL...</code>. Paste in one of the below options:</li>
+</ol>
+<p><strong>Latest Release - Recommended</strong></p>
+<pre><code class="lang-text">https://github.com/KaijuSolutions/Kaiju-Agents.git#release
+</code></pre><p><strong>Specific Release</strong></p>
+<p>Replace the <code>#release</code> in the latest release installation with the version number of the given <a href="https://github.com/KaijuSolutions/Kaiju-Agents/releases" title="Kaiju Agents Releases" target="_blank">release</a>.</p>
+<p><strong>Development</strong></p>
+<p>This will pull directly from the master branch, and is not recommended unless there is a specific feature needed not yet in the latest release.</p>
+<pre><code class="lang-text">https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents
+</code></pre><h3 id="template-project">Template Project</h3>
+<p>The <a href="https://github.com/KaijuSolutions/Kaiju-Agents-Template" title="Kaiju Agents Template Project" target="_blank">Kaiju Agents template project</a> comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply <a href="https://github.com/KaijuSolutions/Kaiju-Agents-Template" title="Kaiju Agents Template Project" target="_blank">download or clone the repository</a> to get started.</p>
 </article>
           </div>
           

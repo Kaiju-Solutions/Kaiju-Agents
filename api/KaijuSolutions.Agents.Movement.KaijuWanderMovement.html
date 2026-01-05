@@ -93,6 +93,9 @@
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_DefaultWeight">KaijuMovement.DefaultWeight</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted">KaijuMovement.OnStarted</a>
     </div>
     <div>
@@ -153,7 +156,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KaijuWanderMovement(KaijuAgent agent, float distance = 5F, float radius = 1F, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuWanderMovement(KaijuAgent agent, float distance = 20F, float radius = 1F, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -168,7 +171,7 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
@@ -186,8 +189,56 @@
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_DefaultDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.DefaultDistance">DefaultDistance</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html#KaijuSolutions_Agents_Movement_KaijuWanderMovement_Distance">Distance</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultDistance = 20F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_DefaultRadius" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.DefaultRadius">DefaultRadius</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html#KaijuSolutions_Agents_Movement_KaijuWanderMovement_Radius">Radius</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultRadius = 1F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -341,7 +392,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_EditorRenderVisualizations_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.EditorRenderVisualizations*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_EditorRenderVisualizations_Vector3_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.EditorRenderVisualizations(Vector3)">EditorRenderVisualizations(Vector3)</h4>
-  <div class="markdown level1 summary"><p>Render the visualization of the movement.
+  <div class="markdown level1 summary"><p>Render the visualization of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.
 <param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -397,12 +448,12 @@
   <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualizationColor">KaijuMovement.EditorVisualizationColor()</a></div>
   <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Get*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Single)">Get(KaijuAgent, Single, Single, Single)</h4>
-  <div class="markdown level1 summary"><p>Get a wander movement.</p>
+  <div class="markdown level1 summary"><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static KaijuWanderMovement Get(KaijuAgent agent, float distance = 5F, float radius = 1F, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public static KaijuWanderMovement Get(KaijuAgent agent, float distance = 20F, float radius = 1F, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -435,7 +486,7 @@
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -451,14 +502,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a></td>
-        <td><p>Get a wander movement for the agent.</p>
+        <td><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuWanderMovement.html">KaijuWanderMovement</a> for the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Move*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuWanderMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
-  <div class="markdown level1 summary"><p>Get the movement.</p>
+  <div class="markdown level1 summary"><p>Get the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -500,7 +551,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Vector2</span></td>
-        <td><p>The calculated movement.</p>
+        <td><p>The calculated move vector.</p>
 </td>
       </tr>
     </tbody>

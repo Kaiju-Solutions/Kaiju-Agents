@@ -95,16 +95,41 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class KaijuAgentsFindPath</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_InitialCacheSize" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.InitialCacheSize">InitialCacheSize</h4>
+  <div class="markdown level1 summary"><p>What size to initially allocate for getting paths.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int InitialCacheSize = 100</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector2, Vector2, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_System_Collections_Generic_List_Vector2__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,System.Collections.Generic.List{Vector2},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, List&lt;Vector2&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, List&lt;Vector2&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -129,7 +154,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -140,6 +165,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -159,13 +202,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector2},System.Int32)">FindPath(Vector2, Vector2, IList&lt;Vector2&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_System_Collections_Generic_List_Vector2__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,System.Collections.Generic.List{Vector2},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, List&lt;Vector2&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, List&lt;Vector2&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -190,7 +233,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -201,6 +244,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -220,13 +281,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector2, Vector2, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_System_Collections_Generic_List_Vector3__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,System.Collections.Generic.List{Vector3},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, List&lt;Vector3&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, List&lt;Vector3&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -251,7 +312,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -262,6 +323,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -281,13 +360,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,IList{Vector3},System.Int32)">FindPath(Vector2, Vector2, IList&lt;Vector3&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_System_Collections_Generic_List_Vector3__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,System.Collections.Generic.List{Vector3},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, List&lt;Vector3&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, List&lt;Vector3&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -312,7 +391,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -321,6 +400,24 @@
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">mask</span></td>
         <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
 </td>
       </tr>
     </tbody>
@@ -342,13 +439,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector2, ref Vector2[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, ref Vector2[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -384,6 +481,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -403,13 +518,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,System.Int32)">FindPath(Vector2, Vector2, ref Vector2[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector2____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector2[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, ref Vector2[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector2[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -445,6 +560,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -464,13 +597,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector2, ref Vector3[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, ref Vector3[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -506,6 +639,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -525,13 +676,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,System.Int32)">FindPath(Vector2, Vector2, ref Vector3[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector2_Vector3____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector2,Vector3[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector2, ref Vector3[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector2 goal, ref Vector3[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -567,6 +718,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -586,13 +755,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector2, Vector3, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_System_Collections_Generic_List_Vector2__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,System.Collections.Generic.List{Vector2},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, List&lt;Vector2&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, List&lt;Vector2&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -617,7 +786,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -628,6 +797,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -647,13 +834,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector2},System.Int32)">FindPath(Vector2, Vector3, IList&lt;Vector2&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_System_Collections_Generic_List_Vector2__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,System.Collections.Generic.List{Vector2},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, List&lt;Vector2&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, List&lt;Vector2&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -678,7 +865,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -689,6 +876,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -708,13 +913,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector2, Vector3, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_System_Collections_Generic_List_Vector3__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,System.Collections.Generic.List{Vector3},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, List&lt;Vector3&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, List&lt;Vector3&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -739,7 +944,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -750,6 +955,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -769,13 +992,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,IList{Vector3},System.Int32)">FindPath(Vector2, Vector3, IList&lt;Vector3&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_System_Collections_Generic_List_Vector3__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,System.Collections.Generic.List{Vector3},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, List&lt;Vector3&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, List&lt;Vector3&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -800,7 +1023,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -809,6 +1032,24 @@
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">mask</span></td>
         <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
 </td>
       </tr>
     </tbody>
@@ -830,13 +1071,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector3, ref Vector2[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, ref Vector2[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -872,6 +1113,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -891,13 +1150,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,System.Int32)">FindPath(Vector2, Vector3, ref Vector2[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector2____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector2[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, ref Vector2[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector2[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -933,6 +1192,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -952,13 +1229,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector2, Vector3, ref Vector3[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, ref Vector3[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -994,6 +1271,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1013,13 +1308,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,System.Int32)">FindPath(Vector2, Vector3, ref Vector3[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector2_Vector3_Vector3____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector2,Vector3,Vector3[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector2, Vector3, ref Vector3[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector2 start, Vector3 goal, ref Vector3[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1055,6 +1350,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1074,13 +1387,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector3, Vector2, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_System_Collections_Generic_List_Vector2__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,System.Collections.Generic.List{Vector2},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector2, List&lt;Vector2&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, List&lt;Vector2&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1105,7 +1418,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1116,6 +1429,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1135,13 +1466,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,IList{Vector2},System.Int32)">FindPath(Vector3, Vector2, IList&lt;Vector2&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_System_Collections_Generic_List_Vector2__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,System.Collections.Generic.List{Vector2},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector2, List&lt;Vector2&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, List&lt;Vector2&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1166,7 +1497,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1177,65 +1508,22 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Description</th>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
       </tr>
-    </thead>
-    <tbody>
       <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><p>The number of points along the found path.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector2, ref Vector2[], NavMeshQueryFilter)</h4>
-  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Vector3</span></td>
-        <td><span class="parametername">start</span></td>
-        <td><p>The starting position.</p>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Vector2</span></td>
-        <td><span class="parametername">goal</span></td>
-        <td><p>The goal position.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Vector2</span>[]</td>
-        <td><span class="parametername">path</span></td>
-        <td><p>The path to update.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">NavMeshQueryFilter</span></td>
-        <td><span class="parametername">filter</span></td>
-        <td><p>The area filter to consider for pathfinding.</p>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
 </td>
       </tr>
     </tbody>
@@ -1257,13 +1545,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,System.Int32)">FindPath(Vector3, Vector2, ref Vector2[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector2, ref Vector2[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1294,9 +1582,27 @@
 </td>
       </tr>
       <tr>
+        <td><span class="xref">NavMeshQueryFilter</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>The area filter to consider for pathfinding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="xref">System.Int32</span></td>
-        <td><span class="parametername">mask</span></td>
-        <td><p>The area mask to consider for pathfinding.</p>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
 </td>
       </tr>
     </tbody>
@@ -1318,13 +1624,92 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector2__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector2},NavMeshQueryFilter)">FindPath(Vector3, Vector3, IList&lt;Vector2&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector2_Vector2____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector2,Vector2[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector2, ref Vector2[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector2&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector2 goal, ref Vector2[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>The starting position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">goal</span></td>
+        <td><p>The goal position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>The path to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">mask</span></td>
+        <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_System_Collections_Generic_List_Vector2__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,System.Collections.Generic.List{Vector2},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, List&lt;Vector2&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
+  <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, List&lt;Vector2&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1349,7 +1734,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1360,6 +1745,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1379,13 +1782,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector2__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector2},System.Int32)">FindPath(Vector3, Vector3, IList&lt;Vector2&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_System_Collections_Generic_List_Vector2__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,System.Collections.Generic.List{Vector2},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, List&lt;Vector2&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector2&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, List&lt;Vector2&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1410,7 +1813,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector2</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1421,6 +1824,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1440,13 +1861,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector3__NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector3},NavMeshQueryFilter)">FindPath(Vector3, Vector3, IList&lt;Vector3&gt;, NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_System_Collections_Generic_List_Vector3__NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,System.Collections.Generic.List{Vector3},NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, List&lt;Vector3&gt;, NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector3&gt; path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, List&lt;Vector3&gt; path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1471,7 +1892,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1482,6 +1903,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1501,13 +1940,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_IList_Vector3__System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,IList{Vector3},System.Int32)">FindPath(Vector3, Vector3, IList&lt;Vector3&gt;, Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_System_Collections_Generic_List_Vector3__System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,System.Collections.Generic.List{Vector3},System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, List&lt;Vector3&gt;, Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, IList&lt;Vector3&gt; path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, List&lt;Vector3&gt; path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1532,7 +1971,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">IList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">Vector3</span>&gt;</td>
         <td><span class="parametername">path</span></td>
         <td><p>The path to update.</p>
 </td>
@@ -1541,6 +1980,24 @@
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">mask</span></td>
         <td><p>The area mask to consider for pathfinding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
 </td>
       </tr>
     </tbody>
@@ -1562,13 +2019,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector3, ref Vector2[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, ref Vector2[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1604,6 +2061,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1623,13 +2098,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,System.Int32)">FindPath(Vector3, Vector3, ref Vector2[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector2____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector2[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, ref Vector2[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector2[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1665,6 +2140,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1684,13 +2177,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____NavMeshQueryFilter_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,NavMeshQueryFilter)">FindPath(Vector3, Vector3, ref Vector3[], NavMeshQueryFilter)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____NavMeshQueryFilter_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,NavMeshQueryFilter,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, ref Vector3[], NavMeshQueryFilter, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, NavMeshQueryFilter filter, float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1726,6 +2219,24 @@
         <td><p>The area filter to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1745,13 +2256,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath*"></a>
-  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,System.Int32)">FindPath(Vector3, Vector3, ref Vector3[], Int32)</h4>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_FindPath_Vector3_Vector3_Vector3____System_Int32_System_Nullable_System_Single__System_Int32_QueryTriggerInteraction_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.FindPath(Vector3,Vector3,Vector3[]@,System.Int32,System.Nullable{System.Single},System.Int32,QueryTriggerInteraction)">FindPath(Vector3, Vector3, ref Vector3[], Int32, Nullable&lt;Single&gt;, Int32, QueryTriggerInteraction)</h4>
   <div class="markdown level1 summary"><p>Find a path from the starting to the end position.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, int mask = default(int))</code></pre>
+    <pre><code class="lang-csharp hljs">public static int FindPath(this Vector3 start, Vector3 goal, ref Vector3[] path, int mask = default(int), float? radius = null, int sightMask = -5, QueryTriggerInteraction triggers = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1787,6 +2298,24 @@
         <td><p>The area mask to consider for pathfinding.</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">radius</span></td>
+        <td><p>The radius for path string-pulling checks. Setting to NULL means no string pulling.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">sightMask</span></td>
+        <td><p>The optional layer mask for path string-pulling checks.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">QueryTriggerInteraction</span></td>
+        <td><span class="parametername">triggers</span></td>
+        <td><p>How the path string-pulling checks should handle hitting triggers.</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1801,6 +2330,33 @@
       <tr>
         <td><span class="xref">System.Int32</span></td>
         <td><p>The number of points along the found path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_ResizeCache_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.ResizeCache*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsFindPath_ResizeCache_System_Int32_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.ResizeCache(System.Int32)">ResizeCache(Int32)</h4>
+  <div class="markdown level1 summary"><p>Resize the points cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResizeCache(int size = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The size to set.</p>
 </td>
       </tr>
     </tbody>

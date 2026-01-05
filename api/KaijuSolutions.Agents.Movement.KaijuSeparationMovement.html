@@ -106,22 +106,25 @@
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_SetIdentifier_System_UInt32_">KaijuAreaMovement.SetIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_SetIdentifiers_ICollection_System_UInt32__">KaijuAreaMovement.SetIdentifiers(ICollection&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_SetIdentifiers_System_Collections_Generic_ICollection_System_UInt32__">KaijuAreaMovement.SetIdentifiers(ICollection&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_AddIdentifier_System_UInt32_">KaijuAreaMovement.AddIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_AddIdentifiers_ICollection_System_UInt32__">KaijuAreaMovement.AddIdentifiers(ICollection&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_AddIdentifiers_System_Collections_Generic_ICollection_System_UInt32__">KaijuAreaMovement.AddIdentifiers(ICollection&lt;UInt32&gt;)</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_RemoveIdentifier_System_UInt32_">KaijuAreaMovement.RemoveIdentifier(UInt32)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_RemoveIdentifiers_ICollection_System_UInt32__">KaijuAreaMovement.RemoveIdentifiers(ICollection&lt;UInt32&gt;)</a>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_RemoveIdentifiers_System_Collections_Generic_ICollection_System_UInt32__">KaijuAreaMovement.RemoveIdentifiers(ICollection&lt;UInt32&gt;)</a>
     </div>
     <div>
-      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_ICollection_System_UInt32__System_Single_">KaijuAreaMovement.Initialize(KaijuAgent, Single, ICollection&lt;UInt32&gt;, Single)</a>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_Initialize_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Collections_Generic_ICollection_System_UInt32__System_Single_">KaijuAreaMovement.Initialize(KaijuAgent, Single, ICollection&lt;UInt32&gt;, Single)</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_DefaultWeight">KaijuMovement.DefaultWeight</a>
     </div>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted">KaijuMovement.OnStarted</a>
@@ -181,13 +184,13 @@
   <h3 id="constructors">Constructors
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement__ctor_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.#ctor*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_ICollection_System_UInt32__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,ICollection{System.UInt32},System.Single)">KaijuSeparationMovement(KaijuAgent, Single, Single, ICollection&lt;UInt32&gt;, Single)</h4>
-  <div class="markdown level1 summary"><p>Create a separation movement.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement__ctor_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Collections_Generic_ICollection_System_UInt32__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.#ctor(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Collections.Generic.ICollection{System.UInt32},System.Single)">KaijuSeparationMovement(KaijuAgent, Single, Single, ICollection&lt;UInt32&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Create a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KaijuSeparationMovement(KaijuAgent agent, float distance = 10F, float coefficient = 0F, ICollection&lt;uint&gt; identifiers = null, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public KaijuSeparationMovement(KaijuAgent agent, float distance = 10F, float coefficient = 10F, ICollection&lt;uint&gt; identifiers = null, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -202,13 +205,13 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">distance</span></td>
-        <td><p>The distance to avoid other agents from.</p>
+        <td><p>The distance to avoid other <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from.</p>
 </td>
       </tr>
       <tr>
@@ -218,16 +221,64 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ICollection</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
         <td><span class="parametername">identifiers</span></td>
-        <td><p>What types of agents to avoid.</p>
+        <td><p>What types of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s to avoid.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_DefaultCoefficient" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.DefaultCoefficient">DefaultCoefficient</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html#KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Coefficient">Coefficient</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultCoefficient = 10F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_DefaultDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.DefaultDistance">DefaultDistance</h4>
+  <div class="markdown level1 summary"><p>The default <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuAreaMovement.html#KaijuSolutions_Agents_Movement_KaijuAreaMovement_Distance">Distance</a> for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a>s.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const float DefaultDistance = 10F</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -259,7 +310,7 @@
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Interacting_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Interacting*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Interacting" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Interacting">Interacting</h4>
-  <div class="markdown level1 summary"><p>The agents currently detected this movement is moving in relation to.</p>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s currently detected this movement is moving in relation to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -276,7 +327,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -285,7 +336,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_EditorRenderVisualizations_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.EditorRenderVisualizations*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_EditorRenderVisualizations_Vector3_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.EditorRenderVisualizations(Vector3)">EditorRenderVisualizations(Vector3)</h4>
-  <div class="markdown level1 summary"><p>Render the visualization of the movement.
+  <div class="markdown level1 summary"><p>Render the visualization of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.
 <param name="position">The position of the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_Agent">Agent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -340,13 +391,13 @@
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html#KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualizationColor">KaijuMovement.EditorVisualizationColor()</a></div>
   <a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Get_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Get*"></a>
-  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_ICollection_System_UInt32__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,ICollection{System.UInt32},System.Single)">Get(KaijuAgent, Single, Single, ICollection&lt;UInt32&gt;, Single)</h4>
-  <div class="markdown level1 summary"><p>Get a separation movement.</p>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Get_KaijuSolutions_Agents_KaijuAgent_System_Single_System_Single_System_Collections_Generic_ICollection_System_UInt32__System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Get(KaijuSolutions.Agents.KaijuAgent,System.Single,System.Single,System.Collections.Generic.ICollection{System.UInt32},System.Single)">Get(KaijuAgent, Single, Single, ICollection&lt;UInt32&gt;, Single)</h4>
+  <div class="markdown level1 summary"><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static KaijuSeparationMovement Get(KaijuAgent agent, float distance = 10F, float coefficient = 0F, ICollection&lt;uint&gt; identifiers = null, float weight = 1F)</code></pre>
+    <pre><code class="lang-csharp hljs">public static KaijuSeparationMovement Get(KaijuAgent agent, float distance = 10F, float coefficient = 10F, ICollection&lt;uint&gt; identifiers = null, float weight = 1F)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -361,13 +412,13 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
         <td><span class="parametername">agent</span></td>
-        <td><p>The agent this is assigned to.</p>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this is assigned to.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">distance</span></td>
-        <td><p>The distance to avoid other agents from.</p>
+        <td><p>The distance to avoid other <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from.</p>
 </td>
       </tr>
       <tr>
@@ -377,15 +428,15 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">ICollection</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
         <td><span class="parametername">identifiers</span></td>
-        <td><p>What types of agents to avoid.</p>
+        <td><p>What types of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s to avoid.</p>
 </td>
       </tr>
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td><span class="parametername">weight</span></td>
-        <td><p>The weight of this movement.</p>
+        <td><p>The weight of this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -401,14 +452,14 @@
     <tbody>
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a></td>
-        <td><p>Get a separation movement for the agent.</p>
+        <td><p>Get a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.html">KaijuSeparationMovement</a> for the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Move_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Move*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Move_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Movement.KaijuSeparationMovement.Move(Vector2,System.Single)">Move(Vector2, Single)</h4>
-  <div class="markdown level1 summary"><p>Get the movement.</p>
+  <div class="markdown level1 summary"><p>Get the <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -450,7 +501,7 @@
     <tbody>
       <tr>
         <td><span class="xref">Vector2</span></td>
-        <td><p>The calculated movement.</p>
+        <td><p>The calculated move vector.</p>
 </td>
       </tr>
     </tbody>

@@ -81,7 +81,7 @@
   
   <h1 id="KaijuSolutions_Agents_Actuators_KaijuActuator" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator" class="text-break">Class KaijuActuator
   </h1>
-  <div class="markdown level0 summary"><p>Base actuator class.</p>
+  <div class="markdown level0 summary"><p>Base <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> class.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -89,6 +89,7 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
     <div class="level2"><span class="xref">KaijuActuator</span></div>
+      <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html">KaijuAttackActuator</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -252,6 +253,9 @@
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
     </div>
     <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
+    </div>
+    <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
     </div>
     <div>
@@ -313,7 +317,7 @@
   </h3>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Agent_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Agent*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Agent" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Agent">Agent</h4>
-  <div class="markdown level1 summary"><p>The agent this actuator is assigned to.</p>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> this <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> is assigned to.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -335,11 +339,59 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_IsRunning_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.IsRunning*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_IsRunning" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.IsRunning">IsRunning</h4>
+  <div class="markdown level1 summary"><p>If the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> is currently running.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunning { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_State_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.State*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_State" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.State">State</h4>
+  <div class="markdown level1 summary"><p>The last state of the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KaijuActuatorState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuatorState.html">KaijuActuatorState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Begin_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Begin*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Begin" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Begin">Begin()</h4>
-  <div class="markdown level1 summary"><p>If the actuator should act in its next execution step.</p>
+  <div class="markdown level1 summary"><p>If the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> should act in its next execution step.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -348,7 +400,7 @@
   </div>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Cleanup_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Cleanup*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Cleanup" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Cleanup">Cleanup()</h4>
-  <div class="markdown level1 summary"><p>Perform any needed resetting of the sensor.</p>
+  <div class="markdown level1 summary"><p>Perform any needed resetting of the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -384,7 +436,7 @@
   </table>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_End_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.End*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_End" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.End">End()</h4>
-  <div class="markdown level1 summary"><p>End the execution of this actuator.</p>
+  <div class="markdown level1 summary"><p>End the execution of this <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -393,32 +445,16 @@
   </div>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Handle_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Handle*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Handle" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Handle">Handle()</h4>
-  <div class="markdown level1 summary"><p>Run this actuator if it should be.</p>
+  <div class="markdown level1 summary"><p>Run this <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> if it should be. There is no point in manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Handle()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Handle()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>If the actuator ran or not, or has just now finished running.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Run_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Run*"></a>
   <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_Run" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.Run">Run()</h4>
-  <div class="markdown level1 summary"><p>Run the actuator.</p>
+  <div class="markdown level1 summary"><p>Run the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -436,7 +472,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuatorState.html">KaijuActuatorState</a></td>
-        <td><p>The state of the actuator&apos;s progress.</p>
+        <td><p>The state of the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>&apos;s progress.</p>
 </td>
       </tr>
     </tbody>
@@ -518,7 +554,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnDoneGlobal</code></pre>
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnDoneGlobal</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -610,7 +646,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnExecutingGlobal</code></pre>
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnExecutingGlobal</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -656,7 +692,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnFailedGlobal</code></pre>
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnFailedGlobal</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -702,7 +738,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnInterruptedGlobal</code></pre>
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnInterruptedGlobal</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -748,7 +784,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event KaijuActuatorAction OnStartedGlobal</code></pre>
+    <pre><code class="lang-csharp hljs">public static event KaijuActuatorAction OnStartedGlobal</code></pre>
   </div>
   <h5 class="eventType">Event Type</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -762,6 +798,137 @@
       <tr>
         <td><a class="xref" href="KaijuSolutions.Agents.KaijuActuatorAction.html">KaijuActuatorAction</a></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_GameObject__KaijuSolutions_Agents_Actuators_KaijuActuator" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit(GameObject)~KaijuSolutions.Agents.Actuators.KaijuActuator">Implicit(GameObject to KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuActuator(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_KaijuSolutions_Agents_Actuators_KaijuActuator__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit(KaijuSolutions.Agents.Actuators.KaijuActuator)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuActuator to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuActuator a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Actuators_KaijuActuator_op_Implicit_Transform__KaijuSolutions_Agents_Actuators_KaijuActuator" data-uid="KaijuSolutions.Agents.Actuators.KaijuActuator.op_Implicit(Transform)~KaijuSolutions.Agents.Actuators.KaijuActuator">Implicit(Transform to KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuActuator(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
       </tr>
     </tbody>
   </table>

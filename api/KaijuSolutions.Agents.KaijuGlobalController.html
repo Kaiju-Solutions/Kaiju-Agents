@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuGlobalController | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuGlobalController | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuGlobalController">
+  
+  
+  <h1 id="KaijuSolutions_Agents_KaijuGlobalController" data-uid="KaijuSolutions.Agents.KaijuGlobalController" class="text-break">Class KaijuGlobalController
+  </h1>
+  <div class="markdown level0 summary"><p>Base class to inherit for easy interaction with all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s in the scene.
+Simply override the methods you need to use callbacks without needing to worry about binding.
+If you override either <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html" target="_blank">OnEnable</a> or <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html" target="_blank">OnDisable</a>, you must call their respective base methods for binding and cleanup.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><span class="xref">KaijuGlobalController</span></div>
+      <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Development.KaijuDeveloperUI.html">KaijuDeveloperUI</a></div>
+      <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Exercises.CTF.CaptureTheFlagManager.html">CaptureTheFlagManager</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal">KaijuBehaviour.OnPreSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition">KaijuBehaviour.OnSetPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal">KaijuBehaviour.OnSetPositionGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation">KaijuBehaviour.OnPreSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal">KaijuBehaviour.OnPreSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation">KaijuBehaviour.OnSetOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal">KaijuBehaviour.OnSetOrientationGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale">KaijuBehaviour.OnPreSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal">KaijuBehaviour.OnPreSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScale">KaijuBehaviour.OnSetScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal">KaijuBehaviour.OnSetScaleGlobal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">KaijuBehaviour.Position</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">KaijuBehaviour.Position3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition">KaijuBehaviour.LocalPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3">KaijuBehaviour.LocalPosition3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_X">KaijuBehaviour.X</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalX">KaijuBehaviour.LocalX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Y">KaijuBehaviour.Y</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalY">KaijuBehaviour.LocalY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Z">KaijuBehaviour.Z</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalZ">KaijuBehaviour.LocalZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">KaijuBehaviour.Orientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">KaijuBehaviour.LocalOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles">KaijuBehaviour.OrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles">KaijuBehaviour.LocalOrientationAngles</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">KaijuBehaviour.OrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion">KaijuBehaviour.LocalOrientationQuaternion</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">KaijuBehaviour.OrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">KaijuBehaviour.LocalOrientationX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">KaijuBehaviour.OrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">KaijuBehaviour.LocalOrientationY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">KaijuBehaviour.OrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">KaijuBehaviour.LocalOrientationZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX">KaijuBehaviour.OrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX">KaijuBehaviour.LocalOrientationQuaternionX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY">KaijuBehaviour.OrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY">KaijuBehaviour.LocalOrientationQuaternionY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ">KaijuBehaviour.OrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ">KaijuBehaviour.LocalOrientationQuaternionZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW">KaijuBehaviour.OrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW">KaijuBehaviour.LocalOrientationQuaternionW</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScale">KaijuBehaviour.LocalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX">KaijuBehaviour.LocalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY">KaijuBehaviour.LocalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ">KaijuBehaviour.LocalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScale">KaijuBehaviour.GlobalScale</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX">KaijuBehaviour.GlobalScaleX</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY">KaijuBehaviour.GlobalScaleY</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ">KaijuBehaviour.GlobalScaleZ</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld">KaijuBehaviour.LocalToWorld</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal">KaijuBehaviour.WorldToLocal</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Up">KaijuBehaviour.Up</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Down">KaijuBehaviour.Down</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Right">KaijuBehaviour.Right</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Left">KaijuBehaviour.Left</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Parent">KaijuBehaviour.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Root">KaijuBehaviour.Root</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ChildCount">KaijuBehaviour.ChildCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HasChanged">KaijuBehaviour.HasChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount">KaijuBehaviour.HierarchyCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity">KaijuBehaviour.HierarchyCapacity</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Layer">KaijuBehaviour.Layer</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ComponentCount">KaijuBehaviour.ComponentCount</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy">KaijuBehaviour.ActiveInHierarchy</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf">KaijuBehaviour.ActiveSelf</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_IsStatic">KaijuBehaviour.IsStatic</a>
+    </div>
+    <div>
+      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_KaijuGlobalController_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class KaijuGlobalController : KaijuBehaviour</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDisabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorDisabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDisabled_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorDisabled(KaijuActuator)">OnActuatorDisabled(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has finishing becoming disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorDisabled(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDone_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorDone*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDone_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorDone(KaijuActuator)">OnActuatorDone(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has successfully fully completed its action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorDone(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorEnabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorEnabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorEnabled_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorEnabled(KaijuActuator)">OnActuatorEnabled(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has finishing becoming enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorEnabled(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorExecuting_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorExecuting*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorExecuting_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorExecuting(KaijuActuator)">OnActuatorExecuting(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> is continuing to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorExecuting(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorFailed_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorFailed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorFailed_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorFailed(KaijuActuator)">OnActuatorFailed(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has failed its execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorFailed(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorInterrupted_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorInterrupted*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorInterrupted_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorInterrupted(KaijuActuator)">OnActuatorInterrupted(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has been interrupted during its execution, cancelling the execution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorInterrupted(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorStarted_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorStarted*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorStarted_KaijuActuator_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnActuatorStarted(KaijuActuator)">OnActuatorStarted(KaijuActuator)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuActuator"></see> has started to execute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnActuatorStarted(KaijuActuator actuator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuActuator</span></td>
+        <td><span class="parametername">actuator</span></td>
+        <td><p>The <see cref="!:KaijuActuator"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutomaticSense_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentAutomaticSense*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutomaticSense_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentAutomaticSense(KaijuSolutions.Agents.KaijuAgent)">OnAgentAutomaticSense(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when all automatic <see cref="!:KaijuSensor"></see>s have finished being executed for a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentAutomaticSense(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutoRotate_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentAutoRotate*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutoRotate_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentAutoRotate(KaijuSolutions.Agents.KaijuAgent)">OnAgentAutoRotate(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global autorotation changed callback for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentAutoRotate(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDestroyed_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentDestroyed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDestroyed_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentDestroyed(KaijuSolutions.Agents.KaijuAgent)">OnAgentDestroyed(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> has finishing becoming destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentDestroyed(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDisabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentDisabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDisabled_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentDisabled(KaijuSolutions.Agents.KaijuAgent)">OnAgentDisabled(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> has finishing becoming disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentDisabled(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentEnabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentEnabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentEnabled_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentEnabled(KaijuSolutions.Agents.KaijuAgent)">OnAgentEnabled(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> has finishing becoming enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentEnabled(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookSpeed_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentLookSpeed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookSpeed_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentLookSpeed(KaijuSolutions.Agents.KaijuAgent)">OnAgentLookSpeed(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global look speed changed callback for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentLookSpeed(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookTarget_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentLookTarget*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookTarget_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentLookTarget(KaijuSolutions.Agents.KaijuAgent)">OnAgentLookTarget(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the look target has been set for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentLookTarget(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMove_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMove*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMove_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMove(KaijuSolutions.Agents.KaijuAgent)">OnAgentMove(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> has moved.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentMove(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveAcceleration_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMoveAcceleration*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveAcceleration_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMoveAcceleration(KaijuSolutions.Agents.KaijuAgent)">OnAgentMoveAcceleration(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global movement acceleration changed callback for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentMoveAcceleration(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveSpeed_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMoveSpeed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveSpeed_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAgentMoveSpeed(KaijuSolutions.Agents.KaijuAgent)">OnAgentMoveSpeed(KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Global movement speed changed callback for an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAgentMoveSpeed(KaijuAgent agent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetOrientation_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetOrientation*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetOrientation_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetOrientation(KaijuSolutions.Agents.KaijuBehaviour)">OnAllPreSetOrientation(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for before the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllPreSetOrientation(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetPosition_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetPosition_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetPosition(KaijuSolutions.Agents.KaijuBehaviour)">OnAllPreSetPosition(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for before a <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllPreSetPosition(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetScale_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetScale*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetScale_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllPreSetScale(KaijuSolutions.Agents.KaijuBehaviour)">OnAllPreSetScale(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for before the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllPreSetScale(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetOrientation_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetOrientation*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetOrientation_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetOrientation(KaijuSolutions.Agents.KaijuBehaviour)">OnAllSetOrientation(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s orientation has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllSetOrientation(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetPosition_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetPosition_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetPosition(KaijuSolutions.Agents.KaijuBehaviour)">OnAllSetPosition(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s position has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllSetPosition(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetScale_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetScale*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetScale_KaijuSolutions_Agents_KaijuBehaviour_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnAllSetScale(KaijuSolutions.Agents.KaijuBehaviour)">OnAllSetScale(KaijuBehaviour)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>&apos;s scale has been set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnAllSetScale(KaijuBehaviour behaviour)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></td>
+        <td><span class="parametername">behaviour</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementPerformed_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementPerformed*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementPerformed_KaijuSolutions_Agents_Movement_KaijuMovement_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementPerformed(KaijuSolutions.Agents.Movement.KaijuMovement)">OnMovementPerformed(KaijuMovement)</h4>
+  <div class="markdown level1 summary"><p>Global callback for a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a> being performed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMovementPerformed(KaijuMovement movement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
+        <td><span class="parametername">movement</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStarted_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementStarted*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStarted_KaijuSolutions_Agents_Movement_KaijuMovement_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementStarted(KaijuSolutions.Agents.Movement.KaijuMovement)">OnMovementStarted(KaijuMovement)</h4>
+  <div class="markdown level1 summary"><p>Global callback for a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a> starting.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMovementStarted(KaijuMovement movement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
+        <td><span class="parametername">movement</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStopped_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementStopped*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStopped_KaijuSolutions_Agents_Movement_KaijuMovement_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnMovementStopped(KaijuSolutions.Agents.Movement.KaijuMovement)">OnMovementStopped(KaijuMovement)</h4>
+  <div class="markdown level1 summary"><p>Global callback for a <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a> stopping.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMovementStopped(KaijuMovement movement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
+        <td><span class="parametername">movement</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorDisabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorDisabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorDisabled_KaijuSensor_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorDisabled(KaijuSensor)">OnSensorDisabled(KaijuSensor)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuSensor"></see> has been disabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSensorDisabled(KaijuSensor sensor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSensor</span></td>
+        <td><span class="parametername">sensor</span></td>
+        <td><p>The <see cref="!:KaijuSensor"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorEnabled_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorEnabled*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorEnabled_KaijuSensor_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorEnabled(KaijuSensor)">OnSensorEnabled(KaijuSensor)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuSensor"></see> has been enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSensorEnabled(KaijuSensor sensor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSensor</span></td>
+        <td><span class="parametername">sensor</span></td>
+        <td><p>The <see cref="!:KaijuSensor"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorSense_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorSense*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorSense_KaijuSensor_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.OnSensorSense(KaijuSensor)">OnSensorSense(KaijuSensor)</h4>
+  <div class="markdown level1 summary"><p>Global callback for when a <see cref="!:KaijuSensor"></see> has been run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSensorSense(KaijuSensor sensor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuSensor</span></td>
+        <td><span class="parametername">sensor</span></td>
+        <td><p>The <see cref="!:KaijuSensor"></see>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_GameObject__KaijuSolutions_Agents_KaijuGlobalController" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit(GameObject)~KaijuSolutions.Agents.KaijuGlobalController">Implicit(GameObject to KaijuGlobalController)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuGlobalController(GameObject o)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_KaijuSolutions_Agents_KaijuAgent__KaijuSolutions_Agents_KaijuGlobalController" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit(KaijuSolutions.Agents.KaijuAgent)~KaijuSolutions.Agents.KaijuGlobalController">Implicit(KaijuAgent to KaijuGlobalController)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuGlobalController(KaijuAgent a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a> attached to the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_KaijuSolutions_Agents_KaijuGlobalController__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit(KaijuSolutions.Agents.KaijuGlobalController)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuGlobalController to KaijuAgent)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuGlobalController c)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></td>
+        <td><span class="parametername">c</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to The <a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuGlobalController_op_Implicit_Transform__KaijuSolutions_Agents_KaijuGlobalController" data-uid="KaijuSolutions.Agents.KaijuGlobalController.op_Implicit(Transform)~KaijuSolutions.Agents.KaijuGlobalController">Implicit(Transform to KaijuGlobalController)</h4>
+  <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator KaijuGlobalController(Transform t)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuGlobalController.html">KaijuGlobalController</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
