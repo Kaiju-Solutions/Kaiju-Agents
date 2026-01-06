@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Capture the Flag | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Capture the Flag | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="capture-the-flag">Capture the Flag</h1>
+
+<p>This exercise pits two teams of <a href="#trooper" title="Trooper">troopers</a> against each other in a game of capture the flag.</p>
+<h2 id="trooper-controller">Trooper Controller</h2>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperController.html" title="TrooperController"><code>TrooperController</code> component</a> is provided to be a starting point for you to implement your behaviour design in for the <a href="#trooper" title="Trooper">troopers</a>.</p>
+<h2 id="trooper">Trooper</h2>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Trooper.html" title="Trooper"><code>Trooper</code> component</a> has a given health value that if it reaches <code>0</code> will cause the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Trooper.html" title="Trooper">trooper</a> to be eliminated, respawning after a certain amount of time. Then are armed with a <a href="#blaster-actuator" title="Blaster Actuator">blaster actuator</a>. <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Trooper.html" title="Trooper">Troopers</a> will automatically interact with <a href="#pickups" title="Pickups">pickups</a> they walk into. </p>
+<h2 id="sensors">Sensors</h2>
+<p>Six <a href="/manual/sensors.html" title="Sensors">sensors</a> have been provided to help you with your development. Unlike the <a href="/manual/microbes.html" title="Microbe">microbes exercise</a>, these <a href="/manual/sensors.html" title="Sensors">sensors</a> are not yet attached to the <a href="#trooper" title="Trooper">troopers</a> prefab, and instead this is left for you to decide which combination is best to complete the exercise.</p>
+<h3 id="trooper-vision-sensor">Trooper Vision Sensor</h3>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html" title="TrooperVisionSensor"><code>TrooperVisionSensor</code></a> allows for detecting other <a href="#trooper" title="Trooper">troopers</a>.</p>
+<h4 id="trooper-enemy-vision-sensor">Trooper Enemy Vision Sensor</h4>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperEnemyVisionSensor.html" title="TrooperEnemyVisionSensor"><code>TrooperEnemyVisionSensor</code></a> is a version of the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html" title="TrooperVisionSensor"><code>TrooperVisionSensor</code></a> which detects <a href="#trooper" title="Trooper">troopers</a> on the enemy team.</p>
+<h4 id="trooper-team-vision-sensor">Trooper Team Vision Sensor</h4>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperTeamVisionSensor.html" title="TrooperTeamVisionSensor"><code>TrooperTeamVisionSensor</code></a> is a version of the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.TrooperVisionSensor.html" title="TrooperVisionSensor"><code>TrooperVisionSensor</code></a> which detects <a href="#trooper" title="Trooper">troopers</a> on the same team.</p>
+<h3 id="ammo-vision-sensor">Ammo Vision Sensor</h3>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.AmmoVisionSensor.html" title="AmmoVisionSensor"><code>AmmoVisionSensor</code></a> allows for detecting all <a href="#ammo-pickup" title="Ammo Pickup">ammo pickups</a>.</p>
+<h3 id="health-vision-sensor">Health Vision Sensor</h3>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.HealthVisionSensor.html" title="HealthVisionSensor"><code>HealthVisionSensor</code></a> allows for detecting all <a href="#health-pickup" title="Health Pickup">health pickups</a>.</p>
+<h3 id="flag-vision-sensor">Flag Vision Sensor</h3>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.FlagVisionSensor.html" title="FlagVisionSensor"><code>FlagVisionSensor</code></a> allows for detecting both <a href="#flag" title="Flag">flag</a> in the game.</p>
+<h2 id="blaster-actuator">Blaster Actuator</h2>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html" title="BlasterActuator"><code>BlasterActuator</code></a> is an version of an <a href="/manual/actuators.html#attack-actuator" title="BlasterActuator">attack actuator</a> which is capable of reducing the health of <a href="#trooper" title="Trooper">troopers</a>. The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html" title="BlasterActuator">blaster</a> requires ammo, and with no ammo, the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html" title="BlasterActuator">blaster</a> will fail to attack. For your convenience, a <a href="/api/KaijuSolutions.Agents.Exercises.CTF.BlasterActuator.html" title="BlasterActuator"><code>BlasterActuator</code></a> has been attached to the <a href="#trooper" title="Trooper">trooper</a> prefab.</p>
+<h2 id="pickups">Pickups</h2>
+<p><a href="#trooper" title="Trooper">Troopers</a> will automatically interact with pickups they walk into.</p>
+<h3 id="ammo-pickup">Ammo Pickup</h3>
+<p><a href="/api/KaijuSolutions.Agents.Exercises.CTF.AmmoPickup.html" title="AmmoPickup"><code>AmmoPickup</code></a> instances will restore a <a href="#trooper" title="Trooper">trooper&#39;s</a> <a href="#blaster-actuator" title="Blaster Actuator">blater actuator&#39;s</a> ammo. After being used by a <a href="#trooper" title="Trooper">trooper</a>, the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.AmmoPickup.html" title="AmmoPickup">ammo pickup</a> will go on cooldown before it can be used again.</p>
+<h3 id="health-pickup">Health Pickup</h3>
+<p><a href="/api/KaijuSolutions.Agents.Exercises.CTF.HealthPickup.html" title="HealthPickup"><code>HealthPickup</code></a> instances will restore a <a href="#trooper" title="Trooper">trooper&#39;s</a> health. After being used by a <a href="#trooper" title="Trooper">trooper</a>, the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.HealthPickup.html" title="HealthPickup">health pickup</a> will go on cooldown before it can be used again.</p>
+<h3 id="flag">Flag</h3>
+<p>There are two <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag"><code>Flag</code></a> instances in the game, one for each team. <a href="#trooper" title="Trooper">Troopers</a> interact with the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flags</a> in the following ways:</p>
+<ol>
+<li>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> is for the <a href="#trooper" title="Trooper">trooper&#39;s</a> team:<ol>
+<li>If the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> is already at its base, being where it starts the game at, nothing happens.</li>
+<li>Anywhere else, making contact with the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> when it is on the ground will return it to the base.</li>
+</ol>
+</li>
+<li>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> is for the enemy team:<ol>
+<li>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> will be picked up. If returend to the <a href="#trooper" title="Trooper">trooper&#39;s</a> base, being the spawn position of their team&#39;s <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a>, the enemy <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> will be captured. Once captured, a <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> will return back to its base. If eliminated while carrying a <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a>, the <a href="/api/KaijuSolutions.Agents.Exercises.CTF.Flag.html" title="Flag">flag</a> will be dropped for other <a href="#trooper" title="Trooper">troopers</a> to interact with.</li>
+</ol>
+</li>
+</ol>
+<h2 id="spawn-point">Spawn Point</h2>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.SpawnPoint.html" title="SpawnPoint"><code>SpawnPoint</code> components</a> indicate where <a href="#trooper" title="Trooper">troopers</a> can spawn. Spawns are chosen by positions that are open first, and then those which are closest to the center of the level.</p>
+<h2 id="capture-the-flag-manager">Capture the Flag Manager</h2>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.CTF.CaptureTheFlagManager.html" title="CaptureTheFlagManager"><code>CaptureTheFlagManager</code></a> handles the configuration for the exercise.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">© 2025</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

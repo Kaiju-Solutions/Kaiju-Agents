@@ -1624,7 +1624,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "8Tm/sE+PEFpe3jcoc/eiU817FVAhxIABYujEwFoMJmg="
+          "hash": "Z1mnOKA0RGJUo4bbqX3uBIIjr1jE4m1p02v3rcKgIYM="
         }
       },
       "is_incremental": false,
@@ -1648,7 +1648,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/actuators.html",
-          "hash": "YTyuhp9kWG4yV/oas9sF2MqoyMKr+aEgpILtkTCTdeY="
+          "hash": "SMAJM3Kj7a22vqijhonVZ5n0wHQ9t3jv05OmxBXd0n4="
         }
       },
       "is_incremental": false,
@@ -1660,7 +1660,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/agents.html",
-          "hash": "pQsLjjOSiEONYU30WHmRxfoc9Wx3TVvI5hzyusEJbvc="
+          "hash": "QRgkVnz0y2bp1IGK8QWmYo4MPzeX03BFAKMfxrgHgdU="
         }
       },
       "is_incremental": false,
@@ -1668,11 +1668,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/box-destroyer.md",
+      "source_relative_path": "manual/capture-the-flag.md",
       "output": {
         ".html": {
-          "relative_path": "manual/box-destroyer.html",
-          "hash": "A4K9c7/YvDeV/6vlxxvxCqDU1PMEoybqZ7cbhshPrUk="
+          "relative_path": "manual/capture-the-flag.html",
+          "hash": "YVZEkvI7e9va8StsxwkrTlbf5L600rjmd6atFc3k7xg="
         }
       },
       "is_incremental": false,
@@ -1684,7 +1684,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/cleaner.html",
-          "hash": "pPGCZNWmwWtshYC65+apPVVTcHBYrUfFSOYyfXviBEM="
+          "hash": "E79lvj4uHI5Kny+DbrdvcHSFOhFiKVg6YN74zi8n8mk="
         }
       },
       "is_incremental": false,
@@ -1696,7 +1696,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/components.html",
-          "hash": "8zUgMXeMfi5xRsAxEWyFbKS3Zab9xfMZw4WpGLOYAk8="
+          "hash": "+dlsSVcUy2WXuhn8iMijcqtmn8rjXOEWn9sag0iW4UU="
         }
       },
       "is_incremental": false,
@@ -1708,7 +1708,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/controllers.html",
-          "hash": "tlHZgg0i9iJlk/nQN8XaavB5N5HYDvyn8IvQ21mhH58="
+          "hash": "CKdr/dUmEXeHjgUQfgM8IutrDV+pd1qnxHCg8AsZT2U="
         }
       },
       "is_incremental": false,
@@ -1720,19 +1720,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/developer-ui.html",
-          "hash": "Ud74a45e6UtXsQB87nkzXVJt2wUuaN4CXJ1s2iOOHXc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "manual/exercises.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/exercises.html",
-          "hash": "hILTCr8v+GDiD5lA5h5i8fCHFKMkK+CbjmLnRKIlTxY="
+          "hash": "0IhhThac6Y2tSVsXYMcdjidncC5GcwrH+8TIUiHELY4="
         }
       },
       "is_incremental": false,
@@ -1744,7 +1732,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/extensions.html",
-          "hash": "/0u8A9smYpi+Wh1qjsv+lRmXR0uC+Vz7/XaRLOIcJ+A="
+          "hash": "EMzO784Iuvjv3+VON7gXRcIQA4AfP4GLyNTWtIcLJ2Y="
         }
       },
       "is_incremental": false,
@@ -1756,19 +1744,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/getting-started.html",
-          "hash": "EJs5G1hv0sDBuCiyy1S3gihDoeu0HdxGUzQMkRTqJX8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "manual/keyboard.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/keyboard.html",
-          "hash": "EWp6MJcXXspv14AqMea/rC8BMiVHmVuCRcG/S+v7dW4="
+          "hash": "SbqzAeoY1e4yMjIWPUWgJV6m5S9CLmuh85TysNDJapk="
         }
       },
       "is_incremental": false,
@@ -1780,7 +1756,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/manager.html",
-          "hash": "0wJcA8RHaopBPD5mDXPdtBO2VgZeN2xft7dG5UmkpxE="
+          "hash": "24dlsyXeUP5Fnk7iYr/431yISAuyChSA+A2kVJaIP5M="
         }
       },
       "is_incremental": false,
@@ -1792,7 +1768,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/microbes.html",
-          "hash": "hVvUF5vpnkAoU2Nd3drx8pxTi35WBst6FwOHRjikvcM="
+          "hash": "aS9Ox5Yqa1XRq0d3BCVor2wYDU6jELZoRiPZe41I1Dc="
         }
       },
       "is_incremental": false,
@@ -1804,7 +1780,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/movement.html",
-          "hash": "s0uTseg3Nm+RvWkh+y5Rowt+cDIccygVcoNdBCUzEZQ="
+          "hash": "O+/klEBN2SEsR+exeY19TtlIRFdXTlg7NfyIdTgbXF0="
         }
       },
       "is_incremental": false,
@@ -1812,23 +1788,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "manual/sample-movement.md",
+      "source_relative_path": "manual/samples-and-exercises.md",
       "output": {
         ".html": {
-          "relative_path": "manual/sample-movement.html",
-          "hash": "/+7HVDZnyGytGzQV7ksUFsMWyXc+Aa2JjMWycT3mun0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "manual/samples.md",
-      "output": {
-        ".html": {
-          "relative_path": "manual/samples.html",
-          "hash": "pbgYjbtHa0HnWzDavjVUeGJ6t5uxMq/hm+YDIHzZRUg="
+          "relative_path": "manual/samples-and-exercises.html",
+          "hash": "n3NLqsNMG+SQtMI8v4w93aW0rABqV9zwFxERV4b/nFI="
         }
       },
       "is_incremental": false,
@@ -1840,22 +1804,19 @@
       "output": {
         ".html": {
           "relative_path": "manual/sensors.html",
-          "hash": "IHbEUGeJFRzoex1Rt0kNY1CoXAam4jQPGV4yxta+AL0="
+          "hash": "LOyWQ5Vlu3DV8UuNxrhbtCCIlqw2voVLit72EmgjLCU="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "manual/toc.yml",
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "pBb/9eE6/5+DOwtK5IkXVYMYbgumK1Gc3zOGeNenxv4="
+          "hash": "NZvQFwQoA7KILYj6KhuUp/8gNGWQOIM1JExvT4Z+4Fc="
         }
       },
       "is_incremental": false,
@@ -1913,7 +1874,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 21,
+          "total_file_count": 18,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

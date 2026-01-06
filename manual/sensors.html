@@ -79,15 +79,15 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="sensors">Sensors</h1>
 
-<p>Documentation coming soon.</p>
+<p>Sensors are all extended from the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuSensor.html" title="KaijuSensor"><code>KaijuSensor</code> class</a> implementing the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Run" title="KaijuSensor - Run"><code>Run()</code> method</a>. Sensors must be directly attached to or within the child <a href="https://docs.unity3d.com/Manual/class-GameObject.html" title="GameObject" target="_blank">GameObjects</a> of an <a href="/manual/agents.md" title="Agents">agent</a>. Sensors can be run either automatically or manually executed via the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Sense" title="KaijuSensor - Sense"><code>Sense()</code> method</a>.</p>
 <h2 id="vision-sensor">Vision Sensor</h2>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html" title="KaijuVisionSensor"><code>KaijuVisionSensor</code></a> is the base class for implementing vision detecting for a specific <a href="https://docs.unity3d.com/Manual/Components.html" title="Component" target="_blank">component</a> type. It allows for setting a view distance, view angle, and if line-of-sight checks should be performed. If line-of-sight checks are disabled, any objects of the <a href="https://docs.unity3d.com/Manual/Components.html" title="Component" target="_blank">component</a> type in the viewing area defined by the distance and angle will be detected. All detected items can be accessed via the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed" title="KaijuVisionSensor - Observed"><code>Observed</code> property</a>.</p>
 <h3 id="agents-vision-sensor">Agents Vision Sensor</h3>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html" title="KaijuAgentsVisionSensor"><code>KaijuAgentsVisionSensor</code></a> is an implementation of the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html" title="KaijuVisionSensor"><code>KaijuVisionSensor</code></a> for detecting all <a href="/manual/agents.html" title="Agents">agents</a>. This can optionally choose to query for only specific <a href="/manual/agents.html" title="Agents">agents</a> based on identifiers. </p>
 <h3 id="everything-vision-sensor">Everything Vision Sensor</h3>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html" title="KaijuEverythingVisionSensor"><code>KaijuEverythingVisionSensor</code></a> checks for all objects in the scene. You can filter by name to get specific <a href="https://docs.unity3d.com/Manual/class-transform.html" title="Transform" target="_blank">transforms</a>.</p>
 <h2 id="cast-sensor">Cast Sensor</h2>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html" title="KaijuCastSensor"><code>KaijuCastSensor</code></a> works by casting a set number of rays for a set distance evenly spread out over a set angle. What the rays hit can be accessed via the <a href="/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits" title="KaijuCastSensor - Hits"><code>Hits</code> property</a>.</p>
 </article>
           </div>
           

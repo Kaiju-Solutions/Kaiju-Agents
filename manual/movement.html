@@ -79,25 +79,27 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="movement">Movement</h1>
 
-<p>Documentation coming soon.</p>
+<p>Movements control how <a href="/manual/agents.md" title="Agents">agents</a> move through the world. For setting movement behaviours on <a href="/manual/agents.md" title="Agents">agents</a>, see the <a href="/manual/agents.md#movement" title="Agents">movement section of the agents documentation</a>.</p>
 <h2 id="configuration">Configuration</h2>
-<p>Documentation coming soon.</p>
-<h2 id="seek">Seek</h2>
-<p>Documentation coming soon.</p>
-<h2 id="pursue">Pursue</h2>
-<p>Documentation coming soon.</p>
-<h2 id="flee">Flee</h2>
-<p>Documentation coming soon.</p>
-<h2 id="evade">Evade</h2>
-<p>Documentation coming soon.</p>
-<h2 id="wander">Wander</h2>
-<p>Documentation coming soon.</p>
-<h2 id="separation">Separation</h2>
-<p>Documentation coming soon.</p>
-<h2 id="obstacle-avoidance">Obstacle Avoidance</h2>
-<p>Documentation coming soon.</p>
-<h2 id="path-following">Path Following</h2>
-<p>Documentation coming soon.</p>
+<p>A <a href="/api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html" title="KaijuMovementConfiguration"><code>KaijuMovementConfiguration</code> ScriptableObject</a> can be assigned to an <a href="/manual/agents.md" title="Agents">agent</a> to control the default parameters of the various movement behaviours. To create a <a href="/api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html" title="KaijuMovementConfiguration"><code>KaijuMovementConfiguration</code></a>, right click in the <a href="https://docs.unity3d.com/Manual/ProjectView.html" title="Project Window" target="_blank">project window</a> and go to &quot;Create &gt; Kaiju Solutions &gt; Agents &gt; Kaiju Movement Configuration&quot; and name the file. Then, assign it to your <a href="/manual/agents.md" title="Agents">agent</a> in the <a href="https://docs.unity3d.com/Manual/UsingTheInspector.html" title="Inspector Window" target="_blank">inspector</a>.</p>
+<h2 id="types">Types</h2>
+<p>The following movement types are provided with Kaiju Agents. Each has corresponding methods on <a href="/manual/agents.md" title="Agents">agent</a> to perform the given movement.</p>
+<h3 id="seek">Seek</h3>
+<p>Move directly towards a target. It is the inverse of <a href="#flee" title="Flee">flee</a>.</p>
+<h3 id="pursue">Pursue</h3>
+<p>Moves towards a target&#39;s calculated future position based on extrapolating where it will be in the future given its current and past position. The movement towards this calculated future position is the same as a <a href="#seek" title="Seek">seek</a> movement. It is the inverse of <a href="#evade" title="Evade">evade</a>.</p>
+<h3 id="flee">Flee</h3>
+<p>Move directly away from a target. It is the inverse of <a href="#seek" title="Seek">seek</a>.</p>
+<h3 id="evade">Evade</h3>
+<p>Moves away from a target&#39;s calculated future position based on extrapolating where it will be in the future given its current and past position. The movement away from this calculated future position is the same as a <a href="#flee" title="Flee">flee</a> movement. It is the inverse of <a href="#pursue" title="Pursue">pursue</a>.</p>
+<h3 id="wander">Wander</h3>
+<p>This will randomly move the agent based on choosing a random point along a circle&#39;s circumference which is projected a given distance ahead of it. This movement towards the random point is the same as <a href="#seek" title="Seek">seek</a>.</p>
+<h3 id="separation">Separation</h3>
+<p>Separation aims to maintain a radius of space from other <a href="/manual/agents.md" title="Agents">agents</a>. A position based on all other <a href="/manual/agents.md" title="Agents">agents</a> currently currently within its separation radius is calculated at which point a weighted <a href="#seek" title="Seek">seek</a> is performed to reach it.</p>
+<h3 id="obstacle-avoidance">Obstacle Avoidance</h3>
+<p>Obstacle avoidance casts rays to detect obstacles. If one is detected, the normal of the closest ray is used to calculate a point away from the obstacle for the <a href="/manual/agents.md" title="Agents">agent</a> to <a href="#seek" title="Seek">seek</a> to.</p>
+<h3 id="path-following">Path Following</h3>
+<p>Path following calculates a path towards a target and the performs subsequent <a href="#seek" title="Seek">seek</a> movements on each point along the path. This requires navigation data to be baked in the world. To learn more, see the <a href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@latest" title="AI Navigation" target="_blank">Unity AI navigation documentation</a>.</p>
 </article>
           </div>
           

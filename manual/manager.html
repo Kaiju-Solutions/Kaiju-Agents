@@ -79,7 +79,13 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="manager">Manager</h1>
 
-<p>Documentation coming soon.</p>
+<p>All scenes will also have an agent manager which is automatically added to the scene as needed. This is a <a href="https://en.wikipedia.org/wiki/Singleton_pattern" title="Singleton Pattern" target="_blank">singleton</a> meaning only one instance ever exists. This caches <a href="/manual/agents.html" title="Agents">agents</a> in the scene for quick access, spawning, and despawning of agents.</p>
+<p>The manager is responsible for controlling all the <a href="/manual/agents.html" title="Agents">agents</a> in the scene. Every <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html" target="_blank"><code>FixedUpdate()</code></a> the manager will in order:</p>
+<ol>
+<li>Run all automatic <a href="/manual/sensors.html" title="Sensors">sensors</a> on all <a href="/manual/agents.html" title="Agents">agents</a>.</li>
+<li>Run any <a href="/manual/actuators.html" title="Actuators">actuators</a> which have been set to do so.</li>
+<li>Calculate the update <a href="/manual/movement.html" title="Movement">movement</a> velocity of all agents.</li>
+</ol>
 </article>
           </div>
           

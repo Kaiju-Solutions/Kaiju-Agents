@@ -79,21 +79,21 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="microbes">Microbes</h1>
 
-<p>Documentation coming soon.</p>
+<p>This exercise puts you in charge of designing <a href="#microbe" title="Microbe">microbes</a> which can mate with and eat each other.</p>
 <h2 id="microbe-controller">Microbe Controller</h2>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeController.html" title="MicrobeController"><code>MicrobeController</code> component</a> is provided to be a starting point for you to implement your behaviour design in for the <a href="#microbe" title="Microbe">microbes</a>.</p>
 <h2 id="microbe">Microbe</h2>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe"><code>Microbe</code> component</a> contains all aspects of the <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbes</a> for this exercise. <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">Microbes</a> require energy to survive, and it will decay at a given rate over time. Once a <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> hits <code>0</code> energy, it will be despawned. Each <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> has a unique <a href="/manual/agents.html#identifiers" title="Identifiers">identifier</a> corresponding to their color. <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">Microbes</a> can mate with other <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbes</a> that have the same <a href="/manual/agents.html#identifiers" title="Identifiers">identifier</a> as them, and can eat <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbes</a> with different identifiers. Mating has a cooldown timer, and eating another <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> requires having more energy than the other <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbes</a>. Eating another <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> will add that <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a>&#39;s energy to the energy of the <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> which ate it. A newly spawned <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html" title="Microbe">microbe</a> as a result of mating will have an energy level equal to the average of its two parents. Mating and eating are both automatically handled when microbes collide with each other.</p>
 <h2 id="energy-pickup">Energy Pickup</h2>
-<p>Documentation coming soon.</p>
+<p><a href="/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html" title="EnergyPickup"><code>EnergyPickup</code></a> instances randomly spawn around the level, and when a <a href="#microbe" title="Microbe">microbe</a> makes contact with one it will add a given energy level to the <a href="#microbe" title="Microbe">microbe</a>. After being used by a <a href="#microbe" title="Microbe">microbe</a>, the <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html" title="EnergyPickup">energy pickup</a> will despawn.</p>
 <h2 id="sensors">Sensors</h2>
-<p>Documentation coming soon.</p>
+<p>Two <a href="/manual/sensors.html" title="Sensors">sensors</a> have been provided to help you with your development. Each of these sensors have already been attached to the <a href="#microbe" title="Microbe">microbe</a> prefab.</p>
 <h3 id="microbe-vision-sensor">Microbe Vision Sensor</h3>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeVisionSensor.html" title="MicrobeVisionSensor"><code>MicrobeVisionSensor</code></a> allows for detecting other <a href="#microbe" title="Microbe">microbes</a>.</p>
 <h3 id="energy-vision-sensor">Energy Vision Sensor</h3>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyVisionSensor.html" title="EnergyVisionSensor"><code>EnergyVisionSensor</code></a> allows for detecting <a href="#energy-pickup" title="Energy Pickups">energy pickups</a>.</p>
 <h2 id="microbe-manager">Microbe Manager</h2>
-<p>Documentation coming soon.</p>
+<p>The <a href="/api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html" title="MicrobeManager"><code>MicrobeManager</code></a> handles the configuration for the exercise.</p>
 </article>
           </div>
           
