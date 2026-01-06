@@ -12,7 +12,7 @@ The [`Microbe` component](https://agents.kaijusolutions.ca/api/KaijuSolutions.Ag
 
 ## Energy Pickup
 
-[`EnergyPickup`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html "EnergyPickup") instances randomly spawn around the level, and when a [microbe](#microbe "Microbe") makes contact with one it will add a given energy level to the [microbe](#microbe "Microbe").
+[`EnergyPickup`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html "EnergyPickup") instances randomly spawn around the level, and when a [microbe](#microbe "Microbe") makes contact with one it will add a given energy level to the [microbe](#microbe "Microbe"). After being used by a [microbe](#microbe "Microbe"), the [energy pickup](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html "EnergyPickup") will despawn.
 
 ## Sensors
 

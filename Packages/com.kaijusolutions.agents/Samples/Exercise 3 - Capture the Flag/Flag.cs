@@ -190,6 +190,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             // If this is the same team, the flag is being returned.
             if (trooper.TeamOne == TeamOne)
             {
+                // Nothing to return if already at the correct base.
+                if (_position == Position)
+                {
+                    return false;
+                }
+                
                 Return();
             }
             else
