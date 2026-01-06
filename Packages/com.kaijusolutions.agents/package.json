@@ -5,7 +5,7 @@
 	"unity": "6000.3",
 	"description": "Rapidly prototype AI agents.",
 	"dependencies": {
-		"com.unity.modules.ai": "latest",
+		"com.unity.ai.navigation": "2.0.9",
 		"com.unity.inputsystem": "1.17.0"
 	},
 	"author": {
