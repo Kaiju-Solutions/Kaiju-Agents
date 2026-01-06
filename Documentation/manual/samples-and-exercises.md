@@ -30,3 +30,7 @@ This provides a sample scene of an agent which is tasked with destroying "boxes"
 ## Exercises
 
 Several exercises tailored to help you learn Kaiju Agents or use in an education environment are provided. Each exercise is more complicated than the last, providing an efficient learning experience for Kaiju Agents.
+
+1. [Cleaner](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner")
+2. [Microbes](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes")
+3. [Capture the Flag](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag")

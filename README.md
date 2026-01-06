@@ -32,7 +32,8 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
 2. Install [Unity](https://unity.com/download "Unity Download") version 6.3+
 3. Create a new Unity project or open an existing one.
     - Alternatively, see the [template project](#template-project "Template Project").
-4. In Unity, from the top menu, go to `Window > Package Management > Package Manager` and click the `+` icon in the top left followed by `Install package from git URL...`. Paste in one of the below options:
+4. In Unity, from the top menu, go to `Window > Package Management > Package Manager` and click the `+` icon in the top left followed by `Install package from git URL...`.
+5. Paste in one of the below options:
 
 #### Latest Release - Recommended
 
