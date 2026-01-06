@@ -2,6 +2,8 @@
 
 This exercise pits two teams of [troopers](#trooper "Trooper") against each other in a game of capture the flag.
 
+![Capture the Flag](https://agents.kaijusolutions.ca/img/capture-the-flag.png)
+
 ## Trooper Controller
 
 The [`TrooperController` component](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.CTF.TrooperController.html "TrooperController") is provided to be a starting point for you to implement your behaviour design in for the [troopers](#trooper "Trooper").

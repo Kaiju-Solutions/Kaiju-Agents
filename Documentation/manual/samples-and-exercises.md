@@ -27,6 +27,8 @@ This sample provides a scene with an agent that can be controlled with a keyboar
 
 This provides a sample scene of an agent which is tasked with destroying "boxes". The agent demonstrates the use of an [everything vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#everything-vision-sensor "Everything Vision Sensor") and an [everything attack actuator](https://agents.kaijusolutions.ca/manual/actuator.html#everything-attack-actuator "Everything Attack Actuator") being controlled by a [controller](https://agents.kaijusolutions.ca/manual/controllers.html "Controllers").
 
+![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)
+
 ## Exercises
 
 Several exercises tailored to help you learn Kaiju Agents or use in an education environment are provided. Each exercise is more complicated than the last, providing an efficient learning experience for Kaiju Agents.

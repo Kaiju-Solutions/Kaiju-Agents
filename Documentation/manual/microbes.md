@@ -2,6 +2,8 @@
 
 This exercise puts you in charge of designing [microbes](#microbe "Microbe") which can mate with and eat each other.
 
+![Microbes](https://agents.kaijusolutions.ca/img/microbes.png)
+
 ## Microbe Controller
 
 The [`MicrobeController` component](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeController.html "MicrobeController") is provided to be a starting point for you to implement your behaviour design in for the [microbes](#microbe "Microbe").

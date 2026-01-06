@@ -2,6 +2,8 @@
 
 **Framework to quickly prototype AI agents in Unity aimed at researchers and educators.**
 
+[![Getting Started](https://agents.kaijusolutions.ca/img/movement.png)](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started")
+
 Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
 - Modularized sensor-agent-actuator framework to allow for dynamic agent customization.
@@ -60,3 +62,11 @@ The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agen
 ## Next Steps
 
 See the [getting started documentation](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started") to get up and running with Kaiju Agents.
+
+[![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)](https://agents.kaijusolutions.ca/manual/box-destroyer.html "Box Destroyer")
+
+[![Cleaner](https://agents.kaijusolutions.ca/img/cleaner.png)](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner")
+
+[![Microbes](https://agents.kaijusolutions.ca/img/microbes.png)](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes")
+
+[![Capture the Flag](https://agents.kaijusolutions.ca/img/capture-the-flag.png)](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag")

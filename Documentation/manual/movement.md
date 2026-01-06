@@ -2,6 +2,8 @@
 
 Movements control how [agents](https://agents.kaijusolutions.ca/manual/agents.md "Agents") move through the world. For setting movement behaviours on [agents](https://agents.kaijusolutions.ca/manual/agents.md "Agents"), see the [movement section of the agents documentation](https://agents.kaijusolutions.ca/manual/agents.md#movement "Agents").
 
+![Movements](https://agents.kaijusolutions.ca/img/movement.png)
+
 ## Configuration
 
 A [`KaijuMovementConfiguration` ScriptableObject](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html "KaijuMovementConfiguration") can be assigned to an [agent](https://agents.kaijusolutions.ca/manual/agents.md "Agents") to control the default parameters of the various movement behaviours. To create a [`KaijuMovementConfiguration`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html "KaijuMovementConfiguration"), right click in the [project window](https://docs.unity3d.com/Manual/ProjectView.html "Project Window") and go to "Create > Kaiju Solutions > Agents > Kaiju Movement Configuration" and name the file. Then, assign it to your [agent](https://agents.kaijusolutions.ca/manual/agents.md "Agents") in the [inspector](https://docs.unity3d.com/Manual/UsingTheInspector.html "Inspector Window").
