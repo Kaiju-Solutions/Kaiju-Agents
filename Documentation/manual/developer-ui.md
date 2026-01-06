@@ -1,3 +1,3 @@
 ﻿# Developer UI
 
-Documentation coming soon.
+The [`KaijuDeveloperUI` component](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuDeveloperUI.html "KaijuDeveloperUI") can be aded to a scene to provide basic controls. On the left side, it will display controls to change cameras if there are multiple in the scene. On the right, there will be a button to reload the current scene or switch to other scenes currently in the [build settings](https://docs.unity3d.com/Manual/BuildSettings.html "Build Settings"). This can be useful for exporting builds to share which contain multiple scenes.
