@@ -1,3 +1,3 @@
 ﻿# Extensions
 
-Documentation coming soon.
+Kaiju Agents comes packed with a useful [extension methods API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Extensions.html "Extensions API") for working with vectors, positions, rotations, distances, area-checks, line-of-sight, and more. See the [extension methods API documentation](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Extensions.html "Extensions API") of each class to learn more about the methods contained within them.

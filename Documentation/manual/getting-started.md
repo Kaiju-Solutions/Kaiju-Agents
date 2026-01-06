@@ -10,7 +10,7 @@ If you wish to work with pathfinding and navigation, it is recommended you insta
 
 ## Samples
 
-If this is your first time using Kaiju Agents, it is recommended you explore the provided [samples](https://agents.kaijusolutions.ca/manual/samples.html "Samples"). See the [samples documentation](https://agents.kaijusolutions.ca/manual/samples.html "Samples") for instructions on importing them to your project. If you downloaded the [template project](https://agents.kaijusolutions.ca/#template-project "Template Project"), these will already been in the assets folder.
+If this is your first time using Kaiju Agents, it is recommended you explore the provided [samples](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html "Samples and Exercises"). See the [samples documentation](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html "Samples") for instructions on importing them to your project. If you downloaded the [template project](https://agents.kaijusolutions.ca/#template-project "Template Project"), these will already been in the assets folder.
 
 ## Next Steps
 
@@ -18,7 +18,7 @@ To add your first agent into a scene, right click in the [hierarchy window](http
 
 ## Exercises
 
-Once you are familiar with the various [components](https://agents.kaijusolutions.ca/manual/components.html "Components") provided by Kaiju Agents, for practice you can try completing [several exercises](https://agents.kaijusolutions.ca/manual/exercises.html "Exercises"). Each [exercise](https://agents.kaijusolutions.ca/manual/exercises.html "Exercises") is more complicated than the last, providing an efficient learning experience for Kaiju Agents.
+Once you are familiar with the various [components](https://agents.kaijusolutions.ca/manual/components.html "Components") provided by Kaiju Agents, for practice you can try completing [several exercises](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html "Exercises"). Each [exercise](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html "Exercises") is more complicated than the last, providing an efficient learning experience for Kaiju Agents.
 
 ## Exporting
 

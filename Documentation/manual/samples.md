@@ -1,3 +1,0 @@
-﻿# Samples
-
-Documentation coming soon.

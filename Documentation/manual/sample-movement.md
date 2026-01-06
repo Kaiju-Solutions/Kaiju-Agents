@@ -1,3 +1,0 @@
-﻿# Movement
-
-Documentation coming soon.

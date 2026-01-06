@@ -20,17 +20,8 @@ items:
   href: movement.md
 - name: Extensions
   href: extensions.md
-- name: Samples
-  href: samples.md
-  items:
-    - name: Movement
-      href: sample-movement.md
-    - name: Keyboard
-      href: keyboard.md
-    - name: Box Destroyer
-      href: box-destroyer.md
-- name: Exercises
-  href: exercises.md
+- name: Samples and Exercises
+  href: samples-and-exercises.md
   items:
     - name: Cleaner
       href: cleaner.md

@@ -22,7 +22,7 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
 - Powerful extension methods to speed up your development.
   - Helpful methods to easy work with vectors, positions, rotations, distances, area-checks, line-of-sight, and more.
 - Samples and exercises.
-  - Sample scenes provided showcasing all agent movements and an example full agent controller.
+  - Sample scenes provided showcasing all agent movements and an example agent controller.
   - Several exercises tailored to help you learn Kaiju Agents or use in an education environment.
 
 ## Installation
