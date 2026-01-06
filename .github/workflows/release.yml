@@ -1,13 +1,12 @@
 name: Deploy Package to Release Branch
 
 on:
-  #workflow_dispatch:
-  
+  workflow_dispatch:
   push:
     tags:
       - '[0-9]*'
-    #branches:
-    #  - main 
+    paths:
+      - 'Packages/com.kaijusolutions.agents/**'
 
 jobs:
   deploy:
@@ -16,10 +15,14 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Delete Remote Tag (Pre-move)
+      
+      # Delete the tag from the remote so we can move it to the release branch.
+      - name: Delete Remote Tag
         if: github.ref_type == 'tag'
         run: |
           git push origin --delete ${{ github.ref_name }}
+
+      # Push the code to the 'release' branch and re-apply the tag there.
       - name: Push Package to 'release' branch
         uses: s0/git-publish-subdir-action@develop
         env:
@@ -28,5 +31,31 @@ jobs:
           FOLDER: Packages/com.kaijusolutions.agents
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "ver: {msg}"
-          # If triggered by a tag, use that tag. If manual, leave tag empty.
           TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+
+      # Determine prerelease status.
+      - name: Check if Prerelease
+        if: github.ref_type == 'tag'
+        run: |
+          if [[ "${{ github.ref_name }}" =~ [^0-9]$ ]] || [[ "${{ github.ref_name }}" =~ -rc ]]; then
+            echo "IS_PRE=true" >> $GITHUB_ENV
+            echo "Status: Prerelease detected."
+          else
+            echo "IS_PRE=false" >> $GITHUB_ENV
+            echo "Status: Production release detected."
+          fi
+
+      # Create the release.
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
+          prerelease: ${{ env.IS_PRE == 'true' }}
+          body: |            
+            To install this package in Unity, add the following URL to Package Manager:
+            `https://github.com/Kaiju-Solutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents#${{ github.ref_name }}`
+            See release notes at: [https://agents.kaijusolutions.ca/changelog](https://agents.kaijusolutions.ca/changelog "Kaiju Agents Changelog")
+          generate_release_notes: false
+          draft: false
