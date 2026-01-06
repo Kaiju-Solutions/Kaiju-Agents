@@ -16,6 +16,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Delete Remote Tag (Pre-move)
+        if: github.ref_type == 'tag'
+        run: |
+          git push origin --delete ${{ github.ref_name }}
       - name: Push Package to 'release' branch
         uses: s0/git-publish-subdir-action@develop
         env:
