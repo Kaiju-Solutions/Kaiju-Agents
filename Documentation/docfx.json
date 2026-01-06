@@ -5,11 +5,10 @@
                 {
                     "src": "..",
                     "files": [
-                        "Assets/**/*.cs",
                         "Packages/**/*.cs"
                     ],
                     "exclude": [
-                        "Assets/Plugins/**"
+                        "Assets/**/*.cs",
                     ]
                 }
             ],
