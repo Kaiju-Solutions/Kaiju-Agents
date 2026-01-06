@@ -1,0 +1,236 @@
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
+
+namespace KaijuSolutions.Agents.Extensions
+{
+    /// <summary>
+    /// Standalone flee steering extension methods.
+    /// </summary>
+    public static class KaijuAgentsFlee
+    {
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector2 position, Vector2 target, float speed) => target.Seek(position, speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector2 position, Vector3 target, float speed) => position.Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector2 position, [NotNull] Transform target, float speed) => position.Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector2 position, [NotNull] Component target, float speed) => position.Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector2 position, [NotNull] GameObject target, float speed) => position.Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector3 position, Vector2 target, float speed) => position.Flatten().Flee(target, speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector3 position, Vector3 target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector3 position, [NotNull] Transform target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector3 position, [NotNull] Component target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee(this Vector3 position, [NotNull] GameObject target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Transform position, Vector2 target, float speed) => position.Flatten().Flee(target, speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Transform position, Vector3 target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Transform position, [NotNull] Transform target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Transform position, [NotNull] Component target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Transform position, [NotNull] GameObject target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Component position, Vector2 target, float speed) => position.Flatten().Flee(target, speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Component position, Vector3 target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Component position, [NotNull] Transform target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Component position, [NotNull] Component target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this Component position, [NotNull] GameObject target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this GameObject position, Vector2 target, float speed) => position.Flatten().Flee(target, speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this GameObject position, Vector3 target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this GameObject position, [NotNull] Transform target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this GameObject position, [NotNull] Component target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+        
+        /// <summary>
+        /// Calculate a flee behaviour.
+        /// </summary>
+        /// <param name="position">The current position of the instance to calculate the movement for.</param>
+        /// <param name="target">The target to move in relation to.</param>
+        /// <param name="speed">The maximum speed that the position can update at.</param>
+        /// <returns>The calculated movement.</returns>
+        public static Vector2 Flee([NotNull] this GameObject position, [NotNull] GameObject target, float speed) => position.Flatten().Flee(target.Flatten(), speed);
+    }
+}

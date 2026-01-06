@@ -1,0 +1,17 @@
+{
+    "name": "com.kaijusolutions.agents.editor",
+    "references": [
+      "com.kaijusolutions.agents"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

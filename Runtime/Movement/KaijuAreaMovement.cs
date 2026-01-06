@@ -1,0 +1,185 @@
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+namespace KaijuSolutions.Agents.Movement
+{
+    /// <summary>
+    /// <see cref="KaijuMovement"/> which looks for handling other <see cref="KaijuAgent"/>s in a given area.
+    /// </summary>
+    public abstract class KaijuAreaMovement : KaijuMovement
+    {
+        /// <summary>
+        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// </summary>
+        public float Distance
+        {
+            get => _distance;
+            set => _distance = Mathf.Max(value, float.Epsilon);
+        }
+        
+        /// <summary>
+        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// </summary>
+        private float _distance = float.MaxValue;
+        
+        /// <summary>
+        /// What types of <see cref="KaijuAgent"/>s to avoid.
+        /// </summary>
+        public readonly HashSet<uint> Identifiers = new();
+        
+        /// <summary>
+        /// Clear all identifiers of <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        public void ClearIdentifiers()
+        {
+            Identifiers.Clear();
+        }
+        
+        /// <summary>
+        /// Set the identifier of <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifier">The identifier to set.</param>
+        public void SetIdentifier(uint identifier)
+        {
+            ClearIdentifiers();
+            AddIdentifier(identifier);
+        }
+        
+        /// <summary>
+        /// Set the identifier of <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifiers">The identifiers to set.</param>
+        public void SetIdentifiers([NotNull] ICollection<uint> identifiers)
+        {
+            ClearIdentifiers();
+            AddIdentifiers(identifiers);
+        }
+        
+        /// <summary>
+        /// Add an identifier for <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifier">The identifier to add.</param>
+        /// <returns>If the identifier was added.</returns>
+        public bool AddIdentifier(uint identifier)
+        {
+            return Identifiers.Add(identifier);
+        }
+        
+        /// <summary>
+        /// Add identifiers for <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifiers">The identifiers to add.</param>
+        /// <returns>If any of the identifiers were added.</returns>
+        public bool AddIdentifiers([NotNull] ICollection<uint> identifiers)
+        {
+            bool added = false;
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (AddIdentifier(identifier))
+                {
+                    added = true;
+                }
+            }
+            
+            return added;
+        }
+        
+        /// <summary>
+        /// Remove an identifier for <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifier">The identifier to remove.</param>
+        /// <returns>If the identifier was removed.</returns>
+        public bool RemoveIdentifier(uint identifier)
+        {
+            return Identifiers.Remove(identifier);
+        }
+        
+        /// <summary>
+        /// Remove identifiers for <see cref="KaijuAgent"/>s to interact with.
+        /// </summary>
+        /// <param name="identifiers">The identifiers to remove.</param>
+        /// <returns>If any of the identifiers were removed.</returns>
+        public bool RemoveIdentifiers([NotNull] ICollection<uint> identifiers)
+        {
+            bool removed = false;
+            
+            foreach (uint identifier in identifiers)
+            {
+                if (RemoveIdentifier(identifier))
+                {
+                    removed = true;
+                }
+            }
+            
+            return removed;
+        }
+        
+        /// <summary>
+        /// Get an area movement.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <returns>Get an area movement for the <see cref="KaijuAgent"/>.</returns>
+        public KaijuAreaMovement(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = DefaultWeight) : base(agent, weight)
+        {
+            Initialize(agent, distance, identifiers, weight);
+        }
+        
+        /// <summary>
+        /// Initialize the <see cref="KaijuMovement"/>.
+        /// </summary>
+        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        protected void Initialize(KaijuAgent agent, float distance = 10, ICollection<uint> identifiers = null, float weight = DefaultWeight)
+        {
+            base.Initialize(agent, weight);
+            Distance = distance;
+            Identifiers.Clear();
+            if (identifiers == null)
+            {
+                return;
+            }
+            
+            foreach (uint identifier in identifiers)
+            {
+                Identifiers.Add(identifier);
+            }
+        }
+        
+        /// <summary>
+        /// Perform any needed reset operations.
+        /// </summary>
+        protected override void Reset()
+        {
+            base.Reset();
+            _distance = float.MaxValue;
+            Identifiers.Clear();
+        }
+#if UNITY_EDITOR
+        /// <summary>
+        /// Render the visualization of the <see cref="KaijuMovement"/>.
+        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// </summary>
+        protected override void EditorRenderVisualizations(Vector3 position)
+        {
+            Handles.DrawWireDisc(position, Vector3.up, Distance, 0);
+        }
+#endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Area Movement - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+        }
+    }
+}
