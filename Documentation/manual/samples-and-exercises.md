@@ -6,7 +6,7 @@
 
 ### Materials
 
-The `Materials` sample simply contains [materials](https://docs.unity3d.com/Manual/class-Material.html "Materials") used throughout the other samples and [exercises](#exercises "Exercises").
+The `Materials` sample simply contains [materials](https://docs.unity3d.com/Manual/class-Material.html "Materials") used throughout the other samples and [exercises](#exercises "Exercises"). If materials appear pink, from the top menu, go to `Window > Rendering > Render Pipeline Converter`, choose `Built-in to URP` or `Built-in to HDRP`, select all materials, click `Initialize Converters`, and lastly click `Convert Assets`.
 
 ### Movement
 

@@ -67,7 +67,7 @@ https://github.com/Kaiju-Solutions/Kaiju-Agents.git#template
 
 See the [getting started documentation](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started") to get up and running with Kaiju Agents.
 
-[![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)](https://agents.kaijusolutions.ca/manual/box-destroyer.html "Box Destroyer")
+[![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#box-destroyer "Box Destroyer")
 
 [![Cleaner](https://agents.kaijusolutions.ca/img/cleaner.png)](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner")
 
