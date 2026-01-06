@@ -1619,12 +1619,67 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "img/box-destroyer.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/box-destroyer.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "img/capture-the-flag.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/capture-the-flag.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "img/cleaner.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/cleaner.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "img/microbes.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/microbes.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "img/movement.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/movement.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Z1mnOKA0RGJUo4bbqX3uBIIjr1jE4m1p02v3rcKgIYM="
+          "hash": "TQd2ToCuGEZL7DSX8Bzmi3uHB18o2X2yVrM4dK6J5fg="
         }
       },
       "is_incremental": false,
@@ -1672,7 +1727,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/capture-the-flag.html",
-          "hash": "YVZEkvI7e9va8StsxwkrTlbf5L600rjmd6atFc3k7xg="
+          "hash": "vFoU16zlr2hGb5O1UyTZC9HZu3ygjA0oRakOfSoBuLs="
         }
       },
       "is_incremental": false,
@@ -1684,7 +1739,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/cleaner.html",
-          "hash": "E79lvj4uHI5Kny+DbrdvcHSFOhFiKVg6YN74zi8n8mk="
+          "hash": "UkW3Z2gghD4AbG+ztWvv+mJNHqYIJTUlz/93hzevUZM="
         }
       },
       "is_incremental": false,
@@ -1744,7 +1799,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/getting-started.html",
-          "hash": "SbqzAeoY1e4yMjIWPUWgJV6m5S9CLmuh85TysNDJapk="
+          "hash": "IZU1hkElSWR9iz8kzIQ7ETC9+rsRI5zlEy+EHipr/qs="
         }
       },
       "is_incremental": false,
@@ -1768,7 +1823,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/microbes.html",
-          "hash": "aS9Ox5Yqa1XRq0d3BCVor2wYDU6jELZoRiPZe41I1Dc="
+          "hash": "1hZyh+pkR6X62a4VT5c1JEVIfAbZBUIymERbD77Rx3Y="
         }
       },
       "is_incremental": false,
@@ -1780,7 +1835,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/movement.html",
-          "hash": "O+/klEBN2SEsR+exeY19TtlIRFdXTlg7NfyIdTgbXF0="
+          "hash": "Mklp0NpBHbqDS8YRnfnVfBEAQrI0olm26p4nGnxiExA="
         }
       },
       "is_incremental": false,
@@ -1792,7 +1847,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/samples-and-exercises.html",
-          "hash": "n3NLqsNMG+SQtMI8v4w93aW0rABqV9zwFxERV4b/nFI="
+          "hash": "iaA4bSoEjaFLcgk8U6PMSErWp6gmeVzGcaNa+koR9eQ="
         }
       },
       "is_incremental": false,
