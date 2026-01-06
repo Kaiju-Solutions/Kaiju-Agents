@@ -5,7 +5,6 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.unity.modules.ai": "latest",
         "com.unity.ai.navigation": "2.0.9",
         "com.unity.inputsystem": "1.17.0"
       }

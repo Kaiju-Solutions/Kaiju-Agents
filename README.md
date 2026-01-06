@@ -49,7 +49,7 @@ Replace the `#release` in the latest release installation with the version numbe
 
 #### Development
 
-This will pull directly from the master branch, and is not recommended unless there is a specific feature needed not yet in the latest release.
+This will pull directly from the main branch, and is not recommended unless there is a specific feature needed not yet in the latest release.
 
 ```text
 https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents

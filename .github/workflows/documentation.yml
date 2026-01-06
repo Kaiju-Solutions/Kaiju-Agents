@@ -4,7 +4,7 @@ on:
   # Run every push.
   #push:
   #  branches:
-  #    - master
+  #    - main
 
   # Manually run from the Actions tab.
   workflow_dispatch:
