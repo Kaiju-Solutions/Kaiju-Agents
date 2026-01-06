@@ -22,7 +22,7 @@
     "build": {
         "globalMetadata": {
             "_appTitle": "Kaiju Agents",
-            "_appFooter": "<a href=\"/license\" href=\"License\">© 2026</a> <a href=\"https://kaijusolutions.ca\" title=\"Kaiju Solutions Inc.\">Kaiju Solutions Inc.</a>",
+            "_appFooter": "<a href=\"/license\" href=\"License\">MIT License © 2026</a> <a href=\"https://kaijusolutions.ca\" title=\"Kaiju Solutions Inc.\">Kaiju Solutions Inc.</a>",
             "_enableSearch": true,
             "_disableContribution": true,
             "_appLogoPath": "logo.svg",

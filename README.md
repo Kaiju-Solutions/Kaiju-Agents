@@ -33,7 +33,7 @@ Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and te
 1. Install [Git](https://git-scm.com/install "Git Download").
 2. Install [Unity](https://unity.com/download "Unity Download") version 6.3+
 3. Create a new Unity project or open an existing one.
-    - Alternatively, see the [template project](#template-project "Template Project").
+  - Alternatively, see the [template project](#template-project "Template Project").
 4. In Unity, from the top menu, go to `Window > Package Management > Package Manager` and click the `+` icon in the top left followed by `Install package from git URL...`.
 5. Paste in one of the below options:
 
@@ -57,7 +57,11 @@ https://github.com/KaijuSolutions/Kaiju-Agents.git?path=/Packages/com.kaijusolut
 
 ## Template Project
 
-The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the template project repository](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") to get started. Note that this still requires you install [Git](https://git-scm.com/install "Git Download") for the project to pull the latest release of Kaiju Agents into itself.
+The [Kaiju Agents template project](https://github.com/KaijuSolutions/Kaiju-Agents-Template "Kaiju Agents Template Project") comes with the latest release of Kaiju Agents installed and minimal other dependencies in the project. Simply [download or clone the template project repository branch](https://github.com/Kaiju-Solutions/Kaiju-Agents.git#template "Kaiju Agents Template Branch") to get started. Note that this still requires you install [Git](https://git-scm.com/install "Git Download") for the project to pull the latest release of Kaiju Agents into itself.
+
+```text
+https://github.com/Kaiju-Solutions/Kaiju-Agents.git#template
+```
 
 ## Next Steps
 
