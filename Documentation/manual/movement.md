@@ -43,3 +43,7 @@ Obstacle avoidance casts rays to detect obstacles. If one is detected, the norma
 ### Path Following
 
 Path following calculates a path towards a target and the performs subsequent [seek](#seek "Seek") movements on each point along the path. This requires navigation data to be baked in the world. To learn more, see the [Unity AI navigation documentation](https://docs.unity3d.com/Packages/com.unity.ai.navigation@latest "AI Navigation").
+
+## Preferences
+
+To change the colors of movement visualizations, from the top menu, go to `Edit > Project Settings` and select `Kaiju Agents`.
