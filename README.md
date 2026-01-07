@@ -4,7 +4,7 @@
 
 [![Getting Started](https://agents.kaijusolutions.ca/img/movement.png)](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started")
 
-Kaiju Agents aims to provide an easy-to-learn yet powerful for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
+Kaiju Agents to provides an easy-to-learn yet powerful framework for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
 - Modularized [sensor](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors")-[agent](https://agents.kaijusolutions.ca/manual/agents.html "Agents")-[actuator](https://agents.kaijusolutions.ca/manual/autuators.html "Actuators") framework to allow for dynamic agent customization.
   - Have sensors run automatically or manually poll them.
