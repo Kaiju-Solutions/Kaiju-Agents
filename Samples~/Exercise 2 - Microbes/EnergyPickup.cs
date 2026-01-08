@@ -81,5 +81,15 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             Active.Remove(this);
             Unactive.Add(this);
         }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            // Ensure no garbage remaining.
+            Active.Remove(this);
+            Unactive.Remove(this);
+        }
     }
 }

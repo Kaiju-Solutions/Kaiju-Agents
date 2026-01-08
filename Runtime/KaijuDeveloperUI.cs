@@ -142,7 +142,7 @@ namespace KaijuSolutions.Agents
             
             // Display a reset button for the current scene first.
             Scene active = SceneManager.GetActiveScene();
-            if (GUI.Button(new(x, current, scenesWidth, Height), "Reset"))
+            if (GUI.Button(new(x, current, scenesWidth, Height), "Reset Scene"))
             {
 #if UNITY_EDITOR
                 // In the editor, our scene might not be in the build, so load it by path.
@@ -152,29 +152,46 @@ namespace KaijuSolutions.Agents
 #endif
             }
             
+            // If there is not enough space, stop.
+            current += Padding + Height;
+            if (current + Padding + Height >= screenHeight)
+            {
+                return;
+            }
+            
             // Display buttons for all other scenes.
             int count = SceneManager.sceneCountInBuildSettings;
-            for (int i = 0; i < count; i++)
+            if (count < 2)
             {
-                // If there is not enough space, stop.
-                if (current + Padding + Height >= screenHeight)
+                return;
+            }
+            
+            // If two scenes, just move between them.
+            if (count == 2)
+            {
+                if (GUI.Button(new(x, current, scenesWidth, Height), "Next Scene"))
                 {
-                    return;
+                    SceneManager.LoadScene(active.buildIndex == 0 ? 1 : 0);
                 }
                 
-                // Ensure this is not the same scene we currently have loaded.
-                Scene scene = SceneManager.GetSceneByBuildIndex(i);
-                if (active == scene)
-                {
-                    continue;
-                }
-                
-                // Display the button.
-                current += Padding + Height;
-                if (GUI.Button(new(x, current, scenesWidth, Height), scene.name))
-                {
-                    SceneManager.LoadScene(i);
-                }
+                return;
+            }
+            
+            if (GUI.Button(new(x, current, scenesWidth, Height), "Next Scene"))
+            {
+                SceneManager.LoadScene(active.buildIndex >= SceneManager.sceneCountInBuildSettings - 1 ? 0 : active.buildIndex + 1);
+            }
+            
+            // If there is not enough space, stop.
+            current += Padding + Height;
+            if (current + Padding + Height >= screenHeight)
+            {
+                return;
+            }
+            
+            if (GUI.Button(new(x, current, scenesWidth, Height), "Previous Scene"))
+            {
+                SceneManager.LoadScene(active.buildIndex <= 0 ? SceneManager.sceneCountInBuildSettings - 1 : active.buildIndex - 1);
             }
         }
         
