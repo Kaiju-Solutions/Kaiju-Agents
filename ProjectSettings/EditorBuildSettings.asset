@@ -4,7 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/1.0.1/Box Destroyer/Box Destroyer.unity
+    guid: 540a32d86e80b0a428bab8ceff6f9a49
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/1.0.1/Exercise 1 - Cleaner/Cleaner.unity
+    guid: 3410ca21c3558ae4aa83ebbc4d862fa8
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/1.0.1/Exercise 2 - Microbes/Microbes.unity
+    guid: a2d4a7a6b6551454c911d2e49e4a7304
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/1.0.1/Exercise 3 - Capture the Flag/Capture
+      the Flag.unity
+    guid: ad41be87da8b22e409e913b55ef495e4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ac2e9bec2e581d54eb5002277b387897, type: 2}
   m_UseUCBPForAssetBundles: 0

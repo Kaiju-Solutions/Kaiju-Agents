@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-#if UNITY_EDITOR
 using UnityEngine;
-#endif
+
 namespace KaijuSolutions.Agents
 {
     /// <summary>

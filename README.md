@@ -33,7 +33,7 @@ Kaiju Agents provides an easy-to-learn yet powerful framework for developing and
 1. Install [Git](https://git-scm.com/install "Git Download").
 2. Install [Unity](https://unity.com/download "Unity Download") version 6.3+
 3. Create a new Unity project or open an existing one.
-   - Alternatively, see the [template project](#template-project "Template Project").
+  - Alternatively, see the [template project](#template-project "Template Project").
 4. In Unity, from the top menu, go to `Window > Package Management > Package Manager` and click the `+` icon in the top left followed by `Install package from git URL...`.
 5. Paste in one of the below options:
 
@@ -67,10 +67,20 @@ https://github.com/Kaiju-Solutions/Kaiju-Agents.git#template
 
 See the [getting started documentation](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started") to get up and running with Kaiju Agents.
 
+# Showcase
+
 [![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#box-destroyer "Box Destroyer")
+
+The ["Box Destroyer" sample](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#box-destroyer "Box Destroyer") provided with Kaiju Agents.
 
 [![Cleaner](https://agents.kaijusolutions.ca/img/cleaner.png)](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner")
 
+The ["Cleaner" exercise](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner") provided by Kaiju Agents.
+
 [![Microbes](https://agents.kaijusolutions.ca/img/microbes.png)](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes")
 
+The ["Microbes" exercise](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes") provided by Kaiju Agents.
+
 [![Capture the Flag](https://agents.kaijusolutions.ca/img/capture-the-flag.png)](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag")
+
+The ["Capture the Flag" exercise](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag") provided by Kaiju Agents.
