@@ -69,6 +69,14 @@ See the [getting started documentation](https://agents.kaijusolutions.ca/manual/
 
 # Showcase
 
+[![Vision Sensor](https://agents.kaijusolutions.ca/img/vision.png)](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "Vision Sensor")
+
+The [vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "Vision Sensor") provided with Kaiju Agents.
+
+[![Cast Sensor](https://agents.kaijusolutions.ca/img/cast.png)](https://agents.kaijusolutions.ca/manual/sensors.html#cast-sensor "Cast Sensor")
+
+The [cast sensor](https://agents.kaijusolutions.ca/manual/sensors.html#cast-sensor "Cast Sensor") provided with Kaiju Agents.
+
 [![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#box-destroyer "Box Destroyer")
 
 The ["Box Destroyer" sample](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#box-destroyer "Box Destroyer") provided with Kaiju Agents.
