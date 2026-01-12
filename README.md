@@ -2,7 +2,7 @@
 
 **Framework to quickly prototype AI agents in Unity aimed at researchers and educators.**
 
-[![Getting Started](https://agents.kaijusolutions.ca/img/movement.png)](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started")
+[![Showcase](https://agents.kaijusolutions.ca/img/movement.png)](#showcase "Showcase")
 
 Kaiju Agents provides an easy-to-learn yet powerful framework for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
