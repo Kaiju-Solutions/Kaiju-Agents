@@ -1642,6 +1642,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "img/cast.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/cast.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "img/cleaner.png",
       "output": {
         "resource": {
@@ -1674,12 +1685,23 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "img/vision.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/vision.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "gmOBCTPOXP37PNSecLXgRrKitEdKrXnU4HtJEkpv+vI="
+          "hash": "fAshw4uN1m9MHFqhPmLR6qFQLIKVn9zqR2xSp65RrPg="
         }
       },
       "is_incremental": false,
@@ -1859,7 +1881,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/sensors.html",
-          "hash": "O7FwiS/s0kpe3WmMyDRu/TdFxE8JdnA1KInu6Vo/irQ="
+          "hash": "92Ex2RIPsNmE8WNgGl07o+JX4OEeitaG7I7S5r/m2L8="
         }
       },
       "is_incremental": false,
