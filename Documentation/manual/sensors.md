@@ -8,7 +8,9 @@ The [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Ag
 
 ### Agents Vision Sensor
 
-The [`KaijuAgentsVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html "KaijuAgentsVisionSensor") is an implementation of the [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html "KaijuVisionSensor") for detecting all [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents"). This can optionally choose to query for only specific [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents") based on identifiers. 
+The [`KaijuAgentsVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html "KaijuAgentsVisionSensor") is an implementation of the [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html "KaijuVisionSensor") for detecting all [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents"). This can optionally choose to query for only specific [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents") based on identifiers.
+
+![Agents Vision Sensor](https://agents.kaijusolutions.ca/img/vision.png)
 
 ### Everything Vision Sensor
 
@@ -17,3 +19,5 @@ The [`KaijuEverythingVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSo
 ## Cast Sensor
 
 The [`KaijuCastSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html "KaijuCastSensor") works by casting a set number of rays for a set distance evenly spread out over a set angle. What the rays hit can be accessed via the [`Hits` property](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits "KaijuCastSensor - Hits").
+
+![Cast Sensor](https://agents.kaijusolutions.ca/img/cast.png)
