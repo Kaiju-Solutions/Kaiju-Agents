@@ -442,6 +442,26 @@ namespace KaijuSolutions.Agents
         private readonly List<KaijuMovement> _movements = new();
         
         /// <summary>
+        /// All movements which have stopped.
+        /// </summary>
+        private readonly HashSet<KaijuMovement> _stopped = new();
+        
+        /// <summary>
+        /// All movements which have been performed.
+        /// </summary>
+        private readonly HashSet<KaijuMovement> _performed = new();
+        
+        /// <summary>
+        /// All stopped movements we are currently disposing of.
+        /// </summary>
+        private readonly List<KaijuMovement> _stoppedIterating = new();
+        
+        /// <summary>
+        /// All performed movements we are currently disposing of.
+        /// </summary>
+        private readonly HashSet<KaijuMovement> _performedIterating = new();
+        
+        /// <summary>
         /// All movements the agent is currently performing.
         /// </summary>
         public IReadOnlyList<KaijuMovement> Movements => _movements.AsReadOnly();
@@ -774,17 +794,14 @@ namespace KaijuSolutions.Agents
                 // If the movement is done, remove it to the cache.
                 if (_movements[i].Done())
                 {
-                    _movements[i].Stopped();
-                    OnMovementStopped?.Invoke(_movements[i]);
-                    _movements[i].Return();
+                    _stopped.Add(_movements[i]);
                     _movements.RemoveAt(i--);
                     continue;
                 }
                 
                 // Weight the movement.
                 velocity += _movements[i].Move(position, delta) * _movements[i].Weight;
-                _movements[i].Performed();
-                OnMovementPerformed?.Invoke(_movements[i]);
+                _performed.Add(_movements[i]);
             }
             
             // Clamp the movement velocity.
@@ -796,6 +813,9 @@ namespace KaijuSolutions.Agents
             // Set the updated velocity.
             Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, velocity, moveAcceleration * delta) : velocity;
             
+            // Handle which movements are done.
+            InvokeDoneMovements();
+            
             // Invoke callbacks if there has been movement.
             if (Velocity == Vector2.zero)
             {
@@ -804,6 +824,43 @@ namespace KaijuSolutions.Agents
             
             OnMove?.Invoke();
             OnMoveGlobal?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Handle all movements which have finished.
+        /// </summary>
+        private void InvokeDoneMovements()
+        {
+            foreach (KaijuMovement movement in _stopped)
+            {
+                _stoppedIterating.Add(movement);
+            }
+            
+            _stopped.Clear();
+            
+            foreach (KaijuMovement movement in _performed)
+            {
+                _performedIterating.Add(movement);
+            }
+            
+            _performed.Clear();
+            
+            foreach (KaijuMovement movement in _stoppedIterating)
+            {
+                movement.Stopped();
+                OnMovementStopped?.Invoke(movement);
+                movement.Return();
+            }
+            
+            _stoppedIterating.Clear();
+            
+            foreach (KaijuMovement movement in _performedIterating)
+            {
+                movement.Performed();
+                OnMovementPerformed?.Invoke(movement);
+            }
+            
+            _performedIterating.Clear();
         }
         
         /// <summary>
@@ -1008,15 +1065,12 @@ namespace KaijuSolutions.Agents
         public void Stop()
         {
             _control = Vector2.zero;
-            
-            foreach (KaijuMovement movement in _movements)
+
+            for (int i = 0; i < _movements.Count; i++)
             {
-                movement.Stopped();
-                OnMovementStopped?.Invoke(movement);
-                movement.Return();
+                _stopped.Add(_movements[i]);
+                _movements.RemoveAt(i--);
             }
-            
-            _movements.Clear();
         }
         
         /// <summary>
@@ -1033,9 +1087,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _movements[i].Stopped();
-                OnMovementStopped?.Invoke(_movements[i]);
-                _movements[i].Return();
+                _stopped.Add(_movements[i]);
                 _movements.RemoveAt(i);
                 return true;
             }
@@ -1060,9 +1112,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _movements[i].Stopped();
-                OnMovementStopped?.Invoke(_movements[i]);
-                _movements[i].Return();
+                _stopped.Add(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed = true;
             }
@@ -1082,9 +1132,7 @@ namespace KaijuSolutions.Agents
                 return false;
             }
             
-            _movements[index].Stopped();
-            OnMovementStopped?.Invoke(_movements[index]);
-            _movements[index].Return();
+            _stopped.Add(_movements[index]);
             _movements.RemoveAt(index);
             return true;
         }
@@ -1111,9 +1159,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _movements[i].Stopped();
-                OnMovementStopped?.Invoke(_movements[i]);
-                _movements[i].Return();
+                _stopped.Add(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed++;
             }
@@ -1147,9 +1193,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _movements[i].Stopped();
-                OnMovementStopped?.Invoke(_movements[i]);
-                _movements[i].Return();
+                _stopped.Add(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed++;
             }
@@ -1191,6 +1235,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1214,6 +1264,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1237,6 +1293,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1260,6 +1322,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The seek movement to the target.</returns>
         public KaijuSeekMovement Seek([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1283,6 +1351,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1306,6 +1380,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1329,6 +1409,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1352,6 +1438,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The pursue movement to the target.</returns>
         public KaijuPursueMovement Pursue([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1398,6 +1490,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1421,6 +1519,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1444,6 +1548,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The flee movement to the target.</returns>
         public KaijuFleeMovement Flee([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1467,6 +1577,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The pursue movement to the target.</returns>
         public KaijuEvadeMovement Evade(Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1490,6 +1606,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade(Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1513,6 +1635,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1536,6 +1664,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The evade movement to the target.</returns>
         public KaijuEvadeMovement Evade([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1559,6 +1693,12 @@ namespace KaijuSolutions.Agents
         /// <returns>The wander movement.</returns>
         public KaijuWanderMovement Wander(float? distance = null, float? radius = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1583,6 +1723,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuSeparationMovement Separation(float? distance = null, float? coefficient = null, ICollection<uint> collection = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1610,6 +1756,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuObstacleAvoidanceMovement ObstacleAvoidance(float? avoidance = null, float? distance = null, float? sideDistance = null, float? angle = null, float? height = null, float? horizontal = null, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1641,6 +1793,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector2 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1667,6 +1825,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector3 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1693,6 +1857,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Component target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1719,6 +1889,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(GameObject target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1745,6 +1921,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector2 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1771,6 +1953,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Vector3 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1797,6 +1985,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(Component target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
@@ -1823,6 +2017,12 @@ namespace KaijuSolutions.Agents
         /// <param name="clear">If this should clear all other current movement and become the only one the agent is performing.</param>
         public KaijuPathFollowMovement PathFollow(GameObject target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             if (clear ?? (!configuration || configuration.clear))
             {
                 Stop();
