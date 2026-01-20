@@ -652,7 +652,7 @@
   "changelog/index.html": {
     "href": "changelog/index.html",
     "title": "Changelog | Kaiju Agents",
-    "keywords": "Changelog 1.0.1 Fixed errors with exporting builds. Fixed scene reloading errors for the \"Microbes\" exercise . 1.0.0 Initial release."
+    "keywords": "Changelog 1.0.2 Fixed potential infinite loop when listening for a movement to stop, and then starting a new movement during said listening callback. 1.0.1 Fixed errors with exporting builds. Fixed scene reloading errors for the \"Microbes\" exercise . 1.0.0 Initial release."
   },
   "contact/index.html": {
     "href": "contact/index.html",
