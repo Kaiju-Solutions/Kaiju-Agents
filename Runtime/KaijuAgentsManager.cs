@@ -109,16 +109,6 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="position">The position to set it at.</param>
         /// <param name="text">The label itself</param>
-        public static void EditorLabel(Vector3 position, [NotNull] string text)
-        {
-            Handles.Label(position + new Vector3(0, EditorLabelOffset, 0), text, EditorAgentsLabelStyle);
-        }
-        
-        /// <summary>
-        /// Add a label of text in the scene view in the editor.
-        /// </summary>
-        /// <param name="position">The position to set it at.</param>
-        /// <param name="text">The label itself</param>
         /// <param name="color">The color for the text.</param>
         public static void EditorLabel(Vector3 position, [NotNull] string text, Color color)
         {
@@ -342,7 +332,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Handle all pending agents.
         /// </summary>
-        private void HandlePending()
+        private static void HandlePending()
         {
             foreach (KaijuAgent agent in PendingAdditions)
             {
@@ -493,7 +483,7 @@ namespace KaijuSolutions.Agents
                         }
                     }
                     
-                    // If this candidate passsed the requirements, use it.
+                    // If this candidate passed the requirements, use it.
                     if (!valid)
                     {
                         continue;
@@ -648,6 +638,7 @@ namespace KaijuSolutions.Agents
             // Otherwise, set this as the singleton.
             _instance = this;
             DontDestroyOnLoad(gameObject);
+            Application.runInBackground = true;
 #if UNITY_EDITOR
             Selection.selectionChanged += SelectionChanged;
             SelectionChanged();
