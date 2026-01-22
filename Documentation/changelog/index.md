@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.0.3
+
+- Ensured always playing when out of focus to allow for testing agents in the background.
+
 ### 1.0.2
 
 - Fixed potential infinite loop when listening for a movement to stop, and then starting a new movement during said listening callback.
