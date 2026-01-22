@@ -24327,12 +24327,6 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor
   nameWithType: KaijuAgentsManager.EditorAgentColor
-- uid: KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String)
-  name: EditorLabel(Vector3, String)
-  href: api/KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_
-  commentId: M:KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String)
-  fullName: KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3, System.String)
-  nameWithType: KaijuAgentsManager.EditorLabel(Vector3, String)
 - uid: KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String,Color)
   name: EditorLabel(Vector3, String, Color)
   href: api/KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_Color_
