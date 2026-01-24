@@ -1,65 +1,65 @@
 {
-	"name": "com.kaijusolutions.agents",
-	"displayName":"Kaiju Agents",
-	"version": "1.0.3",
-	"unity": "6000.3",
-	"description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
-	"dependencies": {
-		"com.unity.ai.navigation": "2.0.9",
-		"com.unity.inputsystem": "1.17.0"
-	},
-	"author": {
-		"name": "Kaiju Solutions Inc.",
-		"url": "http://kaijusolutions.ca",
-		"email": "contact@kaijusolutions.ca"
-	},
-	"changelogUrl": "https://agents.kaijusolutions.ca/changelog",
-	"documentationUrl": "https://agents.kaijusolutions.ca",
-	"licensesUrl": "https://agents.kaijusolutions.ca/license",
-	"license": "MIT License",
-	"keywords": [
-		"Kaiju Solutions",
-		"Agents",
-		"AI",
-		"Artificial Intelligence",
-		"Steering Behaviours",
-		"Navigation",
-		"Pathfinding",
-		"Sensors",
-		"Actuators"
-	],
-	"samples": [
-		{
-			"displayName": "Materials",
-			"description": "Contains materials used in the other samples.\n\nIf materials appear pink, from the top menu, go to \"Window > Rendering > Render Pipeline Converter\", choose \"Built-in to URP\" or \"Built-in to HDRP\", select all materials, click \"Initialize Converters\", and lastly click \"Convert Assets\".",
-			"path": "Samples~/Materials"
-		},
-		{
-			"displayName": "Movement",
-			"description": "Contains scenes showing off agent movements.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Movement"
-		},
-		{
-			"displayName": "Keyboard",
-			"description": "Contains a basic sample showing keyboard agent controls. Move the agent using WASD or the arrow keys.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Keyboard"
-		},
-		{
-			"displayName": "Box Destroyer",
-			"description": "Demonstrates an agent which roams until it detects a box, after which it will approach and destroy the box.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Box Destroyer"
-		},{
-			"displayName": "Exercise 1 - Cleaner",
-			"description": "An exercise to get you familiar with Kaiju Agents. You will need to complete an agent to keep floor tiles clean.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Exercise 1 - Cleaner"
-		},{
-			"displayName": "Exercise 2 - Microbes",
-			"description": "An exercise featuring microbes which can mate with and eat each other.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Exercise 2 - Microbes"
-		},{
-			"displayName": "Exercise 3 - Capture the Flag",
-			"description": "An exercise featuring two teams of troopers with blasters competing in a game of capture the flag.\n\nYou must also import the \"Materials\" sample for this to work.",
-			"path": "Samples~/Exercise 3 - Capture the Flag"
-		}
-	]
+    "name": "com.kaijusolutions.agents",
+    "displayName":"Kaiju Agents",
+    "version": "1.0.4",
+    "unity": "6000.3",
+    "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
+    "dependencies": {
+        "com.unity.ai.navigation": "2.0.9",
+        "com.unity.inputsystem": "1.17.0"
+    },
+    "author": {
+        "name": "Kaiju Solutions Inc.",
+        "url": "http://kaijusolutions.ca",
+        "email": "contact@kaijusolutions.ca"
+    },
+    "changelogUrl": "https://agents.kaijusolutions.ca/changelog",
+    "documentationUrl": "https://agents.kaijusolutions.ca",
+    "licensesUrl": "https://agents.kaijusolutions.ca/license",
+    "license": "MIT License",
+    "keywords": [
+        "Kaiju Solutions",
+        "Agents",
+        "AI",
+        "Artificial Intelligence",
+        "Steering Behaviours",
+        "Navigation",
+        "Pathfinding",
+        "Sensors",
+        "Actuators"
+    ],
+    "samples": [
+        {
+            "displayName": "Materials",
+            "description": "Contains materials used in the other samples.\n\nIf materials appear pink, from the top menu, go to \"Window > Rendering > Render Pipeline Converter\", choose \"Built-in to URP\" or \"Built-in to HDRP\", select all materials, click \"Initialize Converters\", and lastly click \"Convert Assets\".",
+            "path": "Samples~/Materials"
+        },
+        {
+            "displayName": "Movement",
+            "description": "Contains scenes showing off agent movements.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Movement"
+        },
+        {
+            "displayName": "Keyboard",
+            "description": "Contains a basic sample showing keyboard agent controls. Move the agent using WASD or the arrow keys.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Keyboard"
+        },
+        {
+            "displayName": "Box Destroyer",
+            "description": "Demonstrates an agent which roams until it detects a box, after which it will approach and destroy the box.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Box Destroyer"
+        },{
+            "displayName": "Exercise 1 - Cleaner",
+            "description": "An exercise to get you familiar with Kaiju Agents. You will need to complete an agent to keep floor tiles clean.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Exercise 1 - Cleaner"
+        },{
+            "displayName": "Exercise 2 - Microbes",
+            "description": "An exercise featuring microbes which can mate with and eat each other.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Exercise 2 - Microbes"
+        },{
+            "displayName": "Exercise 3 - Capture the Flag",
+            "description": "An exercise featuring two teams of troopers with blasters competing in a game of capture the flag.\n\nYou must also import the \"Materials\" sample for this to work.",
+            "path": "Samples~/Exercise 3 - Capture the Flag"
+        }
+    ]
 }
