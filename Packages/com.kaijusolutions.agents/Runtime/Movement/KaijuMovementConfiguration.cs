@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace KaijuSolutions.Agents.Movement
 {
@@ -163,6 +164,155 @@ namespace KaijuSolutions.Agents.Movement
         [Min(0)]
         [SerializeField]
         private float separationCoefficient = KaijuSeparationMovement.DefaultCoefficient;
+        
+        /// <summary>
+        /// Identifiers for <see cref="KaijuAgent"/>s when separating.
+        /// </summary>
+        public IReadOnlyList<uint> Identifiers => identifiers;
+        
+        /// <summary>
+        /// Clear all identifiers.
+        /// </summary>
+        public void ClearIdentifiers()
+        {
+            identifiers.Clear();
+        }
+        
+        /// <summary>
+        /// If this agent has an identifier.
+        /// </summary>
+        /// <param name="identifier">The identifier to check.</param>
+        /// <returns>If this agent has the identifier.</returns>
+        public bool HasIdentifier(uint identifier)
+        {
+            foreach (uint i in identifiers)
+            {
+                if (i == identifier)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        /// <summary>
+        /// If this agent has any one of a set of identifiers.
+        /// </summary>
+        /// <param name="collection">The identifiers to check.</param>
+        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        public bool HasAnyIdentifier(IEnumerable<uint> collection)
+        {
+            foreach (uint identifier in collection)
+            {
+                if (HasIdentifier(identifier))
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+        
+        /// <summary>
+        /// Add an identifier to this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to set.</param>
+        /// <returns>If the identifier was added.</returns>
+        public bool AddIdentifier(uint identifier)
+        {
+            if (HasIdentifier(identifier))
+            {
+                return false;
+            }
+            
+            identifiers.Add(identifier);
+            return true;
+        }
+        
+        /// <summary>
+        /// Add identifiers to this agent.
+        /// </summary>
+        /// <param name="collection">The identifiers to add.</param>
+        /// <returns>If any of the identifiers were added.</returns>
+        public bool AddIdentifiers(IEnumerable<uint> collection)
+        {
+            bool added = false;
+            foreach (uint identifier in collection)
+            {
+                if (AddIdentifier(identifier))
+                {
+                    added = true;
+                }
+            }
+            
+            return added;
+        }
+        
+        /// <summary>
+        /// Remove an identifier from this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to remove.</param>
+        /// <returns>If the identifier was removed.</returns>
+        public bool RemoveIdentifier(uint identifier)
+        {
+            if (!HasIdentifier(identifier))
+            {
+                return false;
+            }
+            
+            identifiers.Remove(identifier);
+            return true;
+        }
+        
+        /// <summary>
+        /// Remove identifiers from this agent.
+        /// </summary>
+        /// <param name="collection">The identifiers to remove.</param>
+        /// <returns>If any of the identifiers were removed.</returns>
+        public bool RemoveIdentifiers(IEnumerable<uint> collection)
+        {
+            bool removed = false;
+            foreach (uint identifier in collection)
+            {
+                if (RemoveIdentifier(identifier))
+                {
+                    removed = true;
+                }
+            }
+            
+            return removed;
+        }
+        
+        /// <summary>
+        /// Set an identifier to this agent.
+        /// </summary>
+        /// <param name="identifier">The identifier to set.</param>
+        public void SetIdentifier(uint identifier)
+        {
+            ClearIdentifiers();
+            AddIdentifier(identifier);
+        }
+        
+        /// <summary>
+        /// If this agent has any one of a set of identifiers.
+        /// </summary>
+        /// <param name="collection">The identifiers to check.</param>
+        /// <returns>If this agent has any one of a set of identifiers.</returns>
+        public void SetIdentifiers(IEnumerable<uint> collection)
+        {
+            ClearIdentifiers();
+            AddIdentifiers(collection);
+        }
+        
+        /// <summary>
+        /// Identifiers for <see cref="KaijuAgent"/>s when separating.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Identifiers for agents when separating.")]
+#endif
+        [SerializeField]
+        private List<uint> identifiers = new();
         
         /// <summary>
         /// The default distance from a wall the <see cref="KaijuAgent"/> should maintain.

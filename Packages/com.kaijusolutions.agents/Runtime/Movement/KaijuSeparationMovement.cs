@@ -135,10 +135,9 @@ namespace KaijuSolutions.Agents.Movement
                 }
                 
                 // If there are identifiers to limit the search, consider them.
-                if (Identifiers.Count < 0)
+                if (Identifiers.Count > 0)
                 {
                     bool valid = false;
-                    
                     foreach (uint identifier in agent.Identifiers)
                     {
                         if (!Identifiers.Contains(identifier))
