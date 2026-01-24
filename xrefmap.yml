@@ -28263,6 +28263,35 @@ references:
   commentId: T:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration
   fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration
   nameWithType: KaijuMovementConfiguration
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier(System.UInt32)
+  name: AddIdentifier(UInt32)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifier_System_UInt32_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier(System.UInt32)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier(System.UInt32)
+  nameWithType: KaijuMovementConfiguration.AddIdentifier(UInt32)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier*
+  name: AddIdentifier
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifier_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier
+  nameWithType: KaijuMovementConfiguration.AddIdentifier
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name: AddIdentifiers(IEnumerable<UInt32>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name.vb: AddIdentifiers(IEnumerable(Of UInt32))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers(System.Collections.Generic.IEnumerable<System.UInt32>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers(System.Collections.Generic.IEnumerable(Of System.UInt32))
+  nameWithType: KaijuMovementConfiguration.AddIdentifiers(IEnumerable<UInt32>)
+  nameWithType.vb: KaijuMovementConfiguration.AddIdentifiers(IEnumerable(Of UInt32))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers*
+  name: AddIdentifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifiers_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers
+  nameWithType: KaijuMovementConfiguration.AddIdentifiers
 - uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ApproachingDistance
   name: ApproachingDistance
   href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ApproachingDistance
@@ -28345,6 +28374,19 @@ references:
   commentId: F:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.clear
   fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.clear
   nameWithType: KaijuMovementConfiguration.clear
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers
+  name: ClearIdentifiers()
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ClearIdentifiers
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers()
+  nameWithType: KaijuMovementConfiguration.ClearIdentifiers()
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers*
+  name: ClearIdentifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ClearIdentifiers_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers
+  nameWithType: KaijuMovementConfiguration.ClearIdentifiers
 - uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.collisionMask
   name: collisionMask
   href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_collisionMask
@@ -28363,6 +28405,48 @@ references:
   commentId: F:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.DefaultMask
   fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.DefaultMask
   nameWithType: KaijuMovementConfiguration.DefaultMask
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier(System.Collections.Generic.IEnumerable{System.UInt32})
+  name: HasAnyIdentifier(IEnumerable<UInt32>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasAnyIdentifier_System_Collections_Generic_IEnumerable_System_UInt32__
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier(System.Collections.Generic.IEnumerable{System.UInt32})
+  name.vb: HasAnyIdentifier(IEnumerable(Of UInt32))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier(System.Collections.Generic.IEnumerable<System.UInt32>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier(System.Collections.Generic.IEnumerable(Of System.UInt32))
+  nameWithType: KaijuMovementConfiguration.HasAnyIdentifier(IEnumerable<UInt32>)
+  nameWithType.vb: KaijuMovementConfiguration.HasAnyIdentifier(IEnumerable(Of UInt32))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier*
+  name: HasAnyIdentifier
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasAnyIdentifier_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier
+  nameWithType: KaijuMovementConfiguration.HasAnyIdentifier
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier(System.UInt32)
+  name: HasIdentifier(UInt32)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasIdentifier_System_UInt32_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier(System.UInt32)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier(System.UInt32)
+  nameWithType: KaijuMovementConfiguration.HasIdentifier(UInt32)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier*
+  name: HasIdentifier
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasIdentifier_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier
+  nameWithType: KaijuMovementConfiguration.HasIdentifier
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers
+  name: Identifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Identifiers
+  commentId: P:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers
+  nameWithType: KaijuMovementConfiguration.Identifiers
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers*
+  name: Identifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Identifiers_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers
+  nameWithType: KaijuMovementConfiguration.Identifiers
 - uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.LeavingDistance
   name: LeavingDistance
   href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance
@@ -28389,6 +28473,35 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.PathAutoCalculateDistance
   nameWithType: KaijuMovementConfiguration.PathAutoCalculateDistance
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier(System.UInt32)
+  name: RemoveIdentifier(UInt32)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifier_System_UInt32_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier(System.UInt32)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier(System.UInt32)
+  nameWithType: KaijuMovementConfiguration.RemoveIdentifier(UInt32)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier*
+  name: RemoveIdentifier
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifier_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier
+  nameWithType: KaijuMovementConfiguration.RemoveIdentifier
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name: RemoveIdentifiers(IEnumerable<UInt32>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name.vb: RemoveIdentifiers(IEnumerable(Of UInt32))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers(System.Collections.Generic.IEnumerable<System.UInt32>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers(System.Collections.Generic.IEnumerable(Of System.UInt32))
+  nameWithType: KaijuMovementConfiguration.RemoveIdentifiers(IEnumerable<UInt32>)
+  nameWithType.vb: KaijuMovementConfiguration.RemoveIdentifiers(IEnumerable(Of UInt32))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers*
+  name: RemoveIdentifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifiers_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers
+  nameWithType: KaijuMovementConfiguration.RemoveIdentifiers
 - uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationCoefficient
   name: SeparationCoefficient
   href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationCoefficient
@@ -28415,6 +28528,35 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SeparationDistance
   nameWithType: KaijuMovementConfiguration.SeparationDistance
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier(System.UInt32)
+  name: SetIdentifier(UInt32)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifier_System_UInt32_
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier(System.UInt32)
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier(System.UInt32)
+  nameWithType: KaijuMovementConfiguration.SetIdentifier(UInt32)
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier*
+  name: SetIdentifier
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifier_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier
+  nameWithType: KaijuMovementConfiguration.SetIdentifier
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name: SetIdentifiers(IEnumerable<UInt32>)
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__
+  commentId: M:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})
+  name.vb: SetIdentifiers(IEnumerable(Of UInt32))
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers(System.Collections.Generic.IEnumerable<System.UInt32>)
+  fullName.vb: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers(System.Collections.Generic.IEnumerable(Of System.UInt32))
+  nameWithType: KaijuMovementConfiguration.SetIdentifiers(IEnumerable<UInt32>)
+  nameWithType.vb: KaijuMovementConfiguration.SetIdentifiers(IEnumerable(Of UInt32))
+- uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers*
+  name: SetIdentifiers
+  href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifiers_
+  commentId: Overload:KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers
+  nameWithType: KaijuMovementConfiguration.SetIdentifiers
 - uid: KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.WanderDistance
   name: WanderDistance
   href: api/KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.html#KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderDistance

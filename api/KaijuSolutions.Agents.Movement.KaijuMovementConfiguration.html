@@ -379,6 +379,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Identifiers_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Identifiers" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.Identifiers">Identifiers</h4>
+  <div class="markdown level1 summary"><p>Identifiers for <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s when separating.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;uint&gt; Identifiers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.LeavingDistance*"></a>
   <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.LeavingDistance">LeavingDistance</h4>
   <div class="markdown level1 summary"><p>The default distance at which we can consider <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuFleeMovement.html">KaijuFleeMovement</a> and <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html">KaijuEvadeMovement</a> behaviours done.</p>
@@ -544,6 +568,329 @@
       <tr>
         <td><span class="xref">System.Single</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifier_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifier_System_UInt32_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifier(System.UInt32)">AddIdentifier(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Add an identifier to this agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AddIdentifier(uint identifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the identifier was added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifiers_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.AddIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})">AddIdentifiers(IEnumerable&lt;UInt32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Add identifiers to this agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AddIdentifiers(IEnumerable&lt;uint&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The identifiers to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If any of the identifiers were added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ClearIdentifiers_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ClearIdentifiers" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.ClearIdentifiers">ClearIdentifiers()</h4>
+  <div class="markdown level1 summary"><p>Clear all identifiers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearIdentifiers()</code></pre>
+  </div>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasAnyIdentifier_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasAnyIdentifier_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasAnyIdentifier(System.Collections.Generic.IEnumerable{System.UInt32})">HasAnyIdentifier(IEnumerable&lt;UInt32&gt;)</h4>
+  <div class="markdown level1 summary"><p>If this agent has any one of a set of identifiers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasAnyIdentifier(IEnumerable&lt;uint&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The identifiers to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If this agent has any one of a set of identifiers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasIdentifier_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasIdentifier_System_UInt32_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.HasIdentifier(System.UInt32)">HasIdentifier(UInt32)</h4>
+  <div class="markdown level1 summary"><p>If this agent has an identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasIdentifier(uint identifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If this agent has the identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifier_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifier_System_UInt32_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifier(System.UInt32)">RemoveIdentifier(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Remove an identifier from this agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveIdentifier(uint identifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If the identifier was removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifiers_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.RemoveIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})">RemoveIdentifiers(IEnumerable&lt;UInt32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Remove identifiers from this agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveIdentifiers(IEnumerable&lt;uint&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The identifiers to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If any of the identifiers were removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifier_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifier_System_UInt32_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifier(System.UInt32)">SetIdentifier(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Set an identifier to this agent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetIdentifier(uint identifier)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifiers_" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers*"></a>
+  <h4 id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifiers_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.Movement.KaijuMovementConfiguration.SetIdentifiers(System.Collections.Generic.IEnumerable{System.UInt32})">SetIdentifiers(IEnumerable&lt;UInt32&gt;)</h4>
+  <div class="markdown level1 summary"><p>If this agent has any one of a set of identifiers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetIdentifiers(IEnumerable&lt;uint&gt; collection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The identifiers to check.</p>
+</td>
       </tr>
     </tbody>
   </table>
