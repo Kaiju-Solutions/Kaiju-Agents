@@ -1620,6 +1620,17 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "img/behavior.png",
+      "output": {
+        "resource": {
+          "relative_path": "img/behavior.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "img/box-destroyer.png",
       "output": {
         "resource": {
@@ -1701,7 +1712,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "D2+uIa1fzCaNlZUTutc1obGILjfvsaZW0X4gg2GhvDY="
+          "hash": "uiu8TyhFp46MtfsI7+//OGlDy9VZNRhlKJu3GtNScDQ="
         }
       },
       "is_incremental": false,
