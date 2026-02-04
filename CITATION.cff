@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use Kaiju Agents, please cite it as below."
+authors:
+- name: "Kaiju Solutions Inc."
+title: "Kaiju Agents"
+doi: 10.5281/zenodo.1234
+date-released: 2026-01-06
+url: "https://agents.kaijusolutions.ca"
