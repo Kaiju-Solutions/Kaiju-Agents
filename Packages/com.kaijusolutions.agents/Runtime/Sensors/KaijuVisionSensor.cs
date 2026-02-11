@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
@@ -129,7 +130,12 @@ namespace KaijuSolutions.Agents.Sensors
         public IEnumerable<T> Observables;
         
         /// <summary>
-        /// The number of observed items.
+        /// If at least one instance has been <see cref="Observed"/>.
+        /// </summary>
+        public bool HasObserved => ObservedCount > 0;
+        
+        /// <summary>
+        /// The number of <see cref="Observed"/> items.
         /// </summary>
         public int ObservedCount => _observed.Count;
         
@@ -137,6 +143,103 @@ namespace KaijuSolutions.Agents.Sensors
         /// All observed items.
         /// </summary>
         public IReadOnlyCollection<T> Observed => _observed;
+        
+        /// <summary>
+        /// The nearest <see cref="Observed"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
+        /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
+        public T Nearest(out float nearest)
+        {
+            if (Agent)
+            {
+                return Agent.Nearest(Observables, out nearest);
+            }
+            
+            nearest = float.MaxValue;
+            return null;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
+        /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
+        public T Nearest3(out float nearest)
+        {
+            if (Agent)
+            {
+                return Agent.Nearest3(Observables, out nearest);
+            }
+            
+            nearest = float.MaxValue;
+            return null;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Observed"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
+        /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
+        public T Farthest(out float farthest)
+        {
+            if (Agent)
+            {
+                return Agent.Farthest(Observables, out farthest);
+            }
+            
+            farthest = 0;
+            return null;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
+        /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
+        public T Farthest3(out float farthest)
+        {
+            if (Agent)
+            {
+                return Agent.Farthest3(Observables, out farthest);
+            }
+            
+            farthest = 0;
+            return null;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public T[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            return Agent ? Agent.SortDistance(Observables, farthest, null, Agent.Forward) : Array.Empty<T>();
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public T[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            return Agent ? Agent.SortDistance3(Observables, farthest, null, Agent.Forward) : Array.Empty<T>();
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="mode">How to handle sorting.</param>
+        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public T[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
+        {
+            return Agent.SortAngle(Agent.Forward, Observables, mode, farthest);
+        }
         
         /// <summary>
         /// All observed items.

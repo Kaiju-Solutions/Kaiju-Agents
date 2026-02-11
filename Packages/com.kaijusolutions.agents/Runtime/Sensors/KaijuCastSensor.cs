@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -143,6 +144,25 @@ namespace KaijuSolutions.Agents.Sensors
         public Color editorMiss = Color.green;
 #endif
         /// <summary>
+        /// If at least one ray has hit something.
+        /// </summary>
+        public bool HasHits
+        {
+            get
+            {
+                for (int i = 0; i < _hits.Length; i++)
+                {
+                    if (_hits[i] != null)
+                    {
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+        }
+        
+        /// <summary>
         /// The total number of casts which hit something.
         /// </summary>
         public int HitsTotal
@@ -166,6 +186,118 @@ namespace KaijuSolutions.Agents.Sensors
         /// The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.
         /// </summary>
         public IReadOnlyList<RaycastHit?> Hits => _hits;
+        
+        /// <summary>
+        /// Get transforms for the <see cref="Hits"/>. Misses will be NULL.
+        /// </summary>
+        public IEnumerable<Transform> Transforms => _hits.Select(x => x?.transform);
+        
+        /// <summary>
+        /// The <see cref="Hits"/> data only for points which hit, removing all NULL entries.
+        /// </summary>
+        public IEnumerable<RaycastHit?> ConnectedHits => _hits.Where(x => x != null);
+        
+        /// <summary>
+        /// et transforms for the <see cref="ConnectedHits"/>.
+        /// </summary>
+        public IEnumerable<Transform> ConnectedTransforms => ConnectedHits.Select(x => x!.Value.transform);
+        
+        /// <summary>
+        /// The nearest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Nearest(out float nearest)
+        {
+            if (Agent)
+            {
+                return Agent.Nearest(ConnectedTransforms, out nearest);
+            }
+            
+            nearest = float.MaxValue;
+            return null;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Nearest3(out float nearest)
+        {
+            if (Agent)
+            {
+                return Agent.Nearest3(ConnectedTransforms, out nearest);
+            }
+            
+            nearest = float.MaxValue;
+            return null;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Farthest(out float farthest)
+        {
+            if (Agent)
+            {
+                return Agent.Farthest(ConnectedTransforms, out farthest);
+            }
+            
+            farthest = 0;
+            return null;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Farthest3(out float farthest)
+        {
+            if (Agent)
+            {
+                return Agent.Farthest3(ConnectedTransforms, out farthest);
+            }
+            
+            farthest = 0;
+            return null;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
+        public Transform[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, null, Agent.Forward) : Array.Empty<Transform>();
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
+        public Transform[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, null, Agent.Forward) : Array.Empty<Transform>();
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="mode">How to handle sorting.</param>
+        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
+        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
+        public Transform[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
+        {
+            return Agent.SortAngle(Agent.Forward, ConnectedTransforms, mode, farthest);
+        }
         
         /// <summary>
         /// The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.
