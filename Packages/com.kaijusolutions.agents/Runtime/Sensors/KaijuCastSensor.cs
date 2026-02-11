@@ -274,7 +274,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
         public Transform[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, null, Agent.Forward) : Array.Empty<Transform>();
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
         }
         
         /// <summary>
@@ -285,7 +285,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
         public Transform[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, null, Agent.Forward) : Array.Empty<Transform>();
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
         }
         
         /// <summary>
@@ -297,6 +297,72 @@ namespace KaijuSolutions.Agents.Sensors
         public Transform[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
         {
             return Agent.SortAngle(Agent.Forward, ConnectedTransforms, mode, farthest);
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
+        /// </summary>
+        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
+        public int SortDistance([NotNull] Transform[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            // Sort all instances.
+            Transform[] sorted = SortDistance(farthest, mode);
+            
+            // Copy over what we can.
+            for (int i = 0; i < cache.Length; i++)
+            {
+                cache[i] = i < sorted.Length ? sorted[i] : null;
+            }
+            
+            // Return how many were observed and fit into our cache.
+            return Mathf.Min(sorted.Length, cache.Length);
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
+        /// </summary>
+        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
+        public int SortDistance3([NotNull] Transform[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
+        {
+            // Sort all instances.
+            Transform[] sorted = SortDistance3(farthest, mode);
+            
+            // Copy over what we can.
+            for (int i = 0; i < cache.Length; i++)
+            {
+                cache[i] = i < sorted.Length ? sorted[i] : null;
+            }
+            
+            // Return how many were observed and fit into our cache.
+            return Mathf.Min(sorted.Length, cache.Length);
+        }
+        
+        /// <summary>
+        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
+        /// </summary>
+        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
+        /// <param name="mode">How to handle sorting.</param>
+        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
+        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
+        public int SortAngle([NotNull] Transform[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
+        {
+            // Sort all instances.
+            Transform[] sorted = SortAngle(mode, farthest);
+            
+            // Copy over what we can.
+            for (int i = 0; i < cache.Length; i++)
+            {
+                cache[i] = i < sorted.Length ? sorted[i] : null;
+            }
+            
+            // Return how many were observed and fit into our cache.
+            return Mathf.Min(sorted.Length, cache.Length);
         }
         
         /// <summary>
