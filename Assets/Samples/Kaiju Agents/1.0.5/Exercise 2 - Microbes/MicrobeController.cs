@@ -55,6 +55,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 if (microbe.CanMate && !nearest.OnCooldown)
                 {
                     Agent.Pursue((Component)nearest);
+                    return;
+                }
+                
+                if (!Agent.Moving)
+                {
+                    Agent.Wander();
                 }
                 
                 return;
@@ -63,6 +69,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             if (microbe.Energy > nearest.Energy)
             {
                 Agent.Pursue((Component)nearest);
+                return;
+            }
+            
+            if (!Agent.Moving)
+            {
+                Agent.Wander();
             }
         }
         
