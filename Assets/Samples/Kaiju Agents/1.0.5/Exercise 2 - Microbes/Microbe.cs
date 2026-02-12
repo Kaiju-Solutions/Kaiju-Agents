@@ -247,7 +247,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 return;
             }
             
-            Type[] components = { Type.GetType("Microbe") };
+            string[] components = { "Microbe" };
             KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, components);
             if (!agent.TryGetComponent(out Microbe microbe))
             {

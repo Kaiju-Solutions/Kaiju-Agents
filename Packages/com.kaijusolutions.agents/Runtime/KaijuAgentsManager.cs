@@ -495,7 +495,7 @@ namespace KaijuSolutions.Agents
         /// <param name="components">All components which must be found on the <see cref="KaijuAgent"/>. This will check in children as well.</param>
         /// <typeparam name="T">The type of <see cref="KaijuAgent"/>.</typeparam>
         /// <returns>A cached <see cref="KaijuAgent"/> if one is found, otherwise NULL.</returns>
-        public static T GetCached<T>(ICollection<Type> components = null) where T : KaijuAgent
+        public static T GetCached<T>(ICollection<string> components = null) where T : KaijuAgent
         {
 #if UNITY_EDITOR
             if (!Application.isPlaying)
@@ -532,13 +532,13 @@ namespace KaijuSolutions.Agents
                     
                     // See if this agent has all the components we need.
                     bool valid = true;
-                    foreach (Type c in components)
+                    foreach (string c in components)
                     {
                         // For each component, assume it does not have it until it is found.
                         valid = false;
                         foreach (Type exists in types)
                         {
-                            if (c != exists)
+                            if (c != exists.Name)
                             {
                                 continue;
                             }

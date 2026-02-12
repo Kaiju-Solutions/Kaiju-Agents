@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
@@ -247,7 +246,7 @@ namespace KaijuSolutions.Agents
         /// <param name="eyes">The color to assign the eye visuals. This only works if there is an immediate child named "Eyes" under the "Body" like with the default agents.</param>
         /// <param name="components">All component types to ensure are added to the agent. A cached agent will only be used if it has all of these components, and otherwise will create a new agent with all components instead. This will check in children as well.</param>
         /// <returns>The spawned <see cref="KaijuAgent"/>.</returns>
-        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection<Type> components = null)
+        public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection<string> components = null)
         {
             KaijuAgent agent;
             
@@ -259,7 +258,7 @@ namespace KaijuSolutions.Agents
                     KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(components),
                     KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(components),
                     KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(components),
-                    _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>()
+                    _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>(components)
                 };
                 
                 // If there is a cached agent, work with it.
