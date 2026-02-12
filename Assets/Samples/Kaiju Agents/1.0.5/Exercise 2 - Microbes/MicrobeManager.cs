@@ -23,6 +23,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         {
             get
             {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
                 if (_instance != null)
                 {
                     return _instance;
@@ -45,17 +51,53 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The prefab for the <see cref="Microbe"/>s.
         /// </summary>
-        public static KaijuAgent MicrobePrefab => Instance.microbePrefab;
+        public static KaijuAgent MicrobePrefab
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
+                return Instance.microbePrefab;
+            }
+        }
         
         /// <summary>
         /// How many <see cref="Microbe"/> are allowed in the scene at most.
         /// </summary>
-        public static int MaximumMicrobes => Instance.maximumMicrobes;
+        public static int MaximumMicrobes
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.maximumMicrobes;
+            }
+        }
         
         /// <summary>
         /// The maximum number of <see cref="EnergyPickup"/> pickups allowed in the scene.
         /// </summary>
-        public static int MaximumEnergy => Instance.maximumEnergy;
+        public static int MaximumEnergy
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.maximumEnergy;
+            }
+        }
         
         /// <summary>
         /// The prefab for the <see cref="Microbe"/>s.
@@ -75,7 +117,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The <see cref="Microbe.Energy"/> level to spawn new <see cref="Microbe"/>s at.
         /// </summary>
-        public static float Energy => Instance.energy;
+        public static float Energy
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.energy;
+            }
+        }
         
         /// <summary>
         /// The <see cref="Microbe.Energy"/> level to spawn new <see cref="Microbe"/>s at.
@@ -89,7 +143,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The time in seconds <see cref="Microbe"/>s need to wait before they can <see cref="Microbe.Mate"/> again.
         /// </summary>
-        public static float Cooldown => Instance.cooldown;
+        public static float Cooldown
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.cooldown;
+            }
+        }
         
         /// <summary>
         /// The time in seconds <see cref="Microbe"/>s need to wait before they can <see cref="Microbe.Mate"/> again.
@@ -158,8 +224,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         /// <param name="identifier">The species identifier.</param>
         /// <returns>The identifier for the species.</returns>
-        public static Color GetColor(uint identifier) => Instance.species[identifier % _instance.species.Length];
-
+        public static Color GetColor(uint identifier)
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return Color.white;
+            }
+#endif
+            return Instance.species[identifier % _instance.species.Length];
+        }
+        
         /// <summary>
         /// The colors for the different species of <see cref="Microbe"/>s. The species <see cref="KaijuAgent.Identifiers"/> will be set based on this index.
         /// </summary>
