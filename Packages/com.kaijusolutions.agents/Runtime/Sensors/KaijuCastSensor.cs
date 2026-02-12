@@ -267,225 +267,6 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Transform[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
-        {
-            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Transform[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
-        {
-            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="mode">How to handle sorting.</param>
-        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Transform[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
-        {
-            return Agent ? Agent.SortAngle(Agent.Forward, ConnectedTransforms, mode, farthest) : Array.Empty<Transform>();
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
-        /// </summary>
-        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
-        public int SortDistance([NotNull] Transform[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
-        {
-            // Sort all instances.
-            Transform[] sorted = SortDistance(farthest, mode);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
-        /// </summary>
-        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
-        public int SortDistance3([NotNull] Transform[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
-        {
-            // Sort all instances.
-            Transform[] sorted = SortDistance3(farthest, mode);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
-        /// </summary>
-        /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="ConnectedTransforms"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="ConnectedTransforms"/> instances, any extra space will be filled with NULL values.</param>
-        /// <param name="mode">How to handle sorting.</param>
-        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <returns>The number of <see cref="ConnectedTransforms"/> instances fit into the cache.</returns>
-        public int SortAngle([NotNull] Transform[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
-        {
-            // Sort all instances.
-            Transform[] sorted = SortAngle(mode, farthest);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector2[] SortDistancePosition(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector2>();
-            }
-            
-            Vector2 position = Agent;
-            Vector2[] positions = position.SortDistance(ConnectedTransforms.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector3[] SortDistancePosition3(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector3>();
-            }
-            
-            Vector3 position = Agent;
-            Vector3[] positions = position.SortDistance(ConnectedTransforms.Select(x => x.position), farthest, mode, Agent.Forward);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector2[] SortDistance3Position(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector2>();
-            }
-            
-            Vector2 position = Agent;
-            Vector2[] positions = position.SortDistance3(ConnectedTransforms.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="farthest">If this should sort by farthest items first.</param>
-        /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector3[] SortDistance3Position3(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector3>();
-            }
-            
-            Vector3 position = Agent;
-            Vector3[] positions = position.SortDistance3(ConnectedTransforms.Select(x => x.position), farthest, mode, Agent.Forward);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="mode">How to handle sorting.</param>
-        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector2[] SortAnglePosition(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector2>();
-            }
-            
-            Vector2 position = Agent;
-            Vector2[] positions = position.SortAngle(Agent.Forward, ConnectedTransforms.Select(x => x.Flatten()), mode, farthest);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
-        /// Sort <see cref="ConnectedTransforms"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
-        /// </summary>
-        /// <param name="mode">How to handle sorting.</param>
-        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalization">How to normalize the positions.</param>
-        /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
-        public Vector3[] SortAnglePosition3(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
-        {
-            if (!Agent)
-            {
-                return Array.Empty<Vector3>();
-            }
-            
-            Vector3 position = Agent;
-            Vector3[] positions = position.SortAngle(Agent.Forward, ConnectedTransforms.Select(x => x.position), mode, farthest);
-            position.Normalize(distance, positions, normalization);
-            return positions;
-        }
-        
-        /// <summary>
         /// The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.
         /// </summary>
         private RaycastHit?[] _hits = Array.Empty<RaycastHit?>();
@@ -493,7 +274,22 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
-        public IReadOnlyList<Vector3> Positions => _positions;
+        /// <param name="normalization">How to normalize the positions.</param>
+        public IEnumerable<Vector2> Positions(KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            // TODO - Normalize.
+            return _positions.Select(x => x.Flatten());
+        }
+        
+        /// <summary>
+        /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
+        /// </summary>
+        /// <param name="normalization">How to normalize the positions.</param>
+        public IReadOnlyList<Vector3> Positions3(KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            // TODO - Normalize.
+            return _positions;
+        }
         
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
