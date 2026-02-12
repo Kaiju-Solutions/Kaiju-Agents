@@ -2,7 +2,6 @@
 
 ### 1.1.0
 
-- Fixed crashing when reloading the domain in the ["Microbes"](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes") and ["Capture the Flag"](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag") [exercises](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#exercises "Exercises").
 - Added extended functionality to the [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "KaijuVisionSensor") and [`KaijuCastSensor`](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "KaijuCastSensor").
 
 ### 1.0.4
