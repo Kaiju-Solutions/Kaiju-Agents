@@ -149,64 +149,136 @@ namespace KaijuSolutions.Agents.Sensors
         /// The nearest <see cref="Observed"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
-        public T Nearest(out float nearest)
+        public T Nearest(out float nearest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Nearest(_observed, out nearest);
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
             }
             
-            nearest = float.MaxValue;
-            return null;
+            T target = Agent.Nearest(_observed, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The nearest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
-        public T Nearest3(out float nearest)
+        public T Nearest3(out float nearest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Nearest3(_observed, out nearest);
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
             }
             
-            nearest = float.MaxValue;
-            return null;
+            T target = Agent.Nearest3(_observed, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The farthest <see cref="Observed"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
-        public T Farthest(out float farthest)
+        public T Farthest(out float farthest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Farthest(_observed, out farthest);
+                farthest = 0;
+                return null;
             }
             
-            farthest = 0;
-            return null;
+            T target = Agent.Farthest(_observed, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The farthest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
-        public T Farthest3(out float farthest)
+        public T Farthest3(out float farthest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Farthest3(_observed, out farthest);
+                farthest = 0;
+                return null;
             }
             
-            farthest = 0;
-            return null;
+            T target = Agent.Farthest3(_observed, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
+        public Vector2 Nearest(bool normalize = false)
+        {
+            T target = Nearest(out float _);
+            return target ? normalize ? target.Flatten().Normalize(Agent.Position, Agent.Forward, distance) : target.Flatten() : Vector2.zero;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
+        public Vector3 Nearest3(bool normalize = false)
+        {
+            T target = Nearest3(out float _);
+            return target ? normalize ? target.transform.position.Normalize(Agent.Position, Agent.Forward, distance) : target.transform.position : Vector3.zero;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
+        public Vector2 Farthest(bool normalize = false)
+        {
+            T target = Farthest(out float _);
+            return target ? normalize ? target.Flatten().Normalize(Agent.Position, Agent.Forward, distance) : target.Flatten() : Vector2.zero;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
+        public Vector3 Farthest3(bool normalize = false)
+        {
+            T target = Farthest3(out float _);
+            return target ? normalize ? target.transform.position.Normalize(Agent.Position, Agent.Forward, distance) : target.transform.position : Vector3.zero;
         }
         
         /// <summary>
@@ -251,6 +323,15 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance([NotNull] T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    cache[0] = farthest ? Farthest(out float _) : Nearest(out float _);
+                    return cache[0] ? 1 : 0;
+            }
+            
             // Sort all instances.
             T[] sorted = SortDistance(farthest, mode);
             
@@ -273,6 +354,15 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance3([NotNull] T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    cache[0] = farthest ? Farthest3(out float _) : Nearest3(out float _);
+                    return cache[0] ? 1 : 0;
+            }
+            
             // Sort all instances.
             T[] sorted = SortDistance3(farthest, mode);
             
@@ -295,6 +385,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAngle([NotNull] T[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
         {
+            if (cache.Length < 1)
+            {
+                return 0;
+            }
+            
             // Sort all instances.
             T[] sorted = SortAngle(mode, farthest);
             
@@ -498,6 +593,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistancePosition([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    if (!HasObserved)
+                    {
+                        cache[0] = Vector2.zero;
+                        return 0;
+                    }
+                    
+                    cache[0] = farthest ? Farthest(normalize) : Nearest(normalize);
+                    return 1;
+            }
+            
             return CopyPositions(cache, SortDistancePosition(farthest, mode, false), normalize);
         }
         
@@ -511,6 +621,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistancePosition([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    if (!HasObserved)
+                    {
+                        cache[0] = Vector3.zero;
+                        return 0;
+                    }
+                    
+                    cache[0] = farthest ? Farthest3(normalize) : Nearest3(normalize);
+                    return 1;
+            }
+            
             return CopyPositions(cache, SortDistancePosition3(farthest, mode, false), normalize);
         }
         
@@ -524,6 +649,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance3Position([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    if (!HasObserved)
+                    {
+                        cache[0] = Vector2.zero;
+                        return 0;
+                    }
+                    
+                    cache[0] = farthest ? Farthest(normalize) : Nearest(normalize);
+                    return 1;
+            }
+            
             return CopyPositions(cache, SortDistance3Position(farthest, mode, false), normalize);
         }
         
@@ -537,6 +677,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance3Position([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
+            switch (cache.Length)
+            {
+                case < 1:
+                    return 0;
+                case 1:
+                    if (!HasObserved)
+                    {
+                        cache[0] = Vector3.zero;
+                        return 0;
+                    }
+                    
+                    cache[0] = farthest ? Farthest3(normalize) : Nearest3(normalize);
+                    return 1;
+            }
+            
             return CopyPositions(cache, SortDistance3Position3(farthest, mode, false), normalize);
         }
         
@@ -550,7 +705,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition([NotNull] Vector2[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
-            return CopyPositions(cache, SortAnglePosition(mode, farthest, false), normalize);
+            return cache.Length < 1 ? 0 : CopyPositions(cache, SortAnglePosition(mode, farthest, false), normalize);
         }
         
         /// <summary>
@@ -563,7 +718,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition3([NotNull] Vector3[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
-            return CopyPositions(cache, SortAnglePosition3(mode, farthest, false), normalize);
+            return cache.Length < 1 ? 0 : CopyPositions(cache, SortAnglePosition3(mode, farthest, false), normalize);
         }
         
         /// <summary>

@@ -206,64 +206,92 @@ namespace KaijuSolutions.Agents.Sensors
         /// The nearest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
-        public Transform Nearest(out float nearest)
+        public Transform Nearest(out float nearest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Nearest(ConnectedTransforms, out nearest);
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
             }
             
-            nearest = float.MaxValue;
-            return null;
+            Transform target = Agent.Nearest(ConnectedTransforms, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The nearest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
-        public Transform Nearest3(out float nearest)
+        public Transform Nearest3(out float nearest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Nearest3(ConnectedTransforms, out nearest);
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
             }
             
-            nearest = float.MaxValue;
-            return null;
+            Transform target = Agent.Nearest3(ConnectedTransforms, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The farthest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
-        public Transform Farthest(out float farthest)
+        public Transform Farthest(out float farthest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Farthest(ConnectedTransforms, out farthest);
+                farthest = 0;
+                return null;
             }
             
-            farthest = 0;
-            return null;
+            Transform target = Agent.Farthest(ConnectedTransforms, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
         /// The farthest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
-        public Transform Farthest3(out float farthest)
+        public Transform Farthest3(out float farthest, bool normalize = false)
         {
-            if (Agent)
+            if (!Agent)
             {
-                return Agent.Farthest3(ConnectedTransforms, out farthest);
+                farthest = 0;
+                return null;
             }
             
-            farthest = 0;
-            return null;
+            Transform target = Agent.Farthest3(ConnectedTransforms, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
         }
         
         /// <summary>
