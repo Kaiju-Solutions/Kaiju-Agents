@@ -299,7 +299,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
-        public Vector2 Nearest(bool normalize = false)
+        public Vector2 NearestPosition(bool normalize = false)
         {
             Vector2 positon = Agent.Position;
             Vector2 value = Agent.Position.Nearest(Positions(), out float _);
@@ -311,7 +311,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
-        public Vector3 Nearest3(bool normalize = false)
+        public Vector3 NearestPosition3(bool normalize = false)
         {
             Vector3 positon = Agent.Position3;
             Vector3 value = Agent.Position.Nearest3(Positions3(), out float _);
@@ -323,7 +323,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
-        public Vector2 Farthest(bool normalize = false)
+        public Vector2 FarthestPosition(bool normalize = false)
         {
             Vector2 positon = Agent.Position;
             Vector2 value = Agent.Position.Farthest(Positions(), out float _);
@@ -335,7 +335,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
-        public Vector3 Farthest3(bool normalize = false)
+        public Vector3 FarthestPosition3(bool normalize = false)
         {
             Vector3 positon = Agent.Position3;
             Vector3 value = Agent.Position.Farthest3(Positions3(), out float _);

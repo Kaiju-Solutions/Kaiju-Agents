@@ -64,6 +64,13 @@ The [Kaiju Agents template project](https://github.com/Kaiju-Solutions/Kaiju-Age
 https://github.com/Kaiju-Solutions/Kaiju-Agents.git#template
 ```
 
+## Updating
+
+- **Important:** Kaiju Agents and any other Git-installed packages in your Unity project will not appear as needing updates under the `Updates` tab, and hence why you need to manually choose to update.
+- **Recommended:** Delete all existing [samples and exercises](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html "Samples and Exercises") from your project's `Assets` folder.
+- In Unity, from the top menu, go to `Window > Package Management > Package Manager` and select `In Project`.
+- Select `Kaiju Agents` and click the `Manage` button followed by `Update`.
+
 ## Next Steps
 
 See the [getting started documentation](https://agents.kaijusolutions.ca/manual/getting-started.html "Getting Started") to get up and running with Kaiju Agents.

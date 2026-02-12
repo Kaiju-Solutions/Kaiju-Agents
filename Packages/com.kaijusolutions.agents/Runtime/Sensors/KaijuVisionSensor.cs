@@ -242,7 +242,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
-        public Vector2 Nearest(bool normalize = false)
+        public Vector2 NearestPosition(bool normalize = false)
         {
             T target = Nearest(out float _);
             return target ? normalize ? target.Flatten().Normalize(Agent.Position, Agent.Forward, distance) : target.Flatten() : Vector2.zero;
@@ -253,7 +253,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
-        public Vector3 Nearest3(bool normalize = false)
+        public Vector3 NearestPosition3(bool normalize = false)
         {
             T target = Nearest3(out float _);
             return target ? normalize ? target.transform.position.Normalize(Agent.Position, Agent.Forward, distance) : target.transform.position : Vector3.zero;
@@ -264,7 +264,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
-        public Vector2 Farthest(bool normalize = false)
+        public Vector2 FarthestPosition(bool normalize = false)
         {
             T target = Farthest(out float _);
             return target ? normalize ? target.Flatten().Normalize(Agent.Position, Agent.Forward, distance) : target.Flatten() : Vector2.zero;
@@ -275,7 +275,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
-        public Vector3 Farthest3(bool normalize = false)
+        public Vector3 FarthestPosition3(bool normalize = false)
         {
             T target = Farthest3(out float _);
             return target ? normalize ? target.transform.position.Normalize(Agent.Position, Agent.Forward, distance) : target.transform.position : Vector3.zero;
@@ -604,7 +604,7 @@ namespace KaijuSolutions.Agents.Sensors
                         return 0;
                     }
                     
-                    cache[0] = farthest ? Farthest(normalize) : Nearest(normalize);
+                    cache[0] = farthest ? FarthestPosition(normalize) : NearestPosition(normalize);
                     return 1;
             }
             
@@ -632,7 +632,7 @@ namespace KaijuSolutions.Agents.Sensors
                         return 0;
                     }
                     
-                    cache[0] = farthest ? Farthest3(normalize) : Nearest3(normalize);
+                    cache[0] = farthest ? FarthestPosition3(normalize) : NearestPosition3(normalize);
                     return 1;
             }
             
@@ -660,7 +660,7 @@ namespace KaijuSolutions.Agents.Sensors
                         return 0;
                     }
                     
-                    cache[0] = farthest ? Farthest(normalize) : Nearest(normalize);
+                    cache[0] = farthest ? FarthestPosition(normalize) : NearestPosition(normalize);
                     return 1;
             }
             
@@ -688,7 +688,7 @@ namespace KaijuSolutions.Agents.Sensors
                         return 0;
                     }
                     
-                    cache[0] = farthest ? Farthest3(normalize) : Nearest3(normalize);
+                    cache[0] = farthest ? FarthestPosition3(normalize) : NearestPosition3(normalize);
                     return 1;
             }
             
