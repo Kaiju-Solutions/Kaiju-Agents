@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
 
@@ -17,7 +18,8 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <returns>All active <see cref="Microbe"/>s from <see cref="Microbe.All"/>.</returns>
         protected override IEnumerable<Microbe> DefaultObservables()
         {
-            return Microbe.All;
+            // Don't detect ourselves.
+            return Agent && Agent.TryGetComponent(out Microbe microbe) ? Microbe.All.Where(x => x != microbe) : Microbe.All;
         }
     }
 }
