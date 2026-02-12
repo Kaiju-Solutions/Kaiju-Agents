@@ -197,6 +197,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
             // Spawn the agent.
+            if (All.Count >= MicrobeManager.MaximumMicrobes)
+            {
+                return;
+            }
+            
             KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, Types);
             if (!agent.TryGetComponent(out Microbe microbe))
             {

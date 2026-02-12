@@ -42,10 +42,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// Spawn an energy.
         /// </summary>
         /// <param name="energyPrefab">The prefab to spawn.</param>
-        /// <param name="value">The energy value to set.</param>
         /// <param name="position">The position to spawn the energy pickup at.</param>
         public static void Spawn([NotNull] EnergyPickup energyPrefab, Vector2 position)
         {
+            if (All.Count >= MicrobeManager.MaximumEnergy)
+            {
+                return;
+            }
+            
             // If there are none cached, we need to spawn a new one.
             EnergyPickup spawned;
             if (Unactive.Count < 1)
