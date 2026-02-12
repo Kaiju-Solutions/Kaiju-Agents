@@ -106,6 +106,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private float decay = 5;
         
         /// <summary>
+        /// See if this microbe can mate given the limits set by the game.
+        /// </summary>
+        public bool CanMate => !OnCooldown && All.Count < MicrobeManager.MaximumMicrobes;
+        
+        /// <summary>
         /// If this microbe is currently on a cooldown for mating.
         /// </summary>
         public bool OnCooldown => Cooldown > 0;
@@ -146,7 +151,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void Mate([NotNull] Microbe other)
         {
             // Need to be compatible and both not on cooldown.
-            if (!Compatible(other) || OnCooldown || other.OnCooldown)
+            if (!Compatible(other) || !CanMate || other.OnCooldown)
             {
                 return;
             }
