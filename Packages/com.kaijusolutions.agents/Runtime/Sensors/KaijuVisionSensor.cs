@@ -151,7 +151,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
         public T Nearest(out float nearest)
         {
-            if (Agent)
+            if (HasObserved && Agent)
             {
                 return Agent.Nearest(Observables, out nearest);
             }
@@ -167,7 +167,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The nearest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
         public T Nearest3(out float nearest)
         {
-            if (Agent)
+            if (HasObserved && Agent)
             {
                 return Agent.Nearest3(Observables, out nearest);
             }
@@ -183,7 +183,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
         public T Farthest(out float farthest)
         {
-            if (Agent)
+            if (HasObserved && Agent)
             {
                 return Agent.Farthest(Observables, out farthest);
             }
@@ -199,7 +199,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The farthest <see cref="Observed"/> instance. Will be NULL if the <see cref="Observed"/> list is empty.</returns>
         public T Farthest3(out float farthest)
         {
-            if (Agent)
+            if (HasObserved && Agent)
             {
                 return Agent.Farthest3(Observables, out farthest);
             }
@@ -216,7 +216,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public T[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return Agent ? Agent.SortDistance(Observables, farthest, mode, Agent.Forward) : Array.Empty<T>();
+            return HasObserved && Agent ? Agent.SortDistance(Observables, farthest, mode, Agent.Forward) : Array.Empty<T>();
         }
         
         /// <summary>
@@ -227,7 +227,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public T[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return Agent ? Agent.SortDistance3(Observables, farthest, mode, Agent.Forward) : Array.Empty<T>();
+            return HasObserved && Agent ? Agent.SortDistance3(Observables, farthest, mode, Agent.Forward) : Array.Empty<T>();
         }
         
         /// <summary>
@@ -238,7 +238,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public T[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
         {
-            return Agent.SortAngle(Agent.Forward, Observables, mode, farthest);
+            return HasObserved && Agent ? Agent.SortAngle(Agent.Forward, Observables, mode, farthest) : Array.Empty<T>();
         }
         
         /// <summary>
