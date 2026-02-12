@@ -70,21 +70,23 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                // Cache the material if playing.
+                // Cache the material.
                 if (Application.isPlaying)
                 {
                     Materials.TryAdd(color, material);
                 }
-                
                 return material;
             }
 #endif
             // Otherwise, create a new material.
             material = CreateMaterial(color);
 #if UNITY_EDITOR
-            if (!Application.isPlaying)
+            if (!Application.isPlaying && !EditorApplication.isCompiling && !EditorApplication.isUpdating && !EditorApplication.isPaused)
             {
-                AssetDatabase.CreateAsset(material, $"Assets/{material.name}.mat");
+                // Create a safe name for the material.
+                string name = $"Material_{color.r:F3}_{color.g:F3}_{color.b:F3}_{color.a:F3}";
+                material.name = name;
+                AssetDatabase.CreateAsset(material, $"Assets/{name}.mat");
                 return material;
             }
 #endif
@@ -364,7 +366,7 @@ namespace KaijuSolutions.Agents
                 {
                     for (int j = 0; j < child.childCount; j++)
                     {
-                        Transform final = child.GetChild(i);
+                        Transform final = child.GetChild(j);
                         
                         if (final.name != "Eyes")
                         {

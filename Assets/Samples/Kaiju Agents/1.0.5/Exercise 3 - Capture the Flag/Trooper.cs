@@ -178,7 +178,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// Cache the trooper type which is needed from cached agents.
         /// </summary>
-        private static readonly Type[] Types = { typeof(Trooper) };
+        private static Type[] Types => _types ??= new[] { typeof(Trooper) };
+        
+        /// <summary>
+        /// Cache the trooper type which is needed from cached agents.
+        /// </summary>
+        private static Type[] _types;
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -189,6 +194,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             Active.Clear();
             ActiveOne.Clear();
             ActiveTwo.Clear();
+            _types = null;
         }
         
         /// <summary>
