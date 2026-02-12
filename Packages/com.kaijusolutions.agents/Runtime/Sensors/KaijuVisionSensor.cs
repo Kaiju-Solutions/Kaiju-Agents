@@ -313,7 +313,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector2[] SortDistancePosition(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
@@ -323,8 +323,18 @@ namespace KaijuSolutions.Agents.Sensors
             }
             
             Vector2 position = Agent;
-            Vector2[] positions = position.SortDistance(_observed.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
-            // TODO - Normalize.
+            Vector2 forward = Agent.Forward;
+            Vector2[] positions = position.SortDistance(_observed.Select(x => x.Flatten()), farthest, mode, forward);
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -333,7 +343,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector3[] SortDistancePosition3(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
@@ -343,8 +353,18 @@ namespace KaijuSolutions.Agents.Sensors
             }
             
             Vector3 position = Agent;
-            Vector3[] positions = position.SortDistance(_observed.Select(x => x.transform.position), farthest, mode, Agent.Forward);
-            // TODO - Normalize.
+            Vector3 forward = Agent.Forward3;
+            Vector3[] positions = position.SortDistance(_observed.Select(x => x.transform.position), farthest, mode, forward.Flatten());
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -353,7 +373,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector2[] SortDistance3Position(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
@@ -363,8 +383,18 @@ namespace KaijuSolutions.Agents.Sensors
             }
             
             Vector2 position = Agent;
-            Vector2[] positions = position.SortDistance3(_observed.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
-            // TODO - Normalize.
+            Vector2 forward = Agent.Forward;
+            Vector2[] positions = position.SortDistance3(_observed.Select(x => x.Flatten()), farthest, mode, forward);
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -373,7 +403,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector3[] SortDistance3Position3(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
@@ -383,8 +413,18 @@ namespace KaijuSolutions.Agents.Sensors
             }
             
             Vector3 position = Agent;
-            Vector3[] positions = position.SortDistance3(_observed.Select(x => x.transform.position), farthest, mode, Agent.Forward);
-            // TODO - Normalize.
+            Vector3 forward = Agent.Forward3;
+            Vector3[] positions = position.SortDistance3(_observed.Select(x => x.transform.position), farthest, mode, forward.Flatten());
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -393,7 +433,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector2[] SortAnglePosition(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
@@ -404,7 +444,17 @@ namespace KaijuSolutions.Agents.Sensors
             
             Vector2 position = Agent;
             Vector2[] positions = position.SortAngle(Agent.Forward, _observed.Select(x => x.Flatten()), mode, farthest);
-            // TODO - Normalize.
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                Vector2 forward = Agent.Forward;
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -413,7 +463,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The sorted <see cref="Observed"/> instances.</returns>
         public Vector3[] SortAnglePosition3(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
@@ -424,7 +474,17 @@ namespace KaijuSolutions.Agents.Sensors
             
             Vector3 position = Agent;
             Vector3[] positions = position.SortAngle(Agent.Forward, _observed.Select(x => x.transform.position), mode, farthest);
-            // TODO - Normalize.
+            
+            // Normalize if we should.
+            if (normalize)
+            {
+                Vector3 forward = Agent.Forward3;
+                for (int i = 0; i < positions.Length; i++)
+                {
+                    positions[i] = positions[i].Normalize(position, forward, distance);
+                }
+            }
+            
             return positions;
         }
         
@@ -434,21 +494,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistancePosition([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
-            // Sort all instances.
-            Vector2[] sorted = SortDistancePosition(farthest, mode, normalize);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector2.zero;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return CopyPositions(cache, SortDistancePosition(farthest, mode, false), normalize);
         }
         
         /// <summary>
@@ -457,21 +507,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistancePosition([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
-            // Sort all instances.
-            Vector3[] sorted = SortDistancePosition3(farthest, mode, normalize);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector3.zero;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return CopyPositions(cache, SortDistancePosition3(farthest, mode, false), normalize);
         }
         
         /// <summary>
@@ -480,21 +520,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance3Position([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
-            // Sort all instances.
-            Vector2[] sorted = SortDistance3Position(farthest, mode, normalize);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector2.zero;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return CopyPositions(cache, SortDistance3Position(farthest, mode, false), normalize);
         }
         
         /// <summary>
@@ -503,21 +533,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortDistance3Position([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = true)
         {
-            // Sort all instances.
-            Vector3[] sorted = SortDistance3Position3(farthest, mode, normalize);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector3.zero;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return CopyPositions(cache, SortDistance3Position3(farthest, mode, false), normalize);
         }
         
         /// <summary>
@@ -526,21 +546,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition([NotNull] Vector2[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
-            // Sort all instances.
-            Vector2[] sorted = SortAnglePosition(mode, farthest, normalize);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector2.zero;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return CopyPositions(cache, SortAnglePosition(mode, farthest, false), normalize);
         }
         
         /// <summary>
@@ -549,17 +559,69 @@ namespace KaijuSolutions.Agents.Sensors
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
-        /// <param name="normalize">If positions should be normalized.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition3([NotNull] Vector3[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = true)
         {
-            // Sort all instances.
-            Vector3[] sorted = SortAnglePosition3(mode, farthest, normalize);
-            
+            return CopyPositions(cache, SortAnglePosition3(mode, farthest, false), normalize);
+        }
+        
+        /// <summary>
+        /// Copy sorted positions into a cache.
+        /// </summary>
+        /// <param name="cache">The cache to copy into.</param>
+        /// <param name="sorted">The sorted positions to copy.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
+        /// <returns>The number of instances which fit into the cache.</returns>
+        private int CopyPositions([NotNull] Vector2[] cache, [NotNull] Vector2[] sorted, bool normalize = true)
+        {
             // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
+            if (normalize)
             {
-                cache[i] = i < sorted.Length ? sorted[i] : Vector3.zero;
+                Vector2 position = Agent;
+                Vector2 forward = Agent.Forward;
+                for (int i = 0; i < cache.Length; i++)
+                {
+                    cache[i] = i < sorted.Length ? sorted[i].Normalize(position, forward, distance) : Vector2.zero;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < cache.Length; i++)
+                {
+                    cache[i] = i < sorted.Length ? sorted[i] : Vector2.zero;
+                }
+            }
+            
+            // Return how many were observed and fit into our cache.
+            return Mathf.Min(sorted.Length, cache.Length);
+        }
+        
+        /// <summary>
+        /// Copy sorted positions into a cache.
+        /// </summary>
+        /// <param name="cache">The cache to copy into.</param>
+        /// <param name="sorted">The sorted positions to copy.</param>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
+        /// <returns>The number of instances which fit into the cache.</returns>
+        private int CopyPositions([NotNull] Vector3[] cache, [NotNull] Vector3[] sorted, bool normalize = true)
+        {
+            // Copy over what we can.
+            if (normalize)
+            {
+                Vector3 position = Agent;
+                Vector3 forward = Agent.Forward3;
+                for (int i = 0; i < cache.Length; i++)
+                {
+                    cache[i] = i < sorted.Length ? sorted[i].Normalize(position, forward, distance) : Vector3.zero;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < cache.Length; i++)
+                {
+                    cache[i] = i < sorted.Length ? sorted[i] : Vector3.zero;
+                }
             }
             
             // Return how many were observed and fit into our cache.

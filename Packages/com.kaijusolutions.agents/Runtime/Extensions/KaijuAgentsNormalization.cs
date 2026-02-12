@@ -47,7 +47,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -61,7 +61,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -74,7 +74,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -100,7 +100,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
@@ -112,7 +112,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
@@ -124,7 +124,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
@@ -136,7 +136,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -150,7 +150,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -163,7 +163,20 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and forward.
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
+        /// </summary>
+        /// <param name="value">The vector.</param>
+        /// <param name="position">The position to get the vector relative to.</param>
+        /// <param name="forward">The forward to get the vector relative to.</param>
+        /// <param name="original">The original max value possible, such as a detection distance.</param>
+        /// <returns>The normalized vector.</returns>
+        public static Vector3 Normalize(this Vector3 value, Vector3 position, Vector2 forward, float original)
+        {
+            return value.Normalize(position, forward.Expand(), original);
+        }
+        
+        /// <summary>
+        /// Normalize a vector between [-1, 1] relative to a position and forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position to get the vector relative to.</param>
@@ -177,7 +190,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
@@ -189,7 +202,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
@@ -201,7 +214,7 @@ namespace KaijuSolutions.Agents.Extensions
         }
         
         /// <summary>
-        /// Normalize a vector relative to a position and its forward.
+        /// Normalize a vector between [-1, 1] relative to a position and its forward.
         /// </summary>
         /// <param name="value">The vector.</param>
         /// <param name="position">The position and forward to get the vector relative to.</param>
