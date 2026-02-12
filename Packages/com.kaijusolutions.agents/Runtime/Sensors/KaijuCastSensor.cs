@@ -297,7 +297,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
-        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
         public Vector2 Nearest(bool normalize = false)
         {
@@ -309,7 +309,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
-        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
         public Vector3 Nearest3(bool normalize = false)
         {
@@ -321,7 +321,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
-        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
         public Vector2 Farthest(bool normalize = false)
         {
@@ -333,13 +333,35 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
-        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
         public Vector3 Farthest3(bool normalize = false)
         {
             Vector3 positon = Agent.Position3;
             Vector3 value = Agent.Position.Farthest3(Positions3(), out float _);
             return normalize ? value.Normalize(positon, Agent.Forward3, distance) : value;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
+        /// <returns>The nearest <see cref="Distances"/> instance.</returns>
+        public float NearestDistance(bool normalize = false)
+        {
+            float value = Distances().Min();
+            return normalize ? value.Normalize(distance, 0) : value;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
+        /// <returns>The farthest <see cref="Distances"/> instance.</returns>
+        public float FarthestDistance(bool normalize = false)
+        {
+            float value = Distances().Max();
+            return normalize ? value.Normalize(distance, 0) : value;
         }
         
         /// <summary>
@@ -351,7 +373,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
         /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
-        public IEnumerable<Vector2> Positions(bool normalize = true)
+        public IEnumerable<Vector2> Positions(bool normalize = false)
         {
             if (!Agent)
             {
@@ -381,7 +403,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
         /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
-        public IEnumerable<Vector3> Positions3(bool normalize = true)
+        public IEnumerable<Vector3> Positions3(bool normalize = false)
         {
             if (!Agent)
             {
@@ -411,7 +433,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         /// <param name="normalize">If distances should be normalized between [0, 1].</param>
         /// <returns>The distances of all rays.</returns>
-        public IEnumerable<float> Distances(bool normalize = true)
+        public IEnumerable<float> Distances(bool normalize = false)
         {
             if (!Agent)
             {
