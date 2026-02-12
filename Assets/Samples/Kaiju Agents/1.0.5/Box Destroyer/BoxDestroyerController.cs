@@ -44,7 +44,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         {
             // Nothing for us to do if we did not see any boxes.
             // We know this is our only sensor for this basic agent, which is why we don't check if it is the same one.
-            if (_sensor.HasObserved)
+            if (!_sensor.HasObserved)
             {
                 return;
             }

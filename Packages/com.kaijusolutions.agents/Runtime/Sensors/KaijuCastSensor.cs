@@ -209,7 +209,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
         public Transform Nearest(out float nearest)
         {
-            if (HasHits && Agent)
+            if (Agent)
             {
                 return Agent.Nearest(ConnectedTransforms, out nearest);
             }
@@ -225,7 +225,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
         public Transform Nearest3(out float nearest)
         {
-            if (HasHits && Agent)
+            if (Agent)
             {
                 return Agent.Nearest3(ConnectedTransforms, out nearest);
             }
@@ -241,7 +241,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
         public Transform Farthest(out float farthest)
         {
-            if (HasHits && Agent)
+            if (Agent)
             {
                 return Agent.Farthest(ConnectedTransforms, out farthest);
             }
@@ -257,7 +257,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
         public Transform Farthest3(out float farthest)
         {
-            if (HasHits && Agent)
+            if (Agent)
             {
                 return Agent.Farthest3(ConnectedTransforms, out farthest);
             }
@@ -274,7 +274,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
         public Transform[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return HasHits && Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
         }
         
         /// <summary>
@@ -285,7 +285,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
         public Transform[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)
         {
-            return HasHits && Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
+            return Agent ? Agent.SortDistance(ConnectedTransforms, farthest, mode, Agent.Forward) : Array.Empty<Transform>();
         }
         
         /// <summary>
@@ -296,7 +296,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The sorted <see cref="ConnectedTransforms"/> instances.</returns>
         public Transform[] SortAngle(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
         {
-            return HasHits && Agent ? Agent.SortAngle(Agent.Forward, ConnectedTransforms, mode, farthest) : Array.Empty<Transform>();
+            return Agent ? Agent.SortAngle(Agent.Forward, ConnectedTransforms, mode, farthest) : Array.Empty<Transform>();
         }
         
         /// <summary>
