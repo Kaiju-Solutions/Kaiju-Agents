@@ -4,7 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
     /// <summary>
@@ -45,27 +47,59 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// All microbes currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<Microbe> All => Active;
-        
+        public static IReadOnlyCollection<Microbe> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Microbe>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// The active microbes.
         /// </summary>
         private static readonly HashSet<Microbe> Active = new();
-        
-        /// <summary>
-        /// Cache the microbe type which is needed from cached agents.
-        /// </summary>
-        private static readonly Type[] Types = { typeof(Microbe) };
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
-            Active.Clear();
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
         }
         
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
+            Active.Clear();
+        }
+#endif
         /// <summary>
         /// The current energy of this microbe.
         /// This will <see cref="Decay"/> every second, and this microbe needs energy to stay alive.
@@ -104,6 +138,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         [Min(0)]
         [SerializeField]
         private float decay = 5;
+        
+        /// <summary>
+        /// See if this microbe can mate given the limits set by the game.
+        /// </summary>
+        public bool CanMate => !OnCooldown && All.Count < MicrobeManager.MaximumMicrobes;
         
         /// <summary>
         /// If this microbe is currently on a cooldown for mating.
@@ -146,7 +185,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void Mate([NotNull] Microbe other)
         {
             // Need to be compatible and both not on cooldown.
-            if (!Compatible(other) || OnCooldown || other.OnCooldown)
+            if (!Compatible(other) || !CanMate || other.OnCooldown)
             {
                 return;
             }
@@ -196,8 +235,20 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <param name="identifier">The microbe identifier type.</param>
         public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             // Spawn the agent.
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, Types);
+            if (All.Count >= MicrobeManager.MaximumMicrobes)
+            {
+                return;
+            }
+            
+            string[] components = { "Microbe" };
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, components);
             if (!agent.TryGetComponent(out Microbe microbe))
             {
                 microbe = agent.gameObject.AddComponent<Microbe>();
@@ -228,6 +279,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             Cooldown = 0;
             Active.Remove(this);
             base.OnDisable();
+        }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Active.Remove(this);
         }
         
         /// <summary>

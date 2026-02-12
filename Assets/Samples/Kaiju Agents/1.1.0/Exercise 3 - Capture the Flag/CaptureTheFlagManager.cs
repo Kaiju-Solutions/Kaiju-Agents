@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
@@ -23,6 +25,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             get
             {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
                 if (_instance != null)
                 {
                     return _instance;
@@ -32,16 +40,41 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return manager != null ? manager : new GameObject("Capture the Flag Manager") { isStatic = true }.AddComponent<CaptureTheFlagManager>();
             }
         }
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
-            _instance = null;
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
         }
         
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
+            _instance = null;
+        }
+#endif
         /// <summary>
         /// The prefab for <see cref="Trooper"/>s.
         /// </summary>
@@ -53,8 +86,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Health"/> of <see cref="Trooper"/>s.
         /// </summary>
-        public static int Health => Instance.health;
-
+        public static int Health
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.health;
+            }
+        }
+        
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Health"/> of <see cref="Trooper"/>s.
         /// </summary>
@@ -66,7 +111,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The damage the <see cref="BlasterActuator"/>s deal to <see cref="Trooper"/>s.
         /// </summary>
-        public static int Damage => Instance.damage;
+        public static int Damage
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.damage;
+            }
+        }
         
         /// <summary>
         /// The damage the <see cref="BlasterActuator"/>s deal to <see cref="Trooper"/>s.
@@ -79,7 +136,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Ammo"/> of <see cref="Trooper"/>s for their blaster.
         /// </summary>
-        public static int Ammo => Instance.ammo;
+        public static int Ammo
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.ammo;
+            }
+        }
         
         /// <summary>
         /// The maximum and starting <see cref="Trooper.Ammo"/> of <see cref="Trooper"/>s for their blaster.
@@ -92,7 +161,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The cooldown timer for <see cref="HealthPickup"/>s and <see cref="AmmoPickup"/>s.
         /// </summary>
-        public static float Cooldown => Instance.cooldown;
+        public static float Cooldown
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.cooldown;
+            }
+        }
         
         /// <summary>
         /// The cooldown timer for <see cref="HealthPickup"/>s and <see cref="AmmoPickup"/>s.
@@ -105,7 +186,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// How close to a <see cref="Trooper"/>'s own base to capture a <see cref="Flag"/> they are carrying.
         /// </summary>
-        public static float CaptureDistance => Instance.captureDistance;
+        public static float CaptureDistance
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.captureDistance;
+            }
+        }
         
         /// <summary>
         /// How close to a <see cref="Trooper"/>'s own base to capture a <see cref="Flag"/> they are carrying.
@@ -118,7 +211,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The time in seconds for <see cref="Trooper"/>s to respawn.
         /// </summary>
-        public static float Respawn => Instance.respawn;
+        public static float Respawn
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.respawn;
+            }
+        }
         
         /// <summary>
         /// The time in seconds for <see cref="Trooper"/>s to respawn.
@@ -132,7 +237,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The number of <see cref="Trooper"/>s per team.
         /// </summary>
-        public static int Size => Instance.size;
+        public static int Size
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.size;
+            }
+        }
         
         /// <summary>
         /// The number of <see cref="Trooper"/>s per team.
@@ -145,7 +262,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The color for team one.
         /// </summary>
-        public static Color ColorOne => Instance.colorOne;
+        public static Color ColorOne
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Color.red;
+                }
+#endif
+                return Instance.colorOne;
+            }
+        }
         
         /// <summary>
         /// The color for team one.
@@ -158,7 +287,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// The color for team two.
         /// </summary>
-        public static Color ColorTwo => Instance.colorTwo;
+        public static Color ColorTwo
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Color.blue;
+                }
+#endif
+                return Instance.colorTwo;
+            }
+        }
         
         /// <summary>
         /// The color for team two.

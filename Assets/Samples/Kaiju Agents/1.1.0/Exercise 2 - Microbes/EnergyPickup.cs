@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
     /// <summary>
@@ -16,8 +19,20 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// All energies currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<EnergyPickup> All => Active;
-        
+        public static IReadOnlyCollection<EnergyPickup> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<EnergyPickup>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// The active energy elements.
         /// </summary>
@@ -27,25 +42,61 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// The disabled energy elements.
         /// </summary>
         private static readonly HashSet<EnergyPickup> Unactive = new();
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             Active.Clear();
             Unactive.Clear();
         }
-        
+#endif
         /// <summary>
         /// Spawn an energy.
         /// </summary>
         /// <param name="energyPrefab">The prefab to spawn.</param>
-        /// <param name="value">The energy value to set.</param>
         /// <param name="position">The position to spawn the energy pickup at.</param>
         public static void Spawn([NotNull] EnergyPickup energyPrefab, Vector2 position)
         {
+            
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
+            if (All.Count >= MicrobeManager.MaximumEnergy)
+            {
+                return;
+            }
+            
             // If there are none cached, we need to spawn a new one.
             EnergyPickup spawned;
             if (Unactive.Count < 1)
