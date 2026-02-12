@@ -315,7 +315,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             // Spawn the agent.
             Transform t = spawnPoint.transform;
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, new[] { typeof(Trooper) });
+            Type[] components = { Type.GetType("Trooper") };
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, components);
             if (!agent.TryGetComponent(out Trooper trooper))
             {
                 trooper = agent.gameObject.AddComponent<Trooper>();

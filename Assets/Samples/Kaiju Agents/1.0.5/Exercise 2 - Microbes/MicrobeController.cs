@@ -36,59 +36,18 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         /// <param name="eater">The <see cref="Microbe"/> which ate this.</param>
         private void OnEaten(Microbe eater) { }
-
+        
         /// <summary>
         /// Called when a <see cref="MicrobeVisionSensor"/> has been run.
         /// </summary>
         /// <param name="microbeSensor">The <see cref="MicrobeVisionSensor"/> which was run.</param>
-        private void OnMicrobeSensor(MicrobeVisionSensor microbeSensor)
-        {
-            if (!microbeSensor.HasObserved)
-            {
-                return;
-            }
-            
-            Microbe nearest = microbeSensor.Nearest(out float _);
-            
-            if (microbe.Compatible(nearest))
-            {
-                if (microbe.CanMate && !nearest.OnCooldown)
-                {
-                    Agent.Pursue((Component)nearest);
-                    return;
-                }
-                
-                if (!Agent.Moving)
-                {
-                    Agent.Wander();
-                }
-                
-                return;
-            }
-            
-            if (microbe.Energy > nearest.Energy)
-            {
-                Agent.Pursue((Component)nearest);
-                return;
-            }
-            
-            if (!Agent.Moving)
-            {
-                Agent.Wander();
-            }
-        }
+        private void OnMicrobeSensor(MicrobeVisionSensor microbeSensor) { }
         
         /// <summary>
         /// Called when a <see cref="EnergyVisionSensor"/> has been run.
         /// </summary>
         /// <param name="energySensor">The <see cref="EnergyVisionSensor"/> which was run.</param>
-        private void OnEnergySensor(EnergyVisionSensor energySensor)
-        {
-            if (energySensor.HasObserved && !Agent.Moving)
-            {
-                Agent.Seek((Component)energySensor.Nearest(out float _));
-            }
-        }
+        private void OnEnergySensor(EnergyVisionSensor energySensor) { }
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSensor"/> has been run.
