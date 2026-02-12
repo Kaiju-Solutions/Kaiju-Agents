@@ -4,7 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
     /// <summary>
@@ -67,12 +69,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// Cache the microbe type which is needed from cached agents.
         /// </summary>
-        private static Type[] Types => _types ??= new[] { typeof(Microbe) };
-        
-        /// <summary>
-        /// Cache the microbe type which is needed from cached agents.
-        /// </summary>
-        private static Type[] _types;
+        private static Type[] Types
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying || EditorApplication.isCompiling || EditorApplication.isUpdating || EditorApplication.isPaused)
+                {
+                    return Array.Empty<Type>();
+                }
+#endif
+                return new[] { typeof(Microbe) };
+            }
+        }
         
         /// <summary>
         /// Handle manually resetting the domain.
@@ -81,7 +90,6 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private static void InitOnPlayMode()
         {
             Active.Clear();
-            _types = null;
         }
         
         /// <summary>
