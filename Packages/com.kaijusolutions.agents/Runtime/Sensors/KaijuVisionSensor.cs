@@ -322,13 +322,14 @@ namespace KaijuSolutions.Agents.Sensors
                 return Array.Empty<Vector2>();
             }
             
-            Vector2[] positions = Agent.SortDistance(_observed.Select(x => x.transform.position.Flatten()), farthest, mode, Agent.Forward);
-            Agent.Position.Normalize(distance, positions, normalization);
+            Vector2 position = Agent;
+            Vector2[] positions = position.SortDistance(_observed.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
+            position.Normalize(distance, positions, normalization);
             return positions;
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -341,8 +342,89 @@ namespace KaijuSolutions.Agents.Sensors
                 return Array.Empty<Vector3>();
             }
             
-            Vector3[] positions = Agent.SortDistance3(_observed.Select(x => x.transform.position), farthest, mode, Agent.Forward);
-            Agent.Position3.Normalize(distance, positions, normalization);
+            Vector3 position = Agent;
+            Vector3[] positions = position.SortDistance(_observed.Select(x => x.transform.position), farthest, mode, Agent.Forward);
+            position.Normalize(distance, positions, normalization);
+            return positions;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="normalization">How to normalize the positions.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public Vector2[] SortDistance3Position(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            if (!Agent)
+            {
+                return Array.Empty<Vector2>();
+            }
+            
+            Vector2 position = Agent;
+            Vector2[] positions = position.SortDistance3(_observed.Select(x => x.Flatten()), farthest, mode, Agent.Forward);
+            position.Normalize(distance, positions, normalization);
+            return positions;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">If this should sort by farthest items first.</param>
+        /// <param name="mode">How to break ties based on angle.</param>
+        /// <param name="normalization">How to normalize the positions.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public Vector3[] SortDistance3Position3(bool farthest = false, KaijuAngleSortMode? mode = null, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            if (!Agent)
+            {
+                return Array.Empty<Vector3>();
+            }
+            
+            Vector3 position = Agent;
+            Vector3[] positions = position.SortDistance3(_observed.Select(x => x.transform.position), farthest, mode, Agent.Forward);
+            position.Normalize(distance, positions, normalization);
+            return positions;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="mode">How to handle sorting.</param>
+        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
+        /// <param name="normalization">How to normalize the positions.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public Vector2[] SortAnglePosition(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            if (!Agent)
+            {
+                return Array.Empty<Vector2>();
+            }
+            
+            Vector2 position = Agent;
+            Vector2[] positions = position.SortAngle(Agent.Forward, _observed.Select(x => x.Flatten()), mode, farthest);
+            position.Normalize(distance, positions, normalization);
+            return positions;
+        }
+        
+        /// <summary>
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="mode">How to handle sorting.</param>
+        /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
+        /// <param name="normalization">How to normalize the positions.</param>
+        /// <returns>The sorted <see cref="Observed"/> instances.</returns>
+        public Vector3[] SortAnglePosition3(KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        {
+            if (!Agent)
+            {
+                return Array.Empty<Vector3>();
+            }
+            
+            Vector3 position = Agent;
+            Vector3[] positions = position.SortAngle(Agent.Forward, _observed.Select(x => x.transform.position), mode, farthest);
+            position.Normalize(distance, positions, normalization);
             return positions;
         }
         

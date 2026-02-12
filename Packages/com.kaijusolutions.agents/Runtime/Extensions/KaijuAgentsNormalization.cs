@@ -6,7 +6,7 @@ namespace KaijuSolutions.Agents.Extensions
     /// <summary>
     /// Methods to perform normalization.
     /// </summary>
-    public static class KaijuNormalization
+    public static class KaijuAgentsNormalization
     {
         /// <summary>
         /// Perform normalization.
