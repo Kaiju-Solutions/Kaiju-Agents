@@ -419,6 +419,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         }
         
         /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Active.Remove(this);
+            ActiveOne.Remove(this);
+            ActiveTwo.Remove(this);
+        }
+        
+        /// <summary>
         /// Callback for when an <see cref="KaijuActuator"/> has been enabled.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>

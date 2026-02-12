@@ -259,6 +259,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         }
         
         /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Active.Remove(this);
+        }
+        
+        /// <summary>
         /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
         /// </summary>
         private void FixedUpdate()

@@ -375,5 +375,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             float bA = Mathf.Abs(b);
             return aA < bA ? -1 : bA < aA ? 1 : a < b ? -1 : b < a ? 1 : 0;
         }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            OpenOneCache.Remove(this);
+            OpenTwoCache.Remove(this);
+            OccupiedOneCache.Remove(this);
+            OccupiedTwoCache.Remove(this);
+        }
     }
 }

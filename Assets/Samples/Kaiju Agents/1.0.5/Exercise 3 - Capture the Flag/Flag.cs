@@ -326,5 +326,13 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 c.enabled = true;
             }
         }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Both.Remove(this);
+        }
     }
 }

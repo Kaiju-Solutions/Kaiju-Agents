@@ -354,6 +354,11 @@ namespace KaijuSolutions.Agents
             {
                 return;
             }
+            
+            if (_instance)
+            {
+                _instance._editorSelectedAgents.Remove(agent);
+            }
 #endif
             if (cache)
             {
@@ -363,12 +368,6 @@ namespace KaijuSolutions.Agents
             {
                 PendingRemovals.Add(agent);
             }
-#if UNITY_EDITOR
-            if (_instance)
-            {
-                _instance._editorSelectedAgents.Remove(agent);
-            }
-#endif
         }
         
         /// <summary>
