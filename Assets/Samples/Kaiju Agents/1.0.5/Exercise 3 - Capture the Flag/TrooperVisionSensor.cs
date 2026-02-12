@@ -43,7 +43,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         protected override IEnumerable<Trooper> DefaultObservables()
         {
             // Don't detect ourselves.
-            return Agent && Agent.TryGetComponent(out Trooper trooper) ? Trooper.All.Where(x => x != trooper) : Trooper.All;
+            return Trooper.All.Where(x => x.transform != transform && x.transform != Agent.transform);
         }
     }
 }

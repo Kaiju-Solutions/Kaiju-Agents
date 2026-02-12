@@ -19,7 +19,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         protected override IEnumerable<Microbe> DefaultObservables()
         {
             // Don't detect ourselves.
-            return Agent && Agent.TryGetComponent(out Microbe microbe) ? Microbe.All.Where(x => x != microbe) : Microbe.All;
+            return Microbe.All.Where(x => x.transform != transform && x.transform != Agent.transform);
         }
     }
 }
