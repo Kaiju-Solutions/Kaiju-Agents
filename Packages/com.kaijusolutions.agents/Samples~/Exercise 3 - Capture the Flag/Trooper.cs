@@ -112,8 +112,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// All troopers currently active.
         /// </summary>
-        public static IReadOnlyCollection<Trooper> All => Active;
-        
+        public static IReadOnlyCollection<Trooper> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Trooper>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// All active troopers.
         /// </summary>
@@ -122,8 +134,20 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// All troopers currently active for team one.
         /// </summary>
-        public static IReadOnlyCollection<Trooper> AllOne => ActiveOne;
-        
+        public static IReadOnlyCollection<Trooper> AllOne
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Trooper>();
+                }
+#endif
+                return ActiveOne;
+            }
+        }
+
         /// <summary>
         /// The active troopers for team one.
         /// </summary>
@@ -132,7 +156,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// All troopers currently active for team two.
         /// </summary>
-        public static IReadOnlyCollection<Trooper> AllTwo => ActiveTwo;
+        public static IReadOnlyCollection<Trooper> AllTwo
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Trooper>();
+                }
+#endif
+                return ActiveTwo;
+            }
+        }
         
         /// <summary>
         /// The active troopers for team two.
@@ -235,6 +271,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <returns>The spawned trooper.</returns>
         public static Trooper Spawn([NotNull] KaijuAgent trooperPrefab, [NotNull] SpawnPoint spawnPoint)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             // Get team values.
             uint team;
             Color color;

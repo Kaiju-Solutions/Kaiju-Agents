@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
@@ -16,8 +17,20 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// All energies currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<EnergyPickup> All => Active;
-        
+        public static IReadOnlyCollection<EnergyPickup> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<EnergyPickup>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// The active energy elements.
         /// </summary>
@@ -42,10 +55,21 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// Spawn an energy.
         /// </summary>
         /// <param name="energyPrefab">The prefab to spawn.</param>
-        /// <param name="value">The energy value to set.</param>
         /// <param name="position">The position to spawn the energy pickup at.</param>
         public static void Spawn([NotNull] EnergyPickup energyPrefab, Vector2 position)
         {
+            
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
+            if (All.Count >= MicrobeManager.MaximumEnergy)
+            {
+                return;
+            }
+            
             // If there are none cached, we need to spawn a new one.
             EnergyPickup spawned;
             if (Unactive.Count < 1)

@@ -45,8 +45,20 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// All microbes currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<Microbe> All => Active;
-        
+        public static IReadOnlyCollection<Microbe> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Microbe>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// The active microbes.
         /// </summary>
@@ -106,6 +118,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private float decay = 5;
         
         /// <summary>
+        /// See if this microbe can mate given the limits set by the game.
+        /// </summary>
+        public bool CanMate => !OnCooldown && All.Count < MicrobeManager.MaximumMicrobes;
+        
+        /// <summary>
         /// If this microbe is currently on a cooldown for mating.
         /// </summary>
         public bool OnCooldown => Cooldown > 0;
@@ -146,7 +163,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void Mate([NotNull] Microbe other)
         {
             // Need to be compatible and both not on cooldown.
-            if (!Compatible(other) || OnCooldown || other.OnCooldown)
+            if (!Compatible(other) || !CanMate || other.OnCooldown)
             {
                 return;
             }
@@ -196,7 +213,18 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <param name="identifier">The microbe identifier type.</param>
         public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             // Spawn the agent.
+            if (All.Count >= MicrobeManager.MaximumMicrobes)
+            {
+                return;
+            }
+            
             KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, Types);
             if (!agent.TryGetComponent(out Microbe microbe))
             {

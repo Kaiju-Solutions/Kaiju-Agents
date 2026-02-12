@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
 
@@ -41,7 +42,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <returns>All active <see cref="Trooper"/>s.</returns>
         protected override IEnumerable<Trooper> DefaultObservables()
         {
-            return Trooper.All;
+            // Don't detect ourselves.
+            return Trooper.All.Where(x => x.transform != transform && x.transform != Agent.transform);
         }
     }
 }
