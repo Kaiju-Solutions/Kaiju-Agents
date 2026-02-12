@@ -274,8 +274,8 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
-        /// <param name="normalization">How to normalize the positions.</param>
-        public IEnumerable<Vector2> Positions(KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        /// <param name="normalize">If positions should be normalized.</param>
+        public IEnumerable<Vector2> Positions(bool normalize = true)
         {
             // TODO - Normalize.
             return _positions.Select(x => x.Flatten());
@@ -284,8 +284,8 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
-        /// <param name="normalization">How to normalize the positions.</param>
-        public IReadOnlyList<Vector3> Positions3(KaijuPositionNormalization normalization = KaijuPositionNormalization.Local)
+        /// <param name="normalize">If positions should be normalized.</param>
+        public IReadOnlyList<Vector3> Positions3(bool normalize = true)
         {
             // TODO - Normalize.
             return _positions;
