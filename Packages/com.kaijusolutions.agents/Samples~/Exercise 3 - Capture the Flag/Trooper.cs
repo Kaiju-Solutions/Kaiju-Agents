@@ -4,7 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Actuators;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
@@ -174,29 +176,43 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// The active troopers for team two.
         /// </summary>
         private static readonly HashSet<Trooper> ActiveTwo = new();
-        
-        /// <summary>
-        /// Cache the trooper type which is needed from cached agents.
-        /// </summary>
-        private static Type[] Types => _types ??= new[] { typeof(Trooper) };
-        
-        /// <summary>
-        /// Cache the trooper type which is needed from cached agents.
-        /// </summary>
-        private static Type[] _types;
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             Active.Clear();
             ActiveOne.Clear();
             ActiveTwo.Clear();
-            _types = null;
         }
-        
+#endif
         /// <summary>
         /// The current health of this trooper.
         /// </summary>
@@ -299,7 +315,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             // Spawn the agent.
             Transform t = spawnPoint.transform;
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, Types);
+            Type[] components = { Type.GetType("Trooper") };
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, components);
             if (!agent.TryGetComponent(out Trooper trooper))
             {
                 trooper = agent.gameObject.AddComponent<Trooper>();
@@ -422,6 +439,16 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             OnFlagDropped?.Invoke(_flag);
             OnFlagDroppedGlobal?.Invoke(this, _flag);
             _flag = null;
+        }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Active.Remove(this);
+            ActiveOne.Remove(this);
+            ActiveTwo.Remove(this);
         }
         
         /// <summary>
