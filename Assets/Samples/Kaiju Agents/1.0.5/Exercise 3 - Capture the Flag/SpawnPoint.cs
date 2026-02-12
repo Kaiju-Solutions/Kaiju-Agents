@@ -20,7 +20,17 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         /// <param name="teamOne">If this is for team one.</param>
         /// <returns>The point to spawn at or NULL if there is none.</returns>
-        public static SpawnPoint NextSpawnPoint(bool teamOne) => teamOne ? NextSpawnPoint(OpenOneCache, OccupiedOneCache) : NextSpawnPoint(OpenTwoCache, OccupiedTwoCache);
+        public static SpawnPoint NextSpawnPoint(bool teamOne)
+        {
+            
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
+            return teamOne ? NextSpawnPoint(OpenOneCache, OccupiedOneCache) : NextSpawnPoint(OpenTwoCache, OccupiedTwoCache);
+        }
         
         /// <summary>
         /// Get the next point to spawn at, prioritizing open points first.

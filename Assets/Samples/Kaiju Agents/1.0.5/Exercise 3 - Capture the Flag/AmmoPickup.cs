@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
@@ -13,7 +14,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// Get all active ammo pickups.
         /// </summary>
-        public static IReadOnlyCollection<AmmoPickup> All => Cache;
+        public static IReadOnlyCollection<AmmoPickup> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<AmmoPickup>();
+                }
+#endif
+                return Cache;
+            }
+        }
         
         /// <summary>
         /// Cache currently active items.

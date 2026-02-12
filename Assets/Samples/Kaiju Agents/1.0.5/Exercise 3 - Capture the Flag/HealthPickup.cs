@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Exercises.CTF
@@ -13,7 +14,19 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <summary>
         /// Get all active health pickups.
         /// </summary>
-        public static IReadOnlyCollection<HealthPickup> All => Cache;
+        public static IReadOnlyCollection<HealthPickup> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<HealthPickup>();
+                }
+#endif
+                return Cache;
+            }
+        }
         
         /// <summary>
         /// Cache currently active items.

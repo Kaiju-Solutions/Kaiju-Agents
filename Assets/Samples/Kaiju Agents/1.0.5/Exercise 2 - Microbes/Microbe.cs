@@ -45,8 +45,20 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// All microbes currently in the world.
         /// </summary>
-        public static IReadOnlyCollection<Microbe> All => Active;
-        
+        public static IReadOnlyCollection<Microbe> All
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Microbe>();
+                }
+#endif
+                return Active;
+            }
+        }
+
         /// <summary>
         /// The active microbes.
         /// </summary>
@@ -201,6 +213,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <param name="identifier">The microbe identifier type.</param>
         public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             // Spawn the agent.
             if (All.Count >= MicrobeManager.MaximumMicrobes)
             {
