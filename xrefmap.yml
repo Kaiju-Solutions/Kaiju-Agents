@@ -1847,6 +1847,19 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.All
   nameWithType: Microbe.All
+- uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate
+  name: CanMate
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate
+  commentId: P:KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate
+  nameWithType: Microbe.CanMate
+- uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate*
+  name: CanMate
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate_
+  commentId: Overload:KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate
+  nameWithType: Microbe.CanMate
 - uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.Compatible(KaijuSolutions.Agents.Exercises.Microbes.Microbe)
   name: Compatible(Microbe)
   href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible_KaijuSolutions_Agents_Exercises_Microbes_Microbe_
@@ -2051,6 +2064,32 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.Instance
   nameWithType: MicrobeManager.Instance
+- uid: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy
+  name: MaximumEnergy
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html#KaijuSolutions_Agents_Exercises_Microbes_MicrobeManager_MaximumEnergy
+  commentId: P:KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy
+  nameWithType: MicrobeManager.MaximumEnergy
+- uid: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy*
+  name: MaximumEnergy
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html#KaijuSolutions_Agents_Exercises_Microbes_MicrobeManager_MaximumEnergy_
+  commentId: Overload:KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumEnergy
+  nameWithType: MicrobeManager.MaximumEnergy
+- uid: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes
+  name: MaximumMicrobes
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html#KaijuSolutions_Agents_Exercises_Microbes_MicrobeManager_MaximumMicrobes
+  commentId: P:KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes
+  nameWithType: MicrobeManager.MaximumMicrobes
+- uid: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes*
+  name: MaximumMicrobes
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html#KaijuSolutions_Agents_Exercises_Microbes_MicrobeManager_MaximumMicrobes_
+  commentId: Overload:KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MaximumMicrobes
+  nameWithType: MicrobeManager.MaximumMicrobes
 - uid: KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.MicrobePrefab
   name: MicrobePrefab
   href: api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html#KaijuSolutions_Agents_Exercises_Microbes_MicrobeManager_MicrobePrefab
@@ -12840,6 +12879,121 @@ references:
   fullName.vb: KaijuSolutions.Agents.Extensions.KaijuAgentsNearest3.Nearest3(Of T)(Vector3, System.Collections.Generic.IEnumerable(Of T), ByRef System.Single)
   nameWithType: KaijuAgentsNearest3.Nearest3<T>(Vector3, IEnumerable<T>, out Single)
   nameWithType.vb: KaijuAgentsNearest3.Nearest3(Of T)(Vector3, IEnumerable(Of T), ByRef Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization
+  name: KaijuAgentsNormalization
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html
+  commentId: T:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization
+  nameWithType: KaijuAgentsNormalization
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(System.Single,System.Single,System.Single,System.Single)
+  name: Normalize(Single, Single, Single, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_System_Single_System_Single_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(System.Single,System.Single,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(System.Single, System.Single, System.Single, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Single, Single, Single, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Component,System.Single)
+  name: Normalize(Vector2, Component, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Component_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Component,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Component, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Component, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,GameObject,System.Single)
+  name: Normalize(Vector2, GameObject, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_GameObject_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,GameObject,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, GameObject, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, GameObject, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,System.Single,System.Single,System.Single)
+  name: Normalize(Vector2, Single, Single, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_System_Single_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,System.Single,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, System.Single, System.Single, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Single, Single, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Transform,System.Single)
+  name: Normalize(Vector2, Transform, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Transform_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Transform,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Transform, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Transform, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector2,System.Single)
+  name: Normalize(Vector2, Vector2, Vector2, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector2_Vector2_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector2,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Vector2, Vector2, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Vector2, Vector2, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector3,System.Single)
+  name: Normalize(Vector2, Vector2, Vector3, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector2_Vector3_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector3,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Vector2, Vector3, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Vector2, Vector3, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector2,System.Single)
+  name: Normalize(Vector2, Vector3, Vector2, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector3_Vector2_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector2,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Vector3, Vector2, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Vector3, Vector2, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector3,System.Single)
+  name: Normalize(Vector2, Vector3, Vector3, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector3_Vector3_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector3,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2, Vector3, Vector3, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector2, Vector3, Vector3, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Component,System.Single)
+  name: Normalize(Vector3, Component, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Component_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Component,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Component, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Component, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,GameObject,System.Single)
+  name: Normalize(Vector3, GameObject, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_GameObject_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,GameObject,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, GameObject, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, GameObject, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,System.Single,System.Single,System.Single)
+  name: Normalize(Vector3, Single, Single, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_System_Single_System_Single_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,System.Single,System.Single,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, System.Single, System.Single, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Single, Single, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Transform,System.Single)
+  name: Normalize(Vector3, Transform, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Transform_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Transform,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Transform, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Transform, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector2,System.Single)
+  name: Normalize(Vector3, Vector2, Vector2, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector2_Vector2_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector2,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Vector2, Vector2, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Vector2, Vector2, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector3,System.Single)
+  name: Normalize(Vector3, Vector2, Vector3, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector2_Vector3_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector3,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Vector2, Vector3, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Vector2, Vector3, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector2,System.Single)
+  name: Normalize(Vector3, Vector3, Vector2, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector3_Vector2_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector2,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Vector3, Vector2, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Vector3, Vector2, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector3,System.Single)
+  name: Normalize(Vector3, Vector3, Vector3, Single)
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector3_Vector3_System_Single_
+  commentId: M:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector3,System.Single)
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3, Vector3, Vector3, System.Single)
+  nameWithType: KaijuAgentsNormalization.Normalize(Vector3, Vector3, Vector3, Single)
+- uid: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*
+  name: Normalize
+  href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html#KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_
+  commentId: Overload:KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize
+  nameWithType: KaijuAgentsNormalization.Normalize
 - uid: KaijuSolutions.Agents.Extensions.KaijuAgentsPursue
   name: KaijuAgentsPursue
   href: api/KaijuSolutions.Agents.Extensions.KaijuAgentsPursue.html
@@ -24247,15 +24401,15 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.KaijuAgents.GetMaterial
   nameWithType: KaijuAgents.GetMaterial
-- uid: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.Type})
-  name: Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<Type>)
-  href: api/KaijuSolutions.Agents.KaijuAgents.html#KaijuSolutions_Agents_KaijuAgents_Spawn_KaijuSolutions_Agents_KaijuAgentType_System_Nullable_Vector3__System_Nullable_Quaternion__System_Boolean_KaijuSolutions_Agents_KaijuAgent_System_String_System_Nullable_Color__System_Nullable_Color__System_Collections_Generic_ICollection_System_Type__
-  commentId: M:KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.Type})
-  name.vb: Spawn(KaijuAgentType, Nullable(Of Vector3), Nullable(Of Quaternion), Boolean, KaijuAgent, String, Nullable(Of Color), Nullable(Of Color), ICollection(Of Type))
-  fullName: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType, System.Nullable<Vector3>, System.Nullable<Quaternion>, System.Boolean, KaijuSolutions.Agents.KaijuAgent, System.String, System.Nullable<Color>, System.Nullable<Color>, System.Collections.Generic.ICollection<System.Type>)
-  fullName.vb: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType, System.Nullable(Of Vector3), System.Nullable(Of Quaternion), System.Boolean, KaijuSolutions.Agents.KaijuAgent, System.String, System.Nullable(Of Color), System.Nullable(Of Color), System.Collections.Generic.ICollection(Of System.Type))
-  nameWithType: KaijuAgents.Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<Type>)
-  nameWithType.vb: KaijuAgents.Spawn(KaijuAgentType, Nullable(Of Vector3), Nullable(Of Quaternion), Boolean, KaijuAgent, String, Nullable(Of Color), Nullable(Of Color), ICollection(Of Type))
+- uid: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.String})
+  name: Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<String>)
+  href: api/KaijuSolutions.Agents.KaijuAgents.html#KaijuSolutions_Agents_KaijuAgents_Spawn_KaijuSolutions_Agents_KaijuAgentType_System_Nullable_Vector3__System_Nullable_Quaternion__System_Boolean_KaijuSolutions_Agents_KaijuAgent_System_String_System_Nullable_Color__System_Nullable_Color__System_Collections_Generic_ICollection_System_String__
+  commentId: M:KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.String})
+  name.vb: Spawn(KaijuAgentType, Nullable(Of Vector3), Nullable(Of Quaternion), Boolean, KaijuAgent, String, Nullable(Of Color), Nullable(Of Color), ICollection(Of String))
+  fullName: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType, System.Nullable<Vector3>, System.Nullable<Quaternion>, System.Boolean, KaijuSolutions.Agents.KaijuAgent, System.String, System.Nullable<Color>, System.Nullable<Color>, System.Collections.Generic.ICollection<System.String>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType, System.Nullable(Of Vector3), System.Nullable(Of Quaternion), System.Boolean, KaijuSolutions.Agents.KaijuAgent, System.String, System.Nullable(Of Color), System.Nullable(Of Color), System.Collections.Generic.ICollection(Of System.String))
+  nameWithType: KaijuAgents.Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<String>)
+  nameWithType.vb: KaijuAgents.Spawn(KaijuAgentType, Nullable(Of Vector3), Nullable(Of Quaternion), Boolean, KaijuAgent, String, Nullable(Of Color), Nullable(Of Color), ICollection(Of String))
 - uid: KaijuSolutions.Agents.KaijuAgents.Spawn*
   name: Spawn
   href: api/KaijuSolutions.Agents.KaijuAgents.html#KaijuSolutions_Agents_KaijuAgents_Spawn_
@@ -24438,15 +24592,15 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.KaijuAgentsManager.GetCached
   nameWithType: KaijuAgentsManager.GetCached
-- uid: KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.Type})
-  name: GetCached<T>(ICollection<Type>)
-  href: api/KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_GetCached__1_System_Collections_Generic_ICollection_System_Type__
-  commentId: M:KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.Type})
-  name.vb: GetCached(Of T)(ICollection(Of Type))
-  fullName: KaijuSolutions.Agents.KaijuAgentsManager.GetCached<T>(System.Collections.Generic.ICollection<System.Type>)
-  fullName.vb: KaijuSolutions.Agents.KaijuAgentsManager.GetCached(Of T)(System.Collections.Generic.ICollection(Of System.Type))
-  nameWithType: KaijuAgentsManager.GetCached<T>(ICollection<Type>)
-  nameWithType.vb: KaijuAgentsManager.GetCached(Of T)(ICollection(Of Type))
+- uid: KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.String})
+  name: GetCached<T>(ICollection<String>)
+  href: api/KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_GetCached__1_System_Collections_Generic_ICollection_System_String__
+  commentId: M:KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.String})
+  name.vb: GetCached(Of T)(ICollection(Of String))
+  fullName: KaijuSolutions.Agents.KaijuAgentsManager.GetCached<T>(System.Collections.Generic.ICollection<System.String>)
+  fullName.vb: KaijuSolutions.Agents.KaijuAgentsManager.GetCached(Of T)(System.Collections.Generic.ICollection(Of System.String))
+  nameWithType: KaijuAgentsManager.GetCached<T>(ICollection<String>)
+  nameWithType.vb: KaijuAgentsManager.GetCached(Of T)(ICollection(Of String))
 - uid: KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.Collections.Generic.ICollection{KaijuSolutions.Agents.KaijuAgent},System.Collections.Generic.IEnumerable{System.UInt32})
   name: IdentifiedAgents(ICollection<KaijuAgent>, IEnumerable<UInt32>)
   href: api/KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_Collections_Generic_ICollection_KaijuSolutions_Agents_KaijuAgent__System_Collections_Generic_IEnumerable_System_UInt32__
@@ -30817,6 +30971,32 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Cleanup
   nameWithType: KaijuCastSensor.Cleanup
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits
+  name: ConnectedHits
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits
+  commentId: P:KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits
+  nameWithType: KaijuCastSensor.ConnectedHits
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits*
+  name: ConnectedHits
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits
+  nameWithType: KaijuCastSensor.ConnectedHits
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms
+  name: ConnectedTransforms
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms
+  commentId: P:KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms
+  nameWithType: KaijuCastSensor.ConnectedTransforms
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms*
+  name: ConnectedTransforms
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms
+  nameWithType: KaijuCastSensor.ConnectedTransforms
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance
   name: Distance
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance
@@ -30830,6 +31010,19 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance
   nameWithType: KaijuCastSensor.Distance
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances(System.Boolean)
+  name: Distances(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances(System.Boolean)
+  nameWithType: KaijuCastSensor.Distances(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances*
+  name: Distances
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances
+  nameWithType: KaijuCastSensor.Distances
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.editorHit
   name: editorHit
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_editorHit
@@ -30855,6 +31048,90 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.EditorVisualize
   nameWithType: KaijuCastSensor.EditorVisualize
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest(System.Single@,System.Boolean)
+  name: Farthest(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest(System.Single@,System.Boolean)
+  name.vb: Farthest(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuCastSensor.Farthest(out Single, Boolean)
+  nameWithType.vb: KaijuCastSensor.Farthest(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest*
+  name: Farthest
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest
+  nameWithType: KaijuCastSensor.Farthest
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3(System.Single@,System.Boolean)
+  name: Farthest3(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest3_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3(System.Single@,System.Boolean)
+  name.vb: Farthest3(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuCastSensor.Farthest3(out Single, Boolean)
+  nameWithType.vb: KaijuCastSensor.Farthest3(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3*
+  name: Farthest3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3
+  nameWithType: KaijuCastSensor.Farthest3
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance(System.Boolean)
+  name: FarthestDistance(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestDistance_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance(System.Boolean)
+  nameWithType: KaijuCastSensor.FarthestDistance(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance*
+  name: FarthestDistance
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestDistance_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance
+  nameWithType: KaijuCastSensor.FarthestDistance
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition(System.Boolean)
+  name: FarthestPosition(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition(System.Boolean)
+  nameWithType: KaijuCastSensor.FarthestPosition(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition*
+  name: FarthestPosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition
+  nameWithType: KaijuCastSensor.FarthestPosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3(System.Boolean)
+  name: FarthestPosition3(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition3_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3(System.Boolean)
+  nameWithType: KaijuCastSensor.FarthestPosition3(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3*
+  name: FarthestPosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3
+  nameWithType: KaijuCastSensor.FarthestPosition3
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits
+  name: HasHits
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_HasHits
+  commentId: P:KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits
+  nameWithType: KaijuCastSensor.HasHits
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits*
+  name: HasHits
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_HasHits_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits
+  nameWithType: KaijuCastSensor.HasHits
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Hits
   name: Hits
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits
@@ -30887,6 +31164,77 @@ references:
   commentId: F:KaijuSolutions.Agents.Sensors.KaijuCastSensor.mask
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.mask
   nameWithType: KaijuCastSensor.mask
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest(System.Single@,System.Boolean)
+  name: Nearest(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest(System.Single@,System.Boolean)
+  name.vb: Nearest(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuCastSensor.Nearest(out Single, Boolean)
+  nameWithType.vb: KaijuCastSensor.Nearest(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest*
+  name: Nearest
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest
+  nameWithType: KaijuCastSensor.Nearest
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3(System.Single@,System.Boolean)
+  name: Nearest3(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest3_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3(System.Single@,System.Boolean)
+  name.vb: Nearest3(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuCastSensor.Nearest3(out Single, Boolean)
+  nameWithType.vb: KaijuCastSensor.Nearest3(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3*
+  name: Nearest3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3
+  nameWithType: KaijuCastSensor.Nearest3
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance(System.Boolean)
+  name: NearestDistance(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestDistance_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance(System.Boolean)
+  nameWithType: KaijuCastSensor.NearestDistance(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance*
+  name: NearestDistance
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestDistance_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance
+  nameWithType: KaijuCastSensor.NearestDistance
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition(System.Boolean)
+  name: NearestPosition(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition(System.Boolean)
+  nameWithType: KaijuCastSensor.NearestPosition(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition*
+  name: NearestPosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition
+  nameWithType: KaijuCastSensor.NearestPosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3(System.Boolean)
+  name: NearestPosition3(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition3_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3(System.Boolean)
+  nameWithType: KaijuCastSensor.NearestPosition3(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3*
+  name: NearestPosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3
+  nameWithType: KaijuCastSensor.NearestPosition3
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.op_Implicit(GameObject)~KaijuSolutions.Agents.Sensors.KaijuCastSensor
   name: Implicit(GameObject to KaijuCastSensor)
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_op_Implicit_GameObject__KaijuSolutions_Agents_Sensors_KaijuCastSensor
@@ -30924,12 +31272,12 @@ references:
   fullName.vb: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Widening
   nameWithType: KaijuCastSensor.Implicit
   nameWithType.vb: KaijuCastSensor.Widening
-- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions
-  name: Positions
-  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions
-  commentId: P:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions
-  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions
-  nameWithType: KaijuCastSensor.Positions
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions(System.Boolean)
+  name: Positions(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions(System.Boolean)
+  nameWithType: KaijuCastSensor.Positions(Boolean)
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions*
   name: Positions
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_
@@ -30937,6 +31285,19 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions
   nameWithType: KaijuCastSensor.Positions
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3(System.Boolean)
+  name: Positions3(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions3_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3(System.Boolean)
+  nameWithType: KaijuCastSensor.Positions3(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3*
+  name: Positions3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3
+  nameWithType: KaijuCastSensor.Positions3
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius
   name: Radius
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius
@@ -30963,6 +31324,19 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run
   nameWithType: KaijuCastSensor.Run
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms
+  name: Transforms
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Transforms
+  commentId: P:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms
+  nameWithType: KaijuCastSensor.Transforms
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms*
+  name: Transforms
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Transforms_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms
+  nameWithType: KaijuCastSensor.Transforms
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.triggers
   name: triggers
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_triggers
@@ -31298,6 +31672,93 @@ references:
   fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).EditorVisualize
   nameWithType: KaijuVisionSensor<T>.EditorVisualize
   nameWithType.vb: KaijuVisionSensor(Of T).EditorVisualize
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest(System.Single@,System.Boolean)
+  name: Farthest(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest(System.Single@,System.Boolean)
+  name.vb: Farthest(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Farthest(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Farthest(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.Farthest(out Single, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).Farthest(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest*
+  name: Farthest
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Farthest
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Farthest
+  nameWithType: KaijuVisionSensor<T>.Farthest
+  nameWithType.vb: KaijuVisionSensor(Of T).Farthest
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3(System.Single@,System.Boolean)
+  name: Farthest3(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest3_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3(System.Single@,System.Boolean)
+  name.vb: Farthest3(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Farthest3(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Farthest3(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.Farthest3(out Single, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).Farthest3(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3*
+  name: Farthest3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Farthest3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Farthest3
+  nameWithType: KaijuVisionSensor<T>.Farthest3
+  nameWithType.vb: KaijuVisionSensor(Of T).Farthest3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition(System.Boolean)
+  name: FarthestPosition(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.FarthestPosition(System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).FarthestPosition(System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.FarthestPosition(Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).FarthestPosition(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition*
+  name: FarthestPosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.FarthestPosition
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).FarthestPosition
+  nameWithType: KaijuVisionSensor<T>.FarthestPosition
+  nameWithType.vb: KaijuVisionSensor(Of T).FarthestPosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3(System.Boolean)
+  name: FarthestPosition3(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition3_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.FarthestPosition3(System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).FarthestPosition3(System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.FarthestPosition3(Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).FarthestPosition3(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3*
+  name: FarthestPosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.FarthestPosition3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).FarthestPosition3
+  nameWithType: KaijuVisionSensor<T>.FarthestPosition3
+  nameWithType.vb: KaijuVisionSensor(Of T).FarthestPosition3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved
+  name: HasObserved
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_HasObserved
+  commentId: P:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.HasObserved
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).HasObserved
+  nameWithType: KaijuVisionSensor<T>.HasObserved
+  nameWithType.vb: KaijuVisionSensor(Of T).HasObserved
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved*
+  name: HasObserved
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_HasObserved_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.HasObserved
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).HasObserved
+  nameWithType: KaijuVisionSensor<T>.HasObserved
+  nameWithType.vb: KaijuVisionSensor(Of T).HasObserved
 - uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.lineOfSight
   name: lineOfSight
   href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_lineOfSight
@@ -31314,6 +31775,76 @@ references:
   fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).mask
   nameWithType: KaijuVisionSensor<T>.mask
   nameWithType.vb: KaijuVisionSensor(Of T).mask
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest(System.Single@,System.Boolean)
+  name: Nearest(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest(System.Single@,System.Boolean)
+  name.vb: Nearest(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Nearest(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Nearest(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.Nearest(out Single, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).Nearest(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest*
+  name: Nearest
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Nearest
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Nearest
+  nameWithType: KaijuVisionSensor<T>.Nearest
+  nameWithType.vb: KaijuVisionSensor(Of T).Nearest
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3(System.Single@,System.Boolean)
+  name: Nearest3(out Single, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest3_System_Single__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3(System.Single@,System.Boolean)
+  name.vb: Nearest3(ByRef Single, Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Nearest3(out System.Single, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Nearest3(ByRef System.Single, System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.Nearest3(out Single, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).Nearest3(ByRef Single, Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3*
+  name: Nearest3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Nearest3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Nearest3
+  nameWithType: KaijuVisionSensor<T>.Nearest3
+  nameWithType.vb: KaijuVisionSensor(Of T).Nearest3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition(System.Boolean)
+  name: NearestPosition(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.NearestPosition(System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).NearestPosition(System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.NearestPosition(Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).NearestPosition(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition*
+  name: NearestPosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.NearestPosition
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).NearestPosition
+  nameWithType: KaijuVisionSensor<T>.NearestPosition
+  nameWithType.vb: KaijuVisionSensor(Of T).NearestPosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3(System.Boolean)
+  name: NearestPosition3(Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition3_System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3(System.Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.NearestPosition3(System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).NearestPosition3(System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.NearestPosition3(Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).NearestPosition3(Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3*
+  name: NearestPosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.NearestPosition3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).NearestPosition3
+  nameWithType: KaijuVisionSensor<T>.NearestPosition3
+  nameWithType.vb: KaijuVisionSensor(Of T).NearestPosition3
 - uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observables
   name: Observables
   href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observables
@@ -31435,6 +31966,249 @@ references:
   fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Run
   nameWithType: KaijuVisionSensor<T>.Run
   nameWithType.vb: KaijuVisionSensor(Of T).Run
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(`0[],KaijuAngleSortMode,System.Nullable{System.Boolean})
+  name: SortAngle(T[], KaijuAngleSortMode, Nullable<Boolean>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle__0___KaijuAngleSortMode_System_Nullable_System_Boolean__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(`0[],KaijuAngleSortMode,System.Nullable{System.Boolean})
+  name.vb: SortAngle(T(), KaijuAngleSortMode, Nullable(Of Boolean))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAngle(T[], KaijuAngleSortMode, System.Nullable<System.Boolean>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAngle(T(), KaijuAngleSortMode, System.Nullable(Of System.Boolean))
+  nameWithType: KaijuVisionSensor<T>.SortAngle(T[], KaijuAngleSortMode, Nullable<Boolean>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAngle(T(), KaijuAngleSortMode, Nullable(Of Boolean))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(KaijuAngleSortMode,System.Nullable{System.Boolean})
+  name: SortAngle(KaijuAngleSortMode, Nullable<Boolean>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle_KaijuAngleSortMode_System_Nullable_System_Boolean__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(KaijuAngleSortMode,System.Nullable{System.Boolean})
+  name.vb: SortAngle(KaijuAngleSortMode, Nullable(Of Boolean))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAngle(KaijuAngleSortMode, System.Nullable<System.Boolean>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAngle(KaijuAngleSortMode, System.Nullable(Of System.Boolean))
+  nameWithType: KaijuVisionSensor<T>.SortAngle(KaijuAngleSortMode, Nullable<Boolean>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAngle(KaijuAngleSortMode, Nullable(Of Boolean))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle*
+  name: SortAngle
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAngle
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAngle
+  nameWithType: KaijuVisionSensor<T>.SortAngle
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAngle
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name: SortAnglePosition(KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name.vb: SortAnglePosition(KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition(KaijuAngleSortMode, System.Nullable<System.Boolean>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition(KaijuAngleSortMode, System.Nullable(Of System.Boolean), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition(KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition(KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(Vector2[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name: SortAnglePosition(Vector2[], KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_Vector2___KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(Vector2[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name.vb: SortAnglePosition(Vector2(), KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition(Vector2[], KaijuAngleSortMode, System.Nullable<System.Boolean>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition(Vector2(), KaijuAngleSortMode, System.Nullable(Of System.Boolean), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition(Vector2[], KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition(Vector2(), KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition*
+  name: SortAnglePosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name: SortAnglePosition3(KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name.vb: SortAnglePosition3(KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition3(KaijuAngleSortMode, System.Nullable<System.Boolean>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition3(KaijuAngleSortMode, System.Nullable(Of System.Boolean), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition3(KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition3(KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(Vector3[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name: SortAnglePosition3(Vector3[], KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_Vector3___KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(Vector3[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)
+  name.vb: SortAnglePosition3(Vector3(), KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition3(Vector3[], KaijuAngleSortMode, System.Nullable<System.Boolean>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition3(Vector3(), KaijuAngleSortMode, System.Nullable(Of System.Boolean), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition3(Vector3[], KaijuAngleSortMode, Nullable<Boolean>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition3(Vector3(), KaijuAngleSortMode, Nullable(Of Boolean), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3*
+  name: SortAnglePosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortAnglePosition3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortAnglePosition3
+  nameWithType: KaijuVisionSensor<T>.SortAnglePosition3
+  nameWithType.vb: KaijuVisionSensor(Of T).SortAnglePosition3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name: SortDistance(T[], Boolean, Nullable<KaijuAngleSortMode>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance__0___System_Boolean_System_Nullable_KaijuAngleSortMode__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name.vb: SortDistance(T(), Boolean, Nullable(Of KaijuAngleSortMode))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance(T[], System.Boolean, System.Nullable<KaijuAngleSortMode>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance(T(), System.Boolean, System.Nullable(Of KaijuAngleSortMode))
+  nameWithType: KaijuVisionSensor<T>.SortDistance(T[], Boolean, Nullable<KaijuAngleSortMode>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance(T(), Boolean, Nullable(Of KaijuAngleSortMode))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name: SortDistance(Boolean, Nullable<KaijuAngleSortMode>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance_System_Boolean_System_Nullable_KaijuAngleSortMode__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name.vb: SortDistance(Boolean, Nullable(Of KaijuAngleSortMode))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance(System.Boolean, System.Nullable<KaijuAngleSortMode>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance(System.Boolean, System.Nullable(Of KaijuAngleSortMode))
+  nameWithType: KaijuVisionSensor<T>.SortDistance(Boolean, Nullable<KaijuAngleSortMode>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance(Boolean, Nullable(Of KaijuAngleSortMode))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance*
+  name: SortDistance
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance
+  nameWithType: KaijuVisionSensor<T>.SortDistance
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name: SortDistance3(T[], Boolean, Nullable<KaijuAngleSortMode>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3__0___System_Boolean_System_Nullable_KaijuAngleSortMode__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name.vb: SortDistance3(T(), Boolean, Nullable(Of KaijuAngleSortMode))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3(T[], System.Boolean, System.Nullable<KaijuAngleSortMode>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3(T(), System.Boolean, System.Nullable(Of KaijuAngleSortMode))
+  nameWithType: KaijuVisionSensor<T>.SortDistance3(T[], Boolean, Nullable<KaijuAngleSortMode>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3(T(), Boolean, Nullable(Of KaijuAngleSortMode))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name: SortDistance3(Boolean, Nullable<KaijuAngleSortMode>)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3_System_Boolean_System_Nullable_KaijuAngleSortMode__
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(System.Boolean,System.Nullable{KaijuAngleSortMode})
+  name.vb: SortDistance3(Boolean, Nullable(Of KaijuAngleSortMode))
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3(System.Boolean, System.Nullable<KaijuAngleSortMode>)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3(System.Boolean, System.Nullable(Of KaijuAngleSortMode))
+  nameWithType: KaijuVisionSensor<T>.SortDistance3(Boolean, Nullable<KaijuAngleSortMode>)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3(Boolean, Nullable(Of KaijuAngleSortMode))
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3*
+  name: SortDistance3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3
+  nameWithType: KaijuVisionSensor<T>.SortDistance3
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistance3Position(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistance3Position(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position(System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position(System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistance3Position(Vector2[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_Vector2___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistance3Position(Vector2(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position(Vector2[], System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position(Vector2(), System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position(Vector2[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position(Vector2(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistance3Position(Vector3[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_Vector3___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistance3Position(Vector3(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position(Vector3[], System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position(Vector3(), System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position(Vector3[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position(Vector3(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position*
+  name: SortDistance3Position
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistance3Position3(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position3_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistance3Position3(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position3(System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position3(System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position3(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position3(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3*
+  name: SortDistance3Position3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistance3Position3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistance3Position3
+  nameWithType: KaijuVisionSensor<T>.SortDistance3Position3
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistance3Position3
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistancePosition(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistancePosition(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition(System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition(System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistancePosition(Vector2[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_Vector2___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistancePosition(Vector2(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition(Vector2[], System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition(Vector2(), System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition(Vector2[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition(Vector2(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistancePosition(Vector3[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_Vector3___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistancePosition(Vector3(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition(Vector3[], System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition(Vector3(), System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition(Vector3[], Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition(Vector3(), Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition*
+  name: SortDistancePosition
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name: SortDistancePosition3(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition3_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_
+  commentId: M:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)
+  name.vb: SortDistancePosition3(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition3(System.Boolean, System.Nullable<KaijuAngleSortMode>, System.Boolean)
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition3(System.Boolean, System.Nullable(Of KaijuAngleSortMode), System.Boolean)
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition3(Boolean, Nullable<KaijuAngleSortMode>, Boolean)
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition3(Boolean, Nullable(Of KaijuAngleSortMode), Boolean)
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3*
+  name: SortDistancePosition3
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition3_
+  commentId: Overload:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.SortDistancePosition3
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).SortDistancePosition3
+  nameWithType: KaijuVisionSensor<T>.SortDistancePosition3
+  nameWithType.vb: KaijuVisionSensor(Of T).SortDistancePosition3
 - uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.triggers
   name: triggers
   href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_triggers

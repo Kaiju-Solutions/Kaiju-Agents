@@ -484,6 +484,54 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedHits">ConnectedHits</h4>
+  <div class="markdown level1 summary"><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> data only for points which hit, removing all NULL entries.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;RaycastHit?&gt; ConnectedHits { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Nullable</span>&lt;<span class="xref">RaycastHit</span>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.ConnectedTransforms">ConnectedTransforms</h4>
+  <div class="markdown level1 summary"><p>et transforms for the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits">ConnectedHits</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Transform&gt; ConnectedTransforms { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distance">Distance</h4>
   <div class="markdown level1 summary"><p>How far to cast.</p>
@@ -504,6 +552,30 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HasHits_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HasHits" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.HasHits">HasHits</h4>
+  <div class="markdown level1 summary"><p>If at least one ray has hit something.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasHits { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -556,30 +628,6 @@
       </tr>
     </tbody>
   </table>
-  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions*"></a>
-  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions">Positions</h4>
-  <div class="markdown level1 summary"><p>The positions corresponding to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>, with <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> that missed being set to the maximum casting distance.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;Vector3&gt; Positions { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<span class="xref">Vector3</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Radius">Radius</h4>
   <div class="markdown level1 summary"><p>The radius of the casts.</p>
@@ -604,6 +652,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Transforms_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Transforms" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Transforms">Transforms</h4>
+  <div class="markdown level1 summary"><p>Get transforms for the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>. Misses will be NULL.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Transform&gt; Transforms { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Transform</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Cleanup_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Cleanup*"></a>
@@ -617,6 +689,49 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Cleanup">KaijuSensor.Cleanup()</a></div>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Distances(System.Boolean)">Distances(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Get the distances of all rays.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;float&gt; Distances(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If distances should be normalized between [0, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><p>The distances of all rays.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_EditorVisualize_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.EditorVisualize*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_EditorVisualize_Vector3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.EditorVisualize(Vector3)">EditorVisualize(Vector3)</h4>
   <div class="markdown level1 summary"><p>Allow for visualizing in the editor.
@@ -646,6 +761,544 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_EditorVisualize_Vector3_">KaijuSensor.EditorVisualize(Vector3)</a></div>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest(System.Single@,System.Boolean)">Farthest(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Farthest(out float farthest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>The distance to the farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest3_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Farthest3(System.Single@,System.Boolean)">Farthest3(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Farthest3(out float farthest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>The distance to the farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestDistance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestDistance_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestDistance(System.Boolean)">FarthestDistance(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_">Distances(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float FarthestDistance(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [0, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_">Distances(Boolean)</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition(System.Boolean)">FarthestPosition(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 FarthestPosition(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition3_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.FarthestPosition3(System.Boolean)">FarthestPosition3(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 FarthestPosition3(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest(System.Single@,System.Boolean)">Nearest(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Nearest(out float nearest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">nearest</span></td>
+        <td><p>The distance to the nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest3_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Nearest3(System.Single@,System.Boolean)">Nearest3(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform Nearest3(out float nearest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">nearest</span></td>
+        <td><p>The distance to the nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms">ConnectedTransforms</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestDistance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestDistance_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestDistance(System.Boolean)">NearestDistance(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_">Distances(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float NearestDistance(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [0, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances_System_Boolean_">Distances(Boolean)</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition(System.Boolean)">NearestPosition(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 NearestPosition(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition3_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3(System.Boolean)">NearestPosition3(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 NearestPosition3(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_">Positions(Boolean)</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions(System.Boolean)">Positions(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The positions corresponding to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>, with <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> that missed being set to the maximum casting distance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector2&gt; Positions(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Vector2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions3_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Positions3(System.Boolean)">Positions3(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The positions corresponding to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a>, with <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits">Hits</a> that missed being set to the maximum casting distance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Vector3&gt; Positions3(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">Vector3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run_" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run" data-uid="KaijuSolutions.Agents.Sensors.KaijuCastSensor.Run">Run()</h4>
   <div class="markdown level1 summary"><p>Run the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a>.</p>

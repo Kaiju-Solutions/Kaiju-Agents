@@ -436,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html",
-          "hash": "qo9TFYnjkW12h9Tcic6B3ERvCG9WQ0iOQGudEYyI9wY="
+          "hash": "mGjM4VZan6Y9aqcwjuedtjtuIqqPjGLEgKil7GXBoDE="
         }
       },
       "is_incremental": false,
@@ -472,7 +472,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Exercises.Microbes.MicrobeManager.html",
-          "hash": "KDvpucI5Rk4DjcygJkoY7/EbDolaZlpQD83fp/evXoo="
+          "hash": "rr6HBcMm6XGf3LV4SYaWxkbF7wl3u1Q9nGyBEOIxo4I="
         }
       },
       "is_incremental": false,
@@ -828,6 +828,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html",
+          "hash": "xTdzHjs1OBSuXdyccrYUV//4ukQ3VnXEgpYcQNP436U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Extensions.KaijuAgentsPursue.yml",
       "output": {
         ".html": {
@@ -1000,7 +1012,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Extensions.html",
-          "hash": "lrW8+DsVvWvrK0U0Fl8kLSwYVjIpGlbhOC9k9g7k5k8="
+          "hash": "MTbZVLSXSPVcD8/q3TAmTRpdUqMXq1ISd0yBVyi9Lpw="
         }
       },
       "is_incremental": false,
@@ -1108,7 +1120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgents.html",
-          "hash": "QN+3olc/6itvffBJk7yj1niIl3wyYKEzNUrSbf3XCv8="
+          "hash": "ugAIdWIEHwJ3UGmsaF6nvvJlmAXGrsapH6eB94EWHgM="
         }
       },
       "is_incremental": false,
@@ -1120,7 +1132,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgentsManager.html",
-          "hash": "0L/Lavo/9evM+0tffYQ8uaHzDhSBwMcPlLvGjVs7PTw="
+          "hash": "gMEWTag4NJ9XN9w+FV3MORYc5otfXyzNjP73mq4rC34="
         }
       },
       "is_incremental": false,
@@ -1504,7 +1516,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html",
-          "hash": "n3Tcp5Jj0aQeHcgMC/cUvdsTQZ/P9qeMOz++/kbR9xI="
+          "hash": "yvurq+xeeM2PmxJy5DrUlPaeUIhdwibLY/PHiJI62jg="
         }
       },
       "is_incremental": false,
@@ -1516,7 +1528,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html",
-          "hash": "UIxYnITZpIFankQh3n8Vd3JoohI1lRssURrljJ1/54k="
+          "hash": "gQU5ssLXgJvMB2gXafgO55UxSvTOc8JdZm6DECMCNG4="
         }
       },
       "is_incremental": false,
@@ -1528,7 +1540,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuEverythingVisionSensor.html",
-          "hash": "7QXavsjOYJgbCbD4pKJmY57cTMMs6aWSGAos8ijqcAk="
+          "hash": "Nr/w4pmFBK9obcRRHXIdrZw3Ymq6W8UVvnqhmE7Qdaw="
         }
       },
       "is_incremental": false,
@@ -1552,7 +1564,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html",
-          "hash": "/IPOBGOenXlRB9Y5UB7xW9XCH5IhYBdrUD4pu+hbXb8="
+          "hash": "rVhoEnVXJi4z3P+9J+JNlo+tYHvgvkQDRJegJk8LUnU="
         }
       },
       "is_incremental": false,
@@ -1588,7 +1600,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "ueQ8g4EiYTE07eN1ZyLN54cg9WQles6ld1K3zLaAHcs="
+          "hash": "k331gas7ZFFbaKeJCJ+SGOJcqL50eyJP2eK6EDzKF/o="
         }
       },
       "is_incremental": false,
@@ -1600,7 +1612,7 @@
       "output": {
         ".html": {
           "relative_path": "changelog/index.html",
-          "hash": "MFvBNiLdG6T3pIxstLFhkgXO+HwKTWuFYM97W8wObG0="
+          "hash": "PNxqBIoi81x+I07tw2ijNUt+yWYoe/KNigKgVcKy27k="
         }
       },
       "is_incremental": false,
@@ -1712,7 +1724,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "uiu8TyhFp46MtfsI7+//OGlDy9VZNRhlKJu3GtNScDQ="
+          "hash": "xTIDNZEWzLbWyBhCaO/XpROwsXe7DplVuOGEMETfWnQ="
         }
       },
       "is_incremental": false,
@@ -1968,7 +1980,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 137,
+          "total_file_count": 138,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

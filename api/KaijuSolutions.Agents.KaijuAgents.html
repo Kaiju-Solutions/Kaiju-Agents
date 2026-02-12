@@ -309,13 +309,13 @@
     </tbody>
   </table>
   <a id="KaijuSolutions_Agents_KaijuAgents_Spawn_" data-uid="KaijuSolutions.Agents.KaijuAgents.Spawn*"></a>
-  <h4 id="KaijuSolutions_Agents_KaijuAgents_Spawn_KaijuSolutions_Agents_KaijuAgentType_System_Nullable_Vector3__System_Nullable_Quaternion__System_Boolean_KaijuSolutions_Agents_KaijuAgent_System_String_System_Nullable_Color__System_Nullable_Color__System_Collections_Generic_ICollection_System_Type__" data-uid="KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.Type})">Spawn(KaijuAgentType, Nullable&lt;Vector3&gt;, Nullable&lt;Quaternion&gt;, Boolean, KaijuAgent, String, Nullable&lt;Color&gt;, Nullable&lt;Color&gt;, ICollection&lt;Type&gt;)</h4>
+  <h4 id="KaijuSolutions_Agents_KaijuAgents_Spawn_KaijuSolutions_Agents_KaijuAgentType_System_Nullable_Vector3__System_Nullable_Quaternion__System_Boolean_KaijuSolutions_Agents_KaijuAgent_System_String_System_Nullable_Color__System_Nullable_Color__System_Collections_Generic_ICollection_System_String__" data-uid="KaijuSolutions.Agents.KaijuAgents.Spawn(KaijuSolutions.Agents.KaijuAgentType,System.Nullable{Vector3},System.Nullable{Quaternion},System.Boolean,KaijuSolutions.Agents.KaijuAgent,System.String,System.Nullable{Color},System.Nullable{Color},System.Collections.Generic.ICollection{System.String})">Spawn(KaijuAgentType, Nullable&lt;Vector3&gt;, Nullable&lt;Quaternion&gt;, Boolean, KaijuAgent, String, Nullable&lt;Color&gt;, Nullable&lt;Color&gt;, ICollection&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Spawn an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection&lt;Type&gt; components = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection&lt;string&gt; components = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -376,7 +376,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Type</span>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><span class="parametername">components</span></td>
         <td><p>All component types to ensure are added to the agent. A cached agent will only be used if it has all of these components, and otherwise will create a new agent with all components instead. This will check in children as well.</p>
 </td>

@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsNormalization | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsNormalization | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization">
+  
+  
+  <h1 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization" class="text-break">Class KaijuAgentsNormalization
+  </h1>
+  <div class="markdown level0 summary"><p>Helper normalization methods.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">KaijuAgentsNormalization</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Extensions.html">KaijuSolutions.Agents.Extensions</a></h6>
+  
+  <h5 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class KaijuAgentsNormalization</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_System_Single_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(System.Single,System.Single,System.Single,System.Single)">Normalize(Single, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a float.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float Normalize(this float value, float original, float min = -1F, float max = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The new normalized minimum.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The new normalized maximum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>The normalized float.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Component_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Component,System.Single)">Normalize(Vector2, Component, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Component position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_GameObject_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,GameObject,System.Single)">Normalize(Vector2, GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, GameObject position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,System.Single,System.Single,System.Single)">Normalize(Vector2, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, float original, float min = -1F, float max = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The new normalized minimum.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The new normalized maximum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Transform_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Transform,System.Single)">Normalize(Vector2, Transform, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Transform position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector2_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector2,System.Single)">Normalize(Vector2, Vector2, Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Vector2 position, Vector2 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector2_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector2,Vector3,System.Single)">Normalize(Vector2, Vector2, Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Vector2 position, Vector3 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector3_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector2,System.Single)">Normalize(Vector2, Vector3, Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Vector3 position, Vector2 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector2_Vector3_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector2,Vector3,Vector3,System.Single)">Normalize(Vector2, Vector3, Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector2 Normalize(this Vector2 value, Vector3 position, Vector3 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Component_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Component,System.Single)">Normalize(Vector3, Component, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Component position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Component</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_GameObject_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,GameObject,System.Single)">Normalize(Vector3, GameObject, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, GameObject position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_System_Single_System_Single_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,System.Single,System.Single,System.Single)">Normalize(Vector3, Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, float original, float min = -1F, float max = 1F)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The new normalized minimum.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The new normalized maximum.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Transform_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Transform,System.Single)">Normalize(Vector3, Transform, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and its forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Transform position, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position and forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector2_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector2,System.Single)">Normalize(Vector3, Vector2, Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Vector2 position, Vector2 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector2_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector2,Vector3,System.Single)">Normalize(Vector3, Vector2, Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Vector2 position, Vector3 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector3_Vector2_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector2,System.Single)">Normalize(Vector3, Vector3, Vector2, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Vector3 position, Vector2 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize*"></a>
+  <h4 id="KaijuSolutions_Agents_Extensions_KaijuAgentsNormalization_Normalize_Vector3_Vector3_Vector3_System_Single_" data-uid="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.Normalize(Vector3,Vector3,Vector3,System.Single)">Normalize(Vector3, Vector3, Vector3, Single)</h4>
+  <div class="markdown level1 summary"><p>Normalize a vector between [-1, 1] relative to a position and forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector3 Normalize(this Vector3 value, Vector3 position, Vector3 forward, float original)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">forward</span></td>
+        <td><p>The forward to get the vector relative to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">original</span></td>
+        <td><p>The original max value possible, such as a detection distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The normalized vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

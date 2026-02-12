@@ -571,6 +571,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_HasObserved_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_HasObserved" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.HasObserved">HasObserved</h4>
+  <div class="markdown level1 summary"><p>If at least one instance has been <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasObserved { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observed*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observed">Observed</h4>
   <div class="markdown level1 summary"><p>All observed items.</p>
@@ -597,7 +621,7 @@
   </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_ObservedCount_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.ObservedCount*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_ObservedCount" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.ObservedCount">ObservedCount</h4>
-  <div class="markdown level1 summary"><p>The number of observed items.</p>
+  <div class="markdown level1 summary"><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> items.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -710,6 +734,374 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_EditorVisualize_Vector3_">KaijuSensor.EditorVisualize(Vector3)</a></div>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest(System.Single@,System.Boolean)">Farthest(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Farthest(out float farthest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>The distance to the farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest3_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Farthest3(System.Single@,System.Boolean)">Farthest3(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Farthest3(out float farthest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>The distance to the farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition(System.Boolean)">FarthestPosition(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance position to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 FarthestPosition(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> position instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition3_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.FarthestPosition3(System.Boolean)">FarthestPosition3(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance position to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 FarthestPosition3(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The farthest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> position instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest(System.Single@,System.Boolean)">Nearest(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Nearest(out float nearest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">nearest</span></td>
+        <td><p>The distance to the nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest3_System_Single__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Nearest3(System.Single@,System.Boolean)">Nearest3(out Single, Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T Nearest3(out float nearest, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">nearest</span></td>
+        <td><p>The distance to the nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance. Will be NULL if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition(System.Boolean)">NearestPosition(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance position to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 NearestPosition(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> position instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition3_System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.NearestPosition3(System.Boolean)">NearestPosition3(Boolean)</h4>
+  <div class="markdown level1 summary"><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instance position to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 NearestPosition3(bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If the distance should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><p>The nearest <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> position instance. Will be a zero vector if the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> list is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Run_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Run*"></a>
   <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Run" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Run">Run()</h4>
   <div class="markdown level1 summary"><p>Run the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a>.</p>
@@ -721,6 +1113,1014 @@
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Run">KaijuSensor.Run()</a></div>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle__0___KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(`0[],KaijuAngleSortMode,System.Nullable{System.Boolean})">SortAngle(T[], KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortAngle(T[] cache, KaijuAngleSortMode mode = null, bool? farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with NULL values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle_KaijuAngleSortMode_System_Nullable_System_Boolean__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAngle(KaijuAngleSortMode,System.Nullable{System.Boolean})">SortAngle(KaijuAngleSortMode, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] SortAngle(KaijuAngleSortMode mode = null, bool? farthest = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)">SortAnglePosition(KaijuAngleSortMode, Nullable&lt;Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2[] SortAnglePosition(KaijuAngleSortMode mode = null, bool? farthest = false, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition_Vector2___KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition(Vector2[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)">SortAnglePosition(Vector2[], KaijuAngleSortMode, Nullable&lt;Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortAnglePosition(Vector2[] cache, KaijuAngleSortMode mode = null, bool? farthest = false, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with NULL values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)">SortAnglePosition3(KaijuAngleSortMode, Nullable&lt;Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3[] SortAnglePosition3(KaijuAngleSortMode mode = null, bool? farthest = false, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3_Vector3___KaijuAngleSortMode_System_Nullable_System_Boolean__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortAnglePosition3(Vector3[],KaijuAngleSortMode,System.Nullable{System.Boolean},System.Boolean)">SortAnglePosition3(Vector3[], KaijuAngleSortMode, Nullable&lt;Boolean&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by angle to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortAnglePosition3(Vector3[] cache, KaijuAngleSortMode mode = null, bool? farthest = false, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with NULL values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">KaijuAngleSortMode</span></td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to handle sorting.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance__0___System_Boolean_System_Nullable_KaijuAngleSortMode__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})">SortDistance(T[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistance(T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with NULL values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance_System_Boolean_System_Nullable_KaijuAngleSortMode__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance(System.Boolean,System.Nullable{KaijuAngleSortMode})">SortDistance(Boolean, Nullable&lt;KaijuAngleSortMode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] SortDistance(bool farthest = false, KaijuAngleSortMode? mode = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3__0___System_Boolean_System_Nullable_KaijuAngleSortMode__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(`0[],System.Boolean,System.Nullable{KaijuAngleSortMode})">SortDistance3(T[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistance3(T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with NULL values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3_System_Boolean_System_Nullable_KaijuAngleSortMode__" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3(System.Boolean,System.Nullable{KaijuAngleSortMode})">SortDistance3(Boolean, Nullable&lt;KaijuAngleSortMode&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] SortDistance3(bool farthest = false, KaijuAngleSortMode? mode = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistance3Position(Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2[] SortDistance3Position(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_Vector2___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistance3Position(Vector2[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistance3Position(Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with zero values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position_Vector3___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistance3Position(Vector3[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistance3Position(Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with zero values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position3_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistance3Position3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistance3Position3(Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance across all axes to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3[] SortDistance3Position3(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistancePosition(Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2[] SortDistancePosition(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_Vector2___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector2[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistancePosition(Vector2[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistancePosition(Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector2</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with zero values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition_Vector3___System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition(Vector3[],System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistancePosition(Vector3[], Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>, keeping only the first instances which fit into a cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SortDistancePosition(Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>Where to store the observed instances. If this is less than the total <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, only the first fitting instances will be returned. If this is larger than the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances, any extra space will be filled with zero values.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances fit into the cache.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition3_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition3_System_Boolean_System_Nullable_KaijuAngleSortMode__System_Boolean_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.SortDistancePosition3(System.Boolean,System.Nullable{KaijuAngleSortMode},System.Boolean)">SortDistancePosition3(Boolean, Nullable&lt;KaijuAngleSortMode&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sort <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances by distance to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html#KaijuSolutions_Agents_Sensors_KaijuSensor_Agent">Agent</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3[] SortDistancePosition3(bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">farthest</span></td>
+        <td><p>If this should sort by farthest items first.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">KaijuAngleSortMode</span>&gt;</td>
+        <td><span class="parametername">mode</span></td>
+        <td><p>How to break ties based on angle.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">normalize</span></td>
+        <td><p>If positions should be normalized between [-1, 1].</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span>[]</td>
+        <td><p>The sorted <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed">Observed</a> instances.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="operators">Operators
   </h3>
   <a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.op_Implicit*"></a>
