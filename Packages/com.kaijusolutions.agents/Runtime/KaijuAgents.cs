@@ -122,6 +122,31 @@ namespace KaijuSolutions.Agents
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             Materials.Clear();
         }
 #endif

@@ -176,35 +176,43 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// The active troopers for team two.
         /// </summary>
         private static readonly HashSet<Trooper> ActiveTwo = new();
-        
-        /// <summary>
-        /// Cache the trooper type which is needed from cached agents.
-        /// </summary>
-        private static Type[] Types
-        {
-            get
-            {
 #if UNITY_EDITOR
-                if (!Application.isPlaying || EditorApplication.isCompiling || EditorApplication.isUpdating || EditorApplication.isPaused)
-                {
-                    return Array.Empty<Type>();
-                }
-#endif
-                return new[] { typeof(Trooper) };
-            }
-        }
-        
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             Active.Clear();
             ActiveOne.Clear();
             ActiveTwo.Clear();
         }
-        
+#endif
         /// <summary>
         /// The current health of this trooper.
         /// </summary>
@@ -307,7 +315,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             // Spawn the agent.
             Transform t = spawnPoint.transform;
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, Types);
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, t.position, t.rotation, true, trooperPrefab, $"Trooper {team}", color, Color.black, new[] { typeof(Trooper) });
             if (!agent.TryGetComponent(out Trooper trooper))
             {
                 trooper = agent.gameObject.AddComponent<Trooper>();

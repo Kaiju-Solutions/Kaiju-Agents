@@ -65,33 +65,41 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// The active microbes.
         /// </summary>
         private static readonly HashSet<Microbe> Active = new();
-        
-        /// <summary>
-        /// Cache the microbe type which is needed from cached agents.
-        /// </summary>
-        private static Type[] Types
-        {
-            get
-            {
 #if UNITY_EDITOR
-                if (!Application.isPlaying || EditorApplication.isCompiling || EditorApplication.isUpdating || EditorApplication.isPaused)
-                {
-                    return Array.Empty<Type>();
-                }
-#endif
-                return new[] { typeof(Microbe) };
-            }
-        }
-        
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
-            Active.Clear();
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
         }
         
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
+            Active.Clear();
+        }
+#endif
         /// <summary>
         /// The current energy of this microbe.
         /// This will <see cref="Decay"/> every second, and this microbe needs energy to stay alive.
@@ -239,7 +247,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 return;
             }
             
-            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, Types);
+            KaijuAgent agent = KaijuAgents.Spawn(KaijuAgentType.Rigidbody, position.Expand(), Quaternion.Euler(new(0, Random.Range(0f, 360f), 0)), true, microbePrefab, $"Microbe {identifier}", MicrobeManager.GetColor(identifier), Color.black, new[] { typeof(Microbe) });
             if (!agent.TryGetComponent(out Microbe microbe))
             {
                 microbe = agent.gameObject.AddComponent<Microbe>();

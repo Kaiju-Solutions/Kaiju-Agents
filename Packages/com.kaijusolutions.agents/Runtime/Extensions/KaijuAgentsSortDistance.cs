@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Extensions
 {
     /// <summary>
@@ -17,6 +19,31 @@ namespace KaijuSolutions.Agents.Extensions
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
+        {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
         {
             Sorter.Position = Vector2.zero;
             Sorter.Farthest = false;
