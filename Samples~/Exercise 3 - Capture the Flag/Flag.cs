@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Extensions;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
@@ -17,40 +20,118 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         /// <param name="teamOne">If this is team one's base being requested.</param>
         /// <returns>The location of the team's base.</returns>
-        public static Vector3 Base3(bool teamOne) => Base(teamOne).Expand();
-        
+        public static Vector3 Base3(bool teamOne)
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return Vector3.zero;
+            }
+#endif
+            return Base(teamOne).Expand();
+        }
+
         /// <summary>
         /// Get the location of a team's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
         /// <param name="teamOne">If this is team one's base being requested.</param>
         /// <returns>The location of the team's base.</returns>
-        public static Vector2 Base(bool teamOne) => teamOne ? TeamOneBase : TeamTwoBase;
-        
+        public static Vector2 Base(bool teamOne)
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return Vector2.zero;
+            }
+#endif
+            return teamOne ? TeamOneBase : TeamTwoBase;
+        }
+
         /// <summary>
         /// The location of team one's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
-        public static Vector3 TeamOneBase3 => TeamOneBase.Expand();
-        
+        public static Vector3 TeamOneBase3
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Vector3.zero;
+                }
+#endif
+                return TeamOneBase.Expand();
+            }
+        }
+
         /// <summary>
         /// The location of team one's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
-        public static Vector2 TeamOneBase => TeamOneFlag != null ? TeamOneFlag._position : Vector2.zero;
-        
+        public static Vector2 TeamOneBase
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Vector2.zero;
+                }
+#endif
+                return TeamOneFlag != null ? TeamOneFlag._position : Vector2.zero;
+            }
+        }
+
         /// <summary>
         /// The location of team two's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
-        public static Vector3 TeamTwoBase3 => TeamTwoBase.Expand();
-        
+        public static Vector3 TeamTwoBase3
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Vector3.zero;
+                }
+#endif
+                return TeamTwoBase.Expand();
+            }
+        }
+
         /// <summary>
         /// The location of team two's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
-        public static Vector2 TeamTwoBase => TeamTwoFlag != null ? TeamTwoFlag._position : Vector2.zero;
-        
+        public static Vector2 TeamTwoBase
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Vector2.zero;
+                }
+#endif
+                return TeamTwoFlag != null ? TeamTwoFlag._position : Vector2.zero;
+            }
+        }
+
         /// <summary>
         /// Both flags for easy access.
         /// </summary>
-        public static IReadOnlyCollection<Flag> Flags => Both;
-        
+        public static IReadOnlyCollection<Flag> Flags
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<Flag>();
+                }
+#endif
+                return Both;
+            }
+        }
+
         /// <summary>
         /// Store both flags for easy access.
         /// </summary>
@@ -65,18 +146,43 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// Team two's flag.
         /// </summary>
         public static Flag TeamTwoFlag;
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             TeamOneFlag = null;
             TeamTwoFlag = null;
             Both.Clear();
         }
-        
+#endif
         /// <summary>
         /// If this is team one's flag.
         /// </summary>
@@ -246,6 +352,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             {
                 c.enabled = true;
             }
+        }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            Both.Remove(this);
         }
     }
 }

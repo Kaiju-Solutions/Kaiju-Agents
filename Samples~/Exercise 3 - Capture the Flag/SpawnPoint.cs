@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.CTF
 {
     /// <summary>
@@ -20,7 +22,17 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// </summary>
         /// <param name="teamOne">If this is for team one.</param>
         /// <returns>The point to spawn at or NULL if there is none.</returns>
-        public static SpawnPoint NextSpawnPoint(bool teamOne) => teamOne ? NextSpawnPoint(OpenOneCache, OccupiedOneCache) : NextSpawnPoint(OpenTwoCache, OccupiedTwoCache);
+        public static SpawnPoint NextSpawnPoint(bool teamOne)
+        {
+            
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
+            return teamOne ? NextSpawnPoint(OpenOneCache, OccupiedOneCache) : NextSpawnPoint(OpenTwoCache, OccupiedTwoCache);
+        }
         
         /// <summary>
         /// Get the next point to spawn at, prioritizing open points first.
@@ -59,19 +71,44 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// All spawn points for team two which are currently occupied by an agent.
         /// </summary>
         private static readonly SortedSet<SpawnPoint> OccupiedTwoCache = new();
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             OpenOneCache.Clear();
             OpenTwoCache.Clear();
             OccupiedOneCache.Clear();
             OccupiedTwoCache.Clear();
         }
-
+#endif
         /// <summary>
         /// If this is for team one.
         /// </summary>
@@ -364,6 +401,17 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             float aA = Mathf.Abs(a);
             float bA = Mathf.Abs(b);
             return aA < bA ? -1 : bA < aA ? 1 : a < b ? -1 : b < a ? 1 : 0;
+        }
+        
+        /// <summary>
+        /// Destroying the attached Behaviour will result in the game or Scene receiving OnDestroy.
+        /// </summary>
+        private void OnDestroy()
+        {
+            OpenOneCache.Remove(this);
+            OpenTwoCache.Remove(this);
+            OccupiedOneCache.Remove(this);
+            OccupiedTwoCache.Remove(this);
         }
     }
 }

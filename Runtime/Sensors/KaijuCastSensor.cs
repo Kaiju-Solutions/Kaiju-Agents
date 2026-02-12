@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
 using UnityEngine;
@@ -143,6 +144,25 @@ namespace KaijuSolutions.Agents.Sensors
         public Color editorMiss = Color.green;
 #endif
         /// <summary>
+        /// If at least one ray has hit something.
+        /// </summary>
+        public bool HasHits
+        {
+            get
+            {
+                for (int i = 0; i < _hits.Length; i++)
+                {
+                    if (_hits[i] != null)
+                    {
+                        return true;
+                    }
+                }
+                
+                return false;
+            }
+        }
+        
+        /// <summary>
         /// The total number of casts which hit something.
         /// </summary>
         public int HitsTotal
@@ -168,6 +188,183 @@ namespace KaijuSolutions.Agents.Sensors
         public IReadOnlyList<RaycastHit?> Hits => _hits;
         
         /// <summary>
+        /// Get transforms for the <see cref="Hits"/>. Misses will be NULL.
+        /// </summary>
+        public IEnumerable<Transform> Transforms => _hits.Select(x => x?.transform);
+        
+        /// <summary>
+        /// The <see cref="Hits"/> data only for points which hit, removing all NULL entries.
+        /// </summary>
+        public IEnumerable<RaycastHit?> ConnectedHits => _hits.Where(x => x != null);
+        
+        /// <summary>
+        /// et transforms for the <see cref="ConnectedHits"/>.
+        /// </summary>
+        public IEnumerable<Transform> ConnectedTransforms => ConnectedHits.Select(x => x!.Value.transform);
+        
+        /// <summary>
+        /// The nearest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Nearest(out float nearest, bool normalize = false)
+        {
+            if (!Agent)
+            {
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
+            }
+            
+            Transform target = Agent.Nearest(ConnectedTransforms, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Nearest3(out float nearest, bool normalize = false)
+        {
+            if (!Agent)
+            {
+                nearest = normalize ? 1 : float.MaxValue;
+                return null;
+            }
+            
+            Transform target = Agent.Nearest3(ConnectedTransforms, out nearest);
+            if (normalize)
+            {
+                nearest = nearest.Normalize(distance);
+            }
+            
+            return target;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Farthest(out float farthest, bool normalize = false)
+        {
+            if (!Agent)
+            {
+                farthest = 0;
+                return null;
+            }
+            
+            Transform target = Agent.Farthest(ConnectedTransforms, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
+        /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="ConnectedTransforms"/> instance. Will be NULL if the <see cref="ConnectedTransforms"/> list is empty.</returns>
+        public Transform Farthest3(out float farthest, bool normalize = false)
+        {
+            if (!Agent)
+            {
+                farthest = 0;
+                return null;
+            }
+            
+            Transform target = Agent.Farthest3(ConnectedTransforms, out farthest);
+            if (normalize)
+            {
+                farthest = farthest.Normalize(distance);
+            }
+            
+            return target;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
+        public Vector2 NearestPosition(bool normalize = false)
+        {
+            Vector2 positon = Agent.Position;
+            Vector2 value = Agent.Position.Nearest(Positions(), out float _);
+            return normalize ? value.Normalize(positon, Agent.Forward, distance) : value;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
+        /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
+        public Vector3 NearestPosition3(bool normalize = false)
+        {
+            Vector3 positon = Agent.Position3;
+            Vector3 value = Agent.Position.Nearest3(Positions3(), out float _);
+            return normalize ? value.Normalize(positon, Agent.Forward3, distance) : value;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
+        public Vector2 FarthestPosition(bool normalize = false)
+        {
+            Vector2 positon = Agent.Position;
+            Vector2 value = Agent.Position.Farthest(Positions(), out float _);
+            return normalize ? value.Normalize(positon, Agent.Forward, distance) : value;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
+        /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
+        public Vector3 FarthestPosition3(bool normalize = false)
+        {
+            Vector3 positon = Agent.Position3;
+            Vector3 value = Agent.Position.Farthest3(Positions3(), out float _);
+            return normalize ? value.Normalize(positon, Agent.Forward3, distance) : value;
+        }
+        
+        /// <summary>
+        /// The nearest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
+        /// <returns>The nearest <see cref="Distances"/> instance.</returns>
+        public float NearestDistance(bool normalize = false)
+        {
+            float value = Distances().Min();
+            return normalize ? value.Normalize(distance, 0) : value;
+        }
+        
+        /// <summary>
+        /// The farthest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// </summary>
+        /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
+        /// <returns>The farthest <see cref="Distances"/> instance.</returns>
+        public float FarthestDistance(bool normalize = false)
+        {
+            float value = Distances().Max();
+            return normalize ? value.Normalize(distance, 0) : value;
+        }
+        
+        /// <summary>
         /// The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.
         /// </summary>
         private RaycastHit?[] _hits = Array.Empty<RaycastHit?>();
@@ -175,7 +372,80 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
         /// </summary>
-        public IReadOnlyList<Vector3> Positions => _positions;
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
+        public IEnumerable<Vector2> Positions(bool normalize = false)
+        {
+            if (!Agent)
+            {
+                yield break;
+            }
+            
+            IEnumerable<Vector2> positions = _positions.Select(x => x.Flatten());
+            if (normalize)
+            {
+                Vector2 position = Agent;
+                Vector2 forward = Agent.Forward;
+                foreach (Vector2 value in positions)
+                {
+                    yield return value.Normalize(position, forward, distance);
+                }
+            }
+            else
+            {
+                foreach (Vector2 value in positions)
+                {
+                    yield return value;
+                }
+            }
+        }
+        
+        /// <summary>
+        /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.
+        /// </summary>
+        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
+        public IEnumerable<Vector3> Positions3(bool normalize = false)
+        {
+            if (!Agent)
+            {
+                yield break;
+            }
+            
+            if (normalize)
+            {
+                Vector3 position = Agent;
+                Vector3 forward = Agent.Forward3;
+                foreach (Vector3 value in _positions)
+                {
+                    yield return value.Normalize(position, forward, distance);
+                }
+            }
+            else
+            {
+                foreach (Vector3 value in _positions)
+                {
+                    yield return value;
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Get the distances of all rays.
+        /// </summary>
+        /// <param name="normalize">If distances should be normalized between [0, 1].</param>
+        /// <returns>The distances of all rays.</returns>
+        public IEnumerable<float> Distances(bool normalize = false)
+        {
+            if (!Agent)
+            {
+                yield break;
+            }
+            
+            Vector2 position = Agent;
+            foreach (Vector2 value in _positions.Select(x => x.Flatten()))
+            {
+                yield return normalize ? value.Distance(position).Normalize(distance, 0) : value.Distance(position);
+            }
+        }
         
         /// <summary>
         /// The positions corresponding to the <see cref="Hits"/>, with <see cref="Hits"/> that missed being set to the maximum casting distance.

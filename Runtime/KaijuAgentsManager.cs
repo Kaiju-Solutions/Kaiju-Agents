@@ -34,6 +34,12 @@ namespace KaijuSolutions.Agents
         {
             get
             {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
                 if (_instance != null)
                 {
                     return _instance;
@@ -52,13 +58,37 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// All <see cref="KaijuAgent"/>s.
         /// </summary>
-        public static IReadOnlyCollection<KaijuAgent> Agents => AllAgents;
-        
+        public static IReadOnlyCollection<KaijuAgent> Agents
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return Array.Empty<KaijuAgent>();
+                }
+#endif
+                return AllAgents;
+            }
+        }
+
         /// <summary>
         /// The number of <see cref="KaijuAgent"/>s.
         /// </summary>
-        public static int AgentsCount => AllAgents.Count;
-        
+        public static int AgentsCount
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return AllAgents.Count;
+            }
+        }
+
         /// <summary>
         /// Cache all <see cref="KaijuAgent"/>s.
         /// </summary>
@@ -270,6 +300,31 @@ namespace KaijuSolutions.Agents
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
             _instance = null;
             AllAgents.Clear();
             TickAgents.Clear();
@@ -289,6 +344,12 @@ namespace KaijuSolutions.Agents
         /// <param name="agent">The <see cref="KaijuAgent"/> to register.</param>
         public static void Register(KaijuAgent agent)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             // Ensure there is a manager.
             _ = Instance;
             
@@ -313,6 +374,17 @@ namespace KaijuSolutions.Agents
         /// <param name="cache">If this <see cref="KaijuAgent"/> should be cached.</param>
         public static void Unregister(KaijuAgent agent, bool cache = true)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+            
+            if (_instance)
+            {
+                _instance._editorSelectedAgents.Remove(agent);
+            }
+#endif
             if (cache)
             {
                 PendingCachedRemovals.Add(agent);
@@ -321,12 +393,6 @@ namespace KaijuSolutions.Agents
             {
                 PendingRemovals.Add(agent);
             }
-#if UNITY_EDITOR
-            if (_instance)
-            {
-                _instance._editorSelectedAgents.Remove(agent);
-            }
-#endif
         }
         
         /// <summary>
@@ -429,8 +495,14 @@ namespace KaijuSolutions.Agents
         /// <param name="components">All components which must be found on the <see cref="KaijuAgent"/>. This will check in children as well.</param>
         /// <typeparam name="T">The type of <see cref="KaijuAgent"/>.</typeparam>
         /// <returns>A cached <see cref="KaijuAgent"/> if one is found, otherwise NULL.</returns>
-        public static T GetCached<T>(ICollection<Type> components = null) where T : KaijuAgent
+        public static T GetCached<T>(ICollection<string> components = null) where T : KaijuAgent
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return null;
+            }
+#endif
             // Nothing to do if no cached agents.
             Type type = typeof(T);
             if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
@@ -460,13 +532,13 @@ namespace KaijuSolutions.Agents
                     
                     // See if this agent has all the components we need.
                     bool valid = true;
-                    foreach (Type c in components)
+                    foreach (string c in components)
                     {
                         // For each component, assume it does not have it until it is found.
                         valid = false;
                         foreach (Type exists in types)
                         {
-                            if (c != exists)
+                            if (c != exists.Name)
                             {
                                 continue;
                             }
@@ -511,6 +583,12 @@ namespace KaijuSolutions.Agents
         /// <param name="identifier">The identifier.</param>
         public static void AddIdentifier(KaijuAgent agent, uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
             {
                 set = new();
@@ -527,6 +605,12 @@ namespace KaijuSolutions.Agents
         /// <param name="identifier">The identifier.</param>
         public static void RemoveIdentifier(KaijuAgent agent, uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
             {
                 return;
@@ -546,6 +630,12 @@ namespace KaijuSolutions.Agents
         /// <returns>All <see cref="KaijuAgent"/>s with a given identifier.</returns>
         public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return Array.Empty<KaijuAgent>();
+            }
+#endif
             return AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set) ? set : EmptyAgents;
         }
         
@@ -556,6 +646,12 @@ namespace KaijuSolutions.Agents
         /// <param name="identifiers">The identifiers.</param>
         public static void IdentifiedAgents([NotNull] ICollection<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+#endif
             identified.Clear();
             
             foreach (uint identifier in identifiers)
@@ -579,6 +675,12 @@ namespace KaijuSolutions.Agents
         /// <returns>All <see cref="KaijuAgent"/>s which have any of the given identifier.</returns>
         public static HashSet<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return new();
+            }
+#endif
             HashSet<KaijuAgent> identified = new();
             IdentifiedAgents(identified, identifiers);
             return identified;

@@ -1,5 +1,4 @@
 using KaijuSolutions.Agents.Actuators;
-using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
@@ -45,7 +44,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         {
             // Nothing for us to do if we did not see any boxes.
             // We know this is our only sensor for this basic agent, which is why we don't check if it is the same one.
-            if (_sensor.ObservedCount < 1)
+            if (!_sensor.HasObserved)
             {
                 return;
             }
@@ -54,7 +53,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
             _sensor.automatic = false;
             
             // Choose the nearest box.
-            Transform nearest = Position.Nearest(_sensor.Observed, out float _);
+            Transform nearest = _sensor.Nearest(out float _);
             
             // Seek towards the nearest observed box to destroy it.
             // Give a buffer around the box so our attack can hit.

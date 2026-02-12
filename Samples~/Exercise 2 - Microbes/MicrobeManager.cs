@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
-
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 namespace KaijuSolutions.Agents.Exercises.Microbes
 {
     /// <summary>
@@ -23,6 +25,12 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         {
             get
             {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
                 if (_instance != null)
                 {
                     return _instance;
@@ -32,20 +40,91 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 return manager != null ? manager : new GameObject("Microbe Manager") { isStatic = true }.AddComponent<MicrobeManager>();
             }
         }
-        
+#if UNITY_EDITOR
         /// <summary>
         /// Handle manually resetting the domain.
         /// </summary>
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void InitOnPlayMode()
         {
-            _instance = null;
+            Domain();
+            EditorApplication.playModeStateChanged -= Domain;
+            EditorApplication.playModeStateChanged += Domain;
         }
         
         /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        /// <param name="state">The current editor state change.</param>
+        private static void Domain(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.ExitingPlayMode)
+            {
+                return;
+            }
+            
+            EditorApplication.playModeStateChanged -= Domain;
+            Domain();
+        }
+        
+        /// <summary>
+        /// Handle manually resetting the domain.
+        /// </summary>
+        private static void Domain()
+        {
+            _instance = null;
+        }
+#endif
+        /// <summary>
         /// The prefab for the <see cref="Microbe"/>s.
         /// </summary>
-        public static KaijuAgent MicrobePrefab => Instance.microbePrefab;
+        public static KaijuAgent MicrobePrefab
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return null;
+                }
+#endif
+                return Instance.microbePrefab;
+            }
+        }
+        
+        /// <summary>
+        /// How many <see cref="Microbe"/> are allowed in the scene at most.
+        /// </summary>
+        public static int MaximumMicrobes
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.maximumMicrobes;
+            }
+        }
+        
+        /// <summary>
+        /// The maximum number of <see cref="EnergyPickup"/> pickups allowed in the scene.
+        /// </summary>
+        public static int MaximumEnergy
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.maximumEnergy;
+            }
+        }
         
         /// <summary>
         /// The prefab for the <see cref="Microbe"/>s.
@@ -65,7 +144,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The <see cref="Microbe.Energy"/> level to spawn new <see cref="Microbe"/>s at.
         /// </summary>
-        public static float Energy => Instance.energy;
+        public static float Energy
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.energy;
+            }
+        }
         
         /// <summary>
         /// The <see cref="Microbe.Energy"/> level to spawn new <see cref="Microbe"/>s at.
@@ -79,7 +170,19 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// The time in seconds <see cref="Microbe"/>s need to wait before they can <see cref="Microbe.Mate"/> again.
         /// </summary>
-        public static float Cooldown => Instance.cooldown;
+        public static float Cooldown
+        {
+            get
+            {
+#if UNITY_EDITOR
+                if (!Application.isPlaying)
+                {
+                    return 0;
+                }
+#endif
+                return Instance.cooldown;
+            }
+        }
         
         /// <summary>
         /// The time in seconds <see cref="Microbe"/>s need to wait before they can <see cref="Microbe.Mate"/> again.
@@ -99,12 +202,28 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private int startingMicrobes = 5;
         
         /// <summary>
+        /// How many <see cref="Microbe"/> are allowed in the scene at most.
+        /// </summary>
+        [Tooltip("How many microbes are allowed in the scene at most.")]
+        [Min(1)]
+        [SerializeField]
+        private int maximumMicrobes = 50;
+        
+        /// <summary>
         /// The starting number of <see cref="EnergyPickup"/> pickups.
         /// </summary>
         [Tooltip("The starting number of energy pickups.")]
         [Min(0)]
         [SerializeField]
-        private int startingEnergy = 10;
+        private int startingEnergy = 20;
+        
+        /// <summary>
+        /// The maximum number of <see cref="EnergyPickup"/> pickups allowed in the scene.
+        /// </summary>
+        [Tooltip("The maximum number of energy pickups allowed in the scene.")]
+        [Min(1)]
+        [SerializeField]
+        private int maximumEnergy = 50;
         
         /// <summary>
         /// How many seconds between <see cref="EnergyPickup"/> spawns.
@@ -113,7 +232,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         [Tooltip("How many seconds between energy pickup spawns.")]
         [Min(0)]
         [SerializeField]
-        private float energyRate = 1;
+        private float energyRate = 5;
         
         /// <summary>
         /// The range in each axis to spawn within.
@@ -132,8 +251,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         /// <param name="identifier">The species identifier.</param>
         /// <returns>The identifier for the species.</returns>
-        public static Color GetColor(uint identifier) => Instance.species[identifier % _instance.species.Length];
-
+        public static Color GetColor(uint identifier)
+        {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return Color.white;
+            }
+#endif
+            return Instance.species[identifier % _instance.species.Length];
+        }
+        
         /// <summary>
         /// The colors for the different species of <see cref="Microbe"/>s. The species <see cref="KaijuAgent.Identifiers"/> will be set based on this index.
         /// </summary>
@@ -168,16 +296,23 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             _instance = this;
             
             // Spawn initial values.
-            for (int i = 0; i < startingEnergy; i++)
+            int count = EnergyPickup.All.Count;
+            for (int i = 0; i < startingEnergy && count++ < maximumEnergy; i++)
             {
                 SpawnEnergy();
             }
             
+            count = Microbe.All.Count;
             for (int i = 0; i < species.Length; i++)
             {
                 for (int j = 0; j < startingMicrobes; j++)
                 {
                     SpawnMicrobe();
+                    
+                    if (++count >= maximumMicrobes)
+                    {
+                        return;
+                    }
                 }
             }
         }
@@ -196,14 +331,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <summary>
         /// Get a random spawn position.
         /// </summary>
-        private Vector2 RandomPosition => new Vector2(Random.Range(spawning.x, spawning.y), Random.Range(spawning.x, spawning.y));
+        private Vector2 RandomPosition => new(Random.Range(spawning.x, spawning.y), Random.Range(spawning.x, spawning.y));
         
         /// <summary>
         /// Spawn a <see cref="Microbe"/>.
         /// </summary>
         private void SpawnMicrobe()
         {
-            Microbe.Spawn(microbePrefab, energy, RandomPosition, (uint)Random.Range(0, species.Length));
+            if (Microbe.All.Count < maximumMicrobes)
+            {
+                Microbe.Spawn(microbePrefab, energy, RandomPosition, (uint)Random.Range(0, species.Length));
+            }
         }
         
         /// <summary>
@@ -211,7 +349,10 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// </summary>
         private void SpawnEnergy()
         {
-            EnergyPickup.Spawn(energyPrefab, RandomPosition);
+            if (EnergyPickup.All.Count < maximumEnergy)
+            {
+                EnergyPickup.Spawn(energyPrefab, RandomPosition);
+            }
         }
         
         /// <summary>

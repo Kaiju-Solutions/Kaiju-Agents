@@ -621,9 +621,11 @@ MonoBehaviour:
   energyPrefab: {fileID: 8027974131668265028, guid: 72253b8526679a34ca353adeee189882, type: 3}
   energy: 100
   cooldown: 5
-  startingMicrobes: 30
-  startingEnergy: 50
-  energyRate: 1
+  startingMicrobes: 5
+  maximumMicrobes: 50
+  startingEnergy: 20
+  maximumEnergy: 50
+  energyRate: 5
   spawning: {x: -45, y: 45}
   species:
   - {r: 1, g: 0, b: 0, a: 1}

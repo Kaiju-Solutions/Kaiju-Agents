@@ -2037,6 +2037,16 @@ namespace KaijuSolutions.Agents
         }
 #if UNITY_EDITOR
         /// <summary>
+        /// Handle caching agents we need to validate.
+        /// </summary>
+        private static readonly HashSet<KaijuAgent> AgentsToValidate = new();
+        
+        /// <summary>
+        /// Flag an extra validation.
+        /// </summary>
+        private static bool _willValidate;
+        
+        /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
         /// </summary>
         protected virtual void OnValidate()
@@ -2045,9 +2055,39 @@ namespace KaijuSolutions.Agents
             if (Application.isPlaying)
             {
                 KaijuAgentsManager.EditorValidateIdentifiers(this);
+                Setup();
+                return;
             }
             
-            Setup();
+            // Cache for future validation.
+            AgentsToValidate.Add(this);
+            if (_willValidate)
+            {
+                return;
+            }
+            
+            // Bind a delayed validation.
+            _willValidate = true;
+            EditorApplication.delayCall -= DelayedValidate;
+            EditorApplication.delayCall += DelayedValidate;
+        }
+        
+        /// <summary>
+        /// Run delayed validation.
+        /// </summary>
+        private static void DelayedValidate()
+        {
+            EditorApplication.delayCall -= DelayedValidate;
+            _willValidate = false;
+            foreach (KaijuAgent agent in AgentsToValidate)
+            {
+                if (agent)
+                {
+                    agent.Setup();
+                }
+            }
+            
+            AgentsToValidate.Clear();
         }
         
         /// <summary>
