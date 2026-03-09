@@ -5,8 +5,7 @@
   "unity": "6000.3",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {
-    "com.unity.ai.navigation": "2.0.11",
-    "com.unity.inputsystem": "1.18.0"
+    "com.unity.ai.navigation": "2.0.11"
   },
   "author": {
     "name": "Kaiju Solutions Inc.",
