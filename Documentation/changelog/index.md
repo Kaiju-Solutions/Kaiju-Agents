@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.1.1
+
+- Fixed the ["Capture the Flag" exercise](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag")'s [`FlagVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.CTF.FlagVisionSensor.html "FlagVisionSensor") displaying as a [`HealthVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Exercises.CTF.HealthVisionSensor.html "HealthVisionSensor") in the inspector.
+
 ### 1.1.0
 
 - Added extended functionality to the [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "KaijuVisionSensor") and [`KaijuCastSensor`](https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor "KaijuCastSensor").
