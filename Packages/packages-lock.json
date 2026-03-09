@@ -5,13 +5,12 @@
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.unity.ai.navigation": "2.0.10",
-        "com.unity.inputsystem": "1.17.0"
+        "com.unity.ai.navigation": "2.0.11"
       },
-      "hash": "3ebd9436f93781482c3103301ee5433a37f048c1"
+      "hash": "a667bfda1062a19f6de3de096d18987553ce0d9a"
     },
     "com.unity.ai.navigation": {
-      "version": "2.0.10",
+      "version": "2.0.11",
       "depth": 1,
       "source": "registry",
       "dependencies": {

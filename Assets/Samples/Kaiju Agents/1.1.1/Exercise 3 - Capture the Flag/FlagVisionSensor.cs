@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     /// Sensor for <see cref="Flag"/>s.
     /// </summary>
     [HelpURL("https://agents.kaijusolutions.ca/manual/capture-the-flag.html#flag-vision-sensor")]
-    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Health Vision Sensor", 32)]
+    [AddComponentMenu("Kaiju Solutions/Agents/Exercises/Capture the Flag/Flag Vision Sensor", 32)]
     public class FlagVisionSensor : KaijuVisionSensor<Flag>
     {
         /// <summary>
