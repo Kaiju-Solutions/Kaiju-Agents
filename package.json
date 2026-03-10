@@ -1,7 +1,7 @@
 {
   "name": "com.kaijusolutions.agents",
   "displayName": "Kaiju Agents",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "unity": "6000.3",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {
@@ -9,7 +9,7 @@
   },
   "author": {
     "name": "Kaiju Solutions Inc.",
-    "url": "http://kaijusolutions.ca",
+    "url": "https://kaijusolutions.ca",
     "email": "contact@kaijusolutions.ca"
   },
   "changelogUrl": "https://agents.kaijusolutions.ca/changelog",

@@ -821,7 +821,7 @@ namespace KaijuSolutions.Agents.Sensors
                 Vector2 o = o3.Flatten();
                 
                 // Perform checks.
-                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3 + y, out RaycastHit _, radius, mask, triggers)))
+                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3 + y, out RaycastHit hit, radius, mask, triggers) || hit.transform == to))
                 {
                     _observed.Add(observable);
                 }
