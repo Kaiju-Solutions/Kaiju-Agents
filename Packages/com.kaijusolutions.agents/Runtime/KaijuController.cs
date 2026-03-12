@@ -102,6 +102,17 @@ namespace KaijuSolutions.Agents
             
             // Manually run the enabled call.
             OnEnabled();
+            
+            // Get sensors and actuators which may already be added.
+            foreach (KaijuSensor sensor in agent.Sensors)
+            {
+                OnSensorEnabled(sensor);
+            }
+            
+            foreach (KaijuActuator actuator in agent.Actuators)
+            {
+                OnActuatorEnabled(actuator);
+            }
         }
         
         /// <summary>

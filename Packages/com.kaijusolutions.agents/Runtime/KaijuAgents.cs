@@ -327,7 +327,9 @@ namespace KaijuSolutions.Agents
                     agent = go.AddComponent<KaijuRigidbodyAgent>();
                     
                     // While rigidbody agents do not technically need a collider, if you are using one over a transform agent, you likely want one.
-                    go.AddComponent<CapsuleCollider>();
+                    CapsuleCollider col = go.AddComponent<CapsuleCollider>();
+                    col.center = Vector3.up;
+                    col.height = 2f;
                     break;
                 case KaijuAgentType.Character:
                     go.AddComponent<CharacterController>();

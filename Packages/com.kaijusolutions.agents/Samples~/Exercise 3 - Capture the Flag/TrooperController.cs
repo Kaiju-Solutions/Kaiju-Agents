@@ -175,7 +175,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             base.OnEnable();
         }
-
+        
         /// <summary>
         /// This function is called when the behaviour becomes disabled.
         /// </summary>

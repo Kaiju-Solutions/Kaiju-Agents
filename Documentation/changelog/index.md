@@ -1,5 +1,11 @@
 ﻿# Changelog
 
+### 1.1.3
+
+- Fixed [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") not registering properly at startup of [controllers](https://agents.kaijusolutions.ca/manual/controllers.html "Controllers").
+- Creating a rigidbody [agent](https://agents.kaijusolutions.ca/manual/agents.html "Agents") with [`KaijuAgents.Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<String>)`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuAgents.html#KaijuSolutions_Agents_KaijuAgents_Spawn_KaijuSolutions_Agents_KaijuAgentType_System_Nullable_Vector3__System_Nullable_Quaternion__System_Boolean_KaijuSolutions_Agents_KaijuAgent_System_String_System_Nullable_Color__System_Nullable_Color__System_Collections_Generic_ICollection_System_String__ "KaijuAgents.Spawn(KaijuAgentType, Nullable<Vector3>, Nullable<Quaternion>, Boolean, KaijuAgent, String, Nullable<Color>, Nullable<Color>, ICollection<String>)") now matches the capsule collider with their visual shape.
+- Extended the [trooper](https://agents.kaijusolutions.ca/manual/capture-the-flag.html#trooper "Trooper") and [flag](https://agents.kaijusolutions.ca/manual/capture-the-flag.html#flag "Flag") APIs of the ["Capture the Flag" exercise](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag").
+
 ### 1.1.2
 
 - Fixed the [line-of-sight option](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_lineOfSight "KaijuVisionSensor - lineOfSight") on the [`KaijuVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html "KaijuVisionSensor").

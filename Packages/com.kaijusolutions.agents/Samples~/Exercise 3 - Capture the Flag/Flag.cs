@@ -16,6 +16,26 @@ namespace KaijuSolutions.Agents.Exercises.CTF
     public class Flag : Pickup
     {
         /// <summary>
+        /// Get the location of a flag's base.
+        /// </summary>
+        /// <param name="flag">The flag.</param>
+        /// <returns>The location of a flag's base.</returns>
+        public static Vector3 Base3(Flag flag)
+        {
+            return flag != null ? flag._position.Expand() : Vector3.zero;
+        }
+        
+        /// <summary>
+        /// Get the location of a flag's base.
+        /// </summary>
+        /// <param name="flag">The flag.</param>
+        /// <returns>The location of a flag's base.</returns>
+        public static Vector2 Base(Flag flag)
+        {
+            return flag != null ? flag._position : Vector2.zero;
+        }
+        
+        /// <summary>
         /// Get the location of a team's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
         /// <param name="teamOne">If this is team one's base being requested.</param>
@@ -46,7 +66,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
 #endif
             return teamOne ? TeamOneBase : TeamTwoBase;
         }
-
+        
         /// <summary>
         /// The location of team one's base, being where their flag spawns and where to return captured flags to.
         /// </summary>
@@ -114,7 +134,126 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 return TeamTwoFlag != null ? TeamTwoFlag._position : Vector2.zero;
             }
         }
-
+        
+        /// <summary>
+        /// If a flag is at its base.
+        /// </summary>
+        /// <param name="teamOne">The team this is for.</param>
+        /// <returns>If the flag is at its base.</returns>
+        public static bool AtBase(bool teamOne) => teamOne ? TeamOneAtBase : TeamTwoAtBase;
+        
+        /// <summary>
+        /// If team one's flag is at its base.
+        /// </summary>
+        public static bool TeamOneAtBase => AtBase(TeamOneFlag);
+        
+        /// <summary>
+        /// If team two's flag is at its base.
+        /// </summary>
+        public static bool TeamTwoAtBase => AtBase(TeamTwoFlag);
+        
+        /// <summary>
+        /// If a flag is at its base.
+        /// </summary>
+        /// <param name="flag">The flag this is for.</param>
+        /// <returns>If the flag is at its base.</returns>
+        public static bool AtBase(Flag flag) => flag != null && flag.Position == flag._position && !BeingCarried(flag);
+        
+        /// <summary>
+        /// If a flag is being carried.
+        /// </summary>
+        /// <param name="teamOne">The team this is for.</param>
+        /// <returns>If the flag is being carried.</returns>
+        public static bool BeingCarried(bool teamOne) => teamOne ? TeamOneBeingCarried : TeamTwoBeingCarried;
+        
+        /// <summary>
+        /// If team one's flag is being carried.
+        /// </summary>
+        public static bool TeamOneBeingCarried => BeingCarried(TeamOneFlag);
+        
+        /// <summary>
+        /// If team two's flag is being carried.
+        /// </summary>
+        public static bool TeamTwoBeingCarried => BeingCarried(TeamTwoFlag);
+        
+        /// <summary>
+        /// If a flag is being carried.
+        /// </summary>
+        /// <param name="flag">The flag this is for.</param>
+        /// <returns>If the flag is being carried.</returns>
+        public static bool BeingCarried(Flag flag) => Carrier(flag) != null;
+        
+        /// <summary>
+        /// The <see cref="Trooper"/> which is carrying a flag.
+        /// </summary>
+        /// <param name="teamOne">What team's flag to get the current carrier for.</param>
+        /// <returns>The <see cref="Trooper"/> which is carrying the flag, or NULL if there is no carrier.</returns>
+        public static Trooper Carrier(bool teamOne) => teamOne ? TeamOneCarrier : TeamTwoCarrier;
+        
+        /// <summary>
+        /// The <see cref="Trooper"/> carrying team one's flag.
+        /// </summary>
+        public static Trooper TeamOneCarrier => Carrier(TeamOneFlag);
+        
+        /// <summary>
+        /// The <see cref="Trooper"/> carrying team two's flag.
+        /// </summary>
+        public static Trooper TeamTwoCarrier => Carrier(TeamTwoFlag);
+        
+        /// <summary>
+        /// The distance of a team's flag to its base.
+        /// </summary>
+        /// <param name="teamOne">The team this is for.</param>
+        /// <returns>The distance of the flag to its base.</returns>
+        public static float DistanceToBase(bool teamOne) => teamOne ? TeamOneDistanceToBase : TeamTwoDistanceToBase;
+        
+        /// <summary>
+        /// The distance of team one's flag to its base.
+        /// </summary>
+        public static float TeamOneDistanceToBase => DistanceToBase(TeamOneFlag);
+        
+        /// <summary>
+        /// The distance of team two's flag to its base.
+        /// </summary>
+        public static float TeamTwoDistanceToBase => DistanceToBase(TeamTwoFlag);
+        
+        /// <summary>
+        /// The distance of a flag to its base.
+        /// </summary>
+        /// <param name="flag">The flag.</param>
+        /// <returns>The distance of the flag to its base.</returns>
+        public static float DistanceToBase(Flag flag) => flag == null ? 0f : flag.Position.Distance(flag._position);
+        
+        /// <summary>
+        /// The <see cref="Trooper"/> which is carrying a flag.
+        /// </summary>
+        /// <param name="flag">The flag to get the current carrier for.</param>
+        /// <returns>The <see cref="Trooper"/> which is carrying the flag, or NULL if there is no carrier.</returns>
+        public static Trooper Carrier(Flag flag)
+        {
+            if (flag == null)
+            {
+                return null;
+            }
+            
+            Transform p = flag.transform.parent;
+            while (true)
+            {
+                if (p == null)
+                {
+                    return null;
+                }
+                
+                Trooper trooper = p.GetComponent<Trooper>();
+                if (trooper != null)
+                {
+                    return trooper;
+                }
+                
+                p = p.parent;
+            }
+        }
+        
         /// <summary>
         /// Both flags for easy access.
         /// </summary>

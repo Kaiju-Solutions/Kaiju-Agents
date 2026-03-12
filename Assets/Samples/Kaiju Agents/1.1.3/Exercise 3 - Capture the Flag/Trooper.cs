@@ -229,7 +229,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public Vector2 OwnBase => Flag.Base(TeamOne);
         
         /// <summary>
-        /// Get the location of this trooper's  own base.
+        /// Get the location of this trooper's own base.
         /// </summary>
         public Vector3 OwnBase3 => Flag.Base3(TeamOne);
         
@@ -244,14 +244,89 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public Vector3 EnemyBase3 => Flag.Base3(!TeamOne);
         
         /// <summary>
+        /// Get our team's <see cref="Flag"/>.
+        /// </summary>
+        public Flag TeamFlag => TeamOne ? Flag.TeamOneFlag : Flag.TeamTwoFlag;
+        
+        /// <summary>
+        /// Get the enemy team's <see cref="Flag"/>.
+        /// </summary>
+        public Flag EnemyFlag => TeamOne ? Flag.TeamTwoFlag : Flag.TeamOneFlag;
+        
+        /// <summary>
+        /// The position of our team's <see cref="Flag"/>.
+        /// </summary>
+        public Vector2 TeamFlagPosition => TeamFlag.Position;
+        
+        /// <summary>
+        /// The position of our team's <see cref="Flag"/>.
+        /// </summary>
+        public Vector3 TeamFlagPosition3 => TeamFlag.Position3;
+        
+        /// <summary>
+        /// The position of the enemy team's <see cref="Flag"/>.
+        /// </summary>
+        public Vector2 EnemyFlagPosition => EnemyFlag.Position;
+        
+        /// <summary>
+        /// The position of the enemy team's <see cref="Flag"/>.
+        /// </summary>
+        public Vector3 EnemyFlagPosition3 => EnemyFlag.Position3;
+        
+        /// <summary>
         /// The <see cref="BlasterActuator"/> of the trooper.
         /// </summary>
         private BlasterActuator _blaster;
         
         /// <summary>
-        /// The flag being carried.
+        /// The <see cref="Flag"/> being carried.
         /// </summary>
         private Flag _flag;
+        
+        /// <summary>
+        /// If we have the enemy's <see cref="Flag"/>.
+        /// </summary>
+        public bool HasFlag => _flag != null;
+        
+        /// <summary>
+        /// If our <see cref="Flag"/> is at its base.
+        /// </summary>
+        public bool TeamFlagAtBase => Flag.AtBase(TeamOne);
+        
+        /// <summary>
+        /// If the enemy <see cref="Flag"/> is at its base.
+        /// </summary>
+        public bool EnemyFlagAtBase => Flag.AtBase(!TeamOne);
+        
+        /// <summary>
+        /// If someone on our team is carrying the enemy <see cref="Flag"/>.
+        /// </summary>
+        public bool TeamCarryingFlag => Flag.BeingCarried(!TeamOne);
+        
+        /// <summary>
+        /// If someone on the enemy team is carrying our team's <see cref="Flag"/>.
+        /// </summary>
+        public bool EnemyCarryingFlag => Flag.BeingCarried(TeamOne);
+        
+        /// <summary>
+        /// The distance from us to our <see cref="Flag"/>.
+        /// </summary>
+        public float DistanceTeamFlag => Position.Distance(TeamFlagPosition);
+        
+        /// <summary>
+        /// The distance from us to the enemy <see cref="Flag"/>.
+        /// </summary>
+        public float DistanceEnemyFlag => Position.Distance(EnemyFlagPosition);
+        
+        /// <summary>
+        /// The distance from us to our team's base.
+        /// </summary>
+        public float DistanceTeamBase => Position.Distance(OwnBase);
+        
+        /// <summary>
+        /// The distance from us to the enemy team's base.
+        /// </summary>
+        public float DistanceEnemyBase => Position.Distance(EnemyBase);
         
         /// <summary>
         /// The ammo for this <see cref="Trooper"/>'s <see cref="BlasterActuator"/>.
@@ -425,9 +500,8 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             ActiveOne.Remove(this);
             ActiveTwo.Remove(this);
             
-            // Reset values.
+            // Reset health.
             Health = 0;
-            Ammo = 0;
             
             // Drop the flag if this trooper is carrying it.
             if (_flag == null)
