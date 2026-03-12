@@ -432,6 +432,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             Transform t = transform;
             
+            // Don't interact with other troopers if currently being carried by one.
+            if (t.parent != null)
+            {
+                return false;
+            }
+            
             // If this is the same team, the flag is being returned.
             if (trooper.TeamOne == TeamOne)
             {

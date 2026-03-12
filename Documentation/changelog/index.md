@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.1.4
+
+- Ensure [flags](https://agents.kaijusolutions.ca/manual/capture-the-flag.html#flag "Flag") in the ["Capture the Flag" exercise](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag") do not transfer between agents when already being carried.
+
 ### 1.1.3
 
 - Fixed [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") not registering properly at startup of [controllers](https://agents.kaijusolutions.ca/manual/controllers.html "Controllers").
