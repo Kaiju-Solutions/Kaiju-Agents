@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete old deployments
-        uses: strumwolf/delete-deployment-environment@v2
+        uses: strumwolf/delete-deployment-environment@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment: github-pages
@@ -46,7 +46,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true
 
@@ -288,7 +288,7 @@ jobs:
 
       # Upload the generated documentation.
       - name: Upload Site Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: _site
           # Must equal the 'build.dest' value on the docfx.json.
@@ -307,13 +307,13 @@ jobs:
       url: https://agents.kaijusolutions.ca
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           submodules: true
 
       # Download the generated documentation.
       - name: Download Site Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           # Specify the path to download the artifact.
           name: _site
