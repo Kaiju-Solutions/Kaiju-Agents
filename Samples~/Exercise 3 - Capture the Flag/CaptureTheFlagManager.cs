@@ -324,6 +324,12 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         /// <param name="teamOne">The team to spawn the <see cref="Trooper"/> for.</param>
         private bool Spawn(bool teamOne)
         {
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                return false;
+            }
+#endif
             // Don't spawn if the teams are full.
             if ((teamOne ? Trooper.AllOne.Count : Trooper.AllTwo.Count) >= size)
             {
