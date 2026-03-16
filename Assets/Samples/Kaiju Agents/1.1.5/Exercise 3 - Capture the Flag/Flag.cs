@@ -347,12 +347,10 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         private Quaternion _rotation;
         
         /// <summary>
-        /// This function is called when the object becomes enabled and active.
+        /// Awake is called when an enabled script instance is being loaded.
         /// </summary>
-        protected override void OnEnable()
+        private void Awake()
         {
-            base.OnEnable();
-            
             // Ensure this is assigned.
             AssignFlag();
             
