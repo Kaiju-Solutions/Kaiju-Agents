@@ -20,6 +20,10 @@
         }
     ],
     "build": {
+        "template": [
+            "default",
+            "templates/custom"
+        ],
         "globalMetadata": {
             "_appTitle": "Kaiju Agents",
             "_appFooter": "<a href=\"/license\" href=\"License\">MIT License © 2026</a> <a href=\"https://kaijusolutions.ca\" title=\"Kaiju Solutions Inc.\">Kaiju Solutions Inc.</a>",
