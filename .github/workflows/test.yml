@@ -1,0 +1,152 @@
+name: Validate Compilation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Generate Matrix
+        id: set-matrix
+        run: |
+          python -c '
+          import json, os, urllib.request, re, sys, time
+
+          def get_latest_unity_patch(minor_version):
+              try:
+                  url = f"https://services.api.unity.com/unity/editor/release/v1/releases?version={minor_version}"
+                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
+                  with urllib.request.urlopen(req, timeout=5) as r:
+                      data = json.loads(r.read().decode("utf-8"))
+                  
+                  max_patch = -1
+                  for release in data.get("results", []):
+                      v = release.get("version", "")
+                      match = re.search(rf"^{re.escape(minor_version)}\.(\d+)f", v)
+                      if match:
+                          patch = int(match.group(1))
+                          if patch > max_patch:
+                              max_patch = patch
+                  
+                  if max_patch >= 0:
+                      print(f" -> Found latest official patch via API: {minor_version}.{max_patch}")
+                      return max_patch
+              except Exception as e:
+                  sys.stderr.write(f"Warning: Unity Release API failed ({e}). Falling back to manual search.\n")
+              return 0
+
+          def get_latest_gameci_version(minor_version):
+              start_patch = get_latest_unity_patch(minor_version)
+              print(f" -> Searching Docker Hub for {minor_version}.x starting from patch {start_patch}...")
+              
+              for patch in range(start_patch, -1, -1):
+                  url = f"https://hub.docker.com/v2/repositories/unityci/editor/tags?name=ubuntu-{minor_version}.{patch}f"
+                  try:
+                      req = urllib.request.Request(url, headers={"Accept": "application/json"})
+                      with urllib.request.urlopen(req, timeout=5) as r:
+                          data = json.loads(r.read().decode("utf-8"))
+                      
+                      found_versions = set()
+                      for result in data.get("results", []):
+                          match = re.search(rf"ubuntu-({re.escape(minor_version)}\.{patch}f\d+)-", result["name"])
+                          if match:
+                              found_versions.add(match.group(1))
+                      
+                      if found_versions:
+                          latest = sorted(list(found_versions), key=lambda v: [int(x) for x in re.findall(r"\d+", v)], reverse=True)[0]
+                          return latest
+                  except Exception:
+                      pass 
+                  
+                  if patch % 10 == 0: time.sleep(0.2)
+              return None
+
+          target_minors = ["6000.4", "6000.3"]
+          unity_versions = []
+          
+          for minor in target_minors:
+              latest_tag = get_latest_gameci_version(minor)
+              if latest_tag:
+                  unity_versions.append(latest_tag)
+                  print(f" -> SUCCESS: Resolved to {latest_tag}")
+              else:
+                  sys.stderr.write(f" -> ERROR: No GameCI image found for {minor}.x\n")
+
+          if not unity_versions:
+              sys.exit("Error: No valid Unity versions found to test.")
+
+          # Format specifically as a standard matrix array
+          matrix_json = json.dumps({"unity_version": unity_versions})
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"matrix={matrix_json}\n")
+          '
+
+  test:
+    name: Compile (${{ matrix.unity_version }})
+    needs: generate-matrix
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          submodules: true
+
+      - name: Cache Unity Library
+        uses: actions/cache@v7
+        with:
+          path: Library
+          key: Library-${{ matrix.unity_version }}
+          restore-keys: |
+            Library-
+            
+      - name: Verify Project Compilation
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: ${{ matrix.unity_version }}
+          projectPath: .
+          testMode: editmode
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          customParameters: -quit -batchmode -nographics -silent-crashes -ignoreCompilerErrors -no-browser-auth -no-instance
+
+  create-summary:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate Test Report Summary
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const response = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+              per_page: 100
+            });
+            const unityVersionRegex = /Compile\s*\((.+?)\)/;
+            const testJobs = response.data.jobs.filter(job => unityVersionRegex.test(job.name));
+            
+            let passed = 0, failed = 0;
+            let summary = '## 🧪 Project Compilation Results\n\n| Unity Version | Status |\n| :--- | :---: |\n';
+            
+            for (const job of testJobs) {
+              let icon = job.conclusion === 'success' ? '🟢 Pass' : (job.conclusion === 'failure' ? '🔴 Fail' : '⚪ Skip');
+              if (job.conclusion === 'success') passed++; else if (job.conclusion === 'failure') failed++;
+              
+              const match = job.name.match(unityVersionRegex);
+              summary += match ? `| **${match[1]}** | ${icon} |\n` : `| **?** | ${icon} |\n`;
+            }
+            
+            summary += `\n### **Totals:** ${testJobs.length} Tests | 🟢 ${passed} Passed | 🔴 ${failed} Failed\n`;
+            await core.summary.addRaw(summary).write();
