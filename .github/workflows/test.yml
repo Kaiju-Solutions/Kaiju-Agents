@@ -94,12 +94,12 @@ jobs:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v5
         with:
           submodules: true
 
       - name: Cache Unity Library
-        uses: actions/cache@v7
+        uses: actions/cache@v5
         with:
           path: Library
           key: Library-${{ matrix.unity_version }}
