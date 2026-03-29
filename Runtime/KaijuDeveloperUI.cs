@@ -65,7 +65,11 @@ namespace KaijuSolutions.Agents
         /// </summary>
         private void GetCameras()
         {
+#if UNITY_6000_4_OR_NEWER
+            _cameras = FindObjectsByType<Camera>().OrderBy(x => x.name).ToArray();
+#else
             _cameras = FindObjectsByType<Camera>(sortMode: FindObjectsSortMode.None).OrderBy(x => x.name).ToArray();
+#endif
         }
         
         /// <summary>

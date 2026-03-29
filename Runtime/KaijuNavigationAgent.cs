@@ -168,7 +168,7 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion to get the <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
         /// </summary>
         /// <param name="a">The agent.</param>
-        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent of the agent.</returns>
+        /// <returns>The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html"/>navigation mesh agent of the agent.</returns>
         public static implicit operator NavMeshAgent([NotNull] KaijuNavigationAgent a) => a.nav;
         
         /// <summary>

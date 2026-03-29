@@ -794,7 +794,11 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>All active instances.</returns>
         protected virtual IEnumerable<T> DefaultObservables()
         {
+#if UNITY_6000_4_OR_NEWER
+            return FindObjectsByType<T>(FindObjectsInactive.Exclude).Where(x => x.transform != transform && x.transform != Agent.transform);
+#else
             return FindObjectsByType<T>(FindObjectsInactive.Exclude, FindObjectsSortMode.None).Where(x => x.transform != transform && x.transform != Agent.transform);
+#endif
         }
         
         /// <summary>
