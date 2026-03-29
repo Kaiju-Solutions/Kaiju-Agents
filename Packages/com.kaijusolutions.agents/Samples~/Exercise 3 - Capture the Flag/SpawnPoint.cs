@@ -387,7 +387,11 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             
             // Then, try by names. If still the same, check their instance IDs.
             order = string.Compare(name, other.name, StringComparison.Ordinal);
+#if UNITY_6000_4_OR_NEWER
+            return order != 0 ? order : GetEntityId().CompareTo(other.GetEntityId());
+#else
             return order != 0 ? order : GetInstanceID().CompareTo(other.GetInstanceID());
+#endif
         }
         
         /// <summary>
