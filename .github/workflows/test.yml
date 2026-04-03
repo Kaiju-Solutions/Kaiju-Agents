@@ -14,7 +14,7 @@ jobs:
         run: |
           python -c '
           import json, os, urllib.request, re, sys, time
-
+          
           def get_latest_unity_patch(minor_version):
               try:
                   url = f"https://services.api.unity.com/unity/editor/release/v1/releases?version={minor_version}"
@@ -37,7 +37,7 @@ jobs:
               except Exception as e:
                   sys.stderr.write(f"Warning: Unity Release API failed ({e}). Falling back to manual search.\n")
               return 0
-
+          
           def get_latest_gameci_version(minor_version):
               start_patch = get_latest_unity_patch(minor_version)
               print(f" -> Searching Docker Hub for {minor_version}.x starting from patch {start_patch}...")
@@ -63,8 +63,8 @@ jobs:
                   
                   if patch % 10 == 0: time.sleep(0.2)
               return None
-
-          target_minors = ["6000.4", "6000.3"]
+          
+          target_minors = ["6000.3", "6000.4"]
           unity_versions = []
           
           for minor in target_minors:
@@ -74,16 +74,16 @@ jobs:
                   print(f" -> SUCCESS: Resolved to {latest_tag}")
               else:
                   sys.stderr.write(f" -> ERROR: No GameCI image found for {minor}.x\n")
-
+          
           if not unity_versions:
               sys.exit("Error: No valid Unity versions found to test.")
-
+          
           # Format specifically as a standard matrix array
           matrix_json = json.dumps({"unity_version": unity_versions})
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
               f.write(f"matrix={matrix_json}\n")
           '
-
+  
   test:
     name: Compile (${{ matrix.unity_version }})
     needs: generate-matrix
@@ -97,7 +97,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           submodules: true
-
+      
       - name: Cache Unity Library
         uses: actions/cache@v5
         with:
@@ -105,7 +105,7 @@ jobs:
           key: Library-${{ matrix.unity_version }}
           restore-keys: |
             Library-
-            
+      
       - name: Verify Project Compilation
         uses: game-ci/unity-test-runner@v4
         env:
@@ -118,7 +118,7 @@ jobs:
           testMode: editmode
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           customParameters: -quit -batchmode -nographics -silent-crashes -ignoreCompilerErrors -no-browser-auth -no-instance
-
+  
   create-summary:
     needs: test
     if: always()
