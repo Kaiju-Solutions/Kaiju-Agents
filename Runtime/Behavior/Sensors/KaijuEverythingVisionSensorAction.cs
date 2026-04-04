@@ -20,6 +20,16 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
         id: "9e202450dff3a82616371d1145413749",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuEverythingVisionSensorAction : KaijuVisionSensorAction<KaijuEverythingVisionSensor, Transform> { }
+    public class KaijuEverythingVisionSensorAction : KaijuVisionSensorAction<KaijuEverythingVisionSensor, Transform>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Everything Vision Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Observed: {(observed.Value ? observed.Value : "None")} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
+    }
 }
 #endif

@@ -19,5 +19,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             return AmmoPickup.All;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Ammo Vision Sensor - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
+        }
     }
 }

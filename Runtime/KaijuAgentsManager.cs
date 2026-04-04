@@ -859,7 +859,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agents Manager - Agents: {AgentsCount}";
+            return $"{name} - Kaiju Agents Manager - Agents: {AgentsCount}";
         }
         
         /// <summary>

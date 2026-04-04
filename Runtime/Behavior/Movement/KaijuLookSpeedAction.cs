@@ -43,6 +43,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             agent.Value.LookSpeed = lookSpeed.Value;
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Look Speed Action - Agent: {(agent.Value ? agent.Value : "None")} - Speed: {lookSpeed.Value}";
+        }
     }
 }
 #endif

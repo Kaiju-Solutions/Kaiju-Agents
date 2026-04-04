@@ -9,7 +9,7 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Curve", fileName = "Curve", order = 4)]
 #endif
     public class KaijuUtilityCurveConsideration : KaijuUtilityKeyConsideration
@@ -40,5 +40,13 @@ namespace KaijuSolutions.Agents.Utility
             curve = new(new Keyframe(0f, 1f), new Keyframe(1f, 0f));
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Curve Consideration - Key: {Key}";
+        }
     }
 }

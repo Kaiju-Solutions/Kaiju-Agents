@@ -31,6 +31,15 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
             GetIdeal(sensor.Value.Observed);
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Vision Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Sensor Type: {typeof(T).Name} - Observed: {(observed.Value ? observed.Value : "None")} - Observed Type: {typeof(T0).Name} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
     }
 }
 #endif

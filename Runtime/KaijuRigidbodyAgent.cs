@@ -83,7 +83,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Rigidbody Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed}";
+            return $"{name} - Kaiju Rigidbody Agent - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed} - Radius: {Radius}";
         }
         
         /// <summary>

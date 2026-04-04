@@ -9,7 +9,7 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Composite", fileName = "Composite", order = 5)]
 #endif
     public class KaijuUtilityCompositeConsideration : KaijuUtilityConsideration
@@ -151,6 +151,15 @@ namespace KaijuSolutions.Agents.Utility
             
             // Average if needed and then clamp.
             return Mathf.Clamp01(operation == OperationType.Average ? result / considerations.Count : result);
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Composite Consideration - Considerations: {considerations.Count} - Operation: {operation}";
         }
         
         /// <summary>

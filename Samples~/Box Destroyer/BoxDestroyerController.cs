@@ -114,5 +114,14 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
             // Don't clear so we don't erase the wandering behaviour we just added.
             Agent.ObstacleAvoidance(clear: false);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Box Destroyer Controller";
+        }
     }
 }

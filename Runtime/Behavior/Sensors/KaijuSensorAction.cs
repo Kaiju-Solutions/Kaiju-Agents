@@ -101,6 +101,15 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
         /// </summary>
         /// <returns>The result of reading from the sensor.</returns>
         protected abstract Status HandleSensor();
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Sensor Type: {typeof(T).Name} - Observed: {(observed.Value ? observed.Value : "None")} - Observed Type: {typeof(T0).Name}";
+        }
     }
 }
 #endif

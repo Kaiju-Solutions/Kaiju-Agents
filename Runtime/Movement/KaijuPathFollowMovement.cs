@@ -878,7 +878,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Path Follow Movement - Agent: {(Agent ? Agent.name : "None")} - Target: {Target.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Path Distance: {PathDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Path Follow Movement - Agent: {(Agent ? Agent : "None")} - Target: {Target.ToString()} - Distance: {Distance} - Current Distance: {CurrentDistance} - Path Distance: {PathDistance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>

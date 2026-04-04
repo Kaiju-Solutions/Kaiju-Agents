@@ -394,6 +394,14 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
         
         /// <summary>
+        /// Whether the manual <see cref="Control"/> is in the direction the agent is facing, or based on global coordinates.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Whether the manual control is in the direction the agent is facing, or based on global coordinates.")]
+#endif
+        public bool GlobalControl = true;
+        
+        /// <summary>
         /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector2 Control
@@ -785,7 +793,7 @@ namespace KaijuSolutions.Agents
         public void CalculateVelocity(float delta)
         {
             // Start with any manual steering.
-            Vector2 velocity = _control * moveSpeed;
+            Vector2 velocity = (GlobalControl ? _control : Forward * _control.y + Right.Flatten() * _control.x) * moveSpeed;
             Vector2 position = Position;
             
             // Go through all assigned movements.
@@ -2434,7 +2442,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agent {name} - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed}";
+            return $"{name} - Kaiju Agent - {(isActiveAndEnabled ? "Active" : "Inactive")} - Velocity: {Velocity} - Move Speed: {MoveSpeed} - Move Acceleration: {MoveAcceleration} - Look Speed: {LookSpeed}";
         }
         
         /// <summary>

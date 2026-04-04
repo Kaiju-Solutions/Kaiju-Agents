@@ -8,9 +8,9 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
 #endif
-    public abstract class KaijuNumericBooleanConsideration : KaijuUtilityKeyConsideration
+    public abstract class KaijuUtilityNumericBooleanConsideration : KaijuUtilityKeyConsideration
     {
         /// <summary>
         /// If this should evaluate to true when greater than the <see cref="KaijuUtilityKeyConsideration.Key"/>.
@@ -36,5 +36,14 @@ namespace KaijuSolutions.Agents.Utility
         /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The boolean utility for this consideration.</returns>
         protected abstract bool BooleanEvaluate(KaijuUtilityBrain brain);
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Numeric Boolean Consideration - Key: {Key} - {(greater ? "Greater" : "Lesser")}";
+        }
     }
 }

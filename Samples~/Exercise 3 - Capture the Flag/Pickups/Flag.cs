@@ -504,5 +504,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             Both.Remove(this);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Flag - {(TeamOne ? "Team One" : "Team Two")} - Base: {_position}";
+        }
     }
 }

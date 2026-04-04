@@ -331,7 +331,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agent Controller {name}";
+            return $"{name} - Kaiju Agent Controller - Agent: {(Agent ? Agent : "None")}";
         }
         
         /// <summary>

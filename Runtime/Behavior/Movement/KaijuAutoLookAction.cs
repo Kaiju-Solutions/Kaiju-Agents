@@ -43,6 +43,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             agent.Value.AutoRotate = auto.Value;
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Auto Look Action - Agent: {(agent.Value ? agent.Value : "None")} - {(auto.Value ? string.Empty : "Not ")}Automatically Looking";
+        }
     }
 }
 #endif

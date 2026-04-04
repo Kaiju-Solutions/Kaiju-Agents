@@ -19,6 +19,16 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         id: "9e202450dff3a82616371d1145413754",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopPursueAction : KaijuStopTypeAction<KaijuPursueMovement> { }
+    public class KaijuStopPursueAction : KaijuStopTypeAction<KaijuPursueMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Pursue Action";
+        }
+    }
 }
 #endif

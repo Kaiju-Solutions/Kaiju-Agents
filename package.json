@@ -1,7 +1,7 @@
 {
   "name": "ca.kaijusolutions.agents",
   "displayName": "Kaiju Agents",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "unity": "6000.3",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {

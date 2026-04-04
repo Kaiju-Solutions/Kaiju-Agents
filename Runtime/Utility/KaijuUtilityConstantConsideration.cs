@@ -7,7 +7,7 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Constant", fileName = "Constant", order = 0)]
 #endif
     public class KaijuUtilityConstantConsideration : KaijuUtilityConsideration
@@ -39,6 +39,15 @@ namespace KaijuSolutions.Agents.Utility
         public override float Evaluate(KaijuUtilityBrain brain)
         {
             return utility;
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Constant Consideration - Utility: {utility}";
         }
     }
 }

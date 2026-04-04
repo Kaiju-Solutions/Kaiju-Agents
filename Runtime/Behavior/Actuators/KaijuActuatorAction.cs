@@ -73,6 +73,15 @@ namespace KaijuSolutions.Agents.Behavior.Actuators
             // The actuator and agent must be active.
             return actuator.Value && actuator.Value.Agent;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Actuator Action - Actuator: {(actuator.Value ? actuator.Value : "None")}";
+        }
     }
 }
 #endif

@@ -19,6 +19,16 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         id: "9e202450dff3a82616371d1145413755",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopEvadeAction : KaijuStopTypeAction<KaijuEvadeMovement> { }
+    public class KaijuStopEvadeAction : KaijuStopTypeAction<KaijuEvadeMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Evade Action";
+        }
+    }
 }
 #endif

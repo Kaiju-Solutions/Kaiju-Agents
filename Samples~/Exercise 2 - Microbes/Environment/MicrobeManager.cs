@@ -388,5 +388,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             _elapsed = 0;
             SpawnEnergy();
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Microbe Manager";
+        }
     }
 }

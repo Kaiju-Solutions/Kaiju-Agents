@@ -45,6 +45,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
         {
             onCooldown.Value = microbe.Value.OnCooldown;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Microbe Cooldown Action - Microbe: {(microbe.Value ? microbe.Value : "None")} - {(onCooldown.Value ? "On Cooldown" : "Off Cooldown")}";
+        }
     }
 }
 #endif

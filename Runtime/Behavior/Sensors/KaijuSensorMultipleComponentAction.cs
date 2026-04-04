@@ -27,6 +27,15 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
                 observed.Value = nearest.Value ? sensor.Value.Agent.Nearest(candidates, out float _) : sensor.Value.Agent.Farthest(candidates, out float _);
             }
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Sensor Multiple Component Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Sensor Type: {typeof(T).Name} - Observed: {(observed.Value ? observed.Value : "None")} - Observed Type: {typeof(T0).Name} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
     }
 }
 #endif

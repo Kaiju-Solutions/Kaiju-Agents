@@ -307,5 +307,13 @@ namespace KaijuSolutions.Agents.Movement
             }
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Obstacle Avoidance Movement - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Side Distance: {SideDistance} - Angle: {Angle} - Height: {Height} - Horizontal: {Horizontal} - Mask: {Mask} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+        }
     }
 }

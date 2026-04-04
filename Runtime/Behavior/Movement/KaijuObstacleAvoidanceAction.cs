@@ -56,6 +56,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             // If we are getting hits, indicate we are still running.
             return base.OnUpdate() == Status.Failure ? Status.Failure : Movement.Hits.Count > 1 ? Status.Running : Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Obstacle Avoidance Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Movement: {(Movement ? Movement : "None")}";
+        }
     }
 }
 #endif

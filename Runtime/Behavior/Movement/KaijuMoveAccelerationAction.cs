@@ -43,6 +43,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             agent.Value.MoveAcceleration = moveAcceleration.Value;
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Move Acceleration Action - Agent: {(agent.Value ? agent.Value : "None")} - Speed: {moveAcceleration.Value}";
+        }
     }
 }
 #endif

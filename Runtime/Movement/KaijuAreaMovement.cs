@@ -179,7 +179,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Area Movement - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Area Movement - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

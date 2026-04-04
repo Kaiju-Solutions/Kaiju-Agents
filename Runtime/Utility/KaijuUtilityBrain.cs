@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
 #endif
     [DisallowMultipleComponent]
     [RequireComponent(typeof(KaijuAgent))]
@@ -551,5 +551,14 @@ namespace KaijuSolutions.Agents.Utility
         /// Set any needed blackboard variables for choosing an action to perform.
         /// </summary>
         protected virtual void UpdateBlackboard() { }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Brain - Agent: {(Agent ? Agent : "None")} - Actions: {actions.Count} - Blackboard: {_blackboard.Count} - Current: {(Current ? Current : "None")}";
+        }
     }
 }

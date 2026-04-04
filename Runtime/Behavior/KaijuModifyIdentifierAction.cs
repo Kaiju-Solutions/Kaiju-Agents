@@ -44,6 +44,15 @@ namespace KaijuSolutions.Agents.Behavior
         /// <param name="unsigned">The value cast to unsigned. This is needed as the blackboard variables do not support unsigned integers.</param>
         /// <returns>The result of the action.</returns>
         protected abstract bool HandleAction(uint unsigned);
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Modify Identifier Action - Agent: {(agent.Value ? agent.Value : "None")} - Identifier: {identifier.Value}";
+        }
     }
 }
 #endif

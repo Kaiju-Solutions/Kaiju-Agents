@@ -7,7 +7,7 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
 #endif
     public abstract class KaijuUtilityKeyConsideration : KaijuUtilityConsideration
     {
@@ -26,5 +26,14 @@ namespace KaijuSolutions.Agents.Utility
         [Tooltip("What key to use from the brain's blackboard.")]
         [SerializeField]
         private string key = string.Empty;
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Key Consideration - Key: {Key}";
+        }
     }
 }

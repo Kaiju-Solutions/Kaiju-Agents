@@ -102,7 +102,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Attack Everything Actuator {name} - Agent: {(Agent ? Agent.name : "None")}";
+            return $"{name} - Kaiju Attack Everything Actuator - Agent: {(Agent ? Agent : "None")}";
         }
         
         /// <summary>

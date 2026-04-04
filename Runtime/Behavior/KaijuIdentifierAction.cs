@@ -25,6 +25,15 @@ namespace KaijuSolutions.Agents.Behavior
         /// </summary>
         /// <returns>If this was successful.</returns>
         protected abstract bool HandleAction();
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Identifier Action - Agent: {(agent.Value ? agent.Value : "None")}";
+        }
     }
 }
 #endif

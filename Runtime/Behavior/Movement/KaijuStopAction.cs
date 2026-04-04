@@ -35,6 +35,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             agent.Value.Stop();
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Action";
+        }
     }
 }
 #endif

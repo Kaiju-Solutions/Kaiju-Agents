@@ -45,6 +45,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
         {
             energy.Value = microbe.Value.Energy;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Microbe Energy Action - Microbe: {(microbe.Value ? microbe.Value : "None")} - Energy: {energy.Value}";
+        }
     }
 }
 #endif

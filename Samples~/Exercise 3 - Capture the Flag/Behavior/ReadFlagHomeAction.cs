@@ -45,6 +45,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         {
             home.Value = Flag.Base3(flag.Value.TeamOne);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Flag Home Action - Flag: {(flag.Value ? flag.Value : "None")} - Home: {home.Value}";
+        }
     }
 }
 #endif

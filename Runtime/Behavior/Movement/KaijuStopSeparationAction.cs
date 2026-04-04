@@ -19,6 +19,16 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         id: "9e202450dff3a82616371d1145413757",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopSeparationAction : KaijuStopTypeAction<KaijuSeparationMovement> { }
+    public class KaijuStopSeparationAction : KaijuStopTypeAction<KaijuSeparationMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Separation Action";
+        }
+    }
 }
 #endif

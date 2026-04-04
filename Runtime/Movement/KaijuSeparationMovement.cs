@@ -196,7 +196,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Separation Movement - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Coefficient: {Coefficient} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Separation Movement - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Coefficient: {Coefficient} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
     }
 }

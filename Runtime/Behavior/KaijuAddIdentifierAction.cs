@@ -29,6 +29,15 @@ namespace KaijuSolutions.Agents.Behavior
         {
             return agent.Value.AddIdentifier(unsigned);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Add Identifier Action - Agent: {(agent.Value ? agent.Value : "None")} - Identifier: {identifier.Value}";
+        }
     }
 }
 #endif

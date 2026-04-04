@@ -44,7 +44,16 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         /// <returns>The movement that was created.</returns>
         protected override KaijuPathFollowMovement CreateMovement()
         {
-            return target.Value == null ? null : configuration.Value ? agent.Value.PathFollow(target.Value, configuration.Value.areaMask, configuration.Value.ApproachingDistance, configuration.Value.PathAutoCalculateDistance, configuration.Value.collisionMask, QueryTriggerInteraction.UseGlobal, configuration.Value.Weight,  configuration.Value.clear) : agent.Value.PathFollow(target.Value);
+            return target.Value == null ? null : configuration.Value ? agent.Value.PathFollow(target.Value, configuration.Value.areaMask, configuration.Value.ApproachingDistance, configuration.Value.PathAutoCalculateDistance, configuration.Value.collisionMask, configuration.Value.collisionTriggers, configuration.Value.Weight,  configuration.Value.clear) : agent.Value.PathFollow(target.Value);
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Path Follow Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Movement: {(Movement ? Movement : "None")}";
         }
     }
 }

@@ -43,6 +43,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             agent.Value.Position3 = target.Value.position;
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Teleport Action - Target: {(target.Value ? target.Value : "None")}";
+        }
     }
 }
 #endif

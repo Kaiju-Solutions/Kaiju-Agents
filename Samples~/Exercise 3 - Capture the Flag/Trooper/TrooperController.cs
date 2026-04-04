@@ -197,5 +197,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             trooper.OnFlagReturned -= OnFlagReturned;
             trooper.OnFlagDropped -= OnFlagDropped;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Trooper Controller - Trooper: {(trooper ? trooper : "None")}";
+        }
     }
 }
