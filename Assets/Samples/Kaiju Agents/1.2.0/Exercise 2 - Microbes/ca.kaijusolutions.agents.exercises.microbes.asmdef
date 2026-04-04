@@ -1,0 +1,23 @@
+﻿{
+  "name": "ca.kaijusolutions.agents.exercises.microbes",
+  "references": [
+    "ca.kaijusolutions.agents",
+    "Unity.Behavior",
+    "Unity.Behavior.SerializableGUID"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [
+    {
+      "name": "com.unity.behavior",
+      "expression": "",
+      "define": "COM_UNITY_BEHAVIOR"
+    }
+  ],
+  "noEngineReferences": false
+}

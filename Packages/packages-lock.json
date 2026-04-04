@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.kaijusolutions.agents": {
+    "ca.kaijusolutions.agents": {
       "version": "https://github.com/Kaiju-Solutions/Kaiju-Agents.git#release",
       "depth": 0,
       "source": "git",
@@ -9,7 +9,7 @@
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       },
-      "hash": "c0cfa56615ed2188c4d3014b371fad7432244160"
+      "hash": "bce3007ebb263cc594d099cb6abd501f9f0d7983"
     },
     "com.unity.ai.navigation": {
       "version": "2.0.12",
