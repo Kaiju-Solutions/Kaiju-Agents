@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Actuators
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/actuators.html#attack-actuator")]
 #endif
     public abstract class KaijuAttackActuator: KaijuActuator

@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Sensors
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/sensors.html")]
 #endif
     public abstract class KaijuSensor : KaijuBehaviour

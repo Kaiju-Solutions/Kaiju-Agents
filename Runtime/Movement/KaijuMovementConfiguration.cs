@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Movement
     /// </summary>
 #if UNITY_EDITOR
     [CreateAssetMenu(fileName = "Kaiju Movement Configuration", menuName = "Kaiju Solutions/Agents/Kaiju Movement Configuration", order = 0)]
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public class KaijuMovementConfiguration : ScriptableObject

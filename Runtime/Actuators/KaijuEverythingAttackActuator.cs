@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Actuators
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/Actuators/Kaiju Everything Attack Actuator", 7)]
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/actuators.html#everything-attack-actuator")]
 #endif
     public class KaijuEverythingAttackActuator : KaijuAttackActuator

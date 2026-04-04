@@ -1,7 +1,7 @@
 {
-  "name": "com.kaijusolutions.agents",
+  "name": "ca.kaijusolutions.agents",
   "displayName": "Kaiju Agents",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "unity": "6000.3",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {
@@ -27,7 +27,10 @@
     "Navigation",
     "Pathfinding",
     "Sensors",
-    "Actuators"
+    "Actuators",
+    "Behavior",
+    "Behaviour",
+    "Utility"
   ],
   "samples": [
     {

@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &15142490
 SphereCollider:
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &22372452
 SphereCollider:
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a66e7839c8843bd977d82b29c900f56, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Utilities.KaijuDeveloperUI
+  m_EditorClassIdentifier: ca.kaijusolutions.agents::KaijuSolutions.Agents.Utilities.KaijuDeveloperUI
   width: 200
   dynamicCameras: 0
 --- !u!1 &135667712
@@ -843,7 +843,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &147340176
 SphereCollider:
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &209989848
 SphereCollider:
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &251559992
 SphereCollider:
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &318063217
 SphereCollider:
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &367627509
 SphereCollider:
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &385884936
 SphereCollider:
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &400257864
 SphereCollider:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &417480717
 SphereCollider:
@@ -2977,7 +2977,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &543276307
 SphereCollider:
@@ -3044,7 +3044,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &551987848
 SphereCollider:
@@ -3339,7 +3339,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &587590717
 SphereCollider:
@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &599493036
 SphereCollider:
@@ -3602,7 +3602,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &600903173
 SphereCollider:
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &622192709
 SphereCollider:
@@ -4051,7 +4051,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &664700596
 SphereCollider:
@@ -4118,7 +4118,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &668738662
 SphereCollider:
@@ -4185,7 +4185,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &700742019
 SphereCollider:
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &705256201
 SphereCollider:
@@ -4448,7 +4448,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &737598023
 SphereCollider:
@@ -4515,7 +4515,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &737732539
 SphereCollider:
@@ -5317,7 +5317,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &818869753
 SphereCollider:
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &855080315
 SphereCollider:
@@ -5642,7 +5642,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &864901670
 SphereCollider:
@@ -5932,7 +5932,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &960202279
 SphereCollider:
@@ -6257,7 +6257,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &969274259
 SphereCollider:
@@ -6324,7 +6324,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &976991925
 SphereCollider:
@@ -6582,7 +6582,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1027066624
 SphereCollider:
@@ -6649,7 +6649,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1046683990
 SphereCollider:
@@ -6716,7 +6716,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1053945664
 SphereCollider:
@@ -7141,7 +7141,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1121841639
 SphereCollider:
@@ -7466,7 +7466,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1155981701
 SphereCollider:
@@ -7634,7 +7634,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1181961247
 SphereCollider:
@@ -7701,7 +7701,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1186113949
 SphereCollider:
@@ -8206,7 +8206,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1245161987
 SphereCollider:
@@ -8461,7 +8461,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1280269321
 SphereCollider:
@@ -8528,7 +8528,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1295303114
 SphereCollider:
@@ -8724,7 +8724,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1311464620
 SphereCollider:
@@ -8920,7 +8920,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1313232091
 SphereCollider:
@@ -8987,7 +8987,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1318799604
 SphereCollider:
@@ -9054,7 +9054,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1319954539
 SphereCollider:
@@ -9345,7 +9345,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1397396448
 SphereCollider:
@@ -9412,7 +9412,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1400064941
 SphereCollider:
@@ -10028,7 +10028,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1476421843
 SphereCollider:
@@ -10157,7 +10157,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1538301742
 SphereCollider:
@@ -10224,7 +10224,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1569094435
 SphereCollider:
@@ -10291,7 +10291,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1569807950
 SphereCollider:
@@ -11150,7 +11150,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1679370905
 SphereCollider:
@@ -11217,7 +11217,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1703457484
 SphereCollider:
@@ -11284,7 +11284,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1703860776
 SphereCollider:
@@ -11351,7 +11351,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1706461459
 SphereCollider:
@@ -11612,7 +11612,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1727270472
 SphereCollider:
@@ -11679,7 +11679,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1740266708
 SphereCollider:
@@ -12066,7 +12066,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1771665966
 SphereCollider:
@@ -12262,7 +12262,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1846674833
 SphereCollider:
@@ -12391,7 +12391,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1878538234
 SphereCollider:
@@ -12458,7 +12458,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1881844544
 SphereCollider:
@@ -12654,7 +12654,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1886123384
 SphereCollider:
@@ -12721,7 +12721,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1889718556
 SphereCollider:
@@ -12984,7 +12984,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1909617864
 SphereCollider:
@@ -13051,7 +13051,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 1
 --- !u!135 &1932296464
 SphereCollider:
@@ -13118,7 +13118,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1951860484
 SphereCollider:
@@ -13314,7 +13314,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1977104118
 SphereCollider:
@@ -13443,7 +13443,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &1988220252
 SphereCollider:
@@ -13968,7 +13968,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a9b55a13cb44950b188e3ecd5153046, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.CaptureTheFlagManager
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.CaptureTheFlagManager
   prefab: {fileID: 6190703363887382500, guid: 5bde1c6f1a0a50d46ab6a895090e463f, type: 3}
   health: 100
   damage: 10
@@ -14023,7 +14023,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2680b60c28a4ebca422d8241db351a4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.exercises.ctf::KaijuSolutions.Agents.Exercises.CTF.SpawnPoint
   <TeamOne>k__BackingField: 0
 --- !u!135 &2129424926
 SphereCollider:

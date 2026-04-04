@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50709c4ddd6a44bc99ec6d2e5445125a, type: 3}
   m_Name: Cleaner Movement Configuration
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.Movement.KaijuMovementConfiguration
+  m_EditorClassIdentifier: ca.kaijusolutions.agents::KaijuSolutions.Agents.Movement.KaijuMovementConfiguration
   weight: 1
   clear: 1
   approachingDistance: 0.1

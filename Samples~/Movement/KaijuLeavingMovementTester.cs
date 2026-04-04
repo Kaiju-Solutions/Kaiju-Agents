@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     /// </summary>
     [DefaultExecutionOrder(int.MaxValue)]
 #if UNITY_EDITOR
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/sample-movement.html")]
 #endif
     public abstract class KaijuLeavingMovementTester : KaijuMovementTester

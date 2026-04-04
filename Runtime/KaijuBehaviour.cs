@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 6)]
 #if UNITY_EDITOR
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca")]
 #endif
     public abstract class KaijuBehaviour : MonoBehaviour

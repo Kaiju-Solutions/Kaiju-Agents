@@ -427,7 +427,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1fe3449474b4fa7bb17d68339ad72da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
+  m_EditorClassIdentifier: ca.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
   moveSpeed: 10
   moveAcceleration: 0
   lookSpeed: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1fe3449474b4fa7bb17d68339ad72da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
+  m_EditorClassIdentifier: ca.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
   moveSpeed: 10
   moveAcceleration: 0
   lookSpeed: 0
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5225132bb66b4d1d95e8e533987dbd59, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.samples.movement::KaijuSolutions.Agents.Samples.Movement.KaijuSeekMovementTester
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.samples.movement::KaijuSolutions.Agents.Samples.Movement.KaijuSeekMovementTester
   agents:
   - {fileID: 462820016}
   weight: 1
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca3fada38fb54c0899eb57951b0b6fc2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.samples.movement::KaijuSolutions.Agents.Samples.Movement.KaijuPursueMovementTester
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.samples.movement::KaijuSolutions.Agents.Samples.Movement.KaijuPursueMovementTester
   agents:
   - {fileID: 574302613}
   weight: 1

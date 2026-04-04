@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1fe3449474b4fa7bb17d68339ad72da, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
+  m_EditorClassIdentifier: ca.kaijusolutions.agents::KaijuSolutions.Agents.KaijuTransformAgent
   moveSpeed: 10
   moveAcceleration: 0
   lookSpeed: 360
@@ -356,7 +356,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2a00c4279454cacb0816fc6c01a99b3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: com.kaijusolutions.agents.samples.keyboard::Samples.Keyboard.KeyboardController
+  m_EditorClassIdentifier: ca.kaijusolutions.agents.samples.keyboard::Samples.Keyboard.KeyboardController
   agent: {fileID: 1884755500}
 --- !u!1 &2009975745
 GameObject:
