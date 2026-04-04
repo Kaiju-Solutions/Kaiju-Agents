@@ -27,7 +27,10 @@
     "Navigation",
     "Pathfinding",
     "Sensors",
-    "Actuators"
+    "Actuators",
+    "Behavior",
+    "Behaviour",
+    "Utility"
   ],
   "samples": [
     {
