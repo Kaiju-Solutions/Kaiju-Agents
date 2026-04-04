@@ -121,7 +121,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Box Destroyer Controller {name}";
+            return $"{name} - Box Destroyer Controller";
         }
     }
 }

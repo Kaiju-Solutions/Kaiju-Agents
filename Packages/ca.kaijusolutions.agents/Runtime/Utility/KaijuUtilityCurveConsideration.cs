@@ -40,5 +40,13 @@ namespace KaijuSolutions.Agents.Utility
             curve = new(new Keyframe(0f, 1f), new Keyframe(1f, 0f));
         }
 #endif
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Curve Consideration - Key: {Key}";
+        }
     }
 }

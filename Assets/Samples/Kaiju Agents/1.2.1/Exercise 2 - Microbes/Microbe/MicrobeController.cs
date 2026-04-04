@@ -120,5 +120,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             microbe.OnEat -= OnEat;
             microbe.OnEaten -= OnEaten;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Microbe Controller - Microbe: {(microbe ? microbe : "None")}";
+        }
     }
 }

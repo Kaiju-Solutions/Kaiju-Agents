@@ -78,6 +78,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
         /// Read the needed value.
         /// </summary>
         protected abstract void ReadValue();
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Microbe Action - Microbe: {(microbe.Value ? microbe.Value : "None")}";
+        }
     }
 }
 #endif

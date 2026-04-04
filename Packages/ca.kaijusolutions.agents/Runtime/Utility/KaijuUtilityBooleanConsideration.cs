@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents.Utility
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Boolean", fileName = "Boolean", order = 1)]
 #endif
-    public class KaijuBooleanConsideration : KaijuUtilityKeyConsideration
+    public class KaijuUtilityBooleanConsideration : KaijuUtilityKeyConsideration
     {
         /// <summary>
         /// If the result should be inverted, meaning a true value in the <see cref="KaijuUtilityKeyConsideration.Key"/> will return a zero instead of a one and vice versa.
@@ -30,6 +30,15 @@ namespace KaijuSolutions.Agents.Utility
         public override float Evaluate([NotNull] KaijuUtilityBrain brain)
         {
             return brain.Get<bool>(Key) ? invert ? 0f : 1f : invert ? 1f : 0f;
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Boolean Consideration - Key: {Key}{(invert ? " - Invert" : string.Empty)}";
         }
     }
 }

@@ -380,5 +380,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             _energy += MicrobeManager.Energy;
             pickup.gameObject.SetActive(false);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Microbe - Energy: {_energy} - Decay: {decay} - Cooldown: {Cooldown} - Agent: {(Agent ? Agent : "None")}";
+        }
     }
 }

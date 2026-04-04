@@ -26,7 +26,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Energy Vision Sensor {name} - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
+            return $"{name} - Energy Vision Sensor - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
         }
     }
 }

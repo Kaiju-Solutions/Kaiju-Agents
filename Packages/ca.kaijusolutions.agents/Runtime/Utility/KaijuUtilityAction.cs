@@ -45,5 +45,14 @@ namespace KaijuSolutions.Agents.Utility
         /// </summary>
         /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is for.</param>
         public virtual void Exit([NotNull] KaijuUtilityBrain brain) { }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Action - Consideration: {(Consideration ? Consideration : "None")}";
+        }
     }
 }

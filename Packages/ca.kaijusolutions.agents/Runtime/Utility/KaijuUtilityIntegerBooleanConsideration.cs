@@ -11,7 +11,7 @@ namespace KaijuSolutions.Agents.Utility
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Integer Boolean", fileName = "Integer Boolean", order = 2)]
 #endif
-    public class KaijuUtilityIntegerBooleanConsideration : KaijuNumericBooleanConsideration
+    public class KaijuUtilityIntegerBooleanConsideration : KaijuUtilityNumericBooleanConsideration
     {
         /// <summary>
         /// The value to compare against and get a Boolean result.
@@ -29,6 +29,15 @@ namespace KaijuSolutions.Agents.Utility
         protected override bool BooleanEvaluate(KaijuUtilityBrain brain)
         {
             return greater ? brain.Get<int>(Key) >= value : brain.Get<int>(Key) <= value;
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Integer Boolean Consideration - Key: {Key} - Value: {value} - {(greater ? "Greater" : "Lesser")}";
         }
     }
 }

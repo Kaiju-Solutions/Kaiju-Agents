@@ -149,7 +149,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Energy Pickup {name} - {(Active.Contains(this) ? "Active" : "Inactive")}";
+            return $"{name} - Energy Pickup - {(Active.Contains(this) ? "Active" : "Inactive")}";
         }
     }
 }

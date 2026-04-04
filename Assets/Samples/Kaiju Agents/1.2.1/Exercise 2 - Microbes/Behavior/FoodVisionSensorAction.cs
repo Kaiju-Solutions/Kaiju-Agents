@@ -38,6 +38,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
         {
             return Current.Compatible(microbe) && (energy == null || microbe.Energy >= energy.Value);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Food Vision Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Observed: {(observed.Value ? observed.Value : "None")} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
     }
 }
 #endif

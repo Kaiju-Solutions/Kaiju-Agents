@@ -40,5 +40,14 @@ namespace KaijuSolutions.Agents.Utility
         {
             return utility;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Constant Consideration - Utility: {utility}";
+        }
     }
 }

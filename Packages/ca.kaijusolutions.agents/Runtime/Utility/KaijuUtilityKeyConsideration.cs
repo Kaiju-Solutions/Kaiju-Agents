@@ -26,5 +26,14 @@ namespace KaijuSolutions.Agents.Utility
         [Tooltip("What key to use from the brain's blackboard.")]
         [SerializeField]
         private string key = string.Empty;
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Utility Key Consideration - Key: {Key}";
+        }
     }
 }

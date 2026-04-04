@@ -50,7 +50,7 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Auto Look Action - Agent: {(agent.Value ? agent.Value : "None")} - {(auto.Value ? "" : "Not ")}Automatically Looking";
+            return $"Kaiju Auto Look Action - Agent: {(agent.Value ? agent.Value : "None")} - {(auto.Value ? string.Empty : "Not ")}Automatically Looking";
         }
     }
 }

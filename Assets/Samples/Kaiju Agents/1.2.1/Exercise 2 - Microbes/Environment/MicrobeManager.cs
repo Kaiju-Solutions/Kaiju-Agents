@@ -395,7 +395,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Microbe Manager {name}";
+            return $"{name} - Microbe Manager";
         }
     }
 }

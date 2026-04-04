@@ -96,7 +96,7 @@ namespace KaijuSolutions.Agents.Exercises.Cleaner
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Floor {name} - {(Dirty ? "Dirty" : "Clean")} - Chance: {Chance}";
+            return $"{name} - Floor - {(Dirty ? "Dirty" : "Clean")} - Chance: {Chance}";
         }
     }
 }
