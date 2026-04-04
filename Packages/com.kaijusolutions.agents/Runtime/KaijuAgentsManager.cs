@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents
     [DefaultExecutionOrder(int.MinValue + 3)]
 #if UNITY_EDITOR
     [SelectionBase]
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/manager.html")]
     [AddComponentMenu("Kaiju Solutions/Agents/Kaiju Agents Manager", int.MaxValue)]
 #endif

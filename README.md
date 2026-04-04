@@ -53,7 +53,7 @@ Replace the `#release` in the latest release installation with the version numbe
 This will pull directly from the main branch, and is not recommended unless there is a specific feature needed not yet in the latest release.
 
 ```text
-https://github.com/Kaiju-Solutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents
+https://github.com/Kaiju-Solutions/Kaiju-Agents.git?path=/Packages/ca.kaijusolutions.agents
 ```
 
 ## Template Project

@@ -6,7 +6,7 @@ on:
     tags:
       - '[0-9]*'
     paths:
-      - 'Packages/com.kaijusolutions.agents/**'
+      - 'Packages/ca.kaijusolutions.agents/**'
 
 jobs:
   deploy:
@@ -28,7 +28,7 @@ jobs:
         env:
           REPO: self
           BRANCH: release
-          FOLDER: Packages/com.kaijusolutions.agents
+          FOLDER: Packages/ca.kaijusolutions.agents
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "ver: {msg}"
           TAG: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
@@ -55,7 +55,7 @@ jobs:
           prerelease: ${{ env.IS_PRE == 'true' }}
           body: |            
             To install this package in Unity, add the following URL to Package Manager:
-            `https://github.com/Kaiju-Solutions/Kaiju-Agents.git?path=/Packages/com.kaijusolutions.agents#${{ github.ref_name }}`
+            `https://github.com/Kaiju-Solutions/Kaiju-Agents.git?path=/Packages/ca.kaijusolutions.agents#${{ github.ref_name }}`
             See release notes at: [https://agents.kaijusolutions.ca/changelog](https://agents.kaijusolutions.ca/changelog "Kaiju Agents Changelog")
           generate_release_notes: false
           draft: false

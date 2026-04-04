@@ -14,7 +14,7 @@ namespace KaijuSolutions.Agents
     [DefaultExecutionOrder(int.MinValue + 4)]
 #if UNITY_EDITOR
     [SelectionBase]
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/controller.html")]
 #endif
     public abstract class KaijuGlobalController : KaijuBehaviour

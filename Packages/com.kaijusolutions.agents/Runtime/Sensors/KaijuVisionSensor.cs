@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Sensors
     /// <typeparam name="T">The type of <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.</typeparam>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
-    [Icon("Packages/com.kaijusolutions.agents/Editor/Icon.png")]
+    [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/sensors.html#vision-sensor")]
 #endif
     public abstract class KaijuVisionSensor<T> : KaijuSensor where T : Component

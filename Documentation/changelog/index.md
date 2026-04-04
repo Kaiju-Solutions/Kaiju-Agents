@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.2.0
+
+- Adjusted package naming from `com.kaijusolutions.agents` to `ca.kaijusolutions.agents`.
+
 ### 1.1.7
 
 - Added support for [Unity 6.4](https://docs.unity3d.com/6000.4/Documentation/Manual/WhatsNewUnity64.html "Unity 6.4").

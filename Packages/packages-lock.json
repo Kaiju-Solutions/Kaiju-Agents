@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.kaijusolutions.agents": {
-      "version": "file:com.kaijusolutions.agents",
+    "ca.kaijusolutions.agents": {
+      "version": "file:ca.kaijusolutions.agents",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

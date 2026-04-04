@@ -1,0 +1,15 @@
+﻿{
+  "name": "ca.kaijusolutions.agents.samples.movement",
+  "references": [
+    "ca.kaijusolutions.agents"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
