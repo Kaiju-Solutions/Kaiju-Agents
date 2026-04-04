@@ -19,7 +19,7 @@ namespace Samples.Keyboard
         private void Update()
         {
             Vector2 movement = Vector2.zero;
-#if !ENABLE_LEGACY_INPUT_MANAGER
+#if COM_UNITY_INPUTSYSTEM
             if (UnityEngine.InputSystem.Keyboard.current.wKey.isPressed || UnityEngine.InputSystem.Keyboard.current.upArrowKey.isPressed)
             {
                 movement.y += 1;
@@ -61,7 +61,7 @@ namespace Samples.Keyboard
             }
 #endif
             Agent.Control = movement;
-#if !ENABLE_LEGACY_INPUT_MANAGER
+#if COM_UNITY_INPUTSYSTEM
             if (UnityEngine.InputSystem.Keyboard.current.eKey.isPressed && !UnityEngine.InputSystem.Keyboard.current.qKey.isPressed)
             {
                 Agent.Spin = 1;
