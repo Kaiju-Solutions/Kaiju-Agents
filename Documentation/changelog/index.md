@@ -3,6 +3,7 @@
 ### 1.2.1
 
 - Improved documentation and fixed help links.
+- Added additional events to the ["Microbes" exercise](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes").
 
 ### 1.2.0
 

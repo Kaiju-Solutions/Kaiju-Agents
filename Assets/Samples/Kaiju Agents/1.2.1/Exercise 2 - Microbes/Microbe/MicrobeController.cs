@@ -38,6 +38,11 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void OnEaten(Microbe eater) { }
         
         /// <summary>
+        /// Called after the <see cref="microbe"/> has picked up an <see cref="EnergyPickup"/>.
+        /// </summary>
+        private void OnEnergy() { }
+        
+        /// <summary>
         /// Called when a <see cref="MicrobeVisionSensor"/> has been run.
         /// </summary>
         /// <param name="microbeSensor">The <see cref="MicrobeVisionSensor"/> which was run.</param>
@@ -99,6 +104,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
                 microbe.OnMate += OnMate;
                 microbe.OnEat += OnEat;
                 microbe.OnEaten += OnEaten;
+                microbe.OnEnergy += OnEnergy;
             }
             
             base.OnEnable();
@@ -119,6 +125,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             microbe.OnMate -= OnMate;
             microbe.OnEat -= OnEat;
             microbe.OnEaten -= OnEaten;
+            microbe.OnEnergy -= OnEnergy;
         }
         
         /// <summary>
