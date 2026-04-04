@@ -411,7 +411,7 @@ namespace KaijuSolutions.Agents.Movement
 #if UNITY_EDITOR
         [Tooltip("The default layers to use for path following string-pulling and obstacle avoidance.")]
 #endif
-        public LayerMask collisionMask = KaijuMovementConfiguration.DefaultMask;
+        public LayerMask collisionMask = DefaultMask;
         
         /// <summary>
         /// How string-pulling should consider triggers by default.
@@ -439,5 +439,14 @@ namespace KaijuSolutions.Agents.Movement
         [Min(0)]
         [SerializeField]
         private float pathAutoCalculateDistance = KaijuPathFollowMovement.DefaultAutoCalculateDistance;
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Movement Configuration - Weight: {weight} - Clear: {clear} - Approaching Distance: {approachingDistance} - Leaving Distance: {leavingDistance} - Wander Distance: {wanderDistance} - Wander Radius: {wanderRadius} - Separation Distance: {separationDistance} - Separation Coefficient: {separationCoefficient} - Identifiers: {identifiers.Count} - Avoidance: {avoidance} - Avoidance Distance: {avoidanceDistance} - Avoidance Side Distance: {avoidanceSideDistance} - Avoidance Angle: {avoidanceAngle} - Avoidance Height: {avoidanceHeight} - Avoidance Horizontal: {avoidanceHorizontal} - Area Mask: {areaMask} - Collision Mask: {collisionMask} - Collision Triggers: {collisionTriggers}";
+        }
     }
 }

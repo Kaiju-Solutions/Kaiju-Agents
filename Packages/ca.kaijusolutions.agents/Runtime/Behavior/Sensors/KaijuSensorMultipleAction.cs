@@ -28,6 +28,15 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
         /// </summary>
         /// <param name="candidates">The candidates to choose from.</param>
         protected abstract void GetIdeal([NotNull] IEnumerable<T0> candidates);
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Sensor Multiple Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Sensor Type: {typeof(T).Name} - Observed: {(observed.Value ? observed.Value : "None")} - Observed Type: {typeof(T0).Name} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
     }
 }
 #endif

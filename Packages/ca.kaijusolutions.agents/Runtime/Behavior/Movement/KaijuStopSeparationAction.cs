@@ -14,11 +14,22 @@ namespace KaijuSolutions.Agents.Behavior.Movement
     [NodeDescription(
         name: "Stop Separations",
         story: "Stop all separation movements on [agent].",
-        description: "Stop all separation movements on an agent. This will report a failure if the agent is not currently separating. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
+        description:
+        "Stop all separation movements on an agent. This will report a failure if the agent is not currently separating. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
         category: "Kaiju Agents/Movement/Stop",
         id: "9e202450dff3a82616371d1145413757",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopSeparationAction : KaijuStopTypeAction<KaijuSeparationMovement> { }
+    public class KaijuStopSeparationAction : KaijuStopTypeAction<KaijuSeparationMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Separation Action";
+        }
+    }
 }
 #endif

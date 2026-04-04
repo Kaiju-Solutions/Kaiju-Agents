@@ -30,6 +30,15 @@ namespace KaijuSolutions.Agents.Behavior
             agent.Value.ClearIdentifiers();
             return count > 0;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Clear Identifiers Action - Agent: {(agent.Value ? agent.Value : "None")}";
+        }
     }
 }
 #endif

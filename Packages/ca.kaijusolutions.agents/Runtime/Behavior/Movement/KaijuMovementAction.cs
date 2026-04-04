@@ -134,6 +134,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         /// </summary>
         /// <returns>The movement that was created.</returns>
         protected abstract T CreateMovement();
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Movement Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Type: {typeof(T).Name} - Movement: {(Movement ? Movement : "None")} - Status: {_status}";
+        }
     }
 }
 #endif

@@ -40,6 +40,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             // If the target has been destroyed, assume this has failed.
             return target == null || target.Value == null ? Status.Failure : base.OnUpdate();
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Target Movement Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Type: {typeof(T).Name} - Movement: {(Movement ? Movement : "None")}";
+        }
     }
 }
 #endif

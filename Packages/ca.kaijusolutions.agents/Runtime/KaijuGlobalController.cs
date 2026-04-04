@@ -289,7 +289,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agent Global Controller {name}";
+            return $"{name} - Kaiju Agent Global Controller";
         }
         
         /// <summary>

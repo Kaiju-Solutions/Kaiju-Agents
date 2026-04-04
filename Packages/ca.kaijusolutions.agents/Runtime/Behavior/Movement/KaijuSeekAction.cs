@@ -46,6 +46,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         {
             return target.Value == null ? null : configuration.Value ? agent.Value.Seek(target.Value, configuration.Value.ApproachingDistance, configuration.Value.Weight,  configuration.Value.clear) : agent.Value.Seek(target.Value);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Seek Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Movement: {(Movement ? Movement : "None")}";
+        }
     }
 }
 #endif

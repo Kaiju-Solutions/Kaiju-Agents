@@ -36,6 +36,15 @@ namespace KaijuSolutions.Agents.Behavior.Actuators
             actuator.Value.End();
             return Status.Success;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju End Actuator Action - Actuator: {(actuator.Value ? actuator.Value : "None")}";
+        }
     }
 }
 #endif

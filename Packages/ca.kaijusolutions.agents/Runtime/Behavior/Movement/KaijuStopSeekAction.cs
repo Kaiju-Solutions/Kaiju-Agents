@@ -14,11 +14,22 @@ namespace KaijuSolutions.Agents.Behavior.Movement
     [NodeDescription(
         name: "Stop Seeks",
         story: "Stop all seek movements on [agent].",
-        description: "Stop all seek movements on an agent. This will report a failure if the agent is not currently seeking. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
+        description:
+        "Stop all seek movements on an agent. This will report a failure if the agent is not currently seeking. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
         category: "Kaiju Agents/Movement/Stop",
         id: "9e202450dff3a82616371d1145413752",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopSeekAction : KaijuStopTypeAction<KaijuSeekMovement> { }
+    public class KaijuStopSeekAction : KaijuStopTypeAction<KaijuSeekMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Seek Action";
+        }
+    }
 }
 #endif

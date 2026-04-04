@@ -188,7 +188,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Movement - Agent: {(Agent ? Agent.name : "None")} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
+            return $"Kaiju Movement - Agent: {(Agent ? Agent : "None")} - Weight: {Weight} - {(Done() ? "Done" : "Executing")}";
         }
         
         /// <summary>

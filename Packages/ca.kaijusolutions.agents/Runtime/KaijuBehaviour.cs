@@ -814,7 +814,7 @@ namespace KaijuSolutions.Agents
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Behaviour {name} - Position: {Position3} - Orientation: {OrientationAngles}";
+            return $"{name} - Kaiju Behaviour - Position: {Position3} - Orientation: {OrientationAngles}";
         }
         
         /// <summary>

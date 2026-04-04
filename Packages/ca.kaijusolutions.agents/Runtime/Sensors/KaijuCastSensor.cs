@@ -512,7 +512,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Casts Sensor {name} - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Casts: {Casts} - Radius: {Radius}";
+            return $"{name} - Kaiju Casts Sensor - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Angle: {Angle} - Casts: {Casts} - Radius: {Radius}";
         }
         
         /// <summary>

@@ -30,7 +30,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Agents Vision Sensor {name} - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
+            return $"{name} - Kaiju Agents Vision Sensor - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
         }
         
         /// <summary>

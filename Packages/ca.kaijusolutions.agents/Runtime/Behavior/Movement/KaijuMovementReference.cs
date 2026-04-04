@@ -45,6 +45,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         {
             return _movement != null && _movement.Agent != null && _movement.Agent.Stop(_movement);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Movement Reference - Movement: {_movement}";
+        }
     }
 }
 #endif

@@ -106,6 +106,15 @@ namespace KaijuSolutions.Agents.Behavior.Actuators
             _actuatorStatus = Status.Interrupted;
             Unbind();
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Run Actuator Action - Actuator: {(actuator.Value ? actuator.Value : "None")} - Status: {_actuatorStatus}";
+        }
     }
 }
 #endif

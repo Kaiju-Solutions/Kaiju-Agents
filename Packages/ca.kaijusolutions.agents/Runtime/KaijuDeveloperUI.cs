@@ -210,5 +210,14 @@ namespace KaijuSolutions.Agents
                 _cameras[index].enabled = i == index;
             }
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Kaiju Developer UI - Width: {width} - {(dynamicCameras ? "Dynamic Cameras" : "Static Cameras")} - Cameras: {_cameras.Length}";
+        }
     }
 }

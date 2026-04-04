@@ -21,6 +21,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             // Stop all movements of a type.
             return base.OnStart() == Status.Success && agent.Value.Stop<T>() ? Status.Success : Status.Failure;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Stop Type Action - Type: {typeof(T).Name}";
+        }
     }
 }
 #endif

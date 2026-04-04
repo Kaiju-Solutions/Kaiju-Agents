@@ -126,7 +126,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Sensor {name} - Agent: {(Agent ? Agent.name : "None")}";
+            return $"{name} - Kaiju Sensor - Agent: {(Agent ? Agent : "None")}";
         }
         
         /// <summary>

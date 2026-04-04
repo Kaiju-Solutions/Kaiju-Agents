@@ -37,6 +37,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
         {
             return movement != null && movement.Value && movement.Value.Stop() ? Status.Success : Status.Failure;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Stop Movement Action - Movement: {(movement.Value ? movement.Value : "None")}";
+        }
     }
 }
 #endif

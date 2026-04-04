@@ -56,6 +56,15 @@ namespace KaijuSolutions.Agents.Behavior.Movement
             // Wander movements simply fire-and-forget.
             return base.OnStart() != Status.Failure ? Status.Success : Status.Failure;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Wander Action - Agent: {(agent.Value ? agent.Value : "None")} - Configuration: {(configuration.Value ? configuration.Value : "None")} - Movement: {(Movement ? Movement : "None")}";
+        }
     }
 }
 #endif

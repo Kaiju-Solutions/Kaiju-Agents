@@ -14,11 +14,22 @@ namespace KaijuSolutions.Agents.Behavior.Movement
     [NodeDescription(
         name: "Stop Avoiding Obstacles",
         story: "Stop all obstacle avoidance movements on [agent].",
-        description: "Stop all obstacle avoidance movements on an agent. This will report a failure if the agent is not currently avoiding obstacles. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
+        description:
+        "Stop all obstacle avoidance movements on an agent. This will report a failure if the agent is not currently avoiding obstacles. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
         category: "Kaiju Agents/Movement/Stop",
         id: "9e202450dff3a82616371d1145413758",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class KaijuStopObstacleAvoidanceAction : KaijuStopTypeAction<KaijuObstacleAvoidanceMovement> { }
+    public class KaijuStopObstacleAvoidanceAction : KaijuStopTypeAction<KaijuObstacleAvoidanceMovement>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return "Kaiju Stop Obstacle Avoidance Action";
+        }
+    }
 }
 #endif

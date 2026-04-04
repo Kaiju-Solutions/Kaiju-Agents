@@ -132,6 +132,15 @@ namespace KaijuSolutions.Agents.Behavior
             // If no agent was found, there is nothing to do.
             return null;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Kaiju Agent Graph Action - Agent: {(agent.Value ? agent.Value : "None")}";
+        }
     }
 }
 #endif
