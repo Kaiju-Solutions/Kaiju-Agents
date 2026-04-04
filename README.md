@@ -6,7 +6,7 @@
 
 Kaiju Agents provides an easy-to-learn yet powerful framework for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
-- [Integration](https://behavior.kaijusolutions.ca "Kaiju Agents Behavior") with [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") and an [extension for utility AI](https://utility.kaijusolutions.ca "Kaiju Agents Utility").
+- [Integration](https://agents.kaijusolutions.ca/manual/behavior.html "Unity Behavior Integration") with [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") and an [extension for utility AI](https://utility.kaijusolutions.ca "Kaiju Agents Utility").
 - Modularized [sensor](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors")-[agent](https://agents.kaijusolutions.ca/manual/agents.html "Agents")-[actuator](https://agents.kaijusolutions.ca/manual/autuators.html "Actuators") framework to allow for dynamic agent customization.
   - Have sensors run automatically or manually poll them.
   - Vision sensors based on line-of-sight and casting provided.
@@ -77,7 +77,7 @@ See the [getting started documentation](https://agents.kaijusolutions.ca/manual/
 
 # Showcase
 
-[![Unity Behavior Integration](https://agents.kaijusolutions.ca/img/behavior.png)](https://behavior.kaijusolutions.ca "Unity Behavior Integration")
+[![Unity Behavior Integration](https://agents.kaijusolutions.ca/img/behavior.png)](https://agents.kaijusolutions.ca/manual/behavior.html "Unity Behavior Integration")
 
 [Integration](https://behavior.kaijusolutions.ca "Kaiju Agents Behavior") with [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior")
 

@@ -20,6 +20,8 @@ items:
   href: movement.md
 - name: Extensions
   href: extensions.md
+- name: Behavior
+  href: behavior.md
 - name: Samples and Exercises
   href: samples-and-exercises.md
   items:
