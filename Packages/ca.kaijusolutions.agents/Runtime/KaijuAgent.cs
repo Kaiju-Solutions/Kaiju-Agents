@@ -394,6 +394,14 @@ namespace KaijuSolutions.Agents
         private List<uint> identifiers = new();
         
         /// <summary>
+        /// Whether the manual <see cref="Control"/> is in the direction the agent is facing, or based on global coordinates.
+        /// </summary>
+#if UNITY_EDITOR
+        [Tooltip("Whether the manual control is in the direction the agent is facing, or based on global coordinates.")]
+#endif
+        public bool GlobalControl = true;
+        
+        /// <summary>
         /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
         /// </summary>
         public Vector2 Control
@@ -785,6 +793,7 @@ namespace KaijuSolutions.Agents
         public void CalculateVelocity(float delta)
         {
             // Start with any manual steering.
+            // TODO - When "GlobalControl" is false, have "_control" be relative to the forward of this transform.
             Vector2 velocity = _control * moveSpeed;
             Vector2 position = Position;
             
