@@ -142,5 +142,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             Active.Remove(this);
             Unactive.Remove(this);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Energy Pickup {name} - {(Active.Contains(this) ? "Active" : "Inactive")}";
+        }
     }
 }

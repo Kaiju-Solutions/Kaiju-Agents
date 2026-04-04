@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.2.1
+
+- Improved documentation and fixed help links.
+
 ### 1.2.0
 
 - Moved [Unity Behavior integration](https://agents.kaijusolutions.ca/manual/behavior.html "Unity Behavior Integration") and [utility AI extension](https://agents.kaijusolutions.ca/manual/utility.html "Utility") directly into this package.

@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Utility
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
     [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Integer Boolean", fileName = "Integer Boolean", order = 2)]
 #endif
     public class KaijuUtilityIntegerBooleanConsideration : KaijuNumericBooleanConsideration

@@ -18,10 +18,10 @@ items:
       href: developer-ui.md
 - name: Movement
   href: movement.md
-- name: Behavior
-  href: behavior.md
-- name: Utility
-  href: utility.md
+- name: Behavior Graph
+  href: behavior-graph.md
+- name: Utility AI
+  href: utility-ai.md
 - name: Extensions
   href: extensions.md
 - name: Samples and Exercises

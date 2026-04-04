@@ -21,5 +21,14 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             // Don't detect ourselves.
             return Microbe.All.Where(x => x.transform != transform && x.transform != Agent.transform);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Microbe Vision Sensor {name} - Agent: {(Agent ? Agent.name : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
+        }
     }
 }

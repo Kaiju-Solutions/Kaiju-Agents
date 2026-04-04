@@ -1,5 +1,0 @@
-﻿# Behavior
-
-When [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") is installed in the project, nodes to allow for all types of [movement](https://agents.kaijusolutions.ca/manual/movement.html "Movement") and using [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") are available. Additionally, nodes have been made for the [Microbes](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#microbes "Microbes") and [Capture the Flag](https://agents.kaijusolutions.ca/manual/samples-and-exercises.html#capture-the-flag "Capture the Flag") exercises. To get started, follow the [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") documentation.
-
-![Unity Behavior Integration](https://agents.kaijusolutions.ca/img/behavior.png)

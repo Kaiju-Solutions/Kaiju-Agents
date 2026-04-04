@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [SelectionBase]
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
-    [HelpURL("https://agents.kaijusolutions.ca")]
+    [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
 #endif
     [DisallowMultipleComponent]
     [RequireComponent(typeof(KaijuAgent))]
