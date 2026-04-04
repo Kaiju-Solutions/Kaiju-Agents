@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuNumericBooleanConsideration | Kaiju Agents</title>
+    <title>Class KaijuUtilityBooleanConsideration | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuNumericBooleanConsideration | Kaiju Agents ">
+    <meta name="title" content="Class KaijuUtilityBooleanConsideration | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,12 +76,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration">
   
   
-  <h1 id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration" class="text-break">Class KaijuNumericBooleanConsideration
+  <h1 id="KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration" data-uid="KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration" class="text-break">Class KaijuUtilityBooleanConsideration
   </h1>
-  <div class="markdown level0 summary"><p>Base <a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration.html">KaijuUtilityConsideration</a> for comparing numeric values as booleans.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration.html">KaijuUtilityConsideration</a> which acts as a boolean, returning one or zero depending on its evaluation.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -89,9 +89,7 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration.html">KaijuUtilityConsideration</a></div>
     <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.html">KaijuUtilityKeyConsideration</a></div>
-    <div class="level3"><span class="xref">KaijuNumericBooleanConsideration</span></div>
-      <div class="level4"><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityFloatBooleanConsideration.html">KaijuUtilityFloatBooleanConsideration</a></div>
-      <div class="level4"><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityIntegerBooleanConsideration.html">KaijuUtilityIntegerBooleanConsideration</a></div>
+    <div class="level3"><span class="xref">KaijuUtilityBooleanConsideration</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -101,19 +99,19 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Utility.html">KaijuSolutions.Agents.Utility</a></h6>
   
-  <h5 id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_syntax">Syntax</h5>
+  <h5 id="KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class KaijuNumericBooleanConsideration : KaijuUtilityKeyConsideration</code></pre>
+    <pre><code class="lang-csharp hljs">public class KaijuUtilityBooleanConsideration : KaijuUtilityKeyConsideration</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
-  <h4 id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_greater" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.greater">greater</h4>
-  <div class="markdown level1 summary"><p>If this should evaluate to true when greater than the <a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityKeyConsideration_Key">Key</a>.</p>
+  <h4 id="KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_invert" data-uid="KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.invert">invert</h4>
+  <div class="markdown level1 summary"><p>If the result should be inverted, meaning a true value in the <a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityKeyConsideration_Key">Key</a> will return a zero instead of a one and vice versa.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool greater</code></pre>
+    <pre><code class="lang-csharp hljs">public bool invert</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -132,51 +130,8 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_BooleanEvaluate_" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate*"></a>
-  <h4 id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_BooleanEvaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)">BooleanEvaluate(KaijuUtilityBrain)</h4>
-  <div class="markdown level1 summary"><p>Get a boolean utility for this consideration.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract bool BooleanEvaluate(KaijuUtilityBrain brain)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html">KaijuUtilityBrain</a></td>
-        <td><span class="parametername">brain</span></td>
-        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html">KaijuUtilityBrain</a> this is considering for.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td><p>The boolean utility for this consideration.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_Evaluate_" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate*"></a>
-  <h4 id="KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_" data-uid="KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)">Evaluate(KaijuUtilityBrain)</h4>
+  <a id="KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_Evaluate_" data-uid="KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate*"></a>
+  <h4 id="KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_" data-uid="KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)">Evaluate(KaijuUtilityBrain)</h4>
   <div class="markdown level1 summary"><p>Get the utility for this consideration from [0, 1].</p>
 </div>
   <div class="markdown level1 conceptual"></div>

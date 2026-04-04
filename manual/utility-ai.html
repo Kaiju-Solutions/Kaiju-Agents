@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Behavior | Kaiju Agents</title>
+    <title>Utility AI | Kaiju Agents</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Behavior | Kaiju Agents ">
+    <meta name="title" content="Utility AI | Kaiju Agents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,10 +77,19 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="behavior">Behavior</h1>
+<h1 id="utility-ai">Utility AI</h1>
 
-<p>When <a href="https://docs.unity3d.com/Packages/com.unity.behavior@latest" title="Unity Behavior" target="_blank">Unity Behavior</a> is installed in the project, nodes to allow for all types of <a href="/manual/movement.html" title="Movement">movement</a> and using <a href="/manual/sensors.html" title="Sensors">sensors</a> and <a href="/manual/actuators.html" title="Actuators">actuators</a> are available. Additionally, nodes have been made for the <a href="/manual/samples-and-exercises.html#microbes" title="Microbes">Microbes</a> and <a href="/manual/samples-and-exercises.html#capture-the-flag" title="Capture the Flag">Capture the Flag</a> exercises. To get started, follow the <a href="https://docs.unity3d.com/Packages/com.unity.behavior@latest" title="Unity Behavior" target="_blank">Unity Behavior</a> documentation.</p>
-<p><img src="/img/behavior.png" alt="Unity Behavior Integration"></p>
+<p>Kaiju Agents provides you with the ability to visually create utility AI and is based on a <a href="https://youtu.be/S4oyqrsU2WU" title="git-Amend - Utility AI: Mastering Smart Decisions in Unity!" target="_blank">sample by git-amend</a>. Below is an overview of the workflow for using utility AI in Kaiju Agents. See the <a href="/api/KaijuSolutions.Agents.Utility.html" title="Utility AI">scripting API for utility AI here</a>.</p>
+<ol>
+<li>Create a class which extends from <a href="/api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html" title="KaijuUtilityBrain"><code>KaijuUtilityBrain</code></a> and attach it to your agent.</li>
+<li>Override the <a href="/api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html#KaijuSolutions_Agents_Utility_KaijuUtilityBrain_UpdateBlackboard" title="KaijuUtilityBrain.UpdateBlackboard()"><code>KaijuUtilityBrain.UpdateBlackboard()</code> method</a>, and use the set methods to assign blackboard variables.</li>
+<li>Create actions by extending <a href="/api/KaijuSolutions.Agents.Utility.KaijuUtilityAction.html" title="KaijuUtilityAction"><code>KaijuUtilityAction</code></a>.</li>
+<li>Create instances of the new actions.</li>
+<li>Create and configure considerations by right-clicking in the project and going to <code>Kaiju Solutions &gt; Agents &gt; Utility &gt; Considerations</code>.</li>
+<li>Assign considerations to their actions.</li>
+<li>Assign actions to the created brain.</li>
+<li>When playing, the utility scores of all actions can be seen in the inspector of the brain.</li>
+</ol>
 </article>
           </div>
           

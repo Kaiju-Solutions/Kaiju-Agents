@@ -4580,6 +4580,18 @@ references:
   commentId: E:KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEatGlobal
   fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEatGlobal
   nameWithType: Microbe.OnEatGlobal
+- uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergy
+  name: OnEnergy
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergy
+  commentId: E:KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergy
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergy
+  nameWithType: Microbe.OnEnergy
+- uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergyGlobal
+  name: OnEnergyGlobal
+  href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergyGlobal
+  commentId: E:KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergyGlobal
+  fullName: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergyGlobal
+  nameWithType: Microbe.OnEnergyGlobal
 - uid: KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnMate
   name: OnMate
   href: api/KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMate
@@ -25756,6 +25768,12 @@ references:
   fullName.vb: KaijuSolutions.Agents.KaijuAgent.GetSensors(Of T)(System.Collections.Generic.ISet(Of T), System.Boolean)
   nameWithType: KaijuAgent.GetSensors<T>(ISet<T>, Boolean)
   nameWithType.vb: KaijuAgent.GetSensors(Of T)(ISet(Of T), Boolean)
+- uid: KaijuSolutions.Agents.KaijuAgent.GlobalControl
+  name: GlobalControl
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GlobalControl
+  commentId: F:KaijuSolutions.Agents.KaijuAgent.GlobalControl
+  fullName: KaijuSolutions.Agents.KaijuAgent.GlobalControl
+  nameWithType: KaijuAgent.GlobalControl
 - uid: KaijuSolutions.Agents.KaijuAgent.HasAnyIdentifier(System.Collections.Generic.IEnumerable{System.UInt32})
   name: HasAnyIdentifier(IEnumerable<UInt32>)
   href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_HasAnyIdentifier_System_Collections_Generic_IEnumerable_System_UInt32__
@@ -34847,69 +34865,6 @@ references:
   commentId: N:KaijuSolutions.Agents.Utility
   fullName: KaijuSolutions.Agents.Utility
   nameWithType: KaijuSolutions.Agents.Utility
-- uid: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration
-  name: KaijuBooleanConsideration
-  href: api/KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.html
-  commentId: T:KaijuSolutions.Agents.Utility.KaijuBooleanConsideration
-  fullName: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration
-  nameWithType: KaijuBooleanConsideration
-- uid: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  name: Evaluate(KaijuUtilityBrain)
-  href: api/KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
-  commentId: M:KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  fullName: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  nameWithType: KaijuBooleanConsideration.Evaluate(KaijuUtilityBrain)
-- uid: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate*
-  name: Evaluate
-  href: api/KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuBooleanConsideration_Evaluate_
-  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.Evaluate
-  nameWithType: KaijuBooleanConsideration.Evaluate
-- uid: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.invert
-  name: invert
-  href: api/KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuBooleanConsideration_invert
-  commentId: F:KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.invert
-  fullName: KaijuSolutions.Agents.Utility.KaijuBooleanConsideration.invert
-  nameWithType: KaijuBooleanConsideration.invert
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration
-  name: KaijuNumericBooleanConsideration
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html
-  commentId: T:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration
-  nameWithType: KaijuNumericBooleanConsideration
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  name: BooleanEvaluate(KaijuUtilityBrain)
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_BooleanEvaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
-  commentId: M:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  nameWithType: KaijuNumericBooleanConsideration.BooleanEvaluate(KaijuUtilityBrain)
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate*
-  name: BooleanEvaluate
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_BooleanEvaluate_
-  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.BooleanEvaluate
-  nameWithType: KaijuNumericBooleanConsideration.BooleanEvaluate
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  name: Evaluate(KaijuUtilityBrain)
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
-  commentId: M:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
-  nameWithType: KaijuNumericBooleanConsideration.Evaluate(KaijuUtilityBrain)
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate*
-  name: Evaluate
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_Evaluate_
-  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate
-  isSpec: "True"
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.Evaluate
-  nameWithType: KaijuNumericBooleanConsideration.Evaluate
-- uid: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.greater
-  name: greater
-  href: api/KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuNumericBooleanConsideration_greater
-  commentId: F:KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.greater
-  fullName: KaijuSolutions.Agents.Utility.KaijuNumericBooleanConsideration.greater
-  nameWithType: KaijuNumericBooleanConsideration.greater
 - uid: KaijuSolutions.Agents.Utility.KaijuUtilityAction
   name: KaijuUtilityAction
   href: api/KaijuSolutions.Agents.Utility.KaijuUtilityAction.html
@@ -34981,6 +34936,31 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Utility.KaijuUtilityAction.Utility
   nameWithType: KaijuUtilityAction.Utility
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration
+  name: KaijuUtilityBooleanConsideration
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.html
+  commentId: T:KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration
+  nameWithType: KaijuUtilityBooleanConsideration
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  name: Evaluate(KaijuUtilityBrain)
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
+  commentId: M:KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  nameWithType: KaijuUtilityBooleanConsideration.Evaluate(KaijuUtilityBrain)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate*
+  name: Evaluate
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_Evaluate_
+  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.Evaluate
+  nameWithType: KaijuUtilityBooleanConsideration.Evaluate
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.invert
+  name: invert
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityBooleanConsideration_invert
+  commentId: F:KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.invert
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBooleanConsideration.invert
+  nameWithType: KaijuUtilityBooleanConsideration.invert
 - uid: KaijuSolutions.Agents.Utility.KaijuUtilityBrain
   name: KaijuUtilityBrain
   href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html
@@ -35376,3 +35356,41 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.Key
   nameWithType: KaijuUtilityKeyConsideration.Key
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration
+  name: KaijuUtilityNumericBooleanConsideration
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html
+  commentId: T:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration
+  nameWithType: KaijuUtilityNumericBooleanConsideration
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  name: BooleanEvaluate(KaijuUtilityBrain)
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityNumericBooleanConsideration_BooleanEvaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
+  commentId: M:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  nameWithType: KaijuUtilityNumericBooleanConsideration.BooleanEvaluate(KaijuUtilityBrain)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate*
+  name: BooleanEvaluate
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityNumericBooleanConsideration_BooleanEvaluate_
+  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.BooleanEvaluate
+  nameWithType: KaijuUtilityNumericBooleanConsideration.BooleanEvaluate
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  name: Evaluate(KaijuUtilityBrain)
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityNumericBooleanConsideration_Evaluate_KaijuSolutions_Agents_Utility_KaijuUtilityBrain_
+  commentId: M:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate(KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  nameWithType: KaijuUtilityNumericBooleanConsideration.Evaluate(KaijuUtilityBrain)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate*
+  name: Evaluate
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityNumericBooleanConsideration_Evaluate_
+  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.Evaluate
+  nameWithType: KaijuUtilityNumericBooleanConsideration.Evaluate
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.greater
+  name: greater
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.html#KaijuSolutions_Agents_Utility_KaijuUtilityNumericBooleanConsideration_greater
+  commentId: F:KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.greater
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityNumericBooleanConsideration.greater
+  nameWithType: KaijuUtilityNumericBooleanConsideration.greater
