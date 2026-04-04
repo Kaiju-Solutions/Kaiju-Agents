@@ -3,7 +3,7 @@
 ### 1.2.0
 
 - Moved [Unity Behavior integration](https://agents.kaijusolutions.ca/manual/behavior.html "Unity Behavior Integration") and [utility AI extension](https://agents.kaijusolutions.ca/manual/utility.html "Utility") directly into this package.
-- Adjusted package naming from `com.kaijusolutions.agents` to `ca.kaijusolutions.agents`.
+- Adjusted package naming from `com.kaijusolutions.agents` to `ca.kaijusolutions.agents` in preparation for future releases using [Unity Package Manager (UPM) publishing on the Asset Store](https://assetstore.unity.com/publishing/upm-publishing "Unity Package Manager (UPM) Publishing on the Asset Store"). Due to this change, you must first remove and then add Kaiju Agents back into your project.
 
 ### 1.1.7
 
