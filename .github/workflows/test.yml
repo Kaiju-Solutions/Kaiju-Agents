@@ -1,4 +1,4 @@
-name: Validate Compilation
+name: Validate Package
 
 on:
   workflow_dispatch:
@@ -14,6 +14,36 @@ jobs:
         run: |
           python -c '
           import json, os, urllib.request, re, sys, time
+          
+          def get_latest_compatible(pkg_name, unity_ver, cache={}):
+              if pkg_name not in cache:
+                  try:
+                      url = f"https://packages.unity.com/{pkg_name}"
+                      with urllib.request.urlopen(url) as r:
+                          cache[pkg_name] = json.loads(r.read())
+                  except Exception as e:
+                      sys.stderr.write(f"Error fetching {pkg_name}: {e}\n")
+                      return None
+              
+              data = cache[pkg_name]
+              versions = data.get("versions", {})
+              
+              target_match = re.match(r"^(\d+)\.(\d+)", unity_ver)
+              if not target_match: return None
+              target_v = [int(target_match.group(1)), int(target_match.group(2))]
+              
+              candidates = []
+              for v_str, v_data in versions.items():
+                  req_unity = v_data.get("unity", "0.0")
+                  req_match = re.match(r"^(\d+)\.(\d+)", req_unity)
+                  if not req_match: continue
+                  req_v = [int(req_match.group(1)), int(req_match.group(2))]
+                  
+                  if req_v <= target_v:
+                      candidates.append(v_str)
+              
+              if not candidates: return None
+              return sorted(candidates, key=lambda x: [int(y) for y in re.findall(r"\d+", x)], reverse=True)[0]
           
           def get_latest_unity_patch(minor_version):
               try:
@@ -36,6 +66,7 @@ jobs:
                       return max_patch
               except Exception as e:
                   sys.stderr.write(f"Warning: Unity Release API failed ({e}). Falling back to manual search.\n")
+              
               return 0
           
           def get_latest_gameci_version(minor_version):
@@ -62,6 +93,7 @@ jobs:
                       pass 
                   
                   if patch % 10 == 0: time.sleep(0.2)
+              
               return None
           
           target_minors = ["6000.3", "6000.4"]
@@ -73,19 +105,43 @@ jobs:
                   unity_versions.append(latest_tag)
                   print(f" -> SUCCESS: Resolved to {latest_tag}")
               else:
-                  sys.stderr.write(f" -> ERROR: No GameCI image found for {minor}.x\n")
+                  sys.stderr.write(f" -> ERROR: No GameCI image found for {minor}.x (0-{get_latest_unity_patch(minor)})\n")
           
           if not unity_versions:
               sys.exit("Error: No valid Unity versions found to test.")
           
-          # Format specifically as a standard matrix array
-          matrix_json = json.dumps({"unity_version": unity_versions})
+          matrix = []
+          pkg_cache = {}
+          
+          for unity_version in unity_versions:
+              behavior_v = get_latest_compatible("com.unity.behavior", unity_version, pkg_cache)
+              
+              # Configuration 1: Without Unity Behavior
+              matrix.append({
+                  "config_name": "Base", 
+                  "unity_version": unity_version, 
+                  "dependencies": json.dumps({}), 
+                  "scripting_define": ""
+              })
+              
+              # Configuration 2: With Unity Behavior
+              if behavior_v:
+                  matrix.append({
+                      "config_name": "With Unity Behavior", 
+                      "unity_version": unity_version, 
+                      "dependencies": json.dumps({"com.unity.behavior": behavior_v}), 
+                      "scripting_define": ""
+                  })
+              else:
+                  sys.stderr.write(f" -> Warning: No compatible com.unity.behavior version found for {unity_version}\n")
+          
+          matrix_json = json.dumps({"include": matrix})
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
               f.write(f"matrix={matrix_json}\n")
           '
   
   test:
-    name: Compile (${{ matrix.unity_version }})
+    name: ${{ matrix.config_name }} (${{ matrix.unity_version }})
     needs: generate-matrix
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -94,17 +150,41 @@ jobs:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: true
+      
+      - name: Remove Asset Store Tools
+        run: rm -rf Packages/com.unity.asset-store-tools
+      
+      - name: Setup manifest.json
+        env:
+          DEPS_JSON: ${{ matrix.dependencies }}
+        run: |
+          python -c '
+          import os, json
+          manifest = {"dependencies": json.loads(os.environ["DEPS_JSON"])}
+          os.makedirs("Packages", exist_ok=True)
+          with open("Packages/manifest.json", "w") as f:
+              json.dump(manifest, f, indent=2)
+          '
+          cat Packages/manifest.json
       
       - name: Cache Unity Library
         uses: actions/cache@v5
         with:
           path: Library
-          key: Library-${{ matrix.unity_version }}
+          key: Library-${{ matrix.unity_version }}-${{ hashFiles('Packages/manifest.json') }}-${{ matrix.scripting_define }}
           restore-keys: |
+            Library-${{ matrix.unity_version }}-${{ hashFiles('Packages/manifest.json') }}-
+            Library-${{ matrix.unity_version }}-
             Library-
+      
+      - name: Inject Scripting Define
+        if: matrix.scripting_define != ''
+        run: |
+          mkdir -p Assets
+          echo "-define:${{ matrix.scripting_define }}" > Assets/csc.rsp
       
       - name: Verify Project Compilation
         uses: game-ci/unity-test-runner@v4
@@ -134,19 +214,15 @@ jobs:
               run_id: context.runId,
               per_page: 100
             });
-            const unityVersionRegex = /Compile\s*\((.+?)\)/;
+            const unityVersionRegex = /(.+?)\s*\((\d{4,5}\.\d+\.\d+f\d+)\)/;
             const testJobs = response.data.jobs.filter(job => unityVersionRegex.test(job.name));
-            
             let passed = 0, failed = 0;
-            let summary = '## 🧪 Project Compilation Results\n\n| Unity Version | Status |\n| :--- | :---: |\n';
-            
+            let summary = '## 🧪 Kaiju Agents Test Results\n\n| Unity Version | Configuration | Status |\n| :--- | :--- | :---: |\n';
             for (const job of testJobs) {
               let icon = job.conclusion === 'success' ? '🟢 Pass' : (job.conclusion === 'failure' ? '🔴 Fail' : '⚪ Skip');
               if (job.conclusion === 'success') passed++; else if (job.conclusion === 'failure') failed++;
-              
               const match = job.name.match(unityVersionRegex);
-              summary += match ? `| **${match[1]}** | ${icon} |\n` : `| **?** | ${icon} |\n`;
+              summary += match ? `| **${match[2]}** | \`${match[1]}\` | ${icon} |\n` : `| **?** | \`${job.name}\` | ${icon} |\n`;
             }
-            
             summary += `\n### **Totals:** ${testJobs.length} Tests | 🟢 ${passed} Passed | 🔴 ${failed} Failed\n`;
             await core.summary.addRaw(summary).write();
