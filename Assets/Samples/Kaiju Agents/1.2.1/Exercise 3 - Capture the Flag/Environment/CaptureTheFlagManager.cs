@@ -438,5 +438,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
                 Spawn(teamOne);
             }
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Capture the Flag Manager";
+        }
     }
 }

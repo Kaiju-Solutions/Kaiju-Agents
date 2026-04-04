@@ -20,6 +20,16 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         id: "9e202450dff3a82616371d1145413779",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")
     ]
-    public class FlagVisionSensorAction : KaijuVisionSensorAction<FlagVisionSensor, Flag> { }
+    public class FlagVisionSensorAction : KaijuVisionSensorAction<FlagVisionSensor, Flag>
+    {
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Flag Vision Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Observed: {(observed.Value ? observed.Value : "None")} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
+    }
 }
 #endif

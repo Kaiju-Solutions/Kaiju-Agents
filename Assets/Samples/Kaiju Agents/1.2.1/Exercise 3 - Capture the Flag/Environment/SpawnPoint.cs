@@ -417,5 +417,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             OccupiedOneCache.Remove(this);
             OccupiedTwoCache.Remove(this);
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Spawn Point - {(TeamOne ? "Team One" : "Team Two")} - {(Occupied ? "Occupied" : "Open")} - Position: {Position3} - Orientation: {OrientationAngles}";
+        }
     }
 }

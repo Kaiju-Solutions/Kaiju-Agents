@@ -87,7 +87,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Path Follow Movement Tester {name}";
+            return $"{name} - Kaiju Path Follow Movement Tester - Agents: {Agents.Count} - Distance: {Distance} - Mask: {mask} - Auto Calculate Distance: {AutoCalculateDistance} - Collision Mask: {collisionMask} - Triggers: {triggers} - Weight: {Weight} - Clear: {clear}";
         }
     }
 }

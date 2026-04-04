@@ -14,8 +14,7 @@ namespace KaijuSolutions.Agents.Behavior.Movement
     [NodeDescription(
         name: "Stop Wanders",
         story: "Stop all wander movements on [agent].",
-        description:
-        "Stop all wander movements on an agent. This will report a failure if the agent is not currently wandering. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
+        description: "Stop all wander movements on an agent. This will report a failure if the agent is not currently wandering. This will report a failure if the agent is not currently moving. If the agent is not assigned, it will try to find an agent variable. If none are found, it will try to find an agent attached to any other component and create a variable from it.",
         category: "Kaiju Agents/Movement/Stop",
         id: "9e202450dff3a82616371d1145413756",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")

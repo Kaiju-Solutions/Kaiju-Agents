@@ -31,7 +31,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"Kaiju Evade Movement Tester {name}";
+            return $"{name} - Kaiju Evade Movement Tester - Agents: {Agents.Count} - Distance: {Distance} - Weight: {Weight} - Clear: {clear}";
         }
     }
 }

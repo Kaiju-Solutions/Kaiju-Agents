@@ -18,5 +18,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         {
             return Attached == null ? base.DefaultObservables() : Attached.TeamOne ? Trooper.AllOne : Trooper.AllTwo;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Trooper Team Vision Sensor - Agent: {(Agent ? Agent : "None")} - Distance: {Distance} - Angle: {Angle} - Line-of-Sight: {(lineOfSight ? "Yes" : "No")} - Radius: {Radius}";
+        }
     }
 }

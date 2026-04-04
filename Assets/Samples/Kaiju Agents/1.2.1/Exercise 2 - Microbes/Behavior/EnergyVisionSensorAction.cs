@@ -15,8 +15,7 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
     [NodeDescription(
         name: "Energy Vision Sense",
         story: "See [observed] with energy [sensor].",
-        description:
-        "Sense for any energy pickups using an energy vision sensor. If the sensor is not assigned, will try to find the first sensor of this type on of the first agent variable found.",
+        description: "Sense for any energy pickups using an energy vision sensor. If the sensor is not assigned, will try to find the first sensor of this type on of the first agent variable found.",
         category: "Kaiju Agents/Microbes",
         id: "9e202450dff3a82616371d1145413775",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")

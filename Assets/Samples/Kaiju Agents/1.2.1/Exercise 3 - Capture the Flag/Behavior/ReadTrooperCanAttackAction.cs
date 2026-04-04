@@ -44,6 +44,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         {
             canAttack.Value = trooper.Value.CanAttack;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Trooper Can Attack Action - Trooper: {(trooper.Value ? trooper.Value : "None")} - {(canAttack.Value ? "Can Attack" : "Cannot Attack")}";
+        }
     }
 }
 #endif

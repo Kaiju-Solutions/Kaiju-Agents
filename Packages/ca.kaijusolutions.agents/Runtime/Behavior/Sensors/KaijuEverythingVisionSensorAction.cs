@@ -15,8 +15,7 @@ namespace KaijuSolutions.Agents.Behavior.Sensors
     [NodeDescription(
         name: "Everything Vision Sense",
         story: "See [observed] with everything [sensor].",
-        description:
-        "Sense for any transform using an everything vision sensor. If the sensor is not assigned, will try to find the first sensor of this type on of the first agent variable found.",
+        description: "Sense for any transform using an everything vision sensor. If the sensor is not assigned, will try to find the first sensor of this type on of the first agent variable found.",
         category: "Kaiju Agents/Sensors",
         id: "9e202450dff3a82616371d1145413749",
         icon: "Packages/ca.kaijusolutions.agents/Editor/Icon.png")

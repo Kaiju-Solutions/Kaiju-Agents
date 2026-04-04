@@ -338,7 +338,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// <returns>A description of the object.</returns>
         public override string ToString()
         {
-            return $"{name} - Kaiju Attack Actuator - Agent: {(Agent ? Agent : "None")}";
+            return $"{name} - Kaiju Attack Actuator - Agent: {(Agent ? Agent : "None")} - Range: {Range} - Charge: {Charge} - Cooldown: {Cooldown}";
         }
         
         /// <summary>
