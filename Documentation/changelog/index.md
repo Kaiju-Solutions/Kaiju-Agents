@@ -4,6 +4,7 @@
 
 - Improved documentation and fixed help links.
 - Added additional events to the ["Microbes" exercise](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes").
+- Added relative steering control to agents.
 
 ### 1.2.0
 

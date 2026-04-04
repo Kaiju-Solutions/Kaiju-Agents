@@ -793,8 +793,7 @@ namespace KaijuSolutions.Agents
         public void CalculateVelocity(float delta)
         {
             // Start with any manual steering.
-            // TODO - When "GlobalControl" is false, have "_control" be relative to the forward of this transform.
-            Vector2 velocity = _control * moveSpeed;
+            Vector2 velocity = (GlobalControl ? _control : Forward * _control.y + Right.Flatten() * _control.x) * moveSpeed;
             Vector2 position = Position;
             
             // Go through all assigned movements.

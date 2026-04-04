@@ -21,7 +21,7 @@ This sample provides multiple scenes to demonstrate [movements](https://agents.k
 
 ### Keyboard
 
-This sample provides a scene with an agent that can be controlled with a keyboard. To control the agent, use WASD or the arrow keys to move, and Q and E to turn.
+This sample provides a scene with an agent that can be controlled with a keyboard. To control the agent, use WASD or the arrow keys to move, and Q and E to turn. Hold space to make the agent move relative to its current heading.
 
 ### Box Destroyer
 

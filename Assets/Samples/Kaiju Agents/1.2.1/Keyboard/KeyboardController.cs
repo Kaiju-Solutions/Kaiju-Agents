@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Samples.Keyboard
 {
     /// <summary>
-    /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent, and Q and E to turn the agent.
+    /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent, and Q and E to turn the agent. Holding space will make the movement relative to the heading of the agent.
     /// </summary>
     [DisallowMultipleComponent]
 #if UNITY_EDITOR
@@ -18,6 +18,11 @@ namespace Samples.Keyboard
         /// </summary>
         private void Update()
         {
+#if COM_UNITY_INPUTSYSTEM
+            Agent.AutoRotate = Agent.GlobalControl = !UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed;
+#else
+            Agent.AutoRotate = Agent.GlobalControl = !Input.GetKey(KeyCode.Space);
+#endif
             Vector2 movement = Vector2.zero;
 #if COM_UNITY_INPUTSYSTEM
             if (UnityEngine.InputSystem.Keyboard.current.wKey.isPressed || UnityEngine.InputSystem.Keyboard.current.upArrowKey.isPressed)
