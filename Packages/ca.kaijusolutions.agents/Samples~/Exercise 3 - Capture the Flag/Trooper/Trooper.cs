@@ -644,5 +644,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             OnFlagCapturedGlobal?.Invoke(this, _flag);
             _flag = null;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Trooper - Health: {Health} - {(TeamOne ? "Team One" : "Team Two")}";
+        }
     }
 }

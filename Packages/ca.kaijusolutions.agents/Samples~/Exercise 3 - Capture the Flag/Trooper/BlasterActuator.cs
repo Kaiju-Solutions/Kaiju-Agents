@@ -103,5 +103,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             trooper.TakeDamage(_trooper);
             return true;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Blaster Actuator - Agent: {(Agent ? Agent : "None")} - Range: {Range} - Charge: {Charge} - Cooldown: {Cooldown} - Ammo: {_ammo}";
+        }
     }
 }

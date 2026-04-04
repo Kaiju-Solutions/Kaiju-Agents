@@ -44,6 +44,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         {
             health.Value = trooper.Value.Health;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Trooper Health Action - Trooper: {(trooper.Value ? trooper.Value : "None")} - Health: {health.Value}";
+        }
     }
 }
 #endif

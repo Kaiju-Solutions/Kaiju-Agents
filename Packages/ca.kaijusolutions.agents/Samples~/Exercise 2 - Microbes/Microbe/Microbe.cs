@@ -45,6 +45,16 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         public event MultiMicrobeAction OnMateGlobal;
         
         /// <summary>
+        /// Callback for this microbe picking up energy.
+        /// </summary>
+        public event KaijuAction OnEnergy;
+        
+        /// <summary>
+        /// Global c for this microbe picking up energy.
+        /// </summary>
+        public event MicrobeAction OnEnergyGlobal;
+        
+        /// <summary>
         /// All microbes currently in the world.
         /// </summary>
         public static IReadOnlyCollection<Microbe> All
@@ -379,6 +389,17 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
             
             _energy += MicrobeManager.Energy;
             pickup.gameObject.SetActive(false);
+            OnEnergy?.Invoke();
+            OnEnergyGlobal?.Invoke(this);
+        }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Microbe - Energy: {_energy} - Decay: {decay} - Cooldown: {Cooldown} - Agent: {(Agent ? Agent : "None")}";
         }
     }
 }

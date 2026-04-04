@@ -107,5 +107,14 @@ namespace KaijuSolutions.Agents.Exercises.CTF
             Cooldown = 0;
             SetActive();
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Number Pickup - Cooldown: {Cooldown}";
+        }
     }
 }

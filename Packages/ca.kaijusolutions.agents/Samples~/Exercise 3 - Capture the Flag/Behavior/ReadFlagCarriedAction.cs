@@ -44,6 +44,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         {
             carried.Value = flag.Value.Parent != null;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Flag Carried Action - Flag: {(flag.Value ? flag.Value : "None")} - Carried: {(carried.Value ? carried.Value : "None")}";
+        }
     }
 }
 #endif

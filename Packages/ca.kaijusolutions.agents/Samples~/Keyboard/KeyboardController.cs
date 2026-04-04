@@ -89,5 +89,14 @@ namespace Samples.Keyboard
             }
 #endif
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"{name} - Keyboard Controller - Agent: {(Agent ? Agent : "None")}";
+        }
     }
 }

@@ -70,6 +70,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.Microbes
             base.OnEnd();
             Current = null;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Filter Microbe Vision Sensor Action - Sensor: {(sensor.Value ? sensor.Value : "None")} - Observed: {(observed.Value ? observed.Value : "None")} - {(nearest.Value ? "Nearest" : "Farthest")}";
+        }
     }
 }
 #endif

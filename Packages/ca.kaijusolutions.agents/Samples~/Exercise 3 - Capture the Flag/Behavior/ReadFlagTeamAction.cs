@@ -44,6 +44,15 @@ namespace KaijuSolutions.Agents.Behavior.Exercises.CTF
         {
             team.Value = flag.Value.TeamOne;
         }
+        
+        /// <summary>
+        /// Get a description of the object.
+        /// </summary>
+        /// <returns>A description of the object.</returns>
+        public override string ToString()
+        {
+            return $"Read Flag Team Action - Flag: {(flag.Value ? flag.Value : "None")} - {(team.Value ? "Team One" : "Team Two")}";
+        }
     }
 }
 #endif
