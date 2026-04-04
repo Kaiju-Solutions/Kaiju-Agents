@@ -12,3 +12,5 @@ KaijuSolutions.Agents.Behavior.Sensors
 KaijuSolutions.Agents.Behavior.Actuators
 KaijuSolutions.Agents.Behavior.Exercises.Microbes
 KaijuSolutions.Agents.Behavior.Exercises.CTF
+KaijuSolutions.Agents.Utility
+KaijuSolutions.Agents.Utility.Editor

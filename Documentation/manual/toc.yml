@@ -18,10 +18,12 @@ items:
       href: developer-ui.md
 - name: Movement
   href: movement.md
-- name: Extensions
-  href: extensions.md
 - name: Behavior
   href: behavior.md
+- name: Utility
+  href: utility.md
+- name: Extensions
+  href: extensions.md
 - name: Samples and Exercises
   href: samples-and-exercises.md
   items:

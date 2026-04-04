@@ -2,7 +2,7 @@
 
 ### 1.2.0
 
-- Moved [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") integration directly into this package.
+- Moved [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") integration and utility AI extension directly into this package.
 - Adjusted package naming from `ca.kaijusolutions.agents` to `ca.kaijusolutions.agents`.
 
 ### 1.1.7
