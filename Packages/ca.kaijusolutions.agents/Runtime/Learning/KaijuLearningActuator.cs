@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Learning
     /// </summary>
     [RequireComponent(typeof(KaijuActuator))]
 #if UNITY_EDITOR
-    [AddComponentMenu("Kaiju Solutions/Agents/ML-Agents/Actuators/Kaiju Learning Actuator", 3)]
+    [AddComponentMenu("Kaiju Solutions/Agents/ML-Agents/Actuators/Kaiju Learning Actuator", 4)]
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/ml-agents.html")]
 #endif

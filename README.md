@@ -6,7 +6,7 @@
 
 Kaiju Agents provides an easy-to-learn yet powerful framework for developing and testing AI agents, aimed to speed up research and development and for education. Some of the key features of Kaiju Agents are:
 
-- [Integration](https://agents.kaijusolutions.ca/manual/behavior-graph.html "Unity Behavior Integration") with [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior").
+- Integrations with [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") and [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents").
 - Modularized [sensor](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors")-[agent](https://agents.kaijusolutions.ca/manual/agents.html "Agents")-[actuator](https://agents.kaijusolutions.ca/manual/autuators.html "Actuators") framework to allow for dynamic agent customization.
   - Have sensors run automatically or manually poll them.
   - Vision sensors based on line-of-sight and casting provided.
