@@ -1,0 +1,3 @@
+﻿# ML-Agents
+
+When [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents") is installed in the project, [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") can be bound for use with [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents"). To see what is provided, see the [scripting API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Learning.html "Learning"). For further information, see the [Unity ML-Agents documentation](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents").

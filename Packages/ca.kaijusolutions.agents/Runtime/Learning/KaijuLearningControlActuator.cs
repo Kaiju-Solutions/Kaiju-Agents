@@ -1,4 +1,5 @@
-﻿using Unity.MLAgents.Actuators;
+﻿#if COM_UNITY_ML_AGENTS
+using Unity.MLAgents.Actuators;
 using UnityEngine;
 
 namespace KaijuSolutions.Agents.Learning
@@ -47,3 +48,4 @@ namespace KaijuSolutions.Agents.Learning
         }
     }
 }
+#endif
