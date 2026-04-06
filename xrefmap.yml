@@ -25768,12 +25768,12 @@ references:
   fullName.vb: KaijuSolutions.Agents.KaijuAgent.GetSensors(Of T)(System.Collections.Generic.ISet(Of T), System.Boolean)
   nameWithType: KaijuAgent.GetSensors<T>(ISet<T>, Boolean)
   nameWithType.vb: KaijuAgent.GetSensors(Of T)(ISet(Of T), Boolean)
-- uid: KaijuSolutions.Agents.KaijuAgent.GlobalControl
-  name: GlobalControl
-  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_GlobalControl
-  commentId: F:KaijuSolutions.Agents.KaijuAgent.GlobalControl
-  fullName: KaijuSolutions.Agents.KaijuAgent.GlobalControl
-  nameWithType: KaijuAgent.GlobalControl
+- uid: KaijuSolutions.Agents.KaijuAgent.globalControl
+  name: globalControl
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_globalControl
+  commentId: F:KaijuSolutions.Agents.KaijuAgent.globalControl
+  fullName: KaijuSolutions.Agents.KaijuAgent.globalControl
+  nameWithType: KaijuAgent.globalControl
 - uid: KaijuSolutions.Agents.KaijuAgent.HasAnyIdentifier(System.Collections.Generic.IEnumerable{System.UInt32})
   name: HasAnyIdentifier(IEnumerable<UInt32>)
   href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_HasAnyIdentifier_System_Collections_Generic_IEnumerable_System_UInt32__
@@ -26592,6 +26592,32 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.KaijuAgent.RegisterSensor
   nameWithType: KaijuAgent.RegisterSensor
+- uid: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity
+  name: RelativeVelocity
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RelativeVelocity
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.RelativeVelocity
+  fullName: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity
+  nameWithType: KaijuAgent.RelativeVelocity
+- uid: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity*
+  name: RelativeVelocity
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RelativeVelocity_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.RelativeVelocity
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity
+  nameWithType: KaijuAgent.RelativeVelocity
+- uid: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3
+  name: RelativeVelocity3
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RelativeVelocity3
+  commentId: P:KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3
+  fullName: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3
+  nameWithType: KaijuAgent.RelativeVelocity3
+- uid: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3*
+  name: RelativeVelocity3
+  href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RelativeVelocity3_
+  commentId: Overload:KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3
+  isSpec: "True"
+  fullName: KaijuSolutions.Agents.KaijuAgent.RelativeVelocity3
+  nameWithType: KaijuAgent.RelativeVelocity3
 - uid: KaijuSolutions.Agents.KaijuAgent.RemoveIdentifier(System.UInt32)
   name: RemoveIdentifier(UInt32)
   href: api/KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_RemoveIdentifier_System_UInt32_

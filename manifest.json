@@ -1984,7 +1984,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuAgent.html",
-          "hash": "hqW5Vls6Qpo/y1JDhUY86/8olwSn+OjK7CtukDev5B0="
+          "hash": "cEQ/7snox3eIE1clcosOqzJmKyTkkA0RekB7D36LgiI="
         }
       },
       "is_incremental": false,
@@ -2140,7 +2140,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuCharacterAgent.html",
-          "hash": "UN8UMKp6Nw6mxQCRXmEpmwM+rhRdkMKakTFR+GFExHI="
+          "hash": "0+7Y3J7joRkejF4p+mjz2VPJCOOARmSLATgUgY+5d/8="
         }
       },
       "is_incremental": false,
@@ -2200,7 +2200,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuNavigationAgent.html",
-          "hash": "zUFzr0R5KknQmhPu6EeIXypgyZsdQP8nJxSqwx4kH20="
+          "hash": "0N9Y5oVJO81Rtax0LV6aOzBpRkrTPMrgwEzhRNxozx4="
         }
       },
       "is_incremental": false,
@@ -2212,7 +2212,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuRadiusAgent.html",
-          "hash": "+s4g19G395KgEao6JR2LISaK2H9nGftFpiSXW0vyC2M="
+          "hash": "heUg7cgPZkHIpM5SnMYcusDYRPI+E2R/GK88h/yJYLk="
         }
       },
       "is_incremental": false,
@@ -2224,7 +2224,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuRigidbodyAgent.html",
-          "hash": "fSSErfcrg7Bo2Wy2WpFR5Geqfd5FUk5xzOhcwxY/4Yc="
+          "hash": "DDEFoDKuaX8rUbTmP+eKnaToAN7VxqLUqyqBMlhyloU="
         }
       },
       "is_incremental": false,
@@ -2248,7 +2248,7 @@
       "output": {
         ".html": {
           "relative_path": "api/KaijuSolutions.Agents.KaijuTransformAgent.html",
-          "hash": "Fqdb0CU66OJlAYq/uvrfM2ydFTKYpJbLSol6H6/k97k="
+          "hash": "DIBwo85TpevpTXVNlD+YCn9u4p0zp65DvzXhv6aapnA="
         }
       },
       "is_incremental": false,
@@ -2704,7 +2704,7 @@
       "output": {
         ".html": {
           "relative_path": "changelog/index.html",
-          "hash": "5uljiTC8CknkZos1RY73euLW55UNiViCVxAAb3MY8qE="
+          "hash": "Fa9j38ajOr805S1VoIOwXbIfofZ/12ouQ+M8cdBKD6Y="
         }
       },
       "is_incremental": false,
@@ -2816,7 +2816,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "m6W/Dvl+E1R2ifqCDaxcyuG77M25qWgh+GINaXdEhpE="
+          "hash": "PL/XRca48pmIRz4bNpBEc0KrNBuuHT7aWVgPspg18wg="
         }
       },
       "is_incremental": false,
@@ -2980,6 +2980,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "manual/ml-agents.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/ml-agents.html",
+          "hash": "ZAeivRJ4yCvFd3RT0/ZZCpbC4KfBRCclhC1bzu+1ACc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/movement.md",
       "output": {
         ".html": {
@@ -3020,7 +3032,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "c4QoimugsOXHBhPUVB4lch3M8O4s//K0WYQyIeUZzvo="
+          "hash": "/Yabbjj/Cxb6czKCLn0xCJAWVsvletmVt3kykueZkvE="
         }
       },
       "is_incremental": false,
@@ -3090,13 +3102,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 20,
+          "total_file_count": 21,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 237,
+          "total_file_count": 238,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
