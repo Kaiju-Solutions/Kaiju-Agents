@@ -20,7 +20,7 @@ items:
   href: movement.md
 - name: Behavior Graph
   href: behavior-graph.md
-- name: ML Agents
+- name: ML-Agents
   href: ml-agents.md
 - name: Utility AI
   href: utility-ai.md
