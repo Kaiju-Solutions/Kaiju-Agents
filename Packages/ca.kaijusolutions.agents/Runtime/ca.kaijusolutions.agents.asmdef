@@ -2,7 +2,8 @@
     "name": "ca.kaijusolutions.agents",
     "references": [
         "Unity.Behavior",
-        "Unity.Behavior.SerializableGUID"
+        "Unity.Behavior.SerializableGUID",
+        "Unity.ML-Agents"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -16,6 +17,11 @@
             "name": "com.unity.behavior",
             "expression": "",
             "define": "COM_UNITY_BEHAVIOR"
+        },
+        {
+            "name": "com.unity.ml-agents",
+            "expression": "",
+            "define": "COM_UNITY_ML_AGENTS"
         }
     ],
     "noEngineReferences": false
