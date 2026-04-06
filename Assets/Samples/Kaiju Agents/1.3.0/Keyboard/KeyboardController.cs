@@ -21,7 +21,7 @@ namespace Samples.Keyboard
 #if COM_UNITY_INPUTSYSTEM
             Agent.AutoRotate = Agent.globalControl = !UnityEngine.InputSystem.Keyboard.current.spaceKey.isPressed;
 #else
-            Agent.AutoRotate = Agent.GlobalControl = !Input.GetKey(KeyCode.Space);
+            Agent.AutoRotate = Agent.globalControl = !Input.GetKey(KeyCode.Space);
 #endif
             Vector2 movement = Vector2.zero;
 #if COM_UNITY_INPUTSYSTEM
