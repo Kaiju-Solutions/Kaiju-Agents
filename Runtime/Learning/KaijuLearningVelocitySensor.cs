@@ -1,7 +1,7 @@
-﻿using Unity.MLAgents.Sensors;
+﻿#if COM_UNITY_ML_AGENTS
+using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-#if COM_UNITY_ML_AGENTS
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
