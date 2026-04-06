@@ -2256,6 +2256,162 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningActuator.html",
+          "hash": "fUATiPG1/rjORVE9vTT696RvWcz6AoRZZk6FqpTCgbQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html",
+          "hash": "DOiiRRy/W17uQDluZyWitlx4Jznl/tOelDQsQbuzZcM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.html",
+          "hash": "JYuREBbkQOpWT5BjE8lWaPRT6lDw37OIWi5gzAr238E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAgentSensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAgentSensor.html",
+          "hash": "7BL4DUR6+X9JR+4Q1u6HtwYntMKONeka/0Zx69NY8/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAttackActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningAttackActuator.html",
+          "hash": "ixx6i8QKrlHRFkpi40Jtm5M14wfqs6qsk2Uw2nnAOjI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningCastSensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningCastSensor.html",
+          "hash": "UzqcdvYv3w9MYlpdTJjbl4rnbexCS3VbEbaSHCzyoaA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningControlActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningControlActuator.html",
+          "hash": "yI99Sk6W59aHigkkbCzrcFH0K7+zeYQos+5ByHWC6eU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningRotationSensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningRotationSensor.html",
+          "hash": "VNe/6LcBHDNFCYDgNqzrCULttryRKDqAaNkQ9XTIWNM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningSensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningSensor.html",
+          "hash": "7dVEXyA3/B0ZgJzZ8VPO2O0AHdhhcQjvC4baoipJk4Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.html",
+          "hash": "WQMNw8aHalyISvUBqXgCuggbXMI0GVwH0YV6gp2IYzk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningVelocitySensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningVelocitySensor.html",
+          "hash": "6Qe4iK48IORMnSS7R5zZ9bPSLkyJ6EHc9dUVKNbHU8c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningVisionSensor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.KaijuLearningVisionSensor.html",
+          "hash": "WtGfe4Equjl/pmWj0vKqC6bFqINLN8Oe5Zm7f76pvzk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Learning.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Learning.html",
+          "hash": "BU9Ab1KBciNccrDRkpzYhCUFJFdqiB3Y9BQHFCoSMaE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.yml",
       "output": {
         ".html": {
@@ -2692,7 +2848,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "/qMvEBm7UW4F64jtI7qQA9xyi5gQlJvOSnyEvd7VHR8="
+          "hash": "s6L5GXFG4anDjR3fF1L4/MidOuGZlmVsAgqlCrahOT0="
         }
       },
       "is_incremental": false,
@@ -3032,7 +3188,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "/Yabbjj/Cxb6czKCLn0xCJAWVsvletmVt3kykueZkvE="
+          "hash": "w+lEwype0opHjK+BSMv0++7h+AQYcGLo089PLs+NTzs="
         }
       },
       "is_incremental": false,
@@ -3108,7 +3264,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 238,
+          "total_file_count": 251,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
