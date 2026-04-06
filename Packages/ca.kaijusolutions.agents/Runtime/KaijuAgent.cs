@@ -437,12 +437,12 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The current velocity of the agent relative to the direction we are facing.
         /// </summary>
-        public Vector2 RelativeVelocity => Velocity;  // TODO - Make this relative to the direction the agent is facing.
+        public Vector2 RelativeVelocity => RelativeVelocity3.Flatten();
         
         /// <summary>
         /// The current velocity of the agent relative to the direction we are facing.
         /// </summary>
-        public Vector3 RelativeVelocity3 => RelativeVelocity.Expand();
+        public Vector3 RelativeVelocity3 => transform.InverseTransformDirection(Velocity3);
         
         /// <summary>
         /// Get the forward direction of this agent along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
