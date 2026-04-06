@@ -399,7 +399,7 @@ namespace KaijuSolutions.Agents
 #if UNITY_EDITOR
         [Tooltip("Whether the manual control is in the direction the agent is facing, or based on global coordinates.")]
 #endif
-        public bool GlobalControl = true;
+        public bool globalControl = true;
         
         /// <summary>
         /// The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the <see cref="MoveSpeed"/>.
@@ -433,6 +433,16 @@ namespace KaijuSolutions.Agents
         /// The current velocity of the agent.
         /// </summary>
         public Vector3 Velocity3 => Velocity.Expand();
+        
+        /// <summary>
+        /// The current velocity of the agent relative to the direction we are facing.
+        /// </summary>
+        public Vector2 RelativeVelocity => Velocity;  // TODO - Make this relative to the direction the agent is facing.
+        
+        /// <summary>
+        /// The current velocity of the agent relative to the direction we are facing.
+        /// </summary>
+        public Vector3 RelativeVelocity3 => RelativeVelocity.Expand();
         
         /// <summary>
         /// Get the forward direction of this agent along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
@@ -793,7 +803,7 @@ namespace KaijuSolutions.Agents
         public void CalculateVelocity(float delta)
         {
             // Start with any manual steering.
-            Vector2 velocity = (GlobalControl ? _control : Forward * _control.y + Right.Flatten() * _control.x) * moveSpeed;
+            Vector2 velocity = (globalControl ? _control : Forward * _control.y + Right.Flatten() * _control.x) * moveSpeed;
             Vector2 position = Position;
             
             // Go through all assigned movements.
