@@ -257,6 +257,9 @@ jobs:
               # Clean up whitespace in the title tag.
               $newContent = $newContent -creplace ' </title>', '</title>'
               $newContent = $newContent -creplace '(\r\n|\n|\r)\s+\| ', ' | '
+              
+              # Remove leading pipe in the title when there is no heading to prevent "<title> | Site Name".
+              $newContent = $newContent -creplace '<title>\s*\|\s*', '<title>'
 
               # Remove duplicate text around a pipe separator, e.g., turn "My Title | My Title" into "My Title".
               # This is targeted at title-like text containing words, spaces, commas, dots, and hyphens.
