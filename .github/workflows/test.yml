@@ -115,8 +115,9 @@ jobs:
           
           for unity_version in unity_versions:
               behavior_v = get_latest_compatible("com.unity.behavior", unity_version, pkg_cache)
+              ml_v = get_latest_compatible("com.unity.ml-agents", unity_version, pkg_cache)
               
-              # Configuration 1: Without Unity Behavior
+              # Configuration 1: Without packages
               matrix.append({
                   "config_name": "Base", 
                   "unity_version": unity_version, 
@@ -124,16 +125,34 @@ jobs:
                   "scripting_define": ""
               })
               
-              # Configuration 2: With Unity Behavior
+              # Configuration 2: With packages
               if behavior_v:
-                  matrix.append({
-                      "config_name": "With Unity Behavior", 
-                      "unity_version": unity_version, 
-                      "dependencies": json.dumps({"com.unity.behavior": behavior_v}), 
-                      "scripting_define": ""
-                  })
+                  if ml_v:
+                      matrix.append({
+                          "config_name": "With Packages", 
+                          "unity_version": unity_version, 
+                          "dependencies": json.dumps({"com.unity.behavior": behavior_v, "com.unity.ml-agents": ml_v}), 
+                          "scripting_define": ""
+                      })
+                  else:
+                      matrix.append({
+                          "config_name": "With Packages", 
+                          "unity_version": unity_version, 
+                          "dependencies": json.dumps({"com.unity.behavior": behavior_v}), 
+                          "scripting_define": ""
+                      })
+                      sys.stderr.write(f" -> Warning: No compatible com.unity.ml-agents version found for {unity_version}\n")
               else:
-                  sys.stderr.write(f" -> Warning: No compatible com.unity.behavior version found for {unity_version}\n")
+                  if ml_v:
+                      matrix.append({
+                          "config_name": "With Packages", 
+                          "unity_version": unity_version, 
+                          "dependencies": json.dumps({"com.unity.ml-agents": ml_v}), 
+                          "scripting_define": ""
+                      })
+                      sys.stderr.write(f" -> Warning: No compatible com.unity.behavior version found for {unity_version}\n")
+                  else:
+                      sys.stderr.write(f" -> Warning: No compatible com.unity.behavior or com.unity.ml-agents versions found for {unity_version}\n")
           
           matrix_json = json.dumps({"include": matrix})
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
