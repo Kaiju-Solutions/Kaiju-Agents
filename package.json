@@ -1,7 +1,7 @@
 {
   "name": "ca.kaijusolutions.agents",
   "displayName": "Kaiju Agents",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "unity": "6000.3",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {
@@ -20,17 +20,27 @@
   "license": "MIT License",
   "keywords": [
     "Kaiju Solutions",
+    "Agent",
     "Agents",
     "AI",
     "Artificial Intelligence",
-    "Steering Behaviours",
+    "Steering",
     "Navigation",
     "Pathfinding",
+    "Seek",
+    "Pursue",
+    "Flee",
+    "Evade",
+    "Obstacle Avoidance",
+    "Separation",
+    "Wander",
     "Sensors",
     "Actuators",
     "Behavior",
     "Behaviour",
-    "Utility"
+    "Utility",
+    "Machine Learning",
+    "ML"
   ],
   "samples": [
     {
