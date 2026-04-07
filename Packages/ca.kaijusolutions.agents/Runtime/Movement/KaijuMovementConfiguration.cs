@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Allow for defining <see cref="KaijuMovement"/> settings for <see cref="KaijuAgent"/>s to use as default values.
+    /// Allow for defining <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> settings for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to use as default values.
     /// </summary>
 #if UNITY_EDITOR
     [CreateAssetMenu(fileName = "Kaiju Movement Configuration", menuName = "Kaiju Solutions/Agents/Kaiju Movement Configuration", order = 0)]
@@ -19,7 +19,7 @@ namespace KaijuSolutions.Agents.Movement
         public const int DefaultMask = -5;
         
         /// <summary>
-        /// The default weight of all <see cref="KaijuMovement"/>s.
+        /// The default weight of all <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>s.
         /// </summary>
         public float Weight
         {
@@ -28,7 +28,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The default weight of all <see cref="KaijuMovement"/>s.
+        /// The default weight of all <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>s.
         /// </summary>
 #if UNITY_EDITOR
         [Header("General")]
@@ -39,7 +39,7 @@ namespace KaijuSolutions.Agents.Movement
         private float weight = KaijuMovement.DefaultWeight;
         
         /// <summary>
-        /// The default behaviour for if new <see cref="KaijuMovement"/>s should clear all other current <see cref="KaijuMovement"/>s and become the only one the <see cref="KaijuAgent"/> is performing.
+        /// The default behaviour for if new <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>s should clear all other current <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>s and become the only one the <see cref="KaijuSolutions.Agents.KaijuAgent"/> is performing.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The default behaviour for if new movements should clear all other current movements and become the only one the agent is performing.")]
@@ -48,7 +48,7 @@ namespace KaijuSolutions.Agents.Movement
         public bool clear = true;
         
         /// <summary>
-        /// The default distance at which we can consider <see cref="KaijuSeekMovement"/>, <see cref="KaijuPursueMovement"/>, and <see cref="KaijuPathFollowMovement"/> behaviours done.
+        /// The default distance at which we can consider <see cref="KaijuSolutions.Agents.Movement.KaijuSeekMovement"/>, <see cref="KaijuSolutions.Agents.Movement.KaijuPursueMovement"/>, and <see cref="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement"/> behaviours done.
         /// </summary>
         public float ApproachingDistance
         {
@@ -57,7 +57,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The default distance at which we can consider <see cref="KaijuSeekMovement"/>, <see cref="KaijuPursueMovement"/>, and <see cref="KaijuPathFollowMovement"/> behaviours done.
+        /// The default distance at which we can consider <see cref="KaijuSolutions.Agents.Movement.KaijuSeekMovement"/>, <see cref="KaijuSolutions.Agents.Movement.KaijuPursueMovement"/>, and <see cref="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement"/> behaviours done.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Approaching")]
@@ -68,7 +68,7 @@ namespace KaijuSolutions.Agents.Movement
         private float approachingDistance = KaijuApproachingMovement.DefaultDistance;
         
         /// <summary>
-        /// The default distance at which we can consider <see cref="KaijuFleeMovement"/> and <see cref="KaijuEvadeMovement"/> behaviours done.
+        /// The default distance at which we can consider <see cref="KaijuSolutions.Agents.Movement.KaijuFleeMovement"/> and <see cref="KaijuSolutions.Agents.Movement.KaijuEvadeMovement"/> behaviours done.
         /// </summary>
         public float LeavingDistance
         {
@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The default distance from the target at which we can consider <see cref="KaijuFleeMovement"/> and <see cref="KaijuEvadeMovement"/> behaviours done.
+        /// The default distance from the target at which we can consider <see cref="KaijuSolutions.Agents.Movement.KaijuFleeMovement"/> and <see cref="KaijuSolutions.Agents.Movement.KaijuEvadeMovement"/> behaviours done.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Leaving")]
@@ -88,7 +88,7 @@ namespace KaijuSolutions.Agents.Movement
         private float leavingDistance = KaijuLeavingMovement.DefaultDistance;
         
         /// <summary>
-        /// How far out to generate the <see cref="KaijuWanderMovement"/> circles by default.
+        /// How far out to generate the <see cref="KaijuSolutions.Agents.Movement.KaijuWanderMovement"/> circles by default.
         /// </summary>
         public float WanderDistance
         {
@@ -97,7 +97,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// How far out to generate the <see cref="KaijuWanderMovement"/> circles by default.
+        /// How far out to generate the <see cref="KaijuSolutions.Agents.Movement.KaijuWanderMovement"/> circles by default.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Wander")]
@@ -108,7 +108,7 @@ namespace KaijuSolutions.Agents.Movement
         private float wanderDistance = KaijuWanderMovement.DefaultDistance;
         
         /// <summary>
-        /// The radius of the <see cref="KaijuWanderMovement"/> circles by default.
+        /// The radius of the <see cref="KaijuSolutions.Agents.Movement.KaijuWanderMovement"/> circles by default.
         /// </summary>
         public float WanderRadius
         {
@@ -117,7 +117,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The radius of the <see cref="KaijuWanderMovement"/> circles by default.
+        /// The radius of the <see cref="KaijuSolutions.Agents.Movement.KaijuWanderMovement"/> circles by default.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The radius of the wander circles by default.")]
@@ -127,7 +127,7 @@ namespace KaijuSolutions.Agents.Movement
         private float wanderRadius = KaijuWanderMovement.DefaultRadius;
         
         /// <summary>
-        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The default distance to interact with other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.
         /// </summary>
         public float SeparationDistance
         {
@@ -136,7 +136,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The default distance to interact with other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Separation")]
@@ -147,7 +147,7 @@ namespace KaijuSolutions.Agents.Movement
         private float separationDistance = KaijuSeparationMovement.DefaultDistance;
         
         /// <summary>
-        /// The default distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The default distance to interact with other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.
         /// </summary>
         public float SeparationCoefficient
         {
@@ -166,7 +166,7 @@ namespace KaijuSolutions.Agents.Movement
         private float separationCoefficient = KaijuSeparationMovement.DefaultCoefficient;
         
         /// <summary>
-        /// Identifiers for <see cref="KaijuAgent"/>s when separating.
+        /// Identifiers for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s when separating.
         /// </summary>
         public IReadOnlyList<uint> Identifiers => identifiers;
         
@@ -306,7 +306,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Identifiers for <see cref="KaijuAgent"/>s when separating.
+        /// Identifiers for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s when separating.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("Identifiers for agents when separating.")]
@@ -315,7 +315,7 @@ namespace KaijuSolutions.Agents.Movement
         private List<uint> identifiers = new();
         
         /// <summary>
-        /// The default distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The default distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
         {
@@ -324,7 +324,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The default distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The default distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
 #if UNITY_EDITOR
         [Header("Obstacle Avoidance")]
@@ -406,7 +406,7 @@ namespace KaijuSolutions.Agents.Movement
         public int areaMask = KaijuPathFollowMovement.DefaultMask;
         
         /// <summary>
-        /// The default layers to use for <see cref="KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuObstacleAvoidanceMovement"/>.
+        /// The default layers to use for <see cref="KaijuSolutions.Agents.Movement.KaijuPathFollowMovement"/> string-pulling and <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The default layers to use for path following string-pulling and obstacle avoidance.")]

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
+    /// <see cref="KaijuSolutions.Agents.KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see>.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -18,12 +18,12 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuRigidbodyAgent : KaijuRadiusAgent
     {
         /// <summary>
-        /// If this <see cref="KaijuAgent"/> should move with the physics system.
+        /// If this <see cref="KaijuSolutions.Agents.KaijuAgent"/> should move with the physics system.
         /// </summary>
         public override bool PhysicsAgent => true;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The rigidbody which controls the agent's movement.")]
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents
         private Rigidbody body;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/Manual/rigidbody-physics-section.html">rigidbody</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
         public Rigidbody Body => body;
         
@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -69,7 +69,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuSolutions.Agents.KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

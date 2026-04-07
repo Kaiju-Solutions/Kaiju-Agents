@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Utility
 {
     /// <summary>
-    /// Base <see cref="KaijuUtilityConsideration"/> for comparing numeric values as booleans.
+    /// Base <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration"/> for comparing numeric values as booleans.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Utility
     public abstract class KaijuUtilityNumericBooleanConsideration : KaijuUtilityKeyConsideration
     {
         /// <summary>
-        /// If this should evaluate to true when greater than the <see cref="KaijuUtilityKeyConsideration.Key"/>.
+        /// If this should evaluate to true when greater than the <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.Key"/>.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("If this should evaluate to true when greater than the brain's key.")]
@@ -23,7 +23,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get the utility for this consideration from [0, 1].
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The utility score for this consideration from [0, 1].</returns>
         public override float Evaluate(KaijuUtilityBrain brain)
         {
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get a boolean utility for this consideration.
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The boolean utility for this consideration.</returns>
         protected abstract bool BooleanEvaluate(KaijuUtilityBrain brain);
         

@@ -15,7 +15,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get the utility for this consideration from [0, 1].
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The utility score for this consideration from [0, 1].</returns>
         public abstract float Evaluate([NotNull] KaijuUtilityBrain brain);
         

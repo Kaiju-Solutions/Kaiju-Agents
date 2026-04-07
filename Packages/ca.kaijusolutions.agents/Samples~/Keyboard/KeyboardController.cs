@@ -1,7 +1,6 @@
-﻿using KaijuSolutions.Agents;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Samples.Keyboard
+namespace KaijuSolutions.Agents.Samples.Keyboard
 {
     /// <summary>
     /// Simple controller to manually move an agent. Use WASD or the arrow keys to move the agent, and Q and E to turn the agent. Holding space will make the movement relative to the heading of the agent.

@@ -263,7 +263,7 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         }
         
         /// <summary>
-        /// The colors for the different species of <see cref="Microbe"/>s. The species <see cref="KaijuAgent.Identifiers"/> will be set based on this index.
+        /// The colors for the different species of <see cref="Microbe"/>s. The species <see cref="KaijuSolutions.Agents.KaijuAgent.Identifiers"/> will be set based on this index.
         /// </summary>
         [Tooltip("The colors for the different species of microbes. The species identifier will be set based on this index.")]
         [SerializeField]

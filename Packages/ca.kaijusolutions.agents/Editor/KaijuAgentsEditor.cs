@@ -64,7 +64,7 @@ namespace KaijuSolutions.Agents.Editor
         }
         
         /// <summary>
-        /// Create a <see cref="KaijuAgent"/>.
+        /// Create a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="type">The type of agent to spawn.</param>
         private static void CreateAgent(KaijuAgentType type = KaijuAgentType.Transform)

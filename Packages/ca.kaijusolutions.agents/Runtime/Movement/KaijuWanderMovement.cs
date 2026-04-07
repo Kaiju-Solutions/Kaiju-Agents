@@ -73,11 +73,11 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get a wander movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this will be assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this will be assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a wander movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
+        /// <returns>Get a wander movement for the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public static KaijuWanderMovement Get([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight)
         {
             KaijuWanderMovement movement = KaijuMovementManager.Get<KaijuWanderMovement>();
@@ -94,10 +94,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a wonder movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public KaijuWanderMovement([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight) : base(agent, weight)
         {
             Configure(agent, distance, radius);
@@ -105,7 +105,7 @@ namespace KaijuSolutions.Agents.Movement
         
         /// <summary>
         /// Configure the initial distance and radius.
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="distance">How far out to generate the wander circle.</param>
         /// <param name="radius">The radius of the wander circle.</param>
         /// </summary>
@@ -142,9 +142,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the <see cref="KaijuMovement"/>.
+        /// Get the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         public override Vector2 Move(Vector2 position, float delta)
@@ -169,8 +169,8 @@ namespace KaijuSolutions.Agents.Movement
         protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorWanderColor;
         
         /// <summary>
-        /// Render the visualization of the <see cref="KaijuMovement"/>.
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// Render the visualization of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)
         {

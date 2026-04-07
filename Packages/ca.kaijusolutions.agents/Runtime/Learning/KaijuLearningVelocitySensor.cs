@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Sensor for getting the normalized velocity of an <see cref="KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Sensor for getting the normalized velocity of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
     /// </summary>
     [DisallowMultipleComponent]
 #if UNITY_EDITOR

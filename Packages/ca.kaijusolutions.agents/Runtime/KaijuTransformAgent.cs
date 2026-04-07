@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// <see cref="KaijuAgent"/> which moves via the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+    /// <see cref="KaijuSolutions.Agents.KaijuAgent"/> which moves via the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
     /// </summary>]
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuTransformAgent : KaijuRadiusAgent
     {
         /// <summary>
-        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuSolutions.Agents.KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

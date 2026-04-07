@@ -15,3 +15,6 @@ KaijuSolutions.Agents.Exercises.Microbes
 KaijuSolutions.Agents.Behavior.Exercises.Microbes
 KaijuSolutions.Agents.Exercises.CTF
 KaijuSolutions.Agents.Behavior.Exercises.CTF
+KaijuSolutions.Agents.Samples.BoxDestroyer
+KaijuSolutions.Agents.Samples.Keyboard
+KaijuSolutions.Agents.Samples.Movement

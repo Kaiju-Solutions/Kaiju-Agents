@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Sensor for getting information from an <see cref="KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Sensor for getting information from an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
     /// </summary>
     [RequireComponent(typeof(KaijuAgent))]
 #if UNITY_EDITOR
@@ -14,7 +14,7 @@ namespace KaijuSolutions.Agents.Learning
     public abstract class KaijuLearningAgentSensor : KaijuLearningSensor
     {
         /// <summary>
-        /// The <see cref="KaijuAgent"/>.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
 #if UNITY_EDITOR
         [field: Tooltip("The agent.")]

@@ -68,7 +68,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         }
 
         /// <summary>
-        /// Any conditions which must be passed to begin running the actuator. This does not need to account for the <see cref="KaijuAttackActuator.Charge"/> or <see cref="KaijuAttackActuator.Cooldown"/>.
+        /// Any conditions which must be passed to begin running the actuator. This does not need to account for the <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.Charge"/> or <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.Cooldown"/>.
         /// </summary>
         /// <returns>If the conditions to run this were passed.</returns>
         protected override bool PreConditions()

@@ -349,7 +349,7 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         public bool HasAmmo => _blaster != null && _blaster.Ammo > 0;
         
         /// <summary>
-        /// If the <see cref="BlasterActuator"/> has any ammo and is not <see cref="KaijuAttackActuator.OnCooldown"/>.
+        /// If the <see cref="BlasterActuator"/> has any ammo and is not <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.OnCooldown"/>.
         /// </summary>
         public bool CanAttack => HasAmmo && !_blaster.OnCooldown;
         
@@ -526,9 +526,9 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         }
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has been enabled.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been enabled.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         protected override void OnActuatorEnabled(KaijuActuator actuator)
         {
             // Get the blaster.

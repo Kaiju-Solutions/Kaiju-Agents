@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Actuators
 {
     /// <summary>
-    /// Base <see cref="KaijuActuator"/> for attacking other objects. This will perform a raycast in the direction of its forward.
+    /// Base <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> for attacking other objects. This will perform a raycast in the direction of its forward.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
 #if UNITY_EDITOR
@@ -157,9 +157,9 @@ namespace KaijuSolutions.Agents.Actuators
         public Vector3? LastPoint { get; private set; }
         
         /// <summary>
-        /// Run the <see cref="KaijuActuator"/>.
+        /// Run the <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.
         /// </summary>
-        /// <returns>The state of the <see cref="KaijuActuator"/>'s progress.</returns>
+        /// <returns>The state of the <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>'s progress.</returns>
         protected override KaijuActuatorState Run()
         {
             // We cannot use this if the preconditions are not met.
@@ -285,7 +285,7 @@ namespace KaijuSolutions.Agents.Actuators
         protected abstract bool HandleHit(RaycastHit hit, [NotNull] Transform t);
         
         /// <summary>
-        /// Perform any needed resetting of the <see cref="KaijuActuator"/>.
+        /// Perform any needed resetting of the <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.
         /// </summary>
         protected override void Cleanup()
         {
@@ -356,10 +356,10 @@ namespace KaijuSolutions.Agents.Actuators
         public static implicit operator KaijuAttackActuator([NotNull] Transform t) => t.GetComponent<KaijuAttackActuator>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="s">The attack actuator.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the attack actuator if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the attack actuator if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuAttackActuator s) => s.Agent;
     }
 }

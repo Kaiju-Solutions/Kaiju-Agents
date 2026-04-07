@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Use <see cref="KaijuAttackActuator"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Use <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
     /// </summary>
     [RequireComponent(typeof(KaijuAttackActuator))]
 #if UNITY_EDITOR
@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents.Learning
     public class KaijuLearningAttackActuator : KaijuLearningActuatorBase
     {
         /// <summary>
-        /// The <see cref="KaijuActuator"/>. Do not modify the properties of this sensor at runtime.
+        /// The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>. Do not modify the properties of this sensor at runtime.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The actuator. Do not modify the properties of this sensor at runtime.")]

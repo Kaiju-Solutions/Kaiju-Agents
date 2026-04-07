@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     public class KaijuObstacleAvoidanceMovementTester : KaijuMovementTester
     {
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
         {
@@ -25,7 +25,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         }
         
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The distance from a wall the agent should maintain.")]
@@ -99,7 +99,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {

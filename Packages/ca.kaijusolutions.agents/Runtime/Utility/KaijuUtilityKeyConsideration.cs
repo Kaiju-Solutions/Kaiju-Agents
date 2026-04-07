@@ -3,7 +3,7 @@
 namespace KaijuSolutions.Agents.Utility
 {
     /// <summary>
-    /// <see cref="KaijuUtilityConsideration"/> which reads a certain key from the <see cref="KaijuUtilityBrain"/>'s blackboard.
+    /// <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration"/> which reads a certain key from the <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>'s blackboard.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -12,7 +12,7 @@ namespace KaijuSolutions.Agents.Utility
     public abstract class KaijuUtilityKeyConsideration : KaijuUtilityConsideration
     {
         /// <summary>
-        /// What key to use from the <see cref="KaijuUtilityBrain"/>'s blackboard.
+        /// What key to use from the <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>'s blackboard.
         /// </summary>
         public string Key
         {
@@ -21,7 +21,7 @@ namespace KaijuSolutions.Agents.Utility
         }
         
         /// <summary>
-        /// What key to use from the <see cref="KaijuUtilityBrain"/>'s blackboard.
+        /// What key to use from the <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>'s blackboard.
         /// </summary>
         [Tooltip("What key to use from the brain's blackboard.")]
         [SerializeField]

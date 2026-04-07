@@ -55,9 +55,9 @@ namespace KaijuSolutions.Agents.Exercises.Microbes
         private void OnEnergySensor(EnergyVisionSensor energySensor) { }
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuSensor"/> has been run.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been run.
         /// </summary>
-        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
+        /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</param>
         protected override void OnSense(KaijuSensor sensor)
         {
             // Run methods for either of the sensors.

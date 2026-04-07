@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
+    /// <see cref="KaijuSolutions.Agents.KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see>.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -18,7 +18,7 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuCharacterAgent : KaijuAgent
     {
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The character controller which controls the agent's movement.")]
@@ -28,7 +28,7 @@ namespace KaijuSolutions.Agents
         private CharacterController character;
         
         /// <summary>
-        /// If gravity should be applied to the <see cref="KaijuAgent"/>.
+        /// If gravity should be applied to the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("If gravity should be applied to the agent.")]
@@ -36,12 +36,12 @@ namespace KaijuSolutions.Agents
         public bool gravity;
         
         /// <summary>
-        /// The cached gravity of the <see cref="KaijuAgent"/>.
+        /// The cached gravity of the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         private float _velocityY;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/Manual/character-control-section.html">chracter controller</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
         public CharacterController Character => character;
         
@@ -91,7 +91,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -102,16 +102,16 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get the radius of an <see cref="KaijuAgent"/>.
+        /// Get the radius of an <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
-        /// <returns>The radius of the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>The radius of the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public override float GetRadius()
         {
             return character ? character.radius : 0;
         }
         
         /// <summary>
-        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuSolutions.Agents.KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

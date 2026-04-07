@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Sensor for getting the rotations of an <see cref="KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see> normalized between zero and one.
+    /// Sensor for getting the rotations of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see> normalized between zero and one.
     /// </summary>
     [DisallowMultipleComponent]
     [RequireComponent(typeof(KaijuAgent))]

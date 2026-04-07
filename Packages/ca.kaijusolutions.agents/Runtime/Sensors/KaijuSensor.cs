@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents.Sensors
         public bool automatic = true;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> this sensor is assigned to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this sensor is assigned to.
         /// </summary>
         public KaijuAgent Agent { get; private set; }
         
@@ -144,10 +144,10 @@ namespace KaijuSolutions.Agents.Sensors
         public static implicit operator KaijuSensor([NotNull] Transform t) => t.GetComponent<KaijuSensor>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="s">The sensor.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the sensor if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the sensor if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuSensor s) => s.Agent;
     }
 }

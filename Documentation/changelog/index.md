@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.3.1
+
+- Fixed documentation generation errors.
+
 ### 1.3.0
 
 - Integration with [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents").

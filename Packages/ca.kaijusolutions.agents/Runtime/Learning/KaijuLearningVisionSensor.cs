@@ -7,7 +7,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Integrate <see cref="KaijuVisionSensor{T}"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. All positions are normalized from negative one to positive one based on detection distance.
+    /// Integrate <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. All positions are normalized from negative one to positive one based on detection distance.
     /// </summary>
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/ML-Agents/Sensors/Kaiju Learning Vision Sensor", 1)]
@@ -18,7 +18,7 @@ namespace KaijuSolutions.Agents.Learning
     public class KaijuLearningVisionSensor : KaijuLearningSensor
     {
         /// <summary>
-        /// The <see cref="KaijuVisionSensor{T}"/>. Do not modify the properties of this sensor at runtime.
+        /// The <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/>. Do not modify the properties of this sensor at runtime.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The vision sensor. Do not modify the properties of this sensor at runtime.")]

@@ -7,12 +7,12 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Movement
 {
     /// <summary>
-    /// Cache <see cref="KaijuMovement"/> objects for reuse.
+    /// Cache <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> objects for reuse.
     /// </summary>
     public static class KaijuMovementManager
     {
         /// <summary>
-        /// Cache of all <see cref="KaijuMovement"/> instances.
+        /// Cache of all <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> instances.
         /// </summary>
         private static readonly Dictionary<Type, Queue<KaijuMovement>> Movements = new();
 #if UNITY_EDITOR
@@ -367,12 +367,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The key for if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
+        /// The key for if all editor visualizations should be rendered or only the selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         private const string EditorVisualizationsAllKey = "KAIJU_AGENTS_VISUALIZATIONS_ALL";
         
         /// <summary>
-        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
+        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         public static bool EditorVisualizationsAll
         {
@@ -394,12 +394,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
+        /// Handle if all editor visualizations should be rendered or only the selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         private static bool? _editorVisualizationsAll;
         
         /// <summary>
-        /// Reset if all editor visualizations should be rendered or only the selected <see cref="KaijuAgent"/>.
+        /// Reset if all editor visualizations should be rendered or only the selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         public static void EditorResetVisualizationsAll()
         {
@@ -484,10 +484,10 @@ namespace KaijuSolutions.Agents.Movement
         }
 #endif
         /// <summary>
-        /// Get a <see cref="KaijuMovement"/> instance.
+        /// Get a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> instance.
         /// </summary>
-        /// <typeparam name="T">The type of <see cref="KaijuMovement"/>.</typeparam>
-        /// <returns>An instance of the <see cref="KaijuMovement"/>.</returns>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</typeparam>
+        /// <returns>An instance of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</returns>
         public static T Get<T>() where T : KaijuMovement
         {
             if (Movements.TryGetValue(typeof(T), out Queue<KaijuMovement> movements) && movements.TryDequeue(out KaijuMovement result) && result is T valid)
@@ -499,10 +499,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Return a <see cref="KaijuMovement"/> to the cache.
+        /// Return a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> to the cache.
         /// </summary>
-        /// <param name="movement">The <see cref="KaijuMovement"/> being returned.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuMovement"/>.</typeparam>
+        /// <param name="movement">The <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> being returned.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</typeparam>
         public static void Return<T>(T movement) where T : KaijuMovement
         {
             if (!Movements.TryGetValue(typeof(T), out Queue<KaijuMovement> queue))

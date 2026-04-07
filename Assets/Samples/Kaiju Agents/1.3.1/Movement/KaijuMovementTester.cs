@@ -16,7 +16,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     public abstract class KaijuMovementTester : KaijuBehaviour
     {
         /// <summary>
-        /// The <see cref="KaijuAgent"/>s to test the <see cref="Agents.Movement.KaijuMovement"/> of.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to test the <see cref="Agents.Movement.KaijuMovement"/> of.
         /// </summary>
         public List<KaijuAgent> Agents
         {
@@ -34,7 +34,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         }
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/>s to test the <see cref="Agents.Movement.KaijuMovement"/> of.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to test the <see cref="Agents.Movement.KaijuMovement"/> of.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The agents to test the movement of.")]
@@ -158,7 +158,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected abstract KaijuMovement Assign([NotNull] KaijuAgent agent);
         

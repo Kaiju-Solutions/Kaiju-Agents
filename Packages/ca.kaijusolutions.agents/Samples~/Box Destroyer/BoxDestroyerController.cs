@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Samples.BoxDestroyer
 {
     /// <summary>
-    /// Simple <see cref="KaijuController"/> to destroy boxes.
+    /// Simple <see cref="KaijuSolutions.Agents.KaijuController"/> to destroy boxes.
     /// </summary>
     [DisallowMultipleComponent]
     [HelpURL("https://agents.kaijusolutions.ca/manual/box-destroyer.html")]
@@ -24,7 +24,7 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         private KaijuEverythingAttackActuator _actuator;
         
         /// <summary>
-        /// Callback for when the <see cref="KaijuController.Agent"/> has finishing becoming enabled.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/> has finishing becoming enabled.
         /// </summary>
         protected override void OnEnabled()
         {
@@ -37,9 +37,9 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         }
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuSensor"/> has been run.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been run.
         /// </summary>
-        /// <param name="sensor">The <see cref="KaijuSensor"/>.</param>
+        /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</param>
         protected override void OnSense(KaijuSensor sensor)
         {
             // Nothing for us to do if we did not see any boxes.
@@ -66,9 +66,9 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         }
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuMovement"/> has stopped.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has stopped.
         /// </summary>
-        /// <param name="movement">The <see cref="KaijuMovement"/>.</param>
+        /// <param name="movement">The <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected override void OnMovementStopped(KaijuMovement movement)
         {
             // Once the seek has finished, we know we are close enough to the box to destroy it.
@@ -79,9 +79,9 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         }
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has successfully fully completed its action.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has successfully fully completed its action.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         protected override void OnActuatorDone(KaijuActuator actuator)
         {
             // If we successfully destroyed the box, we should search for another one.
@@ -89,9 +89,9 @@ namespace KaijuSolutions.Agents.Samples.BoxDestroyer
         }
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has failed its execution.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has failed its execution.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         protected override void OnActuatorFailed(KaijuActuator actuator)
         {
             // If we failed, we somehow missed!

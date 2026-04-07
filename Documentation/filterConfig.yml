@@ -9,12 +9,6 @@ apiRules:
     uidRegex: .*Editor$
     type: Namespace
 - exclude:
-    uidRegex: .*Samples$
-    type: Namespace
-- exclude:
-    uidRegex: .*Samples*.
-    type: Namespace
-- exclude:
     uidRegex: \.ToString$
     type: Method
 - exclude:
