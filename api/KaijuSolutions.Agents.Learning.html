@@ -87,7 +87,7 @@
     <h3 id="classes">Classes
   </h3>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuator.html">KaijuLearningActuator</a></h4>
-      <section><p>Have any generic <see cref="!:KaijuActuator"></see> work with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
+      <section><p>Have any generic <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a> work with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has three discrete actions, being to do nothing, run the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>, or cancel running it. These actions are masked accordingly. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html">KaijuLearningActuatorBase</a></h4>
       <section><p>Base class for integrating all actuators with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
@@ -99,28 +99,28 @@
       <section><p>Sensor for getting information from an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningAttackActuator.html">KaijuLearningAttackActuator</a></h4>
-      <section><p>Use <see cref="!:KaijuAttackActuator"></see>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
+      <section><p>Use <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html">KaijuAttackActuator</a>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has three discrete actions, being to do nothing, run the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuActuator.html">KaijuActuator</a>, or cancel running it. These actions are masked accordingly. Compared to the <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuator.html">KaijuLearningActuator</a>, this takes into account the <a class="xref" href="KaijuSolutions.Agents.Actuators.KaijuAttackActuator.html">KaijuAttackActuator</a> being on cooldown when masking actions. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningAttackActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningAttackActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningCastSensor.html">KaijuLearningCastSensor</a></h4>
-      <section><p>Integrate <see cref="!:KaijuCastSensor"></see>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This normalizes all rays from zero to one.</p>
+      <section><p>Integrate <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuCastSensor.html">KaijuCastSensor</a>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This normalizes all rays from zero to one.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningControlActuator.html">KaijuLearningControlActuator</a></h4>
-      <section><p>Actuator for controlling the movement of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
+      <section><p>Actuator for controlling the movement of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> via the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Control">Control</a> property for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has two continuous actions which are assigned to the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Control">Control</a> property. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningControlActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningControlActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningRotationSensor.html">KaijuLearningRotationSensor</a></h4>
-      <section><p>Sensor for getting the rotations of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a> normalized between zero and one.</p>
+      <section><p>Sensor for getting the <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">OrientationY</a> of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a> normalized between zero and one.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningSensor.html">KaijuLearningSensor</a></h4>
       <section><p>Base class for integrating all sensors with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.html">KaijuLearningSpinActuator</a></h4>
-      <section><p>Actuator for controlling the rotation of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
+      <section><p>Actuator for controlling the rotation of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> via the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has one continuous action which is assigned to the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningVelocitySensor.html">KaijuLearningVelocitySensor</a></h4>
-      <section><p>Sensor for getting the normalized velocity of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
+      <section><p>Sensor for getting the normalized <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Velocity">Velocity</a> of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>.</p>
 </section>
       <h4><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningVisionSensor.html">KaijuLearningVisionSensor</a></h4>
-      <section><p>Integrate <see cref="!:KaijuVisionSensor&lt;T>"></see>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. All positions are normalized from negative one to positive one based on detection distance.</p>
+      <section><p>Integrate <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a>s with <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. All positions are normalized from negative one to positive one based on detection distance.</p>
 </section>
 </article>
           </div>
