@@ -84,7 +84,7 @@ namespace KaijuSolutions.Agents.Actuators
         public static event KaijuActuatorAction OnDisabledGlobal;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> this actuator is assigned to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this actuator is assigned to.
         /// </summary>
         public KaijuAgent Agent { get; private set; }
         
@@ -300,10 +300,10 @@ namespace KaijuSolutions.Agents.Actuators
         public static implicit operator KaijuActuator([NotNull] Transform t) => t.GetComponent<KaijuActuator>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="a">The actuator.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the actuator if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the actuator if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuActuator a) => a.Agent;
     }
     

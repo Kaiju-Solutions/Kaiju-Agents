@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Utility
 {
     /// <summary>
-    /// <see cref="KaijuUtilityConsideration"/> which evaluates multiple sub-considerations.
+    /// <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration"/> which evaluates multiple sub-considerations.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -40,7 +40,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get the utility for this consideration from [0, 1].
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The utility score for this consideration from [0, 1].</returns>
         public override float Evaluate([NotNull] KaijuUtilityBrain brain)
         {

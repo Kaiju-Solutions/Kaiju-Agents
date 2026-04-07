@@ -8,7 +8,7 @@ using Unity.Properties;
 namespace KaijuSolutions.Agents.Behavior.Sensors
 {
     /// <summary>
-    /// Action to run a <see cref="KaijuCastSensor"/>.
+    /// Action to run a <see cref="KaijuSolutions.Agents.Sensors.KaijuCastSensor"/>.
     /// </summary>
     [Serializable]
     [GeneratePropertyBag]

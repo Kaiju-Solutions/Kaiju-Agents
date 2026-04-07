@@ -10,7 +10,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Manager <see cref="KaijuAgent"/>s.
+    /// Manager <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 3)]
@@ -51,12 +51,12 @@ namespace KaijuSolutions.Agents
         }
 
         /// <summary>
-        /// Cache <see cref="KaijuAgent"/>s paired to their identifiers.
+        /// Cache <see cref="KaijuSolutions.Agents.KaijuAgent"/>s paired to their identifiers.
         /// </summary>
         private static readonly Dictionary<uint, HashSet<KaijuAgent>> AgentIdentifiers = new();
         
         /// <summary>
-        /// All <see cref="KaijuAgent"/>s.
+        /// All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
         /// </summary>
         public static IReadOnlyCollection<KaijuAgent> Agents
         {
@@ -73,7 +73,7 @@ namespace KaijuSolutions.Agents
         }
 
         /// <summary>
-        /// The number of <see cref="KaijuAgent"/>s.
+        /// The number of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
         /// </summary>
         public static int AgentsCount
         {
@@ -90,47 +90,47 @@ namespace KaijuSolutions.Agents
         }
 
         /// <summary>
-        /// Cache all <see cref="KaijuAgent"/>s.
+        /// Cache all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
         /// </summary>
         private static readonly HashSet<KaijuAgent> AllAgents = new();
         
         /// <summary>
-        /// Cache for <see cref="KaijuAgent"/>s which tick in the main update loop.
+        /// Cache for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which tick in the main update loop.
         /// </summary>
         private static readonly HashSet<KaijuAgent> TickAgents = new();
         
         /// <summary>
-        /// Cache for <see cref="KaijuAgent"/>s which tick during the physics update loop.
+        /// Cache for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which tick during the physics update loop.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
         
         /// <summary>
-        /// Cache <see cref="KaijuAgent"/>s which have been disabled for reuse.
+        /// Cache <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have been disabled for reuse.
         /// </summary>
         private static readonly Dictionary<Type, HashSet<KaijuAgent>> DisabledAgents = new();
         
         /// <summary>
-        /// Helper empty <see cref="KaijuAgent"/>s array for returning defaults.
+        /// Helper empty <see cref="KaijuSolutions.Agents.KaijuAgent"/>s array for returning defaults.
         /// </summary>
         private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
         
         /// <summary>
-        /// Pending <see cref="KaijuAgent"/>s to handle the spawning of.
+        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the spawning of.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PendingAdditions = new();
         
         /// <summary>
-        /// Pending <see cref="KaijuAgent"/>s to handle the removal of.
+        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the removal of.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PendingRemovals = new();
         
         /// <summary>
-        /// Pending <see cref="KaijuAgent"/>s to handle the removal of and cache.
+        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the removal of and cache.
         /// </summary>
         private static readonly HashSet<KaijuAgent> PendingCachedRemovals = new();
 #if UNITY_EDITOR
         /// <summary>
-        /// All currently selected <see cref="KaijuAgent"/>s in the editor.
+        /// All currently selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>s in the editor.
         /// </summary>
         private readonly HashSet<KaijuAgent> _editorSelectedAgents = new();
         
@@ -215,12 +215,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// The key for what color <see cref="KaijuAgent"/> visualizations should be in the editor.
+        /// The key for what color <see cref="KaijuSolutions.Agents.KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
         private const string EditorAgentKey = "KAIJU_AGENTS_COLOR_AGENT";
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> visualizations should be in the editor.
+        /// What color <see cref="KaijuSolutions.Agents.KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
         public static Color EditorAgentColor
         {
@@ -242,12 +242,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// What color <see cref="KaijuAgent"/> visualizations should be in the editor.
+        /// What color <see cref="KaijuSolutions.Agents.KaijuAgent"/> visualizations should be in the editor.
         /// </summary>
         private static Color? _editorAgentColor;
         
         /// <summary>
-        /// Reset the <see cref="KaijuAgent"/> color in the editor.
+        /// Reset the <see cref="KaijuSolutions.Agents.KaijuAgent"/> color in the editor.
         /// </summary>
         public static void EditorResetAgentColor()
         {
@@ -339,9 +339,9 @@ namespace KaijuSolutions.Agents
         }
 #endif
         /// <summary>
-        /// Register an <see cref="KaijuAgent"/> for movement.
+        /// Register an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> to register.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> to register.</param>
         public static void Register(KaijuAgent agent)
         {
 #if UNITY_EDITOR
@@ -368,10 +368,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister an <see cref="KaijuAgent"/> for movement.
+        /// Unregister an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> to unregister.</param>
-        /// <param name="cache">If this <see cref="KaijuAgent"/> should be cached.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> to unregister.</param>
+        /// <param name="cache">If this <see cref="KaijuSolutions.Agents.KaijuAgent"/> should be cached.</param>
         public static void Unregister(KaijuAgent agent, bool cache = true)
         {
 #if UNITY_EDITOR
@@ -490,11 +490,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get a cached <see cref="KaijuAgent"/> to spawn.
+        /// Get a cached <see cref="KaijuSolutions.Agents.KaijuAgent"/> to spawn.
         /// </summary>
-        /// <param name="components">All components which must be found on the <see cref="KaijuAgent"/>. This will check in children as well.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuAgent"/>.</typeparam>
-        /// <returns>A cached <see cref="KaijuAgent"/> if one is found, otherwise NULL.</returns>
+        /// <param name="components">All components which must be found on the <see cref="KaijuSolutions.Agents.KaijuAgent"/>. This will check in children as well.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</typeparam>
+        /// <returns>A cached <see cref="KaijuSolutions.Agents.KaijuAgent"/> if one is found, otherwise NULL.</returns>
         public static T GetCached<T>(ICollection<string> components = null) where T : KaijuAgent
         {
 #if UNITY_EDITOR
@@ -577,9 +577,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Add an identifier to an <see cref="KaijuAgent"/>. There is no use for manually calling this.
+        /// Add an identifier to an <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no use for manually calling this.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <param name="identifier">The identifier.</param>
         public static void AddIdentifier(KaijuAgent agent, uint identifier)
         {
@@ -599,9 +599,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Remove an identifier from an <see cref="KaijuAgent"/>. There is no use for manually calling this.
+        /// Remove an identifier from an <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no use for manually calling this.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <param name="identifier">The identifier.</param>
         public static void RemoveIdentifier(KaijuAgent agent, uint identifier)
         {
@@ -624,10 +624,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuAgent"/>s with a given identifier.
+        /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s with a given identifier.
         /// </summary>
         /// <param name="identifier">The identifier.</param>
-        /// <returns>All <see cref="KaijuAgent"/>s with a given identifier.</returns>
+        /// <returns>All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s with a given identifier.</returns>
         public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier)
         {
 #if UNITY_EDITOR
@@ -640,9 +640,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuAgent"/>s which have any of the given identifiers. The <see cref="KaijuAgent"/>s are added to the identified parameter.
+        /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifiers. The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s are added to the identified parameter.
         /// </summary>
-        /// <param name="identified">Updated to contain all <see cref="KaijuAgent"/>s which were identified.</param>
+        /// <param name="identified">Updated to contain all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which were identified.</param>
         /// <param name="identifiers">The identifiers.</param>
         public static void IdentifiedAgents([NotNull] ICollection<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
         {
@@ -669,10 +669,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuAgent"/>s which have any of the given identifiers.
+        /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifiers.
         /// </summary>
         /// <param name="identifiers">The identifiers.</param>
-        /// <returns>All <see cref="KaijuAgent"/>s which have any of the given identifier.</returns>
+        /// <returns>All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifier.</returns>
         public static HashSet<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
         {
 #if UNITY_EDITOR
@@ -687,9 +687,9 @@ namespace KaijuSolutions.Agents
         }
 #if UNITY_EDITOR
         /// <summary>
-        /// Validate the identifiers of an <see cref="KaijuAgent"/> in the editor. There is no use for manually calling this.
+        /// Validate the identifiers of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> in the editor. There is no use for manually calling this.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         public static void EditorValidateIdentifiers(KaijuAgent agent)
         {
             // Store empty instances.
@@ -825,9 +825,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Move a set of <see cref="KaijuAgent"/>s.
+        /// Move a set of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
         /// </summary>
-        /// <param name="agents">The <see cref="KaijuAgent"/>s to move.</param>
+        /// <param name="agents">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to move.</param>
         /// <param name="delta">The time step.</param>
         private static void Move(HashSet<KaijuAgent> agents, float delta)
         {
@@ -865,84 +865,84 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Implicit conversion to a short integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator short(KaijuAgentsManager m) => (short)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable short integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator short?(KaijuAgentsManager m) => (short?)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to an unsigned short integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator ushort(KaijuAgentsManager m) => (ushort)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned short integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator ushort?(KaijuAgentsManager m) => (ushort?)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to an integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator int(KaijuAgentsManager m) => AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator int?(KaijuAgentsManager m) => AgentsCount;
         
         /// <summary>
         /// Implicit conversion to an unsigned integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator uint(KaijuAgentsManager m) => (uint)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator uint?(KaijuAgentsManager m) => (uint?)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a long integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator long(KaijuAgentsManager m) => AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable long integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator long?(KaijuAgentsManager m) => AgentsCount;
         
         /// <summary>
         /// Implicit conversion to an unsigned long integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator ulong(KaijuAgentsManager m) => (ulong)AgentsCount;
         
         /// <summary>
         /// Implicit conversion to a nullable unsigned long integer based <see cref="AgentsCount"/>.
         /// </summary>
-        /// <param name="m">The <see cref="KaijuAgent"/> manager.</param>
+        /// <param name="m">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> manager.</param>
         /// <returns><see cref="AgentsCount"/>.</returns>
         public static implicit operator ulong?(KaijuAgentsManager m) => (ulong?)AgentsCount;
     }

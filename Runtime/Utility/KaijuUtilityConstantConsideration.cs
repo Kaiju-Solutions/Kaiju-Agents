@@ -3,7 +3,7 @@
 namespace KaijuSolutions.Agents.Utility
 {
     /// <summary>
-    /// A constant <see cref="KaijuUtilityConsideration"/> value.
+    /// A constant <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration"/> value.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -34,7 +34,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get the utility score of this action.
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is calculating the utility for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is calculating the utility for.</param>
         /// <returns>The utility score of this action.</returns>
         public override float Evaluate(KaijuUtilityBrain brain)
         {

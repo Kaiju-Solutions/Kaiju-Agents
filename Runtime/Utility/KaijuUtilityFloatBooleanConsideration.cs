@@ -24,7 +24,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get a boolean utility for this consideration.
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The boolean utility for this consideration.</returns>
         protected override bool BooleanEvaluate(KaijuUtilityBrain brain)
         {

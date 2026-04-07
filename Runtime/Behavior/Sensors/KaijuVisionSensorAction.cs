@@ -7,9 +7,9 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Behavior.Sensors
 {
     /// <summary>
-    /// Action to sense with a <see cref="KaijuVisionSensor{T}"/> which could have multiple readings of components.
+    /// Action to sense with a <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/> which could have multiple readings of components.
     /// </summary>
-    /// <typeparam name="T">The type of <see cref="KaijuVisionSensor{T}"/></typeparam>
+    /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/></typeparam>
     /// <typeparam name="T0">The type of component this is for.</typeparam>
     [Serializable]
     [GeneratePropertyBag]

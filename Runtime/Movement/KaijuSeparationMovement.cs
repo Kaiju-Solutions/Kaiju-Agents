@@ -13,7 +13,7 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuSeparationMovement : KaijuAreaMovement
     {
         /// <summary>
-        /// The default <see cref="KaijuAreaMovement.Distance"/> for separation movements.
+        /// The default <see cref="KaijuSolutions.Agents.Movement.KaijuAreaMovement.Distance"/> for separation movements.
         /// </summary>
         public const float DefaultDistance = 10;
         
@@ -37,24 +37,24 @@ namespace KaijuSolutions.Agents.Movement
         private float _coefficient;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/>s currently detected this movement is moving in relation to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s currently detected this movement is moving in relation to.
         /// </summary>
         public IReadOnlyCollection<KaijuAgent> Interacting => _interacting;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/>s currently detected this movement is moving in relation to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s currently detected this movement is moving in relation to.
         /// </summary>
         private readonly HashSet<KaijuAgent> _interacting = new();
         
         /// <summary>
         /// Get a separation movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get a separation movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <param name="identifiers">What types of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to avoid.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
+        /// <returns>Get a separation movement for the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public static KaijuSeparationMovement Get([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             KaijuSeparationMovement movement = KaijuMovementManager.Get<KaijuSeparationMovement>();
@@ -70,24 +70,24 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create a separation movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to avoid.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public KaijuSeparationMovement([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection<uint> identifiers = null, float weight = DefaultWeight) : base(agent, distance, identifiers, weight)
         {
             Initialize(agent, distance, coefficient, identifiers, weight);
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="distance">The distance to avoid other <see cref="KaijuAgent"/>s from.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="distance">The distance to avoid other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.</param>
         /// <param name="coefficient">The coefficient to use for inverse square law separation. Zero will use linear separation.</param>
-        /// <param name="identifiers">What types of <see cref="KaijuAgent"/>s to avoid.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="identifiers">What types of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to avoid.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         private void Initialize([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection<uint> identifiers = null, float weight = DefaultWeight)
         {
             Initialize(agent, distance, identifiers, weight);
@@ -105,9 +105,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the <see cref="KaijuMovement"/>.
+        /// Get the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         public override Vector2 Move(Vector2 position, float delta)
@@ -115,7 +115,7 @@ namespace KaijuSolutions.Agents.Movement
             Vector2 movement = Vector2.zero;
             _interacting.Clear();
             
-            // Compare with all other <see cref="KaijuAgent"/>s.
+            // Compare with all other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
             foreach (KaijuAgent agent in KaijuAgentsManager.Agents)
             {
                 // Ignore ourselves.
@@ -124,7 +124,7 @@ namespace KaijuSolutions.Agents.Movement
                     continue;
                 }
                 
-                // Get the direction to the target <see cref="KaijuAgent"/> from the current <see cref="KaijuAgent"/>'s position.
+                // Get the direction to the target <see cref="KaijuSolutions.Agents.KaijuAgent"/> from the current <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s position.
                 Vector2 direction = agent.Direction(position);
                 
                 // See if this is within our distance to consider.
@@ -177,8 +177,8 @@ namespace KaijuSolutions.Agents.Movement
         protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorSeparationColor;
         
         /// <summary>
-        /// Render the visualization of the <see cref="KaijuMovement"/>.
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// Render the visualization of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)
         {

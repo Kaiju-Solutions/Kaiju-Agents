@@ -11,7 +11,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents.Sensors
 {
     /// <summary>
-    /// <see cref="KaijuSensor"/> to perform ray or sphere casts. This will cast from this <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> in the forward direction of this <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+    /// <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> to perform ray or sphere casts. This will cast from this <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> in the forward direction of this <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue)]
 #if UNITY_EDITOR
@@ -203,7 +203,7 @@ namespace KaijuSolutions.Agents.Sensors
         public IEnumerable<Transform> ConnectedTransforms => ConnectedHits.Select(x => x!.Value.transform);
         
         /// <summary>
-        /// The nearest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The nearest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -226,7 +226,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// The nearest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="ConnectedTransforms"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -249,7 +249,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The farthest <see cref="ConnectedTransforms"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -272,7 +272,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSensor.Agent"/>.
+        /// The farthest <see cref="ConnectedTransforms"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="ConnectedTransforms"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -295,7 +295,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
@@ -307,7 +307,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The nearest <see cref="Positions"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
@@ -319,7 +319,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
@@ -331,7 +331,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The farthest <see cref="Positions"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the positions should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Positions"/> instance. Will be a zero vector if the <see cref="Positions"/> list is empty.</returns>
@@ -343,7 +343,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The nearest <see cref="Distances"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
         /// <returns>The nearest <see cref="Distances"/> instance.</returns>
@@ -354,7 +354,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Distances"/> instance to the <see cref="KaijuSensor.Agent"/>.
+        /// The farthest <see cref="Distances"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [0, 1].</param>
         /// <returns>The farthest <see cref="Distances"/> instance.</returns>
@@ -453,7 +453,7 @@ namespace KaijuSolutions.Agents.Sensors
         private Vector3[] _positions = Array.Empty<Vector3>();
         
         /// <summary>
-        /// Run the <see cref="KaijuSensor"/>.
+        /// Run the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.
         /// </summary>
         protected override void Run()
         {
@@ -465,7 +465,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Perform any needed resetting of the <see cref="KaijuSensor"/>.
+        /// Perform any needed resetting of the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.
         /// </summary>
         protected override void Cleanup()
         {
@@ -494,7 +494,7 @@ namespace KaijuSolutions.Agents.Sensors
         
         /// <summary>
         /// Allow for visualizing in the editor.
-        /// <param name="position">The position of the <see cref="KaijuSensor.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.</param>
         /// </summary>
         public override void EditorVisualize(Vector3 position)
         {
@@ -519,21 +519,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuCastSensor([NotNull] GameObject o) => o.GetComponent<KaijuCastSensor>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuCastSensor([NotNull] Transform t) => t.GetComponent<KaijuCastSensor>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The <see cref="KaijuAgentsVisionSensor"/>.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the <see cref="KaijuAgentsVisionSensor"/> if there was one.</returns>
+        /// <param name="s">The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/>.</param>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuCastSensor s) => s.Agent;
     }
 }

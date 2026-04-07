@@ -60,7 +60,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> to move in relation to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/> to move in relation to.
         /// </summary>
         public KaijuAgent TargetAgent
         {
@@ -86,12 +86,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The current distance between the <see cref="KaijuAgent"/> and the target.
+        /// The current distance between the <see cref="KaijuSolutions.Agents.KaijuAgent"/> and the target.
         /// </summary>
         public float CurrentDistance => Done() ? 0 : Target.Distance(Agent.Position);
         
         /// <summary>
-        /// The current distance between the <see cref="KaijuAgent"/> and the target across all axes.
+        /// The current distance between the <see cref="KaijuSolutions.Agents.KaijuAgent"/> and the target across all axes.
         /// </summary>
         public float CurrentDistance3 => Done() ? 0 : Target3.Distance3(Agent.Position3);
         
@@ -113,10 +113,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the target movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector2.html">Vector2</see>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             Target = target;
@@ -126,10 +126,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the target movement for a <see href="https://docs.unity3d.com/ScriptReference/Vector3.html">Vector3</see>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected KaijuTargetMovement([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             Target3 = target;
@@ -139,10 +139,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             TargetGameObject = target;
@@ -152,10 +152,10 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create the target movement for a <see href="https://docs.unity3d.com/Manual/Components.html">component</see>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected KaijuTargetMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = DefaultWeight) : base(agent, weight)
         {
             TargetComponent = target;
@@ -163,12 +163,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public void Initialize([NotNull] KaijuAgent agent, Vector2 target, float distance, float weight = DefaultWeight)
         {
             Target = target;
@@ -177,12 +177,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The vector to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public void Initialize([NotNull] KaijuAgent agent, Vector3 target, float distance, float weight = DefaultWeight)
         {
             Target3 = target;
@@ -191,12 +191,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public void Initialize([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, float weight = DefaultWeight)
         {
             TargetGameObject = target;
@@ -205,12 +205,12 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="target">The <see href="https://docs.unity3d.com/Manual/Components.html">component</see> to move in relation to.</param>
         /// <param name="distance">The distance to consider this move done.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public void Initialize([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, float weight = DefaultWeight)
         {
             TargetComponent = target;
@@ -230,9 +230,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the <see cref="KaijuMovement"/>.
+        /// Get the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         public override Vector2 Move(Vector2 position, float delta)
@@ -241,9 +241,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Determine if the <see cref="KaijuMovement"/> is done or not.
+        /// Determine if the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> is done or not.
         /// </summary>
-        /// <returns>If the <see cref="KaijuMovement"/> is done or not.</returns>
+        /// <returns>If the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> is done or not.</returns>
         public override bool Done()
         {
             return base.Done() || (!_transform && _vector == null);
@@ -252,16 +252,16 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Calculate the movement.
         /// </summary>
-        /// <param name="position">The <see cref="KaijuAgent"/>'s current position.</param>
-        /// <param name="speed">The <see cref="KaijuAgent"/>'s maximum movement speed.</param>
+        /// <param name="position">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s current position.</param>
+        /// <param name="speed">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s maximum movement speed.</param>
         /// <param name="target">The position to move in relation to.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         protected abstract Vector2 Calculate(Vector2 position, float speed, Vector2 target, float delta);
 #if UNITY_EDITOR
         /// <summary>
-        /// Render the visualization of the <see cref="KaijuMovement"/>.
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// Render the visualization of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)
         {
@@ -335,10 +335,10 @@ namespace KaijuSolutions.Agents.Movement
         public static implicit operator GameObject([NotNull] KaijuTargetMovement t) => t.TargetGameObject;
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/> from the target.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/> from the target.
         /// </summary>
         /// <param name="t">The target movement.</param>
-        /// <returns>The target <see cref="KaijuAgent"/> from the target.</returns>
+        /// <returns>The target <see cref="KaijuSolutions.Agents.KaijuAgent"/> from the target.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuTargetMovement t) => t.TargetAgent;
     }
 }

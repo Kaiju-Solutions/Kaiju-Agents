@@ -10,7 +10,7 @@ using UnityEditor;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Methods to help with <see cref="KaijuAgent"/> creation.
+    /// Methods to help with <see cref="KaijuSolutions.Agents.KaijuAgent"/> creation.
     /// </summary>
     public static class KaijuAgents
     {
@@ -234,18 +234,18 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Spawn an <see cref="KaijuAgent"/>.
+        /// Spawn an <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
-        /// <param name="type">The type of <see cref="KaijuAgent"/> to spawn.</param>
-        /// <param name="position">The position to spawn the <see cref="KaijuAgent"/> at.</param>
-        /// <param name="orientation">The orientation to spawn the <see cref="KaijuAgent"/> at.</param>
-        /// <param name="cached">If this should try to load a cached <see cref="KaijuAgent"/> or not.</param>
+        /// <param name="type">The type of <see cref="KaijuSolutions.Agents.KaijuAgent"/> to spawn.</param>
+        /// <param name="position">The position to spawn the <see cref="KaijuSolutions.Agents.KaijuAgent"/> at.</param>
+        /// <param name="orientation">The orientation to spawn the <see cref="KaijuSolutions.Agents.KaijuAgent"/> at.</param>
+        /// <param name="cached">If this should try to load a cached <see cref="KaijuSolutions.Agents.KaijuAgent"/> or not.</param>
         /// <param name="prefab">A prefab to spawn in, either if using cached agents is disabled or one cannot be found rather than creating a default agent.</param>
         /// <param name="name">The name to give the spawned agent.</param>
         /// <param name="body">The color to assign the body visuals. This only works if there is an immediate child named "Body" like with the default agents.</param>
         /// <param name="eyes">The color to assign the eye visuals. This only works if there is an immediate child named "Eyes" under the "Body" like with the default agents.</param>
         /// <param name="components">All component types to ensure are added to the agent. A cached agent will only be used if it has all of these components, and otherwise will create a new agent with all components instead. This will check in children as well.</param>
-        /// <returns>The spawned <see cref="KaijuAgent"/>.</returns>
+        /// <returns>The spawned <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public static KaijuAgent Spawn(KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection<string> components = null)
         {
             KaijuAgent agent;
@@ -413,7 +413,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Create a capsule for the default <see cref="KaijuAgent"/>s.
+        /// Create a capsule for the default <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
         /// </summary>
         /// <param name="parent">The parent <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
         /// <param name="position">The local position.</param>

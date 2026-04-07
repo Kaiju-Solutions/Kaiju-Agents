@@ -395,9 +395,9 @@ namespace KaijuSolutions.Agents.Exercises.CTF
         }
         
         /// <summary>
-        /// Global callback for when a <see cref="KaijuAgent"/> has finishing becoming disabled.
+        /// Global callback for when a <see cref="KaijuSolutions.Agents.KaijuAgent"/> has finishing becoming disabled.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         protected override void OnAgentDisabled(KaijuAgent agent)
         {
             // Whenever a trooper is eliminated, start a respawn timer.

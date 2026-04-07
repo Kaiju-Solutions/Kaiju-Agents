@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents.Utility
     public abstract class KaijuUtilityBrain : KaijuBehaviour
     {
         /// <summary>
-        /// The <see cref="KaijuUtilityAction"/>s this brain can choose to perform.
+        /// The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityAction"/>s this brain can choose to perform.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The actions this brain can choose to perform.")]
@@ -35,7 +35,7 @@ namespace KaijuSolutions.Agents.Utility
         public KaijuAgent Agent { get; private set; }
         
         /// <summary>
-        /// The <see cref="KaijuUtilityAction"/> currently being performed.
+        /// The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityAction"/> currently being performed.
         /// </summary>
         public KaijuUtilityAction Current { get; private set; }
         

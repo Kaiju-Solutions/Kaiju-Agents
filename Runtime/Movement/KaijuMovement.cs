@@ -46,7 +46,7 @@ namespace KaijuSolutions.Agents.Movement
         public static event KaijuMovementAction OnPerformedGlobal;
         
         /// <summary>
-        /// The <see cref="KaijuAgent"/> the movement is assigned to.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/> the movement is assigned to.
         /// </summary>
         public KaijuAgent Agent;
 
@@ -67,7 +67,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create The movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this movement.</param>
         public KaijuMovement([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
@@ -77,7 +77,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Initialize The movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
         /// <param name="weight">The weight of this movement.</param>
         protected void Initialize([NotNull] KaijuAgent agent, float weight = DefaultWeight)
         {
@@ -160,7 +160,7 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public void EditorVisualize(Vector3 position)
         {
-            // Nothing to visualize if no <see cref="KaijuAgent"/>s.
+            // Nothing to visualize if no <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
             if (Done())
             {
                 return;
@@ -192,10 +192,10 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Implicit conversion to an <see cref="KaijuAgent"/> from the assigned <see cref="Agent"/>.
+        /// Implicit conversion to an <see cref="KaijuSolutions.Agents.KaijuAgent"/> from the assigned <see cref="Agent"/>.
         /// </summary>
         /// <param name="m">The movement.</param>
-        /// <returns>The <see cref="KaijuAgent"/>.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuMovement m) => m.Agent;
         
         /// <summary>

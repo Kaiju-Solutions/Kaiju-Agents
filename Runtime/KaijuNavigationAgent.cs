@@ -5,7 +5,7 @@ using UnityEngine.AI;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// <see cref="KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
+    /// <see cref="KaijuSolutions.Agents.KaijuAgent"/> which moves via a <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see>.
     /// </summary>
     [DisallowMultipleComponent]
     [DefaultExecutionOrder(int.MinValue + 2)]
@@ -19,12 +19,12 @@ namespace KaijuSolutions.Agents
     public sealed class KaijuNavigationAgent : KaijuAgent
     {
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
         public NavMeshAgent Nav => nav;
         
         /// <summary>
-        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuAgent"/>'s movement.
+        /// The <see href="https://docs.unity3d.com/ScriptReference/AI.NavMeshAgent.html">navigation mesh agent</see> which controls the <see cref="KaijuSolutions.Agents.KaijuAgent"/>'s movement.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The navigation mesh agent which controls the agent's movement.")]
@@ -34,9 +34,9 @@ namespace KaijuSolutions.Agents
         private NavMeshAgent nav;
         
         /// <summary>
-        /// Get the radius of an <see cref="KaijuAgent"/>.
+        /// Get the radius of an <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
-        /// <returns>The radius of the <see cref="KaijuAgent"/>.</returns>
+        /// <returns>The radius of the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public override float GetRadius()
         {
             return nav ? nav.radius : 0;
@@ -123,7 +123,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuAgent"/>. There is no point in manually calling this.
+        /// Initialize the <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no point in manually calling this.
         /// </summary>
         public override void Setup()
         {
@@ -146,7 +146,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Perform <see cref="KaijuAgent"/> movement. There is no point in manually calling this.
+        /// Perform <see cref="KaijuSolutions.Agents.KaijuAgent"/> movement. There is no point in manually calling this.
         /// </summary>
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)

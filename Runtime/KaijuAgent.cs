@@ -115,77 +115,77 @@ namespace KaijuSolutions.Agents
         public static event KaijuAgentAction OnDestroyedGlobal;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuMovement"/> has started.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has started.
         /// </summary>
         public event KaijuMovementAction OnMovementStarted;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuMovement"/> has stopped.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has stopped.
         /// </summary>
         public event KaijuMovementAction OnMovementStopped;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuMovement"/> has been performed.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has been performed.
         /// </summary>
         public event KaijuMovementAction OnMovementPerformed;
         
         /// <summary>
-        /// Callback for when all automatic <see cref="KaijuSensor"/>s have finished being executed.
+        /// Callback for when all automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s have finished being executed.
         /// </summary>
         public event KaijuAction OnAutomaticSense;
         
         /// <summary>
-        /// Global callback for when all automatic <see cref="KaijuSensor"/>s have finished being executed.
+        /// Global callback for when all automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s have finished being executed.
         /// </summary>
         public static event KaijuAgentAction OnAutomaticSenseGlobal;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuSensor"/> has been run.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been run.
         /// </summary>
         public event KaijuSensorAction OnSense;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuSensor"/> has been enabled.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been enabled.
         /// </summary>
         public event KaijuSensorAction OnSensorEnabled;
         
         /// <summary>
-        /// Callback for when a <see cref="KaijuSensor"/> has been disabled.
+        /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been disabled.
         /// </summary>
         public event KaijuSensorAction OnSensorDisabled;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has been enabled.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been enabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorEnabled;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has been disabled.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been disabled.
         /// </summary>
         public event KaijuActuatorAction OnActuatorDisabled;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has started to execute.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has started to execute.
         /// </summary>
         public event KaijuActuatorAction OnActuatorStarted;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> is continuing to execute.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> is continuing to execute.
         /// </summary>
         public event KaijuActuatorAction OnActuatorExecuting;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has successfully fully completed its action.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has successfully fully completed its action.
         /// </summary>
         public event KaijuActuatorAction OnActuatorDone;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
         /// </summary>
         public event KaijuActuatorAction OnActuatorInterrupted;
         
         /// <summary>
-        /// Callback for when an <see cref="KaijuActuator"/> has failed its execution.
+        /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has failed its execution.
         /// </summary>
         public event KaijuActuatorAction OnActuatorFailed;
         
@@ -292,24 +292,24 @@ namespace KaijuSolutions.Agents
         private bool autoRotate = true;
         
         /// <summary>
-        /// All <see cref="KaijuSensor"/>s attached to this agent.
+        /// All <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s attached to this agent.
         /// </summary>
         public IReadOnlyCollection<KaijuSensor> Sensors => _sensors;
         
         /// <summary>
-        /// The number of <see cref="KaijuSensor"/>s attached to this agent.
+        /// The number of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s attached to this agent.
         /// </summary>
         public int SensorsCount => _sensors.Count;
         
         /// <summary>
-        /// All <see cref="KaijuSensor"/>s attached to this agent.
+        /// All <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s attached to this agent.
         /// </summary>
         private readonly HashSet<KaijuSensor> _sensors = new();
         
         /// <summary>
-        /// Register a <see cref="KaijuSensor"/>. There is no point in manually calling this.
+        /// Register a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The <see cref="KaijuSensor"/> to register.</param>
+        /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> to register.</param>
         public void RegisterSensor(KaijuSensor sensor)
         {
             if (_sensors.Add(sensor))
@@ -319,9 +319,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister a <see cref="KaijuSensor"/>. There is no point in manually calling this.
+        /// Unregister a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The <see cref="KaijuSensor"/> to unregister.</param>
+        /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> to unregister.</param>
         public void UnregisterSensor(KaijuSensor sensor)
         {
             if (_sensors.Remove(sensor))
@@ -331,24 +331,24 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// All <see cref="KaijuActuator"/>s attached to this agent.
+        /// All <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s attached to this agent.
         /// </summary>
         public IReadOnlyCollection<KaijuActuator> Actuators => _actuators;
         
         /// <summary>
-        /// The number of <see cref="KaijuActuator"/>s attached to this agent.
+        /// The number of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s attached to this agent.
         /// </summary>
         public int ActuatorsCount => _actuators.Count;
         
         /// <summary>
-        /// All <see cref="KaijuActuator"/>s attached to this agent.
+        /// All <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s attached to this agent.
         /// </summary>
         private readonly HashSet<KaijuActuator> _actuators = new();
         
         /// <summary>
-        /// Register an <see cref="KaijuActuator"/>. There is no point in manually calling this.
+        /// Register an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>s to register.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to register.</param>
         public void RegisterActuator(KaijuActuator actuator)
         {
             if (_actuators.Add(actuator))
@@ -358,9 +358,9 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Unregister an <see cref="KaijuActuator"/>. There is no point in manually calling this.
+        /// Unregister an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuSensor"/> to unregister.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> to unregister.</param>
         public void UnregisterActuator(KaijuActuator actuator)
         {
             if (_actuators.Remove(actuator))
@@ -445,12 +445,12 @@ namespace KaijuSolutions.Agents
         public Vector3 RelativeVelocity3 => transform.InverseTransformDirection(Velocity3);
         
         /// <summary>
-        /// Get the forward direction of this agent along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
+        /// Get the forward direction of this agent along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuSolutions.Agents.KaijuBehaviour.Forward3"/>.
         /// </summary>
         public Vector2 MoveForward => Velocity == Vector2.zero ? Forward : Velocity;
         
         /// <summary>
-        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuBehaviour.Forward3"/>.
+        /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuSolutions.Agents.KaijuBehaviour.Forward3"/>.
         /// </summary>
         public Vector3 MoveForward3 => Velocity == Vector2.zero ? Forward3 : Velocity3;
         
@@ -1766,7 +1766,7 @@ namespace KaijuSolutions.Agents
         /// </summary>
         /// <param name="avoidance">The distance from a wall the agent should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
-        /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="KaijuObstacleAvoidanceMovement.Distance"/>.</param>
+        /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
@@ -2147,13 +2147,13 @@ namespace KaijuSolutions.Agents
                 movement.EditorVisualize(p);
             }
             
-            // Visualize all <see cref="KaijuSensor"/>s.
+            // Visualize all <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s.
             foreach (KaijuSensor sensor in _sensors)
             {
                 sensor.EditorVisualize(p);
             }
             
-            // Visualize all <see cref="KaijuActuator"/>s.
+            // Visualize all <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s.
             foreach (KaijuActuator actuator in _actuators)
             {
                 actuator.EditorVisualize(p);
@@ -2167,12 +2167,12 @@ namespace KaijuSolutions.Agents
         public abstract void Move(float delta);
         
         /// <summary>
-        /// Get a <see cref="KaijuSensor"/> of a given type.
+        /// Get a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="ignore">The optional set of <see cref="KaijuSensor"/>s to ignore from this search, meaning only a <see cref="KaijuSensor"/> not in this set can be returned.</param>
-        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
-        /// <returns>The first <see cref="KaijuSensor"/> found of the given type or NULL if there are none found.</returns>
+        /// <param name="ignore">The optional set of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s to ignore from this search, meaning only a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> not in this set can be returned.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</typeparam>
+        /// <returns>The first <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> found of the given type or NULL if there are none found.</returns>
         public T GetSensor<T>(ISet<T> ignore = null, bool automatic = true) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -2190,11 +2190,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuSensor"/> of a given type.
+        /// Get all <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
-        /// <returns>The set of <see cref="KaijuSensor"/>s found.</returns>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</typeparam>
+        /// <returns>The set of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s found.</returns>
         public HashSet<T> GetSensors<T>(bool automatic = true) where T : KaijuSensor
         {
             HashSet<T> sensors = new();
@@ -2203,12 +2203,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuSensor"/> of a given type.
+        /// Get all <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> of a given type.
         /// </summary>
-        /// <param name="sensors">The set of <see cref="KaijuSensor"/>s to add the found <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
-        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
-        /// <returns>The number of <see cref="KaijuSensor"/>s added to the set.</returns>
+        /// <param name="sensors">The set of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s to add the found <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to allow the return of automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s added to the set.</returns>
         public int GetSensors<T>([NotNull] ISet<T> sensors, bool automatic = true) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -2227,11 +2227,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get a <see cref="KaijuActuator"/> of a given type.
+        /// Get a <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> of a given type.
         /// </summary>
-        /// <param name="ignore">The optional set of <see cref="KaijuActuator"/>s to ignore from this search, meaning only a <see cref="KaijuActuator"/> not in this set can be returned.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
-        /// <returns>The first <see cref="KaijuActuator"/> found of the given type or NULL if there are none found.</returns>
+        /// <param name="ignore">The optional set of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to ignore from this search, meaning only a <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> not in this set can be returned.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</typeparam>
+        /// <returns>The first <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> found of the given type or NULL if there are none found.</returns>
         public T GetActuator<T>(ISet<T> ignore = null) where T : KaijuActuator
         {
             // Use an explicit type to only run exact matches.
@@ -2249,10 +2249,10 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuActuator"/> of a given type.
+        /// Get all <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> of a given type.
         /// </summary>
-        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
-        /// <returns>The set of <see cref="KaijuActuator"/>s found.</returns>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</typeparam>
+        /// <returns>The set of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s found.</returns>
         public HashSet<T> GetActuators<T>() where T : KaijuActuator
         {
             HashSet<T> actuators = new();
@@ -2261,11 +2261,11 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Get all <see cref="KaijuActuator"/> of a given type.
+        /// Get all <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> of a given type.
         /// </summary>
-        /// <param name="actuators">The set of <see cref="KaijuActuator"/>s to add the found <see cref="KaijuActuator"/>s to. If you wish to have this cleared, you must manually do so before.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuActuator"/>.</typeparam>
-        /// <returns>The number of <see cref="KaijuActuator"/>s added to the set.</returns>
+        /// <param name="actuators">The set of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to add the found <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s added to the set.</returns>
         public int GetActuators<T>([NotNull] ISet<T> actuators) where T : KaijuActuator
         {
             // Use an explicit type to only run exact matches.
@@ -2284,12 +2284,12 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Manually run all <see cref="KaijuSensor"/>s of a type attached to this agent.
+        /// Manually run all <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s of a type attached to this agent.
         /// </summary>
-        /// <param name="sensors">The optional set of <see cref="KaijuSensor"/>s to add the executed <see cref="KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
-        /// <param name="automatic">If you also want to run automatic <see cref="KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
-        /// <typeparam name="T">The type of <see cref="KaijuSensor"/>.</typeparam>
-        /// <returns>The number of <see cref="KaijuSensor"/>s which were run.</returns>
+        /// <param name="sensors">The optional set of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s to add the executed <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s to. If you wish to have this cleared, you must manually do so before.</param>
+        /// <param name="automatic">If you also want to run automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s, which are automatically run in <see cref="SenseAutomatic"/>.</param>
+        /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</typeparam>
+        /// <returns>The number of <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s which were run.</returns>
         public int Sense<T>(ICollection<T> sensors = null, bool automatic = false) where T : KaijuSensor
         {
             // Use an explicit type to only run exact matches.
@@ -2312,7 +2312,7 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Execute all automatically-running <see cref="KaijuSensor"/>s. There is no point in manually calling this.
+        /// Execute all automatically-running <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s. There is no point in manually calling this.
         /// </summary>
         public void SenseAutomatic()
         {
@@ -2329,16 +2329,16 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Called by a <see cref="KaijuSensor"/> when it has been run. There is no point in manually calling this.
+        /// Called by a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> when it has been run. There is no point in manually calling this.
         /// </summary>
-        /// <param name="sensor">The <see cref="KaijuSensor"/> which has been run.</param>
+        /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> which has been run.</param>
         public void SensorRun([NotNull] KaijuSensor sensor)
         {
             OnSense?.Invoke(sensor);
         }
         
         /// <summary>
-        /// Execute all <see cref="KaijuActuator"/>s. There is no point in manually calling this.
+        /// Execute all <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s. There is no point in manually calling this.
         /// </summary>
         public void Act()
         {
@@ -2349,45 +2349,45 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Allow for <see cref="KaijuActuator"/>s to trigger that they have started. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to trigger that they have started. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         public void ActuatorStarted(KaijuActuator actuator)
         {
             OnActuatorStarted?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for <see cref="KaijuActuator"/>s to trigger that they are executing. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to trigger that they are executing. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         public void ActuatorExecuting(KaijuActuator actuator)
         {
             OnActuatorExecuting?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for <see cref="KaijuActuator"/>s to trigger that they are done. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to trigger that they are done. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         public void ActuatorDone(KaijuActuator actuator)
         {
             OnActuatorDone?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for <see cref="KaijuActuator"/>s to trigger that they were interrupted. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to trigger that they were interrupted. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         public void ActuatorInterrupted(KaijuActuator actuator)
         {
             OnActuatorInterrupted?.Invoke(actuator);
         }
         
         /// <summary>
-        /// Allow for <see cref="KaijuActuator"/>s to trigger that they failed. There is no point in manually calling this.
+        /// Allow for <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s to trigger that they failed. There is no point in manually calling this.
         /// </summary>
-        /// <param name="actuator">The <see cref="KaijuActuator"/>.</param>
+        /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
         public void ActuatorFailed(KaijuActuator actuator)
         {
             OnActuatorFailed?.Invoke(actuator);
@@ -2470,17 +2470,17 @@ namespace KaijuSolutions.Agents
         public static implicit operator KaijuAgent([NotNull] Transform t) => t.GetComponent<KaijuAgent>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuController"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuController"/>.
         /// </summary>
         /// <param name="a">The agent.</param>
-        /// <returns>The <see cref="KaijuController"/> attached to the agent if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuController"/> attached to the agent if there was one.</returns>
         public static implicit operator KaijuController([NotNull] KaijuAgent a) => a.GetComponent<KaijuController>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuGlobalController"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuGlobalController"/>.
         /// </summary>
         /// <param name="a">The agent.</param>
-        /// <returns>The <see cref="KaijuGlobalController"/> attached to the agent if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuGlobalController"/> attached to the agent if there was one.</returns>
         public static implicit operator KaijuGlobalController([NotNull] KaijuAgent a) => a.GetComponent<KaijuGlobalController>();
         
         /// <summary>

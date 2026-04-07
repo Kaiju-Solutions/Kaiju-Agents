@@ -13,37 +13,37 @@ namespace KaijuSolutions.Agents.Movement
     public class KaijuObstacleAvoidanceMovement : KaijuMovement
     {
         /// <summary>
-        /// The default <see cref="Avoidance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="Avoidance"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultAvoidance = 2;
         
         /// <summary>
-        /// The default <see cref="Distance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="Distance"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultDistance = 5;
         
         /// <summary>
-        /// The default <see cref="SideDistance"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="SideDistance"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultSideDistance = 0;
         
         /// <summary>
-        /// The default <see cref="Angle"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="Angle"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultAngle = 15;
         
         /// <summary>
-        /// The default <see cref="Height"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="Height"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultHeight = 1;
         
         /// <summary>
-        /// The default <see cref="Horizontal"/> for <see cref="KaijuObstacleAvoidanceMovement"/>s.
+        /// The default <see cref="Horizontal"/> for <see cref="KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement"/>s.
         /// </summary>
         public const float DefaultHorizontal = 0;
         
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
         public float Avoidance
         {
@@ -52,7 +52,7 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// The distance from a wall the <see cref="KaijuAgent"/> should maintain.
+        /// The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.
         /// </summary>
         private float _avoidance;
         
@@ -127,15 +127,15 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Get an obstacle avoidance movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
-        /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuAgent"/>.</returns>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
+        /// <returns>Get an obstacle avoidance movement for the <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</returns>
         public static KaijuObstacleAvoidanceMovement Get([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance, float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
         {
             KaijuObstacleAvoidanceMovement movement = KaijuMovementManager.Get<KaijuObstacleAvoidanceMovement>();
@@ -151,30 +151,30 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// Create an obstacle avoidance movement.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public KaijuObstacleAvoidanceMovement([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight) : base(agent, weight)
         {
             Initialize(agent, avoidance, distance, sideDistance, angle, height, horizontal, weight);
         }
         
         /// <summary>
-        /// Initialize the <see cref="KaijuMovement"/>.
+        /// Initialize the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/> this is assigned to.</param>
-        /// <param name="avoidance">The distance from a wall the <see cref="KaijuAgent"/> should maintain.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> this is assigned to.</param>
+        /// <param name="avoidance">The distance from a wall the <see cref="KaijuSolutions.Agents.KaijuAgent"/> should maintain.</param>
         /// <param name="distance">The distance for rays.</param>
         /// <param name="sideDistance">The distance of the side rays. Zero or less will use the <see cref="Distance"/>.</param>
         /// <param name="angle">The angle for side rays.</param>
         /// <param name="height">The height offset for the rays.</param>
         /// <param name="horizontal">The horizontal shift for the side rays.</param>
-        /// <param name="weight">The weight of this <see cref="KaijuMovement"/>.</param>
+        /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         protected void Initialize([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
         {
             base.Initialize(agent, weight);
@@ -206,9 +206,9 @@ namespace KaijuSolutions.Agents.Movement
         }
         
         /// <summary>
-        /// Get the <see cref="KaijuMovement"/>.
+        /// Get the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
         /// </summary>
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         /// <returns>The calculated move vector.</returns>
@@ -290,8 +290,8 @@ namespace KaijuSolutions.Agents.Movement
         protected override Color EditorVisualizationColor() => KaijuMovementManager.EditorObstacleAvoidanceColor;
         
         /// <summary>
-        /// Render the visualization of the <see cref="KaijuMovement"/>.
-        /// <param name="position">The position of the <see cref="KaijuMovement.Agent"/>.</param>
+        /// Render the visualization of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement.Agent"/>.</param>
         /// </summary>
         protected override void EditorRenderVisualizations(Vector3 position)
         {

@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
     public class KaijuSeparationMovementTester : KaijuMovementTester
     {
         /// <summary>
-        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The distance to interact with other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.
         /// </summary>
         public float Distance
         {
@@ -26,7 +26,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         }
         
         /// <summary>
-        /// The distance to interact with other <see cref="KaijuAgent"/>s from.
+        /// The distance to interact with other <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The distance to interact with other agents from.")]
@@ -55,12 +55,12 @@ namespace KaijuSolutions.Agents.Samples.Movement
         private float coefficient = KaijuSeparationMovement.DefaultCoefficient;
         
         /// <summary>
-        /// What types of <see cref="KaijuAgent"/>s to avoid.
+        /// What types of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to avoid.
         /// </summary>
         public IReadOnlyList<uint> Identifiers => identifiers;
         
         /// <summary>
-        /// What types of <see cref="KaijuAgent"/>s to avoid.
+        /// What types of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to avoid.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("What types of agents to avoid.")]
@@ -71,7 +71,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {

@@ -18,7 +18,7 @@ namespace KaijuSolutions.Agents.Samples.Movement
         /// <summary>
         /// Assign this <see cref="Agents.Movement.KaijuMovement"/> to the one of the <see cref="Agents"/>.
         /// </summary>
-        /// <param name="agent">The <see cref="KaijuAgent"/>.</param>
+        /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <returns>The <see cref="Agents.Movement.KaijuMovement"/>.</returns>
         protected override KaijuMovement Assign([NotNull] KaijuAgent agent)
         {

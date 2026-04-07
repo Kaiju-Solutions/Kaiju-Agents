@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Utility
 {
     /// <summary>
-    /// <see cref="KaijuUtilityConsideration"/> which acts as a boolean, returning one or zero depending on its evaluation.
+    /// <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityConsideration"/> which acts as a boolean, returning one or zero depending on its evaluation.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -15,7 +15,7 @@ namespace KaijuSolutions.Agents.Utility
     public class KaijuUtilityBooleanConsideration : KaijuUtilityKeyConsideration
     {
         /// <summary>
-        /// If the result should be inverted, meaning a true value in the <see cref="KaijuUtilityKeyConsideration.Key"/> will return a zero instead of a one and vice versa.
+        /// If the result should be inverted, meaning a true value in the <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityKeyConsideration.Key"/> will return a zero instead of a one and vice versa.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("If the result should be inverted, meaning a true value in the key will return a zero instead of a one and vice versa.")]
@@ -25,7 +25,7 @@ namespace KaijuSolutions.Agents.Utility
         /// <summary>
         /// Get the utility for this consideration from [0, 1].
         /// </summary>
-        /// <param name="brain">The <see cref="KaijuUtilityBrain"/> this is considering for.</param>
+        /// <param name="brain">The <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/> this is considering for.</param>
         /// <returns>The utility score for this consideration from [0, 1].</returns>
         public override float Evaluate([NotNull] KaijuUtilityBrain brain)
         {

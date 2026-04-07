@@ -4,7 +4,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Actuator for controlling an <see cref="KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Actuator for controlling an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
     /// </summary>
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
@@ -14,7 +14,7 @@ namespace KaijuSolutions.Agents.Learning
     public abstract class KaijuLearningAgentActuator : KaijuLearningActuatorBase
     {
         /// <summary>
-        /// The <see cref="KaijuAgent"/>.
+        /// The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
 #if UNITY_EDITOR
         [field: Tooltip("The agent.")]

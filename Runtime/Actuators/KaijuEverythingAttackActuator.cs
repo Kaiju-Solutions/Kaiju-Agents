@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Actuators
 {
     /// <summary>
-    /// <see cref="KaijuAttackActuator"/> based on <see href="https://docs.unity3d.com/Manual/class-Transform.html">transforms</see>, allowing it to attack anything. You can optionally filter objects by name to limit what is returned.
+    /// <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator"/> based on <see href="https://docs.unity3d.com/Manual/class-Transform.html">transforms</see>, allowing it to attack anything. You can optionally filter objects by name to limit what is returned.
     /// As <see href="https://docs.unity3d.com/Manual/class-Transform.html">transforms</see> are directly returned by hits in the underlying class, this is actually quite efficient than compared to making a custom version to get a specific component type.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 1)]
@@ -120,10 +120,10 @@ namespace KaijuSolutions.Agents.Actuators
         public static implicit operator KaijuEverythingAttackActuator([NotNull] Transform t) => t.GetComponent<KaijuEverythingAttackActuator>();
         
         /// <summary>
-        /// Implicit conversion to a <see cref="KaijuAgent"/>.
+        /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="s">The everything attack actuator.</param>
-        /// <returns>The <see cref="KaijuAgent"/> attached to the everything attack actuator if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the everything attack actuator if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuEverythingAttackActuator s) => s.Agent;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Integrate <see cref="KaijuCastSensor"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. This normalizes all rays from zero to one.
+    /// Integrate <see cref="KaijuSolutions.Agents.Sensors.KaijuCastSensor"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. This normalizes all rays from zero to one.
     /// </summary>
 #if UNITY_EDITOR
     [AddComponentMenu("Kaiju Solutions/Agents/ML-Agents/Sensors/Kaiju Learning Cast Sensor", 0)]
@@ -17,7 +17,7 @@ namespace KaijuSolutions.Agents.Learning
     public class KaijuLearningCastSensor : KaijuLearningSensor
     {
         /// <summary>
-        /// The <see cref="KaijuCastSensor"/>. Do not modify the properties of this sensor at runtime.
+        /// The <see cref="KaijuSolutions.Agents.Sensors.KaijuCastSensor"/>. Do not modify the properties of this sensor at runtime.
         /// </summary>
 #if UNITY_EDITOR
         [Tooltip("The cast sensor. Do not modify the properties of this sensor at runtime.")]
