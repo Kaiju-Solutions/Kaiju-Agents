@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Actuator for controlling the movement of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Actuator for controlling the movement of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> via the <see cref="KaijuSolutions.Agents.KaijuAgent.Control"/> property for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. This has two continuous actions which are assigned to the <see cref="KaijuSolutions.Agents.KaijuAgent.Control"/> property. This has no <see cref="Heuristic"/> implementation, and you will need to extend this class and override for your use case.
     /// </summary>
     [DisallowMultipleComponent]
 #if UNITY_EDITOR
@@ -34,17 +34,15 @@ namespace KaijuSolutions.Agents.Learning
         /// </summary>
         /// <param name="actionMask"> The action mask for the agent.</param>
         public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask) { }
-        
+
         /// <summary>
         /// Method called on objects which are expected to fill out the <see cref="actionBuffersOut"/> data structure. Object that implement this interface should be careful to be consistent in the placement of their actions in the <see cref="actionBuffersOut"/> data structure.
         /// </summary>
         /// <param name="actionBuffersOut">The action buffers data structure to be filled by the object implementing this interface.</param>
         public override void Heuristic(in ActionBuffers actionBuffersOut)
         {
-            // Get however the agent is currently moving as the action.
-            Vector2 velocity = (Agent.globalControl ? Agent.Velocity : Agent.RelativeVelocity) / Agent.MoveSpeed;
-            actionBuffersOut.ContinuousActions.Array[0] = velocity.x;
-            actionBuffersOut.ContinuousActions.Array[1] = velocity.y;
+            actionBuffersOut.ContinuousActions.Array[0] = 0f;
+            actionBuffersOut.ContinuousActions.Array[1] = 0f;
         }
     }
 }

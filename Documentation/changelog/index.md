@@ -2,11 +2,12 @@
 
 ### 1.3.1
 
+- Improved clarity on the [Unity ML-Agents integration](https://agents.kaijusolutions.ca/manual/ml-agents.html "Unity ML-Agents").
 - Fixed documentation generation errors.
 
 ### 1.3.0
 
-- Integration with [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents").
+- Added [Integration with Unity ML-Agents](https://agents.kaijusolutions.ca/manual/ml-agents.html "Unity ML-Agents").
 
 ### 1.2.1
 

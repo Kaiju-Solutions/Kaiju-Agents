@@ -6,7 +6,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Use <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>.
+    /// Use <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator"/>s with <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. This has three discrete actions, being to do nothing, run the <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>, or cancel running it. These actions are masked accordingly. Compared to the <see cref="KaijuSolutions.Agents.Learning.KaijuLearningActuator"/>, this takes into account the <see cref="KaijuSolutions.Agents.Actuators.KaijuAttackActuator"/> being on cooldown when masking actions. This has no <see cref="Heuristic"/> implementation, and you will need to extend this class and override for your use case.
     /// </summary>
     [RequireComponent(typeof(KaijuAttackActuator))]
 #if UNITY_EDITOR
@@ -24,11 +24,6 @@ namespace KaijuSolutions.Agents.Learning
 #endif
         [SerializeField]
         private KaijuAttackActuator actuator;
-        
-        /// <summary>
-        /// The value to pass for the heuristic methods.
-        /// </summary>
-        private int _heuristic;
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.
@@ -41,46 +36,6 @@ namespace KaijuSolutions.Agents.Learning
             }
         }
 #endif
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before any of the Update methods are called the first time. This function can be a coroutine.
-        /// </summary>
-        private void Start()
-        {
-            _heuristic = 0;
-            actuator.OnStarted += OnStarted;
-            actuator.OnInterrupted += OnInterrupted;
-        }
-        
-        /// <summary>
-        /// Called when a GameObject or component is about to be destroyed.
-        /// </summary>
-        private void OnDestroy()
-        {
-            if (!actuator)
-            {
-                return;
-            }
-            
-            actuator.OnStarted -= OnStarted;
-            actuator.OnInterrupted -= OnInterrupted;
-        }
-
-        /// <summary>
-        /// Callback for when the <see cref="actuator"/> has started to execute.
-        /// </summary>
-        private void OnStarted()
-        {
-            _heuristic = 1;
-        }
-        
-        /// <summary>
-        /// Callback for when the <see cref="actuator"/> has been interrupted during its execution, cancelling the execution.
-        /// </summary>
-        private void OnInterrupted()
-        {
-            _heuristic = 2;
-        }
-        
         /// <summary>
         /// The specification of the possible actions for this actuator component. This must produce the same results as the corresponding IActuator's ActionSpec.
         /// </summary>
@@ -124,8 +79,7 @@ namespace KaijuSolutions.Agents.Learning
         /// <param name="actionBuffersOut">The action buffers data structure to be filled by the object implementing this interface.</param>
         public override void Heuristic(in ActionBuffers actionBuffersOut)
         {
-            actionBuffersOut.DiscreteActions.Array[0] = _heuristic;
-            _heuristic = 0;
+            actionBuffersOut.DiscreteActions.Array[0] = 0;
         }
     }
 }
