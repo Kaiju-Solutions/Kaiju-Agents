@@ -1,0 +1,224 @@
+/* DocFX Dark Mode Styles */
+
+/* Base Theme Variables - Light Mode (Default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #0078d4;
+  --navbar-bg: #222222;
+  --navbar-text: #9d9d9d;
+  --sidebar-bg: #f5f5f5;
+  --border-color: #e5e5e5;
+  --code-bg: #f8f8f8;
+  --code-text: #c7254e;
+  --table-border: #ddd;
+  --table-stripe: #f9f9f9;
+}
+
+/* Dark Mode Variables */
+.theme-dark {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --link-color: #58a6ff;
+  --navbar-bg: #24292e;
+  --navbar-text: #ffffff;
+  --sidebar-bg: #1f1f1f;
+  --border-color: #30363d;
+  --code-bg: #161b22;
+  --code-text: #ff7b72;
+  --table-border: #30363d;
+  --table-stripe: #161b22;
+}
+
+/* Base element overrides using variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-dark {
+  background-color: var(--bg-color);
+}
+
+.theme-dark .container-fluid,
+.theme-dark .container,
+.theme-dark .body-content {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-dark .sideaffix,
+.theme-dark .bs-docs-sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.theme-dark .subnav,
+.theme-dark .toc {
+  background-color: var(--sidebar-bg);
+  border-color: var(--border-color);
+}
+
+.theme-dark .navbar {
+  background-color: var(--navbar-bg);
+  border-color: var(--border-color);
+}
+
+.theme-dark .navbar-inverse {
+  background-color: var(--navbar-bg);
+  border-color: var(--border-color);
+}
+
+.theme-dark .navbar-inverse .navbar-nav > li > a {
+  color: var(--navbar-text);
+}
+
+.theme-dark .navbar-inverse .navbar-brand {
+  color: var(--navbar-text);
+}
+
+.theme-dark a {
+  color: var(--link-color);
+}
+
+.theme-dark blockquote {
+  border-left-color: var(--border-color);
+  color: #8b949e;
+  background-color: #161b22;
+}
+
+.theme-dark code {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+}
+
+.theme-dark pre {
+  background-color: var(--code-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.theme-dark table {
+  border-color: var(--table-border);
+}
+
+.theme-dark table > thead > tr > th,
+.theme-dark table > tbody > tr > th,
+.theme-dark table > tfoot > tr > th,
+.theme-dark table > thead > tr > td,
+.theme-dark table > tbody > tr > td,
+.theme-dark table > tfoot > tr > td {
+  border-color: var(--table-border);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-dark table > tbody > tr:nth-of-type(odd) {
+  background-color: var(--table-stripe);
+}
+
+.theme-dark .form-control {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border-color: var(--border-color);
+}
+
+.theme-dark .btn-default {
+  background-color: #21262d;
+  color: #c9d1d9;
+  border-color: var(--border-color);
+}
+
+.theme-dark .pagination > li > a,
+.theme-dark .pagination > li > span {
+  background-color: #161b22;
+  border-color: var(--border-color);
+  color: var(--link-color);
+}
+
+.theme-dark .pagination > .active > a,
+.theme-dark .pagination > .active > span {
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: #fff;
+}
+
+/* Sidebar and TOC specific dark mode */
+.theme-dark #toc .nav > li > a {
+  color: var(--text-color);
+}
+
+.theme-dark #toc .nav > li > a:hover,
+.theme-dark #toc .nav > li > a:focus {
+  background-color: #2d333b;
+  color: var(--link-color);
+}
+
+.theme-dark #toc .nav > li.active > a {
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.theme-dark .sidetoc {
+  background-color: var(--sidebar-bg);
+  border-color: var(--border-color);
+}
+
+.theme-dark .sidetoc .toc-filter {
+  background-color: var(--sidebar-bg);
+  border-color: var(--border-color);
+}
+
+/* Article specific dark mode */
+.theme-dark article h1,
+.theme-dark article h2,
+.theme-dark article h3,
+.theme-dark article h4,
+.theme-dark article h5,
+.theme-dark article h6 {
+  color: var(--text-color);
+}
+
+.theme-dark .footer {
+  background-color: var(--sidebar-bg);
+  border-top-color: var(--border-color);
+  color: #8b949e;
+}
+
+/* Theme Toggle Button Styling */
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--navbar-text);
+  padding: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.2s ease-in-out;
+}
+
+#theme-toggle:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.theme-dark #theme-toggle .sun {
+  display: inline-block;
+}
+
+.theme-dark #theme-toggle .moon {
+  display: none;
+}
+
+#theme-toggle .sun {
+  display: none;
+}
+
+#theme-toggle .moon {
+  display: inline-block;
+}
+
+/* Hide the toggle by default until JS initializes it */
+#theme-toggle {
+  opacity: 0.8;
+}
