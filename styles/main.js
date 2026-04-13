@@ -1,9 +1,14 @@
+/**
+ * Filters the in-page table of contents (affix) based on user input.
+ */
 function filterAffix() {
   var input = document.getElementById('affix-filter');
   if (!input) return;
+  
   var filter = input.value.toUpperCase();
-  var allItems = document.querySelectorAll('#affix ul li');
-  var allUls = document.querySelectorAll('#affix ul');
+  // Target both standard BS3/BS4 and BS5 (modern template) structures
+  var allItems = document.querySelectorAll('#affix .nav-item, #affix li');
+  var allUls = document.querySelectorAll('#affix .nav, #affix ul');
   
   // Initially show everything if filter is empty
   if (filter === "") {
@@ -36,7 +41,7 @@ function filterAffix() {
         // Show all parent li and ul elements to ensure the path to the matching item is visible
         var parent = item.parentElement;
         while (parent && parent.id !== 'affix') {
-          if (parent.tagName === 'LI' || parent.tagName === 'UL') {
+          if (parent.tagName === 'LI' || parent.tagName === 'UL' || parent.classList.contains('nav') || parent.classList.contains('nav-item')) {
             parent.style.display = "block";
           }
           parent = parent.parentElement;
