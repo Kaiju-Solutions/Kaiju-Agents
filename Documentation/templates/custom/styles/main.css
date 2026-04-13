@@ -222,3 +222,27 @@ body {
 #theme-toggle {
   opacity: 0.8;
 }
+
+/* Navbar container adjustment for better layout */
+.navbar-right-container {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  .navbar-right-container {
+    float: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  .navbar-form {
+    flex-grow: 1;
+    margin: 0;
+  }
+}
+
+.theme-dark .navbar-right-container {
+  border-top-color: var(--border-color);
+}
