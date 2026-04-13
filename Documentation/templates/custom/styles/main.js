@@ -45,3 +45,46 @@ function filterAffix() {
     }
   }
 }
+
+// Theme Toggle Logic
+(function () {
+  const themeKey = 'docfx-theme';
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+
+  function getPreferredTheme() {
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme) {
+      return savedTheme;
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      html.classList.add('theme-dark');
+    } else {
+      html.classList.remove('theme-dark');
+    }
+    localStorage.setItem(themeKey, theme);
+  }
+
+  // Initial application
+  const currentTheme = getPreferredTheme();
+  applyTheme(currentTheme);
+
+  // Toggle button click handler
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      const newTheme = html.classList.contains('theme-dark') ? 'light' : 'dark';
+      applyTheme(newTheme);
+    });
+  }
+
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem(themeKey)) {
+      applyTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+})();
