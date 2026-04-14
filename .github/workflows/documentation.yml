@@ -95,7 +95,7 @@ jobs:
           python -c '
           import json, os, urllib.request, re, sys
           target_unity = "'"$PROJECT_VER"'"
-          packages_to_inject = ["com.unity.behavior", "com.unity.ml-agents"]
+          packages_to_inject = ["com.unity.behavior", "com.unity.ml-agents", "com.unity.inputsystem"]
           
           def get_latest_compatible(pkg, unity_ver):
               try:
