@@ -186,16 +186,15 @@ body.dark-mode .panel-default > .panel-heading {
 /* Theme Toggle Header Button Styling */
 #theme-toggle {
     cursor: pointer;
-    font-size: 16px; /* Slightly larger for easier clicking */
+    font-size: 16px; 
     display: flex;
     align-items: center;
     height: 100%;
-}
-
-body.dark-mode #theme-toggle {
     color: #e0e0e0;
 }
 
-body.dark-mode #theme-toggle:hover {
+#theme-toggle:hover,
+#theme-toggle:focus {
     color: #ffffff;
+    text-decoration: none;
 }
