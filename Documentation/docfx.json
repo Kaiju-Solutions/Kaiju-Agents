@@ -12,9 +12,6 @@
                     ]
                 }
             ],
-            "references": [
-                "Dependencies/**/*.dll"
-            ],
             "globalNamespaceId": "Global",
             "filter": "filterConfig.yml",
             "dest": "api",
