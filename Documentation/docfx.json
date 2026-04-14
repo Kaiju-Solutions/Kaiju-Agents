@@ -22,7 +22,7 @@
     "build": {
         "template": [
             "default",
-			"templates/custom"
+			"custom"
         ],
         "globalMetadata": {
             "_appTitle": "Kaiju Agents",
