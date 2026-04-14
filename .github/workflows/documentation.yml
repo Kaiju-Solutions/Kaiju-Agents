@@ -1,12 +1,6 @@
 name: Create Documentation
 
 on:
-  # Run every push.
-  #push:
-  #  branches:
-  #    - main
-
-  # Manually run from the Actions tab.
   workflow_dispatch:
 
 # Concurrency group to cancel in-progress runs of this workflow on the same branch.
@@ -15,7 +9,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Delete all old jobs before starting this new one.
   delete-old-runs:
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +20,6 @@ jobs:
           retain_days: 0
           keep_minimum_runs: 0
 
-  # Delete all old deployments before starting this new one.
   delete-old-deployments:
     needs: delete-old-runs
     runs-on: ubuntu-latest
@@ -39,24 +31,32 @@ jobs:
           environment: github-pages
           onlyRemoveDeployments: true
 
-  # Build the documentation.
   build:
     needs: delete-old-deployments
-    # DocFX needs Windows.
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
           submodules: true
 
-      # DocFx can't recognize compiler flags so change them based on set flags.
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      # Spins up a lightweight Unity container to copy the core DLLs into our workspace.
+      # Because we are just extracting files and not launching the Editor, no Unity License is required.
+      - name: Automate Unity DLL Extraction
+        run: |
+          mkdir -p Documentation/Dependencies
+          docker run --rm -v ${{ github.workspace }}:/workspace unityci/editor:ubuntu-2022.3.15f1-base-3.0.0 bash -c "cp -r /opt/unity/Editor/Data/Managed/* /workspace/Documentation/Dependencies/ && chmod -R 777 /workspace/Documentation/Dependencies/"
+
       - name: Handle Precompiler Definitions
         run: |
           $trueDefinesFile = "Documentation/TRUE.txt"
           $falseDefinesFile = "Documentation/FALSE.txt"
 
-          # Load TRUE definitions if the file exists.
           $trueDefines = @()
           if (Test-Path $trueDefinesFile) {
               $trueDefines = Get-Content $trueDefinesFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
@@ -65,7 +65,6 @@ jobs:
               Write-Host "'$trueDefinesFile' not found. No symbols will be replaced with TRUE."
           }
 
-          # Load FALSE definitions if the file exists.
           $falseDefines = @()
           if (Test-Path $falseDefinesFile) {
               $falseDefines = Get-Content $falseDefinesFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
@@ -74,33 +73,27 @@ jobs:
               Write-Host "'$falseDefinesFile' not found. No symbols will be replaced with FALSE."
           }
 
-          # Exit if no definitions were loaded.
           if ($trueDefines.Count -eq 0 -and $falseDefines.Count -eq 0) {
               Write-Host "No define symbol files found or files are empty. Skipping replacement."
               return
           }
 
-          # Get all C# files recursively.
           $csFiles = Get-ChildItem -Path . -Filter *.cs -Recurse
 
-          # Iterate over each C# file and apply replacements.
           foreach ($file in $csFiles) {
               $originalContent = Get-Content $file.FullName -Raw
               $newContent = $originalContent
 
-              # Replace symbols with 'TRUE'.
               foreach ($define in $trueDefines) {
                   $pattern = "\b$([regex]::Escape($define))\b"
                   $newContent = $newContent -creplace $pattern, 'TRUE'
               }
 
-              # Replace symbols with 'FALSE'.
               foreach ($define in $falseDefines) {
                   $pattern = "\b$([regex]::Escape($define))\b"
                   $newContent = $newContent -creplace $pattern, 'FALSE'
               }
 
-              # Write content back to file only if changes were made.
               if ($originalContent -ne $newContent) {
                   Write-Host "Updating definitions in: $($file.FullName)"
                   Set-Content -Path $file.FullName -Value $newContent
@@ -111,16 +104,15 @@ jobs:
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
-        # Ensure a clean build for safety.
       - name: Clean DocFX Intermediate Files
-        run: Remove-Item -Path Documentation/obj -Recurse -Force -ErrorAction SilentlyContinue
+        run: rm -rf Documentation/obj
 
       - name: Use README.md as index.md
         run: cp README.md Documentation/index.md
 
       - name: Copy LICENSE.md
         run: |
-          New-Item -Path "Documentation/license" -ItemType Directory -Force
+          mkdir -p Documentation/license
           cp LICENSE.md Documentation/license/index.md
 
       - name: Documentation Folder Contents Before Build
@@ -136,7 +128,6 @@ jobs:
           Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
         shell: pwsh
       
-      # Reorder the API TOC and write custom names.
       - name: Update API TOC Order and Names
         shell: pwsh
         run: |
@@ -144,44 +135,35 @@ jobs:
           $namespacesDir = "Documentation/namespaces"
           $orderFile = "Documentation/toc_order.txt"
 
-          # --- PRE-CHECKS ---
           if (-not (Test-Path $tocFile -PathType Leaf)) {
               Write-Host "TOC file not found at '$tocFile'. Skipping update."
               exit 0
           }
 
-          # Read the current TOC content
           $tocContent = Get-Content $tocFile -Raw
 
-          # --- PART 1: REORDERING ---
           if (Test-Path $orderFile -PathType Leaf) {
               Write-Host "Found TOC order file. Reordering entries..."
               $desiredOrder = Get-Content $orderFile | ForEach-Object { $_.Trim() } | Where-Object { $_ }
 
-              # Split the TOC into individual blocks. 
-              # This regex splits before "- uid:" ensuring we capture the full block for each entry.
               $tocEntries = $tocContent -split '(?m)^(?=- uid:)' | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
 
               $sortedEntries = $tocEntries | Sort-Object {
-                  # Extract the UID from the current block to find its index in the order file
                   if ($_ -match "uid:\s*(\S+)") {
                       $uid = $matches[1]
                       $index = $desiredOrder.IndexOf($uid)
-                      # If UID is found in the order file, use its index. Otherwise, push it to the end (9999).
                       if ($index -ne -1) { $index } else { 9999 }
                   } else {
                       9999
                   }
               }
 
-              # Rebuild the TOC content.
               $tocContent = $sortedEntries -join ""
               Write-Host "TOC reordered."
           } else {
               Write-Host "No '$orderFile' found. Skipping reorder."
           }
 
-          # Apply renames.
           if (Test-Path $namespacesDir -PathType Container) {
               $namespaceFiles = Get-ChildItem -Path $namespacesDir -Filter *.txt
               
@@ -197,7 +179,6 @@ jobs:
           
                   foreach ($originalName in $nameMappings.Keys) {
                       $niceName = $nameMappings[$originalName]
-                      # Regex matches "name: " followed by the exact namespace, ensuring no partial matches.
                       $pattern = "(name:\s+)$([regex]::Escape($originalName))(?!\S)"
                       if ($tocContent -match $pattern) {
                           Write-Host "Updating name for '$originalName'."
@@ -207,97 +188,67 @@ jobs:
               }
           }
           
-          # --- SAVE CHANGES ---
           Set-Content -Path $tocFile -Value $tocContent
           Write-Host "Updated '$tocFile' successfully."
 
-      # Write the contents of the specified YML file to the log.
       - name: Show API YML Contents
-        run: Get-Content Documentation\api\toc.yml
+        run: Get-Content Documentation/api/toc.yml
         shell: pwsh
       
-      # Build the API.
       - name: Build Documentation Website
         run: docfx build Documentation/docfx.json -l Verbose
 
-      # Copy over the 404.html file to the root of the build output.
       - name: Copy 404.html
-        run: Copy-Item -Path Documentation/404.html -Destination _site/404.html
-        shell: pwsh
+        run: cp Documentation/404.html _site/404.html
 
-      # Clean "index.html" links for prettier URLs.
       - name: Clean Site HTML
         shell: pwsh
         run: |
           $siteDir = "_site"
-          # Get all HTML files from the output directory.
           $htmlFiles = Get-ChildItem -Path $siteDir -Filter *.html -Recurse
           Write-Host "Found $($htmlFiles.Count) HTML files to process for cleaning."
 
           foreach ($file in $htmlFiles) {
               $originalContent = Get-Content $file.FullName -Raw
 
-              # Clean all internal links.
               $newContent = $originalContent -creplace 'https?://agents\.kaijusolutions\.ca', ''
-
-              # This makes URLs cleaner, e.g., '.../topic/index.html' becomes '.../topic/'.
               $newContent = $newContent -creplace '/index\.html#', '#'
               $newContent = $newContent -creplace '/index\.html"', '"'
               $newContent = $newContent -creplace '"index\.html"', '"."'
-
-              # Remove blank, useless name attributes.
               $newContent = $newContent -creplace 'name=""', ''
-
-              # Find <a> tags with external links that do NOT have a target attribute, and add target="_blank"
               $newContent = $newContent -creplace '(<a\s+(?!.*\btarget\b=)[^>]*\bhref\s*=\s*["'']https?://[^>]+?)>', '$1 target="_blank">'
-
-              # Remove any blank assemblies listed.
               $newContent = $newContent -creplace '<h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>', ''
-
-              # Clean up whitespace in the title tag.
               $newContent = $newContent -creplace ' </title>', '</title>'
               $newContent = $newContent -creplace '(\r\n|\n|\r)\s+\| ', ' | '
-              
-              # Remove leading pipe in the title when there is no heading to prevent "<title> | Site Name".
               $newContent = $newContent -creplace '<title>\s*\|\s*', '<title>'
 
-              # Remove duplicate text around a pipe separator, e.g., turn "My Title | My Title" into "My Title".
-              # This is targeted at title-like text containing words, spaces, commas, dots, and hyphens.
               $genericPipeRegex = '([\w\s.,-]+)\s*\|\s*([\w\s.,-]+)'
               $pipeEvaluator = {
                   param($match)
                   $firstPart = $match.Groups[1].Value.Trim()
                   $secondPart = $match.Groups[2].Value.Trim()
 
-                  # Check for equality and that the strings aren't just whitespace.
                   if (($firstPart -eq $secondPart) -and (-not [string]::IsNullOrWhiteSpace($firstPart))) {
-                      # Return only the first part, effectively removing the duplicate and the pipe.
                       $firstPart
                   } else {
-                      # If they are not equal, return the original matched string so no change occurs.
                       $match.Value
                   }
               }
               $newContent = [regex]::Replace($newContent, $genericPipeRegex, $pipeEvaluator)
 
-              # If content was changed, write it back to the file.
               if ($originalContent -ne $newContent) {
                   Write-Host "Cleaned links and titles in: $($file.FullName)"
-                  # Use UTF8 without BOM to prevent issues with web servers.
                   $utf8WithoutBom = New-Object System.Text.UTF8Encoding($false)
                   [System.IO.File]::WriteAllText($file.FullName, $newContent, $utf8WithoutBom)
               }
           }
 
-      # Upload the generated documentation.
       - name: Upload Site Artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
           name: _site
-          # Must equal the 'build.dest' value on the docfx.json.
           path: _site
 
-  # Deploy the generated documentation to the gh-pages branch.
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -314,11 +265,9 @@ jobs:
         with:
           submodules: true
 
-      # Download the generated documentation.
       - name: Download Site Artifact
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v4
         with:
-          # Specify the path to download the artifact.
           name: _site
           path: _site
 
