@@ -21,7 +21,8 @@
     ],
     "build": {
         "template": [
-            "default"
+            "default",
+			"templates/custom"
         ],
         "globalMetadata": {
             "_appTitle": "Kaiju Agents",
