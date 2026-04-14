@@ -1,128 +1,98 @@
 <!DOCTYPE html>
-<html lang="csharp">
+<!--[if IE]><![endif]-->
+<html>
+  
   <head>
     <meta charset="utf-8">
-      <title>Class Microbe | Kaiju Agents</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Microbe | Kaiju Agents ">
-      
-      
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
-      
-      <meta name="docfx:rel" content="../">
-      
-      
-      
-      <meta name="loc:inThisArticle" content="In This Article">
-      <meta name="loc:searchResultsCount" content="">
-      <meta name="loc:searchNoResults" content="">
-      <meta name="loc:tocFilter" content="Enter here to filter...">
-      <meta name="loc:nextArticle" content="">
-      <meta name="loc:prevArticle" content="">
-      <meta name="loc:themeLight" content="">
-      <meta name="loc:themeDark" content="">
-      <meta name="loc:themeAuto" content="">
-      <meta name="loc:changeTheme" content="">
-      <meta name="loc:copy" content="">
-      <meta name="loc:downloadPdf" content="">
-
-      <script type="module" src="./../public/docfx.min.js"></script>
-
-      <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-      </script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Microbe | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Microbe | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
   </head>
-
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
-    <header class="bg-body border-bottom">
-      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
-        <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="..">
-            <img id="logo" class="svg" src="../logo.svg" alt="">
-            
-          </a>
-          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-three-dots"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navpanel">
-            <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
               </form>
             </div>
           </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
-
-    <main class="container-xxl">
-      <div class="toc-offcanvas">
-        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
-          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
-
-      <div class="content">
-        <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <nav id="breadcrumb"></nav>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
         </div>
-
-        <article data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe">
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe">
   
   
-  <h1 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe" class="text-break">
-    Class Microbe
-    
+  <h1 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe" class="text-break">Class Microbe
   </h1>
-  
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.html">KaijuSolutions.Agents.Exercises.Microbes</a></dd></dl>
-    <dl><dt>Assembly</dt><dd>cs.temp.dll.dll</dd></dl>
-  </div>
-  
-  <div class="markdown summary"><p>Microbes which can mate with and eat each other.</p>
+  <div class="markdown level0 summary"><p>Microbes which can mate with and eat each other.</p>
 </div>
-  <div class="markdown conceptual"></div>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Microbe : KaijuController</code></pre>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.KaijuController.html">KaijuController</a></div>
+    <div class="level3"><span class="xref">Microbe</span></div>
   </div>
-  
-  
-  
-  
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><span class="xref">System.Object</span></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.KaijuController.html">KaijuController</a></div>
-      <div><span class="xref">Microbe</span></div>
-    </dd>
-  </dl>
-  
-  
-  
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuController.html#KaijuSolutions_Agents_KaijuController_Agent">KaijuController.Agent</a>
     </div>
@@ -426,580 +396,492 @@
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
     </div>
-  </dd></dl>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.html">KaijuSolutions.Agents.Exercises.Microbes</a></h6>
   
-  
-  
-  
-  
-  
-  <h2 class="section" id="properties">Properties
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_All_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.All*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_All" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.All">
-    All
-    
+  <h5 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Microbe : KaijuController</code></pre>
+  </div>
+  <h3 id="properties">Properties
   </h3>
-  
+  <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_All_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.All*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_All" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.All">All</h4>
   <div class="markdown level1 summary"><p>All microbes currently in the world.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Microbe&gt; All { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate">
-    CanMate
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.CanMate">CanMate</h4>
   <div class="markdown level1 summary"><p>See if this microbe can mate given the limits set by the game.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool CanMate { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Boolean</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Cooldown_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Cooldown*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Cooldown" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Cooldown">
-    Cooldown
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Cooldown" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Cooldown">Cooldown</h4>
   <div class="markdown level1 summary"><p>The time in seconds the microbe needs to wait before it can <span class="xref">KaijuSolutions.Agents.Exercises.Microbes.Microbe.Mate(KaijuSolutions.Agents.Exercises.Microbes.Microbe)</span> again.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Cooldown { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Single</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Decay_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Decay*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Decay" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Decay">
-    Decay
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Decay" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Decay">Decay</h4>
   <div class="markdown level1 summary"><p>How much <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy">Energy</a> this microbe loses per second.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Decay { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Single</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Energy*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Energy">
-    Energy
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Energy">Energy</h4>
   <div class="markdown level1 summary"><p>The current energy of this microbe.
 This will <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Decay">Decay</a> every second, and this microbe needs energy to stay alive.
 Walk into <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.EnergyPickup.html">EnergyPickup</a> pickups to restore this.
 Microbes with higher energy levels than other microbes can eat them.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public float Energy { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Single</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnCooldown_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnCooldown*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnCooldown" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnCooldown">
-    OnCooldown
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnCooldown" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnCooldown">OnCooldown</h4>
   <div class="markdown level1 summary"><p>If this microbe is currently on a cooldown for mating.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool OnCooldown { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Boolean</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h2 class="section" id="methods">Methods
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Compatible*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible_KaijuSolutions_Agents_Exercises_Microbes_Microbe_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Compatible(KaijuSolutions.Agents.Exercises.Microbes.Microbe)">
-    Compatible(Microbe)
-    
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
   </h3>
-  
+  <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Compatible*"></a>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible_KaijuSolutions_Agents_Exercises_Microbes_Microbe_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Compatible(KaijuSolutions.Agents.Exercises.Microbes.Microbe)">Compatible(Microbe)</h4>
   <div class="markdown level1 summary"><p>See if this microbe is compatible to mate with another microbe.
 Note this does not check if either microbe is still on <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Cooldown">Cooldown</a> for mating.
 For that, check <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnCooldown">OnCooldown</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Compatible(Microbe other)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>other</code> <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a></dt>
-    <dd><p>The other microbe.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Boolean</span></dt>
-    <dd><p>If this microbe is compatible to mate with another microbe.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other microbe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If this microbe is compatible to mate with another microbe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Eatable_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Eatable*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Eatable_KaijuSolutions_Agents_Exercises_Microbes_Microbe_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Eatable(KaijuSolutions.Agents.Exercises.Microbes.Microbe)">
-    Eatable(Microbe)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Eatable_KaijuSolutions_Agents_Exercises_Microbes_Microbe_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Eatable(KaijuSolutions.Agents.Exercises.Microbes.Microbe)">Eatable(Microbe)</h4>
   <div class="markdown level1 summary"><p>See if this microbe could eat another microbe.
 Note this does not check if this has enough <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy">Energy</a> to eat the other microbe, being more <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html#KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy">Energy</a> than the other microbe has.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Eatable(Microbe other)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>other</code> <a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a></dt>
-    <dd><p>The other microbe.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Boolean</span></dt>
-    <dd><p>If this microbe could eat another microbe.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.Microbe.html">Microbe</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The other microbe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>If this microbe could eat another microbe.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Spawn_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Spawn*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Spawn_KaijuSolutions_Agents_KaijuAgent_System_Single_Vector2_System_UInt32_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Spawn(KaijuSolutions.Agents.KaijuAgent,System.Single,Vector2,System.UInt32)">
-    Spawn(KaijuAgent, Single, Vector2, UInt32)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Spawn_KaijuSolutions_Agents_KaijuAgent_System_Single_Vector2_System_UInt32_" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.Spawn(KaijuSolutions.Agents.KaijuAgent,System.Single,Vector2,System.UInt32)">Spawn(KaijuAgent, Single, Vector2, UInt32)</h4>
   <div class="markdown level1 summary"><p>Spawn a microbe.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Spawn(KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>microbePrefab</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The prefab to spawn.</p>
-</dd>
-    <dt><code>energy</code> <span class="xref">System.Single</span></dt>
-    <dd><p>The energy level to spawn with.</p>
-</dd>
-    <dt><code>position</code> <span class="xref">Vector2</span></dt>
-    <dd><p>The position to spawn the microbe at.</p>
-</dd>
-    <dt><code>identifier</code> <span class="xref">System.UInt32</span></dt>
-    <dd><p>The microbe identifier type.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <h2 class="section" id="events">Events
-  </h2>
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEat" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEat">
-    OnEat
-    
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">microbePrefab</span></td>
+        <td><p>The prefab to spawn.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><span class="parametername">energy</span></td>
+        <td><p>The energy level to spawn with.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Vector2</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to spawn the microbe at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The microbe identifier type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
   </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEat" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEat">OnEat</h4>
   <div class="markdown level1 summary"><p>Callback for this microbe eating.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MicrobeAction OnEat</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEaten" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEaten">
-    OnEaten
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEaten" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEaten">OnEaten</h4>
   <div class="markdown level1 summary"><p>Callback for this microbe being eaten.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MicrobeAction OnEaten</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEatGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEatGlobal">
-    OnEatGlobal
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEatGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEatGlobal">OnEatGlobal</h4>
   <div class="markdown level1 summary"><p>Global callback for this microbe eating.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MultiMicrobeAction OnEatGlobal</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MultiMicrobeAction.html">MultiMicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergy" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergy">
-    OnEnergy
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MultiMicrobeAction.html">MultiMicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergy" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergy">OnEnergy</h4>
   <div class="markdown level1 summary"><p>Callback for this microbe picking up energy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event KaijuAction OnEnergy</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergyGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergyGlobal">
-    OnEnergyGlobal
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAction.html">KaijuAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergyGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnEnergyGlobal">OnEnergyGlobal</h4>
   <div class="markdown level1 summary"><p>Global c for this microbe picking up energy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MicrobeAction OnEnergyGlobal</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMate" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnMate">
-    OnMate
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMate" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnMate">OnMate</h4>
   <div class="markdown level1 summary"><p>Callback for this microbe mating.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MicrobeAction OnMate</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h3 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMateGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnMateGlobal">
-    OnMateGlobal
-    
-  </h3>
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MicrobeAction.html">MicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMateGlobal" data-uid="KaijuSolutions.Agents.Exercises.Microbes.Microbe.OnMateGlobal">OnMateGlobal</h4>
   <div class="markdown level1 summary"><p>Global callback for this microbe mating.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public event MultiMicrobeAction OnMateGlobal</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  <h4 class="section">Event Type</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MultiMicrobeAction.html">MultiMicrobeAction</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Exercises.Microbes.MultiMicrobeAction.html">MultiMicrobeAction</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
-
-
-        <div class="next-article d-print-none border-top" id="nextArticle"></div>
-
-      </div>
-
-      <div class="affix">
-        <nav id="affix"></nav>
-      </div>
-    </main>
-
-    <div class="container-xxl search-results" id="search-results"></div>
-
-    <footer class="border-top text-secondary">
-      <div class="container-xxl">
-        <div class="flex-fill">
-          <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
+                <div></div>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

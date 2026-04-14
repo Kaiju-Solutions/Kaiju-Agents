@@ -1,129 +1,99 @@
 <!DOCTYPE html>
-<html lang="csharp">
+<!--[if IE]><![endif]-->
+<html>
+  
   <head>
     <meta charset="utf-8">
-      <title>Class KaijuAgentsVisionSensor | Kaiju Agents</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class KaijuAgentsVisionSensor | Kaiju Agents ">
-      
-      
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
-      
-      <meta name="docfx:rel" content="../">
-      
-      
-      
-      <meta name="loc:inThisArticle" content="In This Article">
-      <meta name="loc:searchResultsCount" content="">
-      <meta name="loc:searchNoResults" content="">
-      <meta name="loc:tocFilter" content="Enter here to filter...">
-      <meta name="loc:nextArticle" content="">
-      <meta name="loc:prevArticle" content="">
-      <meta name="loc:themeLight" content="">
-      <meta name="loc:themeDark" content="">
-      <meta name="loc:themeAuto" content="">
-      <meta name="loc:changeTheme" content="">
-      <meta name="loc:copy" content="">
-      <meta name="loc:downloadPdf" content="">
-
-      <script type="module" src="./../public/docfx.min.js"></script>
-
-      <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-      </script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsVisionSensor | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsVisionSensor | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
   </head>
-
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
-    <header class="bg-body border-bottom">
-      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
-        <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="..">
-            <img id="logo" class="svg" src="../logo.svg" alt="">
-            
-          </a>
-          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-three-dots"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navpanel">
-            <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
               </form>
             </div>
           </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
-
-    <main class="container-xxl">
-      <div class="toc-offcanvas">
-        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
-          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
-
-      <div class="content">
-        <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <nav id="breadcrumb"></nav>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
         </div>
-
-        <article data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">
   
   
-  <h1 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor" class="text-break">
-    Class KaijuAgentsVisionSensor
-    
+  <h1 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor" class="text-break">Class KaijuAgentsVisionSensor
   </h1>
-  
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="KaijuSolutions.Agents.Sensors.html">KaijuSolutions.Agents.Sensors</a></dd></dl>
-    <dl><dt>Assembly</dt><dd>cs.temp.dll.dll</dd></dl>
-  </div>
-  
-  <div class="markdown summary"><p><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a> to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a>s as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
+  <div class="markdown level0 summary"><p><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a> to see <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s. By default, this is more efficient than standard <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor&lt;T&gt;</a>s as it accesses the cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
 </div>
-  <div class="markdown conceptual"></div>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KaijuAgentsVisionSensor : KaijuVisionSensor&lt;KaijuAgent&gt;</code></pre>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></div>
+    <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor</a>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</div>
+    <div class="level4"><span class="xref">KaijuAgentsVisionSensor</span></div>
   </div>
-  
-  
-  
-  
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><span class="xref">System.Object</span></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuSensor.html">KaijuSensor</a></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html">KaijuVisionSensor</a>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</div>
-      <div><span class="xref">KaijuAgentsVisionSensor</span></div>
-    </dd>
-  </dl>
-  
-  
-  
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Distance">KaijuVisionSensor&lt;KaijuAgent&gt;.Distance</a>
     </div>
@@ -490,191 +460,204 @@
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
     </div>
-  </dd></dl>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Sensors.html">KaijuSolutions.Agents.Sensors</a></h6>
   
-  
-  
-  
-  
-  
-  <h2 class="section" id="methods">Methods
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_DefaultObservables_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.DefaultObservables*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_DefaultObservables" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.DefaultObservables">
-    DefaultObservables()
-    
+  <h5 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuAgentsVisionSensor : KaijuVisionSensor&lt;KaijuAgent&gt;</code></pre>
+  </div>
+  <h3 id="methods">Methods
   </h3>
-  
+  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_DefaultObservables_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.DefaultObservables*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_DefaultObservables" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.DefaultObservables">DefaultObservables()</h4>
   <div class="markdown level1 summary"><p>If there are no explicitly defined observable objects, define how to query for default observables.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected override IEnumerable&lt;KaijuAgent&gt; DefaultObservables()</code></pre>
   </div>
-  
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</dt>
-    <dd><p>All active <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <h2 class="section" id="operators">Operators
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_GameObject__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(GameObject)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">
-    Implicit(GameObject to KaijuAgentsVisionSensor)
-    
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><p>All active <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s from <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_Agents">Agents</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">KaijuSolutions.Agents.Sensors.KaijuVisionSensor&lt;KaijuSolutions.Agents.KaijuAgent&gt;.DefaultObservables()</span></div>
+  <h3 id="operators">Operators
   </h3>
-  
+  <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_GameObject__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(GameObject)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">Implicit(GameObject to KaijuAgentsVisionSensor)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgentsVisionSensor(GameObject o)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>o</code> <span class="xref">GameObject</span></dt>
-    <dd><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">GameObject</span></td>
+        <td><span class="parametername">o</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-GameObject.html" target="_blank">GameObject</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor)~KaijuSolutions.Agents.KaijuAgent">
-    Implicit(KaijuAgentsVisionSensor to KaijuAgent)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor__KaijuSolutions_Agents_KaijuAgent" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor)~KaijuSolutions.Agents.KaijuAgent">Implicit(KaijuAgentsVisionSensor to KaijuAgent)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgent(KaijuAgentsVisionSensor s)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>s</code> <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a>.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> if there was one.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> attached to the <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_Transform__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(Transform)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">
-    Implicit(Transform to KaijuAgentsVisionSensor)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_op_Implicit_Transform__KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor" data-uid="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.op_Implicit(Transform)~KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor">Implicit(Transform to KaijuAgentsVisionSensor)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion from a <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator KaijuAgentsVisionSensor(Transform t)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>t</code> <span class="xref">Transform</span></dt>
-    <dd><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td><span class="parametername">t</span></td>
+        <td><p>The <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor.html">KaijuAgentsVisionSensor</a> attached to the <a href="https://docs.unity3d.com/Manual/class-transform.html" target="_blank">transform</a> if there was one.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
-
-
-        <div class="next-article d-print-none border-top" id="nextArticle"></div>
-
-      </div>
-
-      <div class="affix">
-        <nav id="affix"></nav>
-      </div>
-    </main>
-
-    <div class="container-xxl search-results" id="search-results"></div>
-
-    <footer class="border-top text-secondary">
-      <div class="container-xxl">
-        <div class="flex-fill">
-          <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
+                <div></div>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

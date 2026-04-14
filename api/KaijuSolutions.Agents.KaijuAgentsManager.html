@@ -1,127 +1,97 @@
 <!DOCTYPE html>
-<html lang="csharp">
+<!--[if IE]><![endif]-->
+<html>
+  
   <head>
     <meta charset="utf-8">
-      <title>Class KaijuAgentsManager | Kaiju Agents</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class KaijuAgentsManager | Kaiju Agents ">
-      
-      
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
-      
-      <meta name="docfx:rel" content="../">
-      
-      
-      
-      <meta name="loc:inThisArticle" content="In This Article">
-      <meta name="loc:searchResultsCount" content="">
-      <meta name="loc:searchNoResults" content="">
-      <meta name="loc:tocFilter" content="Enter here to filter...">
-      <meta name="loc:nextArticle" content="">
-      <meta name="loc:prevArticle" content="">
-      <meta name="loc:themeLight" content="">
-      <meta name="loc:themeDark" content="">
-      <meta name="loc:themeAuto" content="">
-      <meta name="loc:changeTheme" content="">
-      <meta name="loc:copy" content="">
-      <meta name="loc:downloadPdf" content="">
-
-      <script type="module" src="./../public/docfx.min.js"></script>
-
-      <script>
-        const theme = localStorage.getItem('theme') || 'auto'
-        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-      </script>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class KaijuAgentsManager | Kaiju Agents</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class KaijuAgentsManager | Kaiju Agents ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
   </head>
-
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
-    <header class="bg-body border-bottom">
-      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
-        <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="..">
-            <img id="logo" class="svg" src="../logo.svg" alt="">
-            
-          </a>
-          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-three-dots"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navpanel">
-            <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="..">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
               </form>
             </div>
           </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
-
-    <main class="container-xxl">
-      <div class="toc-offcanvas">
-        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
-          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
-
-      <div class="content">
-        <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <nav id="breadcrumb"></nav>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
         </div>
-
-        <article data-uid="KaijuSolutions.Agents.KaijuAgentsManager">
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.KaijuAgentsManager">
   
   
-  <h1 id="KaijuSolutions_Agents_KaijuAgentsManager" data-uid="KaijuSolutions.Agents.KaijuAgentsManager" class="text-break">
-    Class KaijuAgentsManager
-    
+  <h1 id="KaijuSolutions_Agents_KaijuAgentsManager" data-uid="KaijuSolutions.Agents.KaijuAgentsManager" class="text-break">Class KaijuAgentsManager
   </h1>
-  
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></dd></dl>
-    <dl><dt>Assembly</dt><dd>cs.temp.dll.dll</dd></dl>
-  </div>
-  
-  <div class="markdown summary"><p>Manager <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s.</p>
+  <div class="markdown level0 summary"><p>Manager <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s.</p>
 </div>
-  <div class="markdown conceptual"></div>
-  
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KaijuAgentsManager : KaijuBehaviour</code></pre>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
+    <div class="level2"><span class="xref">KaijuAgentsManager</span></div>
   </div>
-  
-  
-  
-  
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><span class="xref">System.Object</span></div>
-      <div><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
-      <div><span class="xref">KaijuAgentsManager</span></div>
-    </dd>
-  </dl>
-  
-  
-  
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
     </div>
@@ -335,1211 +305,1184 @@
     <div>
       <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
     </div>
-  </dd></dl>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a></h6>
   
-  
-  
-  
-  
-  
-  <h2 class="section" id="properties">Properties
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_KaijuAgentsManager_Agents_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Agents*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_Agents" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Agents">
-    Agents
-    
+  <h5 id="KaijuSolutions_Agents_KaijuAgentsManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuAgentsManager : KaijuBehaviour</code></pre>
+  </div>
+  <h3 id="properties">Properties
   </h3>
-  
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_Agents_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Agents*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_Agents" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Agents">Agents</h4>
   <div class="markdown level1 summary"><p>All <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;KaijuAgent&gt; Agents { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AgentsCount*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AgentsCount">
-    AgentsCount
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AgentsCount">AgentsCount</h4>
   <div class="markdown level1 summary"><p>The number of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static int AgentsCount { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Int32</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor">
-    EditorAgentColor
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorAgentColor">EditorAgentColor</h4>
   <div class="markdown level1 summary"><p>What color <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> visualizations should be in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Color EditorAgentColor { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Color</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabelOffset*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabelOffset">
-    EditorLabelOffset
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabelOffset">EditorLabelOffset</h4>
   <div class="markdown level1 summary"><p>The offset for label placement in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static float EditorLabelOffset { get; set; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Single</span></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_Instance_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Instance*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_Instance" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Instance">
-    Instance
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_Instance" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Instance">Instance</h4>
   <div class="markdown level1 summary"><p>The singleton manager instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static KaijuAgentsManager Instance { get; }</code></pre>
   </div>
-  
-  
-  
-  
-  
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd></dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  <h2 class="section" id="methods">Methods
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_KaijuAgentsManager_AddIdentifier_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AddIdentifier*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_AddIdentifier_KaijuSolutions_Agents_KaijuAgent_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AddIdentifier(KaijuSolutions.Agents.KaijuAgent,System.UInt32)">
-    AddIdentifier(KaijuAgent, UInt32)
-    
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
   </h3>
-  
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_AddIdentifier_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AddIdentifier*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_AddIdentifier_KaijuSolutions_Agents_KaijuAgent_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.AddIdentifier(KaijuSolutions.Agents.KaijuAgent,System.UInt32)">AddIdentifier(KaijuAgent, UInt32)</h4>
   <div class="markdown level1 summary"><p>Add an identifier to an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>. There is no use for manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void AddIdentifier(KaijuAgent agent, uint identifier)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>agent</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
-</dd>
-    <dt><code>identifier</code> <span class="xref">System.UInt32</span></dt>
-    <dd><p>The identifier.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String,Color)">
-    EditorLabel(Vector3, String, Color)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel_Vector3_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLabel(Vector3,System.String,Color)">EditorLabel(Vector3, String, Color)</h4>
   <div class="markdown level1 summary"><p>Add a label of text in the scene view in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorLabel(Vector3 position, string text, Color color)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>position</code> <span class="xref">Vector3</span></dt>
-    <dd><p>The position to set it at.</p>
-</dd>
-    <dt><code>text</code> <span class="xref">System.String</span></dt>
-    <dd><p>The label itself</p>
-</dd>
-    <dt><code>color</code> <span class="xref">Color</span></dt>
-    <dd><p>The color for the text.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Vector3</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The position to set it at.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The label itself</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color for the text.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLoadColor*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLoadColor(System.String,Color)">
-    EditorLoadColor(String, Color)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorLoadColor(System.String,Color)">EditorLoadColor(String, Color)</h4>
   <div class="markdown level1 summary"><p>Load a color from preferences in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static Color EditorLoadColor(string key, Color fallback)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <span class="xref">System.String</span></dt>
-    <dd><p>The color key to retrieve.</p>
-</dd>
-    <dt><code>fallback</code> <span class="xref">Color</span></dt>
-    <dd><p>The fallback color if this is a default value.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Color</span></dt>
-    <dd><p>The color loaded from preferences.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to retrieve.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">fallback</span></td>
+        <td><p>The fallback color if this is a default value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><p>The color loaded from preferences.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetAgentColor*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetAgentColor">
-    EditorResetAgentColor()
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetAgentColor">EditorResetAgentColor()</h4>
   <div class="markdown level1 summary"><p>Reset the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> color in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorResetAgentColor()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetColor*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor_System_String_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetColor(System.String)">
-    EditorResetColor(String)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor_System_String_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetColor(System.String)">EditorResetColor(String)</h4>
   <div class="markdown level1 summary"><p>Reset a color to preferences in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorResetColor(string key)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <span class="xref">System.String</span></dt>
-    <dd><p>The color key to reset.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to reset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetLabelOffset*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetLabelOffset">
-    EditorResetLabelOffset()
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorResetLabelOffset">EditorResetLabelOffset()</h4>
   <div class="markdown level1 summary"><p>Reset the offset for label placement in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorResetLabelOffset()</code></pre>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorSaveColor*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorSaveColor(System.String,Color)">
-    EditorSaveColor(String, Color)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor_System_String_Color_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorSaveColor(System.String,Color)">EditorSaveColor(String, Color)</h4>
   <div class="markdown level1 summary"><p>Save a color to preferences in the editor.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorSaveColor(string key, Color color)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <span class="xref">System.String</span></dt>
-    <dd><p>The color key to save.</p>
-</dd>
-    <dt><code>color</code> <span class="xref">Color</span></dt>
-    <dd><p>The color to set.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The color key to save.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorValidateIdentifiers*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorValidateIdentifiers(KaijuSolutions.Agents.KaijuAgent)">
-    EditorValidateIdentifiers(KaijuAgent)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.EditorValidateIdentifiers(KaijuSolutions.Agents.KaijuAgent)">EditorValidateIdentifiers(KaijuAgent)</h4>
   <div class="markdown level1 summary"><p>Validate the identifiers of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> in the editor. There is no use for manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void EditorValidateIdentifiers(KaijuAgent agent)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>agent</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_GetCached_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.GetCached*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_GetCached__1_System_Collections_Generic_ICollection_System_String__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.String})">
-    GetCached&lt;T&gt;(ICollection&lt;String&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_GetCached__1_System_Collections_Generic_ICollection_System_String__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.GetCached``1(System.Collections.Generic.ICollection{System.String})">GetCached&lt;T&gt;(ICollection&lt;String&gt;)</h4>
   <div class="markdown level1 summary"><p>Get a cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to spawn.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static T GetCached&lt;T&gt;(ICollection&lt;string&gt; components = null)
     where T : KaijuAgent</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>components</code> <span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.String</span>&gt;</dt>
-    <dd><p>All components which must be found on the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>. This will check in children as well.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">T</span></dt>
-    <dd><p>A cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> if one is found, otherwise NULL.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Type Parameters</h4>
-  <dl class="parameters">
-    <dt><code>T</code></dt>
-    <dd><p>The type of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">components</span></td>
+        <td><p>All components which must be found on the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>. This will check in children as well.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>A cached <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> if one is found, otherwise NULL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_Collections_Generic_ICollection_KaijuSolutions_Agents_KaijuAgent__System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.Collections.Generic.ICollection{KaijuSolutions.Agents.KaijuAgent},System.Collections.Generic.IEnumerable{System.UInt32})">
-    IdentifiedAgents(ICollection&lt;KaijuAgent&gt;, IEnumerable&lt;UInt32&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_Collections_Generic_ICollection_KaijuSolutions_Agents_KaijuAgent__System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.Collections.Generic.ICollection{KaijuSolutions.Agents.KaijuAgent},System.Collections.Generic.IEnumerable{System.UInt32})">IdentifiedAgents(ICollection&lt;KaijuAgent&gt;, IEnumerable&lt;UInt32&gt;)</h4>
   <div class="markdown level1 summary"><p>Get all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which have any of the given identifiers. The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s are added to the identified parameter.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void IdentifiedAgents(ICollection&lt;KaijuAgent&gt; identified, IEnumerable&lt;uint&gt; identifiers)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>identified</code> <span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</dt>
-    <dd><p>Updated to contain all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which were identified.</p>
-</dd>
-    <dt><code>identifiers</code> <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</dt>
-    <dd><p>The identifiers.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><span class="parametername">identified</span></td>
+        <td><p>Updated to contain all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which were identified.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">identifiers</span></td>
+        <td><p>The identifiers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.Collections.Generic.IEnumerable{System.UInt32})">
-    IdentifiedAgents(IEnumerable&lt;UInt32&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_Collections_Generic_IEnumerable_System_UInt32__" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.Collections.Generic.IEnumerable{System.UInt32})">IdentifiedAgents(IEnumerable&lt;UInt32&gt;)</h4>
   <div class="markdown level1 summary"><p>Get all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which have any of the given identifiers.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static HashSet&lt;KaijuAgent&gt; IdentifiedAgents(IEnumerable&lt;uint&gt; identifiers)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>identifiers</code> <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</dt>
-    <dd><p>The identifiers.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">HashSet</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</dt>
-    <dd><p>All <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which have any of the given identifier.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><span class="parametername">identifiers</span></td>
+        <td><p>The identifiers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">HashSet</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><p>All <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s which have any of the given identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.UInt32)">
-    IdentifiedAgents(UInt32)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.IdentifiedAgents(System.UInt32)">IdentifiedAgents(UInt32)</h4>
   <div class="markdown level1 summary"><p>Get all <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s with a given identifier.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;KaijuAgent&gt; IdentifiedAgents(uint identifier)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>identifier</code> <span class="xref">System.UInt32</span></dt>
-    <dd><p>The identifier.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</dt>
-    <dd><p>All <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s with a given identifier.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>&gt;</td>
+        <td><p>All <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>s with a given identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_Register_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Register*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_Register_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Register(KaijuSolutions.Agents.KaijuAgent)">
-    Register(KaijuAgent)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_Register_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Register(KaijuSolutions.Agents.KaijuAgent)">Register(KaijuAgent)</h4>
   <div class="markdown level1 summary"><p>Register an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for movement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Register(KaijuAgent agent)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>agent</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to register.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to register.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_RemoveIdentifier_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.RemoveIdentifier*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_RemoveIdentifier_KaijuSolutions_Agents_KaijuAgent_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.RemoveIdentifier(KaijuSolutions.Agents.KaijuAgent,System.UInt32)">
-    RemoveIdentifier(KaijuAgent, UInt32)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_RemoveIdentifier_KaijuSolutions_Agents_KaijuAgent_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.RemoveIdentifier(KaijuSolutions.Agents.KaijuAgent,System.UInt32)">RemoveIdentifier(KaijuAgent, UInt32)</h4>
   <div class="markdown level1 summary"><p>Remove an identifier from an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>. There is no use for manually calling this.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void RemoveIdentifier(KaijuAgent agent, uint identifier)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>agent</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
-</dd>
-    <dt><code>identifier</code> <span class="xref">System.UInt32</span></dt>
-    <dd><p>The identifier.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">identifier</span></td>
+        <td><p>The identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_Unregister_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Unregister*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_Unregister_KaijuSolutions_Agents_KaijuAgent_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Unregister(KaijuSolutions.Agents.KaijuAgent,System.Boolean)">
-    Unregister(KaijuAgent, Boolean)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_Unregister_KaijuSolutions_Agents_KaijuAgent_System_Boolean_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.Unregister(KaijuSolutions.Agents.KaijuAgent,System.Boolean)">Unregister(KaijuAgent, Boolean)</h4>
   <div class="markdown level1 summary"><p>Unregister an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> for movement.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Unregister(KaijuAgent agent, bool cache = true)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>agent</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to unregister.</p>
-</dd>
-    <dt><code>cache</code> <span class="xref">System.Boolean</span></dt>
-    <dd><p>If this <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should be cached.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <h2 class="section" id="operators">Operators
-  </h2>
-  
-  
-  <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int16" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int16">
-    Implicit(KaijuAgentsManager to Int16)
-    
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
+        <td><span class="parametername">agent</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> to unregister.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">cache</span></td>
+        <td><p>If this <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> should be cached.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
   </h3>
-  
+  <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int16" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int16">Implicit(KaijuAgentsManager to Int16)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a short integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator short (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Int16</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int16</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int32" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int32">
-    Implicit(KaijuAgentsManager to Int32)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int32" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int32">Implicit(KaijuAgentsManager to Int32)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to an integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator int (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Int32</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int64" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int64">
-    Implicit(KaijuAgentsManager to Int64)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Int64" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Int64">Implicit(KaijuAgentsManager to Int64)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a long integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator long (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Int64</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int16_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int16}">
-    Implicit(KaijuAgentsManager to Nullable&lt;Int16&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int16_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int16}">Implicit(KaijuAgentsManager to Nullable&lt;Int16&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable short integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator short? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int16</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int16</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int32}">
-    Implicit(KaijuAgentsManager to Nullable&lt;Int32&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int32}">Implicit(KaijuAgentsManager to Nullable&lt;Int32&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator int? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int64_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int64}">
-    Implicit(KaijuAgentsManager to Nullable&lt;Int64&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_Int64_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.Int64}">Implicit(KaijuAgentsManager to Nullable&lt;Int64&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable long integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator long? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt16_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt16}">
-    Implicit(KaijuAgentsManager to Nullable&lt;UInt16&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt16_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt16}">Implicit(KaijuAgentsManager to Nullable&lt;UInt16&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable unsigned short integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator ushort? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt16</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt16</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt32}">
-    Implicit(KaijuAgentsManager to Nullable&lt;UInt32&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt32_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt32}">Implicit(KaijuAgentsManager to Nullable&lt;UInt32&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable unsigned integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator uint? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt32</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt32</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt64_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt64}">
-    Implicit(KaijuAgentsManager to Nullable&lt;UInt64&gt;)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_Nullable_System_UInt64_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.Nullable{System.UInt64}">Implicit(KaijuAgentsManager to Nullable&lt;UInt64&gt;)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to a nullable unsigned long integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator ulong? (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.UInt64</span>&gt;</td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt16" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt16">
-    Implicit(KaijuAgentsManager to UInt16)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt16" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt16">Implicit(KaijuAgentsManager to UInt16)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to an unsigned short integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator ushort (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.UInt16</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt16</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt32" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt32">
-    Implicit(KaijuAgentsManager to UInt32)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt32" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt32">Implicit(KaijuAgentsManager to UInt32)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to an unsigned integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator uint (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.UInt32</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit*"></a>
-  
-  <h3 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt64" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt64">
-    Implicit(KaijuAgentsManager to UInt64)
-    
-  </h3>
-  
+  <h4 id="KaijuSolutions_Agents_KaijuAgentsManager_op_Implicit_KaijuSolutions_Agents_KaijuAgentsManager__System_UInt64" data-uid="KaijuSolutions.Agents.KaijuAgentsManager.op_Implicit(KaijuSolutions.Agents.KaijuAgentsManager)~System.UInt64">Implicit(KaijuAgentsManager to UInt64)</h4>
   <div class="markdown level1 summary"><p>Implicit conversion to an unsigned long integer based <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  
+  <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static implicit operator ulong (KaijuAgentsManager m)</code></pre>
   </div>
-  
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>m</code> <a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></dt>
-    <dd><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
-</dd>
-  </dl>
-  
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><span class="xref">System.UInt64</span></dt>
-    <dd><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
-</dd>
-  </dl>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html">KaijuAgentsManager</a></td>
+        <td><span class="parametername">m</span></td>
+        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> manager.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.UInt64</span></td>
+        <td><p><a class="xref" href="KaijuSolutions.Agents.KaijuAgentsManager.html#KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount">AgentsCount</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
-
-
-        <div class="next-article d-print-none border-top" id="nextArticle"></div>
-
-      </div>
-
-      <div class="affix">
-        <nav id="affix"></nav>
-      </div>
-    </main>
-
-    <div class="container-xxl search-results" id="search-results"></div>
-
-    <footer class="border-top text-secondary">
-      <div class="container-xxl">
-        <div class="flex-fill">
-          <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
+                <div></div>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
-    </footer>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>
