@@ -59,13 +59,18 @@ jobs:
           echo "Querying Unity Release API for recent stable versions..."
           RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=20" | jq -r '[.results[] | select(.version | test("a|b|rc") | not)] | .[].version')
           
+          echo "Fetching recent tags from GameCI Docker Hub..."
+          # Query Docker Hub ONCE for the top 100 tags to avoid rate limits, ignoring errors if it fails.
+          DOCKER_TAGS=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?page_size=100" | jq -r '.results[].name' 2>/dev/null || echo "")
+          
           FOUND_TAG=""
           for UNITY_VER in $RECENT_UNITIES; do
-            echo "Checking GameCI Docker Hub for Unity $UNITY_VER..."
-            TAG_QUERY="ubuntu-${UNITY_VER}-base"
-            MATCHING_TAG=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?name=${TAG_QUERY}" | jq -r '[.results[].name | select(test("-base-[0-9.]+$"))] | .[0]')
+            echo "Checking GameCI for Unity $UNITY_VER..."
             
-            if [ "$MATCHING_TAG" != "null" ] && [ -n "$MATCHING_TAG" ]; then
+            # Search the downloaded list for a matching ubuntu base tag
+            MATCHING_TAG=$(echo "$DOCKER_TAGS" | grep -E "^ubuntu-${UNITY_VER}-base-[0-9.]+$" | head -n 1)
+            
+            if [ -n "$MATCHING_TAG" ]; then
               FOUND_TAG=$MATCHING_TAG
               echo "✅ Found latest available GameCI image: $FOUND_TAG"
               break
