@@ -33,7 +33,7 @@ jobs:
   build:
     needs: delete-old-deployments
     # REQUIRED: ubuntu-latest is needed for Docker to run GameCI efficiently, 
-    # and modern DocFX natively supports Linux.
+    # and modern DocFX natively supports Linux. PowerShell scripts run fine on Ubuntu.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -86,6 +86,59 @@ jobs:
              echo "⚠️ Rate limit hit or no tags. Using hardcoded safe fallback."
              FOUND_TAG="ubuntu-6000.0.2f1-base-3.1.0"
           fi
+
+          echo "Injecting Optional Packages into manifest.json..."
+          python -c '
+          import json, os, urllib.request, re, sys
+          target_unity = "'"$PROJECT_VER"'"
+          packages_to_inject = ["com.unity.behavior", "com.unity.ml-agents", "com.unity.inputsystem"]
+          
+          def get_latest_compatible(pkg, unity_ver):
+              try:
+                  url = f"https://packages.unity.com/{pkg}"
+                  with urllib.request.urlopen(url) as r:
+                      data = json.loads(r.read())
+                  versions = data.get("versions", {})
+                  target_match = re.match(r"^(\d+)\.(\d+)", unity_ver)
+                  if not target_match: return None
+                  target_v = [int(target_match.group(1)), int(target_match.group(2))]
+                  
+                  candidates = []
+                  for v_str, v_data in versions.items():
+                      req_unity = v_data.get("unity", "0.0")
+                      req_match = re.match(r"^(\d+)\.(\d+)", req_unity)
+                      if not req_match: continue
+                      req_v = [int(req_match.group(1)), int(req_match.group(2))]
+                      
+                      if req_v <= target_v:
+                          candidates.append(v_str)
+                  
+                  if not candidates: return None
+                  return sorted(candidates, key=lambda x: [int(y) for y in re.findall(r"\d+", x)], reverse=True)[0]
+              except Exception as e:
+                  print(f"Error resolving {pkg}: {e}")
+                  return None
+                  
+          manifest_path = "Packages/manifest.json"
+          manifest = {"dependencies": {}}
+          if os.path.exists(manifest_path):
+              with open(manifest_path, "r") as f:
+                  try: manifest = json.load(f)
+                  except: pass
+          if "dependencies" not in manifest: manifest["dependencies"] = {}
+          
+          for pkg_name in packages_to_inject:
+              latest_ver = get_latest_compatible(pkg_name, target_unity)
+              if latest_ver:
+                  manifest["dependencies"][pkg_name] = latest_ver
+                  print(f"✅ Injected {pkg_name}@{latest_ver} into manifest.json")
+              else:
+                  print(f"⚠️ Could not resolve compatible version of {pkg_name} for Unity {target_unity}")
+                  
+          os.makedirs("Packages", exist_ok=True)
+          with open(manifest_path, "w") as f:
+              json.dump(manifest, f, indent=2)
+          '
           
           echo "Launching Unity to resolve UPM using: unityci/editor:$FOUND_TAG"
           docker run --rm \
