@@ -59,23 +59,21 @@ function filterAffix() {
         const navbar = document.getElementById('navbar');
         if (!navbar) return;
 
-        // Create the toggle container using standard Bootstrap 3 navbar classes
-        const toggleContainer = document.createElement('ul');
-        toggleContainer.className = 'nav navbar-nav navbar-right';
+        // Use a <div> instead of a <ul> so we don't break DocFX's internal AJAX nav loader
+        const toggleContainer = document.createElement('div');
+        toggleContainer.className = 'navbar-right';
         
-        // Use just the icon for a cleaner look in the header
+        // Use inline padding (15px) to perfectly match Bootstrap 3's default nav link sizing
         toggleContainer.innerHTML = `
-            <li>
-                <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode">
-                    <span class="glyphicon glyphicon-adjust"></span>
-                </a>
-            </li>
+            <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode" style="display: inline-block; padding: 15px; text-decoration: none;">
+                <span class="glyphicon glyphicon-adjust"></span>
+            </a>
         `;
 
-        // Find the search form. Standard DocFX templates use id="search"
+        // Find the search form
         const searchForm = document.getElementById('search');
         
-        // Inject it. Because .navbar-right uses float: right, inserting it *before* // the search form in the DOM actually places it to the *right* visually.
+        // Inject it right before the search form
         if (searchForm) {
             searchForm.parentNode.insertBefore(toggleContainer, searchForm);
         } else {
