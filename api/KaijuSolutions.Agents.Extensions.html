@@ -1,82 +1,95 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
 <html>
-  
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace KaijuSolutions.Agents.Extensions | Kaiju Agents</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace KaijuSolutions.Agents.Extensions | Kaiju Agents ">
-    <meta name="generator" content="docfx 2.59.4.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    
-  </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="..">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace KaijuSolutions.Agents.Extensions | Kaiju Agents</title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace KaijuSolutions.Agents.Extensions | Kaiju Agents ">
+      <meta name="generator" content="docfx 2.59.4.0">
+      
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="../styles/config.css">
+      <link rel="stylesheet" href="../styles/discord.css">
+      <link rel="stylesheet" href="../styles/singulink.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+      
+      <meta property="docfx:rel" content="../">
+      
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+            
+            <a class="brand" href="..">
+              <img src="../logo.svg" alt="" class="logomark">
+              <span class="brand-title"></span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+                    
+                    <div>
+                      <div class="mobile-hide">
+                        
+                        <a class="brand" href="..">
+                          <img src="../logo.svg" alt="" class="logomark">
+                          <span class="brand-title"></span>
+                        </a>  </div>
+                    
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+                    
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                        
+                        <div id="sidetoggle">
+                          <div id="sidetoc"></div>
+                        </div>
                 </div>
-              </form>
-            </div>
-          </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
-        </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
-          </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-        </div>
-      </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
-        </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions">
+                <div class="footer">
+                  <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
+                  
+                </div>            </nav>
+
+            <main class="main-panel">
+                
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+                <div role="main" class="hide-when-search">
+                        
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                    <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Extensions">
   
   <h1 id="KaijuSolutions_Agents_Extensions" data-uid="KaijuSolutions.Agents.Extensions" class="text-break">Namespace KaijuSolutions.Agents.Extensions
   </h1>
@@ -86,162 +99,146 @@
   <div class="markdown level0 remarks"></div>
     <h3 id="classes">Classes
   </h3>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.html">KaijuAgentsAngle</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngle.html">KaijuAgentsAngle</a></h5>
       <section><p>Extensions to get the angle in degrees from a position towards a target around the global Y axis. These will be from -180 to 180 degrees.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsAngleSorter.html">KaijuAgentsAngleSorter</a></h5>
       <section><p>Comparer class to sort by angle in degrees from a position towards a target around the global Y axis. Used in the extension methods found in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.html">KaijuAgentsSortAngle</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcRaycast.html">KaijuAgentsArcRaycast</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcRaycast.html">KaijuAgentsArcRaycast</a></h5>
       <section><p>Extension methods to perform ray casting along an arc. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcSphereCast.html">KaijuAgentsArcSphereCast</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcSphereCast.html">KaijuAgentsArcSphereCast</a></h5>
       <section><p>Extension methods to perform sphere casting along an arc. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBetween.html">KaijuAgentsBetween</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBetween.html">KaijuAgentsBetween</a></h5>
       <section><p>Extension methods to see if points are between two given distances of each other along the X and Z axes. These methods are inclusive of the distances to check. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBetween3.html">KaijuAgentsBetween3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBetween3.html">KaijuAgentsBetween3</a></h5>
       <section><p>Extension methods to see if points are between two given distances of each other along all three axes. These methods are inclusive of the distances to check. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond.html">KaijuAgentsBeyond</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond.html">KaijuAgentsBeyond</a></h5>
       <section><p>Extension methods to see if points are beyond a given distance of each other along the X and Z axes. These methods are inclusive of the distance to check. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond3.html">KaijuAgentsBeyond3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsBeyond3.html">KaijuAgentsBeyond3</a></h5>
       <section><p>Extension methods to see if points are beyond a given distance of each other along all three axes. These methods are inclusive of the distance to check. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDirection.html">KaijuAgentsDirection</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDirection.html">KaijuAgentsDirection</a></h5>
       <section><p>Extension methods to get the direction along the X and Z axes from one position to another. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDirection3.html">KaijuAgentsDirection3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDirection3.html">KaijuAgentsDirection3</a></h5>
       <section><p>Extension methods to get the direction along all three axes from one position to another. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance.html">KaijuAgentsDistance</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance.html">KaijuAgentsDistance</a></h5>
       <section><p>Extension methods to get the 2D distance across the X and Z axes. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3.html">KaijuAgentsDistance3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3.html">KaijuAgentsDistance3</a></h5>
       <section><p>Extension methods distance across all three axes. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3Sorter.html">KaijuAgentsDistance3Sorter</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistance3Sorter.html">KaijuAgentsDistance3Sorter</a></h5>
       <section><p>Comparer class to sort by distance along all three axes. Used in the extension methods found in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.html">KaijuAgentsSortDistance3</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistanceSorter.html">KaijuAgentsDistanceSorter</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsDistanceSorter.html">KaijuAgentsDistanceSorter</a></h5>
       <section><p>Comparer class to sort by distance along the X and Z axes. Used in the extension methods found in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.html">KaijuAgentsSortDistance</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsEvade.html">KaijuAgentsEvade</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsEvade.html">KaijuAgentsEvade</a></h5>
       <section><p>Standalone evade steering extension methods.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html">KaijuAgentsExpand</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html">KaijuAgentsExpand</a></h5>
       <section><p>Extension method to expand a 2D vector across the X and Z axes to all three axes, setting the Y axis to zero.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExtractPoints.html">KaijuAgentsExtractPoints</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExtractPoints.html">KaijuAgentsExtractPoints</a></h5>
       <section><p>Extension methods to extract the point vectors from hits. These do not perform any actual casting. For casting, see <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcRaycast.html">KaijuAgentsArcRaycast</a> and <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsArcSphereCast.html">KaijuAgentsArcSphereCast</a>. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest.html">KaijuAgentsFarthest</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest.html">KaijuAgentsFarthest</a></h5>
       <section><p>Extension methods to get the farthest object from a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest3.html">KaijuAgentsFarthest3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFarthest3.html">KaijuAgentsFarthest3</a></h5>
       <section><p>Extension methods to get the farthest object from a given position along all three axes. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.html">KaijuAgentsFindPath</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFindPath.html">KaijuAgentsFindPath</a></h5>
       <section><p>Extension methods for finding a path.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a></h5>
       <section><p>Extension methods to flatten objects down to their 2D representation as a <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> from the X and Z axes.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlee.html">KaijuAgentsFlee</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlee.html">KaijuAgentsFlee</a></h5>
       <section><p>Standalone flee steering extension methods.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsHasSight.html">KaijuAgentsHasSight</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsHasSight.html">KaijuAgentsHasSight</a></h5>
       <section><p>Extension methods to see if there is a direct line of sight between two positions across all axes. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsInView.html">KaijuAgentsInView</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsInView.html">KaijuAgentsInView</a></h5>
       <section><p>Extension methods to get if a target is within the field-of-view. This does not consider vertical field-of-view, meaning it checks relative to the global Y axis. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNearest.html">KaijuAgentsNearest</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNearest.html">KaijuAgentsNearest</a></h5>
       <section><p>Extension methods to get the nearest object to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNearest3.html">KaijuAgentsNearest3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNearest3.html">KaijuAgentsNearest3</a></h5>
       <section><p>Extension methods to get the nearest object to a given position along all three axes. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html">KaijuAgentsNormalization</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsNormalization.html">KaijuAgentsNormalization</a></h5>
       <section><p>Helper normalization methods.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsPursue.html">KaijuAgentsPursue</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsPursue.html">KaijuAgentsPursue</a></h5>
       <section><p>Standalone pursue steering extension methods.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsRaycast.html">KaijuAgentsRaycast</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsRaycast.html">KaijuAgentsRaycast</a></h5>
       <section><p>Extension methods to perform ray casting. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSeek.html">KaijuAgentsSeek</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSeek.html">KaijuAgentsSeek</a></h5>
       <section><p>Standalone seek steering extension methods.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.html">KaijuAgentsSortAngle</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortAngle.html">KaijuAgentsSortAngle</a></h5>
       <section><p>Extension methods for sorting objects by their angle in degrees from a position towards a target around the global Y axis.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.html">KaijuAgentsSortDistance</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance.html">KaijuAgentsSortDistance</a></h5>
       <section><p>Extension methods for sorting objects by their distance to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.html">KaijuAgentsSortDistance3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSortDistance3.html">KaijuAgentsSortDistance3</a></h5>
       <section><p>Extension methods for sorting objects by their distance to a given position along all three axes. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed.html">KaijuAgentsSpeed</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed.html">KaijuAgentsSpeed</a></h5>
       <section><p>Extension methods to get the speed at which an object is travelling along the X and Z axes. Methods without a delta time value will use Time.deltaTime. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed3.html">KaijuAgentsSpeed3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSpeed3.html">KaijuAgentsSpeed3</a></h5>
       <section><p>Extension methods to get the speed at which an object is travelling along all three axes. Methods without a delta time value will use Time.deltaTime. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSphereCast.html">KaijuAgentsSphereCast</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsSphereCast.html">KaijuAgentsSphereCast</a></h5>
       <section><p>Extension methods to perform sphere casting. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity.html">KaijuAgentsVelocity</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity.html">KaijuAgentsVelocity</a></h5>
       <section><p>Extension methods to get the velocity at which an object is travelling along the X and Z axes. Methods without a delta time value will use Time.deltaTime. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity3.html">KaijuAgentsVelocity3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsVelocity3.html">KaijuAgentsVelocity3</a></h5>
       <section><p>Extension methods to get the velocity at which an object is travelling along all three axes. Methods without a delta time value will use Time.deltaTime. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsWithin.html">KaijuAgentsWithin</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsWithin.html">KaijuAgentsWithin</a></h5>
       <section><p>Extension methods to see if points are within a given distance of each other along the X and Z axes. These methods are inclusive of the distance to check. All three-dimensional vectors will be flattened via methods in <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsFlatten.html">KaijuAgentsFlatten</a>.</p>
 </section>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsWithin3.html">KaijuAgentsWithin3</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsWithin3.html">KaijuAgentsWithin3</a></h5>
       <section><p>Extension methods to see if points are within a given distance of each other along all three axes. These methods are inclusive of the distance to check. Any <a href="https://docs.unity3d.com/ScriptReference/Vector2.html" target="_blank">Vector2</a> values will be expanded via the <a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAgentsExpand.html#KaijuSolutions_Agents_Extensions_KaijuAgentsExpand_Expand_Vector2_">Expand(Vector2)</a> method.</p>
 </section>
     <h3 id="enums">Enums
   </h3>
-      <h4><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></h4>
+      <h5><a class="xref" href="KaijuSolutions.Agents.Extensions.KaijuAngleSortMode.html">KaijuAngleSortMode</a></h5>
       <section><p>The mode to sort angles by.</p>
 </section>
 </article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
-                <div></div>
-              </nav>
-            </div>
-          </div>
+                </div>
+
+            </main>
         </div>
-      </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        <script type="text/javascript" src="../styles/jquery.twbsPagination.js"></script>
+        <script type="text/javascript" src="../styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <script type="text/javascript" src="../styles/docfx.js"></script>
+        <script type="text/javascript" src="../styles/singulink.js"></script>
+        <script type="text/javascript" src="../styles/main.js"></script>    </body>
 </html>

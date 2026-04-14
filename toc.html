@@ -3,9 +3,9 @@
   <div>
     <div class="sidefilter">
       <form class="toc-filter">
-        <span class="glyphicon glyphicon-filter filter-icon"></span>
-        <span class="glyphicon glyphicon-remove clear-icon" id="toc_filter_clear"></span>
-        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+        <i class="bi bi-funnel-fill filter-icon"></i>
+        <i id="toc_filter_clear" class="bi bi-x-lg clear-icon"></i>
+        <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." autocomplete="off" onkeypress="if(event.keyCode==13) {return false;}">
       </form>
     </div>
     <div class="sidetoc">
@@ -13,22 +13,28 @@
           
           <ul class="nav level1">
                 <li>
-                    <a href="manual/getting-started.html" name="manual/toc.html" title="Manual">Manual</a>
+                      <a href="manual/getting-started.html" class="sidebar-item" name="manual/toc.html" title="Manual">Manual</a>
+                  
                 </li>
                 <li>
-                    <a href="api/KaijuSolutions.Agents.html" name="api/toc.html" title="Scripting API">Scripting API</a>
+                      <a href="api/KaijuSolutions.Agents.html" class="sidebar-item" name="api/toc.html" title="Scripting API">Scripting API</a>
+                  
                 </li>
                 <li>
-                    <a href="changelog"  title="Changelog">Changelog</a>
+                      <a href="changelog" class="sidebar-item"  title="Changelog">Changelog</a>
+                  
                 </li>
                 <li>
-                    <a href="license"  title="License">License</a>
+                      <a href="license" class="sidebar-item"  title="License">License</a>
+                  
                 </li>
                 <li>
-                    <a href="contact"  title="Contact">Contact</a>
+                      <a href="contact" class="sidebar-item"  title="Contact">Contact</a>
+                  
                 </li>
                 <li>
-                    <a href="https://github.com/Kaiju-Solutions/Kaiju-Agents"  title="GitHub" target="_blank">GitHub</a>
+                      <a href="https://github.com/Kaiju-Solutions/Kaiju-Agents" class="sidebar-item"  title="GitHub" target="_blank">GitHub</a>
+                  
                 </li>
           </ul>
       </div>
