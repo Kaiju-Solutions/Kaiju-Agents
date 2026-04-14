@@ -1,97 +1,128 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<html>
-  
+<html lang="csharp">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuLearningSpinActuator | Kaiju Agents</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuLearningSpinActuator | Kaiju Agents ">
-    <meta name="generator" content="docfx 2.59.4.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="..">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+      <title>Class KaijuLearningSpinActuator | Kaiju Agents</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KaijuLearningSpinActuator | Kaiju Agents ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In This Article">
+      <meta name="loc:searchResultsCount" content="">
+      <meta name="loc:searchNoResults" content="">
+      <meta name="loc:tocFilter" content="Enter here to filter...">
+      <meta name="loc:nextArticle" content="">
+      <meta name="loc:prevArticle" content="">
+      <meta name="loc:themeLight" content="">
+      <meta name="loc:themeDark" content="">
+      <meta name="loc:themeAuto" content="">
+      <meta name="loc:changeTheme" content="">
+      <meta name="loc:copy" content="">
+      <meta name="loc:downloadPdf" content="">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="..">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator">
+
+        <article data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator">
   
   
-  <h1 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator" class="text-break">Class KaijuLearningSpinActuator
+  <h1 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator" class="text-break">
+    Class KaijuLearningSpinActuator
+    
   </h1>
-  <div class="markdown level0 summary"><p>Actuator for controlling the rotation of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> via the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has one continuous action which is assigned to the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html">KaijuLearningActuatorBase</a></div>
-    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.html">KaijuLearningAgentActuator</a></div>
-    <div class="level3"><span class="xref">KaijuLearningSpinActuator</span></div>
+  
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="KaijuSolutions.Agents.Learning.html">KaijuSolutions.Agents.Learning</a></dd></dl>
+    <dl><dt>Assembly</dt><dd>cs.temp.dll.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+  
+  <div class="markdown summary"><p>Actuator for controlling the rotation of an <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a> via the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property for <a href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest" target="_blank">ML-Agents</a>. This has one continuous action which is assigned to the <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html#KaijuSolutions_Agents_KaijuAgent_Spin">Spin</a> property. This has no <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_ActionBuffers__">Heuristic(in ActionBuffers)</a> implementation, and you will need to extend this class and override for your use case.</p>
+</div>
+  <div class="markdown conceptual"></div>
+  
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class KaijuLearningSpinActuator : KaijuLearningAgentActuator</code></pre>
+  </div>
+  
+  
+  
+  
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">System.Object</span></div>
+      <div><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html">KaijuLearningActuatorBase</a></div>
+      <div><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.html">KaijuLearningAgentActuator</a></div>
+      <div><span class="xref">KaijuLearningSpinActuator</span></div>
+    </dd>
+  </dl>
+  
+  
+  
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.html#KaijuSolutions_Agents_Learning_KaijuLearningAgentActuator_Agent">KaijuLearningAgentActuator.Agent</a>
     </div>
@@ -104,173 +135,172 @@
     <div>
       <a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html#KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_Name">KaijuLearningActuatorBase.Name</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Learning.html">KaijuSolutions.Agents.Learning</a></h6>
+  </dd></dl>
   
-  <h5 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KaijuLearningSpinActuator : KaijuLearningAgentActuator</code></pre>
-  </div>
-  <h3 id="properties">Properties
-  </h3>
+  
+  
+  
+  
+  
+  <h2 class="section" id="properties">Properties
+  </h2>
+  
+  
   <a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_ActionSpec_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.ActionSpec*"></a>
-  <h4 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_ActionSpec" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.ActionSpec">ActionSpec</h4>
+  
+  <h3 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_ActionSpec" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.ActionSpec">
+    ActionSpec
+    
+  </h3>
+  
   <div class="markdown level1 summary"><p>The specification of the possible actions for this actuator component. This must produce the same results as the corresponding IActuator&apos;s ActionSpec.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ActionSpec ActionSpec { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ActionSpec</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
+  
+  
+  
+  
+  
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">ActionSpec</span></dt>
+    <dd></dd>
+  </dl>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h2 class="section" id="methods">Methods
+  </h2>
+  
+  
   <a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.Heuristic*"></a>
-  <h4 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_ActionBuffers__" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.Heuristic(ActionBuffers@)">Heuristic(in ActionBuffers)</h4>
+  
+  <h3 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic_ActionBuffers__" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.Heuristic(ActionBuffers@)">
+    Heuristic(in ActionBuffers)
+    
+  </h3>
+  
   <div class="markdown level1 summary"><p>Method called on objects which are expected to fill out the <see cref="!:actionBuffersOut"></see> data structure. Object that implement this interface should be careful to be consistent in the placement of their actions in the <see cref="!:actionBuffersOut"></see> data structure.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Heuristic(in ActionBuffers actionBuffersOut)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ActionBuffers</span></td>
-        <td><span class="parametername">actionBuffersOut</span></td>
-        <td><p>The action buffers data structure to be filled by the object implementing this interface.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html#KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_Heuristic_ActionBuffers__">KaijuLearningActuatorBase.Heuristic(in ActionBuffers)</a></div>
+  
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>actionBuffersOut</code> <span class="xref">ActionBuffers</span></dt>
+    <dd><p>The action buffers data structure to be filled by the object implementing this interface.</p>
+</dd>
+  </dl>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_OnActionReceived_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.OnActionReceived*"></a>
-  <h4 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_OnActionReceived_ActionBuffers_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.OnActionReceived(ActionBuffers)">OnActionReceived(ActionBuffers)</h4>
+  
+  <h3 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_OnActionReceived_ActionBuffers_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.OnActionReceived(ActionBuffers)">
+    OnActionReceived(ActionBuffers)
+    
+  </h3>
+  
   <div class="markdown level1 summary"><p>Method called in order to allow object to execute actions based on the <see cref="!:actionBuffers"></see> contents. The structure of the contents in the <see cref="!:actionBuffers"></see> are defined by the action spec.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void OnActionReceived(ActionBuffers actionBuffers)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ActionBuffers</span></td>
-        <td><span class="parametername">actionBuffers</span></td>
-        <td><p>The data structure containing the action buffers for this object.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html#KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_OnActionReceived_ActionBuffers_">KaijuLearningActuatorBase.OnActionReceived(ActionBuffers)</a></div>
+  
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>actionBuffers</code> <span class="xref">ActionBuffers</span></dt>
+    <dd><p>The data structure containing the action buffers for this object.</p>
+</dd>
+  </dl>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_WriteDiscreteActionMask_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.WriteDiscreteActionMask*"></a>
-  <h4 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_WriteDiscreteActionMask_IDiscreteActionMask_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.WriteDiscreteActionMask(IDiscreteActionMask)">WriteDiscreteActionMask(IDiscreteActionMask)</h4>
+  
+  <h3 id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_WriteDiscreteActionMask_IDiscreteActionMask_" data-uid="KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.WriteDiscreteActionMask(IDiscreteActionMask)">
+    WriteDiscreteActionMask(IDiscreteActionMask)
+    
+  </h3>
+  
   <div class="markdown level1 summary"><p>Implement to modify the masks for discrete actions. When using discrete actions, the agent will not perform the masked action.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
+  
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">IDiscreteActionMask</span></td>
-        <td><span class="parametername">actionMask</span></td>
-        <td><p>The action mask for the agent.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.html#KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_WriteDiscreteActionMask_IDiscreteActionMask_">KaijuLearningActuatorBase.WriteDiscreteActionMask(IDiscreteActionMask)</a></div>
+  
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>actionMask</code> <span class="xref">IDiscreteActionMask</span></dt>
+    <dd><p>The action mask for the agent.</p>
+</dd>
+  </dl>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <div class="pull-left">
-              <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
-              
-            </div>
-            <div class="toggle-mode pull-right visible-sm visible-xs">
-              <div class="icon">
-                <i aria-hidden="true">☀</i>
-              </div>
-              <label class="switch">
-                <input type="checkbox" id="switch-style-m">
-                <span class="slider round"></span>
-              </label>
-              <div class="icon">
-                <i aria-hidden="true">☾</i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="../styles/toggle-theme.js"></script>
-      </footer>    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    </footer>
   </body>
 </html>
