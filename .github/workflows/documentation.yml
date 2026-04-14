@@ -45,12 +45,36 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # Spins up a lightweight Unity container to copy the core DLLs into our workspace.
-      # Because we are just extracting files and not launching the Editor, no Unity License is required.
-      - name: Automate Unity DLL Extraction
+      - name: Automate Unity DLL Extraction (Latest Stable)
         run: |
           mkdir -p Documentation/Dependencies
-          docker run --rm -v ${{ github.workspace }}:/workspace unityci/editor:ubuntu-2022.3.15f1-base-3.0.0 bash -c "cp -r /opt/unity/Editor/Data/Managed/* /workspace/Documentation/Dependencies/ && chmod -R 777 /workspace/Documentation/Dependencies/"
+          
+          echo "Querying Unity Release API for recent stable versions..."
+          # Fetch the 20 most recent Unity releases, filtering out alphas/betas/RCs.
+          RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=20" | jq -r '[.results[] | select(.version | test("a|b|rc") | not)] | .[].version')
+          
+          FOUND_TAG=""
+          for UNITY_VER in $RECENT_UNITIES; do
+            echo "Checking GameCI Docker Hub for Unity $UNITY_VER..."
+            
+            # Query docker hub specifically for ubuntu base tags of this version
+            TAG_QUERY="ubuntu-${UNITY_VER}-base"
+            MATCHING_TAG=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?name=${TAG_QUERY}" | jq -r '[.results[].name | select(test("-base-[0-9.]+$"))] | .[0]')
+            
+            if [ "$MATCHING_TAG" != "null" ] && [ -n "$MATCHING_TAG" ]; then
+              FOUND_TAG=$MATCHING_TAG
+              echo "✅ Found latest available GameCI image: $FOUND_TAG"
+              break
+            fi
+          done
+          
+          if [ -z "$FOUND_TAG" ]; then
+            echo "⚠️ Could not find a recent GameCI tag. Falling back to a known stable version."
+            FOUND_TAG="ubuntu-6000.0.2f1-base-3.0.0"
+          fi
+          
+          echo "Extracting DLLs using: unityci/editor:$FOUND_TAG"
+          docker run --rm -v ${{ github.workspace }}:/workspace unityci/editor:$FOUND_TAG bash -c "cp -r /opt/unity/Editor/Data/Managed/* /workspace/Documentation/Dependencies/ && chmod -R 777 /workspace/Documentation/Dependencies/"
 
       - name: Handle Precompiler Definitions
         run: |
