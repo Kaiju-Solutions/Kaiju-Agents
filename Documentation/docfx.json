@@ -21,10 +21,7 @@
     ],
     "build": {
         "template": [
-            "default",
-            "templates/singulinkfx",
-            "plugins/memberpage.2.59.0/content",
-            "plugins/memberpage-extras"
+            "default"
         ],
         "globalMetadata": {
             "_appTitle": "Kaiju Agents",
