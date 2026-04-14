@@ -1,409 +1,112 @@
 <!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<html>
-  
+<html lang="csharp">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class KaijuEvadeMovementTester | Kaiju Agents</title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class KaijuEvadeMovementTester | Kaiju Agents ">
-    <meta name="generator" content="docfx 2.59.4.0">
-    
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-    
-    <meta property="docfx:rel" content="../">
-    
+      <title>Kaiju Agents</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | Kaiju Agents ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
-        
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              
-              <a class="navbar-brand" href="..">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="..">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
-        </nav>
-        
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
-          </div>
         </div>
-      </header>
-      <div class="container body-content">
-        
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="KaijuSolutions.Agents.Samples.Movement.KaijuEvadeMovementTester">
-  
-  
-  <h1 id="KaijuSolutions_Agents_Samples_Movement_KaijuEvadeMovementTester" data-uid="KaijuSolutions.Agents.Samples.Movement.KaijuEvadeMovementTester" class="text-break">Class KaijuEvadeMovementTester
-  </h1>
-  <div class="markdown level0 summary"><p>Simple tester for <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuEvadeMovement.html">KaijuEvadeMovement</a>s.</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html">KaijuBehaviour</a></div>
-    <div class="level2"><a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuMovementTester.html">KaijuMovementTester</a></div>
-    <div class="level3"><a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuLeavingMovementTester.html">KaijuLeavingMovementTester</a></div>
-    <div class="level4"><span class="xref">KaijuEvadeMovementTester</span></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuLeavingMovementTester.html#KaijuSolutions_Agents_Samples_Movement_KaijuLeavingMovementTester_Distance">KaijuLeavingMovementTester.Distance</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuMovementTester.html#KaijuSolutions_Agents_Samples_Movement_KaijuMovementTester_Agents">KaijuMovementTester.Agents</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuMovementTester.html#KaijuSolutions_Agents_Samples_Movement_KaijuMovementTester_Weight">KaijuMovementTester.Weight</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuMovementTester.html#KaijuSolutions_Agents_Samples_Movement_KaijuMovementTester_clear">KaijuMovementTester.clear</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition">KaijuBehaviour.OnPreSetPosition</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal">KaijuBehaviour.OnPreSetPositionGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition">KaijuBehaviour.OnSetPosition</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal">KaijuBehaviour.OnSetPositionGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation">KaijuBehaviour.OnPreSetOrientation</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal">KaijuBehaviour.OnPreSetOrientationGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation">KaijuBehaviour.OnSetOrientation</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal">KaijuBehaviour.OnSetOrientationGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale">KaijuBehaviour.OnPreSetScale</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal">KaijuBehaviour.OnPreSetScaleGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScale">KaijuBehaviour.OnSetScale</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal">KaijuBehaviour.OnSetScaleGlobal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position">KaijuBehaviour.Position</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Position3">KaijuBehaviour.Position3</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition">KaijuBehaviour.LocalPosition</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3">KaijuBehaviour.LocalPosition3</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_X">KaijuBehaviour.X</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalX">KaijuBehaviour.LocalX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Y">KaijuBehaviour.Y</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalY">KaijuBehaviour.LocalY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Z">KaijuBehaviour.Z</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalZ">KaijuBehaviour.LocalZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Orientation">KaijuBehaviour.Orientation</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation">KaijuBehaviour.LocalOrientation</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles">KaijuBehaviour.OrientationAngles</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles">KaijuBehaviour.LocalOrientationAngles</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion">KaijuBehaviour.OrientationQuaternion</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion">KaijuBehaviour.LocalOrientationQuaternion</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationX">KaijuBehaviour.OrientationX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX">KaijuBehaviour.LocalOrientationX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationY">KaijuBehaviour.OrientationY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY">KaijuBehaviour.LocalOrientationY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationZ">KaijuBehaviour.OrientationZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ">KaijuBehaviour.LocalOrientationZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX">KaijuBehaviour.OrientationQuaternionX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX">KaijuBehaviour.LocalOrientationQuaternionX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY">KaijuBehaviour.OrientationQuaternionY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY">KaijuBehaviour.LocalOrientationQuaternionY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ">KaijuBehaviour.OrientationQuaternionZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ">KaijuBehaviour.LocalOrientationQuaternionZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW">KaijuBehaviour.OrientationQuaternionW</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW">KaijuBehaviour.LocalOrientationQuaternionW</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScale">KaijuBehaviour.LocalScale</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX">KaijuBehaviour.LocalScaleX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY">KaijuBehaviour.LocalScaleY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ">KaijuBehaviour.LocalScaleZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScale">KaijuBehaviour.GlobalScale</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX">KaijuBehaviour.GlobalScaleX</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY">KaijuBehaviour.GlobalScaleY</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ">KaijuBehaviour.GlobalScaleZ</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld">KaijuBehaviour.LocalToWorld</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal">KaijuBehaviour.WorldToLocal</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward">KaijuBehaviour.Forward</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Forward3">KaijuBehaviour.Forward3</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Backwards">KaijuBehaviour.Backwards</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Up">KaijuBehaviour.Up</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Down">KaijuBehaviour.Down</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Right">KaijuBehaviour.Right</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Left">KaijuBehaviour.Left</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Parent">KaijuBehaviour.Parent</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Root">KaijuBehaviour.Root</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ChildCount">KaijuBehaviour.ChildCount</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HasChanged">KaijuBehaviour.HasChanged</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount">KaijuBehaviour.HierarchyCount</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity">KaijuBehaviour.HierarchyCapacity</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Layer">KaijuBehaviour.Layer</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ComponentCount">KaijuBehaviour.ComponentCount</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy">KaijuBehaviour.ActiveInHierarchy</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf">KaijuBehaviour.ActiveSelf</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_IsStatic">KaijuBehaviour.IsStatic</a>
-    </div>
-    <div>
-      <a class="xref" href="KaijuSolutions.Agents.KaijuBehaviour.html#KaijuSolutions_Agents_KaijuBehaviour_Scene">KaijuBehaviour.Scene</a>
-    </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="KaijuSolutions.Agents.Samples.Movement.html">KaijuSolutions.Agents.Samples.Movement</a></h6>
-  
-  <h5 id="KaijuSolutions_Agents_Samples_Movement_KaijuEvadeMovementTester_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class KaijuEvadeMovementTester : KaijuLeavingMovementTester</code></pre>
-  </div>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="KaijuSolutions_Agents_Samples_Movement_KaijuEvadeMovementTester_Assign_" data-uid="KaijuSolutions.Agents.Samples.Movement.KaijuEvadeMovementTester.Assign*"></a>
-  <h4 id="KaijuSolutions_Agents_Samples_Movement_KaijuEvadeMovementTester_Assign_KaijuSolutions_Agents_KaijuAgent_" data-uid="KaijuSolutions.Agents.Samples.Movement.KaijuEvadeMovementTester.Assign(KaijuSolutions.Agents.KaijuAgent)">Assign(KaijuAgent)</h4>
-  <div class="markdown level1 summary"><p>Assign this <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a> to the one of the <a class="xref" href="KaijuSolutions.Agents.html">KaijuSolutions.Agents</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override KaijuMovement Assign(KaijuAgent agent)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a></td>
-        <td><span class="parametername">agent</span></td>
-        <td><p>The <a class="xref" href="KaijuSolutions.Agents.KaijuAgent.html">KaijuAgent</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a></td>
-        <td><p>The <a class="xref" href="KaijuSolutions.Agents.Movement.KaijuMovement.html">KaijuMovement</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="KaijuSolutions.Agents.Samples.Movement.KaijuMovementTester.html#KaijuSolutions_Agents_Samples_Movement_KaijuMovementTester_Assign_KaijuSolutions_Agents_KaijuAgent_">KaijuMovementTester.Assign(KaijuAgent)</a></div>
+
+        <article data-uid="KaijuSolutions.Agents.Samples.Movement.KaijuEvadeMovementTester">
+
+
 </article>
-          </div>
-          
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
-                <input type="text" class="form-control" id="affix-filter" placeholder="Filter..." style="margin-bottom: 10px;" onkeyup="filterAffix()">
-                <div></div>
-              </nav>
-            </div>
-          </div>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
         </div>
       </div>
-      
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-            <a href="/license" href="License">MIT License © 2026</a> <a href="https://kaijusolutions.ca" title="Kaiju Solutions Inc." target="_blank">Kaiju Solutions Inc.</a>
-            
-          </div>
-        </div>
-      </footer>
-    </div>
-    
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    </footer>
   </body>
 </html>
