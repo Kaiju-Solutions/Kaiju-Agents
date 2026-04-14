@@ -55,40 +55,28 @@ function filterAffix() {
 
     // 2. Wait for the DOM to load to inject the toggle button
     document.addEventListener("DOMContentLoaded", function () {
-        // Find the existing search form instead of the entire navbar collapse
-        const searchForm = document.getElementById('search');
-        if (!searchForm) return;
+        // Find the right-aligned section of the footer
+        const footerRight = document.querySelector('footer .footer .container .pull-right');
+        if (!footerRight) return;
 
-        // Create the toggle container to mimic a Bootstrap form-group
-        const toggleContainer = document.createElement('div');
-        toggleContainer.className = 'form-group';
+        // Create the toggle container
+        const toggleContainer = document.createElement('span');
         
-        // Inline styles to perfectly align it with the search bar
-        toggleContainer.style.display = 'inline-block';
-        toggleContainer.style.verticalAlign = 'middle';
-        toggleContainer.style.marginRight = '15px'; 
-
+        // Add the link and a separator to match the footer's style
         toggleContainer.innerHTML = `
-            <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode" style="color: #999; font-size: 18px; text-decoration: none; line-height: 1;">
-                <span class="glyphicon glyphicon-adjust"></span>
+            <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode">
+                <span class="glyphicon glyphicon-adjust"></span> Toggle Theme
             </a>
+            <span style="margin: 0 10px; color: #ccc;">|</span>
         `;
 
-        // Prepend it so it sits to the left of the search input
-        searchForm.insertBefore(toggleContainer, searchForm.firstChild);
+        // Insert it right before the existing "Back to top" link
+        footerRight.insertBefore(toggleContainer, footerRight.firstChild);
 
         // Add click event listener
         const toggleBtn = document.getElementById('theme-toggle');
-        
-        // Add a nice hover effect
-        toggleBtn.addEventListener('mouseenter', () => toggleBtn.style.color = document.body.classList.contains('dark-mode') ? '#fff' : '#333');
-        toggleBtn.addEventListener('mouseleave', () => toggleBtn.style.color = '#999');
-
         toggleBtn.addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
-            
-            // Re-apply hover color based on new state
-            toggleBtn.style.color = document.body.classList.contains('dark-mode') ? '#fff' : '#333';
             
             // Save preference
             if (document.body.classList.contains('dark-mode')) {
