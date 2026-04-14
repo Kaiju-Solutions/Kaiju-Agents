@@ -109,7 +109,7 @@ jobs:
         shell: pwsh
 
       - name: Install DocFX
-        run: choco install -y docfx
+        run: dotnet tool install -g docfx
 
         # Ensure a clean build for safety.
       - name: Clean DocFX Intermediate Files
