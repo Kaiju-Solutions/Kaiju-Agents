@@ -55,23 +55,32 @@ function filterAffix() {
 
     // 2. Wait for the DOM to load to inject the toggle button
     document.addEventListener("DOMContentLoaded", function () {
-        // Find the right-aligned section of the footer
-        const footerRight = document.querySelector('footer .footer .container .pull-right');
-        if (!footerRight) return;
+        // Find the navbar container
+        const navbar = document.getElementById('navbar');
+        if (!navbar) return;
 
-        // Create the toggle container
-        const toggleContainer = document.createElement('span');
+        // Create the toggle container using standard Bootstrap 3 navbar classes
+        const toggleContainer = document.createElement('ul');
+        toggleContainer.className = 'nav navbar-nav navbar-right';
         
-        // Add the link and a separator to match the footer's style
+        // Use just the icon for a cleaner look in the header
         toggleContainer.innerHTML = `
-            <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode">
-                <span class="glyphicon glyphicon-adjust"></span> Toggle Theme
-            </a>
-            <span style="margin: 0 10px; color: #ccc;">|</span>
+            <li>
+                <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode">
+                    <span class="glyphicon glyphicon-adjust"></span>
+                </a>
+            </li>
         `;
 
-        // Insert it right before the existing "Back to top" link
-        footerRight.insertBefore(toggleContainer, footerRight.firstChild);
+        // Find the search form. Standard DocFX templates use id="search"
+        const searchForm = document.getElementById('search');
+        
+        // Inject it. Because .navbar-right uses float: right, inserting it *before* // the search form in the DOM actually places it to the *right* visually.
+        if (searchForm) {
+            searchForm.parentNode.insertBefore(toggleContainer, searchForm);
+        } else {
+            navbar.appendChild(toggleContainer);
+        }
 
         // Add click event listener
         const toggleBtn = document.getElementById('theme-toggle');
