@@ -3,7 +3,6 @@ name: Create Documentation
 on:
   workflow_dispatch:
 
-# Concurrency group to cancel in-progress runs of this workflow on the same branch.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -41,23 +40,28 @@ jobs:
           submodules: true
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '8.0.x'
 
-      - name: Automate Unity DLL Extraction (Latest Stable)
+      - name: Automate Unity Package Resolution & DLL Extraction
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         run: |
+          if [ -z "$UNITY_LICENSE" ]; then
+            echo "❌ ERROR: UNITY_LICENSE secret is missing. Unity cannot launch to resolve packages."
+            exit 1
+          fi
+
           mkdir -p Documentation/Dependencies
+          echo "$UNITY_LICENSE" > UnityLicense.ulf
           
           echo "Querying Unity Release API for recent stable versions..."
-          # Fetch the 20 most recent Unity releases, filtering out alphas/betas/RCs.
           RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=20" | jq -r '[.results[] | select(.version | test("a|b|rc") | not)] | .[].version')
           
           FOUND_TAG=""
           for UNITY_VER in $RECENT_UNITIES; do
             echo "Checking GameCI Docker Hub for Unity $UNITY_VER..."
-            
-            # Query docker hub specifically for ubuntu base tags of this version
             TAG_QUERY="ubuntu-${UNITY_VER}-base"
             MATCHING_TAG=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?name=${TAG_QUERY}" | jq -r '[.results[].name | select(test("-base-[0-9.]+$"))] | .[0]')
             
@@ -73,8 +77,19 @@ jobs:
             FOUND_TAG="ubuntu-6000.0.2f1-base-3.0.0"
           fi
           
-          echo "Extracting DLLs using: unityci/editor:$FOUND_TAG"
-          docker run --rm -v ${{ github.workspace }}:/workspace unityci/editor:$FOUND_TAG bash -c "cp -r /opt/unity/Editor/Data/Managed/* /workspace/Documentation/Dependencies/ && chmod -R 777 /workspace/Documentation/Dependencies/"
+          echo "Launching Unity to resolve UPM packages using: unityci/editor:$FOUND_TAG"
+          docker run --rm \
+            -v ${{ github.workspace }}:/workspace \
+            unityci/editor:$FOUND_TAG \
+            bash -c " \
+              echo 'Opening Unity to compile project...' && \
+              unity-editor -batchmode -nographics -manualLicenseFile /workspace/UnityLicense.ulf -projectPath /workspace -quit || true && \
+              echo 'Copying Core Unity DLLs...' && \
+              cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ && \
+              echo 'Copying UPM Package DLLs...' && \
+              find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; && \
+              chmod -R 777 /workspace/Documentation/Dependencies/ \
+            "
 
       - name: Handle Precompiler Definitions
         run: |
@@ -139,19 +154,9 @@ jobs:
           mkdir -p Documentation/license
           cp LICENSE.md Documentation/license/index.md
 
-      - name: Documentation Folder Contents Before Build
-        run: |
-          Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
-        shell: pwsh
-
       - name: Generate Metadata
         run: docfx metadata Documentation/docfx.json -l Verbose
 
-      - name: Documentation Folder Contents After Build
-        run: |
-          Get-ChildItem -Path Documentation -Recurse | Select-Object FullName
-        shell: pwsh
-      
       - name: Update API TOC Order and Names
         shell: pwsh
         run: |
@@ -215,10 +220,6 @@ jobs:
           Set-Content -Path $tocFile -Value $tocContent
           Write-Host "Updated '$tocFile' successfully."
 
-      - name: Show API YML Contents
-        run: Get-Content Documentation/api/toc.yml
-        shell: pwsh
-      
       - name: Build Documentation Website
         run: docfx build Documentation/docfx.json -l Verbose
 
@@ -230,7 +231,6 @@ jobs:
         run: |
           $siteDir = "_site"
           $htmlFiles = Get-ChildItem -Path $siteDir -Filter *.html -Recurse
-          Write-Host "Found $($htmlFiles.Count) HTML files to process for cleaning."
 
           foreach ($file in $htmlFiles) {
               $originalContent = Get-Content $file.FullName -Raw
@@ -261,14 +261,13 @@ jobs:
               $newContent = [regex]::Replace($newContent, $genericPipeRegex, $pipeEvaluator)
 
               if ($originalContent -ne $newContent) {
-                  Write-Host "Cleaned links and titles in: $($file.FullName)"
                   $utf8WithoutBom = New-Object System.Text.UTF8Encoding($false)
                   [System.IO.File]::WriteAllText($file.FullName, $newContent, $utf8WithoutBom)
               }
           }
 
       - name: Upload Site Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: _site
           path: _site
@@ -290,7 +289,7 @@ jobs:
           submodules: true
 
       - name: Download Site Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: _site
           path: _site
