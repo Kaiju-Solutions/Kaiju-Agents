@@ -56,30 +56,46 @@ jobs:
           mkdir -p Documentation/Dependencies
           echo "$UNITY_LICENSE" > UnityLicense.ulf
           
-          echo "Querying Unity Release API for recent stable versions..."
-          RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=20" | jq -r '[.results[] | select(.version | test("a|b|rc") | not)] | .[].version')
-          
-          echo "Fetching recent tags from GameCI Docker Hub..."
-          # Query Docker Hub ONCE for the top 100 tags to avoid rate limits, ignoring errors if it fails.
-          DOCKER_TAGS=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?page_size=100" | jq -r '.results[].name' 2>/dev/null || echo "")
-          
           FOUND_TAG=""
-          for UNITY_VER in $RECENT_UNITIES; do
-            echo "Checking GameCI for Unity $UNITY_VER..."
-            
-            # Search the downloaded list for a matching ubuntu base tag
-            MATCHING_TAG=$(echo "$DOCKER_TAGS" | grep -E "^ubuntu-${UNITY_VER}-base-[0-9.]+$" | head -n 1)
-            
-            if [ -n "$MATCHING_TAG" ]; then
-              FOUND_TAG=$MATCHING_TAG
-              echo "✅ Found latest available GameCI image: $FOUND_TAG"
-              break
-            fi
-          done
+          GAMECI_VERSIONS=("3.1.0" "3.0.1" "3.0.0")
+          
+          echo "Attempting to match the project's exact Unity version..."
+          if [ -f "ProjectSettings/ProjectVersion.txt" ]; then
+            PROJECT_VER=$(grep "m_EditorVersion:" ProjectSettings/ProjectVersion.txt | awk '{print $2}' | tr -d '\r')
+            echo "Project uses Unity $PROJECT_VER. Checking Docker Hub..."
+            for GC_VER in "${GAMECI_VERSIONS[@]}"; do
+              URL="https://hub.docker.com/v2/repositories/unityci/editor/tags/ubuntu-${PROJECT_VER}-base-${GC_VER}/"
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+              if [ "$HTTP_CODE" == "200" ]; then
+                FOUND_TAG="ubuntu-${PROJECT_VER}-base-${GC_VER}"
+                echo "✅ Found exact GameCI image: $FOUND_TAG"
+                break
+              fi
+            done
+          fi
           
           if [ -z "$FOUND_TAG" ]; then
-            echo "⚠️ Could not find a recent GameCI tag. Falling back to a known stable version."
-            FOUND_TAG="ubuntu-6000.0.2f1-base-3.0.0"
+            echo "Querying Unity Release API for recent stable versions..."
+            # Pulls 15 latest releases and extracts only stable 'f1' versions
+            RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=15" | grep -oP '"version":"\K6000\.[^a-zA-Z"]+f1' | head -n 10 || echo "")
+            
+            for UNITY_VER in $RECENT_UNITIES; do
+              echo "Checking GameCI for Unity $UNITY_VER..."
+              for GC_VER in "${GAMECI_VERSIONS[@]}"; do
+                URL="https://hub.docker.com/v2/repositories/unityci/editor/tags/ubuntu-${UNITY_VER}-base-${GC_VER}/"
+                HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+                if [ "$HTTP_CODE" == "200" ]; then
+                  FOUND_TAG="ubuntu-${UNITY_VER}-base-${GC_VER}"
+                  echo "✅ Found latest available GameCI image: $FOUND_TAG"
+                  break 2
+                fi
+              done
+            done
+          fi
+          
+          if [ -z "$FOUND_TAG" ]; then
+            echo "❌ CRITICAL ERROR: Could not find any valid GameCI tags on Docker Hub. Stopping."
+            exit 1
           fi
           
           echo "Launching Unity to resolve UPM packages using: unityci/editor:$FOUND_TAG"
@@ -87,12 +103,14 @@ jobs:
             -v ${{ github.workspace }}:/workspace \
             unityci/editor:$FOUND_TAG \
             bash -c " \
-              echo 'Opening Unity to compile project...' && \
-              unity-editor -batchmode -nographics -manualLicenseFile /workspace/UnityLicense.ulf -projectPath /workspace -quit || true && \
+              echo 'Activating Unity License...' && \
+              unity-editor -batchmode -nographics -manualLicenseFile /workspace/UnityLicense.ulf -quit || true && \
+              echo 'Opening Unity to compile project and resolve UPM...' && \
+              unity-editor -batchmode -nographics -projectPath /workspace -quit || true && \
               echo 'Copying Core Unity DLLs...' && \
-              cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ && \
+              cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ 2>/dev/null || true && \
               echo 'Copying UPM Package DLLs...' && \
-              find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; && \
+              find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; 2>/dev/null || true && \
               chmod -R 777 /workspace/Documentation/Dependencies/ \
             "
 
