@@ -32,8 +32,6 @@ jobs:
 
   build:
     needs: delete-old-deployments
-    # REQUIRED: ubuntu-latest is needed for Docker to run GameCI efficiently, 
-    # and modern DocFX natively supports Linux. PowerShell scripts run fine on Ubuntu.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -91,7 +89,7 @@ jobs:
           python -c '
           import json, os, urllib.request, re, sys
           target_unity = "'"$PROJECT_VER"'"
-          packages_to_inject = ["com.unity.behavior", "com.unity.ml-agents", "com.unity.inputsystem"]
+          packages_to_inject = ["com.unity.behavior", "com.unity.ml-agents"]
           
           def get_latest_compatible(pkg, unity_ver):
               try:
@@ -140,7 +138,12 @@ jobs:
               json.dump(manifest, f, indent=2)
           '
           
+          echo "------ VERIFYING MANIFEST INJECTION ------"
+          cat Packages/manifest.json
+          echo "------------------------------------------"
+          
           echo "Launching Unity to resolve UPM using: unityci/editor:$FOUND_TAG"
+          # Included testing flags to force complete resolution and bypass compiler errors
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             unityci/editor:$FOUND_TAG \
@@ -148,12 +151,17 @@ jobs:
               echo 'Activating Unity License...' && \
               unity-editor -batchmode -nographics -manualLicenseFile /workspace/UnityLicense.ulf -quit || true && \
               echo 'Opening Unity to compile project...' && \
-              unity-editor -batchmode -nographics -projectPath /workspace -quit || true && \
+              unity-editor -batchmode -nographics -projectPath /workspace -silent-crashes -ignoreCompilerErrors -no-browser-auth -no-instance -quit || true && \
               echo 'Copying DLLs...' && \
               cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ 2>/dev/null || true && \
               find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; 2>/dev/null || true && \
               chmod -R 777 /workspace/Documentation/Dependencies/ \
             "
+
+      - name: Verify Extracted Dependencies
+        run: |
+          echo "Listing all extracted DLLs for DocFX:"
+          ls -lh Documentation/Dependencies/ || echo "Dependencies directory not found or empty."
 
       - name: Handle Precompiler Definitions
         run: |
@@ -204,7 +212,6 @@ jobs:
           }
         shell: pwsh
 
-      # REQUIRED: This must be dotnet tool install to get DocFx 2.60+ and the "modern" template.
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
