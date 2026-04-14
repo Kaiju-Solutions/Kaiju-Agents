@@ -21,9 +21,8 @@
     ],
     "build": {
         "template": [
-            "templates/common",
-            "templates/default",
-            "templates/modern",
+            "default",
+            "modern",
             "templates/custom"
         ],
         "globalMetadata": {
