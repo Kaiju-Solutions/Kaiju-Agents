@@ -22,7 +22,7 @@
     "build": {
         "template": [
             "default",
-            "modern",
+            "templates/darkfx",
             "templates/custom"
         ],
         "globalMetadata": {
