@@ -45,3 +45,45 @@ function filterAffix() {
     }
   }
 }
+
+(function () {
+    // 1. Check local storage for theme preference immediately
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.body.classList.add('dark-mode');
+    }
+
+    // 2. Wait for the DOM to load to inject the toggle button
+    document.addEventListener("DOMContentLoaded", function () {
+        // Find the navbar
+        const navbar = document.querySelector('#autocollapse .navbar-collapse');
+        if (!navbar) return;
+
+        // Create the toggle container
+        const toggleContainer = document.createElement('ul');
+        toggleContainer.className = 'nav navbar-nav navbar-right';
+        toggleContainer.innerHTML = `
+            <li>
+                <a href="javascript:void(0)" id="theme-toggle" title="Toggle Dark Mode" style="font-size: 18px; line-height: 20px;">
+                    <span class="glyphicon glyphicon-adjust"></span>
+                </a>
+            </li>
+        `;
+
+        // Append the toggle to the navbar
+        navbar.appendChild(toggleContainer);
+
+        // Add click event listener
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            
+            // Save preference
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    });
+})();
