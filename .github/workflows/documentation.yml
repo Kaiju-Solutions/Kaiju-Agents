@@ -32,6 +32,8 @@ jobs:
 
   build:
     needs: delete-old-deployments
+    # REQUIRED: ubuntu-latest is needed for Docker to run GameCI efficiently, 
+    # and modern DocFX natively supports Linux.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -56,60 +58,46 @@ jobs:
           mkdir -p Documentation/Dependencies
           echo "$UNITY_LICENSE" > UnityLicense.ulf
           
-          FOUND_TAG=""
-          GAMECI_VERSIONS=("3.1.0" "3.0.1" "3.0.0")
-          
-          echo "Attempting to match the project's exact Unity version..."
+          PROJECT_VER="6000.0.2f1"
           if [ -f "ProjectSettings/ProjectVersion.txt" ]; then
             PROJECT_VER=$(grep "m_EditorVersion:" ProjectSettings/ProjectVersion.txt | awk '{print $2}' | tr -d '\r')
-            echo "Project uses Unity $PROJECT_VER. Checking Docker Hub..."
-            for GC_VER in "${GAMECI_VERSIONS[@]}"; do
-              URL="https://hub.docker.com/v2/repositories/unityci/editor/tags/ubuntu-${PROJECT_VER}-base-${GC_VER}/"
-              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
-              if [ "$HTTP_CODE" == "200" ]; then
-                FOUND_TAG="ubuntu-${PROJECT_VER}-base-${GC_VER}"
-                echo "✅ Found exact GameCI image: $FOUND_TAG"
-                break
-              fi
-            done
           fi
           
-          if [ -z "$FOUND_TAG" ]; then
-            echo "Querying Unity Release API for recent stable versions..."
-            # Pulls 15 latest releases and extracts only stable 'f1' versions
-            RECENT_UNITIES=$(curl -s "https://services.api.unity.com/unity/editor/release/v1/releases?limit=15" | grep -oP '"version":"\K6000\.[^a-zA-Z"]+f1' | head -n 10 || echo "")
-            
-            for UNITY_VER in $RECENT_UNITIES; do
-              echo "Checking GameCI for Unity $UNITY_VER..."
-              for GC_VER in "${GAMECI_VERSIONS[@]}"; do
-                URL="https://hub.docker.com/v2/repositories/unityci/editor/tags/ubuntu-${UNITY_VER}-base-${GC_VER}/"
-                HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
-                if [ "$HTTP_CODE" == "200" ]; then
-                  FOUND_TAG="ubuntu-${UNITY_VER}-base-${GC_VER}"
-                  echo "✅ Found latest available GameCI image: $FOUND_TAG"
-                  break 2
-                fi
-              done
-            done
+          MAJOR_VER=$(echo $PROJECT_VER | cut -d'.' -f1)
+          echo "Project uses Unity $PROJECT_VER (Major: $MAJOR_VER)."
+          
+          echo "Querying GameCI tags for Unity $MAJOR_VER (Single Request to bypass limits)..."
+          TAGS_JSON=$(curl -s "https://hub.docker.com/v2/repositories/unityci/editor/tags?name=ubuntu-${MAJOR_VER}&page_size=100" 2>/dev/null || echo "")
+          
+          AVAILABLE_TAGS=$(echo "$TAGS_JSON" | jq -r '.results[].name' 2>/dev/null | grep -E "^ubuntu-${MAJOR_VER}\.[0-9]+\.[0-9]+[a-z][0-9]+-base-[0-9.]+$" | sort -V)
+          
+          FOUND_TAG=""
+          if [ -n "$AVAILABLE_TAGS" ]; then
+            EXACT_MATCH=$(echo "$AVAILABLE_TAGS" | grep "^ubuntu-${PROJECT_VER}-base" | tail -n 1)
+            if [ -n "$EXACT_MATCH" ]; then
+              FOUND_TAG=$EXACT_MATCH
+              echo "✅ Found exact GameCI image: $FOUND_TAG"
+            else
+              FOUND_TAG=$(echo "$AVAILABLE_TAGS" | tail -n 1)
+              echo "⚠️ Exact version $PROJECT_VER not built by GameCI yet."
+              echo "✅ Falling back to highest available Unity $MAJOR_VER image: $FOUND_TAG"
+            fi
+          else
+             echo "⚠️ Rate limit hit or no tags. Using hardcoded safe fallback."
+             FOUND_TAG="ubuntu-6000.0.2f1-base-3.1.0"
           fi
           
-          if [ -z "$FOUND_TAG" ]; then
-            echo "❌ CRITICAL ERROR: Could not find any valid GameCI tags on Docker Hub. Stopping."
-            exit 1
-          fi
-          
-          echo "Launching Unity to resolve UPM packages using: unityci/editor:$FOUND_TAG"
+          echo "Launching Unity to resolve UPM using: unityci/editor:$FOUND_TAG"
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             unityci/editor:$FOUND_TAG \
             bash -c " \
               echo 'Activating Unity License...' && \
               unity-editor -batchmode -nographics -manualLicenseFile /workspace/UnityLicense.ulf -quit || true && \
-              echo 'Opening Unity to compile project and resolve UPM...' && \
+              echo 'Opening Unity to compile project...' && \
               unity-editor -batchmode -nographics -projectPath /workspace -quit || true && \
-              echo 'Copying Core Unity DLLs...' && \
+              echo 'Copying DLLs...' && \
               cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ 2>/dev/null || true && \
-              echo 'Copying UPM Package DLLs...' && \
               find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; 2>/dev/null || true && \
               chmod -R 777 /workspace/Documentation/Dependencies/ \
             "
@@ -163,6 +151,7 @@ jobs:
           }
         shell: pwsh
 
+      # REQUIRED: This must be dotnet tool install to get DocFx 2.60+ and the "modern" template.
       - name: Install DocFX
         run: dotnet tool install -g docfx
 
@@ -243,6 +232,10 @@ jobs:
           Set-Content -Path $tocFile -Value $tocContent
           Write-Host "Updated '$tocFile' successfully."
 
+      - name: Show API YML Contents
+        run: Get-Content Documentation/api/toc.yml
+        shell: pwsh
+      
       - name: Build Documentation Website
         run: docfx build Documentation/docfx.json -l Verbose
 
