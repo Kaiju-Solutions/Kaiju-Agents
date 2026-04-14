@@ -44,6 +44,12 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Pin .NET SDK Version
+        run: |
+          DOTNET_VER=$(dotnet --version)
+          echo "Pinning Roslyn compiler to .NET $DOTNET_VER to avoid .NET 10 crashes..."
+          dotnet new globaljson --sdk-version $DOTNET_VER --roll-forward latestFeature
+
       - name: Automate Unity Package Resolution & DLL Extraction
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -138,12 +144,8 @@ jobs:
               json.dump(manifest, f, indent=2)
           '
           
-          echo "------ VERIFYING MANIFEST INJECTION ------"
-          cat Packages/manifest.json
-          echo "------------------------------------------"
-          
           echo "Launching Unity to resolve UPM using: unityci/editor:$FOUND_TAG"
-          # Included testing flags to force complete resolution and bypass compiler errors
+          # Included flags to filter out duplicate assemblies that cause DocFx to crash
           docker run --rm \
             -v ${{ github.workspace }}:/workspace \
             unityci/editor:$FOUND_TAG \
@@ -154,7 +156,7 @@ jobs:
               unity-editor -batchmode -nographics -projectPath /workspace -silent-crashes -ignoreCompilerErrors -no-browser-auth -no-instance -quit || true && \
               echo 'Copying DLLs...' && \
               cp /opt/unity/Editor/Data/Managed/*.dll /workspace/Documentation/Dependencies/ 2>/dev/null || true && \
-              find /workspace/Library -name '*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; 2>/dev/null || true && \
+              find /workspace/Library -name '*.dll' ! -name 'ca.kaijusolutions*.dll' ! -name 'Assembly-CSharp*.dll' -exec cp {} /workspace/Documentation/Dependencies/ \; 2>/dev/null || true && \
               chmod -R 777 /workspace/Documentation/Dependencies/ \
             "
 
