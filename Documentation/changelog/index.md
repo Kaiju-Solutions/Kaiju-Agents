@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.3.2
+
+- Fixed exporting error related to the [`KaijuUtlityCurveConsideration`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Utility.KaijuUtilityCurveConsideration.html "KaijuUtlityCurveConsideration").
+
 ### 1.3.1
 
 - Improved clarity on the [Unity ML-Agents integration](https://agents.kaijusolutions.ca/manual/ml-agents.html "Unity ML-Agents").
