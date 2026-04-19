@@ -11,7 +11,7 @@
       }
     },
     "com.unity.ai.inference": {
-      "version": "2.6.0",
+      "version": "2.6.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -124,11 +124,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "4.0.2",
+      "version": "4.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.ai.inference": "2.5.0",
+        "com.unity.ai.inference": "2.6.1",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0"
