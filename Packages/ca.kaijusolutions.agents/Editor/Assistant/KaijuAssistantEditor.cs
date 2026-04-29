@@ -4,6 +4,7 @@ using KaijuSolutions.Agents.Extensions;
 using Unity.AI.MCP.Editor.ToolRegistry;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace KaijuSolutions.Agents.Assistant.Editor
 {
@@ -104,33 +105,56 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         }
         
         /// <summary>
-        /// MCP tool to place a wall in the scene.
+        /// MCP tool to place a wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.
         /// </summary>
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the wall was placed.</returns>
-        [McpTool("place_wall", "Place a basic wall in the scene.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpPlaceWall(McpPlaceWall parameters)
+        [McpTool("place_wall", "Place a basic wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        public static object McpPlaceWall(McpPlaceWallParameters parameters)
         {
             // Create the wall.
             GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            
-            // Ensure a valid scale and assign it.
             parameters.Scale = new(Mathf.Abs(parameters.Scale.x), Mathf.Abs(parameters.Scale.y), Mathf.Abs(parameters.Scale.z));
             wall.transform.localScale = parameters.Scale;
-            
-            // Set the correct position.
             wall.transform.position = new(parameters.Position.x, parameters.Scale.y / 2f, parameters.Position.y);
-            
-            // Apply the material.
             wall.GetComponent<MeshRenderer>().material = KaijuAgents.GetMaterial(parameters.Color ?? Color.black);
-            
-            // Name the wall.
             wall.name = string.IsNullOrWhiteSpace(parameters.Name) ? "Wall" : parameters.Name;
-            
-            // Have walls be static by default.
             wall.isStatic = true;
             
+            // Add and set up the NavMeshObstacle.
+            NavMeshObstacle obstacle = wall.AddComponent<NavMeshObstacle>();
+            obstacle.carving = true;
+            obstacle.carveOnlyStationary = true;
+            obstacle.shape = NavMeshObstacleShape.Box;
+            
             return new { success = true, message = $"Created wall \"{wall.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y}, {parameters.Scale.z})." };
+        }
+        
+        /// <summary>
+        /// Place a basic floor in the scene. This is based on a plane collider, and has no renderer attached to it. Floors are set to be static by default.
+        /// </summary>
+        /// <param name="parameters">The placing parameters.</param>
+        /// <returns>That the floor was placed.</returns>
+        [McpTool("place_floor", "Place a basic floor in the scene. This is based on a plane collider, and has no renderer attached to it. Floors are set to be static by default.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        public static object McpPlaceFloor(McpPlaceFloorParameters parameters)
+        {
+            // Create the floor.
+            GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            floor.transform.position = new(parameters.Position.x, 0f, parameters.Position.y);
+            floor.transform.localScale = new(Mathf.Abs(parameters.Scale.x), 1f, Mathf.Abs(parameters.Scale.y));
+            floor.name = string.IsNullOrWhiteSpace(parameters.Name) ? "Floor" : parameters.Name;
+            floor.isStatic = true;
+            
+            if (Application.isPlaying)
+            {
+                Object.Destroy(floor.GetComponent<MeshRenderer>());
+            }
+            else
+            {
+                Object.DestroyImmediate(floor.GetComponent<MeshRenderer>());
+            }
+            
+            return new { success = true, message = $"Created floor \"{floor.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y})." };
         }
     }
     
@@ -203,7 +227,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
     /// <summary>
     /// Placing wall parameters for MCP interactions.
     /// </summary>
-    public sealed class McpPlaceWall
+    public sealed class McpPlaceWallParameters
     {
         /// <summary>
         /// The position to spawn the wall at, corresponding to X and Z coordinates, as all walls have their base at a Y of zero.
@@ -228,6 +252,30 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         [McpDescription("What color to make the wall, defaulting to black", Required = false)]
         public Color? Color { get; set; }
+    }
+    
+    /// <summary>
+    /// Placing floor parameters for MCP interactions.
+    /// </summary>
+    public sealed class McpPlaceFloorParameters
+    {
+        /// <summary>
+        /// The position to spawn the floor at, corresponding to X and Z coordinates, as all floors are placed at Y of zero.
+        /// </summary>
+        [McpDescription("The position to spawn the floor at, corresponding to X and Z coordinates, as all floors are placed at Y of zero.", Required = true)]
+        public Vector2 Position { get; set; }
+        
+        /// <summary>
+        /// What size to make the floor, corresponding to X and Z coordinates, with the Y scale always being one.
+        /// </summary>
+        [McpDescription("What size to make the floor, corresponding to X and Z coordinates, with the Y scale always being one.", Required = true)]
+        public Vector2 Scale { get; set; }
+        
+        /// <summary>
+        /// What to name the floor.
+        /// </summary>
+        [McpDescription("What to name the floor.", Required = false)]
+        public string Name { get; set; } = "Floor";
     }
 }
 #endif
