@@ -2,7 +2,8 @@
     "name": "ca.kaijusolutions.agents.editor",
     "references": [
         "ca.kaijusolutions.agents",
-        "Unity.AI.MCP.Editor"
+        "Unity.AI.MCP.Editor",
+        "Unity.AI.Navigation"
     ],
     "includePlatforms": [
         "Editor"
