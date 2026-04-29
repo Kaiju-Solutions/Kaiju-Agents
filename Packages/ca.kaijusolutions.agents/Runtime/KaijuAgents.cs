@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.AI;
 using Object = UnityEngine.Object;
@@ -366,8 +368,50 @@ namespace KaijuSolutions.Agents
             
             // Create the default visuals.
             CreateCapsule(CreateCapsule(agent.transform, Vector3.up, Quaternion.identity, Vector3.one, body ?? Body, "Body"), new(0, 0.5f, 0.225f), Quaternion.Euler(0, 0, 90f), new(0.5f, 0.5f, 0.5f), eyes ?? Eyes, "Eyes");
+            
+            // Add the requested components, skipping those which are not valid.
+            if (components != null)
+            {
+                foreach (string c in components)
+                {
+                    Type component = ResolveType(c);
+                    if (component != null && typeof(Component).IsAssignableFrom(component))
+                    {
+                        agent.gameObject.AddComponent(component);
+                    }
+                }
+            }
+            
+            // Perform the final set up.
             agent.Setup();
             return agent;
+        }
+        
+        /// <summary>
+        /// Searches all loaded assemblies for the specified type.
+        /// </summary>
+        /// <param name="type">The name of the type to get.</param>
+        /// <returns>The loaded type or NULL if none was found.</returns>
+        private static Type ResolveType(string type)
+        {
+            // Try standard resolution first, which works for mscorlib and the executing assembly.
+            Type t = Type.GetType(type);
+            if (t != null)
+            {
+                return t;
+            }
+            
+            // Search through all loaded assemblies in the AppDomain
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                t = assembly.GetType(type);
+                if (t != null)
+                {
+                    return t;
+                }
+            }
+            
+            return null;
         }
         
         /// <summary>
