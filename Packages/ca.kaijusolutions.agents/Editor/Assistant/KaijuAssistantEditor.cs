@@ -127,6 +127,9 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             // Name the wall.
             wall.name = string.IsNullOrWhiteSpace(parameters.Name) ? "Wall" : parameters.Name;
             
+            // Have walls be static by default.
+            wall.isStatic = true;
+            
             return new { success = true, message = $"Created wall \"{wall.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y}, {parameters.Scale.z})." };
         }
     }
