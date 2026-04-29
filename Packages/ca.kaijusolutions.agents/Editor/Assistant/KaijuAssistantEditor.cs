@@ -206,13 +206,13 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// The position to spawn the wall at, corresponding to X and Z coordinates, as all walls have their base at a Y of zero.
         /// </summary>
         [McpDescription("The position to spawn the wall at, corresponding to X and Z coordinates, as all walls have their base at a Y of zero.", Required = true)]
-        public Vector2 Position { get; set; } = Vector2.zero;
+        public Vector2 Position { get; set; }
         
         /// <summary>
-        /// What size to make the wall. Note that this will automatically ensure the vertical height is representative as starting from zero along the Y axis, meaning for instance a wall with a height of two has its bottom at zero and top at two.
+        /// What size to make the wall. Note that this will automatically ensure the vertical height is representative as starting from zero along the Y axis, meaning for instance a wall with a height of two has its bottom at zero and top at two. Note that agents have a height of two, so ensure at least this if you want to avoid agents seeing over a wall with certain sensor arrangements.
         /// </summary>
-        [McpDescription("What height to make the wall.", Required = true)]
-        public Vector3 Scale { get; set; } = new(1f, 2f, 1f);
+        [McpDescription("What height to make the wall. Note that this will automatically ensure the vertical height is representative as starting from zero along the Y axis, meaning for instance a wall with a height of two has its bottom at zero and top at two. Note that agents have a height of two, so ensure at least this if you want to avoid agents seeing over a wall with certain sensor arrangements.", Required = true)]
+        public Vector3 Scale { get; set; }
         
         /// <summary>
         /// What to name the wall.
