@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR && COM_UNITY_AI_ASSISTANT
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using KaijuSolutions.Agents.Extensions;
 using Unity.AI.MCP.Editor.ToolRegistry;
@@ -23,7 +24,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// <param name="parameters">The spawning parameters.</param>
         /// <returns>If the agent was successfully placed or not.</returns>
         [McpTool("place_agent", "Places an agent into the level.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpPlaceAgent(McpPlaceAgentParameters parameters)
+        public static object McpPlaceAgent([NotNull] McpPlaceAgentParameters parameters)
         {
             // Load the prefab.
             KaijuAgent prefab = AssetDatabase.LoadAssetAtPath<KaijuAgent>(parameters.Path);
@@ -49,7 +50,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// <param name="parameters">The creation parameters.</param>
         /// <returns>If the prefab was successfully created or not.</returns>
         [McpTool("create_agent_prefab", "Creates an agent prefab. Cannot be performed while in play mode.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpCreateAgentPrefab(McpCreateAgentPrefabParameters parameters)
+        public static object McpCreateAgentPrefab([NotNull] McpCreateAgentPrefabParameters parameters)
         {
             // Only allow this when in edit mode.
             if (Application.isPlaying)
@@ -114,9 +115,19 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the wall was placed.</returns>
         [McpTool("place_wall", "Place a basic wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpPlaceWall(McpPlaceWallParameters parameters)
+        public static object McpPlaceWall([NotNull] McpPlaceWallParameters parameters)
         {
-            // Create the wall.
+            GameObject wall = PlaceWall(parameters);
+            return new { success = true, message = $"Created wall \"{wall.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y}, {parameters.Scale.z})." };
+        }
+        
+        /// <summary>
+        /// Helper method to place a wall.
+        /// </summary>
+        /// <param name="parameters">The placing parameters.</param>
+        /// <returns>The placed wall.</returns>
+        private static GameObject PlaceWall([NotNull] McpPlaceWallParameters parameters)
+        {
             GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
             parameters.Scale = new(Mathf.Max(Mathf.Abs(parameters.Scale.x), float.Epsilon), Mathf.Max(Mathf.Abs(parameters.Scale.y), float.Epsilon), Mathf.Max(Mathf.Abs(parameters.Scale.z), float.Epsilon));
             wall.transform.localScale = parameters.Scale;
@@ -130,8 +141,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             obstacle.carving = true;
             obstacle.carveOnlyStationary = true;
             obstacle.shape = NavMeshObstacleShape.Box;
-            
-            return new { success = true, message = $"Created wall \"{wall.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y}, {parameters.Scale.z})." };
+            return wall;
         }
         
         /// <summary>
@@ -140,7 +150,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the floor was placed.</returns>
         [McpTool("place_floor", "Place a basic floor in the scene. This is based on the default \"Quad\" collider, rotated properly to be a floor, and has no renderer attached to it. Floors are set to be static by default.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpPlaceFloor(McpPlaceFloorParameters parameters)
+        public static object McpPlaceFloor([NotNull] McpPlaceFloorParameters parameters)
         {
             // Create the floor.
             GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Quad);
@@ -164,7 +174,26 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             // Place outer walls.
             if (parameters.OuterWalls)
             {
-                // TODO.
+                PlaceWall(new()
+                {
+                    Position = new(parameters.Position.x, parameters.Position.y + parameters.Scale / 2f + 0.5f),
+                    Scale = new(parameters.Scale + 2f, 2f, 1f)
+                }).name = "Wall Forwards";
+                PlaceWall(new()
+                {
+                    Position = new(parameters.Position.x, parameters.Position.y - parameters.Scale / 2f - 0.5f),
+                    Scale = new(parameters.Scale + 2f, 2f, 1f)
+                }).name = "Wall Backwards";
+                PlaceWall(new()
+                {
+                    Position = new(parameters.Position.x + parameters.Scale / 2f + 0.5f, parameters.Position.y),
+                    Scale = new(1f, 2f, parameters.Scale + 2f)
+                }).name = "Wall Right";
+                PlaceWall(new()
+                {
+                    Position = new(parameters.Position.x - parameters.Scale / 2f - 0.5f, parameters.Position.y),
+                    Scale = new(1f, 2f, parameters.Scale + 2f)
+                }).name = "Wall Left";
             }
             
             return new { success = true, message = $"Created floor \"{floor.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and a scale of {scale}." };
@@ -176,7 +205,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the NavMesh Surface was placed.</returns>
         [McpTool("place_navmesh", "Place a NavMesh Surface into the scene. This is set to collect all GameObjects in the scene across all layers and uses physics colliders.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpPlaceNavMesh(McpPlaceNavMeshParameters parameters)
+        public static object McpPlaceNavMesh([NotNull] McpPlaceNavMeshParameters parameters)
         {
             // Create the navigation mesh.
             GameObject go = new(string.IsNullOrWhiteSpace(parameters.Name) ? "NavMesh Surface" : parameters.Name);
@@ -226,15 +255,15 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         }
         
         /// <summary>
-        /// MCP tool to create a scene set up for use with Kaiju Agents.
+        /// MCP tool to create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene.
         /// </summary>
         /// <param name="parameters">The creating parameters.</param>
         /// <returns>If the scene was created.</returns>
-        [McpTool("create_scene", "Create a scene set up for use with Kaiju Agents.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
-        public static object McpCreateScene(McpCreateSceneParameters parameters)
+        [McpTool("create_scene", "Create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        public static object McpCreateScene([NotNull] McpCreateSceneParameters parameters)
         {
             // Load the scene template.
-            SceneTemplateAsset template = AssetDatabase.LoadAssetAtPath<SceneTemplateAsset>("Packages/ca.kaijusolutions.agents/Editor/Kaiju Agents Empty.scenetemplate");
+            SceneTemplateAsset template = AssetDatabase.LoadAssetAtPath<SceneTemplateAsset>("Packages/ca.kaijusolutions.agents/Editor/Kaiju Agents.scenetemplate");
             if (template == null)
             {
                 return new { success = false, message = "Scene template does not exist and cannot be loaded." };
@@ -287,9 +316,22 @@ namespace KaijuSolutions.Agents.Assistant.Editor
                 return new { success = false, message = $"Failed to create scene \"{uniquePath}\" from the template." };
             }
             
+            // Place a floor if we should.
             if (parameters.Floor != null)
             {
+                // Place it and its walls.
                 McpPlaceFloor(parameters.Floor);
+                
+                // If we have a camera in the scene, size it to see the level.
+                Camera camera = Camera.main;
+                if (camera != null)
+                {
+                    camera.transform.position = new(parameters.Floor.Position.x, camera.transform.position.y, parameters.Floor.Position.y);
+                    camera.orthographic = true;
+                    camera.orthographicSize = parameters.Floor.Scale / 2f + (parameters.Floor.OuterWalls ? 1f : 0f);
+                }
+                
+                // Bake all navigation in the scene.
                 McpBakeNavigation();
                 EditorSceneManager.SaveScene(result.scene);
             }
@@ -451,9 +493,9 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         public string Path { get; set; } = "Assets/Kaiju Agents.unity";
         
         /// <summary>
-        /// A floor to optionally place in the scene.
+        /// A floor to optionally place in the scene. If a floor is created, the main orthographic camera is set to fit in into view, including the walls if they are added.
         /// </summary>
-        [McpDescription("A floor to optionally place in the scene.", Required = false)]
+        [McpDescription("A floor to optionally place in the scene. If a floor is created, the main orthographic camera is set to fit in into view, including the walls if they are added.", Required = false)]
         public McpPlaceFloorParameters Floor { get; set; } = null;
         
         /// <summary>
