@@ -1,5 +1,6 @@
 ﻿#if UNITY_EDITOR && COM_UNITY_AI_ASSISTANT
 using System.IO;
+using KaijuSolutions.Agents.Extensions;
 using Unity.AI.MCP.Editor.ToolRegistry;
 using UnityEditor;
 using UnityEngine;
@@ -33,8 +34,8 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             }
             
             // Spawn the agent.
-            KaijuAgents.Spawn(KaijuAgentType.Transform, parameters.Position, Quaternion.Euler(0f, parameters.Rotation, 0f), Application.isPlaying, prefab, parameters.Name);
-            return new { success = true, message = $"Spawned an instance of \"{parameters.Path}\" as \"{parameters.Name}\" at position ({parameters.Position.x}, {parameters.Position.y}, {parameters.Position.z}) and a rotation angle of {parameters.Rotation} degrees." };
+            KaijuAgents.Spawn(KaijuAgentType.Transform, parameters.Position.Expand(), Quaternion.Euler(0f, parameters.Rotation, 0f), Application.isPlaying, prefab, parameters.Name);
+            return new { success = true, message = $"Spawned an instance of \"{parameters.Path}\" as \"{parameters.Name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and a rotation angle of {parameters.Rotation} degrees." };
         }
         
         /// <summary>
@@ -121,10 +122,10 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         public string Name { get; set; } = "Agent";
         
         /// <summary>
-        /// The position to spawn the agent at.
+        /// The position to spawn the agent at, corresponding to X and Z coordinates, as all agents are spawned at a Y of zero.
         /// </summary>
-        [McpDescription("The position to spawn the agent at.", Required = false)]
-        public Vector3 Position { get; set; } = Vector3.zero;
+        [McpDescription("The position to spawn the agent at, corresponding to X and Z coordinates, as all agents are spawned at a Y of zero.", Required = false)]
+        public Vector2 Position { get; set; } = Vector2.zero;
         
         /// <summary>
         /// The orientation in degrees around the Y axis to spawn the agent facing.
