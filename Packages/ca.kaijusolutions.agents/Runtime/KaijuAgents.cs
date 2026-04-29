@@ -253,6 +253,19 @@ namespace KaijuSolutions.Agents
             // If we can use a cached agent, do so.
             if (cached)
             {
+                // If using a prefab, we need to try and see if there is a prefab with all of these components, and use its type.
+                if (prefab != null)
+                {
+                    components = prefab.GetComponentsInChildren<Component>().Select(x => x.GetType().Name).Distinct().ToArray();
+                    type = prefab.GetType().Name switch
+                    {
+                        "KaijuNavigationAgent" => KaijuAgentType.Navigation,
+                        "KaijuCharacterAgent" => KaijuAgentType.Character,
+                        "KaijuRigidbodyAgent" => KaijuAgentType.Rigidbody,
+                        _ => KaijuAgentType.Transform
+                    };
+                }
+                
                 agent = type switch
                 {
                     KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(components),
