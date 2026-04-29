@@ -1,4 +1,5 @@
 ﻿KaijuSolutions.Agents
+KaijuSolutions.Agents.Editor
 KaijuSolutions.Agents.Movement
 KaijuSolutions.Agents.Sensors
 KaijuSolutions.Agents.Actuators
@@ -9,6 +10,7 @@ KaijuSolutions.Agents.Behavior.Actuators
 KaijuSolutions.Agents.Learning
 KaijuSolutions.Agents.Utility
 KaijuSolutions.Agents.Utility.Editor
+KaijuSolutions.Agents.Assistant.Editor
 KaijuSolutions.Agents.Extensions
 KaijuSolutions.Agents.Exercises.Cleaner
 KaijuSolutions.Agents.Exercises.Microbes

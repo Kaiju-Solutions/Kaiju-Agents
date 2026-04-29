@@ -1,7 +1,8 @@
 {
     "name": "ca.kaijusolutions.agents.editor",
     "references": [
-      "ca.kaijusolutions.agents"
+        "ca.kaijusolutions.agents",
+        "Unity.AI.MCP.Editor"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,6 +13,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.ai.assistant",
+            "expression": "",
+            "define": "COM_UNITY_AI_ASSISTANT"
+        }
+    ],
     "noEngineReferences": false
 }

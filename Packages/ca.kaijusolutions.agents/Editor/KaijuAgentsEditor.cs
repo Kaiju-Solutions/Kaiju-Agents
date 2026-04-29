@@ -171,14 +171,30 @@ namespace KaijuSolutions.Agents.Editor
                 keywords = new HashSet<string>(new[]
                 {
                     "Kaiju Solutions",
+                    "Agent",
                     "Agents",
                     "AI",
                     "Artificial Intelligence",
-                    "Steering Behaviours",
+                    "Steering",
                     "Navigation",
                     "Pathfinding",
+                    "Seek",
+                    "Pursue",
+                    "Flee",
+                    "Evade",
+                    "Obstacle Avoidance",
+                    "Separation",
+                    "Wander",
                     "Sensors",
-                    "Actuators"
+                    "Actuators",
+                    "Behavior",
+                    "Behaviour",
+                    "Utility",
+                    "Machine Learning",
+                    "ML",
+                    "Assistant",
+                    "MCP",
+                    "Model Context Protocol"
                 })
             };
         }

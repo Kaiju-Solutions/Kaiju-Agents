@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.4.0
+
+- Support for [Unity AI Assistant](https://docs.unity3d.com/Packages/com.unity.ai.assistant@latest "Unity AI Assistant").
+
 ### 1.3.2
 
 - Fixed exporting error related to the [`KaijuUtlityCurveConsideration`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Utility.KaijuUtilityCurveConsideration.html "KaijuUtlityCurveConsideration").
