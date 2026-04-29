@@ -94,7 +94,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("Any vertical offset to add to the line-of-sight checks. This can be useful if you for instance have targets which are a few units high but their origins are at their bases.")]
 #endif
-        public float offset;
+        public float offset = 1f;
         
         /// <summary>
         /// What layers to collide with on the line-of-sight checks.
@@ -120,7 +120,7 @@ namespace KaijuSolutions.Agents.Sensors
         public Color editorColor = Color.white;
         
         /// <summary>
-        /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>'s position or from the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>'s position. The range and view arc are always drawn from the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>'s Y height and the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>'s X and Z positions.
+        /// If the visualizations in the editor for the line-of-sight checks should come from the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>'s position or from the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>'s position. The range and view arc are always drawn from the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>'s Y height and the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>'s X and Z positions.
         /// </summary>
         [Tooltip("If the visualizations in the editor for the line-of-sight checks should come from the agent's position or from the sensor's position. The range and view arc are always drawn from the agent's Y height and the sensor's X and Z positions.")]
         public bool editorFromAgent = true;
@@ -128,7 +128,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The objects which this can detect.
         /// </summary>
-        public IEnumerable<T> Observables;
+        public IEnumerable<T> observables;
         
         /// <summary>
         /// If at least one instance has been <see cref="Observed"/>.
@@ -146,7 +146,7 @@ namespace KaijuSolutions.Agents.Sensors
         public IReadOnlyCollection<T> Observed => _observed;
         
         /// <summary>
-        /// The nearest <see cref="Observed"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The nearest <see cref="Observed"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -169,7 +169,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The nearest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="nearest">The distance to the nearest <see cref="Observed"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -192,7 +192,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Observed"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The farthest <see cref="Observed"/> instance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -215,7 +215,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The farthest <see cref="Observed"/> instance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">The distance to the farthest <see cref="Observed"/> instance.</param>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
@@ -238,7 +238,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
@@ -249,7 +249,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The nearest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The nearest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
@@ -260,7 +260,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
@@ -271,7 +271,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// The farthest <see cref="Observed"/> instance position to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="normalize">If the distance should be normalized between [-1, 1].</param>
         /// <returns>The farthest <see cref="Observed"/> position instance. Will be a zero vector if the <see cref="Observed"/> list is empty.</returns>
@@ -282,7 +282,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -293,7 +293,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -304,7 +304,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
@@ -315,7 +315,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -346,7 +346,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -377,7 +377,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="mode">How to handle sorting.</param>
@@ -404,7 +404,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -434,7 +434,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -464,7 +464,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -494,7 +494,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="farthest">If this should sort by farthest items first.</param>
         /// <param name="mode">How to break ties based on angle.</param>
@@ -524,7 +524,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
@@ -554,7 +554,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.
         /// </summary>
         /// <param name="mode">How to handle sorting.</param>
         /// <param name="farthest">How to handle breaking ties by distance. NULL means no tie breaking, false for nearest distance, and true for farthest distance.</param>
@@ -584,7 +584,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -612,7 +612,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -640,7 +640,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -668,7 +668,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by distance across all axes to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with zero values.</param>
         /// <param name="farthest">If this should sort by farthest items first.</param>
@@ -696,7 +696,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="mode">How to handle sorting.</param>
@@ -709,7 +709,7 @@ namespace KaijuSolutions.Agents.Sensors
         }
         
         /// <summary>
-        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>, keeping only the first instances which fit into a cache.
+        /// Sort <see cref="Observed"/> instances by angle to the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>, keeping only the first instances which fit into a cache.
         /// </summary>
         /// <param name="cache">Where to store the observed instances. If this is less than the total <see cref="Observed"/> instances, only the first fitting instances will be returned. If this is larger than the <see cref="Observed"/> instances, any extra space will be filled with NULL values.</param>
         /// <param name="mode">How to handle sorting.</param>
@@ -817,7 +817,7 @@ namespace KaijuSolutions.Agents.Sensors
             Vector3 y = new(0, offset, 0);
             
             // Loop through all observable objects.
-            foreach (T observable in Observables ?? DefaultObservables())
+            foreach (T observable in observables ?? DefaultObservables())
             {
                 // Cache values for this observable.
                 Transform to = observable.transform;
@@ -837,13 +837,13 @@ namespace KaijuSolutions.Agents.Sensors
         /// </summary>
         protected override void Cleanup()
         {
-            Observables = null;
+            observables = null;
             _observed.Clear();
         }
 #if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing in the editor.
-        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgent.Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor.Agent"/>.</param>
         /// </summary>
         public override void EditorVisualize(Vector3 position)
         {

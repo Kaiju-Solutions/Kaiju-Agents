@@ -37,21 +37,21 @@ namespace KaijuSolutions.Agents.Sensors
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
         /// </summary>
         /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
-        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/> attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
         public static implicit operator KaijuAgentsVisionSensor([NotNull] GameObject o) => o.GetComponent<KaijuAgentsVisionSensor>();
         
         /// <summary>
         /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
         /// </summary>
         /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
-        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/> attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
         public static implicit operator KaijuAgentsVisionSensor([NotNull] Transform t) => t.GetComponent<KaijuAgentsVisionSensor>();
         
         /// <summary>
         /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
-        /// <param name="s">The <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/>.</param>
-        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the <see cref="KaijuSolutions.Agents.Sensors.KaijuAgentsVisionSensor"/> if there was one.</returns>
+        /// <param name="s">The <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/>.</param>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the <see cref="KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuAgentsVisionSensor s) => s.Agent;
     }
 }

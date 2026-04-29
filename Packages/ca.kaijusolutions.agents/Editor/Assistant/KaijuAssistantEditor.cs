@@ -102,6 +102,33 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             // Indicate success.
             return success ? new { success = true, message = $"Created agent prefab \"{parameters.Path}\"." } : new { success = false, message = $"Failed to create agent prefab \"{parameters.Path}\"." };
         }
+        
+        /// <summary>
+        /// MCP tool to place a wall in the scene.
+        /// </summary>
+        /// <param name="parameters">The placing parameters.</param>
+        /// <returns>That the wall was placed.</returns>
+        [McpTool("place_wall", "Place a basic wall in the scene.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        public static object McpPlaceWall(McpPlaceWall parameters)
+        {
+            // Create the wall.
+            GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            
+            // Ensure a valid scale and assign it.
+            parameters.Scale = new(Mathf.Abs(parameters.Scale.x), Mathf.Abs(parameters.Scale.y), Mathf.Abs(parameters.Scale.z));
+            wall.transform.localScale = parameters.Scale;
+            
+            // Set the correct position.
+            wall.transform.position = new(parameters.Position.x, parameters.Scale.y / 2f, parameters.Position.y);
+            
+            // Apply the material.
+            wall.GetComponent<MeshRenderer>().material = KaijuAgents.GetMaterial(parameters.Color ?? Color.black);
+            
+            // Name the wall.
+            wall.name = string.IsNullOrWhiteSpace(parameters.Name) ? "Wall" : parameters.Name;
+            
+            return new { success = true, message = $"Created wall \"{wall.name}\" at position ({parameters.Position.x}, {parameters.Position.y}) and scale ({parameters.Scale.x}, {parameters.Scale.y}, {parameters.Scale.z})." };
+        }
     }
     
     /// <summary>
@@ -168,6 +195,36 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         [McpDescription("What color to make the eyes of the agent.", Required = false)]
         public Color? Eyes { get; set; }
+    }
+    
+    /// <summary>
+    /// Placing wall parameters for MCP interactions.
+    /// </summary>
+    public sealed class McpPlaceWall
+    {
+        /// <summary>
+        /// The position to spawn the wall at, corresponding to X and Z coordinates, as all walls have their base at a Y of zero.
+        /// </summary>
+        [McpDescription("The position to spawn the wall at, corresponding to X and Z coordinates, as all walls have their base at a Y of zero.", Required = true)]
+        public Vector2 Position { get; set; } = Vector2.zero;
+        
+        /// <summary>
+        /// What size to make the wall. Note that this will automatically ensure the vertical height is representative as starting from zero along the Y axis, meaning for instance a wall with a height of two has its bottom at zero and top at two.
+        /// </summary>
+        [McpDescription("What height to make the wall.", Required = true)]
+        public Vector3 Scale { get; set; } = new(1f, 2f, 1f);
+        
+        /// <summary>
+        /// What to name the wall.
+        /// </summary>
+        [McpDescription("What to name the wall.", Required = false)]
+        public string Name { get; set; } = "Wall";
+        
+        /// <summary>
+        /// What color to make the wall, defaulting to black.
+        /// </summary>
+        [McpDescription("What color to make the wall, defaulting to black", Required = false)]
+        public Color? Color { get; set; }
     }
 }
 #endif
