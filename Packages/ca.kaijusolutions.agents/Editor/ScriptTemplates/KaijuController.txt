@@ -1,0 +1,24 @@
+﻿using UnityEngine;
+using KaijuSolutions.Agents;
+
+/// <summary>
+/// Allows for easily controlling a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
+/// Simply override the methods you need to use callbacks without needing to worry about binding.
+/// If you override either <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnEnable.html">OnEnable</see>
+/// or <see href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnDisable.html">OnDisable</see>,
+/// you must call their respective base methods for binding and cleanup.
+/// <see href="https://agents.kaijusolutions.ca/manual/controllers.html">Manual</see>.
+/// <see href="https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuController.html">Scripting API</see>.
+/// </summary>
+[DefaultExecutionOrder(int.MinValue + 5)]
+[RequireComponent(typeof(KaijuAgent))]
+#if UNITY_EDITOR
+[SelectionBase]
+[Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
+[HelpURL("https://agents.kaijusolutions.ca/manual/controller.html")]
+[AddComponentMenu("Project/#SCRIPTNAME#", int.MinValue)]
+#endif
+public sealed class #SCRIPTNAME# : KaijuController
+{
+    #NOTRIM#
+}

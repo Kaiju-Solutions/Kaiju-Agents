@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
-    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Boolean", fileName = "Boolean", order = 1)]
+    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Boolean", fileName = "Boolean", order = 2)]
 #endif
     public class KaijuUtilityBooleanConsideration : KaijuUtilityKeyConsideration
     {

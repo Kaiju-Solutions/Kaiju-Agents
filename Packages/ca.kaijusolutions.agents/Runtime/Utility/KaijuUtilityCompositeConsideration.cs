@@ -10,7 +10,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
-    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Composite", fileName = "Composite", order = 5)]
+    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Composite", fileName = "Composite", order = 6)]
 #endif
     public class KaijuUtilityCompositeConsideration : KaijuUtilityConsideration
     {

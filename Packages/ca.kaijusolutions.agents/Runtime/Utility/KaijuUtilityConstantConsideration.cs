@@ -8,7 +8,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
-    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Constant", fileName = "Constant", order = 0)]
+    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Constant", fileName = "Constant", order = 1)]
 #endif
     public class KaijuUtilityConstantConsideration : KaijuUtilityConsideration
     {

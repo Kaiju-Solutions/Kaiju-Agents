@@ -23,7 +23,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         /// <param name="parameters">The spawning parameters.</param>
         /// <returns>If the agent was successfully placed or not.</returns>
-        [McpTool("place_agent", "Places an agent into the level.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_place_agent", "Places an agent into the level.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpPlaceAgent([NotNull] McpPlaceAgentParameters parameters)
         {
             // Load the prefab.
@@ -49,7 +49,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         /// <param name="parameters">The creation parameters.</param>
         /// <returns>If the prefab was successfully created or not.</returns>
-        [McpTool("create_agent_prefab", "Creates an agent prefab. Cannot be performed while in play mode.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_create_agent_prefab", "Creates an agent prefab. Cannot be performed while in play mode.", EnabledByDefault = true, Groups = new []{"Assets"})]
         public static object McpCreateAgentPrefab([NotNull] McpCreateAgentPrefabParameters parameters)
         {
             // Only allow this when in edit mode.
@@ -114,7 +114,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the wall was placed.</returns>
-        [McpTool("place_wall", "Place a basic wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_place_wall", "Place a basic wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpPlaceWall([NotNull] McpPlaceWallParameters parameters)
         {
             GameObject wall = PlaceWall(parameters);
@@ -149,7 +149,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the floor was placed.</returns>
-        [McpTool("place_floor", "Place a basic floor in the scene. This is based on the default \"Quad\" collider, rotated properly to be a floor, and has no renderer attached to it. Floors are set to be static by default.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_place_floor", "Place a basic floor in the scene. This is based on the default \"Quad\" collider, rotated properly to be a floor, and has no renderer attached to it. Floors are set to be static by default.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpPlaceFloor([NotNull] McpPlaceFloorParameters parameters)
         {
             // Create the floor.
@@ -204,7 +204,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// </summary>
         /// <param name="parameters">The placing parameters.</param>
         /// <returns>That the NavMesh Surface was placed.</returns>
-        [McpTool("place_navmesh", "Place a NavMesh Surface into the scene. This is set to collect all GameObjects in the scene across all layers and uses physics colliders.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_place_navmesh", "Place a NavMesh Surface into the scene. This is set to collect all GameObjects in the scene across all layers and uses physics colliders.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpPlaceNavMesh([NotNull] McpPlaceNavMeshParameters parameters)
         {
             // Create the navigation mesh.
@@ -228,7 +228,7 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         /// MCP tool to build all active NavMesh Surfaces in the active scenes.
         /// </summary>
         /// <returns>If any NavMesh Surfaces were built</returns>
-        [McpTool("bake_navigation", "Build all active NavMesh Surfaces in the active scenes.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_bake_navigation", "Build all active NavMesh Surfaces in the active scenes.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpBakeNavigation()
         {
 #if UNITY_6000_4_OR_NEWER
@@ -245,34 +245,12 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             return surfaces.Length < 1 ? new { success = false, message = "No NavMesh Surfaces found to bake."} : new { success = true, message = surfaces.Length > 1 ? $"Baked {surfaces.Length} NavMesh Surfaces." : "Baked 1 NavMesh Surface."};
         }
         
-        [MenuItem("Testing/Test")]
-        public static void Test()
-        {
-            McpCreateScene(new()
-            {
-                Floor = new(),
-                Walls = new []
-                {
-                    new McpPlaceWallParameters
-                    {
-                        Position = new(3f, 3f),
-                        Scale = new(3f, 2f, 1f)
-                    },
-                    new McpPlaceWallParameters
-                    {
-                        Position = new(-2f, -4f),
-                        Scale = new(1f, 2f, 2f)
-                    }
-                }
-            });
-        }
-        
         /// <summary>
         /// MCP tool to create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene. Choosing to place floors and walls parameters will automatically build the navigation mesh.
         /// </summary>
         /// <param name="parameters">The creating parameters.</param>
         /// <returns>If the scene was created.</returns>
-        [McpTool("create_scene", "Create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene. Choosing to place floors and walls parameters will automatically build the navigation mesh.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("kaiju_agents_create_scene", "Create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene. Choosing to place floors and walls parameters will automatically build the navigation mesh.", EnabledByDefault = true, Groups = new []{"Scene"})]
         public static object McpCreateScene([NotNull] McpCreateSceneParameters parameters)
         {
             // Load the scene template.

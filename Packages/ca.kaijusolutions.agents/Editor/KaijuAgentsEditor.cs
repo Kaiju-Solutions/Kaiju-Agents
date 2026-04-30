@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -14,6 +15,9 @@ namespace KaijuSolutions.Agents.Editor
     /// </summary>
     internal static class KaijuAgentsEditor
     {
+        // The directory of custom script templates.
+        private const string TemplateRoot = "Packages/ca.kaijusolutions.agents/Editor/ScriptTemplates/";
+        
         /// <summary>
         /// Create a <see cref="KaijuTransformAgent"/>.
         /// </summary>
@@ -397,6 +401,24 @@ namespace KaijuSolutions.Agents.Editor
             {
                 floatField.value = get();
             }
+        }
+        
+        /// <summary>
+        /// Create a new kaiju controller.
+        /// </summary>
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuController Script", priority = 17)]
+        private static void CreateKaijuController()
+        {
+            CreateScript("KaijuController");
+        }
+        
+        /// <summary>
+        /// Create a custom script.
+        /// </summary>
+        /// <param name="name">The name of the script template without the extension.</param>
+        private static void CreateScript([NotNull] string name)
+        {
+            ProjectWindowUtil.CreateScriptAssetFromTemplateFile($"{TemplateRoot}{name}.txt", $"New{name}.cs");
         }
     }
 }
