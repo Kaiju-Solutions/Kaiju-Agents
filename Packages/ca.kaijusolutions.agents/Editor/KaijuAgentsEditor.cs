@@ -404,12 +404,21 @@ namespace KaijuSolutions.Agents.Editor
         }
         
         /// <summary>
-        /// Create a new kaiju controller.
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuController"/>.
         /// </summary>
         [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuController Script", priority = 17)]
         private static void CreateKaijuController()
         {
             CreateScript("KaijuController");
+        }
+        
+        /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuGlobalController"/>.
+        /// </summary>
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuGlobalController Script", priority = 18)]
+        private static void CreateKaijuGlobalController()
+        {
+            CreateScript("KaijuGlobalController");
         }
         
         /// <summary>

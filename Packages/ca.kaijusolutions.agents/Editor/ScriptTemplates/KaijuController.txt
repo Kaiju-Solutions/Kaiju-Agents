@@ -212,5 +212,12 @@ public sealed class #SCRIPTNAME# : KaijuController
     /// <param name="a">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
     /// <returns>The #SCRIPTNAME# attached to the <see cref="KaijuSolutions.Agents.KaijuAgent"/> if there was one.</returns>
     public static implicit operator #SCRIPTNAME#([NotNull] KaijuAgent a) => a.GetComponent<#SCRIPTNAME#>();
+    #NOTRIM#
+    /// <summary>
+    /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
+    /// </summary>
+    /// <param name="c">The #SCRIPTNAME#.</param>
+    /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the #SCRIPTNAME# if there was one.</returns>
+    public static implicit operator KaijuAgent([NotNull] #SCRIPTNAME# c) => c.Agent;
 }
 #ROOTNAMESPACEEND#

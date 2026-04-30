@@ -359,7 +359,7 @@ namespace KaijuSolutions.Agents
         /// Implicit conversion to a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
         /// <param name="c">The <see cref="KaijuSolutions.Agents.KaijuController"/>.</param>
-        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to The <see cref="KaijuSolutions.Agents.KaijuController"/> if there was one.</returns>
+        /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the <see cref="KaijuSolutions.Agents.KaijuController"/> if there was one.</returns>
         public static implicit operator KaijuAgent([NotNull] KaijuController c) => c.agent;
     }
 }
