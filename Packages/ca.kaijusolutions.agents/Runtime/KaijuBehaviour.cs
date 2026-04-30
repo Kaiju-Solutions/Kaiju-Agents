@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace KaijuSolutions.Agents
 {
     /// <summary>
-    /// Base extended behaviour providing convenient helpers methods, mainly in relation to position and orientation.
+    /// Base extended <see href="https://docs.unity3d.com/6000.3/Documentation/Manual/class-MonoBehaviour.html">MonoBehaviour</see> providing convenient helpers methods, mainly in relation to position and orientation.
     /// </summary>
     [DefaultExecutionOrder(int.MinValue + 6)]
 #if UNITY_EDITOR

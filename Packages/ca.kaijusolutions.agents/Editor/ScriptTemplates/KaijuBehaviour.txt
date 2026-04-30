@@ -1,0 +1,42 @@
+﻿using System.Diagnostics.CodeAnalysis;
+using KaijuSolutions.Agents;
+using UnityEngine;
+
+#ROOTNAMESPACEBEGIN#
+/// <summary>
+/// An extended <see href="https://docs.unity3d.com/6000.3/Documentation/Manual/class-MonoBehaviour.html">MonoBehaviour</see>
+/// providing convenient helpers methods, mainly in relation to position and orientation.
+/// <see href="https://agents.kaijusolutions.ca">Manual</see>.
+/// <see href="https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.KaijuBehaviour.html">Scripting API</see>.
+/// </summary>
+[DefaultExecutionOrder(int.MinValue + 6)]
+#if UNITY_EDITOR
+[Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
+[HelpURL("https://agents.kaijusolutions.ca")]
+#endif
+public sealed class #SCRIPTNAME# : KaijuBehaviour
+{
+    /// <summary>
+    /// Get a description of the object.
+    /// </summary>
+    /// <returns>A description of the object.</returns>
+    public override string ToString()
+    {
+        return $"{name} - #SCRIPTNAME# - Position: {Position3} - Orientation: {OrientationAngles}";
+    }
+    #NOTRIM#
+    /// <summary>
+    /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+    /// </summary>
+    /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+    /// <returns>The #SCRIPTNAME# attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+    public static implicit operator #SCRIPTNAME#([NotNull] GameObject o) => o.GetComponent<#SCRIPTNAME#>();
+    #NOTRIM#
+    /// <summary>
+    /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+    /// </summary>
+    /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+    /// <returns>The #SCRIPTNAME# attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+    public static implicit operator #SCRIPTNAME#([NotNull] Transform t) => t.GetComponent<#SCRIPTNAME#>();
+}
+#ROOTNAMESPACEEND#

@@ -5,6 +5,7 @@ using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
 
+#ROOTNAMESPACEBEGIN#
 /// <summary>
 /// Base class to inherit for easy interaction with all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s in the scene.
 /// Simply override the methods you need to use callbacks without needing to worry about binding.
@@ -21,7 +22,7 @@ using UnityEngine;
 [HelpURL("https://agents.kaijusolutions.ca/manual/controller.html")]
 [AddComponentMenu("#SCRIPTNAME#", int.MinValue)]
 #endif
-public abstract class #SCRIPTNAME# : KaijuGlobalController
+public sealed class #SCRIPTNAME# : KaijuGlobalController
 {
     /// <summary>
     /// Global callback for before a <see cref="KaijuSolutions.Agents.KaijuBehaviour"/>'s position has been set.
@@ -234,3 +235,4 @@ public abstract class #SCRIPTNAME# : KaijuGlobalController
     /// <returns>The <see cref="KaijuSolutions.Agents.KaijuAgent"/> attached to the #SCRIPTNAME# if there was one.</returns>
     public static implicit operator KaijuAgent([NotNull] #SCRIPTNAME# c) => c.GetComponent<KaijuAgent>();
 }
+#ROOTNAMESPACEEND#

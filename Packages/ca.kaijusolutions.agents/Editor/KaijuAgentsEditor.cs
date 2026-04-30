@@ -422,6 +422,15 @@ namespace KaijuSolutions.Agents.Editor
         }
         
         /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuBehaviour"/>.
+        /// </summary>
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuBehaviour Script", priority = 19)]
+        private static void CreateKaijuBehaviour()
+        {
+            CreateScript("KaijuBehaviour");
+        }
+        
+        /// <summary>
         /// Create a custom script.
         /// </summary>
         /// <param name="name">The name of the script template without the extension.</param>
