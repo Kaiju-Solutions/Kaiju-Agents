@@ -422,9 +422,18 @@ namespace KaijuSolutions.Agents.Editor
         }
         
         /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>.
+        /// </summary>
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuUtilityBrain Script", priority = 19)]
+        private static void CreateKaijuUtilityBrain()
+        {
+            CreateScript("KaijuUtilityBrain");
+        }
+        
+        /// <summary>
         /// Create a new <see cref="KaijuSolutions.Agents.KaijuBehaviour"/>.
         /// </summary>
-        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuBehaviour Script", priority = 19)]
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuBehaviour Script", priority = 20)]
         private static void CreateKaijuBehaviour()
         {
             CreateScript("KaijuBehaviour");
