@@ -94,7 +94,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("Any vertical offset to add to the line-of-sight checks. This can be useful if you for instance have targets which are a few units high but their origins are at their bases.")]
 #endif
-        public float offset = 1f;
+        public float offset = 1.5f;
         
         /// <summary>
         /// What layers to collide with on the line-of-sight checks.

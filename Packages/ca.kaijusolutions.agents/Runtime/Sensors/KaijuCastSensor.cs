@@ -66,7 +66,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         [Tooltip("Any vertical offset to add to the casts.")]
 #endif
-        public float offset = 1f;
+        public float offset = 1.5f;
         
         /// <summary>
         /// The number of casts to make. These will be evenly distributed across the <see cref="angle"/>, unless there is only one cast in which case it will cast directly forward.
