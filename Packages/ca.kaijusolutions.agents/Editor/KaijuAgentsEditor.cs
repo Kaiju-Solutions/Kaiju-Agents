@@ -406,6 +406,7 @@ namespace KaijuSolutions.Agents.Editor
         /// <summary>
         /// Create a new <see cref="KaijuSolutions.Agents.KaijuController"/>.
         /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuController Script", priority = 14)]
         [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuController Script", priority = 17)]
         private static void CreateKaijuController()
         {
@@ -415,6 +416,7 @@ namespace KaijuSolutions.Agents.Editor
         /// <summary>
         /// Create a new <see cref="KaijuSolutions.Agents.KaijuGlobalController"/>.
         /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuGlobalController Script", priority = 15)]
         [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuGlobalController Script", priority = 18)]
         private static void CreateKaijuGlobalController()
         {
@@ -424,6 +426,7 @@ namespace KaijuSolutions.Agents.Editor
         /// <summary>
         /// Create a new <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>.
         /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuUtilityBrain Script", priority = 16)]
         [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuUtilityBrain Script", priority = 19)]
         private static void CreateKaijuUtilityBrain()
         {
@@ -433,6 +436,7 @@ namespace KaijuSolutions.Agents.Editor
         /// <summary>
         /// Create a new <see cref="KaijuSolutions.Agents.KaijuBehaviour"/>.
         /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuBehaviour Script", priority = 17)]
         [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuBehaviour Script", priority = 20)]
         private static void CreateKaijuBehaviour()
         {
