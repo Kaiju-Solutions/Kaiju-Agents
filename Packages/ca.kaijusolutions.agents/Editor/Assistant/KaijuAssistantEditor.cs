@@ -250,16 +250,29 @@ namespace KaijuSolutions.Agents.Assistant.Editor
         {
             McpCreateScene(new()
             {
-                Floor = new()
+                Floor = new(),
+                Walls = new []
+                {
+                    new McpPlaceWallParameters
+                    {
+                        Position = new(3f, 3f),
+                        Scale = new(3f, 2f, 1f)
+                    },
+                    new McpPlaceWallParameters
+                    {
+                        Position = new(-2f, -4f),
+                        Scale = new(1f, 2f, 2f)
+                    }
+                }
             });
         }
         
         /// <summary>
-        /// MCP tool to create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene.
+        /// MCP tool to create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene. Choosing to place floors and walls parameters will automatically build the navigation mesh.
         /// </summary>
         /// <param name="parameters">The creating parameters.</param>
         /// <returns>If the scene was created.</returns>
-        [McpTool("create_scene", "Create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
+        [McpTool("create_scene", "Create a scene set up for use with Kaiju Agents. This scene also creates a GameObject with a NavMesh Surface, and sets up a main camera for a top-down orthographic view of the scene. Choosing to place floors and walls parameters will automatically build the navigation mesh.", EnabledByDefault = true, Groups = new []{"Kaiju Agents"})]
         public static object McpCreateScene([NotNull] McpCreateSceneParameters parameters)
         {
             // Load the scene template.
@@ -317,7 +330,8 @@ namespace KaijuSolutions.Agents.Assistant.Editor
             }
             
             // Place a floor if we should.
-            if (parameters.Floor != null)
+            bool hasFloor = parameters.Floor != null;
+            if (hasFloor)
             {
                 // Place it and its walls.
                 McpPlaceFloor(parameters.Floor);
@@ -330,8 +344,21 @@ namespace KaijuSolutions.Agents.Assistant.Editor
                     camera.orthographic = true;
                     camera.orthographicSize = parameters.Floor.Scale / 2f + (parameters.Floor.OuterWalls ? 1f : 0f);
                 }
-                
-                // Bake all navigation in the scene.
+            }
+            
+            // Place walls if we should as well.
+            bool hasWalls = parameters.Walls is { Length: > 0 };
+            if (hasWalls)
+            {
+                foreach (McpPlaceWallParameters wall in parameters.Walls)
+                {
+                    McpPlaceWall(wall);
+                }
+            }
+            
+            // Bake all navigation in the scene.
+            if (hasFloor || hasWalls)
+            {
                 McpBakeNavigation();
                 EditorSceneManager.SaveScene(result.scene);
             }
