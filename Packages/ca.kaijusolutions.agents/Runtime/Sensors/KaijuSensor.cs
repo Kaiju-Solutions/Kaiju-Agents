@@ -116,7 +116,7 @@ namespace KaijuSolutions.Agents.Sensors
 #if UNITY_EDITOR
         /// <summary>
         /// Allow for visualizing in the editor.
-        /// <param name="position">The position of the <see cref="Agent"/>.</param>
+        /// <param name="position">The position of the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.</param>
         /// </summary>
         public virtual void EditorVisualize(Vector3 position) { }
 #endif

@@ -168,77 +168,77 @@ namespace KaijuSolutions.Agents
         }
         
         /// <summary>
-        /// Callback for before the <see cref="Agent"/>'s position has been set.
+        /// Callback for before the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s position has been set.
         /// </summary>
         protected virtual void OnAgentPreSetPosition() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/>'s position has been set.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s position has been set.
         /// </summary>
         protected virtual void OnAgentSetPosition() { }
         
         /// <summary>
-        /// Callback for before the <see cref="Agent"/>'s orientation has been set.
+        /// Callback for before the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s orientation has been set.
         /// </summary>
         protected virtual void OnAgentPreSetOrientation() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/>'s orientation has been set.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s orientation has been set.
         /// </summary>
         protected virtual void OnAgentSetOrientation() { }
         
         /// <summary>
-        /// Callback for before the <see cref="Agent"/>'s scale has been set.
+        /// Callback for before the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s scale has been set.
         /// </summary>
         protected virtual void OnAgentPreSetScale() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/>'s scale has been set.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>'s scale has been set.
         /// </summary>
         protected virtual void OnAgentSetScale() { }
         
         /// <summary>
-        /// Movement speed changed callback for the <see cref="Agent"/>.
+        /// Movement speed changed callback for the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.
         /// </summary>
         protected virtual void OnMoveSpeed() { }
         
         /// <summary>
-        /// Movement acceleration changed callback for the <see cref="Agent"/>.
+        /// Movement acceleration changed callback for the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.
         /// </summary>
         protected virtual void OnMoveAcceleration() { }
         
         /// <summary>
-        /// Look speed changed callback for the <see cref="Agent"/>.
+        /// Look speed changed callback for the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.
         /// </summary>
         protected virtual void OnLookSpeed() { }
         
         /// <summary>
-        /// Autorotation changed callback for the <see cref="Agent"/>.
+        /// Autorotation changed callback for the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.
         /// </summary>
         protected virtual void OnAutoRotate() { }
         
         /// <summary>
-        /// Callback for when the look target has been set for the <see cref="Agent"/>.
+        /// Callback for when the look target has been set for the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/>.
         /// </summary>
         protected virtual void OnLookTarget() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/> has moved.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/> has moved.
         /// </summary>
         protected virtual void OnMove() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/> has finishing becoming enabled.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/> has finishing becoming enabled.
         /// </summary>
         protected virtual void OnEnabled() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/> has finishing becoming disabled.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/> has finishing becoming disabled.
         /// </summary>
         protected virtual void OnDisabled() { }
         
         /// <summary>
-        /// Callback for when the <see cref="Agent"/> has finishing becoming destroyed.
+        /// Callback for when the <see cref="KaijuSolutions.Agents.KaijuController.Agent"/> has finishing becoming destroyed.
         /// </summary>
         protected virtual void OnDestroyed() { }
         
@@ -246,19 +246,19 @@ namespace KaijuSolutions.Agents
         /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has started.
         /// </summary>
         /// <param name="movement">The <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
-        protected virtual void OnMovementStarted(KaijuMovement movement) { }
+        protected virtual void OnMovementStarted([NotNull] KaijuMovement movement) { }
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has stopped.
         /// </summary>
         /// <param name="movement">The <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
-        protected virtual void OnMovementStopped(KaijuMovement movement) { }
+        protected virtual void OnMovementStopped([NotNull] KaijuMovement movement) { }
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> has been performed.
         /// </summary>
         /// <param name="movement">The <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
-        protected virtual void OnMovementPerformed(KaijuMovement movement) { }
+        protected virtual void OnMovementPerformed([NotNull] KaijuMovement movement) { }
         
         /// <summary>
         /// Callback for when all automatic <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>s have finished being executed.
@@ -269,61 +269,61 @@ namespace KaijuSolutions.Agents
         /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been run.
         /// </summary>
         /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</param>
-        protected virtual void OnSense(KaijuSensor sensor) { }
+        protected virtual void OnSense([NotNull] KaijuSensor sensor) { }
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been enabled.
         /// </summary>
         /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</param>
-        protected virtual void OnSensorEnabled(KaijuSensor sensor) { }
+        protected virtual void OnSensorEnabled([NotNull] KaijuSensor sensor) { }
         
         /// <summary>
         /// Callback for when a <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/> has been disabled.
         /// </summary>
         /// <param name="sensor">The <see cref="KaijuSolutions.Agents.Sensors.KaijuSensor"/>.</param>
-        protected virtual void OnSensorDisabled(KaijuSensor sensor) { }
+        protected virtual void OnSensorDisabled([NotNull] KaijuSensor sensor) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been enabled.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorEnabled(KaijuActuator actuator) { }
+        protected virtual void OnActuatorEnabled([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been disabled.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorDisabled(KaijuActuator actuator) { }
+        protected virtual void OnActuatorDisabled([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has started to execute.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorStarted(KaijuActuator actuator) { }
+        protected virtual void OnActuatorStarted([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> is continuing to execute.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorExecuting(KaijuActuator actuator) { }
+        protected virtual void OnActuatorExecuting([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has successfully fully completed its action.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorDone(KaijuActuator actuator) { }
+        protected virtual void OnActuatorDone([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has been interrupted during its execution, cancelling the execution.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorInterrupted(KaijuActuator actuator) { }
+        protected virtual void OnActuatorInterrupted([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Callback for when an <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/> has failed its execution.
         /// </summary>
         /// <param name="actuator">The <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>.</param>
-        protected virtual void OnActuatorFailed(KaijuActuator actuator) { }
+        protected virtual void OnActuatorFailed([NotNull] KaijuActuator actuator) { }
         
         /// <summary>
         /// Get a description of the object.
