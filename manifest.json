@@ -2412,6 +2412,162 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpBakeNavigation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpBakeNavigation.html",
+          "hash": "0Z2gqUmQIt8bZi64OmhbNsYPCPifqGDDLnXIkYzsk90="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpCreateAgentPrefab.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpCreateAgentPrefab.Parameters.html",
+          "hash": "gUQ1Wp661AtHSvrFbOv2x9iae/iXoueHsxc1Hl0t1Uo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpCreateAgentPrefab.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpCreateAgentPrefab.html",
+          "hash": "bJhXYriFIF1PS0YqfiXlPa3wRRU32J2/KgcRA9scpQQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpHelpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpHelpers.html",
+          "hash": "G9PwfF8PNyMXIWHHAYR6UTj4qBrTfQxEpYbONYkGlrU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceAgent.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceAgent.Parameters.html",
+          "hash": "Yp0bEX9/tHbwJUozK1uCbH5idliiG0SOIBrl6hqPNBQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceAgent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceAgent.html",
+          "hash": "D8XwdFqVtV5SPj/skz7ugpGCo7AUb1+OTdB++fLXsBU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceFloor.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceFloor.Parameters.html",
+          "hash": "E5frC4wKMSozHN7aicFQJSkRGHPfDnj+Nba7izz5ptQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceFloor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceFloor.html",
+          "hash": "WXLe5B3e1Zv5kTIyYMAkvNKfZOF9DxNB57siuTBOabU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceNavMesh.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceNavMesh.Parameters.html",
+          "hash": "G5ziP7/KBFDL4egskmuZQE0u3icwaFmfYok6+/aAt60="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceNavMesh.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceNavMesh.html",
+          "hash": "OEFQjCvvJxhmeuoEEhLoj8e/2Fjgak/K1xYJn1EZFRo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceWall.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceWall.Parameters.html",
+          "hash": "vRo8G0yXotcMyx2Spvuuckri8HRe4AMFjiTPkixX9kQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceWall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.KaijuMcpPlaceWall.html",
+          "hash": "08tAwdhaMhIqf8bBSHQNg0F09bFCMAKwSak3PGtfDQU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.MCP.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.MCP.Editor.html",
+          "hash": "Jtfx9N+tOSlM6Ribp9rkNAwuv8ih6FHA/2uNhxnC7CI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Movement.KaijuApproachingMovement.yml",
       "output": {
         ".html": {
@@ -2868,6 +3024,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Utility.Editor.KaijuUtilityBrainEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Utility.Editor.KaijuUtilityBrainEditor.html",
+          "hash": "5D2P/ZUMiWlSadmU6wQvJ/FOu+NTz6sRuaNrfF8KluA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/KaijuSolutions.Agents.Utility.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/KaijuSolutions.Agents.Utility.Editor.html",
+          "hash": "VlSJRYBHqZoiAzm0zl9MwTo5lZhlg3Qdoiad5k/Wr3c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/KaijuSolutions.Agents.Utility.KaijuUtilityAction.yml",
       "output": {
         ".html": {
@@ -3040,7 +3220,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "DLvI8k5VQSbEGM9oCzZy0eaJmJvZ9US5/QA95hoOnvY="
+          "hash": "Zm98VlBQZ5Rcg0HYA9hZcP3YBszC9k38X3LvmGSdygA="
         }
       },
       "is_incremental": false,
@@ -3468,7 +3648,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 272,
+          "total_file_count": 287,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
