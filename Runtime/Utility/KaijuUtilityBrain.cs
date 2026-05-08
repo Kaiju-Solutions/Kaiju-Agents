@@ -560,5 +560,19 @@ namespace KaijuSolutions.Agents.Utility
         {
             return $"{name} - Kaiju Utility Brain - Agent: {(Agent ? Agent : "None")} - Actions: {actions.Count} - Blackboard: {_blackboard.Count} - Current: {(Current ? Current : "None")}";
         }
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.
+        /// </summary>
+        /// <param name="o">The <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see>.</param>
+        /// <returns>The brain attached to the <see href="https://docs.unity3d.com/Manual/class-GameObject.html">GameObject</see> if there was one.</returns>
+        public static implicit operator KaijuUtilityBrain([NotNull] GameObject o) => o.GetComponent<KaijuUtilityBrain>();
+        
+        /// <summary>
+        /// Implicit conversion from a <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.
+        /// </summary>
+        /// <param name="t">The <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see>.</param>
+        /// <returns>The brain attached to the <see href="https://docs.unity3d.com/Manual/class-transform.html">transform</see> if there was one.</returns>
+        public static implicit operator KaijuUtilityBrain([NotNull] Transform t) => t.GetComponent<KaijuUtilityBrain>();
     }
 }

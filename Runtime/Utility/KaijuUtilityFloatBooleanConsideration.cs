@@ -9,7 +9,7 @@ namespace KaijuSolutions.Agents.Utility
 #if UNITY_EDITOR
     [Icon("Packages/ca.kaijusolutions.agents/Editor/Icon.png")]
     [HelpURL("https://agents.kaijusolutions.ca/manual/utility-ai.html")]
-    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Float Boolean", fileName = "Float Boolean", order = 3)]
+    [CreateAssetMenu(menuName = "Kaiju Solutions/Agents/Utility/Float Boolean", fileName = "Float Boolean", order = 4)]
 #endif
     public class KaijuUtilityFloatBooleanConsideration : KaijuUtilityNumericBooleanConsideration
     {

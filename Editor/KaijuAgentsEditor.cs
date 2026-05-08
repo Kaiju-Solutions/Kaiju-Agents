@@ -1,6 +1,7 @@
 ﻿#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using KaijuSolutions.Agents.Movement;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -14,6 +15,9 @@ namespace KaijuSolutions.Agents.Editor
     /// </summary>
     internal static class KaijuAgentsEditor
     {
+        // The directory of custom script templates.
+        private const string TemplateRoot = "Packages/ca.kaijusolutions.agents/Editor/ScriptTemplates/";
+        
         /// <summary>
         /// Create a <see cref="KaijuTransformAgent"/>.
         /// </summary>
@@ -171,14 +175,30 @@ namespace KaijuSolutions.Agents.Editor
                 keywords = new HashSet<string>(new[]
                 {
                     "Kaiju Solutions",
+                    "Agent",
                     "Agents",
                     "AI",
                     "Artificial Intelligence",
-                    "Steering Behaviours",
+                    "Steering",
                     "Navigation",
                     "Pathfinding",
+                    "Seek",
+                    "Pursue",
+                    "Flee",
+                    "Evade",
+                    "Obstacle Avoidance",
+                    "Separation",
+                    "Wander",
                     "Sensors",
-                    "Actuators"
+                    "Actuators",
+                    "Behavior",
+                    "Behaviour",
+                    "Utility",
+                    "Machine Learning",
+                    "ML",
+                    "Assistant",
+                    "MCP",
+                    "Model Context Protocol"
                 })
             };
         }
@@ -381,6 +401,55 @@ namespace KaijuSolutions.Agents.Editor
             {
                 floatField.value = get();
             }
+        }
+        
+        /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuController"/>.
+        /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuController Script", priority = 14)]
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuController Script", priority = 17)]
+        private static void CreateKaijuController()
+        {
+            CreateScript("KaijuController");
+        }
+        
+        /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuGlobalController"/>.
+        /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuGlobalController Script", priority = 15)]
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuGlobalController Script", priority = 18)]
+        private static void CreateKaijuGlobalController()
+        {
+            CreateScript("KaijuGlobalController");
+        }
+        
+        /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>.
+        /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuUtilityBrain Script", priority = 16)]
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuUtilityBrain Script", priority = 19)]
+        private static void CreateKaijuUtilityBrain()
+        {
+            CreateScript("KaijuUtilityBrain");
+        }
+        
+        /// <summary>
+        /// Create a new <see cref="KaijuSolutions.Agents.KaijuBehaviour"/>.
+        /// </summary>
+        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuBehaviour Script", priority = 17)]
+        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuBehaviour Script", priority = 20)]
+        private static void CreateKaijuBehaviour()
+        {
+            CreateScript("KaijuBehaviour");
+        }
+        
+        /// <summary>
+        /// Create a custom script.
+        /// </summary>
+        /// <param name="name">The name of the script template without the extension.</param>
+        private static void CreateScript([NotNull] string name)
+        {
+            ProjectWindowUtil.CreateScriptAssetFromTemplateFile($"{TemplateRoot}{name}.txt", $"New{name}.cs");
         }
     }
 }
