@@ -1,7 +1,9 @@
 {
     "name": "ca.kaijusolutions.agents.editor",
     "references": [
-        "ca.kaijusolutions.agents"
+        "ca.kaijusolutions.agents",
+        "MCPForUnity.Editor",
+        "MCPForUnity.Runtime"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,6 +14,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.coplaydev.unity-mcp",
+            "expression": "",
+            "define": "COM_COPLAYDEV_UNITY_MCP"
+        }
+    ],
     "noEngineReferences": false
 }
