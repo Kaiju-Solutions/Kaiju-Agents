@@ -10,7 +10,7 @@ KaijuSolutions.Agents.Behavior.Actuators
 KaijuSolutions.Agents.Learning
 KaijuSolutions.Agents.Utility
 KaijuSolutions.Agents.Utility.Editor
-KaijuSolutions.Agents.Assistant.Editor
+KaijuSolutions.Agents.MCP.Editor
 KaijuSolutions.Agents.Extensions
 KaijuSolutions.Agents.Exercises.Cleaner
 KaijuSolutions.Agents.Exercises.Microbes

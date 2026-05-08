@@ -3,7 +3,8 @@
     "references": [
         "ca.kaijusolutions.agents",
         "MCPForUnity.Editor",
-        "MCPForUnity.Runtime"
+        "MCPForUnity.Runtime",
+        "Unity.AI.Navigation"
     ],
     "includePlatforms": [
         "Editor"

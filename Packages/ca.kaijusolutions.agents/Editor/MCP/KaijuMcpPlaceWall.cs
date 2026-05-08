@@ -4,7 +4,7 @@ using MCPForUnity.Editor.Tools;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Editor.MCP
+namespace KaijuSolutions.Agents.MCP.Editor
 {
     /// <summary>
     /// MCP tool to place a wall in the scene. This is based on a box collider. Walls are set to be static by default will have a NavMeshObstacle component attached to them. The NavMeshObstacle will be set to carve.

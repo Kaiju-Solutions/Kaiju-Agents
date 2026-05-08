@@ -24,6 +24,8 @@ items:
   href: ml-agents.md
 - name: Utility AI
   href: utility-ai.md
+- name: MCP
+  href: mcp.md
 - name: Extensions
   href: extensions.md
 - name: Samples and Exercises

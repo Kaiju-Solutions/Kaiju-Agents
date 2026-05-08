@@ -126,19 +126,28 @@ jobs:
               })
               
               # Configuration 2: With packages
+              mcp_git_url = "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main"
+              
               if behavior_v:
                   if ml_v:
                       matrix.append({
                           "config_name": "With Packages", 
                           "unity_version": unity_version, 
-                          "dependencies": json.dumps({"com.unity.behavior": behavior_v, "com.unity.ml-agents": ml_v}), 
+                          "dependencies": json.dumps({
+                              "com.unity.behavior": behavior_v, 
+                              "com.unity.ml-agents": ml_v,
+                              "com.coplaydev.unity-mcp": mcp_git_url
+                          }), 
                           "scripting_define": ""
                       })
                   else:
                       matrix.append({
                           "config_name": "With Packages", 
                           "unity_version": unity_version, 
-                          "dependencies": json.dumps({"com.unity.behavior": behavior_v}), 
+                          "dependencies": json.dumps({
+                              "com.unity.behavior": behavior_v,
+                              "com.coplaydev.unity-mcp": mcp_git_url
+                          }), 
                           "scripting_define": ""
                       })
               else:
@@ -146,12 +155,23 @@ jobs:
                       matrix.append({
                           "config_name": "With Packages", 
                           "unity_version": unity_version, 
-                          "dependencies": json.dumps({"com.unity.ml-agents": ml_v}), 
+                          "dependencies": json.dumps({
+                              "com.unity.ml-agents": ml_v,
+                              "com.coplaydev.unity-mcp": mcp_git_url
+                          }), 
                           "scripting_define": ""
                       })
                       sys.stderr.write(f" -> Warning: No compatible com.unity.behavior version found for {unity_version}\n")
                   else:
                       sys.stderr.write(f" -> Warning: No compatible com.unity.behavior or com.unity.ml-agents versions found for {unity_version}\n")
+                      matrix.append({
+                          "config_name": "With Packages", 
+                          "unity_version": unity_version, 
+                          "dependencies": json.dumps({
+                              "com.coplaydev.unity-mcp": mcp_git_url
+                          }), 
+                          "scripting_define": ""
+                      })
           
           matrix_json = json.dumps({"include": matrix})
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:

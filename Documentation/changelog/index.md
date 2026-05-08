@@ -2,7 +2,7 @@
 
 ### 1.4.0
 
-- Support for [Unity AI Assistant](https://docs.unity3d.com/Packages/com.unity.ai.assistant@latest "Unity AI Assistant").
+- Support for [Coplay](https://www.coplay.dev "Coplay")'s [Unity MCP](https://github.com/CoplayDev/unity-mcp "Unity MCP").
 
 ### 1.3.2
 

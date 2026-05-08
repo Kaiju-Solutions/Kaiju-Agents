@@ -4,7 +4,7 @@ using MCPForUnity.Editor.Tools;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Editor.MCP
+namespace KaijuSolutions.Agents.MCP.Editor
 {
     /// <summary>
     /// MCP tool to place a basic floor in the scene. This is based on the default "Quad" collider, rotated properly to be a floor, and has no renderer attached to it. Floors are set to be static by default.

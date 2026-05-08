@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace KaijuSolutions.Agents.Editor.MCP
+namespace KaijuSolutions.Agents.MCP.Editor
 {
     /// <summary>
     /// MCP tool to create an agent prefab. Cannot be performed while in play mode.

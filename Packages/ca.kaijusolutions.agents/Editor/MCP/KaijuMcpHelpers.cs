@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace KaijuSolutions.Agents.Editor.MCP
+namespace KaijuSolutions.Agents.MCP.Editor
 {
     /// <summary>
     /// Helper methods for MCP parsing.
