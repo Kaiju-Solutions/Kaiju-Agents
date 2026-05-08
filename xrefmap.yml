@@ -35011,6 +35011,12 @@ references:
   isSpec: "True"
   fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.NearestPosition3
   nameWithType: KaijuCastSensor.NearestPosition3
+- uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.offset
+  name: offset
+  href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_offset
+  commentId: F:KaijuSolutions.Agents.Sensors.KaijuCastSensor.offset
+  fullName: KaijuSolutions.Agents.Sensors.KaijuCastSensor.offset
+  nameWithType: KaijuCastSensor.offset
 - uid: KaijuSolutions.Agents.Sensors.KaijuCastSensor.op_Implicit(GameObject)~KaijuSolutions.Agents.Sensors.KaijuCastSensor
   name: Implicit(GameObject to KaijuCastSensor)
   href: api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_op_Implicit_GameObject__KaijuSolutions_Agents_Sensors_KaijuCastSensor
@@ -35621,14 +35627,14 @@ references:
   fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).NearestPosition3
   nameWithType: KaijuVisionSensor<T>.NearestPosition3
   nameWithType.vb: KaijuVisionSensor(Of T).NearestPosition3
-- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observables
-  name: Observables
-  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observables
-  commentId: F:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observables
-  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.Observables
-  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).Observables
-  nameWithType: KaijuVisionSensor<T>.Observables
-  nameWithType.vb: KaijuVisionSensor(Of T).Observables
+- uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.observables
+  name: observables
+  href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_observables
+  commentId: F:KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.observables
+  fullName: KaijuSolutions.Agents.Sensors.KaijuVisionSensor<T>.observables
+  fullName.vb: KaijuSolutions.Agents.Sensors.KaijuVisionSensor(Of T).observables
+  nameWithType: KaijuVisionSensor<T>.observables
+  nameWithType.vb: KaijuVisionSensor(Of T).observables
 - uid: KaijuSolutions.Agents.Sensors.KaijuVisionSensor`1.Observed
   name: Observed
   href: api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed
@@ -36149,6 +36155,34 @@ references:
   fullName.vb: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Get(Of T)(System.String)
   nameWithType: KaijuUtilityBrain.Get<T>(String)
   nameWithType.vb: KaijuUtilityBrain.Get(Of T)(String)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit(GameObject)~KaijuSolutions.Agents.Utility.KaijuUtilityBrain
+  name: Implicit(GameObject to KaijuUtilityBrain)
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html#KaijuSolutions_Agents_Utility_KaijuUtilityBrain_op_Implicit_GameObject__KaijuSolutions_Agents_Utility_KaijuUtilityBrain
+  commentId: M:KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit(GameObject)~KaijuSolutions.Agents.Utility.KaijuUtilityBrain
+  name.vb: Widening(GameObject to KaijuUtilityBrain)
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Implicit(GameObject to KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  fullName.vb: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Widening(GameObject to KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  nameWithType: KaijuUtilityBrain.Implicit(GameObject to KaijuUtilityBrain)
+  nameWithType.vb: KaijuUtilityBrain.Widening(GameObject to KaijuUtilityBrain)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit(Transform)~KaijuSolutions.Agents.Utility.KaijuUtilityBrain
+  name: Implicit(Transform to KaijuUtilityBrain)
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html#KaijuSolutions_Agents_Utility_KaijuUtilityBrain_op_Implicit_Transform__KaijuSolutions_Agents_Utility_KaijuUtilityBrain
+  commentId: M:KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit(Transform)~KaijuSolutions.Agents.Utility.KaijuUtilityBrain
+  name.vb: Widening(Transform to KaijuUtilityBrain)
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Implicit(Transform to KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  fullName.vb: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Widening(Transform to KaijuSolutions.Agents.Utility.KaijuUtilityBrain)
+  nameWithType: KaijuUtilityBrain.Implicit(Transform to KaijuUtilityBrain)
+  nameWithType.vb: KaijuUtilityBrain.Widening(Transform to KaijuUtilityBrain)
+- uid: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit*
+  name: Implicit
+  href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html#KaijuSolutions_Agents_Utility_KaijuUtilityBrain_op_Implicit_
+  commentId: Overload:KaijuSolutions.Agents.Utility.KaijuUtilityBrain.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Implicit
+  fullName.vb: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Widening
+  nameWithType: KaijuUtilityBrain.Implicit
+  nameWithType.vb: KaijuUtilityBrain.Widening
 - uid: KaijuSolutions.Agents.Utility.KaijuUtilityBrain.Set(System.String,System.Object)
   name: Set(String, Object)
   href: api/KaijuSolutions.Agents.Utility.KaijuUtilityBrain.html#KaijuSolutions_Agents_Utility_KaijuUtilityBrain_Set_System_String_System_Object_
