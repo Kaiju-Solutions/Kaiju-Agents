@@ -6,9 +6,6 @@ apiRules:
     uidRegex: ^System$
     type: Namespace
 - exclude:
-    uidRegex: .*Editor$
-    type: Namespace
-- exclude:
     uidRegex: \.ToString$
     type: Method
 - exclude:
