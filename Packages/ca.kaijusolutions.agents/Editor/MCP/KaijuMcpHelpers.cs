@@ -1,7 +1,10 @@
 ﻿#if UNITY_EDITOR && COM_COPLAYDEV_UNITY_MCP
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using UnityEngine;
+using UnityEngine.AI;
 
 namespace KaijuSolutions.Agents.Editor.MCP
 {
@@ -14,13 +17,13 @@ namespace KaijuSolutions.Agents.Editor.MCP
         /// Extract an array from the MCP client.
         /// </summary>
         /// <param name="params">The parameters returned by the MCP client.</param>
-        /// <param name="paramName">The name of the parameter to get the array from.</param>
+        /// <param name="name">The name of the parameter to get the array from.</param>
         /// <typeparam name="T">The type of parameters to extract.</typeparam>
         /// <returns>The parsed array or NULL if there were no parameters or there was an error.</returns>
-        public static T[] GetArray<T>(JObject @params, string paramName) 
+        public static T[] GetArray<T>(JObject @params, string name) 
         {
             // See if the parameters exist.
-            if (@params == null || !@params.TryGetValue(paramName, out JToken itemsToken))
+            if (@params == null || !@params.TryGetValue(name, out JToken itemsToken))
             {
                 return null;
             }
@@ -99,6 +102,29 @@ namespace KaijuSolutions.Agents.Editor.MCP
                 default:
                     return null;
             }
+        }
+        
+        /// <summary>
+        /// Helper method to place a wall.
+        /// </summary>
+        /// <param name="parameters">The placing parameters.</param>
+        /// <returns>The placed wall.</returns>
+        public static GameObject PlaceWall([NotNull] KaijuMcpPlaceWall.Parameters parameters)
+        {
+            GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            parameters.scale = new(Mathf.Max(Mathf.Abs(parameters.scale.x), float.Epsilon), Mathf.Max(Mathf.Abs(parameters.scale.y), float.Epsilon), Mathf.Max(Mathf.Abs(parameters.scale.z), float.Epsilon));
+            wall.transform.localScale = parameters.scale;
+            wall.transform.position = new(parameters.position.x, parameters.scale.y / 2f, parameters.position.y);
+            wall.GetComponent<MeshRenderer>().material = KaijuAgents.GetMaterial(parameters.color);
+            wall.name = string.IsNullOrWhiteSpace(parameters.name) ? "Wall" : parameters.name;
+            wall.isStatic = true;
+            
+            // Add and set up the NavMeshObstacle.
+            NavMeshObstacle obstacle = wall.AddComponent<NavMeshObstacle>();
+            obstacle.carving = true;
+            obstacle.carveOnlyStationary = true;
+            obstacle.shape = NavMeshObstacleShape.Box;
+            return wall;
         }
     }
 }

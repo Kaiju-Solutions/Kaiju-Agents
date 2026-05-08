@@ -24,7 +24,7 @@ namespace KaijuSolutions.Agents.Editor.MCP
             // Only allow this when in edit mode.
             if (Application.isPlaying)
             {
-                return new { success = false, message = "Cannot create agent prefabs when in play mode." };
+                return new ErrorResponse("Cannot create \"KaijuAgent\" prefabs when in play mode.");
             }
             
             if (@params == null)
@@ -74,7 +74,7 @@ namespace KaijuSolutions.Agents.Editor.MCP
                     type = KaijuAgentType.Navigation;
                     break;
                 default:
-                    return new { success = false, message = $"Unknown agent type of \"{stringType}\"." };
+                    return new ErrorResponse($"Unknown agent type of \"{stringType}\".");
             }
             
             // Spawn one into the active scene.
