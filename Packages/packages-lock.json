@@ -18,7 +18,7 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.test-framework": "1.1.31"
       },
-      "hash": "b92c05a25820cfc9f59ce4094eb46aaec8632ea2"
+      "hash": "417cf351a152b483c91e6e2deaf7ae355fa8eff3"
     },
     "com.unity.ai.inference": {
       "version": "2.6.1",
@@ -248,6 +248,12 @@
     "com.unity.modules.physics": {
       "version": "1.0.0",
       "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.physics2d": {
+      "version": "1.0.0",
+      "depth": 0,
       "source": "builtin",
       "dependencies": {}
     },
