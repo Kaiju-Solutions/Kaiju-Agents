@@ -137,7 +137,7 @@ jobs:
                               "com.unity.behavior": behavior_v, 
                               "com.unity.ml-agents": ml_v,
                               "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": 1.0.0
+                              "com.unity.modules.physics2d": "1.0.0"
                           }), 
                           "scripting_define": ""
                       })
@@ -148,7 +148,7 @@ jobs:
                           "dependencies": json.dumps({
                               "com.unity.behavior": behavior_v,
                               "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": 1.0.0
+                              "com.unity.modules.physics2d": "1.0.0"
                           }), 
                           "scripting_define": ""
                       })
@@ -160,7 +160,7 @@ jobs:
                           "dependencies": json.dumps({
                               "com.unity.ml-agents": ml_v,
                               "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": 1.0.0
+                              "com.unity.modules.physics2d": "1.0.0"
                           }), 
                           "scripting_define": ""
                       })
@@ -172,7 +172,7 @@ jobs:
                           "unity_version": unity_version, 
                           "dependencies": json.dumps({
                               "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": 1.0.0
+                              "com.unity.modules.physics2d": "1.0.0"
                           }), 
                           "scripting_define": ""
                       })
