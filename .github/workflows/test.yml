@@ -96,7 +96,7 @@ jobs:
               
               return None
           
-          target_minors = ["6000.3", "6000.4"]
+          target_minors = ["6000.3", "6000.4", "6000.5", "6000.6"]
           unity_versions = []
           
           for minor in target_minors:

@@ -8,6 +8,7 @@
     "com.unity.ml-agents": "4.0.3",
     "com.unity.ui": "2.0.0",
     "com.unity.ui.builder": "2.0.0",
-    "com.unity.modules.physics2d": "1.0.0"
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.modules.physicscore2d": "1.0.0"
   }
 }

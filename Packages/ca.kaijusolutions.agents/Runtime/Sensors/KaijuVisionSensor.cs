@@ -128,6 +128,7 @@ namespace KaijuSolutions.Agents.Sensors
         /// <summary>
         /// The objects which this can detect.
         /// </summary>
+        [NonSerialized]
         public IEnumerable<T> observables;
         
         /// <summary>

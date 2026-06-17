@@ -1,5 +1,9 @@
 ﻿# Changelog
 
+### 1.4.1
+
+- Fixed [`KaijuVisionSensor.observables`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_observables "KaijuVisionSensor.observables") being wrongly exposed for serialization.
+
 ### 1.4.0
 
 - Support for [Coplay](https://www.coplay.dev "Coplay")'s [Unity MCP](https://github.com/CoplayDev/unity-mcp "Unity MCP").
