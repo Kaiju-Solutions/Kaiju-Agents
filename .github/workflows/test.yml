@@ -189,12 +189,30 @@ jobs:
     timeout-minutes: 20
     strategy:
       fail-fast: false
+      max-parallel: 5
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
         with:
           submodules: true
+      
+      - name: Free Disk Space
+        run: |
+          echo "Disk before cleanup:"
+          df -h
+        
+          # Remove large, unneeded tool caches from hosted runner
+          sudo rm -rf /usr/local/lib/android || true
+          sudo rm -rf /opt/ghc || true
+          sudo rm -rf /usr/share/dotnet || true
+          sudo rm -rf /opt/hostedtoolcache/CodeQL || true
+          
+          # Prune any preexisting docker artifacts
+          docker system prune -af || true
+          
+          echo "Disk after cleanup:"
+          df -h
       
       - name: Remove Asset Store Tools
         run: rm -rf Packages/com.unity.asset-store-tools
