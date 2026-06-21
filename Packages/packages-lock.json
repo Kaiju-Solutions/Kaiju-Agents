@@ -5,11 +5,11 @@
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.unity.ai.navigation": "2.0.12",
+        "com.unity.ai.navigation": "2.0.13",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       },
-      "hash": "3939167ad2bf735b06fe117155902e66f8c256ee"
+      "hash": "bcefd7daca490d834bc0d81d8337774458876900"
     },
     "com.unity.ai.navigation": {
       "version": "2.0.13",
@@ -21,7 +21,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
-      "version": "2.0.5",
+      "version": "2.1.0",
       "depth": 1,
       "source": "builtin",
       "dependencies": {}
@@ -54,11 +54,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.6.0",
+      "version": "1.7.0",
       "depth": 1,
       "source": "builtin",
       "dependencies": {
-        "com.unity.ext.nunit": "2.0.3",
+        "com.unity.ext.nunit": "2.1.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       }
@@ -76,6 +76,12 @@
       "dependencies": {}
     },
     "com.unity.modules.ai": {
+      "version": "1.0.0",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {}
+    },
+    "com.unity.modules.animation": {
       "version": "1.0.0",
       "depth": 2,
       "source": "builtin",
@@ -105,6 +111,12 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.modules.physicscore2d": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.modules.ui": {
       "version": "1.0.0",
       "depth": 2,
@@ -120,7 +132,8 @@
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.hierarchycore": "1.0.0",
-        "com.unity.modules.physics": "1.0.0"
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.animation": "1.0.0"
       }
     }
   }
