@@ -111,12 +111,6 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.modules.physicscore2d": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
     "com.unity.modules.ui": {
       "version": "1.0.0",
       "depth": 2,
