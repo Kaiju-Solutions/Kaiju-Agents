@@ -183,6 +183,132 @@ body.dark-mode .panel-default > .panel-heading {
     color: #e0e0e0;
 }
 
+/* Alerts & Callouts */
+body.dark-mode .alert,
+body.dark-mode .NOTE,
+body.dark-mode .TIP,
+body.dark-mode .WARNING,
+body.dark-mode .IMPORTANT,
+body.dark-mode .CAUTION,
+body.dark-mode .note,
+body.dark-mode .tip,
+body.dark-mode .warning,
+body.dark-mode .important,
+body.dark-mode .caution {
+    color: #e0e0e0;
+}
+
+body.dark-mode .NOTE,
+body.dark-mode .note,
+body.dark-mode .alert-info {
+    background-color: rgba(56, 139, 253, 0.15);
+    border-color: rgba(56, 139, 253, 0.4);
+}
+body.dark-mode .NOTE h5,
+body.dark-mode .NOTE h6,
+body.dark-mode .note h5,
+body.dark-mode .note h6,
+body.dark-mode .alert-info h5,
+body.dark-mode .alert-info h6,
+body.dark-mode .alert-info .alert-heading {
+    color: #58a6ff;
+}
+body.dark-mode .NOTE a,
+body.dark-mode .note a,
+body.dark-mode .alert-info a {
+    color: #79c0ff;
+}
+
+body.dark-mode .TIP,
+body.dark-mode .tip,
+body.dark-mode .alert-success {
+    background-color: rgba(46, 160, 67, 0.15);
+    border-color: rgba(46, 160, 67, 0.4);
+}
+body.dark-mode .TIP h5,
+body.dark-mode .TIP h6,
+body.dark-mode .tip h5,
+body.dark-mode .tip h6,
+body.dark-mode .alert-success h5,
+body.dark-mode .alert-success h6,
+body.dark-mode .alert-success .alert-heading {
+    color: #3fb950;
+}
+body.dark-mode .TIP a,
+body.dark-mode .tip a,
+body.dark-mode .alert-success a {
+    color: #56d364;
+}
+
+body.dark-mode .WARNING,
+body.dark-mode .warning,
+body.dark-mode .alert-warning {
+    background-color: rgba(187, 128, 9, 0.15);
+    border-color: rgba(187, 128, 9, 0.4);
+}
+body.dark-mode .WARNING h5,
+body.dark-mode .WARNING h6,
+body.dark-mode .warning h5,
+body.dark-mode .warning h6,
+body.dark-mode .alert-warning h5,
+body.dark-mode .alert-warning h6,
+body.dark-mode .alert-warning .alert-heading {
+    color: #e3b341;
+}
+body.dark-mode .WARNING a,
+body.dark-mode .warning a,
+body.dark-mode .alert-warning a {
+    color: #f0883e;
+}
+
+body.dark-mode .IMPORTANT,
+body.dark-mode .important {
+    background-color: rgba(163, 113, 247, 0.15);
+    border-color: rgba(163, 113, 247, 0.4);
+}
+body.dark-mode .IMPORTANT h5,
+body.dark-mode .IMPORTANT h6,
+body.dark-mode .important h5,
+body.dark-mode .important h6 {
+    color: #bc8cff;
+}
+body.dark-mode .IMPORTANT a,
+body.dark-mode .important a {
+    color: #bc8cff;
+}
+
+body.dark-mode .CAUTION,
+body.dark-mode .caution,
+body.dark-mode .alert-danger {
+    background-color: rgba(248, 81, 73, 0.15);
+    border-color: rgba(248, 81, 73, 0.4);
+}
+body.dark-mode .CAUTION h5,
+body.dark-mode .CAUTION h6,
+body.dark-mode .caution h5,
+body.dark-mode .caution h6,
+body.dark-mode .alert-danger h5,
+body.dark-mode .alert-danger h6,
+body.dark-mode .alert-danger .alert-heading {
+    color: #f85149;
+}
+body.dark-mode .CAUTION a,
+body.dark-mode .caution a,
+body.dark-mode .alert-danger a {
+    color: #ff7b72;
+}
+
+body.dark-mode .NOTE code,
+body.dark-mode .TIP code,
+body.dark-mode .WARNING code,
+body.dark-mode .IMPORTANT code,
+body.dark-mode .CAUTION code,
+body.dark-mode .alert code {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #e0e0e0;
+}
+
+
 /* Theme Toggle Header Button Styling */
 #theme-toggle {
     cursor: pointer;
