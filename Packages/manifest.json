@@ -5,6 +5,7 @@
     "com.unity.ide.visualstudio": "2.0.28",
     "com.unity.inputsystem": "1.20.0",
     "com.unity.ui": "2.0.0",
-    "com.unity.ui.builder": "2.0.0"
+    "com.unity.ui.builder": "2.0.0",
+    "com.unity.modules.tetgen": "1.0.0"
   }
 }
