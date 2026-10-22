@@ -25,7 +25,7 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.test-framework": "1.1.31"
       },
-      "hash": "aa5fc638d623f56178d50329d9ad8c541a57fe66"
+      "hash": "81542a7e86292b5c4c21b1782c5af23b567f45ce"
     },
     "com.unity.ai.inference": {
       "version": "2.6.1",
@@ -41,7 +41,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ai.navigation": {
-      "version": "2.0.15",
+      "version": "2.0.16",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -97,17 +97,15 @@
     },
     "com.unity.ext.nunit": {
       "version": "2.1.0",
-      "depth": 1,
+      "depth": 2,
       "source": "builtin",
       "dependencies": {}
     },
     "com.unity.ide.rider": {
-      "version": "3.0.40",
+      "version": "3.1.0",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
