@@ -20,12 +20,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.ext.nunit": {
-      "version": "2.1.0",
-      "depth": 2,
-      "source": "builtin",
-      "dependencies": {}
-    },
     "com.unity.ide.rider": {
       "version": "3.1.0",
       "depth": 0,
@@ -34,12 +28,10 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.28",
+      "version": "2.0.29",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.33"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
@@ -50,16 +42,6 @@
         "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
-    },
-    "com.unity.test-framework": {
-      "version": "1.8.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.ext.nunit": "2.1.0",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
     },
     "com.unity.ui": {
       "version": "2.0.0",
