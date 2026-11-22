@@ -84,7 +84,7 @@
       }
     },
     "com.unity.dt.app-ui": {
-      "version": "2.3.0",
+      "version": "2.3.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -102,7 +102,7 @@
       "dependencies": {}
     },
     "com.unity.ide.rider": {
-      "version": "3.1.0",
+      "version": "3.1.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
