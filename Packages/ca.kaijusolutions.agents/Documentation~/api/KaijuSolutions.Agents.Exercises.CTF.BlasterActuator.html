@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlasterActuator | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="blasteractuator">BlasterActuator</h1>
+<p>The blaster for use by Troopers.</p>
+<pre><code class="language-csharp">public class BlasterActuator : KaijuAttackActuator
+</code></pre>
+<p><a href="../../Samples~/Exercise%203%20-%20Capture%20the%20Flag/Trooper/BlasterActuator.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_Ammo"></a></p>
+<h3 id="ammo">Ammo</h3>
+<pre><code class="language-csharp">public int Ammo { get; set; }
+</code></pre>
+<p>The ammo for this blaster.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected override void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected override void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_PreConditions"></a></p>
+<h3 id="preconditions">PreConditions</h3>
+<pre><code class="language-csharp">protected override bool PreConditions ()
+</code></pre>
+<p>Any conditions which must be passed to begin running the actuator. This does not need to account for the KaijuSolutions.Agents.Actuators.KaijuAttackActuator.Charge or KaijuSolutions.Agents.Actuators.KaijuAttackActuator.Cooldown.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_PostActions"></a></p>
+<h3 id="postactions">PostActions</h3>
+<pre><code class="language-csharp">protected override void PostActions (bool success)
+</code></pre>
+<p>Any final actions to perform after the actuator has performed.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_HandleHit"></a></p>
+<h3 id="handlehit">HandleHit</h3>
+<pre><code class="language-csharp">protected override bool HandleHit (RaycastHit hit, Transform t)
+</code></pre>
+<p>Handle the hit logic.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_BlasterActuator_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsSphereCast | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsspherecast">KaijuAgentsSphereCast</h1>
+<p>Extension methods to perform sphere casting. Any Vector2 values will be expanded via the KaijuAgentsExpand.Expand method.</p>
+<pre><code class="language-csharp">public static class KaijuAgentsSphereCast
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsSphereCast.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsSphereCast_SphereCast"></a></p>
+<h3 id="spherecast">SphereCast</h3>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector2 position, Vector2 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector2 position, Vector3 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector2 position, [NotNull] Transform direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector2 position, [NotNull] Component direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector2 position, [NotNull] GameObject direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector3 position, Vector2 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector3 position, Vector3 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector3 position, [NotNull] Transform direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector3 position, [NotNull] Component direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast (this Vector3 position, [NotNull] GameObject direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, Vector2 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, Vector3 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, [NotNull] Transform direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, [NotNull] Component direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, [NotNull] GameObject direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Transform position, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a SphereCast in the forward direction.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, Vector2 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, Vector3 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, [NotNull] Transform direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, [NotNull] Component direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, [NotNull] GameObject direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this Component position, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a SphereCast in the forward direction.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, Vector2 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, Vector3 direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, [NotNull] Transform direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, [NotNull] Component direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, [NotNull] GameObject direction, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a sphere cast.</p>
+<pre><code class="language-csharp">public static bool SphereCast ([NotNull] this GameObject position, float radius, out RaycastHit hit, float distance = float.MaxValue, int mask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal)
+</code></pre>
+<p>Perform a SphereCast in the forward direction.</p></main></body></html>

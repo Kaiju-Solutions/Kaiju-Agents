@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphStep | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="graphstep">GraphStep</h1>
+<pre><code class="language-csharp">public sealed class GraphStep
+</code></pre>
+<p><a href="../../Runtime/Graphs/KaijuGraph.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Id"></a></p>
+<h3 id="id">Id</h3>
+<pre><code class="language-csharp">public Hash128 Id
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Op"></a></p>
+<h3 id="op">Op</h3>
+<pre><code class="language-csharp">public GraphOp Op
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Label"></a></p>
+<h3 id="label">Label</h3>
+<pre><code class="language-csharp">public string Label
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Key"></a></p>
+<h3 id="key">Key</h3>
+<pre><code class="language-csharp">public string Key
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Children"></a></p>
+<h3 id="children">Children</h3>
+<pre><code class="language-csharp">public int[] Children
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Completion"></a></p>
+<h3 id="completion">Completion</h3>
+<pre><code class="language-csharp">public StateCompletion Completion
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Transitions"></a></p>
+<h3 id="transitions">Transitions</h3>
+<pre><code class="language-csharp">public GraphTransition[] Transitions
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Graph"></a></p>
+<h3 id="graph">Graph</h3>
+<pre><code class="language-csharp">public KaijuGraph Graph
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Bindings"></a></p>
+<h3 id="bindings">Bindings</h3>
+<pre><code class="language-csharp">public GraphBinding[] Bindings
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Guard"></a></p>
+<h3 id="guard">Guard</h3>
+<pre><code class="language-csharp">public GraphGuard Guard
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Eligibility"></a></p>
+<h3 id="eligibility">Eligibility</h3>
+<pre><code class="language-csharp">public GraphGuard Eligibility
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Scorer"></a></p>
+<h3 id="scorer">Scorer</h3>
+<pre><code class="language-csharp">public string Scorer
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Score"></a></p>
+<h3 id="score">Score</h3>
+<pre><code class="language-csharp">public GraphScore Score
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_EnterAction"></a></p>
+<h3 id="enteraction">EnterAction</h3>
+<pre><code class="language-csharp">public string EnterAction
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_ExitAction"></a></p>
+<h3 id="exitaction">ExitAction</h3>
+<pre><code class="language-csharp">public string ExitAction
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Reactive"></a></p>
+<h3 id="reactive">Reactive</h3>
+<pre><code class="language-csharp">public bool Reactive
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Duration"></a></p>
+<h3 id="duration">Duration</h3>
+<pre><code class="language-csharp">public float Duration
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Timeout"></a></p>
+<h3 id="timeout">Timeout</h3>
+<pre><code class="language-csharp">public float Timeout
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_SwitchMargin"></a></p>
+<h3 id="switchmargin">SwitchMargin</h3>
+<pre><code class="language-csharp">public float SwitchMargin
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Considerations"></a></p>
+<h3 id="considerations">Considerations</h3>
+<pre><code class="language-csharp">public GraphConsideration[] Considerations
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Preconditions"></a></p>
+<h3 id="preconditions">Preconditions</h3>
+<pre><code class="language-csharp">public GraphFact[] Preconditions
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Effects"></a></p>
+<h3 id="effects">Effects</h3>
+<pre><code class="language-csharp">public GraphFact[] Effects
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_BaseScore"></a></p>
+<h3 id="basescore">BaseScore</h3>
+<pre><code class="language-csharp">public float BaseScore
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Cost"></a></p>
+<h3 id="cost">Cost</h3>
+<pre><code class="language-csharp">public float Cost
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphStep_Retries"></a></p>
+<h3 id="retries">Retries</h3>
+<pre><code class="language-csharp">public int Retries
+</code></pre></main></body></html>

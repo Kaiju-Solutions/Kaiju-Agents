@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuWanderMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuwandermovement">KaijuWanderMovement</h1>
+<p>Wander steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuWanderMovement : KaijuMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuWanderMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_DefaultDistance"></a></p>
+<h3 id="defaultdistance">DefaultDistance</h3>
+<pre><code class="language-csharp">public const float DefaultDistance
+</code></pre>
+<p>The default Distance for wander movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_DefaultRadius"></a></p>
+<h3 id="defaultradius">DefaultRadius</h3>
+<pre><code class="language-csharp">public const float DefaultRadius
+</code></pre>
+<p>The default Radius for wander movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>How far out to generate the wander circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Radius"></a></p>
+<h3 id="radius">Radius</h3>
+<pre><code class="language-csharp">public float Radius { get; set; }
+</code></pre>
+<p>The radius of the wander circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center"></a></p>
+<h3 id="center">Center</h3>
+<pre><code class="language-csharp">public Vector2 Center { get; private set; }
+</code></pre>
+<p>The center point of the circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Center3"></a></p>
+<h3 id="center3">Center3</h3>
+<pre><code class="language-csharp">public Vector3 Center3 { get; }
+</code></pre>
+<p>The center point of the circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target"></a></p>
+<h3 id="target">Target</h3>
+<pre><code class="language-csharp">public Vector2 Target { get; private set; }
+</code></pre>
+<p>The target calculated along the circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Target3"></a></p>
+<h3 id="target3">Target3</h3>
+<pre><code class="language-csharp">public Vector3 Target3 { get; }
+</code></pre>
+<p>The target calculated along the circle.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public static KaijuWanderMovement Get ([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight)
+</code></pre>
+<p>Get a wander movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_KaijuWanderMovement"></a></p>
+<h3 id="kaijuwandermovement_1">KaijuWanderMovement</h3>
+<pre><code class="language-csharp">public KaijuWanderMovement ([NotNull] KaijuAgent agent, float distance = DefaultDistance, float radius = DefaultRadius, float weight = DefaultWeight)
+</code></pre>
+<p>Create a wonder movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">protected override void Setup ()
+</code></pre>
+<p>Handle any additional setup.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override Vector2 Move (Vector2 position, float delta)
+</code></pre>
+<p>Get the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuWanderMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

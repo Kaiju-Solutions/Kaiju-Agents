@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphContext | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="graphcontext">GraphContext</h1>
+<pre><code class="language-csharp">public sealed class GraphContext : IReadOnlyGraphContext
+</code></pre>
+<p><a href="../../Runtime/Graphs/GraphExecution.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_Execution"></a></p>
+<h3 id="execution">Execution</h3>
+<pre><code class="language-csharp">public GraphExecution Execution { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_Entity"></a></p>
+<h3 id="entity">Entity</h3>
+<pre><code class="language-csharp">public Entity Entity { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_World"></a></p>
+<h3 id="world">World</h3>
+<pre><code class="language-csharp">public World World { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_IsActive"></a></p>
+<h3 id="isactive">IsActive</h3>
+<pre><code class="language-csharp">public bool IsActive { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_Signal"></a></p>
+<h3 id="signal">Signal</h3>
+<pre><code class="language-csharp">public void Signal (string name)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public GraphValue Get (string key)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_TrySet"></a></p>
+<h3 id="tryset">TrySet</h3>
+<pre><code class="language-csharp">public bool TrySet (string key, GraphValue value)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphContext_Set"></a></p>
+<h3 id="set">Set</h3>
+<pre><code class="language-csharp">public void Set (string key, GraphValue value)
+</code></pre></main></body></html>

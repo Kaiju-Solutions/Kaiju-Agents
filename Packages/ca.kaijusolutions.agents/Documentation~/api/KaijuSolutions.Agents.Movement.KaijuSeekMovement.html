@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuSeekMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuseekmovement">KaijuSeekMovement</h1>
+<p>Seek steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuSeekMovement : KaijuApproachingMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuSeekMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public static KaijuSeekMovement Get ([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get a seek movement.</p>
+<pre><code class="language-csharp">public static KaijuSeekMovement Get ([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get a seek movement.</p>
+<pre><code class="language-csharp">public static KaijuSeekMovement Get ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get a seek movement.</p>
+<pre><code class="language-csharp">public static KaijuSeekMovement Get ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get a seek movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_KaijuSeekMovement"></a></p>
+<h3 id="kaijuseekmovement_1">KaijuSeekMovement</h3>
+<pre><code class="language-csharp">public KaijuSeekMovement ([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a seek movement.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement ([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a seek movement.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a seek movement.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a seek movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_Move3"></a></p>
+<h3 id="move3">Move3</h3>
+<pre><code class="language-csharp">public override Vector3 Move3 (Vector3 position, float delta)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_Calculate"></a></p>
+<h3 id="calculate">Calculate</h3>
+<pre><code class="language-csharp">protected override Vector2 Calculate (Vector2 position, float speed, Vector2 target, float delta)
+</code></pre>
+<p>Calculate the movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeekMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsWithin | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentswithin">KaijuAgentsWithin</h1>
+<p>Extension methods to see if points are within a given distance of each other along the X and Z axes. These methods are inclusive of the distance to check. All three-dimensional vectors will be flattened via methods in KaijuAgentsFlatten.</p>
+<pre><code class="language-csharp">public static class KaijuAgentsWithin
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsWithin.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsWithin_Within"></a></p>
+<h3 id="within">Within</h3>
+<pre><code class="language-csharp">public static bool Within (this Vector2 self, Vector2 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector2 self, Vector3 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector2 self, [NotNull] Transform other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector2 self, [NotNull] Component other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector2 self, [NotNull] GameObject other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector3 self, Vector2 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector3 self, Vector3 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector3 self, [NotNull] Transform other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector3 self, [NotNull] Component other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within (this Vector3 self, [NotNull] GameObject other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Transform self, Vector2 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Transform self, Vector3 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Transform self, [NotNull] Transform other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Transform self, [NotNull] Component other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Transform self, [NotNull] GameObject other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Component self, Vector2 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Component self, Vector3 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Component self, [NotNull] Transform other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Component self, [NotNull] Component other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this Component self, [NotNull] GameObject other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this GameObject self, Vector2 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this GameObject self, Vector3 other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this GameObject self, [NotNull] Transform other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this GameObject self, [NotNull] Component other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p>
+<pre><code class="language-csharp">public static bool Within ([NotNull] this GameObject self, [NotNull] GameObject other, float distance)
+</code></pre>
+<p>If this is within a distance to another position.</p></main></body></html>

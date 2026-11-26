@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAreaMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuareamovement">KaijuAreaMovement</h1>
+<p>KaijuSolutions.Agents.Movement.KaijuMovement which looks for handling other KaijuSolutions.Agents.KaijuAgents in a given area.</p>
+<pre><code class="language-csharp">public abstract class KaijuAreaMovement : KaijuMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuAreaMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>The distance to interact with other KaijuSolutions.Agents.KaijuAgents from.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_Identifiers"></a></p>
+<h3 id="identifiers">Identifiers</h3>
+<pre><code class="language-csharp">public readonly HashSet&lt;uint&gt; Identifiers
+</code></pre>
+<p>What types of KaijuSolutions.Agents.KaijuAgents to avoid.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_ClearIdentifiers"></a></p>
+<h3 id="clearidentifiers">ClearIdentifiers</h3>
+<pre><code class="language-csharp">public void ClearIdentifiers ()
+</code></pre>
+<p>Clear all identifiers of KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_SetIdentifier"></a></p>
+<h3 id="setidentifier">SetIdentifier</h3>
+<pre><code class="language-csharp">public void SetIdentifier (uint identifier)
+</code></pre>
+<p>Set the identifier of KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_SetIdentifiers"></a></p>
+<h3 id="setidentifiers">SetIdentifiers</h3>
+<pre><code class="language-csharp">public void SetIdentifiers ([NotNull] ICollection&lt;uint&gt; identifiers)
+</code></pre>
+<p>Set the identifier of KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_AddIdentifier"></a></p>
+<h3 id="addidentifier">AddIdentifier</h3>
+<pre><code class="language-csharp">public bool AddIdentifier (uint identifier)
+</code></pre>
+<p>Add an identifier for KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_AddIdentifiers"></a></p>
+<h3 id="addidentifiers">AddIdentifiers</h3>
+<pre><code class="language-csharp">public bool AddIdentifiers ([NotNull] ICollection&lt;uint&gt; identifiers)
+</code></pre>
+<p>Add identifiers for KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_RemoveIdentifier"></a></p>
+<h3 id="removeidentifier">RemoveIdentifier</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifier (uint identifier)
+</code></pre>
+<p>Remove an identifier for KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_RemoveIdentifiers"></a></p>
+<h3 id="removeidentifiers">RemoveIdentifiers</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifiers ([NotNull] ICollection&lt;uint&gt; identifiers)
+</code></pre>
+<p>Remove identifiers for KaijuSolutions.Agents.KaijuAgents to interact with.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_KaijuAreaMovement"></a></p>
+<h3 id="kaijuareamovement_1">KaijuAreaMovement</h3>
+<pre><code class="language-csharp">public KaijuAreaMovement (KaijuAgent agent, float distance = 10, ICollection&lt;uint&gt; identifiers = null, float weight = DefaultWeight)
+</code></pre>
+<p>Get an area movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_Initialize"></a></p>
+<h3 id="initialize">Initialize</h3>
+<pre><code class="language-csharp">protected void Initialize (KaijuAgent agent, float distance = 10, ICollection&lt;uint&gt; identifiers = null, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuAreaMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

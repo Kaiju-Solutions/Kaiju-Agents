@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12501, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Rescue
+  m_EditorClassIdentifier: UnityEditor.dll::Unity.GraphToolkit.Editor.Implementation.GraphObjectImp
+  m_GraphModel:
+    rid: 8326676930786492560
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8326676930786492560
+      type: {class: StateMachineImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Guid:
+          m_Value0: 8737372659088501957
+          m_Value1: 2149649476836613567
+        m_HashGuid:
+          serializedVersion: 2
+          Hash: c52c2e0f24624179bf5d7352cf16d51d
+        m_Name: 
+        m_GraphNodeModels:
+        - rid: 8326676930786492563
+        m_GraphWireModels: []
+        m_GraphStickyNoteModels: []
+        m_GraphPlacematModels: []
+        m_GraphVariableModels: []
+        m_GraphPortalModels: []
+        m_SectionModels:
+        - rid: 8326676930786492561
+        m_LocalSubgraphs: []
+        m_LastKnownBounds:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_GraphElementMetaData:
+        - m_Guid:
+            m_Value0: 17921896269062709589
+            m_Value1: 12784190107948830514
+          m_HashGuid:
+            serializedVersion: 2
+            Hash: 55a1e1d2b35db7f8324f5a6d2b916ab1
+          m_Category: 6
+          m_Index: 0
+        m_Graph:
+          rid: 8326676930786492562
+    - rid: 8326676930786492561
+      type: {class: SectionModel, ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Guid:
+          m_Value0: 1531492214008230458
+          m_Value1: 7579223413675772835
+        m_HashGuid:
+          serializedVersion: 2
+          Hash: 3ab23cf00df44015a3cb77cd89cf2e69
+        m_Version: 2
+        m_Items: []
+        m_Title: 
+    - rid: 8326676930786492562
+      type: {class: KaijuStateMachine, ns: KaijuSolutions.Agents.Editor.Graphs, asm: ca.kaijusolutions.agents.editor}
+      data: 
+    - rid: 8326676930786492563
+      type: {class: UserStateModelImp, ns: Unity.GraphToolkit.Editor.Implementation, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Guid:
+          m_Value0: 17921896269062709589
+          m_Value1: 12784190107948830514
+        m_HashGuid:
+          serializedVersion: 2
+          Hash: 55a1e1d2b35db7f8324f5a6d2b916ab1
+        m_Version: 2
+        m_Position: {x: 0, y: 0}
+        m_Title: 
+        m_Tooltip: 
+        m_NodePreviewModel:
+          rid: -2
+        m_State: 0
+        m_ElementColor:
+          m_Color: {r: 0, g: 0, b: 0, a: 0}
+          m_HasUserColor: 0
+        m_OptionConstantsById:
+          m_KeyList:
+          - __option_Initial
+          - __option_Behavior
+          - __option_Bindings
+          - __option_On enter
+          - __option_On exit
+          m_ValueList:
+          - rid: 8326676930786492564
+          - rid: 8326676930786492565
+          - rid: 8326676930786492566
+          - rid: 8326676930786492567
+          - rid: 8326676930786492568
+        m_Node:
+          rid: 8326676930786492569
+    - rid: 8326676930786492564
+      type: {class: 'Constant`1[[System.Boolean, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 1
+    - rid: 8326676930786492565
+      type: {class: 'Constant`1[[KaijuSolutions.Agents.Graphs.KaijuGraph, ca.kaijusolutions.agents]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: {fileID: 7194093555672020370, guid: 6634cd0d85443004b9796585a29cdc4a, type: 3}
+    - rid: 8326676930786492566
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 8326676930786492567
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 8326676930786492568
+      type: {class: 'Constant`1[[System.String, mscorlib]]', ns: Unity.GraphToolkit.Editor, asm: UnityEditor.GraphToolkitModule}
+      data:
+        m_Value: 
+    - rid: 8326676930786492569
+      type: {class: BehaviorState, ns: KaijuSolutions.Agents.Editor.Graphs, asm: ca.kaijusolutions.agents.editor}
+      data: 

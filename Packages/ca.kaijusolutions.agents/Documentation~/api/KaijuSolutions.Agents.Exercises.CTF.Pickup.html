@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pickup | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="pickup">Pickup</h1>
+<p>Base pickup class for Troopers to pickup.</p>
+<pre><code class="language-csharp">public abstract class Pickup : KaijuBehaviour
+</code></pre>
+<p><a href="../../Samples~/Exercise%203%20-%20Capture%20the%20Flag/Pickups/Pickup.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_Interact"></a></p>
+<h3 id="interact">Interact</h3>
+<pre><code class="language-csharp">public abstract bool Interact ([NotNull] Trooper trooper)
+</code></pre>
+<p>What to do when interacted with.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_Colliders"></a></p>
+<h3 id="colliders">Colliders</h3>
+<pre><code class="language-csharp">protected IReadOnlyList&lt;Collider&gt; Colliders { get; }
+</code></pre>
+<p>All colliders attached to this.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_Renderers"></a></p>
+<h3 id="renderers">Renderers</h3>
+<pre><code class="language-csharp">protected IReadOnlyList&lt;MeshRenderer&gt; Renderers { get; }
+</code></pre>
+<p>All renderers attached to this.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected virtual void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_OnValidate"></a></p>
+<h3 id="onvalidate">OnValidate</h3>
+<pre><code class="language-csharp">protected virtual void OnValidate ()
+</code></pre>
+<p>Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Pickup_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

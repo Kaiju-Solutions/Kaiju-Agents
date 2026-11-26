@@ -1,0 +1,6 @@
+# Controllers
+
+Controllers allow for easily access [agent](agents.md "Agents") callbacks without having to worry about binding to [C# events](https://learn.microsoft.com/dotnet/standard/events "C# Events"). Two versions are provided of which you can extend from:
+
+1. [`KaijuController`](api/KaijuSolutions.Agents.KaijuController.md "KaijuController") - This attaches directly to an [agent](agents.md "Agents") on the same [GameObject](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject") and listens to callbacks specifically for the associated [agent](agents.md "Agents").
+2. [`KaijuGlobalController`](api/KaijuSolutions.Agents.KaijuGlobalController.md "KaijuGlobalController") - This controller receives all global callbacks for all [agents](agents.md "Agents") in the scene. Unlike the [`KaijuController`](api/KaijuSolutions.Agents.KaijuController.md "KaijuController"), this does not need to be attached to an [agent](agents.md "Agents"). In most use cases, a [`KaijuController`](api/KaijuSolutions.Agents.KaijuController.md "KaijuController") will be more effective to use than a [`KaijuGlobalController`](api/KaijuSolutions.Agents.KaijuGlobalController.md "KaijuGlobalController").

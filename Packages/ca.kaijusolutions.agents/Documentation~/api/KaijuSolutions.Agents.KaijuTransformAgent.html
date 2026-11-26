@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuTransformAgent | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijutransformagent">KaijuTransformAgent</h1>
+<p>KaijuSolutions.Agents.KaijuAgent which moves via the transform.</p>
+<pre><code class="language-csharp">public sealed class KaijuTransformAgent : KaijuRadiusAgent
+</code></pre>
+<p><a href="../../Runtime/KaijuTransformAgent.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuTransformAgent_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override void Move (float delta)
+</code></pre>
+<p>Perform KaijuSolutions.Agents.KaijuAgent movement. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuTransformAgent_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuTransformAgent ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuTransformAgent ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p></main></body></html>

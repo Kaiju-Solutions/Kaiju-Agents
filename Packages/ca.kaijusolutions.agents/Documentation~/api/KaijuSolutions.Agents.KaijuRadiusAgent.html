@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuRadiusAgent | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuradiusagent">KaijuRadiusAgent</h1>
+<p>An KaijuSolutions.Agents.KaijuAgent type which tries to get its radius from colliders or otherwise manually assigns them.</p>
+<pre><code class="language-csharp">public abstract class KaijuRadiusAgent : KaijuAgent
+</code></pre>
+<p><a href="../../Runtime/KaijuRadiusAgent.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuRadiusAgent_Radius"></a></p>
+<h3 id="radius">Radius</h3>
+<pre><code class="language-csharp">public float Radius { get; set; }
+</code></pre>
+<p>The radius of this KaijuSolutions.Agents.KaijuAgent. If there is an attached collider, this will lock to it and calculate the radius based on its size and cannot be set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuRadiusAgent_GetRadius"></a></p>
+<h3 id="getradius">GetRadius</h3>
+<pre><code class="language-csharp">public override float GetRadius ()
+</code></pre>
+<p>Get the radius of an KaijuSolutions.Agents.KaijuAgent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuRadiusAgent_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">public override void Setup ()
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.KaijuAgent. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuRadiusAgent_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuRadiusAgent ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuRadiusAgent ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p></main></body></html>

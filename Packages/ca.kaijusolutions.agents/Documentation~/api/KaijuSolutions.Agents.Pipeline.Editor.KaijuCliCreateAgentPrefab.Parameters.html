@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parameters | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="parameters">Parameters</h1>
+<p>Creating agent prefab parameters for Pipeline interactions.</p>
+<pre><code class="language-csharp">public sealed class Parameters
+</code></pre>
+<p><a href="../../Editor/Pipeline/KaijuCliCreateAgentPrefab.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Pipeline_Editor_KaijuCliCreateAgentPrefab_Parameters_path"></a></p>
+<h3 id="path">path</h3>
+<pre><code class="language-csharp">public string path
+</code></pre>
+<p>The path to save the agent prefab to.</p>
+<p><a id="KaijuSolutions_Agents_Pipeline_Editor_KaijuCliCreateAgentPrefab_Parameters_type"></a></p>
+<h3 id="type">type</h3>
+<pre><code class="language-csharp">public string type
+</code></pre>
+<p>The type of agent to spawn.</p>
+<p><a id="KaijuSolutions_Agents_Pipeline_Editor_KaijuCliCreateAgentPrefab_Parameters_components"></a></p>
+<h3 id="components">components</h3>
+<pre><code class="language-csharp">public string[] components
+</code></pre>
+<p>The names of additional component types to add to the agent. You do not need to include the agent's component in this, as it is handled by the type parameter. Note that these will be assigned directly to the root GameObject of the agent. Invalid components will be skipped.</p>
+<p><a id="KaijuSolutions_Agents_Pipeline_Editor_KaijuCliCreateAgentPrefab_Parameters_body"></a></p>
+<h3 id="body">body</h3>
+<pre><code class="language-csharp">public Color body
+</code></pre>
+<p>What color to make the body of the agent.</p>
+<p><a id="KaijuSolutions_Agents_Pipeline_Editor_KaijuCliCreateAgentPrefab_Parameters_eyes"></a></p>
+<h3 id="eyes">eyes</h3>
+<pre><code class="language-csharp">public Color eyes
+</code></pre>
+<p>What color to make the eyes of the agent.</p></main></body></html>

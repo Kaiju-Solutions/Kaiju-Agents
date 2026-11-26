@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuPathFollowMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijupathfollowmovement">KaijuPathFollowMovement</h1>
+<p>Path following steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuPathFollowMovement : KaijuMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuPathFollowMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_DefaultMask"></a></p>
+<h3 id="defaultmask">DefaultMask</h3>
+<pre><code class="language-csharp">public const int DefaultMask
+</code></pre>
+<p>The default Mask for path follow movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_DefaultAutoCalculateDistance"></a></p>
+<h3 id="defaultautocalculatedistance">DefaultAutoCalculateDistance</h3>
+<pre><code class="language-csharp">public const float DefaultAutoCalculateDistance
+</code></pre>
+<p>The default AutoCalculateDistance for path follow movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target"></a></p>
+<h3 id="target">Target</h3>
+<pre><code class="language-csharp">public Vector2 Target { get; set; }
+</code></pre>
+<p>The position to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Target3"></a></p>
+<h3 id="target3">Target3</h3>
+<pre><code class="language-csharp">public Vector3 Target3 { get; set; }
+</code></pre>
+<p>The position to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetTransform"></a></p>
+<h3 id="targettransform">TargetTransform</h3>
+<pre><code class="language-csharp">public Transform TargetTransform { get; set; }
+</code></pre>
+<p>The transform to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetGameObject"></a></p>
+<h3 id="targetgameobject">TargetGameObject</h3>
+<pre><code class="language-csharp">public GameObject TargetGameObject { get; set; }
+</code></pre>
+<p>The GameObject to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetAgent"></a></p>
+<h3 id="targetagent">TargetAgent</h3>
+<pre><code class="language-csharp">public KaijuAgent TargetAgent { get; set; }
+</code></pre>
+<p>The KaijuSolutions.Agents.KaijuAgent to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_TargetComponent"></a></p>
+<h3 id="targetcomponent">TargetComponent</h3>
+<pre><code class="language-csharp">public Component TargetComponent { set; }
+</code></pre>
+<p>The component to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Path"></a></p>
+<h3 id="path">Path</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;Vector3&gt; Path { get; }
+</code></pre>
+<p>The path of points to follow.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_HasCompleteSurfaceRoute"></a></p>
+<h3 id="hascompletesurfaceroute">HasCompleteSurfaceRoute</h3>
+<pre><code class="language-csharp">public bool HasCompleteSurfaceRoute { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>The distance at which we can consider this behaviour done.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance"></a></p>
+<h3 id="currentdistance">CurrentDistance</h3>
+<pre><code class="language-csharp">public float CurrentDistance { get; }
+</code></pre>
+<p>The current distance between the KaijuSolutions.Agents.KaijuAgent and the target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CurrentDistance3"></a></p>
+<h3 id="currentdistance3">CurrentDistance3</h3>
+<pre><code class="language-csharp">public float CurrentDistance3 { get; }
+</code></pre>
+<p>The current distance between the KaijuSolutions.Agents.KaijuAgent and the target across all axes.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance"></a></p>
+<h3 id="pathdistance">PathDistance</h3>
+<pre><code class="language-csharp">public float PathDistance { get; }
+</code></pre>
+<p>The total distance from the KaijuSolutions.Agents.KaijuAgent along the Path to the Target along the X and Z axes.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_PathDistance3"></a></p>
+<h3 id="pathdistance3">PathDistance3</h3>
+<pre><code class="language-csharp">public float PathDistance3 { get; }
+</code></pre>
+<p>The total distance from the KaijuSolutions.Agents.KaijuAgent along the Path to the Target3 along all three axes.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_AutoCalculateDistance"></a></p>
+<h3 id="autocalculatedistance">AutoCalculateDistance</h3>
+<pre><code class="language-csharp">public float? AutoCalculateDistance { get; set; }
+</code></pre>
+<p>The distance to automatically recalculate the path from, with NULL not performing recalculations automatically.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Previous"></a></p>
+<h3 id="previous">Previous</h3>
+<pre><code class="language-csharp">public Vector2 Previous { get; set; }
+</code></pre>
+<p>The previous position of the Target3.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Previous3"></a></p>
+<h3 id="previous3">Previous3</h3>
+<pre><code class="language-csharp">public Vector3 Previous3
+</code></pre>
+<p>The previous position of the Target3.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Mask"></a></p>
+<h3 id="mask">Mask</h3>
+<pre><code class="language-csharp">public int Mask { get; set; }
+</code></pre>
+<p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_MaskAssigned"></a></p>
+<h3 id="maskassigned">MaskAssigned</h3>
+<pre><code class="language-csharp">public int? MaskAssigned { get; set; }
+</code></pre>
+<p>A bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Filter"></a></p>
+<h3 id="filter">Filter</h3>
+<pre><code class="language-csharp">public NavMeshQueryFilter? Filter { get; set; }
+</code></pre>
+<p>Filter for the navigation calculations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CollisionMask"></a></p>
+<h3 id="collisionmask">CollisionMask</h3>
+<pre><code class="language-csharp">public int CollisionMask
+</code></pre>
+<p>The collision mask for string-pulling line-of-sight checks.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Triggers"></a></p>
+<h3 id="triggers">Triggers</h3>
+<pre><code class="language-csharp">public QueryTriggerInteraction Triggers
+</code></pre>
+<p>How line-of-sight checks should handle triggers.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Vector2 target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Vector3 target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Component target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, GameObject target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, Component target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<pre><code class="language-csharp">public static KaijuPathFollowMovement Get ([NotNull] KaijuAgent agent, GameObject target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Get a path follow movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_KaijuPathFollowMovement"></a></p>
+<h3 id="kaijupathfollowmovement_1">KaijuPathFollowMovement</h3>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, Vector2 target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, Vector3 target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, [NotNull] GameObject target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, [NotNull] Component target, int mask= DefaultMask, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, Vector2 target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, Vector3 target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, [NotNull] GameObject target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement ([NotNull] KaijuAgent agent, [NotNull] Component target, NavMeshQueryFilter filter, float distance = KaijuApproachingMovement.DefaultDistance, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Create a path follow movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Initialize"></a></p>
+<h3 id="initialize">Initialize</h3>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, Vector2 target, float distance, int mask= DefaultMask, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, Vector3 target, float distance, int mask= DefaultMask, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, int mask= DefaultMask, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, int mask= DefaultMask, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, Vector2 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, Vector3 target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<pre><code class="language-csharp">public void Initialize ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance, NavMeshQueryFilter filter, float? autoCalculateDistance = DefaultAutoCalculateDistance, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_CalculatePath"></a></p>
+<h3 id="calculatepath">CalculatePath</h3>
+<pre><code class="language-csharp">public void CalculatePath ()
+</code></pre>
+<p>Calculate the path to the target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Done"></a></p>
+<h3 id="done">Done</h3>
+<pre><code class="language-csharp">public override bool Done ()
+</code></pre>
+<p>Determine if the KaijuSolutions.Agents.Movement.KaijuMovement is done or not.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override Vector2 Move (Vector2 position, float delta)
+</code></pre>
+<p>Get the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuPathFollowMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2? ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a nullable Vector2 from the target.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2 ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a Vector2 from the target.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3? ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a nullable Vector3 from the target.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3 ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a Vector3 from the target.</p>
+<pre><code class="language-csharp">public static implicit operator Transform ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a transform from the target.</p>
+<pre><code class="language-csharp">public static implicit operator GameObject ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a GameObject from the target.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuPathFollowMovement t)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent from the target.</p></main></body></html>

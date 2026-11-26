@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsNearest | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsnearest">KaijuAgentsNearest</h1>
+<p>Extension methods to get the nearest object to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in KaijuAgentsFlatten.</p>
+<pre><code class="language-csharp">public static class KaijuAgentsNearest
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsNearest.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsNearest_Nearest"></a></p>
+<h3 id="nearest">Nearest</h3>
+<pre><code class="language-csharp">public static Vector2 Nearest (this Vector2 position, [NotNull] IEnumerable&lt;Vector2&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector3 Nearest (this Vector2 position, [NotNull] IEnumerable&lt;Vector3&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Transform Nearest (this Vector2 position, [NotNull] IEnumerable&lt;Transform&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static T Nearest &lt;T&gt; (this Vector2 position, [NotNull] IEnumerable&lt;T&gt; targets, out float distance) where T : Component
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static GameObject Nearest (this Vector2 position, [NotNull] IEnumerable&lt;GameObject&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector2 Nearest (this Vector3 position, [NotNull] IEnumerable&lt;Vector2&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector3 Nearest (this Vector3 position, [NotNull] IEnumerable&lt;Vector3&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Transform Nearest (this Vector3 position, [NotNull] IEnumerable&lt;Transform&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static T Nearest &lt;T&gt; (this Vector3 position, [NotNull] IEnumerable&lt;T&gt; targets, out float distance) where T : Component
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static GameObject Nearest (this Vector3 position, [NotNull] IEnumerable&lt;GameObject&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector2 Nearest ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Vector2&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector3 Nearest ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Vector3&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Transform Nearest ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Transform&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static T Nearest &lt;T&gt; ([NotNull] this Transform position, [NotNull] IEnumerable&lt;T&gt; targets, out float distance) where T : Component
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static GameObject Nearest ([NotNull] this Transform position, [NotNull] IEnumerable&lt;GameObject&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector2 Nearest ([NotNull] this Component position, [NotNull] IEnumerable&lt;Vector2&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector3 Nearest ([NotNull] this Component position, [NotNull] IEnumerable&lt;Vector3&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Transform Nearest ([NotNull] this Component position, [NotNull] IEnumerable&lt;Transform&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static T Nearest &lt;T&gt; ([NotNull] this Component position, [NotNull] IEnumerable&lt;T&gt; targets, out float distance) where T : Component
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static GameObject Nearest ([NotNull] this Component position, [NotNull] IEnumerable&lt;GameObject&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector2 Nearest ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Vector2&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Vector3 Nearest ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Vector3&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static Transform Nearest ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Transform&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static T Nearest &lt;T&gt; ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;T&gt; targets, out float distance) where T : Component
+</code></pre>
+<p>The nearest instance to a position.</p>
+<pre><code class="language-csharp">public static GameObject Nearest ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;GameObject&gt; targets, out float distance)
+</code></pre>
+<p>The nearest instance to a position.</p></main></body></html>

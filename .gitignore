@@ -82,3 +82,5 @@ crashlytics-build.properties
 Documentation/api
 Documentation/obj
 Documentation/index.md
+/TestResults/
+/Tools/**/__pycache__/

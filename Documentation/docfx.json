@@ -8,7 +8,7 @@
                         "Packages/**/*.cs"
                     ],
                     "exclude": [
-                        "Assets/**/*.cs",
+                        "Packages/**/Tests/**/*.cs"
                     ]
                 }
             ],

@@ -33,6 +33,10 @@ namespace KaijuSolutions.Agents.Movement
             {
                 _transform = null;
                 Vector3 expanded = value.Expand();
+                if (_surfaceTarget && Agent is KaijuNavigationAgent surface) surface.EndRoute(this);
+                _surfaceTarget = false;
+                HasCompleteSurfaceRoute = false;
+                if (Agent && Agent.FreeFlight) expanded.y = Agent.Position3.y;
                 _vector3 = expanded;
                 Previous3 = expanded;
                 CalculatePath();
@@ -48,6 +52,7 @@ namespace KaijuSolutions.Agents.Movement
             set
             {
                 _transform = null;
+                _surfaceTarget = true;
                 _vector3 = value;
                 Previous3 = value;
                 CalculatePath();
@@ -62,6 +67,7 @@ namespace KaijuSolutions.Agents.Movement
             get => _transform;
             set
             {
+                _surfaceTarget = true;
                 _transform = value;
                 _vector3 = null;
                 Previous3 = value.position;
@@ -114,6 +120,12 @@ namespace KaijuSolutions.Agents.Movement
         /// The path of points to follow.
         /// </summary>
         private readonly List<Vector3> _path = new();
+        private bool _surfaceTarget;
+        private NavMeshPath _surfacePath;
+        private Vector3[] _surfaceCorners;
+        private Vector3 _surfaceGoal;
+        private Vector3? _lastSteeringTarget;
+        public bool HasCompleteSurfaceRoute { get; private set; }
         
         /// <summary>
         /// The distance at which we can consider this behaviour done.
@@ -141,7 +153,7 @@ namespace KaijuSolutions.Agents.Movement
         {
             get
             {
-                if (Done())
+                if (Done() || _path.Count == 0)
                 {
                     return 0;
                 }
@@ -168,7 +180,9 @@ namespace KaijuSolutions.Agents.Movement
         {
             get
             {
-                if (Done())
+                if (_surfaceTarget && Agent is KaijuNavigationAgent surface && ReferenceEquals(surface.SurfaceRoute, this) && surface.Nav.isOnNavMesh)
+                    return surface.Nav.remainingDistance;
+                if (Done() || _path.Count == 0)
                 {
                     return 0;
                 }
@@ -766,8 +780,34 @@ namespace KaijuSolutions.Agents.Movement
             // Update the previous position for future automatic updates.
             Previous3 = Target3;
             
+            if (_surfaceTarget && Agent is KaijuNavigationAgent surface)
+            {
+                _path.Clear();
+                HasCompleteSurfaceRoute = false;
+                _lastSteeringTarget = null;
+                var nav = surface.Nav;
+                if (nav && nav.isOnNavMesh)
+                {
+                    var filter = _filter ?? new NavMeshQueryFilter { agentTypeID = nav.agentTypeID, areaMask = Mask & nav.areaMask };
+                    _surfacePath ??= new NavMeshPath();
+                    var costSource = !_filter.HasValue && filter.areaMask == nav.areaMask ? nav : null;
+                    if (filter.agentTypeID == nav.agentTypeID &&
+                        surface.SurfacePosition.TryFindSurfacePath(Target3, filter, surface.surfaceSnapDistance, _surfacePath,
+                            ref _surfaceCorners, out int count, out _, out _surfaceGoal, costSource) &&
+                        surface.StartRoute(this, _surfacePath))
+                    {
+                        for (int i = 0; i < count; i++) _path.Add(_surfaceCorners[i]);
+                        HasCompleteSurfaceRoute = true;
+                    }
+                }
+                if (!HasCompleteSurfaceRoute) surface.EndRoute(this);
+                return;
+            }
             // Get the path.
-            Agent.Position3.FindPath(Target3, _path, Mask, Agent.GetRadius(), CollisionMask, Triggers);
+            if (_filter.HasValue)
+                Agent.Position3.FindPath(Target3, _path, _filter.Value, Agent.GetRadius(), CollisionMask, Triggers);
+            else
+                Agent.Position3.FindPath(Target3, _path, Mask, Agent.GetRadius(), CollisionMask, Triggers);
         }
         
         /// <summary>
@@ -775,9 +815,11 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         protected override void Reset()
         {
+            if (Agent is KaijuNavigationAgent surface) surface.EndRoute(this);
+            HasCompleteSurfaceRoute = false;
+            _surfaceTarget = false;
             base.Reset();
             _path.Clear();
-            _path.Capacity = 0;
             _autoCalculateDistance = null;
             Previous3 = Vector3.zero;
             _mask = null;
@@ -792,7 +834,16 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> is done or not.</returns>
         public override bool Done()
         {
-            return base.Done() || (!_transform && _vector3 == null) || Agent.Position.Within(Target, _distance);
+            if (base.Done() || (!_transform && _vector3 == null)) return true;
+            if (_surfaceTarget && Agent is KaijuNavigationAgent surface)
+            {
+                if (!HasCompleteSurfaceRoute || !surface.Nav.isOnNavMesh || surface.Nav.isOnOffMeshLink) return false;
+                if (_autoCalculateDistance.HasValue && (Target3 - Previous3).sqrMagnitude > _autoCalculateDistance.Value * _autoCalculateDistance.Value) return false;
+                float tolerance = Mathf.Max(0.02f, _distance);
+                return (surface.SurfacePosition - _surfaceGoal).sqrMagnitude <= tolerance * tolerance &&
+                       (!surface.Nav.hasPath || surface.Nav.remainingDistance <= tolerance);
+            }
+            return Agent.Position.Within(Target, _distance);
         }
         
         /// <summary>
@@ -809,6 +860,21 @@ namespace KaijuSolutions.Agents.Movement
                 CalculatePath();
             }
             
+            if (_surfaceTarget && Agent is KaijuNavigationAgent surface)
+            {
+                if (!HasCompleteSurfaceRoute || !ReferenceEquals(surface.SurfaceRoute, this) || !surface.Nav.isOnNavMesh)
+                    return Vector2.zero;
+                // Keep the public list aligned with Unity's next corner, including after crossing links.
+                Vector3 next = surface.Nav.steeringTarget;
+                if (_path.Count > 1 && _lastSteeringTarget != next)
+                {
+                    _lastSteeringTarget = next;
+                    int index = _path.IndexOf(next);
+                    if (index > 0) _path.RemoveRange(0, index);
+                }
+                return surface.Nav.velocity.Flatten();
+            }
+
             // Unity's pathfinding calculates along all three axes, so use that to determine if a point has been reached.
             Vector3 positions3 = Agent.Position3;
             

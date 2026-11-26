@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgent | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagent">KaijuAgent</h1>
+<p>Base agent class.</p>
+<pre><code class="language-csharp">public abstract class KaijuAgent : KaijuBehaviour
+</code></pre>
+<p><a href="../../Runtime/KaijuAgent.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMoveSpeed"></a></p>
+<h3 id="onmovespeed">OnMoveSpeed</h3>
+<pre><code class="language-csharp">public event KaijuAction OnMoveSpeed
+</code></pre>
+<p>Movement speed changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMoveSpeedGlobal"></a></p>
+<h3 id="onmovespeedglobal">OnMoveSpeedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnMoveSpeedGlobal
+</code></pre>
+<p>Global movement speed changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMoveAcceleration"></a></p>
+<h3 id="onmoveacceleration">OnMoveAcceleration</h3>
+<pre><code class="language-csharp">public event KaijuAction OnMoveAcceleration
+</code></pre>
+<p>Movement acceleration changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMoveAccelerationGlobal"></a></p>
+<h3 id="onmoveaccelerationglobal">OnMoveAccelerationGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnMoveAccelerationGlobal
+</code></pre>
+<p>Global movement acceleration changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnLookSpeed"></a></p>
+<h3 id="onlookspeed">OnLookSpeed</h3>
+<pre><code class="language-csharp">public event KaijuAction OnLookSpeed
+</code></pre>
+<p>Look speed changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnLookSpeedGlobal"></a></p>
+<h3 id="onlookspeedglobal">OnLookSpeedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnLookSpeedGlobal
+</code></pre>
+<p>Global look speed changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnAutoRotate"></a></p>
+<h3 id="onautorotate">OnAutoRotate</h3>
+<pre><code class="language-csharp">public event KaijuAction OnAutoRotate
+</code></pre>
+<p>Autorotation changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnAutoRotateGlobal"></a></p>
+<h3 id="onautorotateglobal">OnAutoRotateGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnAutoRotateGlobal
+</code></pre>
+<p>Global autorotation speed changed callback.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnLookTarget"></a></p>
+<h3 id="onlooktarget">OnLookTarget</h3>
+<pre><code class="language-csharp">public event KaijuAction OnLookTarget
+</code></pre>
+<p>Callback for when the look target has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnLookTargetGlobal"></a></p>
+<h3 id="onlooktargetglobal">OnLookTargetGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnLookTargetGlobal
+</code></pre>
+<p>Global callback for when the look target has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMove"></a></p>
+<h3 id="onmove">OnMove</h3>
+<pre><code class="language-csharp">public event KaijuAction OnMove
+</code></pre>
+<p>Callback for when this agent has moved.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMoveGlobal"></a></p>
+<h3 id="onmoveglobal">OnMoveGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnMoveGlobal
+</code></pre>
+<p>Global callback for when this agent has moved.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnEnabled"></a></p>
+<h3 id="onenabled">OnEnabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnEnabled
+</code></pre>
+<p>Callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnEnabledGlobal"></a></p>
+<h3 id="onenabledglobal">OnEnabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnEnabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnDisabled"></a></p>
+<h3 id="ondisabled">OnDisabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnDisabled
+</code></pre>
+<p>Callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnDisabledGlobal"></a></p>
+<h3 id="ondisabledglobal">OnDisabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnDisabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnDestroyed"></a></p>
+<h3 id="ondestroyed">OnDestroyed</h3>
+<pre><code class="language-csharp">public event KaijuAction OnDestroyed
+</code></pre>
+<p>Callback for when this has finishing becoming destroyed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnDestroyedGlobal"></a></p>
+<h3 id="ondestroyedglobal">OnDestroyedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnDestroyedGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming destroyed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMovementStarted"></a></p>
+<h3 id="onmovementstarted">OnMovementStarted</h3>
+<pre><code class="language-csharp">public event KaijuMovementAction OnMovementStarted
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Movement.KaijuMovement has started.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMovementStopped"></a></p>
+<h3 id="onmovementstopped">OnMovementStopped</h3>
+<pre><code class="language-csharp">public event KaijuMovementAction OnMovementStopped
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Movement.KaijuMovement has stopped.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnMovementPerformed"></a></p>
+<h3 id="onmovementperformed">OnMovementPerformed</h3>
+<pre><code class="language-csharp">public event KaijuMovementAction OnMovementPerformed
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Movement.KaijuMovement has been performed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnAutomaticSense"></a></p>
+<h3 id="onautomaticsense">OnAutomaticSense</h3>
+<pre><code class="language-csharp">public event KaijuAction OnAutomaticSense
+</code></pre>
+<p>Callback for when all automatic KaijuSolutions.Agents.Sensors.KaijuSensors have finished being executed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnAutomaticSenseGlobal"></a></p>
+<h3 id="onautomaticsenseglobal">OnAutomaticSenseGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuAgentAction OnAutomaticSenseGlobal
+</code></pre>
+<p>Global callback for when all automatic KaijuSolutions.Agents.Sensors.KaijuSensors have finished being executed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnSense"></a></p>
+<h3 id="onsense">OnSense</h3>
+<pre><code class="language-csharp">public event KaijuSensorAction OnSense
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been run.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnSensorEnabled"></a></p>
+<h3 id="onsensorenabled">OnSensorEnabled</h3>
+<pre><code class="language-csharp">public event KaijuSensorAction OnSensorEnabled
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnSensorDisabled"></a></p>
+<h3 id="onsensordisabled">OnSensorDisabled</h3>
+<pre><code class="language-csharp">public event KaijuSensorAction OnSensorDisabled
+</code></pre>
+<p>Callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorEnabled"></a></p>
+<h3 id="onactuatorenabled">OnActuatorEnabled</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorEnabled
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has been enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorDisabled"></a></p>
+<h3 id="onactuatordisabled">OnActuatorDisabled</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorDisabled
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has been disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorStarted"></a></p>
+<h3 id="onactuatorstarted">OnActuatorStarted</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorStarted
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has started to execute.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorExecuting"></a></p>
+<h3 id="onactuatorexecuting">OnActuatorExecuting</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorExecuting
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator is continuing to execute.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorDone"></a></p>
+<h3 id="onactuatordone">OnActuatorDone</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorDone
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has successfully fully completed its action.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorInterrupted"></a></p>
+<h3 id="onactuatorinterrupted">OnActuatorInterrupted</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorInterrupted
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has been interrupted during its execution, cancelling the execution.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnActuatorFailed"></a></p>
+<h3 id="onactuatorfailed">OnActuatorFailed</h3>
+<pre><code class="language-csharp">public event KaijuActuatorAction OnActuatorFailed
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has failed its execution.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_PhysicsAgent"></a></p>
+<h3 id="physicsagent">PhysicsAgent</h3>
+<pre><code class="language-csharp">public virtual bool PhysicsAgent { get; }
+</code></pre>
+<p>If this agent should move with the physics system.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MoveSpeed"></a></p>
+<h3 id="movespeed">MoveSpeed</h3>
+<pre><code class="language-csharp">public float MoveSpeed { get; set; }
+</code></pre>
+<p>The maximum move speed of the agent in units per second.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MoveAcceleration"></a></p>
+<h3 id="moveacceleration">MoveAcceleration</h3>
+<pre><code class="language-csharp">public float MoveAcceleration { get; set; }
+</code></pre>
+<p>The maximum move acceleration of the agent in units per second. Setting to zero yields instant acceleration.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookSpeed"></a></p>
+<h3 id="lookspeed">LookSpeed</h3>
+<pre><code class="language-csharp">public float LookSpeed { get; set; }
+</code></pre>
+<p>The look speed of the agent in degrees per second.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_AutoRotate"></a></p>
+<h3 id="autorotate">AutoRotate</h3>
+<pre><code class="language-csharp">public bool AutoRotate { get; set; }
+</code></pre>
+<p>If the agent should automatically rotate towards where it is moving when no look target is set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Sensors"></a></p>
+<h3 id="sensors">Sensors</h3>
+<pre><code class="language-csharp">public IReadOnlyCollection&lt;KaijuSensor&gt; Sensors { get; }
+</code></pre>
+<p>All KaijuSolutions.Agents.Sensors.KaijuSensors attached to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SensorsCount"></a></p>
+<h3 id="sensorscount">SensorsCount</h3>
+<pre><code class="language-csharp">public int SensorsCount { get; }
+</code></pre>
+<p>The number of KaijuSolutions.Agents.Sensors.KaijuSensors attached to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RegisterSensor"></a></p>
+<h3 id="registersensor">RegisterSensor</h3>
+<pre><code class="language-csharp">public void RegisterSensor (KaijuSensor sensor)
+</code></pre>
+<p>Register a KaijuSolutions.Agents.Sensors.KaijuSensor. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_UnregisterSensor"></a></p>
+<h3 id="unregistersensor">UnregisterSensor</h3>
+<pre><code class="language-csharp">public void UnregisterSensor (KaijuSensor sensor)
+</code></pre>
+<p>Unregister a KaijuSolutions.Agents.Sensors.KaijuSensor. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Actuators"></a></p>
+<h3 id="actuators">Actuators</h3>
+<pre><code class="language-csharp">public IReadOnlyCollection&lt;KaijuActuator&gt; Actuators { get; }
+</code></pre>
+<p>All KaijuSolutions.Agents.Actuators.KaijuActuators attached to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorsCount"></a></p>
+<h3 id="actuatorscount">ActuatorsCount</h3>
+<pre><code class="language-csharp">public int ActuatorsCount { get; }
+</code></pre>
+<p>The number of KaijuSolutions.Agents.Actuators.KaijuActuators attached to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RegisterActuator"></a></p>
+<h3 id="registeractuator">RegisterActuator</h3>
+<pre><code class="language-csharp">public void RegisterActuator (KaijuActuator actuator)
+</code></pre>
+<p>Register an KaijuSolutions.Agents.Actuators.KaijuActuator. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_UnregisterActuator"></a></p>
+<h3 id="unregisteractuator">UnregisterActuator</h3>
+<pre><code class="language-csharp">public void UnregisterActuator (KaijuActuator actuator)
+</code></pre>
+<p>Unregister an KaijuSolutions.Agents.Actuators.KaijuActuator. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Identifiers"></a></p>
+<h3 id="identifiers">Identifiers</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;uint&gt; Identifiers { get; }
+</code></pre>
+<p>Identifiers for this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_configuration"></a></p>
+<h3 id="configuration">configuration</h3>
+<pre><code class="language-csharp">public KaijuMovementConfiguration configuration
+</code></pre>
+<p>The default movement values for this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_globalControl"></a></p>
+<h3 id="globalcontrol">globalControl</h3>
+<pre><code class="language-csharp">public bool globalControl
+</code></pre>
+<p>Whether the manual Control is in the direction the agent is facing, or based on global coordinates.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Control"></a></p>
+<h3 id="control">Control</h3>
+<pre><code class="language-csharp">public Vector2 Control { get; set; }
+</code></pre>
+<p>The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the MoveSpeed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Control3"></a></p>
+<h3 id="control3">Control3</h3>
+<pre><code class="language-csharp">public Vector3 Control3 { get; set; }
+</code></pre>
+<p>The manual control vector for the agent's movement, with steering values ranging from negative one to positive one on each axis. This is multiplied by the MoveSpeed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Velocity"></a></p>
+<h3 id="velocity">Velocity</h3>
+<pre><code class="language-csharp">public Vector2 Velocity { get; private set; }
+</code></pre>
+<p>The current velocity of the agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Velocity3"></a></p>
+<h3 id="velocity3">Velocity3</h3>
+<pre><code class="language-csharp">public Vector3 Velocity3 { get; }
+</code></pre>
+<p>The current velocity of the agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RelativeVelocity"></a></p>
+<h3 id="relativevelocity">RelativeVelocity</h3>
+<pre><code class="language-csharp">public Vector2 RelativeVelocity { get; }
+</code></pre>
+<p>The current velocity of the agent relative to the direction we are facing.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RelativeVelocity3"></a></p>
+<h3 id="relativevelocity3">RelativeVelocity3</h3>
+<pre><code class="language-csharp">public Vector3 RelativeVelocity3 { get; }
+</code></pre>
+<p>The current velocity of the agent relative to the direction we are facing.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MoveForward"></a></p>
+<h3 id="moveforward">MoveForward</h3>
+<pre><code class="language-csharp">public Vector2 MoveForward { get; }
+</code></pre>
+<p>Get the forward direction of this agent along the X and Z axes based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as KaijuSolutions.Agents.KaijuBehaviour.Forward3.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MoveForward3"></a></p>
+<h3 id="moveforward3">MoveForward3</h3>
+<pre><code class="language-csharp">public Vector3 MoveForward3 { get; }
+</code></pre>
+<p>Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as KaijuSolutions.Agents.KaijuBehaviour.Forward3.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Movements"></a></p>
+<h3 id="movements">Movements</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;KaijuMovement&gt; Movements { get; }
+</code></pre>
+<p>All movements the agent is currently performing.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MovementsCount"></a></p>
+<h3 id="movementscount">MovementsCount</h3>
+<pre><code class="language-csharp">public int MovementsCount { get; }
+</code></pre>
+<p>The total number movements the agent is currently performing.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Moving"></a></p>
+<h3 id="moving">Moving</h3>
+<pre><code class="language-csharp">public bool Moving { get; }
+</code></pre>
+<p>If there are any movements occuring.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Spin"></a></p>
+<h3 id="spin">Spin</h3>
+<pre><code class="language-csharp">public float? Spin { get; set; }
+</code></pre>
+<p>The manual spin control, ranging from negative one to positive one. Negative values mean a left spin and positive values mean a right spin, multiplied by the LookSpeed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookAngle"></a></p>
+<h3 id="lookangle">LookAngle</h3>
+<pre><code class="language-csharp">public float? LookAngle { get; set; }
+</code></pre>
+<p>The angle to look at relative to the global forward direction.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookVector"></a></p>
+<h3 id="lookvector">LookVector</h3>
+<pre><code class="language-csharp">public Vector2? LookVector { get; set; }
+</code></pre>
+<p>The vector to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookVector3"></a></p>
+<h3 id="lookvector3">LookVector3</h3>
+<pre><code class="language-csharp">public Vector3? LookVector3 { get; set; }
+</code></pre>
+<p>The vector to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookTransform"></a></p>
+<h3 id="looktransform">LookTransform</h3>
+<pre><code class="language-csharp">public Transform LookTransform { get; set; }
+</code></pre>
+<p>The transform to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookGameObject"></a></p>
+<h3 id="lookgameobject">LookGameObject</h3>
+<pre><code class="language-csharp">public GameObject LookGameObject { get; set; }
+</code></pre>
+<p>The GameObject to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookComponent"></a></p>
+<h3 id="lookcomponent">LookComponent</h3>
+<pre><code class="language-csharp">public Component LookComponent { set; }
+</code></pre>
+<p>The component to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_TargetAgent"></a></p>
+<h3 id="targetagent">TargetAgent</h3>
+<pre><code class="language-csharp">public KaijuAgent TargetAgent { get; set; }
+</code></pre>
+<p>The agent to move in relation to.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_TargetComponent"></a></p>
+<h3 id="targetcomponent">TargetComponent</h3>
+<pre><code class="language-csharp">public Component TargetComponent { set; }
+</code></pre>
+<p>The component to look at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Looking"></a></p>
+<h3 id="looking">Looking</h3>
+<pre><code class="language-csharp">public bool Looking { get; }
+</code></pre>
+<p>If the agent is currently looking at something.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_LookDistance"></a></p>
+<h3 id="lookdistance">LookDistance</h3>
+<pre><code class="language-csharp">public float LookDistance { get; }
+</code></pre>
+<p>Get the distance from the agent to the target which is being looked at.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_MovementWeights"></a></p>
+<h3 id="movementweights">MovementWeights</h3>
+<pre><code class="language-csharp">public float MovementWeights { get; }
+</code></pre>
+<p>The total weight of all movements.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_GetRadius"></a></p>
+<h3 id="getradius">GetRadius</h3>
+<pre><code class="language-csharp">public abstract float GetRadius ()
+</code></pre>
+<p>Get the radius of an agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">public virtual void Setup ()
+</code></pre>
+<p>Initialize the agent. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_CalculateVelocity"></a></p>
+<h3 id="calculatevelocity">CalculateVelocity</h3>
+<pre><code class="language-csharp">public void CalculateVelocity (float delta)
+</code></pre>
+<p>Calculate the velocity for the next update. There is no point in manually calling this. The time step.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SimulationEntity"></a></p>
+<h3 id="simulationentity">SimulationEntity</h3>
+<pre><code class="language-csharp">public Entity SimulationEntity { get; private set; }
+</code></pre>
+<p>The simulation entity while this agent is registered in the default world.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_FreeFlight"></a></p>
+<h3 id="freeflight">FreeFlight</h3>
+<pre><code class="language-csharp">public KaijuFreeFlight FreeFlight { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected virtual void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected virtual void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Spawn"></a></p>
+<h3 id="spawn">Spawn</h3>
+<pre><code class="language-csharp">public void Spawn ()
+</code></pre>
+<p>Spawn this agent if it is not currently spawned. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Despawn"></a></p>
+<h3 id="despawn">Despawn</h3>
+<pre><code class="language-csharp">public void Despawn ()
+</code></pre>
+<p>Despawn this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ClearIdentifiers"></a></p>
+<h3 id="clearidentifiers">ClearIdentifiers</h3>
+<pre><code class="language-csharp">public void ClearIdentifiers ()
+</code></pre>
+<p>Clear all identifiers.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_HasIdentifier"></a></p>
+<h3 id="hasidentifier">HasIdentifier</h3>
+<pre><code class="language-csharp">public bool HasIdentifier (uint identifier)
+</code></pre>
+<p>If this agent has an identifier.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_HasAnyIdentifier"></a></p>
+<h3 id="hasanyidentifier">HasAnyIdentifier</h3>
+<pre><code class="language-csharp">public bool HasAnyIdentifier (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>If this agent has any one of a set of identifiers.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_AddIdentifier"></a></p>
+<h3 id="addidentifier">AddIdentifier</h3>
+<pre><code class="language-csharp">public bool AddIdentifier (uint identifier)
+</code></pre>
+<p>Add an identifier to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_AddIdentifiers"></a></p>
+<h3 id="addidentifiers">AddIdentifiers</h3>
+<pre><code class="language-csharp">public bool AddIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>Add identifiers to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RemoveIdentifier"></a></p>
+<h3 id="removeidentifier">RemoveIdentifier</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifier (uint identifier)
+</code></pre>
+<p>Remove an identifier from this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_RemoveIdentifiers"></a></p>
+<h3 id="removeidentifiers">RemoveIdentifiers</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>Remove identifiers from this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SetIdentifier"></a></p>
+<h3 id="setidentifier">SetIdentifier</h3>
+<pre><code class="language-csharp">public void SetIdentifier (uint identifier)
+</code></pre>
+<p>Set an identifier to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SetIdentifiers"></a></p>
+<h3 id="setidentifiers">SetIdentifiers</h3>
+<pre><code class="language-csharp">public void SetIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>If this agent has any one of a set of identifiers.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Stop"></a></p>
+<h3 id="stop">Stop</h3>
+<pre><code class="language-csharp">public void Stop ()
+</code></pre>
+<p>Stop all movement, including manual steering.</p>
+<pre><code class="language-csharp">public bool Stop (KaijuMovement movement)
+</code></pre>
+<p>Stop a movement of this agent.</p>
+<pre><code class="language-csharp">public bool Stop &lt;T&gt; () where T : KaijuMovement
+</code></pre>
+<p>Stop all instances of a movement type. This checks for exact matches, not inherited classes.</p>
+<pre><code class="language-csharp">public bool Stop (int index)
+</code></pre>
+<p>Stop a movement by the given index.</p>
+<pre><code class="language-csharp">public int Stop (Vector2 v)
+</code></pre>
+<p>Stop existing target movements in relation to a vector.</p>
+<pre><code class="language-csharp">public int Stop (Vector3 v)
+</code></pre>
+<p>Stop existing target movements in relation to a vector.</p>
+<pre><code class="language-csharp">public int Stop ([NotNull] GameObject go)
+</code></pre>
+<p>Stop existing target movements in relation to a GameObject.</p>
+<pre><code class="language-csharp">public int Stop ([NotNull] Component c)
+</code></pre>
+<p>Stop an existing target movement in relation to a component.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_StopLooking"></a></p>
+<h3 id="stoplooking">StopLooking</h3>
+<pre><code class="language-csharp">public void StopLooking ()
+</code></pre>
+<p>Stop explicitly looking at a target.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Seek"></a></p>
+<h3 id="seek">Seek</h3>
+<pre><code class="language-csharp">public KaijuSeekMovement Seek (Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Seek to a target.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement Seek (Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Seek to a target.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement Seek ([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Seek to a target.</p>
+<pre><code class="language-csharp">public KaijuSeekMovement Seek ([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Seek to a target.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Pursue"></a></p>
+<h3 id="pursue">Pursue</h3>
+<pre><code class="language-csharp">public KaijuPursueMovement Pursue (Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Pursue to a target.</p>
+<pre><code class="language-csharp">public KaijuPursueMovement Pursue (Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Pursue to a target.</p>
+<pre><code class="language-csharp">public KaijuPursueMovement Pursue ([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Pursue to a target.</p>
+<pre><code class="language-csharp">public KaijuPursueMovement Pursue ([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Pursue to a target.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Flee"></a></p>
+<h3 id="flee">Flee</h3>
+<pre><code class="language-csharp">public KaijuFleeMovement Flee (Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Flee from a target.</p>
+<pre><code class="language-csharp">public KaijuFleeMovement Flee (Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Flee from a target.</p>
+<pre><code class="language-csharp">public KaijuFleeMovement Flee ([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Flee from a target.</p>
+<pre><code class="language-csharp">public KaijuFleeMovement Flee ([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Flee from a target.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Evade"></a></p>
+<h3 id="evade">Evade</h3>
+<pre><code class="language-csharp">public KaijuEvadeMovement Evade (Vector2 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Evade from a target.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement Evade (Vector3 target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Evade from a target.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement Evade ([NotNull] GameObject target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Evade from a target.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement Evade ([NotNull] Component target, float? distance = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Evade from a target.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Wander"></a></p>
+<h3 id="wander">Wander</h3>
+<pre><code class="language-csharp">public KaijuWanderMovement Wander (float? distance = null, float? radius = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Wander.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Separation"></a></p>
+<h3 id="separation">Separation</h3>
+<pre><code class="language-csharp">public KaijuSeparationMovement Separation (float? distance = null, float? coefficient = null, ICollection&lt;uint&gt; collection = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Separate from other agents.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ObstacleAvoidance"></a></p>
+<h3 id="obstacleavoidance">ObstacleAvoidance</h3>
+<pre><code class="language-csharp">public KaijuObstacleAvoidanceMovement ObstacleAvoidance (float? avoidance = null, float? distance = null, float? sideDistance = null, float? angle = null, float? height = null, float? horizontal = null, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Avoid obstacles.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_PathFollow"></a></p>
+<h3 id="pathfollow">PathFollow</h3>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Vector2 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Vector3 target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Component target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (GameObject target, int areaMask = NavMesh.AllAreas, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Vector2 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Vector3 target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (Component target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<pre><code class="language-csharp">public KaijuPathFollowMovement PathFollow (GameObject target, NavMeshQueryFilter filter, float? distance = null, float? autoCalculateDistance = 1, int collisionMask = KaijuMovementConfiguration.DefaultMask, QueryTriggerInteraction triggers = QueryTriggerInteraction.UseGlobal, float? weight = null, bool? clear = null)
+</code></pre>
+<p>Path following.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_OnValidate"></a></p>
+<h3 id="onvalidate">OnValidate</h3>
+<pre><code class="language-csharp">protected virtual void OnValidate ()
+</code></pre>
+<p>Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public void EditorVisualize (bool text)
+</code></pre>
+<p>Visualize this agent in the editor. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public abstract void Move (float delta)
+</code></pre>
+<p>Perform agent movement. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_GetSensor"></a></p>
+<h3 id="getsensor">GetSensor</h3>
+<pre><code class="language-csharp">public T GetSensor &lt;T&gt; (ISet&lt;T&gt; ignore = null, bool automatic = true) where T : KaijuSensor
+</code></pre>
+<p>Get a KaijuSolutions.Agents.Sensors.KaijuSensor of a given type.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_GetSensors"></a></p>
+<h3 id="getsensors">GetSensors</h3>
+<pre><code class="language-csharp">public HashSet&lt;T&gt; GetSensors &lt;T&gt; (bool automatic = true) where T : KaijuSensor
+</code></pre>
+<p>Get all KaijuSolutions.Agents.Sensors.KaijuSensor of a given type.</p>
+<pre><code class="language-csharp">public int GetSensors &lt;T&gt; ([NotNull] ISet&lt;T&gt; sensors, bool automatic = true) where T : KaijuSensor
+</code></pre>
+<p>Get all KaijuSolutions.Agents.Sensors.KaijuSensor of a given type.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_GetActuator"></a></p>
+<h3 id="getactuator">GetActuator</h3>
+<pre><code class="language-csharp">public T GetActuator &lt;T&gt; (ISet&lt;T&gt; ignore = null) where T : KaijuActuator
+</code></pre>
+<p>Get a KaijuSolutions.Agents.Actuators.KaijuActuator of a given type.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_GetActuators"></a></p>
+<h3 id="getactuators">GetActuators</h3>
+<pre><code class="language-csharp">public HashSet&lt;T&gt; GetActuators &lt;T&gt; () where T : KaijuActuator
+</code></pre>
+<p>Get all KaijuSolutions.Agents.Actuators.KaijuActuator of a given type.</p>
+<pre><code class="language-csharp">public int GetActuators &lt;T&gt; ([NotNull] ISet&lt;T&gt; actuators) where T : KaijuActuator
+</code></pre>
+<p>Get all KaijuSolutions.Agents.Actuators.KaijuActuator of a given type.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Sense"></a></p>
+<h3 id="sense">Sense</h3>
+<pre><code class="language-csharp">public int Sense &lt;T&gt; (ICollection&lt;T&gt; sensors = null, bool automatic = false) where T : KaijuSensor
+</code></pre>
+<p>Manually run all KaijuSolutions.Agents.Sensors.KaijuSensors of a type attached to this agent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SenseAutomatic"></a></p>
+<h3 id="senseautomatic">SenseAutomatic</h3>
+<pre><code class="language-csharp">public void SenseAutomatic ()
+</code></pre>
+<p>Execute all automatically-running KaijuSolutions.Agents.Sensors.KaijuSensors. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_SensorRun"></a></p>
+<h3 id="sensorrun">SensorRun</h3>
+<pre><code class="language-csharp">public void SensorRun ([NotNull] KaijuSensor sensor)
+</code></pre>
+<p>Called by a KaijuSolutions.Agents.Sensors.KaijuSensor when it has been run. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Act"></a></p>
+<h3 id="act">Act</h3>
+<pre><code class="language-csharp">public void Act ()
+</code></pre>
+<p>Execute all KaijuSolutions.Agents.Actuators.KaijuActuators. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorStarted"></a></p>
+<h3 id="actuatorstarted">ActuatorStarted</h3>
+<pre><code class="language-csharp">public void ActuatorStarted (KaijuActuator actuator)
+</code></pre>
+<p>Allow for KaijuSolutions.Agents.Actuators.KaijuActuators to trigger that they have started. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorExecuting"></a></p>
+<h3 id="actuatorexecuting">ActuatorExecuting</h3>
+<pre><code class="language-csharp">public void ActuatorExecuting (KaijuActuator actuator)
+</code></pre>
+<p>Allow for KaijuSolutions.Agents.Actuators.KaijuActuators to trigger that they are executing. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorDone"></a></p>
+<h3 id="actuatordone">ActuatorDone</h3>
+<pre><code class="language-csharp">public void ActuatorDone (KaijuActuator actuator)
+</code></pre>
+<p>Allow for KaijuSolutions.Agents.Actuators.KaijuActuators to trigger that they are done. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorInterrupted"></a></p>
+<h3 id="actuatorinterrupted">ActuatorInterrupted</h3>
+<pre><code class="language-csharp">public void ActuatorInterrupted (KaijuActuator actuator)
+</code></pre>
+<p>Allow for KaijuSolutions.Agents.Actuators.KaijuActuators to trigger that they were interrupted. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ActuatorFailed"></a></p>
+<h3 id="actuatorfailed">ActuatorFailed</h3>
+<pre><code class="language-csharp">public void ActuatorFailed (KaijuActuator actuator)
+</code></pre>
+<p>Allow for KaijuSolutions.Agents.Actuators.KaijuActuators to trigger that they failed. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_Look"></a></p>
+<h3 id="look">Look</h3>
+<pre><code class="language-csharp">public void Look (float delta)
+</code></pre>
+<p>Handle look actions. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgent_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuController ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuController.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuGlobalController ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuGlobalController.</p>
+<pre><code class="language-csharp">public static implicit operator short ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a short integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator short? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable short integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator ushort ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to an unsigned short integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator ushort? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned short integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator int ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to an integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator int? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator uint ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to an unsigned integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator uint? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator long ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a long integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator long? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable long integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator ulong ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to an unsigned long integer based on the number of Movements.</p>
+<pre><code class="language-csharp">public static implicit operator ulong? ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned long integer based on the number of Movements.</p></main></body></html>

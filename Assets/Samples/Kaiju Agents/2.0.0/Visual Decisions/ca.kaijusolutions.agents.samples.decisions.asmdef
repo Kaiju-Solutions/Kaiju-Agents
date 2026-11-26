@@ -1,0 +1,15 @@
+{
+  "name": "ca.kaijusolutions.agents.samples.decisions",
+  "references": [
+    "ca.kaijusolutions.agents",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.unity.ml-agents",
+      "expression": "",
+      "define": "COM_UNITY_ML_AGENTS"
+    }
+  ]
+}

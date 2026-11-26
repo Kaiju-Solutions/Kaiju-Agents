@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsMultiMatcher | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsmultimatcher">KaijuAgentsMultiMatcher</h1>
+<p>Helper to match multiple KaijuAgentsMatcher instances together which all must succeed.</p>
+<pre><code class="language-csharp">public class KaijuAgentsMultiMatcher
+</code></pre>
+<p><a href="../../Runtime/KaijuAgentsMultiMatcher.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMultiMatcher_Matchers"></a></p>
+<h3 id="matchers">Matchers</h3>
+<pre><code class="language-csharp">public List&lt;KaijuAgentsMatcher&gt; Matchers { get; set; }
+</code></pre>
+<p>KaijuAgentsMatcher instances to compare where they all must pass their condition.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMultiMatcher_Matched"></a></p>
+<h3 id="matched">Matched</h3>
+<pre><code class="language-csharp">public bool Matched ([NotNull] string value)
+</code></pre>
+<p>Get if this is a match.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMultiMatcher_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator string ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a string.</p>
+<pre><code class="language-csharp">public static implicit operator short ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a short integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator short? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable short integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator ushort ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to an unsigned short integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator ushort? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned short integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator int ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to an integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator int? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator uint ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to an unsigned integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator uint? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator long ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a long integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator long? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable long integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator ulong ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to an unsigned long integer based on the number of Matchers.</p>
+<pre><code class="language-csharp">public static implicit operator ulong? ([NotNull] KaijuAgentsMultiMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned long integer based on the number of Matchers.</p></main></body></html>

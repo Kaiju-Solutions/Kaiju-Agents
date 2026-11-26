@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuObstacleAvoidanceMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuobstacleavoidancemovement">KaijuObstacleAvoidanceMovement</h1>
+<p>Obstacle avoidance steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuObstacleAvoidanceMovement : KaijuMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuObstacleAvoidanceMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultAvoidance"></a></p>
+<h3 id="defaultavoidance">DefaultAvoidance</h3>
+<pre><code class="language-csharp">public const float DefaultAvoidance
+</code></pre>
+<p>The default Avoidance for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultDistance"></a></p>
+<h3 id="defaultdistance">DefaultDistance</h3>
+<pre><code class="language-csharp">public const float DefaultDistance
+</code></pre>
+<p>The default Distance for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultSideDistance"></a></p>
+<h3 id="defaultsidedistance">DefaultSideDistance</h3>
+<pre><code class="language-csharp">public const float DefaultSideDistance
+</code></pre>
+<p>The default SideDistance for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultAngle"></a></p>
+<h3 id="defaultangle">DefaultAngle</h3>
+<pre><code class="language-csharp">public const float DefaultAngle
+</code></pre>
+<p>The default Angle for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultHeight"></a></p>
+<h3 id="defaultheight">DefaultHeight</h3>
+<pre><code class="language-csharp">public const float DefaultHeight
+</code></pre>
+<p>The default Height for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_DefaultHorizontal"></a></p>
+<h3 id="defaulthorizontal">DefaultHorizontal</h3>
+<pre><code class="language-csharp">public const float DefaultHorizontal
+</code></pre>
+<p>The default Horizontal for KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Avoidance"></a></p>
+<h3 id="avoidance">Avoidance</h3>
+<pre><code class="language-csharp">public float Avoidance { get; set; }
+</code></pre>
+<p>The distance from a wall the KaijuSolutions.Agents.KaijuAgent should maintain.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>The distance for rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_SideDistance"></a></p>
+<h3 id="sidedistance">SideDistance</h3>
+<pre><code class="language-csharp">public float SideDistance { get; set; }
+</code></pre>
+<p>The distance of the side rays. Zero or less will use the Distance.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Angle"></a></p>
+<h3 id="angle">Angle</h3>
+<pre><code class="language-csharp">public float Angle
+</code></pre>
+<p>The angle for rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Height"></a></p>
+<h3 id="height">Height</h3>
+<pre><code class="language-csharp">public float Height
+</code></pre>
+<p>The height offset for the rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Horizontal"></a></p>
+<h3 id="horizontal">Horizontal</h3>
+<pre><code class="language-csharp">public float Horizontal
+</code></pre>
+<p>The horizontal shift for the side rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Mask"></a></p>
+<h3 id="mask">Mask</h3>
+<pre><code class="language-csharp">public LayerMask Mask
+</code></pre>
+<p>While layers the rays should hit.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Hits"></a></p>
+<h3 id="hits">Hits</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;RaycastHit&gt; Hits { get; }
+</code></pre>
+<p>The points hit by the rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Misses"></a></p>
+<h3 id="misses">Misses</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;Vector3&gt; Misses { get; }
+</code></pre>
+<p>All points which were checked to hit but misses.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public static KaijuObstacleAvoidanceMovement Get ([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance, float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
+</code></pre>
+<p>Get an obstacle avoidance movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_KaijuObstacleAvoidanceMovement"></a></p>
+<h3 id="kaijuobstacleavoidancemovement_1">KaijuObstacleAvoidanceMovement</h3>
+<pre><code class="language-csharp">public KaijuObstacleAvoidanceMovement ([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
+</code></pre>
+<p>Create an obstacle avoidance movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Initialize"></a></p>
+<h3 id="initialize">Initialize</h3>
+<pre><code class="language-csharp">protected void Initialize ([NotNull] KaijuAgent agent, float avoidance = DefaultAvoidance, float distance = DefaultDistance, float sideDistance = DefaultDistance,float angle = DefaultAngle, float height = DefaultHeight, float horizontal = DefaultHorizontal, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override Vector2 Move (Vector2 position, float delta)
+</code></pre>
+<p>Get the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuObstacleAvoidanceMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

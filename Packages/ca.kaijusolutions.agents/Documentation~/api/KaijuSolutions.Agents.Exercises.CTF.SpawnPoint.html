@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpawnPoint | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="spawnpoint">SpawnPoint</h1>
+<p>Points which Troopers can spawn at.</p>
+<pre><code class="language-csharp">public class SpawnPoint : KaijuBehaviour, IComparable&lt;SpawnPoint&gt;
+</code></pre>
+<p><a href="../../Samples~/Exercise%203%20-%20Capture%20the%20Flag/Environment/SpawnPoint.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_NextSpawnPoint"></a></p>
+<h3 id="nextspawnpoint">NextSpawnPoint</h3>
+<pre><code class="language-csharp">public static SpawnPoint NextSpawnPoint (bool teamOne)
+</code></pre>
+<p>Get the next point to spawn at, prioritizing open points first.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_TeamOne"></a></p>
+<h3 id="teamone">TeamOne</h3>
+<pre><code class="language-csharp">public bool TeamOne { get; private set; }
+</code></pre>
+<p>If this is for team one.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_Occupied"></a></p>
+<h3 id="occupied">Occupied</h3>
+<pre><code class="language-csharp">public bool Occupied { get; }
+</code></pre>
+<p>If this is currently occupied by any Troopers.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_SpawnOccupy"></a></p>
+<h3 id="spawnoccupy">SpawnOccupy</h3>
+<pre><code class="language-csharp">public void SpawnOccupy (Trooper trooper)
+</code></pre>
+<p>Manually occupy this on a spawn as physics collisions won't pick it up right away.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_CompareTo"></a></p>
+<h3 id="compareto">CompareTo</h3>
+<pre><code class="language-csharp">public int CompareTo (SpawnPoint other)
+</code></pre>
+<p>Compare to another instance for sorting.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_SpawnPoint_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

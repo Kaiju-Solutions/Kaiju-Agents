@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuLeavingMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuleavingmovement">KaijuLeavingMovement</h1>
+<p>Base KaijuSolutions.Agents.Movement.KaijuMovement class for moving away from a single target.</p>
+<pre><code class="language-csharp">public abstract class KaijuLeavingMovement : KaijuTargetMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuLeavingMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuLeavingMovement_DefaultDistance"></a></p>
+<h3 id="defaultdistance">DefaultDistance</h3>
+<pre><code class="language-csharp">public const float DefaultDistance
+</code></pre>
+<p>The default  KaijuSolutions.Agents.Movement.KaijuTargetMovement.Distance of leaving movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuLeavingMovement_KaijuLeavingMovement"></a></p>
+<h3 id="kaijuleavingmovement_1">KaijuLeavingMovement</h3>
+<pre><code class="language-csharp">public KaijuLeavingMovement ([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a leaving movement for a Vector2.</p>
+<pre><code class="language-csharp">public KaijuLeavingMovement ([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a leaving movement for a Vector3.</p>
+<pre><code class="language-csharp">public KaijuLeavingMovement ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a leaving movement for a GameObject.</p>
+<pre><code class="language-csharp">public KaijuLeavingMovement ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create a leaving movement for a component.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuLeavingMovement_Done"></a></p>
+<h3 id="done">Done</h3>
+<pre><code class="language-csharp">public override bool Done ()
+</code></pre>
+<p>Determine if the KaijuSolutions.Agents.Movement.KaijuMovement is done or not.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuLeavingMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

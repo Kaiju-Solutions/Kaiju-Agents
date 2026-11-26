@@ -21,8 +21,8 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector3 Previous3
         {
-            get => Previous.Expand();
-            set => Previous = value.Flatten();
+            get => _previousFlightTarget ?? Previous.Expand();
+            set { Previous = value.Flatten(); _previousFlightTarget = value; }
         }
         
         /// <summary>
@@ -33,7 +33,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <summary>
         /// The predicted future <see cref="KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target"/>.
         /// </summary>
-        public Vector3 Future3 => Future.Expand();
+        public Vector3 Future3 => _futureFlightTarget ?? Future.Expand();
 #if UNITY_EDITOR
         /// <summary>
         /// Points to render in the editor.
@@ -172,10 +172,26 @@ namespace KaijuSolutions.Agents.Movement
         protected override void Reset()
         {
             base.Reset();
+            _previousFlightTarget = _futureFlightTarget = null;
             Previous = Vector2.zero;
             Future = Vector2.zero;
         }
         
+        private Vector3? _previousFlightTarget;
+        private Vector3? _futureFlightTarget;
+        public override Vector3 Move3(Vector3 position, float delta)
+        {
+            Vector3 target = Target3;
+            Vector3 velocity = delta > 0 && _previousFlightTarget.HasValue ? (target - _previousFlightTarget.Value) / delta : Vector3.zero;
+            _previousFlightTarget = target;
+            float lead = Agent.MoveSpeed > 0 ? Mathf.Min(1f, Vector3.Distance(position, target) / Agent.MoveSpeed) : 0;
+            Vector3 future = target + velocity * lead;
+            _futureFlightTarget = future;
+            Previous = target.Flatten();
+            Future = future.Flatten();
+            return (future - position).normalized * Agent.MoveSpeed;
+        }
+
         /// <summary>
         /// Calculate the movement.
         /// </summary>

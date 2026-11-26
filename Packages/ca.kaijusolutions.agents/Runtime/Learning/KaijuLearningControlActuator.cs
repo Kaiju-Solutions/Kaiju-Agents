@@ -5,7 +5,7 @@ using UnityEngine;
 namespace KaijuSolutions.Agents.Learning
 {
     /// <summary>
-    /// Actuator for controlling the movement of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> via the <see cref="KaijuSolutions.Agents.KaijuAgent.Control"/> property for <see href="https://docs.unity3d.com/Packages/com.unity.ml-agents@latest">ML-Agents</see>. This has two continuous actions which are assigned to the <see cref="KaijuSolutions.Agents.KaijuAgent.Control"/> property. This has no <see cref="Heuristic"/> implementation, and you will need to extend this class and override for your use case.
+    /// Controls a Kaiju agent with continuous ML-Agents actions for X and Z. Enable Include Climb to append a Y action for flight.
     /// </summary>
     [DisallowMultipleComponent]
 #if UNITY_EDITOR
@@ -18,7 +18,10 @@ namespace KaijuSolutions.Agents.Learning
         /// <summary>
         /// The specification of the possible actions for this actuator component. This must produce the same results as the corresponding IActuator's ActionSpec.
         /// </summary>
-        public override ActionSpec ActionSpec => ActionSpec.MakeContinuous(2);
+        public override ActionSpec ActionSpec => ActionSpec.MakeContinuous(includeClimb ? 3 : 2);
+
+        [Tooltip("Append a climb action after the horizontal X and Z actions.")]
+        [SerializeField] private bool includeClimb;
         
         /// <summary>
         /// Method called in order to allow object to execute actions based on the <see cref="actionBuffers"/> contents. The structure of the contents in the <see cref="actionBuffers"/> are defined by the action spec.
@@ -26,7 +29,9 @@ namespace KaijuSolutions.Agents.Learning
         /// <param name="actionBuffers">The data structure containing the action buffers for this object.</param>
         public override void OnActionReceived(ActionBuffers actionBuffers)
         {
-            Agent.Control = new(actionBuffers.ContinuousActions[0],  actionBuffers.ContinuousActions[1]);
+            var actions = actionBuffers.ContinuousActions;
+            if (includeClimb) Agent.Control3 = new Vector3(actions[0], actions[2], actions[1]);
+            else Agent.Control = new Vector2(actions[0], actions[1]);
         }
         
         /// <summary>
@@ -41,8 +46,7 @@ namespace KaijuSolutions.Agents.Learning
         /// <param name="actionBuffersOut">The action buffers data structure to be filled by the object implementing this interface.</param>
         public override void Heuristic(in ActionBuffers actionBuffersOut)
         {
-            actionBuffersOut.ContinuousActions.Array[0] = 0f;
-            actionBuffersOut.ContinuousActions.Array[1] = 0f;
+            actionBuffersOut.ContinuousActions.Clear();
         }
     }
 }

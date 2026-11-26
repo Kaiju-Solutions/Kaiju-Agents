@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsSortDistance | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentssortdistance">KaijuAgentsSortDistance</h1>
+<p>Extension methods for sorting objects by their distance to a given position along the X and Z axes. All three-dimensional vectors will be flattened via methods in KaijuAgentsFlatten.</p>
+<pre><code class="language-csharp">public static class KaijuAgentsSortDistance
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsSortDistance.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsSortDistance_SortDistance"></a></p>
+<h3 id="sortdistance">SortDistance</h3>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] List&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector2[] SortDistance (this Vector2 position, [NotNull] IEnumerable&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] List&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector3[] SortDistance (this Vector2 position, [NotNull] IEnumerable&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] List&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Transform[] SortDistance (this Vector2 position, [NotNull] IEnumerable&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; (this Vector2 position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; (this Vector2 position, [NotNull] List&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static T[] SortDistance &lt;T&gt; (this Vector2 position, [NotNull] IEnumerable&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector2 position, [NotNull] List&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static GameObject[] SortDistance (this Vector2 position, [NotNull] IEnumerable&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] List&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector2[] SortDistance (this Vector3 position, [NotNull] IEnumerable&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] List&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector3[] SortDistance (this Vector3 position, [NotNull] IEnumerable&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] List&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Transform[] SortDistance (this Vector3 position, [NotNull] IEnumerable&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; (this Vector3 position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; (this Vector3 position, [NotNull] List&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static T[] SortDistance &lt;T&gt; (this Vector3 position, [NotNull] IEnumerable&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance (this Vector3 position, [NotNull] List&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static GameObject[] SortDistance (this Vector3 position, [NotNull] IEnumerable&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] List&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector2[] SortDistance ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] List&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector3[] SortDistance ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] List&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Transform[] SortDistance ([NotNull] this Transform position, [NotNull] IEnumerable&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this Transform position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this Transform position, [NotNull] List&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static T[] SortDistance &lt;T&gt; ([NotNull] this Transform position, [NotNull] IEnumerable&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Transform position, [NotNull] List&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static GameObject[] SortDistance ([NotNull] this Transform position, [NotNull] IEnumerable&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] List&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector2[] SortDistance ([NotNull] this Component position, [NotNull] IEnumerable&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] List&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector3[] SortDistance ([NotNull] this Component position, [NotNull] IEnumerable&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] List&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Transform[] SortDistance ([NotNull] this Component position, [NotNull] IEnumerable&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this Component position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this Component position, [NotNull] List&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static T[] SortDistance &lt;T&gt; ([NotNull] this Component position, [NotNull] IEnumerable&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this Component position, [NotNull] List&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static GameObject[] SortDistance ([NotNull] this Component position, [NotNull] IEnumerable&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] Vector2[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] List&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector2[] SortDistance ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Vector2&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] Vector3[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] List&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Vector3[] SortDistance ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Vector3&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] Transform[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] List&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static Transform[] SortDistance ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;Transform&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this GameObject position, [NotNull] T[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance &lt;T&gt; ([NotNull] this GameObject position, [NotNull] List&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static T[] SortDistance &lt;T&gt; ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;T&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null) where T : Component
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] GameObject[] targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static void SortDistance ([NotNull] this GameObject position, [NotNull] List&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position.</p>
+<pre><code class="language-csharp">public static GameObject[] SortDistance ([NotNull] this GameObject position, [NotNull] IEnumerable&lt;GameObject&gt; targets, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Sort targets from a position. This version will produce garbage, and it is recommended to use an inplace method instead.</p></main></body></html>

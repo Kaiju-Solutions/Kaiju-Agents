@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microbe | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="microbe">Microbe</h1>
+<p>Microbes which can mate with and eat each other.</p>
+<pre><code class="language-csharp">public class Microbe : KaijuController
+</code></pre>
+<p><a href="../../Samples~/Exercise%202%20-%20Microbes/Microbe/Microbe.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEat"></a></p>
+<h3 id="oneat">OnEat</h3>
+<pre><code class="language-csharp">public event MicrobeAction OnEat
+</code></pre>
+<p>Callback for this microbe eating.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEaten"></a></p>
+<h3 id="oneaten">OnEaten</h3>
+<pre><code class="language-csharp">public event MicrobeAction OnEaten
+</code></pre>
+<p>Callback for this microbe being eaten.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEatGlobal"></a></p>
+<h3 id="oneatglobal">OnEatGlobal</h3>
+<pre><code class="language-csharp">public event MultiMicrobeAction OnEatGlobal
+</code></pre>
+<p>Global callback for this microbe eating.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMate"></a></p>
+<h3 id="onmate">OnMate</h3>
+<pre><code class="language-csharp">public event MicrobeAction OnMate
+</code></pre>
+<p>Callback for this microbe mating.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnMateGlobal"></a></p>
+<h3 id="onmateglobal">OnMateGlobal</h3>
+<pre><code class="language-csharp">public event MultiMicrobeAction OnMateGlobal
+</code></pre>
+<p>Global callback for this microbe mating.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergy"></a></p>
+<h3 id="onenergy">OnEnergy</h3>
+<pre><code class="language-csharp">public event KaijuAction OnEnergy
+</code></pre>
+<p>Callback for this microbe picking up energy.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnergyGlobal"></a></p>
+<h3 id="onenergyglobal">OnEnergyGlobal</h3>
+<pre><code class="language-csharp">public event MicrobeAction OnEnergyGlobal
+</code></pre>
+<p>Global c for this microbe picking up energy.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_All"></a></p>
+<h3 id="all">All</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;Microbe&gt; All { get; }
+</code></pre>
+<p>All microbes currently in the world.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Energy"></a></p>
+<h3 id="energy">Energy</h3>
+<pre><code class="language-csharp">public float Energy { get; set; }
+</code></pre>
+<p>The current energy of this microbe. This will Decay every second, and this microbe needs energy to stay alive. Walk into EnergyPickup pickups to restore this. Microbes with higher energy levels than other microbes can eat them.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Decay"></a></p>
+<h3 id="decay">Decay</h3>
+<pre><code class="language-csharp">public float Decay { get; set; }
+</code></pre>
+<p>How much Energy this microbe loses per second.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_CanMate"></a></p>
+<h3 id="canmate">CanMate</h3>
+<pre><code class="language-csharp">public bool CanMate { get; }
+</code></pre>
+<p>See if this microbe can mate given the limits set by the game.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnCooldown"></a></p>
+<h3 id="oncooldown">OnCooldown</h3>
+<pre><code class="language-csharp">public bool OnCooldown { get; }
+</code></pre>
+<p>If this microbe is currently on a cooldown for mating.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Cooldown"></a></p>
+<h3 id="cooldown">Cooldown</h3>
+<pre><code class="language-csharp">public float Cooldown { get; private set; }
+</code></pre>
+<p>The time in seconds the microbe needs to wait before it can Mate again.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Compatible"></a></p>
+<h3 id="compatible">Compatible</h3>
+<pre><code class="language-csharp">public bool Compatible ([NotNull] Microbe other)
+</code></pre>
+<p>See if this microbe is compatible to mate with another microbe. Note this does not check if either microbe is still on Cooldown for mating. For that, check OnCooldown.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Eatable"></a></p>
+<h3 id="eatable">Eatable</h3>
+<pre><code class="language-csharp">public bool Eatable ([NotNull] Microbe other)
+</code></pre>
+<p>See if this microbe could eat another microbe. Note this does not check if this has enough Energy to eat the other microbe, being more Energy than the other microbe has.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_Spawn"></a></p>
+<h3 id="spawn">Spawn</h3>
+<pre><code class="language-csharp">public static void Spawn (KaijuAgent microbePrefab, float energy, Vector2 position, uint identifier)
+</code></pre>
+<p>Spawn a microbe.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected override void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected override void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Microbes_Microbe_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

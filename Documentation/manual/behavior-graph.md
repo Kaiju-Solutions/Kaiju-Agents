@@ -1,13 +1,45 @@
-﻿# Behavior Graph
+# Visual decision graphs
 
-When [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") is installed in the project, nodes to allow for all types of [movement](https://agents.kaijusolutions.ca/manual/movement.html "Movement") and using [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") are available. Additionally, nodes have been made for the ["Microbes"](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes") and ["Capture the Flag"](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag") exercises. To get started, follow the [Unity Behavior](https://docs.unity3d.com/Packages/com.unity.behavior@latest "Unity Behavior") documentation and see the various APIs.
+Import **Visual Decisions** from the package Samples tab and open **Rescue Decisions**. Select the rescue agent during Play Mode to inspect its active nodes and recent decisions. Open the Rescue state machine in the sample's Resources/KaijuDecisions folder and follow its Behavior references. Mission calls an HTN, whose primitive task calls a GOAP action. That action calls a Utility graph. The winning behavior tree runs a policy and invokes the C# pickup action.
 
-- [Core API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.html "Behavior - Core")
-- [Movement API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Movement.html "Behavior - Movement")
-- [Sensors API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Sensors.html "Behavior - Sensors")
-- [Actuators API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Actuators.html "Behavior - Actuators")
-- [Actuators API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Actuators.html "Behavior - Actuators")
-- ["Microbes" exercise API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Exercises.Microbes.html "Behavior - Microbes")
-- ["Capture the Flag" exercise API.](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Behavior.Exercises.CTF.html "Behavior - Microbes")
+## Create a behavior
 
-![Unity Behavior Integration](https://agents.kaijusolutions.ca/img/behavior.png)
+Use **Assets > Create > Kaiju Agents** for an empty decision graph or state machine. For a working template choose **Assets > Create > Kaiju Agents > Templates** or use the Pipeline command `kaiju-agents create-graph` with a new asset path and a family. Choose StateMachine, BehaviorTree, Utility, Goap or Htn. Use the .kaijufsm extension for a state machine and .kaijugraph for the other families. A decision graph has one Entry node. Connect its Root port to a task, set the child count in the inspector, and connect the numbered child ports in execution order.
+
+Add a **Kaiju Graph Runner** to a GameObject that already has a Kaiju agent and assign the graph. The runner starts after entity registration. The fixed-step Entities system advances active executions. A single agent can run one root execution at a time. Calling Start again interrupts its previous execution. A registered GameObject runner can also start a chosen graph immediately through TryStart.
+
+## Choose a pattern
+
+- **State machines.** Mark one state Initial, assign a behavior to run inside it, and drag transitions between states. Nested machines can be local subgraphs or reusable graph assets. Parent transitions are checked before ticking a child. Higher destination Priority wins, with authoring order breaking ties. State Completion can explicitly succeed, fail or stay active. An interruption exits the child before invoking the state's exit callback. The new state enters on the following fixed step. Use a Child result rule to respond to completion. A state with a behavior and no outgoing transition returns its child's result.
+- **Behavior trees.** Sequence advances on success and Selector advances on failure. Invert swaps those outcomes. Repeat runs its child for the configured number of iterations (zero continues until interrupted). Retry runs a failed child again up to the configured retry count. Timeout interrupts a running child and returns TimedOut. Running children retain their execution between ticks. Enable Reactive to recheck earlier guards, including guarded branches while a later child runs. Use Wait, Action, Condition, Call and Policy as leaves.
+- **Utility AI.** Connect candidate tasks to a Utility root. Base score supplies the starting score. The separate Cost field describes a GOAP action. Connect a Consideration node to Score to author comparisons, response curves and nested arithmetic combinations. Each consideration adds its weight times a response curve evaluated at a Number variable. Eligible can filter a candidate, and Scorer can name a registered C# function. Seconds controls reevaluation cadence and Switch margin controls when a challenger takes over. Child order breaks initial ties.
+- **GOAP.** Set desired facts on the root's Effects field. Connect actions with preconditions, predicted effects and nonnegative costs. Search uses uniform cost order, a shared action table and a per-execution frontier. Actions begin only after a plan is selected. Before each step, the runner checks the live preconditions. A successful step commits its declared effects. Retries bounds replanning after invalidation or failure.
+- **HTN.** Connect compound tasks to ordered Method nodes. Methods decompose into primitives and nested compounds. The planner tries methods in order, simulates their effects, and backtracks when a later task is inapplicable. A primitive can execute an action, policy or another graph.
+
+Declare planner facts on the blackboard. Use comma-separated names in Preconditions and Effects. A Boolean can be written as `ready` or `!ready`. Use `floor=2`, `mode=flying` or `destination=0 3 4` for typed values. Each planner domain supports 64 distinct fact tests. The inspector reports selected HTN methods and planned actions, and distinguishes an exhausted search from a search limit. Both planners retain Burst search frontiers between ticks. Each search gets up to 32 expansions per turn. KaijuGraphSystem.PlannerExpansionsPerTick sets the shared world budget (1024 by default). Waiting searches resume in queue order. The search reports when it exhausts its frontier or reaches its safety limit.
+
+## Call graphs and C#
+
+A Call node or a state's Behavior field accepts any graph family. Declare input and output variables on the child's blackboard. In Bindings, enter comma-separated parent=child pairs. The importer validates names, types and call cycles. Each invocation has its own local variables. Inputs are copied on entry and successful results copy outputs back. Cancellation propagates from parent to child.
+
+```csharp
+var services = new GraphServices();
+services.Actions.Add("pickup", () => new PickupAction());
+services.Predicates.Add("ready", context => inventory.IsReady);
+services.Events.Add("release", context => inventory.Release());
+var system = world.GetOrCreateSystemManaged<KaijuGraphSystem>();
+var run = system.Start(entity, graph, services);
+run.Signal("alarm");
+```
+
+Use the KaijuSolutions.Agents.Graphs namespace. Pass an optional dictionary of GraphValue inputs to Start. An IGraphAction instance has Begin, Tick and Cancel methods. Begin and Tick return a GraphResult. Release owned resources before returning a terminal result, and implement Cancel for interruption. Keep the GraphContext passed to Begin for deferred callbacks. Its IsActive and TrySet methods reject stale writes after interruption, even if a sibling now runs on the same entity. RegisterAction wraps a synchronous C# method. For GameObjects, implement IGraphServiceProvider on a component attached to the runner. Register actions, predicates, utility scorers, and state entry or exit events there.
+
+For Condition use a Boolean name, !name, @signal or ?predicate. Signals are visible for one fixed step. The GameObject runner registers seek and follow-route actions and arrived and detected predicates. Movement reads a Vector named target and a Number named radius in the current graph. Entity-only graphs also get seek, arrived and detected. Use GraphEntityServices.Register when providing your own services. Seek supports flight. Follow-route uses a navigation agent for stacked surfaces and connections.
+
+## Run an ML policy
+
+Add Kaiju Graph Policy to an ML-Agents Agent and give the Policy node its service name. Seconds sets successful completion after a simulated duration. Condition can end it on arrival, a signal, or a C# predicate. Timeout returns TimedOut. The provider can complete on an episode boundary and has an explicit option to end an episode on release. An existing DecisionRequester retains its schedule. Without one, the policy requests one decision per graph tick. Custom Agent.OnActionReceived implementations should check AcceptActions before applying controls. Kaiju learning actuators check automatically.
+
+## Automation
+
+Use `unity command kaiju-agents validate-graph --path Assets/Patrol.kaijufsm` to inspect an imported graph, or compile-graph to force reimport. run-graph accepts JSON options containing path, ticks, delta and optional typed inputs and signals keyed by tick. Its isolated scenario supports built-in tasks and emits trace records with graph paths and stable node IDs. For a live agent in Play Mode, run trace-agent with operation=start, the hierarchy path and a tick count, then operation=read. Each tick includes the active graph stack and service name. Redirect the JSON CLI response to save a trace. The Visual Decisions sample exercises real inference when ML-Agents is installed.

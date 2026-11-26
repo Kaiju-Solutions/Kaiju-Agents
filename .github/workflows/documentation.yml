@@ -9,10 +9,9 @@ on:
   # Manually run from the Actions tab.
   workflow_dispatch:
 
-# Concurrency group to cancel in-progress runs of this workflow on the same branch.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: kaiju-agents-workflows
+  queue: max
 
 jobs:
   # Delete all old jobs before starting this new one.
@@ -116,7 +115,12 @@ jobs:
         run: Remove-Item -Path Documentation/obj -Recurse -Force -ErrorAction SilentlyContinue
 
       - name: Use README.md as index.md
-        run: cp README.md Documentation/index.md
+        shell: pwsh
+        run: |
+          $index = (Get-Content README.md -Raw).Replace('](Documentation/manual/', '](manual/')
+          $index = $index.Replace('](DEVELOPER.md)', '](https://github.com/Kaiju-Solutions/Kaiju-Agents/blob/main/DEVELOPER.md)')
+          $index = $index.Replace('](Packages/ca.kaijusolutions.agents/Documentation~/index.md)', '](https://github.com/Kaiju-Solutions/Kaiju-Agents/tree/main/Packages/ca.kaijusolutions.agents/Documentation~)')
+          Set-Content Documentation/index.md -Value $index
 
       - name: Copy LICENSE.md
         run: |

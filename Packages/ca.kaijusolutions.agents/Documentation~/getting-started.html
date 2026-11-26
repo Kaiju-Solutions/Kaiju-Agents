@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Started | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="index.html">Kaiju Agents manual</a></nav><main><h1 id="getting-started">Getting Started</h1>
+<p>To get started with Kaiju Agents, follow the <a href="https://agents.kaijusolutions.ca/#installation" title="Installation Instructions">installation instructions</a> or use the <a href="https://agents.kaijusolutions.ca/#template-project" title="Template Project">template project</a>.</p>
+<h2 id="install-the-package">Install the package</h2>
+<p>Use Unity 6.7 beta or Unity 7 alpha. In Window &gt; Package Management &gt; Package Manager choose Install package from git URL and enter <code>https://github.com/Kaiju-Solutions/Kaiju-Agents.git#release</code>. Git must be installed. The package brings in Entities, Burst, navigation and Unity Pipeline. Unity Graph Toolkit supplies visual decision authoring. ML-Agents is optional.</p>
+<p>Open the <a href="manager.html">simulation guide</a> for a minimal entity-only agent or add a Kaiju Transform Agent from the GameObject menu. Use the <a href="pipeline.html">CLI guide</a> for scene creation and project-local skill installation.</p>
+<h2 id="recommendations">Recommendations</h2>
+<p>To make your workflow more convenient, it is recommended to set the <a href="https://docs.unity3d.com/Manual/GameView.html" title="Game View">game view</a> to <code>Play Unfocused</code>. This setting can be found towards the center-right of the <a href="https://docs.unity3d.com/Manual/GameView.html" title="Game View">game view</a>. This is recommended as agent visualizations are only shown in the <a href="https://docs.unity3d.com/Manual/UsingTheSceneView.html" title="Scene View">scene view</a>, and either of the other two modes in the <a href="https://docs.unity3d.com/Manual/GameView.html" title="Game View">game view</a> can result in having your <a href="https://docs.unity3d.com/Manual/UsingTheSceneView.html" title="Scene View">scene view</a> minimized depending on your editor layout.</p>
+<h2 id="samples">Samples</h2>
+<p>If this is your first time using Kaiju Agents, it is recommended you explore the provided <a href="samples-and-exercises.html" title="Samples and Exercises">samples</a>. See the <a href="samples-and-exercises.html" title="Samples">samples documentation</a> for instructions on importing them to your project. If you downloaded the <a href="https://agents.kaijusolutions.ca/#template-project" title="Template Project">template project</a>, these will already been in the assets folder.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>To add your first agent into a scene, right click in the <a href="https://docs.unity3d.com/Manual/Hierarchy.html" title="Hierarchy Window">hierarchy window</a> and go to <code>Kaiju Solutions &gt; Agents</code> and click any of the options, with the <code>Kaiju Transform Agent</code> being the most basic. You can also access this creation process from the top menu by going to either <code>GameObject</code> or <code>Tools</code> and following the same steps. To learn how the agent works and how you can control it, head to the <a href="components.html" title="Components">components documentation</a>.</p>
+<h2 id="exercises">Exercises</h2>
+<p>Once you are familiar with the various <a href="components.html" title="Components">components</a> provided by Kaiju Agents, for practice you can try completing <a href="samples-and-exercises.html" title="Exercises">several exercises</a>. Each <a href="samples-and-exercises.html" title="Exercises">exercise</a> is more complicated than the last, providing an efficient learning experience for Kaiju Agents.</p>
+<h2 id="exporting">Exporting</h2>
+<p>Code releated to visualizations only works in the Unity editor, and hence related code is stripped if you export a build. All properties and methods in the <a href="api/KaijuSolutions.Agents.html" title="Scripting API">scripting API</a> which can only be run in the editor are prefixed with <code>Editor</code>. If you are writing any code accessing their editor-only properties or methods, you will need to exclude that code from buids. This can be done in two ways:</p>
+<ol>
+<li>If the entire script is not needed for your build, simply nest the script under any folder named <code>Editor</code>.</li>
+<li>If the script is needed in your build, you need to use <a href="https://docs.unity3d.com/Manual/platform-dependent-compilation.html" title="Unity Conditional Compilation">preprocessor directives</a> to wrap the editor-only code.</li>
+</ol></main></body></html>

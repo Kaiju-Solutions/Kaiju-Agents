@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuLearningActuatorBase | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijulearningactuatorbase">KaijuLearningActuatorBase</h1>
+<p>Base class for integrating all actuators with ML-Agents.</p>
+<pre><code class="language-csharp">public abstract class KaijuLearningActuatorBase : ActuatorComponent, IActuator
+</code></pre>
+<p><a href="../../Runtime/Learning/KaijuLearningActuatorBase.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_OnActionReceived"></a></p>
+<h3 id="onactionreceived">OnActionReceived</h3>
+<pre><code class="language-csharp">public abstract void OnActionReceived (ActionBuffers actionBuffers)
+</code></pre>
+<p>Method called in order to allow object to execute actions based on the actionBuffers contents. The structure of the contents in the actionBuffers are defined by the action spec.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_WriteDiscreteActionMask"></a></p>
+<h3 id="writediscreteactionmask">WriteDiscreteActionMask</h3>
+<pre><code class="language-csharp">public abstract void WriteDiscreteActionMask (IDiscreteActionMask actionMask)
+</code></pre>
+<p>Implement to modify the masks for discrete actions. When using discrete actions, the agent will not perform the masked action.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_Heuristic"></a></p>
+<h3 id="heuristic">Heuristic</h3>
+<pre><code class="language-csharp">public abstract void Heuristic (in ActionBuffers actionBuffersOut)
+</code></pre>
+<p>Method called on objects which are expected to fill out the actionBuffersOut data structure. Object that implement this interface should be careful to be consistent in the placement of their actions in the actionBuffersOut data structure.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_ResetData"></a></p>
+<h3 id="resetdata">ResetData</h3>
+<pre><code class="language-csharp">public virtual void ResetData ()
+</code></pre>
+<p>Resets the internal state of the actuator. This is called at the end of an Agent's episode. Most implementations can leave this empty.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_CreateActuators"></a></p>
+<h3 id="createactuators">CreateActuators</h3>
+<pre><code class="language-csharp">public override IActuator[] CreateActuators ()
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningActuatorBase_Name"></a></p>
+<h3 id="name">Name</h3>
+<pre><code class="language-csharp">public string Name { get; }
+</code></pre>
+<p>Gets the name of this IActuator which will be used to sort it.</p></main></body></html>

@@ -125,6 +125,11 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="weight">The weight of this <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/>.</param>
         public KaijuFleeMovement([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight) : base(agent, target, distance, weight) { }
         
+        public override Vector3 Move3(Vector3 position, float delta)
+        {
+            return -(Target3 - position).normalized * Agent.MoveSpeed;
+        }
+
         /// <summary>
         /// Calculate the movement.
         /// </summary>

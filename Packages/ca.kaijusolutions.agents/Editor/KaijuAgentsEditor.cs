@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -67,6 +67,14 @@ namespace KaijuSolutions.Agents.Editor
             Application.OpenURL("https://agents.kaijusolutions.ca");
         }
         
+        [MenuItem("Tools/Kaiju Solutions/Agents/Offline Documentation", false, int.MaxValue - 1)]
+        private static void OfflineDocumentation()
+        {
+            var package = UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(KaijuAgentsEditor).Assembly);
+            string index = System.IO.Path.Combine(package.resolvedPath, "Documentation~", "index.html");
+            Application.OpenURL(new Uri(index).AbsoluteUri);
+        }
+
         /// <summary>
         /// Create a <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
@@ -191,14 +199,14 @@ namespace KaijuSolutions.Agents.Editor
                     "Wander",
                     "Sensors",
                     "Actuators",
-                    "Behavior",
+                    "Graph Toolkit",
                     "Behaviour",
-                    "Utility",
+                    "Utility AI",
                     "Machine Learning",
                     "ML",
                     "Assistant",
-                    "MCP",
-                    "Model Context Protocol"
+                    "Entities",
+                    "Unity CLI"
                 })
             };
         }
@@ -421,16 +429,6 @@ namespace KaijuSolutions.Agents.Editor
         private static void CreateKaijuGlobalController()
         {
             CreateScript("KaijuGlobalController");
-        }
-        
-        /// <summary>
-        /// Create a new <see cref="KaijuSolutions.Agents.Utility.KaijuUtilityBrain"/>.
-        /// </summary>
-        [MenuItem("Tools/Kaiju Solutions/Agents/Scripts/KaijuUtilityBrain Script", priority = 16)]
-        [MenuItem("Assets/Create/Kaiju Solutions/Agents/KaijuUtilityBrain Script", priority = 19)]
-        private static void CreateKaijuUtilityBrain()
-        {
-            CreateScript("KaijuUtilityBrain");
         }
         
         /// <summary>

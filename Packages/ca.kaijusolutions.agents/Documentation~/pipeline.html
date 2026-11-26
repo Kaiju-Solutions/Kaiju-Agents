@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unity CLI and Pipeline | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="index.html">Kaiju Agents manual</a></nav><main><h1 id="unity-cli-and-pipeline">Unity CLI and Pipeline</h1>
+<p>Open the project in Unity 6.7 or Unity 7 with com.unity.pipeline installed. Run these commands from the project root.</p>
+<pre><code class="language-sh">unity status
+unity command --query kaiju-agents
+unity command kaiju-agents place-floor --options '{&quot;name&quot;:&quot;Training Floor&quot;,&quot;scale&quot;:20,&quot;outerWalls&quot;:false}'
+unity command kaiju-agents create-agent-prefab --options '{&quot;path&quot;:&quot;Assets/Scout.prefab&quot;,&quot;type&quot;:&quot;TRANSFORM&quot;}'
+unity command kaiju-agents place-agent --options '{&quot;path&quot;:&quot;Assets/Scout.prefab&quot;,&quot;position&quot;:{&quot;x&quot;:2,&quot;y&quot;:3}}'
+unity command kaiju-agents place-navmesh --options '{&quot;build&quot;:true}'
+</code></pre>
+<p>Position uses X and Z on the ground plane. The second JSON coordinate is named y. Agent types include TRANSFORM, CHARACTER, RIGIDBODY and NAVIGATION. Use place-wall to add a carving obstacle, and bake-navigation to rebuild active NavMesh surfaces. Save your scene after placement. Use the CLI's --project-path option to target a specific open project.</p>
+<p>For project-local AI guidance run <code>unity command kaiju-agents install-skills --provider codex</code> or choose a provider under Tools &gt; Kaiju Solutions &gt; Agents &gt; Install Agent Skills. Claude, Gemini, and Qwen have corresponding provider names in lowercase. Re-run after upgrading to refresh the package-owned skill. Your project's other skills and root instructions are preserved.</p>
+<p>Use <code>unity command --query test</code> and <code>unity command --query console</code> to discover the test and diagnostics commands available from the installed Pipeline.</p>
+<p>Use <code>worldPosition</code> for an explicit XYZ position with place-agent, place-floor, or place-wall. For walls, Y is the base elevation. Outer walls inherit their floor's elevation. Supply only one position convention per command.</p>
+<pre><code class="language-sh">unity command kaiju-agents place-floor --options '{&quot;name&quot;:&quot;Upper floor&quot;,&quot;worldPosition&quot;:{&quot;x&quot;:0,&quot;y&quot;:4,&quot;z&quot;:0},&quot;scale&quot;:8}'
+unity command kaiju-agents check-route --options '{&quot;start&quot;:{&quot;x&quot;:0,&quot;y&quot;:0,&quot;z&quot;:0},&quot;goal&quot;:{&quot;x&quot;:0,&quot;y&quot;:4,&quot;z&quot;:0},&quot;snapDistance&quot;:0.5}'
+unity command kaiju-agents install-skills --provider codex --check true
+</code></pre>
+<p>Bake the surfaces and link the floors before checking connectivity. The read-only route command reports status, mappedEndpoint, and cornerCount. A skill preview reports each file as missing, current, update, or modified. Installation preserves locally modified files by default. Use <code>--force true</code> to explicitly replace them.</p>
+<h2 id="decision-graphs">Decision graphs</h2>
+<p>Create an HTN template from either shell with the JSON options for create-graph. Validate it with <code>unity command kaiju-agents validate-graph --path Assets/Rescue.kaijugraph</code>. To reimport and validate, use compile-graph with the same path. A state machine uses the .kaijufsm extension.</p>
+<p>For a headless scenario, run-graph accepts path, ticks, delta, typed inputs, and signals keyed by tick. Use trace-agent to capture decisions on a live agent with its own C# and ML providers in Play Mode. The <a href="behavior-graph.html">visual graph guide</a> describes port bindings and status values.</p>
+<pre><code class="language-sh">unity command kaiju-agents create-graph --options '{&quot;path&quot;:&quot;Assets/Tasks.kaijugraph&quot;,&quot;family&quot;:&quot;Htn&quot;}'
+unity command kaiju-agents create-graph --options '{&quot;path&quot;:&quot;Assets/Mission.kaijufsm&quot;,&quot;family&quot;:&quot;StateMachine&quot;,&quot;child&quot;:&quot;Assets/Tasks.kaijugraph&quot;}'
+unity command kaiju-agents compile-graph --path Assets/Mission.kaijufsm
+unity command kaiju-agents run-graph --options '{&quot;path&quot;:&quot;Assets/Mission.kaijufsm&quot;,&quot;ticks&quot;:16}' --format json
+</code></pre>
+<p>During Play Mode, select an agent by its GameObject hierarchy path. Save its trace as JSON in the working directory.</p>
+<pre><code class="language-sh">unity command kaiju-agents trace-agent --options '{&quot;operation&quot;:&quot;start&quot;,&quot;path&quot;:&quot;/Scout&quot;,&quot;ticks&quot;:120}'
+unity command kaiju-agents trace-agent --options '{&quot;operation&quot;:&quot;read&quot;}' --format json &gt; scout-trace.json
+</code></pre></main></body></html>

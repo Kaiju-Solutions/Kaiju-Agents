@@ -33,6 +33,38 @@ namespace KaijuSolutions.Agents
         [SerializeField]
         private NavMeshAgent nav;
         
+        [Tooltip("Maximum distance from a requested destination to its walkable surface.")]
+        [Min(0.01f)] public float surfaceSnapDistance = 0.5f;
+        /// <summary>Position on the supporting surface, accounting for the agent pivot offset.</summary>
+        public Vector3 SurfacePosition => nav && nav.isOnNavMesh ? nav.nextPosition - transform.up * nav.baseOffset : transform.position;
+        internal Movement.KaijuPathFollowMovement SurfaceRoute { get; private set; }
+
+        private float _savedStoppingDistance;
+
+        internal bool StartRoute(Movement.KaijuPathFollowMovement owner, NavMeshPath path)
+        {
+            if (!nav || !nav.isOnNavMesh) return false;
+            if (!nav.SetPath(path)) return false;
+            var previous = SurfaceRoute;
+            if (previous == null) _savedStoppingDistance = nav.stoppingDistance;
+            SurfaceRoute = owner;
+            if (previous != null && !ReferenceEquals(previous, owner)) Stop(previous);
+            nav.stoppingDistance = Mathf.Min(_savedStoppingDistance, owner.Distance);
+            nav.isStopped = false;
+            return true;
+        }
+
+        internal void EndRoute(Movement.KaijuPathFollowMovement owner)
+        {
+            if (!ReferenceEquals(SurfaceRoute, owner)) return;
+            SurfaceRoute = null;
+            if (!nav) return;
+            nav.stoppingDistance = _savedStoppingDistance;
+            if (!nav.isOnNavMesh) return;
+            nav.ResetPath();
+            nav.isStopped = true;
+        }
+
         /// <summary>
         /// Get the radius of an <see cref="KaijuSolutions.Agents.KaijuAgent"/>.
         /// </summary>
@@ -113,6 +145,7 @@ namespace KaijuSolutions.Agents
             OnAutoRotate -= ChangedAutoRotate;
             OnLookTarget -= ChangedAutoRotate;
             
+            if (SurfaceRoute != null) EndRoute(SurfaceRoute);
             if (nav && nav.isOnNavMesh)
             {
                 nav.ResetPath();
@@ -152,7 +185,7 @@ namespace KaijuSolutions.Agents
         public override void Move(float delta)
         {
             // Offset the current position by the movement velocity.
-            nav.Move(Velocity3 * delta);
+            if (SurfaceRoute == null && nav && nav.isOnNavMesh) nav.Move(Velocity3 * delta);
         }
         
         /// <summary>

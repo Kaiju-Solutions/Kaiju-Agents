@@ -1,13 +1,18 @@
 {
   "name": "ca.kaijusolutions.agents",
   "displayName": "Kaiju Agents",
-  "version": "1.4.1",
-  "unity": "6000.3",
+  "version": "2.0.0",
+  "unity": "6000.7",
   "description": "Framework to quickly prototype AI agents in Unity aimed at researchers and educators.",
   "dependencies": {
     "com.unity.ai.navigation": "2.0.13",
     "com.unity.modules.physics": "1.0.0",
-    "com.unity.modules.imgui": "1.0.0"
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.entities": "6.7.0",
+    "com.unity.burst": "2.0.0",
+    "com.unity.mathematics": "1.4.0",
+    "com.unity.pipeline": "1.0.1",
+    "com.unity.nuget.newtonsoft-json": "3.2.2"
   },
   "author": {
     "name": "Kaiju Solutions Inc.",
@@ -42,8 +47,9 @@
     "Machine Learning",
     "ML",
     "Assistant",
-    "MCP",
-    "Model Context Protocol"
+    "Entities",
+    "Burst",
+    "Unity CLI"
   ],
   "samples": [
     {
@@ -80,6 +86,17 @@
       "displayName": "Exercise 3 - Capture the Flag",
       "description": "An exercise featuring two teams of troopers with blasters competing in a game of capture the flag.\n\nYou must also import the \"Materials\" sample for this to work.",
       "path": "Samples~/Exercise 3 - Capture the Flag"
+    },
+    {
+      "displayName": "Floors and Flight",
+      "description": "A guard traverses two connected floors and a drone follows editable waypoints in open air.",
+      "path": "Samples~/Floors and Flight"
+    },
+    {
+      "displayName": "Visual Decisions",
+      "description": "Editable mixed AI behaviors and a one-observation identity policy for exercising ML-Agents inference.",
+      "path": "Samples~/Visual Decisions"
     }
-  ]
+  ],
+  "unityRelease": "0b1"
 }

@@ -21,3 +21,8 @@ The [`KaijuEverythingVisionSensor`](https://agents.kaijusolutions.ca/api/KaijuSo
 The [`KaijuCastSensor`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html "KaijuCastSensor") works by casting a set number of rays for a set distance evenly spread out over a set angle. What the rays hit can be accessed via the [`Hits` property](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuCastSensor.html#KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits "KaijuCastSensor - Hits").
 
 ![Cast Sensor](https://agents.kaijusolutions.ca/img/cast.png)
+### Agent vision in crowds
+
+Default agent vision shares an XZ candidate grid during each fixed sensing pass. Exact range, cone and line-of-sight checks still apply to each candidate, including Y when spatial vision is enabled. The grid captures cell membership on first use in the pass. Turn off **Use Nearby Query** for a sensor whose callbacks teleport other agents during that pass. Explicit target lists take precedence. Manual queries outside a sensing pass use current positions.
+
+Use `KaijuAgentsManager.FindNearby(origin, radius, list, spherical)` to fill a reusable list and `sensor.TryGetNearest(out var target)` to select the nearest observation in the sensor's distance mode. `CandidatesExamined` and `SightQueries` describe the most recent scan. Object and position sorting overloads accepting caller buffers reuse their sort storage.

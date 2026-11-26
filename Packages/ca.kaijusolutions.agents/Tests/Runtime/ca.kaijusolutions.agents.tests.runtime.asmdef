@@ -1,0 +1,23 @@
+{
+  "name": "ca.kaijusolutions.agents.tests.runtime",
+  "references": [
+    "ca.kaijusolutions.agents",
+    "Unity.Entities",
+    "Unity.Transforms",
+    "Unity.Mathematics",
+    "Unity.ML-Agents",
+    "Unity.InferenceEngine"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [],
+  "versionDefines": [
+    {
+      "name": "com.unity.ml-agents",
+      "expression": "",
+      "define": "COM_UNITY_ML_AGENTS"
+    }
+  ],
+  "autoReferenced": false
+}

@@ -1,0 +1,14 @@
+# Actuators
+
+Actuators are all extended from the [`KaijuActuator` class](api/KaijuSolutions.Agents.Actuators.KaijuActuator.md "KaijuActuator") implementing the [`Run()` method](api/KaijuSolutions.Agents.Actuators.KaijuActuator.md#KaijuSolutions_Agents_Actuators_KaijuActuator_Run "KaijuActuator - Run"). Actuators must be directly attached to or within the child [GameObjects](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject") of an [agent](agents.md "Agents"). Actuators are run by calling the [`Begin()` method](api/KaijuSolutions.Agents.Actuators.KaijuActuator.md#KaijuSolutions_Agents_Actuators_KaijuActuator_Begin "KaijuActuator - Begin").
+
+## Attack Actuator
+
+The [`KaijuAttackActuator`](api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.md "KaijuAttackActuator") is the base class for creating actuators that fire a ray in the forward direction. This ray fires for a set distance and will try to hit a given [component](https://docs.unity3d.com/Manual/Components.html "Component") type. If the given [component](https://docs.unity3d.com/Manual/Components.html "Component") type is found, the [`HandleHit(RaycastHit, Transform)` method](api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.md#KaijuSolutions_Agents_Actuators_KaijuAttackActuator_HandleHit "KaijuAttackActuator - HandleHit(RaycastHit, Transform)") is called. A [LineRenderer](https://docs.unity3d.com/ScriptReference/LineRenderer.html "LineRenderer") can optionally be assigned to the attack actuator to visualize the ray.
+
+### Everything Attack Actuator
+
+The [`KaijuEverythingAttackActuator`](api/KaijuSolutions.Agents.Actuators.KaijuEverythingAttackActuator.md) is an implementation of the [`KaijuAttackActuator`](api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.md "KaijuAttackActuator") which calls [`HandleHit(RaycastHit, Transform)` method](api/KaijuSolutions.Agents.Actuators.KaijuAttackActuator.md#KaijuSolutions_Agents_Actuators_KaijuAttackActuator_HandleHit "KaijuAttackActuator - HandleHit(RaycastHit, Transform)") on all [transforms](https://docs.unity3d.com/Manual/class-transform.html "Transform"). This will either disable or destroy the hit [GameObject](https://docs.unity3d.com/Manual/class-GameObject.html "GameObject"). A name filter allows for filtering specific ojects, similar to the [everything vision sensor](sensors.md#everything-vision-sensor "Everything Vision Sensor").
+## Requesting an actuator from Entities
+
+After registration and its first fixed step, each enabled actuator exposes SimulationEntity. Read KaijuActuation from that entity, set Requested and write the component back. The actuator publishes Running and Result after executing. Its Agent field identifies the owning simulation entity. Reacquire the entity after pooling. Begin and End remain available to GameObject scripts.

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuEvadeMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuevademovement">KaijuEvadeMovement</h1>
+<p>Evade steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuEvadeMovement : KaijuFleeMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuEvadeMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Previous"></a></p>
+<h3 id="previous">Previous</h3>
+<pre><code class="language-csharp">public Vector2 Previous
+</code></pre>
+<p>The previous position of the KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Previous3"></a></p>
+<h3 id="previous3">Previous3</h3>
+<pre><code class="language-csharp">public Vector3 Previous3 { get; set; }
+</code></pre>
+<p>The previous position of the KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Future"></a></p>
+<h3 id="future">Future</h3>
+<pre><code class="language-csharp">public Vector2 Future { get; private set; }
+</code></pre>
+<p>The predicted future KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Future3"></a></p>
+<h3 id="future3">Future3</h3>
+<pre><code class="language-csharp">public Vector3 Future3 { get; }
+</code></pre>
+<p>The predicted future KaijuSolutions.Agents.Movement.KaijuTargetMovement.Target.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public new static KaijuEvadeMovement Get ([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get an evade movement.</p>
+<pre><code class="language-csharp">public new static KaijuEvadeMovement Get ([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get an evade movement.</p>
+<pre><code class="language-csharp">public new static KaijuEvadeMovement Get ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get an evade movement.</p>
+<pre><code class="language-csharp">public new static KaijuEvadeMovement Get ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Get an evade movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_KaijuEvadeMovement"></a></p>
+<h3 id="kaijuevademovement_1">KaijuEvadeMovement</h3>
+<pre><code class="language-csharp">public KaijuEvadeMovement ([NotNull] KaijuAgent agent, Vector2 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create an evade movement.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement ([NotNull] KaijuAgent agent, Vector3 target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create an evade movement.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement ([NotNull] KaijuAgent agent, [NotNull] GameObject target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create an evade movement.</p>
+<pre><code class="language-csharp">public KaijuEvadeMovement ([NotNull] KaijuAgent agent, [NotNull] Component target, float distance = DefaultDistance, float weight = DefaultWeight)
+</code></pre>
+<p>Create an evade movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">protected override void Setup ()
+</code></pre>
+<p>Handle any additional setup.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Move3"></a></p>
+<h3 id="move3">Move3</h3>
+<pre><code class="language-csharp">public override Vector3 Move3 (Vector3 position, float delta)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_Calculate"></a></p>
+<h3 id="calculate">Calculate</h3>
+<pre><code class="language-csharp">protected override Vector2 Calculate (Vector2 position, float speed, Vector2 target, float delta)
+</code></pre>
+<p>Calculate the movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuEvadeMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

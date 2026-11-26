@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsDistanceSorter | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsdistancesorter">KaijuAgentsDistanceSorter</h1>
+<p>Comparer class to sort by distance along the X and Z axes. Used in the extension methods found in KaijuAgentsSortDistance.</p>
+<pre><code class="language-csharp">public sealed class KaijuAgentsDistanceSorter : IComparer&lt;Vector2&gt;, IComparer&lt;Vector3&gt;, IComparer&lt;Transform&gt;, IComparer&lt;Component&gt;, IComparer&lt;GameObject&gt;
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsDistanceSorter.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Position3"></a></p>
+<h3 id="position3">Position3</h3>
+<pre><code class="language-csharp">public Vector3 Position3 { get; set; }
+</code></pre>
+<p>The position to compare against.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_PositionTransform"></a></p>
+<h3 id="positiontransform">PositionTransform</h3>
+<pre><code class="language-csharp">public Transform PositionTransform { set; }
+</code></pre>
+<p>The position to compare against. This will also set the forward for angle tie breaking.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_PositionComponent"></a></p>
+<h3 id="positioncomponent">PositionComponent</h3>
+<pre><code class="language-csharp">public Component PositionComponent { set; }
+</code></pre>
+<p>The position to compare against. This will also set the forward for angle tie breaking.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_PositionGameObject"></a></p>
+<h3 id="positiongameobject">PositionGameObject</h3>
+<pre><code class="language-csharp">public GameObject PositionGameObject { set; }
+</code></pre>
+<p>The position to compare against. This will also set the forward for angle tie breaking.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Forward3"></a></p>
+<h3 id="forward3">Forward3</h3>
+<pre><code class="language-csharp">public Vector3? Forward3 { get; set; }
+</code></pre>
+<p>The forward direction to break ties on.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_ForwardTransform"></a></p>
+<h3 id="forwardtransform">ForwardTransform</h3>
+<pre><code class="language-csharp">public Transform ForwardTransform { set; }
+</code></pre>
+<p>The forward direction to break ties on.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_ForwardComponent"></a></p>
+<h3 id="forwardcomponent">ForwardComponent</h3>
+<pre><code class="language-csharp">public Component ForwardComponent { set; }
+</code></pre>
+<p>The forward direction to break ties on.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_ForwardGameObject"></a></p>
+<h3 id="forwardgameobject">ForwardGameObject</h3>
+<pre><code class="language-csharp">public Component ForwardGameObject { set; }
+</code></pre>
+<p>The forward direction to break ties on.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Position"></a></p>
+<h3 id="position">Position</h3>
+<pre><code class="language-csharp">public Vector2 Position
+</code></pre>
+<p>The position to compare against.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Farthest"></a></p>
+<h3 id="farthest">Farthest</h3>
+<pre><code class="language-csharp">public bool Farthest
+</code></pre>
+<p>If this should sort by farthest items first.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Mode"></a></p>
+<h3 id="mode">Mode</h3>
+<pre><code class="language-csharp">public KaijuAngleSortMode? Mode
+</code></pre>
+<p>How to break ties based on angle.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Forward"></a></p>
+<h3 id="forward">Forward</h3>
+<pre><code class="language-csharp">public Vector2? Forward
+</code></pre>
+<p>The forward direction to break ties on.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_KaijuAgentsDistanceSorter"></a></p>
+<h3 id="kaijuagentsdistancesorter_1">KaijuAgentsDistanceSorter</h3>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter ()
+</code></pre>
+<p>Create the sorter.</p>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter (Vector2 position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Create the sorter.</p>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter (Vector3 position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Create the sorter.</p>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter ([NotNull] Transform position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Create the sorter.</p>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter ([NotNull] Component position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Create the sorter.</p>
+<pre><code class="language-csharp">public KaijuAgentsDistanceSorter ([NotNull] GameObject position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Create the sorter.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Set"></a></p>
+<h3 id="set">Set</h3>
+<pre><code class="language-csharp">public void Set (Vector2 position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Set values for the sorter.</p>
+<pre><code class="language-csharp">public void Set (Vector3 position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Set values for the sorter.</p>
+<pre><code class="language-csharp">public void Set ([NotNull] Transform position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Set values for the sorter.</p>
+<pre><code class="language-csharp">public void Set ([NotNull] Component position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Set values for the sorter.</p>
+<pre><code class="language-csharp">public void Set ([NotNull] GameObject position, bool farthest = false, KaijuAngleSortMode? mode = null, Vector2? forward = null)
+</code></pre>
+<p>Set values for the sorter.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_CompareDistance"></a></p>
+<h3 id="comparedistance">CompareDistance</h3>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector2 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector2 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector2 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector2 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector2 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector3 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector3 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector3 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector3 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, Vector3 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Transform x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Transform x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Transform x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Transform x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Transform x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Component x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Component x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Component x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Component x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] Component x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] GameObject x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] GameObject x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] GameObject x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] GameObject x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector2 position, [NotNull] GameObject x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector2 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector2 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector2 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector2 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector2 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector3 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector3 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector3 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector3 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, Vector3 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Transform x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Transform x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Transform x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Transform x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Transform x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Component x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Component x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Component x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Component x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] Component x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] GameObject x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] GameObject x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] GameObject x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] GameObject x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance (Vector3 position, [NotNull] GameObject x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector2 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector2 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector2 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector2 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector2 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector3 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector3 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector3 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector3 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, Vector3 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Transform x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Transform x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Transform x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Transform x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Transform x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Component x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Component x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Component x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Component x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] Component x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] GameObject x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] GameObject x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] GameObject x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] GameObject x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Transform position, [NotNull] GameObject x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector2 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector2 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector2 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector2 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector2 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector3 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector3 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector3 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector3 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, Vector3 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Transform x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Transform x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Transform x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Transform x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Transform x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Component x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Component x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Component x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Component x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] Component x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] GameObject x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] GameObject x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] GameObject x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] GameObject x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] Component position, [NotNull] GameObject x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector2 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector2 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector2 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector2 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector2 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector3 x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector3 x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector3 x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector3 x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, Vector3 x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Transform x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Transform x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Transform x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Transform x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Transform x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Component x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Component x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Component x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Component x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] Component x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] GameObject x, Vector2 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] GameObject x, Vector3 y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] GameObject x, [NotNull] Transform y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] GameObject x, [NotNull] Component y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public static int CompareDistance ([NotNull] GameObject position, [NotNull] GameObject x, [NotNull] GameObject y, bool farthest = false)
+</code></pre>
+<p>Compare the two instances.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_Compare"></a></p>
+<h3 id="compare">Compare</h3>
+<pre><code class="language-csharp">public int Compare (Vector2 x, Vector2 y)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public int Compare (Vector3 x, Vector3 y)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public int Compare (Transform x, Transform y)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public int Compare (Component x, Component y)
+</code></pre>
+<p>Compare the two instances.</p>
+<pre><code class="language-csharp">public int Compare (GameObject x, GameObject y)
+</code></pre>
+<p>Compare the two instances.</p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsDistanceSorter_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator string ([NotNull] KaijuAgentsDistanceSorter s)
+</code></pre>
+<p>Implicit conversion to a string.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2 ([NotNull] KaijuAgentsDistanceSorter s)
+</code></pre>
+<p>Implicit conversion to a Vector2 from the position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2? ([NotNull] KaijuAgentsDistanceSorter s)
+</code></pre>
+<p>Implicit conversion to a nullable Vector2 from the position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3 ([NotNull] KaijuAgentsDistanceSorter s)
+</code></pre>
+<p>Implicit conversion to a Vector3 from the position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3? ([NotNull] KaijuAgentsDistanceSorter s)
+</code></pre>
+<p>Implicit conversion to a nullable Vector3 from the position.</p></main></body></html>

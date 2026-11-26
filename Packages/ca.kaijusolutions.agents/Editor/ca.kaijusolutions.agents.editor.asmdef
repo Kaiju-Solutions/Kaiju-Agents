@@ -1,26 +1,21 @@
 {
-    "name": "ca.kaijusolutions.agents.editor",
-    "references": [
-        "ca.kaijusolutions.agents",
-        "MCPForUnity.Editor",
-        "MCPForUnity.Runtime",
-        "Unity.AI.Navigation"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.coplaydev.unity-mcp",
-            "expression": "",
-            "define": "COM_COPLAYDEV_UNITY_MCP"
-        }
-    ],
-    "noEngineReferences": false
+  "name": "ca.kaijusolutions.agents.editor",
+  "references": [
+    "ca.kaijusolutions.agents",
+    "Unity.Entities",
+    "Unity.AI.Navigation",
+    "Unity.Pipeline",
+    "Unity.Pipeline.Attributes"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

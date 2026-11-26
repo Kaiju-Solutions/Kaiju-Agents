@@ -74,7 +74,7 @@ namespace KaijuSolutions.Agents
         /// <param name="delta">The time step.</param>
         public override void Move(float delta)
         {
-            body.linearVelocity = new(Velocity.x, body.linearVelocity.y, Velocity.y);
+            body.linearVelocity = FreeFlight ? Velocity3 : new Vector3(Velocity.x, body.linearVelocity.y, Velocity.y);
         }
         
         /// <summary>

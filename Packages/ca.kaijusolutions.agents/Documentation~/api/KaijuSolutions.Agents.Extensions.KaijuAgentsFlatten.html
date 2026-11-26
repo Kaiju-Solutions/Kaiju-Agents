@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsFlatten | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsflatten">KaijuAgentsFlatten</h1>
+<p>Extension methods to flatten objects down to their 2D representation as a Vector2 from the X and Z axes.</p>
+<pre><code class="language-csharp">public static class KaijuAgentsFlatten
+</code></pre>
+<p><a href="../../Runtime/Extensions/KaijuAgentsFlatten.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Extensions_KaijuAgentsFlatten_Flatten"></a></p>
+<h3 id="flatten">Flatten</h3>
+<pre><code class="language-csharp">public static Vector2 Flatten (this Vector3 vector)
+</code></pre>
+<p>Flatten an XYZ vector down to the X and Z axes.</p>
+<pre><code class="language-csharp">public static Vector2 Flatten ([NotNull] this Transform transform)
+</code></pre>
+<p>Flatten a transform down to the X and Z axes positions.</p>
+<pre><code class="language-csharp">public static Vector2 Flatten ([NotNull] this Component component)
+</code></pre>
+<p>Flatten a component down to the X and Z axes positions.</p>
+<pre><code class="language-csharp">public static Vector2 Flatten ([NotNull] this GameObject gameObject)
+</code></pre>
+<p>Flatten a GameObject down to the X and Z axes positions.</p></main></body></html>

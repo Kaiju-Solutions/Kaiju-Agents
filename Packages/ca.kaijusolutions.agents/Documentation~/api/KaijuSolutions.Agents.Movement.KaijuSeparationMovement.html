@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuSeparationMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuseparationmovement">KaijuSeparationMovement</h1>
+<p>Separation steering behaviour.</p>
+<pre><code class="language-csharp">public class KaijuSeparationMovement : KaijuAreaMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuSeparationMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_DefaultDistance"></a></p>
+<h3 id="defaultdistance">DefaultDistance</h3>
+<pre><code class="language-csharp">public const float DefaultDistance
+</code></pre>
+<p>The default KaijuSolutions.Agents.Movement.KaijuAreaMovement.Distance for separation movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_DefaultCoefficient"></a></p>
+<h3 id="defaultcoefficient">DefaultCoefficient</h3>
+<pre><code class="language-csharp">public const float DefaultCoefficient
+</code></pre>
+<p>The default Coefficient for separation movements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Coefficient"></a></p>
+<h3 id="coefficient">Coefficient</h3>
+<pre><code class="language-csharp">public float Coefficient { get; set; }
+</code></pre>
+<p>The coefficient to use for inverse square law separation. Zero will use linear separation.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Interacting"></a></p>
+<h3 id="interacting">Interacting</h3>
+<pre><code class="language-csharp">public IReadOnlyCollection&lt;KaijuAgent&gt; Interacting { get; }
+</code></pre>
+<p>The KaijuSolutions.Agents.KaijuAgents currently detected this movement is moving in relation to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Get"></a></p>
+<h3 id="get">Get</h3>
+<pre><code class="language-csharp">public static KaijuSeparationMovement Get ([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection&lt;uint&gt; identifiers = null, float weight = DefaultWeight)
+</code></pre>
+<p>Get a separation movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_KaijuSeparationMovement"></a></p>
+<h3 id="kaijuseparationmovement_1">KaijuSeparationMovement</h3>
+<pre><code class="language-csharp">public KaijuSeparationMovement ([NotNull] KaijuAgent agent, float distance = DefaultDistance, float coefficient = DefaultCoefficient, ICollection&lt;uint&gt; identifiers = null, float weight = DefaultWeight)
+</code></pre>
+<p>Create a separation movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected override void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override Vector2 Move (Vector2 position, float delta)
+</code></pre>
+<p>Get the KaijuSolutions.Agents.Movement.KaijuMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected override Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected override void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the KaijuSolutions.Agents.Movement.KaijuMovement. The position of the KaijuSolutions.Agents.Movement.KaijuMovement.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuSeparationMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

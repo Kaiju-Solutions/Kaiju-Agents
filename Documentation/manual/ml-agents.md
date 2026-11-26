@@ -2,4 +2,8 @@
 
 When [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents") is installed in the project, [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") and [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") can be bound for use with [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents"). To see what is provided, see the [scripting API](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Learning.html "Learning"). For further information, see the [Unity ML-Agents documentation](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents").
 
-**Note that none of the [Unity ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@latest "Unity ML-Agents") actuators have heurisitc methods.** If you wish to implement a heursitic method for testing or behavioral cloning, you can extend the actuator and implement the heurisitc method for your use case.
+The velocity sensor and control actuator use two channels by default, ordered X and Z. For a flying agent, enable **Include Climb** on either component that needs a third channel. Channel three carries Y. Set the observation and action dimensions for your model before training. See [Flying agents](movement.md) for flight setup.
+
+To provide manual inputs for testing or behavioral cloning, extend the actuator and override its `Heuristic` method.
+
+Use Kaiju Graph Policy to run inference or training from a visual decision graph. The Visual Decisions sample includes an identity ONNX model with one observation and one action. See the [policy lifecycle and action ownership example](behavior-graph.md).

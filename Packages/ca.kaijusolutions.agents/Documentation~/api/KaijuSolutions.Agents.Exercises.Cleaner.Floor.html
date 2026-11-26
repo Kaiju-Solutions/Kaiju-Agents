@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floor | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="floor">Floor</h1>
+<p>Floor tile which will get dirty over time, given the chance every second of Chance. You should have a KaijuSolutions.Agents.Sensors.KaijuSensor which detects these and can determine which are clean and which are dirty via the Dirty parameter. From there, you will want to move the agent towards a dirty tile if it sensed one. Once close enough to the dirty floor tile, you will need to create a KaijuSolutions.Agents.Actuators.KaijuActuator which can call the Clean method.</p>
+<pre><code class="language-csharp">public class Floor : KaijuBehaviour
+</code></pre>
+<p><a href="../../Samples~/Exercise%201%20-%20Cleaner/Floor.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_Cleaner_Floor_Dirty"></a></p>
+<h3 id="dirty">Dirty</h3>
+<pre><code class="language-csharp">public bool Dirty { get; private set; }
+</code></pre>
+<p>If this floor tile is dirty.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Cleaner_Floor_Chance"></a></p>
+<h3 id="chance">Chance</h3>
+<pre><code class="language-csharp">public float Chance { get; private set; }
+</code></pre>
+<p>The chance that every second this floor tile could become dirty. Note that as this is randomly calculated every fraction of a second, a value of one does not actually guarantee the tile will become dirty every second.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Cleaner_Floor_Clean"></a></p>
+<h3 id="clean">Clean</h3>
+<pre><code class="language-csharp">public void Clean ()
+</code></pre>
+<p>Clean this floor tile. Your actuator will want to call this once you are close enough to this tile.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_Cleaner_Floor_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

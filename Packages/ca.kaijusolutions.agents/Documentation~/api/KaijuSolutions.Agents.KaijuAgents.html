@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgents | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagents">KaijuAgents</h1>
+<p>Methods to help with KaijuSolutions.Agents.KaijuAgent creation.</p>
+<pre><code class="language-csharp">public static class KaijuAgents
+</code></pre>
+<p><a href="../../Runtime/KaijuAgents.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuAgents_GetMaterial"></a></p>
+<h3 id="getmaterial">GetMaterial</h3>
+<pre><code class="language-csharp">public static Material GetMaterial (Color color)
+</code></pre>
+<p>Get a material to use.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgents_AssignComponent"></a></p>
+<h3 id="assigncomponent">AssignComponent</h3>
+<pre><code class="language-csharp">public static bool AssignComponent &lt;T&gt; ([NotNull] this GameObject go, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
+</code></pre>
+<p>Assign a component, validating if it meets requirements.</p>
+<pre><code class="language-csharp">public static bool AssignComponent &lt;T&gt; ([NotNull] this Component c, ref T current, bool self = true, bool children = false, bool parents = false) where T : Component
+</code></pre>
+<p>Assign a component, validating if it meets requirements.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgents_Spawn"></a></p>
+<h3 id="spawn">Spawn</h3>
+<pre><code class="language-csharp">public static KaijuAgent Spawn (KaijuAgentType type = KaijuAgentType.Transform, Vector3? position = null, Quaternion? orientation = null, bool cached = true, [NotNull] KaijuAgent prefab = null, string name = null, Color? body = null, Color? eyes = null, ICollection&lt;string&gt; components = null)
+</code></pre>
+<p>Spawn an KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

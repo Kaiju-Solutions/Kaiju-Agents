@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
+using Unity.Entities;
 
 namespace KaijuSolutions.Agents.Actuators
 {
@@ -92,6 +93,46 @@ namespace KaijuSolutions.Agents.Actuators
         /// If this actuator should run.
         /// </summary>
         private bool _shouldRun;
+
+        /// <summary>Set KaijuActuation.Requested on this entity to drive the actuator from ECS.</summary>
+        public Entity SimulationEntity { get; private set; }
+
+        private World _world;
+
+        private void PublishState()
+        {
+            if (_world == null || !_world.IsCreated || !_world.EntityManager.Exists(SimulationEntity)) return;
+            _world.EntityManager.SetComponentData(SimulationEntity, new KaijuActuation
+            {
+                Agent = Agent.SimulationEntity,
+                Requested = _shouldRun,
+                Running = IsRunning,
+                Result = State
+            });
+        }
+
+        internal void DetachEntity()
+        {
+            if (_world != null && _world.IsCreated && _world.EntityManager.Exists(SimulationEntity))
+                _world.EntityManager.DestroyEntity(SimulationEntity);
+            SimulationEntity = Entity.Null;
+            _world = null;
+        }
+
+        private void ReadRequest()
+        {
+            var world = World.DefaultGameObjectInjectionWorld;
+            if (world == null || !world.IsCreated || !Agent || Agent.SimulationEntity == Entity.Null) return;
+            if (world != _world || !world.EntityManager.Exists(SimulationEntity))
+            {
+                DetachEntity();
+                _world = world;
+                SimulationEntity = world.EntityManager.CreateEntity(typeof(KaijuActuation));
+                PublishState();
+            }
+            _shouldRun = world.EntityManager.GetComponentData<KaijuActuation>(SimulationEntity).Requested;
+        }
+
         
         /// <summary>
         /// If the actuator is currently running.
@@ -133,6 +174,7 @@ namespace KaijuSolutions.Agents.Actuators
         /// </summary>
         protected virtual void OnDisable()
         {
+            DetachEntity();
             if (Agent != null)
             {
                 Agent.UnregisterActuator(this);
@@ -152,12 +194,19 @@ namespace KaijuSolutions.Agents.Actuators
         public void Begin()
         {
             _shouldRun = true;
+            PublishState();
         }
         
         /// <summary>
         /// End the execution of this actuator.
         /// </summary>
         public void End()
+        {
+            EndRequest();
+            PublishState();
+        }
+
+        private void EndRequest()
         {
             // If we should not be running, there is nothing to do.
             if (!_shouldRun)
@@ -186,7 +235,22 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Run this actuator if it should be. There is no point in manually calling this.
         /// </summary>
-        public void Handle()
+        public void Handle() => Step(Time.deltaTime);
+
+        protected float StepDeltaTime { get; private set; }
+
+        internal void Step(float delta)
+        {
+            ReadRequest();
+            StepDeltaTime = delta;
+            Tick(delta);
+            HandleRequest();
+            PublishState();
+        }
+
+        protected virtual void Tick(float delta) { }
+
+        private void HandleRequest()
         {
             // If we should not be running, there is nothing to do.
             if (!_shouldRun)
@@ -307,6 +371,15 @@ namespace KaijuSolutions.Agents.Actuators
         public static implicit operator KaijuAgent([NotNull] KaijuActuator a) => a.Agent;
     }
     
+    /// <summary>Write Requested to begin or stop an actuator. Running and Result report its last step.</summary>
+    public struct KaijuActuation : IComponentData
+    {
+        public Entity Agent;
+        public bool Requested;
+        public bool Running;
+        public KaijuActuatorState Result;
+    }
+
     /// <summary>
     /// The result of running an actuator.
     /// </summary>

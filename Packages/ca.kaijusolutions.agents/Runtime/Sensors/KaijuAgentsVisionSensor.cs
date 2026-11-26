@@ -15,15 +15,30 @@ namespace KaijuSolutions.Agents.Sensors
 #endif
     public class KaijuAgentsVisionSensor : KaijuVisionSensor<KaijuAgent>
     {
+        [Tooltip("Use the shared horizontal candidate grid during fixed-step sensing.")]
+        public bool useNearbyQuery = true;
+        public int NearbyCandidatesExamined { get; private set; }
+        private readonly List<KaijuAgent> nearby = new();
+
         /// <summary>
         /// If there are no explicitly defined observable objects, define how to query for default observables.
         /// </summary>
         /// <returns>All active <see cref="KaijuSolutions.Agents.KaijuAgent"/>s from <see cref="KaijuAgentsManager.Agents"/>.</returns>
         protected override IEnumerable<KaijuAgent> DefaultObservables()
         {
-            return KaijuAgentsManager.Agents;
+            NearbyCandidatesExamined = 0;
+            if (!useNearbyQuery) return KaijuAgentsManager.Agents;
+            NearbyCandidatesExamined = KaijuAgentsManager.FindNearby(transform.position, Distance, nearby, spatialVision);
+            return nearby;
         }
         
+        protected override void Cleanup()
+        {
+            nearby.Clear();
+            NearbyCandidatesExamined = 0;
+            base.Cleanup();
+        }
+
         /// <summary>
         /// Get a description of the object.
         /// </summary>

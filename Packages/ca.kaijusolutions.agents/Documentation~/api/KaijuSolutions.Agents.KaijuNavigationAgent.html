@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuNavigationAgent | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijunavigationagent">KaijuNavigationAgent</h1>
+<p>KaijuSolutions.Agents.KaijuAgent which moves via a navigation mesh agent.</p>
+<pre><code class="language-csharp">public sealed class KaijuNavigationAgent : KaijuAgent
+</code></pre>
+<p><a href="../../Runtime/KaijuNavigationAgent.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_Nav"></a></p>
+<h3 id="nav">Nav</h3>
+<pre><code class="language-csharp">public NavMeshAgent Nav { get; }
+</code></pre>
+<p>The navigation mesh agent which controls the KaijuSolutions.Agents.KaijuAgent's movement.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_surfaceSnapDistance"></a></p>
+<h3 id="surfacesnapdistance">surfaceSnapDistance</h3>
+<pre><code class="language-csharp">public float surfaceSnapDistance
+</code></pre>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_SurfacePosition"></a></p>
+<h3 id="surfaceposition">SurfacePosition</h3>
+<pre><code class="language-csharp">public Vector3 SurfacePosition { get; }
+</code></pre>
+<p>Position on the supporting surface, accounting for the agent pivot offset.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_GetRadius"></a></p>
+<h3 id="getradius">GetRadius</h3>
+<pre><code class="language-csharp">public override float GetRadius ()
+</code></pre>
+<p>Get the radius of an KaijuSolutions.Agents.KaijuAgent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected override void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected override void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">public override void Setup ()
+</code></pre>
+<p>Initialize the KaijuSolutions.Agents.KaijuAgent. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public override void Move (float delta)
+</code></pre>
+<p>Perform KaijuSolutions.Agents.KaijuAgent movement. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuNavigationAgent_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator NavMeshAgent ([NotNull] KaijuNavigationAgent a)
+</code></pre>
+<p>Implicit conversion to get the navigation mesh agent.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuNavigationAgent ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuNavigationAgent ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p></main></body></html>

@@ -102,16 +102,18 @@ namespace KaijuSolutions.Agents
         /// <returns>The created material.</returns>
         private static Material CreateMaterial(Color color)
         {
-            // Create a new material with the standard shader.
-            Material material = new(Shader.Find("Standard"))
+            var pipeline = UnityEngine.Rendering.GraphicsSettings.currentRenderPipeline;
+            var shader = pipeline && pipeline.defaultMaterial ? pipeline.defaultMaterial.shader : Shader.Find("Standard");
+            if (!shader) shader = Resources.GetBuiltinResource<Material>("Default-Material.mat").shader;
+            Material material = new(shader)
             {
                 color = color
             };
             
             // Set to opaque with no smoothness or metallic properties.
-            material.SetFloat(Mode, 0);
-            material.SetFloat(Glossiness, 0);
-            material.SetFloat(Metallic, 0);
+            if (material.HasProperty(Mode)) material.SetFloat(Mode, 0);
+            if (material.HasProperty(Glossiness)) material.SetFloat(Glossiness, 0);
+            if (material.HasProperty(Metallic)) material.SetFloat(Metallic, 0);
             material.name = $"Material {color.r} {color.g} {color.b} {color.a}";
             Materials.Add(color, material);
             return material;
@@ -255,25 +257,14 @@ namespace KaijuSolutions.Agents
             // If we can use a cached agent, do so.
             if (cached)
             {
-                // If using a prefab, we need to try and see if there is a prefab with all of these components, and use its type.
-                if (prefab != null)
+                bool flight = prefab ? prefab.TryGetComponent<KaijuFreeFlight>(out var module) && module.enabled :
+                    components != null && (components.Contains(nameof(KaijuFreeFlight)) || components.Contains(typeof(KaijuFreeFlight).FullName));
+                agent = prefab ? KaijuAgentsManager.GetCachedPrefab(prefab, flight) : type switch
                 {
-                    components = prefab.GetComponentsInChildren<Component>().Select(x => x.GetType().Name).Distinct().ToArray();
-                    type = prefab.GetType().Name switch
-                    {
-                        "KaijuNavigationAgent" => KaijuAgentType.Navigation,
-                        "KaijuCharacterAgent" => KaijuAgentType.Character,
-                        "KaijuRigidbodyAgent" => KaijuAgentType.Rigidbody,
-                        _ => KaijuAgentType.Transform
-                    };
-                }
-                
-                agent = type switch
-                {
-                    KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(components),
-                    KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(components),
-                    KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(components),
-                    _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>(components)
+                    KaijuAgentType.Rigidbody => KaijuAgentsManager.GetCached<KaijuRigidbodyAgent>(components, flight),
+                    KaijuAgentType.Character => KaijuAgentsManager.GetCached<KaijuCharacterAgent>(components, flight),
+                    KaijuAgentType.Navigation => KaijuAgentsManager.GetCached<KaijuNavigationAgent>(components, flight),
+                    _ => KaijuAgentsManager.GetCached<KaijuTransformAgent>(components, flight)
                 };
                 
                 // If there is a cached agent, work with it.
@@ -298,6 +289,7 @@ namespace KaijuSolutions.Agents
             if (prefab != null)
             {
                 agent = Object.Instantiate(prefab, position ?? Vector3.zero, orientation ?? Quaternion.identity);
+                agent.PoolPrefab = prefab;
                 agent.name = name ?? "Agent";
                 
                 // Set the colors if this conforms to the standard setup.
@@ -394,6 +386,7 @@ namespace KaijuSolutions.Agents
         /// <returns>The loaded type or NULL if none was found.</returns>
         private static Type ResolveType(string type)
         {
+            if (type == nameof(KaijuFreeFlight)) return typeof(KaijuFreeFlight);
             // Try standard resolution first, which works for mscorlib and the executing assembly.
             Type t = Type.GetType(type);
             if (t != null)
@@ -414,6 +407,9 @@ namespace KaijuSolutions.Agents
             return null;
         }
         
+        private static bool HeadlessPlayer => Application.isPlaying &&
+            SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null;
+
         /// <summary>
         /// Try to set the materials.
         /// </summary>
@@ -423,7 +419,7 @@ namespace KaijuSolutions.Agents
         private static void SetMaterials([NotNull] Transform root, Color? body = null, Color? eyes = null)
         {
             // If there are no desired colors, skip.
-            if (!body.HasValue && !eyes.HasValue)
+            if ((!body.HasValue && !eyes.HasValue) || HeadlessPlayer)
             {
                 return;
             }
@@ -509,7 +505,7 @@ namespace KaijuSolutions.Agents
             
             // Assign the body color.
             MeshRenderer renderer = go.GetComponent<MeshRenderer>();
-            if (renderer != null)
+            if (renderer != null && !HeadlessPlayer)
             {
                 renderer.material = GetMaterial(color);
             }

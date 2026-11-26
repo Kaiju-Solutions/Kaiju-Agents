@@ -98,6 +98,13 @@ namespace KaijuSolutions.Agents.Movement
         /// <param name="delta">The time step.</param>
         /// <returns>The calculated move vector.</returns>
         public abstract Vector2 Move(Vector2 position, float delta);
+
+        /// <summary>Spatial steering for flight. Existing planar movements contribute horizontal velocity.</summary>
+        public virtual Vector3 Move3(Vector3 position, float delta)
+        {
+            Vector2 horizontal = Move(new Vector2(position.x, position.z), delta);
+            return new Vector3(horizontal.x, 0, horizontal.y);
+        }
         
         /// <summary>
         /// Invoke started callbacks.

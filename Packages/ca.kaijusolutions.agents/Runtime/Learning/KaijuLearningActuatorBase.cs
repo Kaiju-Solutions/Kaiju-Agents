@@ -1,4 +1,4 @@
-﻿#if COM_UNITY_ML_AGENTS
+#if COM_UNITY_ML_AGENTS
 using Unity.MLAgents.Actuators;
 using UnityEngine;
 
@@ -40,7 +40,18 @@ namespace KaijuSolutions.Agents.Learning
         /// Create a collection IActuators. This is called by the agent during initialization.
         /// </summary>
         /// <returns>A collection IActuators</returns>
-        public override IActuator[] CreateActuators() => new IActuator[] { this };
+        private KaijuGraphPolicy _graphPolicy;
+
+        public override IActuator[] CreateActuators()
+        {
+            _graphPolicy = GetComponentInParent<KaijuGraphPolicy>();
+            return new IActuator[] { this };
+        }
+
+        void IActionReceiver.OnActionReceived(ActionBuffers actions)
+        {
+            if (!_graphPolicy || _graphPolicy.AcceptActions) OnActionReceived(actions);
+        }
         
         /// <summary>
         /// Gets the name of this IActuator which will be used to sort it.

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuVisionSensor | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuvisionsensor">KaijuVisionSensor</h1>
+<p>KaijuSolutions.Agents.Sensors.KaijuSensor to allow for visual detection of a component type.</p>
+<pre><code class="language-csharp">public abstract class KaijuVisionSensor &lt;T&gt; : KaijuSensor where T : Component
+</code></pre>
+<p><a href="../../Runtime/Sensors/KaijuVisionSensor.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>How far vision can extend.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_spatialVision"></a></p>
+<h3 id="spatialvision">spatialVision</h3>
+<pre><code class="language-csharp">public bool spatialVision
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Angle"></a></p>
+<h3 id="angle">Angle</h3>
+<pre><code class="language-csharp">public float Angle { get; set; }
+</code></pre>
+<p>What angle the vision detection should cover.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_lineOfSight"></a></p>
+<h3 id="lineofsight">lineOfSight</h3>
+<pre><code class="language-csharp">public bool lineOfSight
+</code></pre>
+<p>If line-of-sight checks should be made for the vision. Turning off line-of-sight checks will return items within the view arc based on the angle and distance.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Radius"></a></p>
+<h3 id="radius">Radius</h3>
+<pre><code class="language-csharp">public float Radius { get; set; }
+</code></pre>
+<p>The radius of the line-of-sight checks.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_offset"></a></p>
+<h3 id="offset">offset</h3>
+<pre><code class="language-csharp">public float offset
+</code></pre>
+<p>Any vertical offset to add to the line-of-sight checks. This can be useful if you for instance have targets which are a few units high but their origins are at their bases.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_mask"></a></p>
+<h3 id="mask">mask</h3>
+<pre><code class="language-csharp">public LayerMask mask
+</code></pre>
+<p>What layers to collide with on the line-of-sight checks.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_triggers"></a></p>
+<h3 id="triggers">triggers</h3>
+<pre><code class="language-csharp">public QueryTriggerInteraction triggers
+</code></pre>
+<p>How line-of-sight checks should handle hitting triggers.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_editorColor"></a></p>
+<h3 id="editorcolor">editorColor</h3>
+<pre><code class="language-csharp">public Color editorColor
+</code></pre>
+<p>The visualizations color in the editor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_editorFromAgent"></a></p>
+<h3 id="editorfromagent">editorFromAgent</h3>
+<pre><code class="language-csharp">public bool editorFromAgent
+</code></pre>
+<p>If the visualizations in the editor for the line-of-sight checks should come from the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent's position or from the KaijuSolutions.Agents.Sensors.KaijuSensor's position. The range and view arc are always drawn from the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent's Y height and the KaijuSolutions.Agents.Sensors.KaijuSensor's X and Z positions.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_observables"></a></p>
+<h3 id="observables">observables</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;T&gt; observables
+</code></pre>
+<p>The objects which this can detect.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_HasObserved"></a></p>
+<h3 id="hasobserved">HasObserved</h3>
+<pre><code class="language-csharp">public bool HasObserved { get; }
+</code></pre>
+<p>If at least one instance has been Observed.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_ObservedCount"></a></p>
+<h3 id="observedcount">ObservedCount</h3>
+<pre><code class="language-csharp">public int ObservedCount { get; }
+</code></pre>
+<p>The number of Observed items.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Observed"></a></p>
+<h3 id="observed">Observed</h3>
+<pre><code class="language-csharp">public IReadOnlyCollection&lt;T&gt; Observed { get; }
+</code></pre>
+<p>All observed items.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest"></a></p>
+<h3 id="nearest">Nearest</h3>
+<pre><code class="language-csharp">public T Nearest (out float nearest, bool normalize = false)
+</code></pre>
+<p>The nearest Observed instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Nearest3"></a></p>
+<h3 id="nearest3">Nearest3</h3>
+<pre><code class="language-csharp">public T Nearest3 (out float nearest, bool normalize = false)
+</code></pre>
+<p>The nearest Observed instance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest"></a></p>
+<h3 id="farthest">Farthest</h3>
+<pre><code class="language-csharp">public T Farthest (out float farthest, bool normalize = false)
+</code></pre>
+<p>The farthest Observed instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Farthest3"></a></p>
+<h3 id="farthest3">Farthest3</h3>
+<pre><code class="language-csharp">public T Farthest3 (out float farthest, bool normalize = false)
+</code></pre>
+<p>The farthest Observed instance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition"></a></p>
+<h3 id="nearestposition">NearestPosition</h3>
+<pre><code class="language-csharp">public Vector2 NearestPosition (bool normalize = false)
+</code></pre>
+<p>The nearest Observed instance position to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_NearestPosition3"></a></p>
+<h3 id="nearestposition3">NearestPosition3</h3>
+<pre><code class="language-csharp">public Vector3 NearestPosition3 (bool normalize = false)
+</code></pre>
+<p>The nearest Observed instance position to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition"></a></p>
+<h3 id="farthestposition">FarthestPosition</h3>
+<pre><code class="language-csharp">public Vector2 FarthestPosition (bool normalize = false)
+</code></pre>
+<p>The farthest Observed instance position to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_FarthestPosition3"></a></p>
+<h3 id="farthestposition3">FarthestPosition3</h3>
+<pre><code class="language-csharp">public Vector3 FarthestPosition3 (bool normalize = false)
+</code></pre>
+<p>The farthest Observed instance position to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance"></a></p>
+<h3 id="sortdistance">SortDistance</h3>
+<pre><code class="language-csharp">public T[] SortDistance (bool farthest = false, KaijuAngleSortMode? mode = null)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3"></a></p>
+<h3 id="sortdistance3">SortDistance3</h3>
+<pre><code class="language-csharp">public T[] SortDistance3 (bool farthest = false, KaijuAngleSortMode? mode = null)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAngle"></a></p>
+<h3 id="sortangle">SortAngle</h3>
+<pre><code class="language-csharp">public T[] SortAngle (KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<pre><code class="language-csharp">public int SortDistance ([NotNull] T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortDistance3 ([NotNull] T[] cache, bool farthest = false, KaijuAngleSortMode? mode = null)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortAngle ([NotNull] T[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition"></a></p>
+<h3 id="sortdistanceposition">SortDistancePosition</h3>
+<pre><code class="language-csharp">public Vector2[] SortDistancePosition (bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistancePosition3"></a></p>
+<h3 id="sortdistanceposition3">SortDistancePosition3</h3>
+<pre><code class="language-csharp">public Vector3[] SortDistancePosition3 (bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position"></a></p>
+<h3 id="sortdistance3position">SortDistance3Position</h3>
+<pre><code class="language-csharp">public Vector2[] SortDistance3Position (bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortDistance3Position3"></a></p>
+<h3 id="sortdistance3position3">SortDistance3Position3</h3>
+<pre><code class="language-csharp">public Vector3[] SortDistance3Position3 (bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition"></a></p>
+<h3 id="sortangleposition">SortAnglePosition</h3>
+<pre><code class="language-csharp">public Vector2[] SortAnglePosition (KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SortAnglePosition3"></a></p>
+<h3 id="sortangleposition3">SortAnglePosition3</h3>
+<pre><code class="language-csharp">public Vector3[] SortAnglePosition3 (KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<pre><code class="language-csharp">public int SortDistancePosition ([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortDistancePosition ([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortDistance3Position ([NotNull] Vector2[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortDistance3Position ([NotNull] Vector3[] cache, bool farthest = false, KaijuAngleSortMode? mode = null, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by distance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortAnglePosition ([NotNull] Vector2[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<pre><code class="language-csharp">public int SortAnglePosition3 ([NotNull] Vector3[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
+</code></pre>
+<p>Sort Observed instances by angle to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent, keeping only the first instances which fit into a cache.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_CandidatesExamined"></a></p>
+<h3 id="candidatesexamined">CandidatesExamined</h3>
+<pre><code class="language-csharp">public int CandidatesExamined { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_SightQueries"></a></p>
+<h3 id="sightqueries">SightQueries</h3>
+<pre><code class="language-csharp">public int SightQueries { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_TryGetNearest"></a></p>
+<h3 id="trygetnearest">TryGetNearest</h3>
+<pre><code class="language-csharp">public bool TryGetNearest (out T target)
+</code></pre>
+<p>Find the closest observation using this sensor's distance mode.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_DefaultObservables"></a></p>
+<h3 id="defaultobservables">DefaultObservables</h3>
+<pre><code class="language-csharp">protected virtual IEnumerable&lt;T&gt; DefaultObservables ()
+</code></pre>
+<p>If there are no explicitly defined observable objects, define how to query for default observables.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Run"></a></p>
+<h3 id="run">Run</h3>
+<pre><code class="language-csharp">protected override void Run ()
+</code></pre>
+<p>Run the KaijuSolutions.Agents.Sensors.KaijuSensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_Cleanup"></a></p>
+<h3 id="cleanup">Cleanup</h3>
+<pre><code class="language-csharp">protected override void Cleanup ()
+</code></pre>
+<p>Perform any needed resetting of the KaijuSolutions.Agents.Sensors.KaijuSensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public override void EditorVisualize (Vector3 position)
+</code></pre>
+<p>Allow for visualizing in the editor. The position of the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuVisionSensor&lt;T&gt; ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuVisionSensor&lt;T&gt; ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuVisionSensor&lt;T&gt; s)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

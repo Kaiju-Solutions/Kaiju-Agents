@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuCastSensor | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijucastsensor">KaijuCastSensor</h1>
+<p>KaijuSolutions.Agents.Sensors.KaijuSensor to perform ray or sphere casts. This will cast from this transform in the forward direction of this transform.</p>
+<pre><code class="language-csharp">public class KaijuCastSensor : KaijuSensor
+</code></pre>
+<p><a href="../../Runtime/Sensors/KaijuCastSensor.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>How far to cast.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Angle"></a></p>
+<h3 id="angle">Angle</h3>
+<pre><code class="language-csharp">public float Angle { get; set; }
+</code></pre>
+<p>What angle to cast along.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_offset"></a></p>
+<h3 id="offset">offset</h3>
+<pre><code class="language-csharp">public float offset
+</code></pre>
+<p>Any vertical offset to add to the casts.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Casts"></a></p>
+<h3 id="casts">Casts</h3>
+<pre><code class="language-csharp">public int Casts { get; set; }
+</code></pre>
+<p>The number of casts to make. These will be evenly distributed across the angle, unless there is only one cast in which case it will cast directly forward.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Radius"></a></p>
+<h3 id="radius">Radius</h3>
+<pre><code class="language-csharp">public float Radius { get; set; }
+</code></pre>
+<p>The radius of the casts.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_mask"></a></p>
+<h3 id="mask">mask</h3>
+<pre><code class="language-csharp">public LayerMask mask
+</code></pre>
+<p>What layers to collide with on the casts.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_triggers"></a></p>
+<h3 id="triggers">triggers</h3>
+<pre><code class="language-csharp">public QueryTriggerInteraction triggers
+</code></pre>
+<p>How casts should handle hitting triggers.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_editorHit"></a></p>
+<h3 id="editorhit">editorHit</h3>
+<pre><code class="language-csharp">public Color editorHit
+</code></pre>
+<p>The visualizations color for hits in the editor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_editorMiss"></a></p>
+<h3 id="editormiss">editorMiss</h3>
+<pre><code class="language-csharp">public Color editorMiss
+</code></pre>
+<p>The visualizations color for misses in the editor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HasHits"></a></p>
+<h3 id="hashits">HasHits</h3>
+<pre><code class="language-csharp">public bool HasHits { get; }
+</code></pre>
+<p>If at least one ray has hit something.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_HitsTotal"></a></p>
+<h3 id="hitstotal">HitsTotal</h3>
+<pre><code class="language-csharp">public int HitsTotal { get; }
+</code></pre>
+<p>The total number of casts which hit something.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Hits"></a></p>
+<h3 id="hits">Hits</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;RaycastHit?&gt; Hits { get; }
+</code></pre>
+<p>The data from left to right of what the rays have hit, with NULL entries being rays that did not hit.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Transforms"></a></p>
+<h3 id="transforms">Transforms</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;Transform&gt; Transforms { get; }
+</code></pre>
+<p>Get transforms for the Hits. Misses will be NULL.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedHits"></a></p>
+<h3 id="connectedhits">ConnectedHits</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;RaycastHit?&gt; ConnectedHits { get; }
+</code></pre>
+<p>The Hits data only for points which hit, removing all NULL entries.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ConnectedTransforms"></a></p>
+<h3 id="connectedtransforms">ConnectedTransforms</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;Transform&gt; ConnectedTransforms { get; }
+</code></pre>
+<p>et transforms for the ConnectedHits.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest"></a></p>
+<h3 id="nearest">Nearest</h3>
+<pre><code class="language-csharp">public Transform Nearest (out float nearest, bool normalize = false)
+</code></pre>
+<p>The nearest ConnectedTransforms instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Nearest3"></a></p>
+<h3 id="nearest3">Nearest3</h3>
+<pre><code class="language-csharp">public Transform Nearest3 (out float nearest, bool normalize = false)
+</code></pre>
+<p>The nearest ConnectedTransforms instance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest"></a></p>
+<h3 id="farthest">Farthest</h3>
+<pre><code class="language-csharp">public Transform Farthest (out float farthest, bool normalize = false)
+</code></pre>
+<p>The farthest ConnectedTransforms instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Farthest3"></a></p>
+<h3 id="farthest3">Farthest3</h3>
+<pre><code class="language-csharp">public Transform Farthest3 (out float farthest, bool normalize = false)
+</code></pre>
+<p>The farthest ConnectedTransforms instance across all axes to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition"></a></p>
+<h3 id="nearestposition">NearestPosition</h3>
+<pre><code class="language-csharp">public Vector2 NearestPosition (bool normalize = false)
+</code></pre>
+<p>The nearest Positions instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestPosition3"></a></p>
+<h3 id="nearestposition3">NearestPosition3</h3>
+<pre><code class="language-csharp">public Vector3 NearestPosition3 (bool normalize = false)
+</code></pre>
+<p>The nearest Positions instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition"></a></p>
+<h3 id="farthestposition">FarthestPosition</h3>
+<pre><code class="language-csharp">public Vector2 FarthestPosition (bool normalize = false)
+</code></pre>
+<p>The farthest Positions instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestPosition3"></a></p>
+<h3 id="farthestposition3">FarthestPosition3</h3>
+<pre><code class="language-csharp">public Vector3 FarthestPosition3 (bool normalize = false)
+</code></pre>
+<p>The farthest Positions instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_NearestDistance"></a></p>
+<h3 id="nearestdistance">NearestDistance</h3>
+<pre><code class="language-csharp">public float NearestDistance (bool normalize = false)
+</code></pre>
+<p>The nearest Distances instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_FarthestDistance"></a></p>
+<h3 id="farthestdistance">FarthestDistance</h3>
+<pre><code class="language-csharp">public float FarthestDistance (bool normalize = false)
+</code></pre>
+<p>The farthest Distances instance to the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions"></a></p>
+<h3 id="positions">Positions</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;Vector2&gt; Positions (bool normalize = false)
+</code></pre>
+<p>The positions corresponding to the Hits, with Hits that missed being set to the maximum casting distance.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Positions3"></a></p>
+<h3 id="positions3">Positions3</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;Vector3&gt; Positions3 (bool normalize = false)
+</code></pre>
+<p>The positions corresponding to the Hits, with Hits that missed being set to the maximum casting distance.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Distances"></a></p>
+<h3 id="distances">Distances</h3>
+<pre><code class="language-csharp">public IEnumerable&lt;float&gt; Distances (bool normalize = false)
+</code></pre>
+<p>Get the distances of all rays.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Run"></a></p>
+<h3 id="run">Run</h3>
+<pre><code class="language-csharp">protected override void Run ()
+</code></pre>
+<p>Run the KaijuSolutions.Agents.Sensors.KaijuSensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_Cleanup"></a></p>
+<h3 id="cleanup">Cleanup</h3>
+<pre><code class="language-csharp">protected override void Cleanup ()
+</code></pre>
+<p>Perform any needed resetting of the KaijuSolutions.Agents.Sensors.KaijuSensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public override void EditorVisualize (Vector3 position)
+</code></pre>
+<p>Allow for visualizing in the editor. The position of the KaijuSolutions.Agents.Sensors.KaijuSensor.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuCastSensor_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuCastSensor ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuCastSensor ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuCastSensor s)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

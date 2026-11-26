@@ -1,0 +1,7 @@
+{
+  "versionDefines": [],
+  "name": "ca.kaijusolutions.agents.samples.spatial",
+  "references": [
+    "ca.kaijusolutions.agents"
+  ]
+}

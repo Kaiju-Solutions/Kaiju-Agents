@@ -1,288 +1,104 @@
-name: Validate Package
-
+name: Validate Kaiju Agents
 on:
+  workflow_call:
+    inputs:
+      runner:
+        type: string
+        default: github-hosted
+      smoke_url:
+        type: string
+        default: ''
+    secrets:
+      UNITY_LICENSE_SERIAL:
+        required: false
   workflow_dispatch:
-
+    inputs:
+      runner:
+        description: Unity validation runner
+        type: choice
+        options:
+          - github-hosted
+          - self-hosted
+        default: github-hosted
+      performance:
+        description: Include warmed standalone steering benchmarks
+        type: boolean
+        default: false
+concurrency:
+  group: kaiju-agents-workflows
+  queue: max
+permissions:
+  contents: read
+env:
+  UNITY_NON_INTERACTIVE: "1"
 jobs:
-  generate-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - name: Generate Matrix
-        id: set-matrix
-        run: |
-          python -c '
-          import json, os, urllib.request, re, sys, time
-          
-          def get_latest_compatible(pkg_name, unity_ver, cache={}):
-              if pkg_name not in cache:
-                  try:
-                      url = f"https://packages.unity.com/{pkg_name}"
-                      with urllib.request.urlopen(url) as r:
-                          cache[pkg_name] = json.loads(r.read())
-                  except Exception as e:
-                      sys.stderr.write(f"Error fetching {pkg_name}: {e}\n")
-                      return None
-              
-              data = cache[pkg_name]
-              versions = data.get("versions", {})
-              
-              target_match = re.match(r"^(\d+)\.(\d+)", unity_ver)
-              if not target_match: return None
-              target_v = [int(target_match.group(1)), int(target_match.group(2))]
-              
-              candidates = []
-              for v_str, v_data in versions.items():
-                  req_unity = v_data.get("unity", "0.0")
-                  req_match = re.match(r"^(\d+)\.(\d+)", req_unity)
-                  if not req_match: continue
-                  req_v = [int(req_match.group(1)), int(req_match.group(2))]
-                  
-                  if req_v <= target_v:
-                      candidates.append(v_str)
-              
-              if not candidates: return None
-              return sorted(candidates, key=lambda x: [int(y) for y in re.findall(r"\d+", x)], reverse=True)[0]
-          
-          def get_latest_unity_patch(minor_version):
-              try:
-                  url = f"https://services.api.unity.com/unity/editor/release/v1/releases?version={minor_version}"
-                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
-                  with urllib.request.urlopen(req, timeout=5) as r:
-                      data = json.loads(r.read().decode("utf-8"))
-                  
-                  max_patch = -1
-                  for release in data.get("results", []):
-                      v = release.get("version", "")
-                      match = re.search(rf"^{re.escape(minor_version)}\.(\d+)f", v)
-                      if match:
-                          patch = int(match.group(1))
-                          if patch > max_patch:
-                              max_patch = patch
-                  
-                  if max_patch >= 0:
-                      print(f" -> Found latest official patch via API: {minor_version}.{max_patch}")
-                      return max_patch
-              except Exception as e:
-                  sys.stderr.write(f"Warning: Unity Release API failed ({e}). Falling back to manual search.\n")
-              
-              return 0
-          
-          def get_latest_gameci_version(minor_version):
-              start_patch = get_latest_unity_patch(minor_version)
-              print(f" -> Searching Docker Hub for {minor_version}.x starting from patch {start_patch}...")
-              
-              for patch in range(start_patch, -1, -1):
-                  url = f"https://hub.docker.com/v2/repositories/unityci/editor/tags?name=ubuntu-{minor_version}.{patch}f"
-                  try:
-                      req = urllib.request.Request(url, headers={"Accept": "application/json"})
-                      with urllib.request.urlopen(req, timeout=5) as r:
-                          data = json.loads(r.read().decode("utf-8"))
-                      
-                      found_versions = set()
-                      for result in data.get("results", []):
-                          match = re.search(rf"ubuntu-({re.escape(minor_version)}\.{patch}f\d+)-", result["name"])
-                          if match:
-                              found_versions.add(match.group(1))
-                      
-                      if found_versions:
-                          latest = sorted(list(found_versions), key=lambda v: [int(x) for x in re.findall(r"\d+", v)], reverse=True)[0]
-                          return latest
-                  except Exception:
-                      pass 
-                  
-                  if patch % 10 == 0: time.sleep(0.2)
-              
-              return None
-          
-          target_minors = ["6000.3", "6000.4", "6000.5", "6000.6"]
-          unity_versions = []
-          
-          for minor in target_minors:
-              latest_tag = get_latest_gameci_version(minor)
-              if latest_tag:
-                  unity_versions.append(latest_tag)
-                  print(f" -> SUCCESS: Resolved to {latest_tag}")
-              else:
-                  sys.stderr.write(f" -> ERROR: No GameCI image found for {minor}.x (0-{get_latest_unity_patch(minor)})\n")
-          
-          if not unity_versions:
-              sys.exit("Error: No valid Unity versions found to test.")
-          
-          matrix = []
-          pkg_cache = {}
-          
-          for unity_version in unity_versions:
-              behavior_v = get_latest_compatible("com.unity.behavior", unity_version, pkg_cache)
-              ml_v = get_latest_compatible("com.unity.ml-agents", unity_version, pkg_cache)
-              
-              # Configuration 1: Without packages
-              matrix.append({
-                  "config_name": "Base", 
-                  "unity_version": unity_version, 
-                  "dependencies": json.dumps({}), 
-                  "scripting_define": ""
-              })
-              
-              # Configuration 2: With packages
-              mcp_git_url = "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main"
-              
-              if behavior_v:
-                  if ml_v:
-                      matrix.append({
-                          "config_name": "With Packages", 
-                          "unity_version": unity_version,
-                          "dependencies": json.dumps({
-                              "com.unity.behavior": behavior_v, 
-                              "com.unity.ml-agents": ml_v,
-                              "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": "1.0.0"
-                          }), 
-                          "scripting_define": ""
-                      })
-                  else:
-                      matrix.append({
-                          "config_name": "With Packages", 
-                          "unity_version": unity_version, 
-                          "dependencies": json.dumps({
-                              "com.unity.behavior": behavior_v,
-                              "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": "1.0.0"
-                          }), 
-                          "scripting_define": ""
-                      })
-              else:
-                  if ml_v:
-                      matrix.append({
-                          "config_name": "With Packages", 
-                          "unity_version": unity_version, 
-                          "dependencies": json.dumps({
-                              "com.unity.ml-agents": ml_v,
-                              "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": "1.0.0"
-                          }), 
-                          "scripting_define": ""
-                      })
-                      sys.stderr.write(f" -> Warning: No compatible com.unity.behavior version found for {unity_version}\n")
-                  else:
-                      sys.stderr.write(f" -> Warning: No compatible com.unity.behavior or com.unity.ml-agents versions found for {unity_version}\n")
-                      matrix.append({
-                          "config_name": "With Packages", 
-                          "unity_version": unity_version, 
-                          "dependencies": json.dumps({
-                              "com.coplaydev.unity-mcp": mcp_git_url,
-                              "com.unity.modules.physics2d": "1.0.0"
-                          }), 
-                          "scripting_define": ""
-                      })
-          
-          matrix_json = json.dumps({"include": matrix})
-          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              f.write(f"matrix={matrix_json}\n")
-          '
-  
-  test:
-    name: ${{ matrix.config_name }} (${{ matrix.unity_version }})
-    needs: generate-matrix
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+  validate:
+    runs-on: ${{ fromJSON(inputs.runner == 'self-hosted' && '["self-hosted","Windows","X64"]' || '["ubuntu-24.04"]') }}
+    timeout-minutes: 240
     strategy:
+      max-parallel: 1
       fail-fast: false
-      max-parallel: 5
-      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
+      matrix:
+        editor: ["6000.7.0b10", "7000.0.0a21"]
+    env:
+      EDITOR_VERSION: ${{ matrix.editor }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v6
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        if: inputs.runner != 'self-hosted'
         with:
-          submodules: true
-      
-      - name: Free Disk Space
+          python-version: "3.13"
+      - run: python -m pip install -r Tools/requirements.txt
+      - run: python Tools/csharp_style.py
+      - run: python Tools/prepare.py --check
+      - run: python -m unittest discover -s Tools -p "test_*.py"
+
+      - name: Prepare hosted Unity CLI
+        if: inputs.runner != 'self-hosted'
+        shell: bash
         run: |
-          echo "Disk before cleanup:"
-          df -h
-        
-          # Remove large, unneeded tool caches from hosted runner
-          sudo rm -rf /usr/local/lib/android || true
-          sudo rm -rf /opt/ghc || true
-          sudo rm -rf /usr/share/dotnet || true
-          sudo rm -rf /opt/hostedtoolcache/CodeQL || true
-          
-          # Prune any preexisting docker artifacts
-          docker system prune -af || true
-          
-          echo "Disk after cleanup:"
-          df -h
-      
-      - name: Remove Asset Store Tools
-        run: rm -rf Packages/com.unity.asset-store-tools
-      
-      - name: Setup manifest.json
+          # Reclaim space for the Editor archive, extracted Editor and Unity Library on this disposable VM.
+          sudo rm -rf -- /usr/local/lib/android /usr/share/dotnet /opt/ghc /usr/local/.ghcup
+          sudo apt-get update -qq
+          sudo env DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends libasound2t64 libglu1-mesa libgtk-3-0t64 libnss3 libxss1
+          curl --fail --silent --show-error --location https://unity.com/install.sh -o "$RUNNER_TEMP/unity-install.sh"
+          bash "$RUNNER_TEMP/unity-install.sh"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Activate hosted Unity seat
+        id: activate
+        if: inputs.runner != 'self-hosted'
+        shell: bash
         env:
-          DEPS_JSON: ${{ matrix.dependencies }}
+          UNITY_LICENSE_SERIAL: ${{ secrets.UNITY_LICENSE_SERIAL }}
         run: |
-          python -c '
-          import os, json
-          manifest = {"dependencies": json.loads(os.environ["DEPS_JSON"])}
-          os.makedirs("Packages", exist_ok=True)
-          with open("Packages/manifest.json", "w") as f:
-              json.dump(manifest, f, indent=2)
-          '
-          cat Packages/manifest.json
-      
-      - name: Cache Unity Library
-        uses: actions/cache@v5
-        with:
-          path: Library
-          key: Library-${{ matrix.unity_version }}-${{ hashFiles('Packages/manifest.json') }}-${{ matrix.scripting_define }}
-          restore-keys: |
-            Library-${{ matrix.unity_version }}-${{ hashFiles('Packages/manifest.json') }}-
-            Library-${{ matrix.unity_version }}-
-            Library-
-      
-      - name: Inject Scripting Define
-        if: matrix.scripting_define != ''
+          : "${UNITY_LICENSE_SERIAL:?Configure an unattended Unity serial or select a licensed self-hosted runner}"
+          unity license activate --non-interactive
+      - name: Install hosted Editor
+        if: inputs.runner != 'self-hosted'
+        shell: bash
         run: |
-          mkdir -p Assets
-          echo "-define:${{ matrix.scripting_define }}" > Assets/csc.rsp
-      
-      - name: Verify Project Compilation
-        uses: game-ci/unity-test-runner@v4
+          mkdir -p "$RUNNER_TEMP/editors"
+          unity editors install-path --set "$RUNNER_TEMP/editors"
+          unity install "$EDITOR_VERSION" --accept-eula --yes --non-interactive
+          unity terms accept "$EDITOR_VERSION" --yes --non-interactive
+          echo "UNITY_HUB_EDITORS=$RUNNER_TEMP/editors" >> "$GITHUB_ENV"
+      - if: ${{ !inputs.performance && !inputs.smoke_url }}
+        run: python Tools/unity_matrix.py --versions "${{ matrix.editor }}"
+      - if: inputs.performance
+        run: python Tools/Benchmarks/steering.py --versions "${{ matrix.editor }}" --full-matrix
+      - if: ${{ !inputs.smoke_url }}
+        run: python Tools/unity_matrix.py --versions "${{ matrix.editor }}" --profile minimal --stages EditMode PlayMode
+      - if: inputs.smoke_url
         env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          KAIJU_INSTALL_URL: ${{ inputs.smoke_url }}
+        run: python Tools/smoke_install.py --version "${{ matrix.editor }}"
+      - name: Return hosted Unity seat
+        if: always() && steps.activate.outcome == 'success'
+        run: unity license return --yes --non-interactive
+      - uses: actions/upload-artifact@v7
+        if: always()
         with:
-          unityVersion: ${{ matrix.unity_version }}
-          projectPath: .
-          testMode: editmode
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          customParameters: -quit -batchmode -nographics -silent-crashes -ignoreCompilerErrors -no-browser-auth -no-instance
-  
-  create-summary:
-    needs: test
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate Test Report Summary
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const response = await github.rest.actions.listJobsForWorkflowRun({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              run_id: context.runId,
-              per_page: 100
-            });
-            const unityVersionRegex = /(.+?)\s*\((\d{4,5}\.\d+\.\d+f\d+)\)/;
-            const testJobs = response.data.jobs.filter(job => unityVersionRegex.test(job.name));
-            let passed = 0, failed = 0;
-            let summary = '## 🧪 Kaiju Agents Test Results\n\n| Unity Version | Configuration | Status |\n| :--- | :--- | :---: |\n';
-            for (const job of testJobs) {
-              let icon = job.conclusion === 'success' ? '🟢 Pass' : (job.conclusion === 'failure' ? '🔴 Fail' : '⚪ Skip');
-              if (job.conclusion === 'success') passed++; else if (job.conclusion === 'failure') failed++;
-              const match = job.name.match(unityVersionRegex);
-              summary += match ? `| **${match[2]}** | \`${match[1]}\` | ${icon} |\n` : `| **?** | \`${job.name}\` | ${icon} |\n`;
-            }
-            summary += `\n### **Totals:** ${testJobs.length} Tests | 🟢 ${passed} Passed | 🔴 ${failed} Failed\n`;
-            await core.summary.addRaw(summary).write();
+          name: ${{ inputs.smoke_url && 'consumer' || 'unity' }}-test-results-${{ matrix.editor }}
+          path: |
+            TestResults/${{ matrix.editor }}/
+            TestResults/steering-benchmark/candidate/

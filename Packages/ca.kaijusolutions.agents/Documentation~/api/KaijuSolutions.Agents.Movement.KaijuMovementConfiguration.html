@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuMovementConfiguration | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijumovementconfiguration">KaijuMovementConfiguration</h1>
+<p>Allow for defining KaijuSolutions.Agents.Movement.KaijuMovement settings for KaijuSolutions.Agents.KaijuAgents to use as default values.</p>
+<pre><code class="language-csharp">public class KaijuMovementConfiguration : ScriptableObject
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuMovementConfiguration.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_DefaultMask"></a></p>
+<h3 id="defaultmask">DefaultMask</h3>
+<pre><code class="language-csharp">public const int DefaultMask
+</code></pre>
+<p>The default collision layer mask.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Weight"></a></p>
+<h3 id="weight">Weight</h3>
+<pre><code class="language-csharp">public float Weight { get; set; }
+</code></pre>
+<p>The default weight of all KaijuSolutions.Agents.Movement.KaijuMovements.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_clear"></a></p>
+<h3 id="clear">clear</h3>
+<pre><code class="language-csharp">public bool clear
+</code></pre>
+<p>The default behaviour for if new KaijuSolutions.Agents.Movement.KaijuMovements should clear all other current KaijuSolutions.Agents.Movement.KaijuMovements and become the only one the KaijuSolutions.Agents.KaijuAgent is performing.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ApproachingDistance"></a></p>
+<h3 id="approachingdistance">ApproachingDistance</h3>
+<pre><code class="language-csharp">public float ApproachingDistance { get; set; }
+</code></pre>
+<p>The default distance at which we can consider KaijuSolutions.Agents.Movement.KaijuSeekMovement, KaijuSolutions.Agents.Movement.KaijuPursueMovement, and KaijuSolutions.Agents.Movement.KaijuPathFollowMovement behaviours done.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_LeavingDistance"></a></p>
+<h3 id="leavingdistance">LeavingDistance</h3>
+<pre><code class="language-csharp">public float LeavingDistance { get; set; }
+</code></pre>
+<p>The default distance at which we can consider KaijuSolutions.Agents.Movement.KaijuFleeMovement and KaijuSolutions.Agents.Movement.KaijuEvadeMovement behaviours done.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderDistance"></a></p>
+<h3 id="wanderdistance">WanderDistance</h3>
+<pre><code class="language-csharp">public float WanderDistance { get; set; }
+</code></pre>
+<p>How far out to generate the KaijuSolutions.Agents.Movement.KaijuWanderMovement circles by default.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_WanderRadius"></a></p>
+<h3 id="wanderradius">WanderRadius</h3>
+<pre><code class="language-csharp">public float WanderRadius { get; set; }
+</code></pre>
+<p>The radius of the KaijuSolutions.Agents.Movement.KaijuWanderMovement circles by default.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationDistance"></a></p>
+<h3 id="separationdistance">SeparationDistance</h3>
+<pre><code class="language-csharp">public float SeparationDistance { get; set; }
+</code></pre>
+<p>The default distance to interact with other KaijuSolutions.Agents.KaijuAgents from.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SeparationCoefficient"></a></p>
+<h3 id="separationcoefficient">SeparationCoefficient</h3>
+<pre><code class="language-csharp">public float SeparationCoefficient { get; set; }
+</code></pre>
+<p>The default distance to interact with other KaijuSolutions.Agents.KaijuAgents from.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Identifiers"></a></p>
+<h3 id="identifiers">Identifiers</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;uint&gt; Identifiers { get; }
+</code></pre>
+<p>Identifiers for KaijuSolutions.Agents.KaijuAgents when separating.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ClearIdentifiers"></a></p>
+<h3 id="clearidentifiers">ClearIdentifiers</h3>
+<pre><code class="language-csharp">public void ClearIdentifiers ()
+</code></pre>
+<p>Clear all identifiers.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasIdentifier"></a></p>
+<h3 id="hasidentifier">HasIdentifier</h3>
+<pre><code class="language-csharp">public bool HasIdentifier (uint identifier)
+</code></pre>
+<p>If this agent has an identifier.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_HasAnyIdentifier"></a></p>
+<h3 id="hasanyidentifier">HasAnyIdentifier</h3>
+<pre><code class="language-csharp">public bool HasAnyIdentifier (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>If this agent has any one of a set of identifiers.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifier"></a></p>
+<h3 id="addidentifier">AddIdentifier</h3>
+<pre><code class="language-csharp">public bool AddIdentifier (uint identifier)
+</code></pre>
+<p>Add an identifier to this agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AddIdentifiers"></a></p>
+<h3 id="addidentifiers">AddIdentifiers</h3>
+<pre><code class="language-csharp">public bool AddIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>Add identifiers to this agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifier"></a></p>
+<h3 id="removeidentifier">RemoveIdentifier</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifier (uint identifier)
+</code></pre>
+<p>Remove an identifier from this agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_RemoveIdentifiers"></a></p>
+<h3 id="removeidentifiers">RemoveIdentifiers</h3>
+<pre><code class="language-csharp">public bool RemoveIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>Remove identifiers from this agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifier"></a></p>
+<h3 id="setidentifier">SetIdentifier</h3>
+<pre><code class="language-csharp">public void SetIdentifier (uint identifier)
+</code></pre>
+<p>Set an identifier to this agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_SetIdentifiers"></a></p>
+<h3 id="setidentifiers">SetIdentifiers</h3>
+<pre><code class="language-csharp">public void SetIdentifiers (IEnumerable&lt;uint&gt; collection)
+</code></pre>
+<p>If this agent has any one of a set of identifiers.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_Avoidance"></a></p>
+<h3 id="avoidance">Avoidance</h3>
+<pre><code class="language-csharp">public float Avoidance { get; set; }
+</code></pre>
+<p>The default distance from a wall the KaijuSolutions.Agents.KaijuAgent should maintain.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceDistance"></a></p>
+<h3 id="avoidancedistance">AvoidanceDistance</h3>
+<pre><code class="language-csharp">public float AvoidanceDistance { get; set; }
+</code></pre>
+<p>The default distance for rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_AvoidanceSideDistance"></a></p>
+<h3 id="avoidancesidedistance">AvoidanceSideDistance</h3>
+<pre><code class="language-csharp">public float AvoidanceSideDistance { get; set; }
+</code></pre>
+<p>The default distance of the side rays. Zero or less will use the AvoidanceDistance.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceAngle"></a></p>
+<h3 id="avoidanceangle">avoidanceAngle</h3>
+<pre><code class="language-csharp">public float avoidanceAngle
+</code></pre>
+<p>The default angle for rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceHeight"></a></p>
+<h3 id="avoidanceheight">avoidanceHeight</h3>
+<pre><code class="language-csharp">public float avoidanceHeight
+</code></pre>
+<p>The default height offset for the rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_avoidanceHorizontal"></a></p>
+<h3 id="avoidancehorizontal">avoidanceHorizontal</h3>
+<pre><code class="language-csharp">public float avoidanceHorizontal
+</code></pre>
+<p>The default horizontal shift for the side rays.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_areaMask"></a></p>
+<h3 id="areamask">areaMask</h3>
+<pre><code class="language-csharp">public int areaMask
+</code></pre>
+<p>The default bitfield mask specifying which navigation mesh areas can be used for the path.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_collisionMask"></a></p>
+<h3 id="collisionmask">collisionMask</h3>
+<pre><code class="language-csharp">public LayerMask collisionMask
+</code></pre>
+<p>The default layers to use for KaijuSolutions.Agents.Movement.KaijuPathFollowMovement string-pulling and KaijuSolutions.Agents.Movement.KaijuObstacleAvoidanceMovement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_collisionTriggers"></a></p>
+<h3 id="collisiontriggers">collisionTriggers</h3>
+<pre><code class="language-csharp">public QueryTriggerInteraction collisionTriggers
+</code></pre>
+<p>How string-pulling should consider triggers by default.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_PathAutoCalculateDistance"></a></p>
+<h3 id="pathautocalculatedistance">PathAutoCalculateDistance</h3>
+<pre><code class="language-csharp">public float PathAutoCalculateDistance { get; set; }
+</code></pre>
+<p>The default distance to automatically recalculate the path from.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovementConfiguration_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

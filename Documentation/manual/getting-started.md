@@ -2,6 +2,12 @@
 
 To get started with Kaiju Agents, follow the [installation instructions](https://agents.kaijusolutions.ca/#installation "Installation Instructions") or use the [template project](https://agents.kaijusolutions.ca/#template-project "Template Project").
 
+## Install the package
+
+Use Unity 6.7 beta or Unity 7 alpha. In Window > Package Management > Package Manager choose Install package from git URL and enter `https://github.com/Kaiju-Solutions/Kaiju-Agents.git#release`. Git must be installed. The package brings in Entities, Burst, navigation and Unity Pipeline. Unity Graph Toolkit supplies visual decision authoring. ML-Agents is optional.
+
+Open the [simulation guide](manager.md) for a minimal entity-only agent or add a Kaiju Transform Agent from the GameObject menu. Use the [CLI guide](pipeline.md) for scene creation and project-local skill installation.
+
 ## Recommendations
 
 To make your workflow more convenient, it is recommended to set the [game view](https://docs.unity3d.com/Manual/GameView.html "Game View") to `Play Unfocused`. This setting can be found towards the center-right of the [game view](https://docs.unity3d.com/Manual/GameView.html "Game View"). This is recommended as agent visualizations are only shown in the [scene view](https://docs.unity3d.com/Manual/UsingTheSceneView.html "Scene View"), and either of the other two modes in the [game view](https://docs.unity3d.com/Manual/GameView.html "Game View") can result in having your [scene view](https://docs.unity3d.com/Manual/UsingTheSceneView.html "Scene View") minimized depending on your editor layout.

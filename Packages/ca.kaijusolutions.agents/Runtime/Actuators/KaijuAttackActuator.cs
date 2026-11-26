@@ -177,7 +177,7 @@ namespace KaijuSolutions.Agents.Actuators
             // Ensure the charge time has passed.
             if (_charging < charge)
             {
-                _charging += Time.deltaTime;
+                _charging += StepDeltaTime;
                 return KaijuActuatorState.Executing;
             }
             
@@ -255,12 +255,12 @@ namespace KaijuSolutions.Agents.Actuators
         /// <summary>
         /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
         /// </summary>
-        private void FixedUpdate()
+        protected override void Tick(float delta)
         {
             // Cool down between uses.
             if (_cooling > 0)
             {
-                _cooling -= Time.deltaTime;
+                _cooling -= delta;
             }
         }
         

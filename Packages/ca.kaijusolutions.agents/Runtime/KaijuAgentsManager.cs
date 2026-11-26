@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using UnityEngine;
+using Unity.Entities;
 #if UNITY_EDITOR
 using KaijuSolutions.Agents.Movement;
 using UnityEditor;
@@ -50,90 +50,28 @@ namespace KaijuSolutions.Agents
             }
         }
 
-        /// <summary>
-        /// Cache <see cref="KaijuSolutions.Agents.KaijuAgent"/>s paired to their identifiers.
-        /// </summary>
-        private static readonly Dictionary<uint, HashSet<KaijuAgent>> AgentIdentifiers = new();
-        
-        /// <summary>
-        /// All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
-        /// </summary>
-        public static IReadOnlyCollection<KaijuAgent> Agents
+        // Early registrations can precede world initialization, especially with a custom bootstrap.
+        private static KaijuAgentRegistry _pendingRegistry;
+
+        internal static KaijuAgentRegistry Registry
         {
             get
             {
-#if UNITY_EDITOR
-                if (!Application.isPlaying)
+                var world = World.DefaultGameObjectInjectionWorld;
+                var system = world?.IsCreated == true ? world.GetExistingSystemManaged<KaijuFrameSimulationSystem>() : null;
+                if (system == null) return _pendingRegistry ??= new KaijuAgentRegistry();
+                if (system.Registry == null)
                 {
-                    return Array.Empty<KaijuAgent>();
+                    system.Registry = _pendingRegistry ?? new KaijuAgentRegistry();
+                    _pendingRegistry = null;
                 }
-#endif
-                return AllAgents;
+                return system.Registry;
             }
         }
 
-        /// <summary>
-        /// The number of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
-        /// </summary>
-        public static int AgentsCount
-        {
-            get
-            {
+        public static IReadOnlyCollection<KaijuAgent> Agents => Registry.Agents;
+        public static int AgentsCount => Registry.AgentsCount;
 #if UNITY_EDITOR
-                if (!Application.isPlaying)
-                {
-                    return 0;
-                }
-#endif
-                return AllAgents.Count;
-            }
-        }
-
-        /// <summary>
-        /// Cache all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> AllAgents = new();
-        
-        /// <summary>
-        /// Cache for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which tick in the main update loop.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> TickAgents = new();
-        
-        /// <summary>
-        /// Cache for <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which tick during the physics update loop.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> PhysicsAgents = new();
-        
-        /// <summary>
-        /// Cache <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have been disabled for reuse.
-        /// </summary>
-        private static readonly Dictionary<Type, HashSet<KaijuAgent>> DisabledAgents = new();
-        
-        /// <summary>
-        /// Helper empty <see cref="KaijuSolutions.Agents.KaijuAgent"/>s array for returning defaults.
-        /// </summary>
-        private static readonly KaijuAgent[] EmptyAgents = Array.Empty<KaijuAgent>();
-        
-        /// <summary>
-        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the spawning of.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> PendingAdditions = new();
-        
-        /// <summary>
-        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the removal of.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> PendingRemovals = new();
-        
-        /// <summary>
-        /// Pending <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to handle the removal of and cache.
-        /// </summary>
-        private static readonly HashSet<KaijuAgent> PendingCachedRemovals = new();
-#if UNITY_EDITOR
-        /// <summary>
-        /// All currently selected <see cref="KaijuSolutions.Agents.KaijuAgent"/>s in the editor.
-        /// </summary>
-        private readonly HashSet<KaijuAgent> _editorSelectedAgents = new();
-        
         /// <summary>
         /// Add a label of text in the scene view in the editor.
         /// </summary>
@@ -326,14 +264,7 @@ namespace KaijuSolutions.Agents
         private static void Domain()
         {
             _instance = null;
-            AllAgents.Clear();
-            TickAgents.Clear();
-            PhysicsAgents.Clear();
-            AgentIdentifiers.Clear();
-            DisabledAgents.Clear();
-            PendingAdditions.Clear();
-            PendingRemovals.Clear();
-            PendingCachedRemovals.Clear();
+            _pendingRegistry = null;
             _ = EditorAgentColor;
             _editorAgentsLabelStyle = null;
         }
@@ -342,152 +273,26 @@ namespace KaijuSolutions.Agents
         /// Register an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> to register.</param>
-        public static void Register(KaijuAgent agent)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-#endif
-            // Ensure there is a manager.
-            _ = Instance;
-            
-            // Remove from cached disabled.
-            Type type = agent.GetType();
-            if (DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
-            {
-                set.Remove(agent);
-                if (set.Count < 1)
-                {
-                    DisabledAgents.Remove(type);
-                }
-            }
-
-            PendingAdditions.Add(agent);
-        }
+        public static void Register(KaijuAgent agent) => Registry.Register(agent);
         
         /// <summary>
         /// Unregister an <see cref="KaijuSolutions.Agents.KaijuAgent"/> for movement.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/> to unregister.</param>
         /// <param name="cache">If this <see cref="KaijuSolutions.Agents.KaijuAgent"/> should be cached.</param>
-        public static void Unregister(KaijuAgent agent, bool cache = true)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-            
-            if (_instance)
-            {
-                _instance._editorSelectedAgents.Remove(agent);
-            }
-#endif
-            if (cache)
-            {
-                PendingCachedRemovals.Add(agent);
-            }
-            else
-            {
-                PendingRemovals.Add(agent);
-            }
-        }
+        public static void Unregister(KaijuAgent agent, bool cache = true) => Registry.Unregister(agent, cache);
         
         /// <summary>
         /// Handle all pending agents.
         /// </summary>
-        private static void HandlePending()
-        {
-            foreach (KaijuAgent agent in PendingAdditions)
-            {
-                AllAgents.Add(agent);
-                
-                // Add identifiers.
-                foreach (uint identifier in agent.Identifiers)
-                {
-                    AddIdentifier(agent, identifier);
-                }
-                
-                if (agent.PhysicsAgent)
-                {
-                    PhysicsAgents.Add(agent);
-                }
-                else
-                {
-                    TickAgents.Add(agent);
-                }
-            }
-            
-            PendingAdditions.Clear();
-            
-            foreach (KaijuAgent agent in PendingCachedRemovals)
-            {
-                AllAgents.Remove(agent);
-                
-                // Remove identifiers.
-                foreach (uint identifier in agent.Identifiers)
-                {
-                    RemoveIdentifier(agent, identifier);
-                }
-                
-                if (agent.PhysicsAgent)
-                {
-                    PhysicsAgents.Remove(agent);
-                }
-                else
-                {
-                    TickAgents.Remove(agent);
-                }
-                
-                // Cache for reuse.
-                Type type = agent.GetType();
-                if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
-                {
-                    set = new(1);
-                    DisabledAgents.Add(type, set);
-                }
-                
-                set.Add(agent);
-            }
-            
-            PendingCachedRemovals.Clear();
-            
-            foreach (KaijuAgent agent in PendingRemovals)
-            {
-                AllAgents.Remove(agent);
-                
-                // Remove identifiers.
-                foreach (uint identifier in agent.Identifiers)
-                {
-                    RemoveIdentifier(agent, identifier);
-                }
-                
-                if (agent.PhysicsAgent)
-                {
-                    PhysicsAgents.Remove(agent);
-                }
-                else
-                {
-                    TickAgents.Remove(agent);
-                }
-                
-                // Ensure this is not cached.
-                Type type = agent.GetType();
-                if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
-                {
-                    continue;
-                }
-                
-                if (set.Remove(agent) && set.Count < 1)
-                {
-                    DisabledAgents.Remove(type);
-                }
-            }
-            
-            PendingRemovals.Clear();
-        }
+        internal static void BeginSensing() => Registry.BeginSensing();
+        internal static void EndSensing() => Registry.EndSensing();
+
+        /// <summary>Fill a caller-owned list with registered agents within the XZ or XYZ radius.</summary>
+        public static int FindNearby(Vector3 origin, float radius, List<KaijuAgent> results, bool spherical = false) =>
+            Registry.FindNearby(origin, radius, results, spherical);
+
+        internal static void HandlePending(EntityManager entities) => Registry.HandlePending(entities);
         
         /// <summary>
         /// Get a cached <see cref="KaijuSolutions.Agents.KaijuAgent"/> to spawn.
@@ -495,229 +300,52 @@ namespace KaijuSolutions.Agents
         /// <param name="components">All components which must be found on the <see cref="KaijuSolutions.Agents.KaijuAgent"/>. This will check in children as well.</param>
         /// <typeparam name="T">The type of <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</typeparam>
         /// <returns>A cached <see cref="KaijuSolutions.Agents.KaijuAgent"/> if one is found, otherwise NULL.</returns>
-        public static T GetCached<T>(ICollection<string> components = null) where T : KaijuAgent
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return null;
-            }
-#endif
-            // Nothing to do if no cached agents.
-            Type type = typeof(T);
-            if (!DisabledAgents.TryGetValue(type, out HashSet<KaijuAgent> set))
-            {
-                return null;
-            }
-            
-            KaijuAgent agent = null;
-            if (components == null)
-            {
-                // Get the first cached agent if we don't care about components.
-                agent = set.First();
-                set.Remove(agent);
-            }
-            else
-            {
-                // Otherwise, search to find a candidate agent which meets our component requirements.
-                foreach (KaijuAgent candidate in set)
-                {
-                    // Get all types on the agent and its children. As this object is inactive, get all inactive items.
-                    Component[] attached = candidate.GetComponentsInChildren<Component>(includeInactive: true);
-                    Type[] types = new Type[attached.Length];
-                    for (int i = 0; i < attached.Length; i++)
-                    {
-                        types[i] = attached[i].GetType();
-                    }
-                    
-                    // See if this agent has all the components we need.
-                    bool valid = true;
-                    foreach (string c in components)
-                    {
-                        // For each component, assume it does not have it until it is found.
-                        valid = false;
-                        foreach (Type exists in types)
-                        {
-                            if (c != exists.Name)
-                            {
-                                continue;
-                            }
-                            
-                            // If we found a match, stop looking for that one.
-                            valid = true;
-                            break;
-                        }
-                        
-                        // If the component was not found, rule this out as a candidate and try the next one.
-                        if (!valid)
-                        {
-                            break;
-                        }
-                    }
-                    
-                    // If this candidate passed the requirements, use it.
-                    if (!valid)
-                    {
-                        continue;
-                    }
-                    
-                    agent = candidate;
-                    set.Remove(candidate);
-                    break;
-                }
-            }
-            
-            // If this set is now empty, remove it.
-            if (set.Count < 1)
-            {
-                DisabledAgents.Remove(type);
-            }
-            
-            return agent != null ? agent as T : null;
-        }
+        public static T GetCached<T>(ICollection<string> components = null) where T : KaijuAgent => Registry.GetCached<T>(components);
+
+        internal static KaijuAgent GetCachedPrefab(KaijuAgent prefab, bool flight) => Registry.GetCached<KaijuAgent>(flight: flight, prefab: prefab);
+
+        internal static T GetCached<T>(ICollection<string> components, bool flight) where T : KaijuAgent => Registry.GetCached<T>(components, flight);
         
         /// <summary>
         /// Add an identifier to an <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no use for manually calling this.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <param name="identifier">The identifier.</param>
-        public static void AddIdentifier(KaijuAgent agent, uint identifier)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-#endif
-            if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
-            {
-                set = new();
-                AgentIdentifiers.Add(identifier, set);
-            }
-            
-            set.Add(agent);
-        }
+        public static void AddIdentifier(KaijuAgent agent, uint identifier) => Registry.AddIdentifier(agent, identifier);
         
         /// <summary>
         /// Remove an identifier from an <see cref="KaijuSolutions.Agents.KaijuAgent"/>. There is no use for manually calling this.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
         /// <param name="identifier">The identifier.</param>
-        public static void RemoveIdentifier(KaijuAgent agent, uint identifier)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-#endif
-            if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
-            {
-                return;
-            }
-            
-            set.Remove(agent);
-            if (set.Count < 1)
-            {
-                AgentIdentifiers.Remove(identifier);
-            }
-        }
+        public static void RemoveIdentifier(KaijuAgent agent, uint identifier) => Registry.RemoveIdentifier(agent, identifier);
         
         /// <summary>
         /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s with a given identifier.
         /// </summary>
         /// <param name="identifier">The identifier.</param>
         /// <returns>All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s with a given identifier.</returns>
-        public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return Array.Empty<KaijuAgent>();
-            }
-#endif
-            return AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set) ? set : EmptyAgents;
-        }
+        public static IReadOnlyCollection<KaijuAgent> IdentifiedAgents(uint identifier) => Registry.IdentifiedAgents(identifier);
         
         /// <summary>
         /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifiers. The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s are added to the identified parameter.
         /// </summary>
         /// <param name="identified">Updated to contain all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which were identified.</param>
         /// <param name="identifiers">The identifiers.</param>
-        public static void IdentifiedAgents([NotNull] ICollection<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-#endif
-            identified.Clear();
-            
-            foreach (uint identifier in identifiers)
-            {
-                if (!AgentIdentifiers.TryGetValue(identifier, out HashSet<KaijuAgent> set))
-                {
-                    continue;
-                }
-                
-                foreach (KaijuAgent agent in set)
-                {
-                    identified.Add(agent);
-                }
-            }
-        }
+        public static void IdentifiedAgents([NotNull] ICollection<KaijuAgent> identified, [NotNull] IEnumerable<uint> identifiers) => Registry.IdentifiedAgents(identified, identifiers);
         
         /// <summary>
         /// Get all <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifiers.
         /// </summary>
         /// <param name="identifiers">The identifiers.</param>
         /// <returns>All <see cref="KaijuSolutions.Agents.KaijuAgent"/>s which have any of the given identifier.</returns>
-        public static HashSet<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers)
-        {
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                return new();
-            }
-#endif
-            HashSet<KaijuAgent> identified = new();
-            IdentifiedAgents(identified, identifiers);
-            return identified;
-        }
+        public static HashSet<KaijuAgent> IdentifiedAgents([NotNull] IEnumerable<uint> identifiers) => Registry.IdentifiedAgents(identifiers);
 #if UNITY_EDITOR
         /// <summary>
         /// Validate the identifiers of an <see cref="KaijuSolutions.Agents.KaijuAgent"/> in the editor. There is no use for manually calling this.
         /// </summary>
         /// <param name="agent">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>.</param>
-        public static void EditorValidateIdentifiers(KaijuAgent agent)
-        {
-            // Store empty instances.
-            HashSet<uint> empty = new(AgentIdentifiers.Count);
-            
-            // Remove all currently cached identifiers.
-            foreach (KeyValuePair<uint, HashSet<KaijuAgent>> pair in AgentIdentifiers)
-            {
-                // Mark if this set is now empty.
-                if (AgentIdentifiers[pair.Key].Remove(agent) && AgentIdentifiers[pair.Key].Count < 1)
-                {
-                    empty.Add(pair.Key);
-                }
-            }
-            
-            // Add all new identifiers, flagging ones which are no longer empty.
-            foreach (uint identifier in agent.Identifiers)
-            {
-                AddIdentifier(agent, identifier);
-                empty.Remove(identifier);
-            }
-            
-            // Remove empty sets.
-            foreach (uint identifier in empty)
-            {
-                AgentIdentifiers.Remove(identifier);
-            }
-        }
+        public static void EditorValidateIdentifiers(KaijuAgent agent) => Registry.EditorValidateIdentifiers(agent);
 #endif
         /// <summary>
         /// This function is called when the object becomes enabled and active.
@@ -741,115 +369,19 @@ namespace KaijuSolutions.Agents
             _instance = this;
             DontDestroyOnLoad(gameObject);
             Application.runInBackground = true;
-#if UNITY_EDITOR
-            Selection.selectionChanged += SelectionChanged;
-            SelectionChanged();
-#endif
         }
-#if UNITY_EDITOR
-        /// <summary>
-        /// This function is called when the behaviour becomes disabled.
-        /// </summary>
-        private void OnDisable()
-        {
-            Selection.selectionChanged -= SelectionChanged;
-        }
-        
-        /// <summary>
-        /// See if the active selection has changed.
-        /// </summary>
-        private void SelectionChanged()
-        {
-            _editorSelectedAgents.Clear();
-            
-            if (!Application.isPlaying)
-            {
-                return;
-            }
-            
-            foreach (Transform t in Selection.transforms)
-            {
-                if (t.GetComponent<KaijuAgent>() is { } a)
-                {
-                    _editorSelectedAgents.Add(a);
-                }
-            }
-        }
-#endif
-        /// <summary>
-        /// Update is called every frame, if the MonoBehaviour is enabled.
-        /// </summary>
-        private void Update()
-        {
-            HandlePending();
-            
-            float delta = Time.deltaTime;
-            
-            Move(TickAgents, delta);
-            
-            foreach (KaijuAgent agent in AllAgents)
-            {
-                agent.Look(delta);
-            }
-        }
-        
-        /// <summary>
-        /// Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
-        /// </summary>
-        private void FixedUpdate()
-        {
-            HandlePending();
-            
-            float delta = Time.deltaTime;
-            
-            // Step all physics agents.
-            Move(PhysicsAgents, delta);
-            
-            // Run automatic sensors.
-            foreach (KaijuAgent agent in AllAgents)
-            {
-                agent.SenseAutomatic();
-            }
-            
-            // Run actuators.
-            foreach (KaijuAgent agent in AllAgents)
-            {
-                agent.Act();
-            }
-            
-            // All agents calculate their velocity.
-            foreach (KaijuAgent agent in AllAgents)
-            {
-                agent.CalculateVelocity(delta);
-            }
-        }
-        
-        /// <summary>
-        /// Move a set of <see cref="KaijuSolutions.Agents.KaijuAgent"/>s.
-        /// </summary>
-        /// <param name="agents">The <see cref="KaijuSolutions.Agents.KaijuAgent"/>s to move.</param>
-        /// <param name="delta">The time step.</param>
-        private static void Move(HashSet<KaijuAgent> agents, float delta)
-        {
-            foreach (KaijuAgent agent in agents)
-            {
-                agent.Move(delta);
-            }
-        }
+
 #if UNITY_EDITOR
         /// <summary>
         /// Implement OnDrawGizmos if you want to draw gizmos that are also pickable and always drawn.
         /// </summary>
-        private void OnDrawGizmos()
+        [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
+        private static void DrawAgent(KaijuAgent agent, GizmoType gizmo)
         {
-            bool labels = AllAgents.Count > 1 && KaijuMovementManager.EditorVisualizationsLabels;
-            
-            foreach (KaijuAgent agent in KaijuMovementManager.EditorVisualizationsAll ? AllAgents : _editorSelectedAgents)
+            if (Application.isPlaying && agent.isActiveAndEnabled &&
+                (KaijuMovementManager.EditorVisualizationsAll || (gizmo & GizmoType.Selected) != 0))
             {
-                if (agent)
-                {
-                    agent.EditorVisualize(labels);
-                }
+                agent.EditorVisualize(AgentsCount > 1 && KaijuMovementManager.EditorVisualizationsLabels);
             }
         }
 #endif

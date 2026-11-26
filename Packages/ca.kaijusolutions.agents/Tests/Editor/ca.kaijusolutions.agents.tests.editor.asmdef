@@ -1,0 +1,18 @@
+{
+  "versionDefines": [],
+  "name": "ca.kaijusolutions.agents.tests.editor",
+  "references": [
+    "ca.kaijusolutions.agents",
+    "Unity.Entities",
+    "Unity.Transforms",
+    "Unity.Mathematics",
+    "ca.kaijusolutions.agents.editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": false
+}

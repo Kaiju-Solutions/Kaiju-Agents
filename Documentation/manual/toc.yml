@@ -18,14 +18,14 @@ items:
       href: developer-ui.md
 - name: Movement
   href: movement.md
-- name: Behavior Graph
+- name: Visual decision graphs
   href: behavior-graph.md
 - name: ML-Agents
   href: ml-agents.md
 - name: Utility AI
   href: utility-ai.md
-- name: MCP
-  href: mcp.md
+- name: Unity CLI
+  href: pipeline.md
 - name: Extensions
   href: extensions.md
 - name: Samples and Exercises

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuSensor | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijusensor">KaijuSensor</h1>
+<p>Base sensor class.</p>
+<pre><code class="language-csharp">public abstract class KaijuSensor : KaijuBehaviour
+</code></pre>
+<p><a href="../../Runtime/Sensors/KaijuSensor.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnSense"></a></p>
+<h3 id="onsense">OnSense</h3>
+<pre><code class="language-csharp">public event KaijuAction OnSense
+</code></pre>
+<p>Callback for when this sensor has been run.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnSenseGlobal"></a></p>
+<h3 id="onsenseglobal">OnSenseGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuSensorAction OnSenseGlobal
+</code></pre>
+<p>Global callback for when this sensor has been run.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabled"></a></p>
+<h3 id="onenabled">OnEnabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnEnabled
+</code></pre>
+<p>Callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnabledGlobal"></a></p>
+<h3 id="onenabledglobal">OnEnabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuSensorAction OnEnabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabled"></a></p>
+<h3 id="ondisabled">OnDisabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnDisabled
+</code></pre>
+<p>Callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisabledGlobal"></a></p>
+<h3 id="ondisabledglobal">OnDisabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuSensorAction OnDisabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_automatic"></a></p>
+<h3 id="automatic">automatic</h3>
+<pre><code class="language-csharp">public bool automatic
+</code></pre>
+<p>If this sensor should be run automatically.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_Agent"></a></p>
+<h3 id="agent">Agent</h3>
+<pre><code class="language-csharp">public KaijuAgent Agent { get; private set; }
+</code></pre>
+<p>The KaijuSolutions.Agents.KaijuAgent this sensor is assigned to.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected virtual void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected virtual void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_Sense"></a></p>
+<h3 id="sense">Sense</h3>
+<pre><code class="language-csharp">public void Sense ()
+</code></pre>
+<p>Run the sensor. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_Run"></a></p>
+<h3 id="run">Run</h3>
+<pre><code class="language-csharp">protected abstract void Run ()
+</code></pre>
+<p>Run the sensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_Cleanup"></a></p>
+<h3 id="cleanup">Cleanup</h3>
+<pre><code class="language-csharp">protected virtual void Cleanup ()
+</code></pre>
+<p>Perform any needed resetting of the sensor.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public virtual void EditorVisualize (Vector3 position)
+</code></pre>
+<p>Allow for visualizing in the editor. The position of the KaijuSolutions.Agents.KaijuController.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuSensor_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuSensor ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuSensor ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuSensor s)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

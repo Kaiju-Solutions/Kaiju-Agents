@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flag | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="flag">Flag</h1>
+<p>The flags themselves for Troopers to try and capture.</p>
+<pre><code class="language-csharp">public class Flag : Pickup
+</code></pre>
+<p><a href="../../Samples~/Exercise%203%20-%20Capture%20the%20Flag/Pickups/Flag.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Base3"></a></p>
+<h3 id="base3">Base3</h3>
+<pre><code class="language-csharp">public static Vector3 Base3 (Flag flag)
+</code></pre>
+<p>Get the location of a flag's base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Base"></a></p>
+<h3 id="base">Base</h3>
+<pre><code class="language-csharp">public static Vector2 Base (Flag flag)
+</code></pre>
+<p>Get the location of a flag's base.</p>
+<pre><code class="language-csharp">public static Vector3 Base3 (bool teamOne)
+</code></pre>
+<p>Get the location of a team's base, being where their flag spawns and where to return captured flags to.</p>
+<pre><code class="language-csharp">public static Vector2 Base (bool teamOne)
+</code></pre>
+<p>Get the location of a team's base, being where their flag spawns and where to return captured flags to.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneBase3"></a></p>
+<h3 id="teamonebase3">TeamOneBase3</h3>
+<pre><code class="language-csharp">public static Vector3 TeamOneBase3 { get; }
+</code></pre>
+<p>The location of team one's base, being where their flag spawns and where to return captured flags to.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneBase"></a></p>
+<h3 id="teamonebase">TeamOneBase</h3>
+<pre><code class="language-csharp">public static Vector2 TeamOneBase { get; }
+</code></pre>
+<p>The location of team one's base, being where their flag spawns and where to return captured flags to.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoBase3"></a></p>
+<h3 id="teamtwobase3">TeamTwoBase3</h3>
+<pre><code class="language-csharp">public static Vector3 TeamTwoBase3 { get; }
+</code></pre>
+<p>The location of team two's base, being where their flag spawns and where to return captured flags to.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoBase"></a></p>
+<h3 id="teamtwobase">TeamTwoBase</h3>
+<pre><code class="language-csharp">public static Vector2 TeamTwoBase { get; }
+</code></pre>
+<p>The location of team two's base, being where their flag spawns and where to return captured flags to.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_AtBase"></a></p>
+<h3 id="atbase">AtBase</h3>
+<pre><code class="language-csharp">public static bool AtBase (bool teamOne)
+</code></pre>
+<p>If a flag is at its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneAtBase"></a></p>
+<h3 id="teamoneatbase">TeamOneAtBase</h3>
+<pre><code class="language-csharp">public static bool TeamOneAtBase { get; }
+</code></pre>
+<p>If team one's flag is at its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoAtBase"></a></p>
+<h3 id="teamtwoatbase">TeamTwoAtBase</h3>
+<pre><code class="language-csharp">public static bool TeamTwoAtBase { get; }
+</code></pre>
+<p>If team two's flag is at its base.</p>
+<pre><code class="language-csharp">public static bool AtBase (Flag flag)
+</code></pre>
+<p>If a flag is at its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_BeingCarried"></a></p>
+<h3 id="beingcarried">BeingCarried</h3>
+<pre><code class="language-csharp">public static bool BeingCarried (bool teamOne)
+</code></pre>
+<p>If a flag is being carried.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneBeingCarried"></a></p>
+<h3 id="teamonebeingcarried">TeamOneBeingCarried</h3>
+<pre><code class="language-csharp">public static bool TeamOneBeingCarried { get; }
+</code></pre>
+<p>If team one's flag is being carried.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoBeingCarried"></a></p>
+<h3 id="teamtwobeingcarried">TeamTwoBeingCarried</h3>
+<pre><code class="language-csharp">public static bool TeamTwoBeingCarried { get; }
+</code></pre>
+<p>If team two's flag is being carried.</p>
+<pre><code class="language-csharp">public static bool BeingCarried (Flag flag)
+</code></pre>
+<p>If a flag is being carried.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Carrier"></a></p>
+<h3 id="carrier">Carrier</h3>
+<pre><code class="language-csharp">public static Trooper Carrier (bool teamOne)
+</code></pre>
+<p>The Trooper which is carrying a flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneCarrier"></a></p>
+<h3 id="teamonecarrier">TeamOneCarrier</h3>
+<pre><code class="language-csharp">public static Trooper TeamOneCarrier { get; }
+</code></pre>
+<p>The Trooper carrying team one's flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoCarrier"></a></p>
+<h3 id="teamtwocarrier">TeamTwoCarrier</h3>
+<pre><code class="language-csharp">public static Trooper TeamTwoCarrier { get; }
+</code></pre>
+<p>The Trooper carrying team two's flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_DistanceToBase"></a></p>
+<h3 id="distancetobase">DistanceToBase</h3>
+<pre><code class="language-csharp">public static float DistanceToBase (bool teamOne)
+</code></pre>
+<p>The distance of a team's flag to its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneDistanceToBase"></a></p>
+<h3 id="teamonedistancetobase">TeamOneDistanceToBase</h3>
+<pre><code class="language-csharp">public static float TeamOneDistanceToBase { get; }
+</code></pre>
+<p>The distance of team one's flag to its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoDistanceToBase"></a></p>
+<h3 id="teamtwodistancetobase">TeamTwoDistanceToBase</h3>
+<pre><code class="language-csharp">public static float TeamTwoDistanceToBase { get; }
+</code></pre>
+<p>The distance of team two's flag to its base.</p>
+<pre><code class="language-csharp">public static float DistanceToBase (Flag flag)
+</code></pre>
+<p>The distance of a flag to its base.</p>
+<pre><code class="language-csharp">public static Trooper Carrier (Flag flag)
+</code></pre>
+<p>The Trooper which is carrying a flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Flags"></a></p>
+<h3 id="flags">Flags</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;Flag&gt; Flags { get; }
+</code></pre>
+<p>Both flags for easy access.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOneFlag"></a></p>
+<h3 id="teamoneflag">TeamOneFlag</h3>
+<pre><code class="language-csharp">public static Flag TeamOneFlag
+</code></pre>
+<p>Team one's flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamTwoFlag"></a></p>
+<h3 id="teamtwoflag">TeamTwoFlag</h3>
+<pre><code class="language-csharp">public static Flag TeamTwoFlag
+</code></pre>
+<p>Team two's flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_TeamOne"></a></p>
+<h3 id="teamone">TeamOne</h3>
+<pre><code class="language-csharp">public bool TeamOne { get; private set; }
+</code></pre>
+<p>If this is team one's flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Interact"></a></p>
+<h3 id="interact">Interact</h3>
+<pre><code class="language-csharp">public override bool Interact ([NotNull] Trooper trooper)
+</code></pre>
+<p>What to do when interacted with.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Return"></a></p>
+<h3 id="return">Return</h3>
+<pre><code class="language-csharp">public void Return ()
+</code></pre>
+<p>Return the flag to its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_Drop"></a></p>
+<h3 id="drop">Drop</h3>
+<pre><code class="language-csharp">public void Drop ()
+</code></pre>
+<p>Drop this flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Flag_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

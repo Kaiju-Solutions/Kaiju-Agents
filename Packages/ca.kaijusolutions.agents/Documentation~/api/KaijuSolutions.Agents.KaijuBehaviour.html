@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuBehaviour | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijubehaviour">KaijuBehaviour</h1>
+<p>Base extended MonoBehaviour providing convenient helpers methods, mainly in relation to position and orientation.</p>
+<pre><code class="language-csharp">public abstract class KaijuBehaviour : MonoBehaviour
+</code></pre>
+<p><a href="../../Runtime/KaijuBehaviour.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPosition"></a></p>
+<h3 id="onpresetposition">OnPreSetPosition</h3>
+<pre><code class="language-csharp">public event KaijuAction OnPreSetPosition
+</code></pre>
+<p>Callback for before the position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetPositionGlobal"></a></p>
+<h3 id="onpresetpositionglobal">OnPreSetPositionGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnPreSetPositionGlobal
+</code></pre>
+<p>Global callback for before the position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetPosition"></a></p>
+<h3 id="onsetposition">OnSetPosition</h3>
+<pre><code class="language-csharp">public event KaijuAction OnSetPosition
+</code></pre>
+<p>Callback for when the position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetPositionGlobal"></a></p>
+<h3 id="onsetpositionglobal">OnSetPositionGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnSetPositionGlobal
+</code></pre>
+<p>Global callback for when the position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientation"></a></p>
+<h3 id="onpresetorientation">OnPreSetOrientation</h3>
+<pre><code class="language-csharp">public event KaijuAction OnPreSetOrientation
+</code></pre>
+<p>Callback for before the orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetOrientationGlobal"></a></p>
+<h3 id="onpresetorientationglobal">OnPreSetOrientationGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnPreSetOrientationGlobal
+</code></pre>
+<p>Global callback for before the orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientation"></a></p>
+<h3 id="onsetorientation">OnSetOrientation</h3>
+<pre><code class="language-csharp">public event KaijuAction OnSetOrientation
+</code></pre>
+<p>Callback for when the orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetOrientationGlobal"></a></p>
+<h3 id="onsetorientationglobal">OnSetOrientationGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnSetOrientationGlobal
+</code></pre>
+<p>Global callback for when the orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScale"></a></p>
+<h3 id="onpresetscale">OnPreSetScale</h3>
+<pre><code class="language-csharp">public event KaijuAction OnPreSetScale
+</code></pre>
+<p>Callback for before the scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnPreSetScaleGlobal"></a></p>
+<h3 id="onpresetscaleglobal">OnPreSetScaleGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnPreSetScaleGlobal
+</code></pre>
+<p>Global callback for before the scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetScale"></a></p>
+<h3 id="onsetscale">OnSetScale</h3>
+<pre><code class="language-csharp">public event KaijuAction OnSetScale
+</code></pre>
+<p>Callback for when the scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OnSetScaleGlobal"></a></p>
+<h3 id="onsetscaleglobal">OnSetScaleGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuBehaviourAction OnSetScaleGlobal
+</code></pre>
+<p>Global callback for when the scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Position"></a></p>
+<h3 id="position">Position</h3>
+<pre><code class="language-csharp">public Vector2 Position { get; set; }
+</code></pre>
+<p>The position vector along the main XZ axis.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Position3"></a></p>
+<h3 id="position3">Position3</h3>
+<pre><code class="language-csharp">public Vector3 Position3 { get; set; }
+</code></pre>
+<p>The position along all axes.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition"></a></p>
+<h3 id="localposition">LocalPosition</h3>
+<pre><code class="language-csharp">public Vector2 LocalPosition { get; set; }
+</code></pre>
+<p>The position vector along the main XZ axis.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalPosition3"></a></p>
+<h3 id="localposition3">LocalPosition3</h3>
+<pre><code class="language-csharp">public Vector3 LocalPosition3 { get; set; }
+</code></pre>
+<p>The position along all axes.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_X"></a></p>
+<h3 id="x">X</h3>
+<pre><code class="language-csharp">public float X { get; set; }
+</code></pre>
+<p>The X position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalX"></a></p>
+<h3 id="localx">LocalX</h3>
+<pre><code class="language-csharp">public float LocalX { get; set; }
+</code></pre>
+<p>The local X position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Y"></a></p>
+<h3 id="y">Y</h3>
+<pre><code class="language-csharp">public float Y { get; set; }
+</code></pre>
+<p>The Y position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalY"></a></p>
+<h3 id="localy">LocalY</h3>
+<pre><code class="language-csharp">public float LocalY { get; set; }
+</code></pre>
+<p>The local Y position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Z"></a></p>
+<h3 id="z">Z</h3>
+<pre><code class="language-csharp">public float Z { get; set; }
+</code></pre>
+<p>The Z position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalZ"></a></p>
+<h3 id="localz">LocalZ</h3>
+<pre><code class="language-csharp">public float LocalZ { get; set; }
+</code></pre>
+<p>The local Y position.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Orientation"></a></p>
+<h3 id="orientation">Orientation</h3>
+<pre><code class="language-csharp">public float Orientation { get; set; }
+</code></pre>
+<p>The main orientation around the Y axis. The difference between this and OrientationY is that setting this will snap the X and Y angles to zero while OrientationY will not change them.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientation"></a></p>
+<h3 id="localorientation">LocalOrientation</h3>
+<pre><code class="language-csharp">public float LocalOrientation { get; set; }
+</code></pre>
+<p>The main local orientation around the Y axis.  The difference between this and LocalOrientationY is that setting this will snap the X and Y angles to zero while LocalOrientationY will not change them.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationAngles"></a></p>
+<h3 id="orientationangles">OrientationAngles</h3>
+<pre><code class="language-csharp">public Vector3 OrientationAngles { get; set; }
+</code></pre>
+<p>Get the orientation of this in angles.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationAngles"></a></p>
+<h3 id="localorientationangles">LocalOrientationAngles</h3>
+<pre><code class="language-csharp">public Vector3 LocalOrientationAngles { get; set; }
+</code></pre>
+<p>Get the local orientation of this in angles.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternion"></a></p>
+<h3 id="orientationquaternion">OrientationQuaternion</h3>
+<pre><code class="language-csharp">public Quaternion OrientationQuaternion { get; set; }
+</code></pre>
+<p>Get the orientation of this as a quaternion. In most instances, it is easier to work with OrientationAngles.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternion"></a></p>
+<h3 id="localorientationquaternion">LocalOrientationQuaternion</h3>
+<pre><code class="language-csharp">public Quaternion LocalOrientationQuaternion { get; set; }
+</code></pre>
+<p>Get the local orientation of this as a quaternion. In most instances, it is easier to work with LocalOrientationAngles.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationX"></a></p>
+<h3 id="orientationx">OrientationX</h3>
+<pre><code class="language-csharp">public float OrientationX { get; set; }
+</code></pre>
+<p>The X orientation of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationX"></a></p>
+<h3 id="localorientationx">LocalOrientationX</h3>
+<pre><code class="language-csharp">public float LocalOrientationX { get; set; }
+</code></pre>
+<p>The local X orientation of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationY"></a></p>
+<h3 id="orientationy">OrientationY</h3>
+<pre><code class="language-csharp">public float OrientationY { get; set; }
+</code></pre>
+<p>The Y orientation of this. The difference between this and Orientation is that Orientation will snap the X and Z angles to zero while this will keep them the same.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationY"></a></p>
+<h3 id="localorientationy">LocalOrientationY</h3>
+<pre><code class="language-csharp">public float LocalOrientationY { get; set; }
+</code></pre>
+<p>The local Y orientation of this. The difference between this and LocalOrientation is that LocalOrientation will snap the X and Z angles to zero while this will keep them the same.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationZ"></a></p>
+<h3 id="orientationz">OrientationZ</h3>
+<pre><code class="language-csharp">public float OrientationZ { get; set; }
+</code></pre>
+<p>The Z orientation of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationZ"></a></p>
+<h3 id="localorientationz">LocalOrientationZ</h3>
+<pre><code class="language-csharp">public float LocalOrientationZ { get; set; }
+</code></pre>
+<p>The local Z orientation of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionX"></a></p>
+<h3 id="orientationquaternionx">OrientationQuaternionX</h3>
+<pre><code class="language-csharp">public float OrientationQuaternionX { get; set; }
+</code></pre>
+<p>The local X value of the orientation quaternion. If you are looking to get or The angle, you may be looking for OrientationX.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionX"></a></p>
+<h3 id="localorientationquaternionx">LocalOrientationQuaternionX</h3>
+<pre><code class="language-csharp">public float LocalOrientationQuaternionX { get; set; }
+</code></pre>
+<p>The local X value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for LocalOrientationX.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionY"></a></p>
+<h3 id="orientationquaterniony">OrientationQuaternionY</h3>
+<pre><code class="language-csharp">public float OrientationQuaternionY { get; set; }
+</code></pre>
+<p>The local Y value of the orientation quaternion. If you are looking to get or The angle, you may be looking for OrientationY.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionY"></a></p>
+<h3 id="localorientationquaterniony">LocalOrientationQuaternionY</h3>
+<pre><code class="language-csharp">public float LocalOrientationQuaternionY { get; set; }
+</code></pre>
+<p>The local Y value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for LocalOrientationY.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionZ"></a></p>
+<h3 id="orientationquaternionz">OrientationQuaternionZ</h3>
+<pre><code class="language-csharp">public float OrientationQuaternionZ { get; set; }
+</code></pre>
+<p>The local Z value of the orientation quaternion. If you are looking to get or The angle, you may be looking for OrientationZ.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionZ"></a></p>
+<h3 id="localorientationquaternionz">LocalOrientationQuaternionZ</h3>
+<pre><code class="language-csharp">public float LocalOrientationQuaternionZ { get; set; }
+</code></pre>
+<p>The local Z value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for LocalOrientationZ.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_OrientationQuaternionW"></a></p>
+<h3 id="orientationquaternionw">OrientationQuaternionW</h3>
+<pre><code class="language-csharp">public float OrientationQuaternionW { get; set; }
+</code></pre>
+<p>The local W value of the orientation quaternion. If you are looking to get or The angle, you may be looking for OrientationX, OrientationY, or OrientationZ.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalOrientationQuaternionW"></a></p>
+<h3 id="localorientationquaternionw">LocalOrientationQuaternionW</h3>
+<pre><code class="language-csharp">public float LocalOrientationQuaternionW { get; set; }
+</code></pre>
+<p>The local W value of the local orientation quaternion. If you are looking to get or The angle, you may be looking for LocalOrientationX, LocalOrientationY, or LocalOrientationZ.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScale"></a></p>
+<h3 id="localscale">LocalScale</h3>
+<pre><code class="language-csharp">public Vector3 LocalScale { get; set; }
+</code></pre>
+<p>The local scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleX"></a></p>
+<h3 id="localscalex">LocalScaleX</h3>
+<pre><code class="language-csharp">public float LocalScaleX { get; set; }
+</code></pre>
+<p>The X local scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleY"></a></p>
+<h3 id="localscaley">LocalScaleY</h3>
+<pre><code class="language-csharp">public float LocalScaleY { get; set; }
+</code></pre>
+<p>The Y local scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalScaleZ"></a></p>
+<h3 id="localscalez">LocalScaleZ</h3>
+<pre><code class="language-csharp">public float LocalScaleZ { get; set; }
+</code></pre>
+<p>The Z local scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScale"></a></p>
+<h3 id="globalscale">GlobalScale</h3>
+<pre><code class="language-csharp">public Vector3 GlobalScale { get; }
+</code></pre>
+<p>The global or lossy scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleX"></a></p>
+<h3 id="globalscalex">GlobalScaleX</h3>
+<pre><code class="language-csharp">public float GlobalScaleX { get; }
+</code></pre>
+<p>The X global or lossy scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleY"></a></p>
+<h3 id="globalscaley">GlobalScaleY</h3>
+<pre><code class="language-csharp">public float GlobalScaleY { get; }
+</code></pre>
+<p>The Y global or lossy scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_GlobalScaleZ"></a></p>
+<h3 id="globalscalez">GlobalScaleZ</h3>
+<pre><code class="language-csharp">public float GlobalScaleZ { get; }
+</code></pre>
+<p>The Z global or lossy scale.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_LocalToWorld"></a></p>
+<h3 id="localtoworld">LocalToWorld</h3>
+<pre><code class="language-csharp">public Matrix4x4 LocalToWorld { get; }
+</code></pre>
+<p>Matrix that transforms a point from local space into world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_WorldToLocal"></a></p>
+<h3 id="worldtolocal">WorldToLocal</h3>
+<pre><code class="language-csharp">public Matrix4x4 WorldToLocal { get; }
+</code></pre>
+<p>Matrix that transforms a point from world space into local space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Forward"></a></p>
+<h3 id="forward">Forward</h3>
+<pre><code class="language-csharp">public Vector2 Forward { get; }
+</code></pre>
+<p>A normalized vector representing the blue axis of thetransformin world space along the X and Z axes.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Forward3"></a></p>
+<h3 id="forward3">Forward3</h3>
+<pre><code class="language-csharp">public Vector3 Forward3 { get; }
+</code></pre>
+<p>A normalized vector representing the blue axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Backwards"></a></p>
+<h3 id="backwards">Backwards</h3>
+<pre><code class="language-csharp">public Vector3 Backwards { get; }
+</code></pre>
+<p>A normalized vector representing the negative blue axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Up"></a></p>
+<h3 id="up">Up</h3>
+<pre><code class="language-csharp">public Vector3 Up { get; }
+</code></pre>
+<p>A normalized vector representing the green axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Down"></a></p>
+<h3 id="down">Down</h3>
+<pre><code class="language-csharp">public Vector3 Down { get; }
+</code></pre>
+<p>A normalized vector representing the negative green axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Right"></a></p>
+<h3 id="right">Right</h3>
+<pre><code class="language-csharp">public Vector3 Right { get; }
+</code></pre>
+<p>A normalized vector representing the red axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Left"></a></p>
+<h3 id="left">Left</h3>
+<pre><code class="language-csharp">public Vector3 Left { get; }
+</code></pre>
+<p>A normalized vector representing the negative red axis of thetransformin world space.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Parent"></a></p>
+<h3 id="parent">Parent</h3>
+<pre><code class="language-csharp">public Transform Parent { get; }
+</code></pre>
+<p>The parent of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Root"></a></p>
+<h3 id="root">Root</h3>
+<pre><code class="language-csharp">public Transform Root { get; }
+</code></pre>
+<p>The topmost parent of this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_ChildCount"></a></p>
+<h3 id="childcount">ChildCount</h3>
+<pre><code class="language-csharp">public int ChildCount { get; }
+</code></pre>
+<p>The number of children this has.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_HasChanged"></a></p>
+<h3 id="haschanged">HasChanged</h3>
+<pre><code class="language-csharp">public bool HasChanged { get; }
+</code></pre>
+<p>Has thetransformchanged since the last time the flag was set to 'false'?</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCount"></a></p>
+<h3 id="hierarchycount">HierarchyCount</h3>
+<pre><code class="language-csharp">public int HierarchyCount { get; }
+</code></pre>
+<p>The number of transforms in the transform's hierarchy data structure.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_HierarchyCapacity"></a></p>
+<h3 id="hierarchycapacity">HierarchyCapacity</h3>
+<pre><code class="language-csharp">public int HierarchyCapacity { get; set; }
+</code></pre>
+<p>Thetransformcapacity of the transform's hierarchy data structure.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Layer"></a></p>
+<h3 id="layer">Layer</h3>
+<pre><code class="language-csharp">public int Layer { get; set; }
+</code></pre>
+<p>Integer identifying the layer the GameObject is assigned to.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_ComponentCount"></a></p>
+<h3 id="componentcount">ComponentCount</h3>
+<pre><code class="language-csharp">public int ComponentCount { get; }
+</code></pre>
+<p>The number of components on the GameObject as an integer value.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_ActiveInHierarchy"></a></p>
+<h3 id="activeinhierarchy">ActiveInHierarchy</h3>
+<pre><code class="language-csharp">public bool ActiveInHierarchy { get; }
+</code></pre>
+<p>The active state of the GameObject in the Scene hierarchy. True if active, false if inactive.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_ActiveSelf"></a></p>
+<h3 id="activeself">ActiveSelf</h3>
+<pre><code class="language-csharp">public bool ActiveSelf { get; }
+</code></pre>
+<p>The local active state of the GameObject. True if active, false if inactive.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_IsStatic"></a></p>
+<h3 id="isstatic">IsStatic</h3>
+<pre><code class="language-csharp">public bool IsStatic { get; set; }
+</code></pre>
+<p>Whether there are any Static Editor Flags set for the GameObject.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_Scene"></a></p>
+<h3 id="scene">Scene</h3>
+<pre><code class="language-csharp">public Scene Scene { get; }
+</code></pre>
+<p>The Scene that contains the GameObject.</p>
+<p><a id="KaijuSolutions_Agents_KaijuBehaviour_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator float ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a float from the Orientation.</p>
+<pre><code class="language-csharp">public static implicit operator float? ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable float from the Orientation.</p>
+<pre><code class="language-csharp">public static implicit operator double ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a double from the Orientation.</p>
+<pre><code class="language-csharp">public static implicit operator double? ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable double from the Orientation.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2 ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a Vector2 from the Position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2? ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable Vector2 from the Position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3 ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a Vector3 from the Position3.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3? ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable Vector3 from the Position3.</p>
+<pre><code class="language-csharp">public static implicit operator Quaternion ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a Quaternion from the OrientationQuaternion.</p>
+<pre><code class="language-csharp">public static implicit operator Quaternion? ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable Quaternion from the OrientationQuaternion.</p>
+<pre><code class="language-csharp">public static implicit operator GameObject ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuBehaviour ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator Transform ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuBehaviour ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator bool (KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a Boolean if the behaviour is active.</p>
+<pre><code class="language-csharp">public static implicit operator bool? (KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a nullable Boolean if the behaviour is active.</p>
+<pre><code class="language-csharp">public static implicit operator string ([NotNull] KaijuBehaviour b)
+</code></pre>
+<p>Implicit conversion to a string.</p></main></body></html>

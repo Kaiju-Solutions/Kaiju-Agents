@@ -1,9 +1,17 @@
-﻿# Manager
+# Agent simulation and the manager API
 
-All scenes will also have an agent manager which is automatically added to the scene as needed. This is a [singleton](https://en.wikipedia.org/wiki/Singleton_pattern "Singleton Pattern") meaning only one instance ever exists. This caches [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents") in the scene for quick access, spawning, and despawning of agents.
+Add an agent to a scene and enter Play Mode. The default Entities world registers the agent and exposes its entity through `KaijuAgent.SimulationEntity` after the next simulation update. Existing scenes can keep their KaijuAgentsManager component. Static registry, identifier and pooling APIs remain available. Accessing the legacy Instance property explicitly creates the compatibility component.
 
-The manager is responsible for controlling all the [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents") in the scene. Every [`FixedUpdate()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html) the manager will in order:
+The fixed-step system moves physics agents using their previous velocity, runs automatic sensors and actuators, gathers weighted movement requests, and integrates the new velocity with Burst. The frame system moves other agents and updates facing. Rigidbody, CharacterController, NavMeshAgent, custom movement callbacks and sensor queries use their UnityEngine implementations on the main thread.
 
-1. Run all automatic [sensors](https://agents.kaijusolutions.ca/manual/sensors.html "Sensors") on all [agents](https://agents.kaijusolutions.ca/manual/agents.html "Agents").
-2. Run any [actuators](https://agents.kaijusolutions.ca/manual/actuators.html "Actuators") which have been set to do so.
-3. Calculate the update [movement](https://agents.kaijusolutions.ca/manual/movement.html "Movement") velocity of all agents.
+## Entity-only agents
+
+Create an entity with `KaijuSteering` and `Unity.Transforms.LocalTransform`. Set the initial transform including scale, DesiredVelocity in world XZ units per second, MaxSpeed, and Acceleration. Each fixed step clamps speed, applies the acceleration blend and integrates the local position. Use unparented entities for world-space motion. With zero acceleration, velocity follows the clamped request immediately. Systems providing input can use UpdateBefore(typeof(KaijuFixedSimulationSystem)) in the fixed-step group.
+
+For a GameObject agent, set Control, MoveSpeed and MoveAcceleration on its MonoBehaviour. Its steering state is gathered each fixed step. Disabling an agent removes its simulation entity on the next simulation update. Re-read SimulationEntity after enabling a pooled agent.
+
+## Steering, sensors and decisions
+
+Add a KaijuMovementInput buffer for weighted steering. Each entry supplies a velocity, seek target or flee target and a weight. For point targets use Value in XZ coordinates. For moving targets set Target to an unparented entity with LocalTransform. Missing targets contribute zero. Inputs add to DesiredVelocity before the speed clamp.
+
+A KaijuRangeSensor reads its Target and Radius and writes Detected during the fixed step. KaijuUtilityScore buffers hold action scores in selection order. Add KaijuDecision to receive Selected from KaijuDecisionSystem after steering. An empty buffer produces -1. Equal scores choose the first candidate. A MonoBehaviour utility brain supplies ScriptableObject consideration scores and receives the selected action through its existing enter, execute and exit callbacks.

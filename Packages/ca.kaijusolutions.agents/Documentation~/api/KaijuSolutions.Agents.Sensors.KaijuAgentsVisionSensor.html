@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsVisionSensor | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsvisionsensor">KaijuAgentsVisionSensor</h1>
+<p>KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T} to see KaijuSolutions.Agents.KaijuAgents. By default, this is more efficient than standard KaijuSolutions.Agents.Sensors.KaijuVisionSensor{T}s as it accesses the cached KaijuSolutions.Agents.KaijuAgents from KaijuAgentsManager.Agents.</p>
+<pre><code class="language-csharp">public class KaijuAgentsVisionSensor : KaijuVisionSensor&lt;KaijuAgent&gt;
+</code></pre>
+<p><a href="../../Runtime/Sensors/KaijuAgentsVisionSensor.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_useNearbyQuery"></a></p>
+<h3 id="usenearbyquery">useNearbyQuery</h3>
+<pre><code class="language-csharp">public bool useNearbyQuery
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_NearbyCandidatesExamined"></a></p>
+<h3 id="nearbycandidatesexamined">NearbyCandidatesExamined</h3>
+<pre><code class="language-csharp">public int NearbyCandidatesExamined { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_DefaultObservables"></a></p>
+<h3 id="defaultobservables">DefaultObservables</h3>
+<pre><code class="language-csharp">protected override IEnumerable&lt;KaijuAgent&gt; DefaultObservables ()
+</code></pre>
+<p>If there are no explicitly defined observable objects, define how to query for default observables.</p>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_Cleanup"></a></p>
+<h3 id="cleanup">Cleanup</h3>
+<pre><code class="language-csharp">protected override void Cleanup ()
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Sensors_KaijuAgentsVisionSensor_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgentsVisionSensor ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgentsVisionSensor ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuAgentsVisionSensor s)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

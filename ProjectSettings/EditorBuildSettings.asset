@@ -6,17 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Samples/Kaiju Agents/1.4.1/Box Destroyer/Box Destroyer.unity
+    path: Assets/Samples/Kaiju Agents/2.0.0/Box Destroyer/Box Destroyer.unity
     guid: 540a32d86e80b0a428bab8ceff6f9a49
   - enabled: 1
-    path: Assets/Samples/Kaiju Agents/1.4.1/Exercise 1 - Cleaner/Cleaner.unity
+    path: Assets/Samples/Kaiju Agents/2.0.0/Exercise 1 - Cleaner/Cleaner.unity
     guid: 3410ca21c3558ae4aa83ebbc4d862fa8
   - enabled: 1
-    path: Assets/Samples/Kaiju Agents/1.4.1/Exercise 2 - Microbes/Microbes.unity
+    path: Assets/Samples/Kaiju Agents/2.0.0/Exercise 2 - Microbes/Microbes.unity
     guid: a2d4a7a6b6551454c911d2e49e4a7304
   - enabled: 1
-    path: Assets/Samples/Kaiju Agents/1.4.1/Exercise 3 - Capture the Flag/Capture the Flag.unity
+    path: Assets/Samples/Kaiju Agents/2.0.0/Exercise 3 - Capture the Flag/Capture the Flag.unity
     guid: ad41be87da8b22e409e913b55ef495e4
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/2.0.0/Floors and Flight/Open Air Patrol.unity
+    guid: 20cb2dcf1dee43da9bc1a77aa9b091ad
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/2.0.0/Floors and Flight/Two Storeys.unity
+    guid: 0cec0dd40a1548acb3ea52c1b766743e
+  - enabled: 1
+    path: Assets/Samples/Kaiju Agents/2.0.0/Visual Decisions/Rescue Decisions.unity
+    guid: 53268bad49ed40d18379ae9fb510d861
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: ac2e9bec2e581d54eb5002277b387897, type: 2}

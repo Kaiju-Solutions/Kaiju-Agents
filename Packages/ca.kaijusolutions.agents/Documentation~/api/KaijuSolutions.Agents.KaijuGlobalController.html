@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuGlobalController | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuglobalcontroller">KaijuGlobalController</h1>
+<p>Base class to inherit for easy interaction with all KaijuSolutions.Agents.KaijuAgents in the scene. Simply override the methods you need to use callbacks without needing to worry about binding. If you override either OnEnable or OnDisable, you must call their respective base methods for binding and cleanup.</p>
+<pre><code class="language-csharp">public abstract class KaijuGlobalController : KaijuBehaviour
+</code></pre>
+<p><a href="../../Runtime/KaijuGlobalController.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected virtual void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected virtual void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetPosition"></a></p>
+<h3 id="onallpresetposition">OnAllPreSetPosition</h3>
+<pre><code class="language-csharp">protected virtual void OnAllPreSetPosition ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for before a KaijuSolutions.Agents.KaijuBehaviour's position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetPosition"></a></p>
+<h3 id="onallsetposition">OnAllSetPosition</h3>
+<pre><code class="language-csharp">protected virtual void OnAllSetPosition ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for when the KaijuSolutions.Agents.KaijuBehaviour's position has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetOrientation"></a></p>
+<h3 id="onallpresetorientation">OnAllPreSetOrientation</h3>
+<pre><code class="language-csharp">protected virtual void OnAllPreSetOrientation ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for before the KaijuSolutions.Agents.KaijuBehaviour's orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetOrientation"></a></p>
+<h3 id="onallsetorientation">OnAllSetOrientation</h3>
+<pre><code class="language-csharp">protected virtual void OnAllSetOrientation ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for when the KaijuSolutions.Agents.KaijuBehaviour's orientation has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllPreSetScale"></a></p>
+<h3 id="onallpresetscale">OnAllPreSetScale</h3>
+<pre><code class="language-csharp">protected virtual void OnAllPreSetScale ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for before the KaijuSolutions.Agents.KaijuBehaviour's scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAllSetScale"></a></p>
+<h3 id="onallsetscale">OnAllSetScale</h3>
+<pre><code class="language-csharp">protected virtual void OnAllSetScale ([NotNull] KaijuBehaviour behaviour)
+</code></pre>
+<p>Global callback for when the KaijuSolutions.Agents.KaijuBehaviour's scale has been set.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveSpeed"></a></p>
+<h3 id="onagentmovespeed">OnAgentMoveSpeed</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentMoveSpeed (KaijuAgent agent)
+</code></pre>
+<p>Global movement speed changed callback for an KaijuSolutions.Agents.KaijuAgent</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMoveAcceleration"></a></p>
+<h3 id="onagentmoveacceleration">OnAgentMoveAcceleration</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentMoveAcceleration (KaijuAgent agent)
+</code></pre>
+<p>Global movement acceleration changed callback for an KaijuSolutions.Agents.KaijuAgent</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookSpeed"></a></p>
+<h3 id="onagentlookspeed">OnAgentLookSpeed</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentLookSpeed (KaijuAgent agent)
+</code></pre>
+<p>Global look speed changed callback for an KaijuSolutions.Agents.KaijuAgent</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutoRotate"></a></p>
+<h3 id="onagentautorotate">OnAgentAutoRotate</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentAutoRotate (KaijuAgent agent)
+</code></pre>
+<p>Global autorotation changed callback for an KaijuSolutions.Agents.KaijuAgent</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentLookTarget"></a></p>
+<h3 id="onagentlooktarget">OnAgentLookTarget</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentLookTarget (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when the look target has been set for an KaijuSolutions.Agents.KaijuAgent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentMove"></a></p>
+<h3 id="onagentmove">OnAgentMove</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentMove (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when an KaijuSolutions.Agents.KaijuAgent has moved.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentEnabled"></a></p>
+<h3 id="onagentenabled">OnAgentEnabled</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentEnabled (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when the a KaijuSolutions.Agents.KaijuAgent has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDisabled"></a></p>
+<h3 id="onagentdisabled">OnAgentDisabled</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentDisabled (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.KaijuAgent has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentDestroyed"></a></p>
+<h3 id="onagentdestroyed">OnAgentDestroyed</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentDestroyed (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.KaijuAgent has finishing becoming destroyed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnAgentAutomaticSense"></a></p>
+<h3 id="onagentautomaticsense">OnAgentAutomaticSense</h3>
+<pre><code class="language-csharp">protected virtual void OnAgentAutomaticSense (KaijuAgent agent)
+</code></pre>
+<p>Global callback for when all automatic KaijuSolutions.Agents.Sensors.KaijuSensors have finished being executed for a KaijuSolutions.Agents.KaijuAgent.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStarted"></a></p>
+<h3 id="onmovementstarted">OnMovementStarted</h3>
+<pre><code class="language-csharp">protected virtual void OnMovementStarted ([NotNull] KaijuMovement movement)
+</code></pre>
+<p>Global callback for a KaijuSolutions.Agents.Movement.KaijuMovement starting.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementStopped"></a></p>
+<h3 id="onmovementstopped">OnMovementStopped</h3>
+<pre><code class="language-csharp">protected virtual void OnMovementStopped ([NotNull] KaijuMovement movement)
+</code></pre>
+<p>Global callback for a KaijuSolutions.Agents.Movement.KaijuMovement stopping.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnMovementPerformed"></a></p>
+<h3 id="onmovementperformed">OnMovementPerformed</h3>
+<pre><code class="language-csharp">protected virtual void OnMovementPerformed ([NotNull] KaijuMovement movement)
+</code></pre>
+<p>Global callback for a KaijuSolutions.Agents.Movement.KaijuMovement being performed.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorSense"></a></p>
+<h3 id="onsensorsense">OnSensorSense</h3>
+<pre><code class="language-csharp">protected virtual void OnSensorSense ([NotNull] KaijuSensor sensor)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been run.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorEnabled"></a></p>
+<h3 id="onsensorenabled">OnSensorEnabled</h3>
+<pre><code class="language-csharp">protected virtual void OnSensorEnabled ([NotNull] KaijuSensor sensor)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnSensorDisabled"></a></p>
+<h3 id="onsensordisabled">OnSensorDisabled</h3>
+<pre><code class="language-csharp">protected virtual void OnSensorDisabled ([NotNull] KaijuSensor sensor)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Sensors.KaijuSensor has been disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorStarted"></a></p>
+<h3 id="onactuatorstarted">OnActuatorStarted</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorStarted ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has started to execute.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorExecuting"></a></p>
+<h3 id="onactuatorexecuting">OnActuatorExecuting</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorExecuting ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator is continuing to execute.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDone"></a></p>
+<h3 id="onactuatordone">OnActuatorDone</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorDone ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has successfully fully completed its action.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorInterrupted"></a></p>
+<h3 id="onactuatorinterrupted">OnActuatorInterrupted</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorInterrupted ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has been interrupted during its execution, cancelling the execution.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorFailed"></a></p>
+<h3 id="onactuatorfailed">OnActuatorFailed</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorFailed ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has failed its execution.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorEnabled"></a></p>
+<h3 id="onactuatorenabled">OnActuatorEnabled</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorEnabled ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_OnActuatorDisabled"></a></p>
+<h3 id="onactuatordisabled">OnActuatorDisabled</h3>
+<pre><code class="language-csharp">protected virtual void OnActuatorDisabled ([NotNull] KaijuActuator actuator)
+</code></pre>
+<p>Global callback for when a KaijuSolutions.Agents.Actuators.KaijuActuator has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_KaijuGlobalController_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuGlobalController ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuGlobalController ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuGlobalController ([NotNull] KaijuAgent a)
+</code></pre>
+<p>Implicit conversion from a KaijuSolutions.Agents.KaijuAgent.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuGlobalController c)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

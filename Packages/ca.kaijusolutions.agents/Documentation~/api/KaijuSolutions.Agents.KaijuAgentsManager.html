@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsManager | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsmanager">KaijuAgentsManager</h1>
+<p>Manager KaijuSolutions.Agents.KaijuAgents.</p>
+<pre><code class="language-csharp">public class KaijuAgentsManager : KaijuBehaviour
+</code></pre>
+<p><a href="../../Runtime/KaijuAgentsManager.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_Instance"></a></p>
+<h3 id="instance">Instance</h3>
+<pre><code class="language-csharp">public static KaijuAgentsManager Instance { get; }
+</code></pre>
+<p>The singleton manager instance.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_Agents"></a></p>
+<h3 id="agents">Agents</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;KaijuAgent&gt; Agents { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_AgentsCount"></a></p>
+<h3 id="agentscount">AgentsCount</h3>
+<pre><code class="language-csharp">public static int AgentsCount { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabel"></a></p>
+<h3 id="editorlabel">EditorLabel</h3>
+<pre><code class="language-csharp">public static void EditorLabel (Vector3 position, [NotNull] string text, Color color)
+</code></pre>
+<p>Add a label of text in the scene view in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLabelOffset"></a></p>
+<h3 id="editorlabeloffset">EditorLabelOffset</h3>
+<pre><code class="language-csharp">public static float EditorLabelOffset { get; set; }
+</code></pre>
+<p>The offset for label placement in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetLabelOffset"></a></p>
+<h3 id="editorresetlabeloffset">EditorResetLabelOffset</h3>
+<pre><code class="language-csharp">public static void EditorResetLabelOffset ()
+</code></pre>
+<p>Reset the offset for label placement in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorAgentColor"></a></p>
+<h3 id="editoragentcolor">EditorAgentColor</h3>
+<pre><code class="language-csharp">public static Color EditorAgentColor { get; set; }
+</code></pre>
+<p>What color KaijuSolutions.Agents.KaijuAgent visualizations should be in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetAgentColor"></a></p>
+<h3 id="editorresetagentcolor">EditorResetAgentColor</h3>
+<pre><code class="language-csharp">public static void EditorResetAgentColor ()
+</code></pre>
+<p>Reset the KaijuSolutions.Agents.KaijuAgent color in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorLoadColor"></a></p>
+<h3 id="editorloadcolor">EditorLoadColor</h3>
+<pre><code class="language-csharp">public static Color EditorLoadColor ([NotNull] string key, Color fallback)
+</code></pre>
+<p>Load a color from preferences in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorSaveColor"></a></p>
+<h3 id="editorsavecolor">EditorSaveColor</h3>
+<pre><code class="language-csharp">public static void EditorSaveColor ([NotNull] string key, Color color)
+</code></pre>
+<p>Save a color to preferences in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorResetColor"></a></p>
+<h3 id="editorresetcolor">EditorResetColor</h3>
+<pre><code class="language-csharp">public static void EditorResetColor ([NotNull] string key)
+</code></pre>
+<p>Reset a color to preferences in the editor.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_Register"></a></p>
+<h3 id="register">Register</h3>
+<pre><code class="language-csharp">public static void Register (KaijuAgent agent)
+</code></pre>
+<p>Register an KaijuSolutions.Agents.KaijuAgent for movement.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_Unregister"></a></p>
+<h3 id="unregister">Unregister</h3>
+<pre><code class="language-csharp">public static void Unregister (KaijuAgent agent, bool cache = true)
+</code></pre>
+<p>Unregister an KaijuSolutions.Agents.KaijuAgent for movement.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_FindNearby"></a></p>
+<h3 id="findnearby">FindNearby</h3>
+<pre><code class="language-csharp">public static int FindNearby (Vector3 origin, float radius, List&lt;KaijuAgent&gt; results, bool spherical = false)
+</code></pre>
+<p>Fill a caller-owned list with registered agents within the XZ or XYZ radius.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_GetCached"></a></p>
+<h3 id="getcached">GetCached</h3>
+<pre><code class="language-csharp">public static T GetCached &lt;T&gt; (ICollection&lt;string&gt; components = null) where T : KaijuAgent
+</code></pre>
+<p>Get a cached KaijuSolutions.Agents.KaijuAgent to spawn.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_AddIdentifier"></a></p>
+<h3 id="addidentifier">AddIdentifier</h3>
+<pre><code class="language-csharp">public static void AddIdentifier (KaijuAgent agent, uint identifier)
+</code></pre>
+<p>Add an identifier to an KaijuSolutions.Agents.KaijuAgent. There is no use for manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_RemoveIdentifier"></a></p>
+<h3 id="removeidentifier">RemoveIdentifier</h3>
+<pre><code class="language-csharp">public static void RemoveIdentifier (KaijuAgent agent, uint identifier)
+</code></pre>
+<p>Remove an identifier from an KaijuSolutions.Agents.KaijuAgent. There is no use for manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_IdentifiedAgents"></a></p>
+<h3 id="identifiedagents">IdentifiedAgents</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;KaijuAgent&gt; IdentifiedAgents (uint identifier)
+</code></pre>
+<p>Get all KaijuSolutions.Agents.KaijuAgents with a given identifier.</p>
+<pre><code class="language-csharp">public static void IdentifiedAgents ([NotNull] ICollection&lt;KaijuAgent&gt; identified, [NotNull] IEnumerable&lt;uint&gt; identifiers)
+</code></pre>
+<p>Get all KaijuSolutions.Agents.KaijuAgents which have any of the given identifiers. The KaijuSolutions.Agents.KaijuAgents are added to the identified parameter.</p>
+<pre><code class="language-csharp">public static HashSet&lt;KaijuAgent&gt; IdentifiedAgents ([NotNull] IEnumerable&lt;uint&gt; identifiers)
+</code></pre>
+<p>Get all KaijuSolutions.Agents.KaijuAgents which have any of the given identifiers.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_EditorValidateIdentifiers"></a></p>
+<h3 id="editorvalidateidentifiers">EditorValidateIdentifiers</h3>
+<pre><code class="language-csharp">public static void EditorValidateIdentifiers (KaijuAgent agent)
+</code></pre>
+<p>Validate the identifiers of an KaijuSolutions.Agents.KaijuAgent in the editor. There is no use for manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsManager_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator short (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a short integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator short? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable short integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator ushort (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to an unsigned short integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator ushort? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned short integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator int (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to an integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator int? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator uint (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to an unsigned integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator uint? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator long (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a long integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator long? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable long integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator ulong (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to an unsigned long integer based AgentsCount.</p>
+<pre><code class="language-csharp">public static implicit operator ulong? (KaijuAgentsManager m)
+</code></pre>
+<p>Implicit conversion to a nullable unsigned long integer based AgentsCount.</p></main></body></html>

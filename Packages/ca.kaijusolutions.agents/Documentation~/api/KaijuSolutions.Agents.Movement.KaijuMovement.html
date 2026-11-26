@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuMovement | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijumovement">KaijuMovement</h1>
+<p>Base movement class.</p>
+<pre><code class="language-csharp">public abstract class KaijuMovement
+</code></pre>
+<p><a href="../../Runtime/Movement/KaijuMovement.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_DefaultWeight"></a></p>
+<h3 id="defaultweight">DefaultWeight</h3>
+<pre><code class="language-csharp">public const float DefaultWeight
+</code></pre>
+<p>The default Weight for movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnStarted"></a></p>
+<h3 id="onstarted">OnStarted</h3>
+<pre><code class="language-csharp">public event KaijuAction OnStarted
+</code></pre>
+<p>Callback for this movement starting.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnStartedGlobal"></a></p>
+<h3 id="onstartedglobal">OnStartedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuMovementAction OnStartedGlobal
+</code></pre>
+<p>Global callback for this movement starting.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnStopped"></a></p>
+<h3 id="onstopped">OnStopped</h3>
+<pre><code class="language-csharp">public event KaijuAction OnStopped
+</code></pre>
+<p>Callback for this movement stopping.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnStoppedGlobal"></a></p>
+<h3 id="onstoppedglobal">OnStoppedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuMovementAction OnStoppedGlobal
+</code></pre>
+<p>Global callback for this movement stopping.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformed"></a></p>
+<h3 id="onperformed">OnPerformed</h3>
+<pre><code class="language-csharp">public event KaijuAction OnPerformed
+</code></pre>
+<p>Callback for this movement being performed.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_OnPerformedGlobal"></a></p>
+<h3 id="onperformedglobal">OnPerformedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuMovementAction OnPerformedGlobal
+</code></pre>
+<p>Global callback for this movement being performed.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Agent"></a></p>
+<h3 id="agent">Agent</h3>
+<pre><code class="language-csharp">public KaijuAgent Agent
+</code></pre>
+<p>The KaijuSolutions.Agents.KaijuAgent the movement is assigned to.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Weight"></a></p>
+<h3 id="weight">Weight</h3>
+<pre><code class="language-csharp">public float Weight { get; set; }
+</code></pre>
+<p>The weight of this movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_KaijuMovement"></a></p>
+<h3 id="kaijumovement_1">KaijuMovement</h3>
+<pre><code class="language-csharp">public KaijuMovement ([NotNull] KaijuAgent agent, float weight = DefaultWeight)
+</code></pre>
+<p>Create The movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Initialize"></a></p>
+<h3 id="initialize">Initialize</h3>
+<pre><code class="language-csharp">protected void Initialize ([NotNull] KaijuAgent agent, float weight = DefaultWeight)
+</code></pre>
+<p>Initialize The movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Setup"></a></p>
+<h3 id="setup">Setup</h3>
+<pre><code class="language-csharp">protected virtual void Setup ()
+</code></pre>
+<p>Handle any additional setup.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Move"></a></p>
+<h3 id="move">Move</h3>
+<pre><code class="language-csharp">public abstract Vector2 Move (Vector2 position, float delta)
+</code></pre>
+<p>Get the movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Move3"></a></p>
+<h3 id="move3">Move3</h3>
+<pre><code class="language-csharp">public virtual Vector3 Move3 (Vector3 position, float delta)
+</code></pre>
+<p>Spatial steering for flight. Existing planar movements contribute horizontal velocity.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Started"></a></p>
+<h3 id="started">Started</h3>
+<pre><code class="language-csharp">public void Started ()
+</code></pre>
+<p>Invoke started callbacks.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Stopped"></a></p>
+<h3 id="stopped">Stopped</h3>
+<pre><code class="language-csharp">public void Stopped ()
+</code></pre>
+<p>Invoke stopped callbacks.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Performed"></a></p>
+<h3 id="performed">Performed</h3>
+<pre><code class="language-csharp">public void Performed ()
+</code></pre>
+<p>Invoke performed callbacks.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Done"></a></p>
+<h3 id="done">Done</h3>
+<pre><code class="language-csharp">public virtual bool Done ()
+</code></pre>
+<p>Determine if the movement is done or not.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Return"></a></p>
+<h3 id="return">Return</h3>
+<pre><code class="language-csharp">public void Return ()
+</code></pre>
+<p>Return this movement.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_Reset"></a></p>
+<h3 id="reset">Reset</h3>
+<pre><code class="language-csharp">protected virtual void Reset ()
+</code></pre>
+<p>Perform any needed reset operations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public void EditorVisualize (Vector3 position)
+</code></pre>
+<p>Allow for visualizing in the editor. The position of the KaijuSolutions.Agents.KaijuController.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_EditorVisualizationColor"></a></p>
+<h3 id="editorvisualizationcolor">EditorVisualizationColor</h3>
+<pre><code class="language-csharp">protected virtual Color EditorVisualizationColor ()
+</code></pre>
+<p>Get the color for visualizations.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_EditorRenderVisualizations"></a></p>
+<h3 id="editorrendervisualizations">EditorRenderVisualizations</h3>
+<pre><code class="language-csharp">protected virtual void EditorRenderVisualizations (Vector3 position)
+</code></pre>
+<p>Render the visualization of the movement. The position of the KaijuSolutions.Agents.KaijuController.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Movement_KaijuMovement_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to an KaijuSolutions.Agents.KaijuAgent from the assigned KaijuSolutions.Agents.KaijuController.Agent.</p>
+<pre><code class="language-csharp">public static implicit operator Transform ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a transform from the assigned KaijuSolutions.Agents.KaijuController.Agent.</p>
+<pre><code class="language-csharp">public static implicit operator GameObject ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a GameObject from the assigned KaijuSolutions.Agents.KaijuController.Agent.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2 ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a Vector2 from the assigned KaijuSolutions.Agents.KaijuController.Agent's position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector2? ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a nullable Vector2 from the assigned KaijuSolutions.Agents.KaijuController.Agent's position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3 ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a Vector3 from the assigned KaijuSolutions.Agents.KaijuController.Agent's position.</p>
+<pre><code class="language-csharp">public static implicit operator Vector3? ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a nullable Vector3 from the assigned KaijuSolutions.Agents.KaijuController.Agent's position.</p>
+<pre><code class="language-csharp">public static implicit operator bool ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a Boolean to see if the KaijuSolutions.Agents.KaijuController.Agent is assigned.</p>
+<pre><code class="language-csharp">public static implicit operator bool? ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a nullable Boolean to see if the KaijuSolutions.Agents.KaijuController.Agent is assigned.</p>
+<pre><code class="language-csharp">public static implicit operator string ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a string.</p>
+<pre><code class="language-csharp">public static implicit operator float ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a float from the Weight.</p>
+<pre><code class="language-csharp">public static implicit operator float? ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a nullable float from the Weight.</p>
+<pre><code class="language-csharp">public static implicit operator double ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a double from the Weight.</p>
+<pre><code class="language-csharp">public static implicit operator double? ([NotNull] KaijuMovement m)
+</code></pre>
+<p>Implicit conversion to a nullable double from the Weight.</p></main></body></html>

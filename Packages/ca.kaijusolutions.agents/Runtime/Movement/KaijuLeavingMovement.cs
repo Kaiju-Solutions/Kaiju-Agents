@@ -56,7 +56,7 @@ namespace KaijuSolutions.Agents.Movement
         /// <returns>If the <see cref="KaijuSolutions.Agents.Movement.KaijuMovement"/> is done or not.</returns>
         public override bool Done()
         {
-            return base.Done() || Agent.Position.Beyond(Target, Distance);
+            return base.Done() || (Agent.FreeFlight ? Agent.Position3.Beyond3(Target3, Distance) : Agent.Position.Beyond(Target, Distance));
         }
         
         /// <summary>

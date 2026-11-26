@@ -21,6 +21,7 @@ namespace KaijuSolutions.Agents.Movement
             {
                 _transform = null;
                 _vector = value;
+                _height = null;
             }
         }
         
@@ -29,11 +30,12 @@ namespace KaijuSolutions.Agents.Movement
         /// </summary>
         public Vector3 Target3
         {
-            get => _transform ? _transform.position : _vector?.Expand() ?? (Agent ? Agent.transform.position : Vector3.zero);
+            get => _transform ? _transform.position : (_vector.HasValue ? new Vector3(_vector.Value.x, _height ?? (Agent && Agent.FreeFlight ? Agent.Position3.y : 0), _vector.Value.y) : (Agent ? Agent.Position3 : Vector3.zero));
             set
             {
                 _transform = null;
                 _vector = value.Flatten();
+                _height = value.y;
             }
         }
         
@@ -104,6 +106,7 @@ namespace KaijuSolutions.Agents.Movement
         /// The internal vector value.
         /// </summary>
         private Vector2? _vector;
+        private float? _height;
         
         /// <summary>
         /// The distance at which we can consider this behaviour done.

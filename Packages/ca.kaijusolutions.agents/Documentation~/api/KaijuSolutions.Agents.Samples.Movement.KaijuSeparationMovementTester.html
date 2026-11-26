@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuSeparationMovementTester | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuseparationmovementtester">KaijuSeparationMovementTester</h1>
+<p>Simple tester for Agents.Movement.KaijuSeparationMovements.</p>
+<pre><code class="language-csharp">public class KaijuSeparationMovementTester : KaijuMovementTester
+</code></pre>
+<p><a href="../../Samples~/Movement/KaijuSeparationMovementTester.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Samples_Movement_KaijuSeparationMovementTester_Distance"></a></p>
+<h3 id="distance">Distance</h3>
+<pre><code class="language-csharp">public float Distance { get; set; }
+</code></pre>
+<p>The distance to interact with other KaijuSolutions.Agents.KaijuAgents from.</p>
+<p><a id="KaijuSolutions_Agents_Samples_Movement_KaijuSeparationMovementTester_Coefficient"></a></p>
+<h3 id="coefficient">Coefficient</h3>
+<pre><code class="language-csharp">public float Coefficient { get; set; }
+</code></pre>
+<p>The coefficient to use for inverse square law separation. Zero will use linear separation.</p>
+<p><a id="KaijuSolutions_Agents_Samples_Movement_KaijuSeparationMovementTester_Identifiers"></a></p>
+<h3 id="identifiers">Identifiers</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;uint&gt; Identifiers { get; }
+</code></pre>
+<p>What types of KaijuSolutions.Agents.KaijuAgents to avoid.</p>
+<p><a id="KaijuSolutions_Agents_Samples_Movement_KaijuSeparationMovementTester_Assign"></a></p>
+<h3 id="assign">Assign</h3>
+<pre><code class="language-csharp">protected override KaijuMovement Assign ([NotNull] KaijuAgent agent)
+</code></pre>
+<p>Assign this Agents.Movement.KaijuMovement to the one of the Agents.</p>
+<p><a id="KaijuSolutions_Agents_Samples_Movement_KaijuSeparationMovementTester_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

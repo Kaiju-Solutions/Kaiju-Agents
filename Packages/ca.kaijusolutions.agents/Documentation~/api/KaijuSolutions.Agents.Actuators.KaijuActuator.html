@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuActuator | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuactuator">KaijuActuator</h1>
+<p>Base actuator class.</p>
+<pre><code class="language-csharp">public abstract class KaijuActuator : KaijuBehaviour
+</code></pre>
+<p><a href="../../Runtime/Actuators/KaijuActuator.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnStarted"></a></p>
+<h3 id="onstarted">OnStarted</h3>
+<pre><code class="language-csharp">public event KaijuAction OnStarted
+</code></pre>
+<p>Callback for when this has started to execute.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnStartedGlobal"></a></p>
+<h3 id="onstartedglobal">OnStartedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnStartedGlobal
+</code></pre>
+<p>Global callback for when this has started to execute.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnExecuting"></a></p>
+<h3 id="onexecuting">OnExecuting</h3>
+<pre><code class="language-csharp">public event KaijuAction OnExecuting
+</code></pre>
+<p>Callback for when this is continuing to execute.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnExecutingGlobal"></a></p>
+<h3 id="onexecutingglobal">OnExecutingGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnExecutingGlobal
+</code></pre>
+<p>Global callback for when this is continuing to execute.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDone"></a></p>
+<h3 id="ondone">OnDone</h3>
+<pre><code class="language-csharp">public event KaijuAction OnDone
+</code></pre>
+<p>Callback for when this has successfully fully completed its action.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDoneGlobal"></a></p>
+<h3 id="ondoneglobal">OnDoneGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnDoneGlobal
+</code></pre>
+<p>Global callback for when this has successfully fully completed its action.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnInterrupted"></a></p>
+<h3 id="oninterrupted">OnInterrupted</h3>
+<pre><code class="language-csharp">public event KaijuAction OnInterrupted
+</code></pre>
+<p>Callback for when this has been interrupted during its execution, cancelling the execution.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnInterruptedGlobal"></a></p>
+<h3 id="oninterruptedglobal">OnInterruptedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnInterruptedGlobal
+</code></pre>
+<p>Global callback for when this has been interrupted during its execution, cancelling the execution.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnFailed"></a></p>
+<h3 id="onfailed">OnFailed</h3>
+<pre><code class="language-csharp">public event KaijuAction OnFailed
+</code></pre>
+<p>Callback for when this has failed its execution.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnFailedGlobal"></a></p>
+<h3 id="onfailedglobal">OnFailedGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnFailedGlobal
+</code></pre>
+<p>Global callback when this has failed its execution.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnEnabled"></a></p>
+<h3 id="onenabled">OnEnabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnEnabled
+</code></pre>
+<p>Callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnEnabledGlobal"></a></p>
+<h3 id="onenabledglobal">OnEnabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnEnabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming enabled.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDisabled"></a></p>
+<h3 id="ondisabled">OnDisabled</h3>
+<pre><code class="language-csharp">public event KaijuAction OnDisabled
+</code></pre>
+<p>Callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDisabledGlobal"></a></p>
+<h3 id="ondisabledglobal">OnDisabledGlobal</h3>
+<pre><code class="language-csharp">public static event KaijuActuatorAction OnDisabledGlobal
+</code></pre>
+<p>Global callback for when this has finishing becoming disabled.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Agent"></a></p>
+<h3 id="agent">Agent</h3>
+<pre><code class="language-csharp">public KaijuAgent Agent { get; private set; }
+</code></pre>
+<p>The KaijuSolutions.Agents.KaijuAgent this actuator is assigned to.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_SimulationEntity"></a></p>
+<h3 id="simulationentity">SimulationEntity</h3>
+<pre><code class="language-csharp">public Entity SimulationEntity { get; private set; }
+</code></pre>
+<p>Set KaijuActuation.Requested on this entity to drive the actuator from ECS.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_IsRunning"></a></p>
+<h3 id="isrunning">IsRunning</h3>
+<pre><code class="language-csharp">public bool IsRunning { get; private set; }
+</code></pre>
+<p>If the actuator is currently running.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_State"></a></p>
+<h3 id="state">State</h3>
+<pre><code class="language-csharp">public KaijuActuatorState State { get; private set; }
+</code></pre>
+<p>The last state of the actuator.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected virtual void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected virtual void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Begin"></a></p>
+<h3 id="begin">Begin</h3>
+<pre><code class="language-csharp">public void Begin ()
+</code></pre>
+<p>If the actuator should act in its next execution step.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_End"></a></p>
+<h3 id="end">End</h3>
+<pre><code class="language-csharp">public void End ()
+</code></pre>
+<p>End the execution of this actuator.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Handle"></a></p>
+<h3 id="handle">Handle</h3>
+<pre><code class="language-csharp">public void Handle ()
+</code></pre>
+<p>Run this actuator if it should be. There is no point in manually calling this.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_StepDeltaTime"></a></p>
+<h3 id="stepdeltatime">StepDeltaTime</h3>
+<pre><code class="language-csharp">protected float StepDeltaTime { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Tick"></a></p>
+<h3 id="tick">Tick</h3>
+<pre><code class="language-csharp">protected virtual void Tick (float delta)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Run"></a></p>
+<h3 id="run">Run</h3>
+<pre><code class="language-csharp">protected abstract KaijuActuatorState Run ()
+</code></pre>
+<p>Run the actuator.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_Cleanup"></a></p>
+<h3 id="cleanup">Cleanup</h3>
+<pre><code class="language-csharp">protected virtual void Cleanup ()
+</code></pre>
+<p>Perform any needed resetting of the actuator.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_EditorVisualize"></a></p>
+<h3 id="editorvisualize">EditorVisualize</h3>
+<pre><code class="language-csharp">public virtual void EditorVisualize (Vector3 position)
+</code></pre>
+<p>Allow for visualizing in the editor. The position of the KaijuSolutions.Agents.KaijuController.Agent.</p>
+<p><a id="KaijuSolutions_Agents_Actuators_KaijuActuator_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuActuator ([NotNull] GameObject o)
+</code></pre>
+<p>Implicit conversion from a GameObject.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuActuator ([NotNull] Transform t)
+</code></pre>
+<p>Implicit conversion from a transform.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgent ([NotNull] KaijuActuator a)
+</code></pre>
+<p>Implicit conversion to a KaijuSolutions.Agents.KaijuAgent.</p></main></body></html>

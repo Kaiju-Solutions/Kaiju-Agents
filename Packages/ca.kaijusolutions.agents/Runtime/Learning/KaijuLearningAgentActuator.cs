@@ -22,6 +22,11 @@ namespace KaijuSolutions.Agents.Learning
 #endif
         [field: SerializeField]
         protected KaijuAgent Agent { get; private set; }
+
+        protected virtual void Awake()
+        {
+            Agent = GetComponent<KaijuAgent>();
+        }
 #if UNITY_EDITOR
         /// <summary>
         /// Editor-only function that Unity calls when the script is loaded or a value changes in the Inspector.

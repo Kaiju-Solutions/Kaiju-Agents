@@ -40,6 +40,9 @@ namespace KaijuSolutions.Agents.Sensors
         [Min(float.Epsilon)]
         [SerializeField]
         private float distance = 20;
+
+        [Tooltip("Use spherical distance and a 3D view cone. Disabled uses the existing XZ field of view.")]
+        public bool spatialVision;
         
         /// <summary>
         /// What angle the vision detection should cover.
@@ -333,17 +336,9 @@ namespace KaijuSolutions.Agents.Sensors
                     return cache[0] ? 1 : 0;
             }
             
-            // Sort all instances.
-            T[] sorted = SortDistance(farthest, mode);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            objects ??= new SortBuffer<T>();
+            return objects.Fill(_observed, value => value, ByDistance(farthest, mode), cache);
         }
         
         /// <summary>
@@ -364,17 +359,9 @@ namespace KaijuSolutions.Agents.Sensors
                     return cache[0] ? 1 : 0;
             }
             
-            // Sort all instances.
-            T[] sorted = SortDistance3(farthest, mode);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            objects ??= new SortBuffer<T>();
+            return objects.Fill(_observed, value => value, ByDistance3(farthest, mode, Agent.Position3), cache);
         }
         
         /// <summary>
@@ -391,17 +378,9 @@ namespace KaijuSolutions.Agents.Sensors
                 return 0;
             }
             
-            // Sort all instances.
-            T[] sorted = SortAngle(mode, farthest);
-            
-            // Copy over what we can.
-            for (int i = 0; i < cache.Length; i++)
-            {
-                cache[i] = i < sorted.Length ? sorted[i] : null;
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            objects ??= new SortBuffer<T>();
+            return objects.Fill(_observed, value => value, ByAngle(mode, farthest), cache);
         }
         
         /// <summary>
@@ -609,7 +588,13 @@ namespace KaijuSolutions.Agents.Sensors
                     return 1;
             }
             
-            return CopyPositions(cache, SortDistancePosition(farthest, mode), normalize);
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            horizontalPositions ??= new SortBuffer<Vector2>();
+            int count = horizontalPositions.Fill(_observed, value => value.Flatten(), ByDistance(farthest, mode), cache);
+            if (normalize)
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position, Agent.Forward, distance);
+            return count;
         }
         
         /// <summary>
@@ -637,7 +622,13 @@ namespace KaijuSolutions.Agents.Sensors
                     return 1;
             }
             
-            return CopyPositions(cache, SortDistancePosition3(farthest, mode), normalize);
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            worldPositions ??= new SortBuffer<Vector3>();
+            int count = worldPositions.Fill(_observed, value => value.transform.position, ByDistance(farthest, mode), cache);
+            if (normalize)
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position3, Agent.Forward3, distance);
+            return count;
         }
         
         /// <summary>
@@ -665,7 +656,13 @@ namespace KaijuSolutions.Agents.Sensors
                     return 1;
             }
             
-            return CopyPositions(cache, SortDistance3Position(farthest, mode), normalize);
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            horizontalPositions ??= new SortBuffer<Vector2>();
+            int count = horizontalPositions.Fill(_observed, value => value.Flatten(), ByDistance3(farthest, mode, Agent.Position.Expand()), cache);
+            if (normalize)
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position, Agent.Forward, distance);
+            return count;
         }
         
         /// <summary>
@@ -693,7 +690,13 @@ namespace KaijuSolutions.Agents.Sensors
                     return 1;
             }
             
-            return CopyPositions(cache, SortDistance3Position3(farthest, mode), normalize);
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            worldPositions ??= new SortBuffer<Vector3>();
+            int count = worldPositions.Fill(_observed, value => value.transform.position, ByDistance3(farthest, mode, Agent.Position3), cache);
+            if (normalize)
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position3, Agent.Forward3, distance);
+            return count;
         }
         
         /// <summary>
@@ -706,7 +709,13 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition([NotNull] Vector2[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
         {
-            return cache.Length < 1 ? 0 : CopyPositions(cache, SortAnglePosition(mode, farthest), normalize);
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            horizontalPositions ??= new SortBuffer<Vector2>();
+            int count = horizontalPositions.Fill(_observed, value => value.Flatten(), ByAngle(mode, farthest), cache);
+            if (normalize)
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position, Agent.Forward, distance);
+            return count;
         }
         
         /// <summary>
@@ -719,74 +728,93 @@ namespace KaijuSolutions.Agents.Sensors
         /// <returns>The number of <see cref="Observed"/> instances fit into the cache.</returns>
         public int SortAnglePosition3([NotNull] Vector3[] cache, KaijuAngleSortMode mode = KaijuAngleSortMode.Magnitude, bool? farthest = false, bool normalize = false)
         {
-            return cache.Length < 1 ? 0 : CopyPositions(cache, SortAnglePosition3(mode, farthest), normalize);
-        }
-        
-        /// <summary>
-        /// Copy sorted positions into a cache.
-        /// </summary>
-        /// <param name="cache">The cache to copy into.</param>
-        /// <param name="sorted">The sorted positions to copy.</param>
-        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
-        /// <returns>The number of instances which fit into the cache.</returns>
-        private int CopyPositions([NotNull] Vector2[] cache, [NotNull] Vector2[] sorted, bool normalize = false)
-        {
-            // Copy over what we can.
+            if (cache.Length == 0) return 0;
+            if (!Agent) { Array.Clear(cache, 0, cache.Length); return 0; }
+            worldPositions ??= new SortBuffer<Vector3>();
+            int count = worldPositions.Fill(_observed, value => value.transform.position, ByAngle(mode, farthest), cache);
             if (normalize)
-            {
-                Vector2 position = Agent;
-                Vector2 forward = Agent.Forward;
-                for (int i = 0; i < cache.Length; i++)
-                {
-                    cache[i] = i < sorted.Length ? sorted[i].Normalize(position, forward, distance) : Vector2.zero;
-                }
-            }
-            else
-            {
-                for (int i = 0; i < cache.Length; i++)
-                {
-                    cache[i] = i < sorted.Length ? sorted[i] : Vector2.zero;
-                }
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+                for (int i = 0; i < count; i++) cache[i] = cache[i].Normalize(Agent.Position3, Agent.Forward3, distance);
+            return count;
         }
-        
-        /// <summary>
-        /// Copy sorted positions into a cache.
-        /// </summary>
-        /// <param name="cache">The cache to copy into.</param>
-        /// <param name="sorted">The sorted positions to copy.</param>
-        /// <param name="normalize">If positions should be normalized between [-1, 1].</param>
-        /// <returns>The number of instances which fit into the cache.</returns>
-        private int CopyPositions([NotNull] Vector3[] cache, [NotNull] Vector3[] sorted, bool normalize = false)
+
+        public int CandidatesExamined { get; private set; }
+        public int SightQueries { get; private set; }
+
+        /// <summary>Find the closest observation using this sensor's distance mode.</summary>
+        public bool TryGetNearest(out T target)
         {
-            // Copy over what we can.
-            if (normalize)
+            target = null;
+            float best = float.PositiveInfinity;
+            if (!Agent) return false;
+            Vector3 origin = Agent.Position3;
+            foreach (T item in _observed)
             {
-                Vector3 position = Agent;
-                Vector3 forward = Agent.Forward3;
-                for (int i = 0; i < cache.Length; i++)
-                {
-                    cache[i] = i < sorted.Length ? sorted[i].Normalize(position, forward, distance) : Vector3.zero;
-                }
+                if (!item) continue;
+                Vector3 offset = item.transform.position - origin;
+                if (!spatialVision) offset.y = 0;
+                float squared = offset.sqrMagnitude;
+                if (squared >= best) continue;
+                best = squared;
+                target = item;
             }
-            else
-            {
-                for (int i = 0; i < cache.Length; i++)
-                {
-                    cache[i] = i < sorted.Length ? sorted[i] : Vector3.zero;
-                }
-            }
-            
-            // Return how many were observed and fit into our cache.
-            return Mathf.Min(sorted.Length, cache.Length);
+            return target;
         }
-        
-        /// <summary>
-        /// All observed items.
-        /// </summary>
+
+        // Keep equal keys in observation order, matching the enumerable sorting API.
+        private sealed class SortBuffer<V> : IComparer<(V value, int order)>
+        {
+            private readonly List<(V value, int order)> values = new();
+            private IComparer<V> comparer;
+
+            public int Fill(HashSet<T> items, Func<T, V> select, IComparer<V> by, V[] destination)
+            {
+                comparer = by;
+                values.Clear();
+                foreach (T item in items)
+                    if (item) values.Add((select(item), values.Count));
+                values.Sort(this);
+                int count = Mathf.Min(values.Count, destination.Length);
+                for (int i = 0; i < count; i++) destination[i] = values[i].value;
+                Array.Clear(destination, count, destination.Length - count);
+                values.Clear();
+                return count;
+            }
+
+            public int Compare((V value, int order) left, (V value, int order) right)
+            {
+                int result = comparer.Compare(left.value, right.value);
+                return result == 0 ? left.order.CompareTo(right.order) : result;
+            }
+        }
+
+        private SortBuffer<T> objects;
+        private SortBuffer<Vector2> horizontalPositions;
+        private SortBuffer<Vector3> worldPositions;
+        private KaijuAgentsDistanceSorter planarSorter;
+        private KaijuAgentsDistance3Sorter spatialSorter;
+        private KaijuAgentsAngleSorter angleSorter;
+
+        private KaijuAgentsDistanceSorter ByDistance(bool farthest, KaijuAngleSortMode? mode)
+        {
+            planarSorter ??= new KaijuAgentsDistanceSorter(Vector2.zero);
+            planarSorter.Set(Agent.Position, farthest, mode, Agent.Forward);
+            return planarSorter;
+        }
+
+        private KaijuAgentsDistance3Sorter ByDistance3(bool farthest, KaijuAngleSortMode? mode, Vector3 origin)
+        {
+            spatialSorter ??= new KaijuAgentsDistance3Sorter(Vector3.zero);
+            spatialSorter.Set(origin, farthest, mode, Agent.Forward);
+            return spatialSorter;
+        }
+
+        private KaijuAgentsAngleSorter ByAngle(KaijuAngleSortMode mode, bool? farthest)
+        {
+            angleSorter ??= new KaijuAgentsAngleSorter();
+            angleSorter.Set(Agent.Position, Agent.Forward, mode, farthest);
+            return angleSorter;
+        }
+
         private readonly HashSet<T> _observed = new();
         
         /// <summary>
@@ -814,19 +842,53 @@ namespace KaijuSolutions.Agents.Sensors
             Transform t = transform;
             Vector3 p3 = t.position;
             Vector2 p = p3.Flatten();
-            Vector2 f = t.forward.Flatten();
+            Vector3 forward = t.forward;
+            Vector2 f = forward.Flatten();
             Vector3 y = new(0, offset, 0);
-            
-            // Loop through all observable objects.
-            foreach (T observable in observables ?? DefaultObservables())
+            float squaredRange = distance * distance;
+            float cone = spatialVision ? Mathf.Cos(angle * 0.5f * Mathf.Deg2Rad) : 0;
+
+            CandidatesExamined = 0;
+            SightQueries = 0;
+            // Enumerating these collections through IEnumerable boxes an enumerator per sensor on CoreCLR.
+            var candidates = observables ?? DefaultObservables();
+            switch (candidates)
+            {
+                case List<T> list:
+                    foreach (T item in list) Observe(item);
+                    break;
+                case HashSet<T> set:
+                    foreach (T item in set) Observe(item);
+                    break;
+                case T[] array:
+                    foreach (T item in array) Observe(item);
+                    break;
+                default:
+                    foreach (T item in candidates) Observe(item);
+                    break;
+            }
+
+            void Observe(T observable)
             {
                 // Cache values for this observable.
+                CandidatesExamined++;
+                if (!observable) return;
                 Transform to = observable.transform;
+                if (to == t || (Agent && to == Agent.transform)) return;
                 Vector3 o3 = to.position;
-                Vector2 o = o3.Flatten();
-                
-                // Perform checks.
-                if ((distance >= float.MaxValue || p.Distance(o) <= distance) && (angle >= 360f || p.InView(f, o, angle)) && (!lineOfSight || p3.HasSight(o3 + y, out RaycastHit hit, radius, mask, triggers) || hit.transform == to))
+                bool inside;
+                if (spatialVision)
+                {
+                    Vector3 difference = o3 - p3;
+                    inside = difference.sqrMagnitude <= squaredRange && (angle >= 360 || difference == Vector3.zero || Vector3.Dot(forward, difference.normalized) >= cone);
+                }
+                else
+                {
+                    Vector2 o = o3.Flatten();
+                    inside = (o - p).sqrMagnitude <= squaredRange && (angle >= 360f || p.InView(f, o, angle));
+                }
+                if (inside && lineOfSight) SightQueries++;
+                if (inside && (!lineOfSight || p3.HasSight(o3 + y, out RaycastHit hit, radius, mask, triggers) || hit.transform == to))
                 {
                     _observed.Add(observable);
                 }
@@ -853,6 +915,7 @@ namespace KaijuSolutions.Agents.Sensors
             Vector3 p = Position3;
             p = new(p.x, editorFromAgent ? position.y : p.y, p.z);
             Vector3 y = new(0, offset, 0);
+
             
             foreach (T observed in _observed)
             {
@@ -862,6 +925,29 @@ namespace KaijuSolutions.Agents.Sensors
                 }
             }
             
+            if (spatialVision)
+            {
+                if (distance >= float.MaxValue) return;
+                if (angle >= 360)
+                {
+                    Handles.DrawWireDisc(p, Vector3.up, distance);
+                    Handles.DrawWireDisc(p, Vector3.forward, distance);
+                    Handles.DrawWireDisc(p, Vector3.right, distance);
+                }
+                else
+                {
+                    float radians = angle * Mathf.Deg2Rad * 0.5f;
+                    Vector3 center = p + transform.forward * (distance * Mathf.Cos(radians));
+                    float rim = distance * Mathf.Sin(radians);
+                    Handles.DrawWireDisc(center, transform.forward, rim);
+                    Handles.DrawLine(p, center + transform.right * rim);
+                    Handles.DrawLine(p, center - transform.right * rim);
+                    Handles.DrawLine(p, center + transform.up * rim);
+                    Handles.DrawLine(p, center - transform.up * rim);
+                }
+                return;
+            }
+
             p = new(p.x, position.y, p.z);
             
             if (angle < 360f)

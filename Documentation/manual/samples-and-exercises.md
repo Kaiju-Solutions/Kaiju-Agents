@@ -25,7 +25,7 @@ This sample provides a scene with an agent that can be controlled with a keyboar
 
 ### Box Destroyer
 
-This provides a sample scene of an agent which is tasked with destroying "boxes". The agent demonstrates the use of an [everything vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#everything-vision-sensor "Everything Vision Sensor") and an [everything attack actuator](https://agents.kaijusolutions.ca/manual/actuator.html#everything-attack-actuator "Everything Attack Actuator") being controlled by a [controller](https://agents.kaijusolutions.ca/manual/controllers.html "Controllers").
+This provides a sample scene of an agent which is tasked with destroying "boxes". The agent demonstrates the use of an [everything vision sensor](https://agents.kaijusolutions.ca/manual/sensors.html#everything-vision-sensor "Everything Vision Sensor") and an [everything attack actuator](https://agents.kaijusolutions.ca/manual/actuators.html#everything-attack-actuator "Everything Attack Actuator") being controlled by a [controller](https://agents.kaijusolutions.ca/manual/controllers.html "Controllers").
 
 ![Box Destroyer](https://agents.kaijusolutions.ca/img/box-destroyer.png)
 
@@ -36,3 +36,6 @@ Several exercises tailored to help you learn Kaiju Agents or use in an education
 1. [Cleaner](https://agents.kaijusolutions.ca/manual/cleaner.html "Cleaner")
 2. [Microbes](https://agents.kaijusolutions.ca/manual/microbes.html "Microbes")
 3. [Capture the Flag](https://agents.kaijusolutions.ca/manual/capture-the-flag.html "Capture the Flag")
+## Visual Decisions
+
+Open Rescue Decisions and inspect the agent as its state machine calls planners, a Utility selector and a behavior tree. With ML-Agents installed the sample executes its identity policy and then a C# pickup action. Without the optional package a C# provider demonstrates the same handoff. [Visual decision graphs](behavior-graph.md)

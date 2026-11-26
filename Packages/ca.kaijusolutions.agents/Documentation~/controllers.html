@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controllers | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="index.html">Kaiju Agents manual</a></nav><main><h1 id="controllers">Controllers</h1>
+<p>Controllers allow for easily access <a href="agents.html" title="Agents">agent</a> callbacks without having to worry about binding to <a href="https://learn.microsoft.com/dotnet/standard/events" title="C# Events">C# events</a>. Two versions are provided of which you can extend from:</p>
+<ol>
+<li><a href="api/KaijuSolutions.Agents.KaijuController.html" title="KaijuController"><code>KaijuController</code></a> - This attaches directly to an <a href="agents.html" title="Agents">agent</a> on the same <a href="https://docs.unity3d.com/Manual/class-GameObject.html" title="GameObject">GameObject</a> and listens to callbacks specifically for the associated <a href="agents.html" title="Agents">agent</a>.</li>
+<li><a href="api/KaijuSolutions.Agents.KaijuGlobalController.html" title="KaijuGlobalController"><code>KaijuGlobalController</code></a> - This controller receives all global callbacks for all <a href="agents.html" title="Agents">agents</a> in the scene. Unlike the <a href="api/KaijuSolutions.Agents.KaijuController.html" title="KaijuController"><code>KaijuController</code></a>, this does not need to be attached to an <a href="agents.html" title="Agents">agent</a>. In most use cases, a <a href="api/KaijuSolutions.Agents.KaijuController.html" title="KaijuController"><code>KaijuController</code></a> will be more effective to use than a <a href="api/KaijuSolutions.Agents.KaijuGlobalController.html" title="KaijuGlobalController"><code>KaijuGlobalController</code></a>.</li>
+</ol></main></body></html>

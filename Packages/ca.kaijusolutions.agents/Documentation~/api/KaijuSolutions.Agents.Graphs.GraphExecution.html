@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GraphExecution | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="graphexecution">GraphExecution</h1>
+<pre><code class="language-csharp">public sealed class GraphExecution
+</code></pre>
+<p><a href="../../Runtime/Graphs/GraphExecution.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_World"></a></p>
+<h3 id="world">World</h3>
+<pre><code class="language-csharp">public World World { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Entity"></a></p>
+<h3 id="entity">Entity</h3>
+<pre><code class="language-csharp">public Entity Entity { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Services"></a></p>
+<h3 id="services">Services</h3>
+<pre><code class="language-csharp">public GraphServices Services { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Context"></a></p>
+<h3 id="context">Context</h3>
+<pre><code class="language-csharp">public GraphContext Context { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Result"></a></p>
+<h3 id="result">Result</h3>
+<pre><code class="language-csharp">public GraphResult Result { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_TickNumber"></a></p>
+<h3 id="ticknumber">TickNumber</h3>
+<pre><code class="language-csharp">public ulong TickNumber { get; private set; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Trace"></a></p>
+<h3 id="trace">Trace</h3>
+<pre><code class="language-csharp">public event Action&lt;ulong, KaijuGraph, UnityEngine.Hash128, GraphResult&gt; Trace
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_TickFinished"></a></p>
+<h3 id="tickfinished">TickFinished</h3>
+<pre><code class="language-csharp">public event Action&lt;GraphExecution&gt; TickFinished
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Decision"></a></p>
+<h3 id="decision">Decision</h3>
+<pre><code class="language-csharp">public event Action&lt;ulong, KaijuGraph, UnityEngine.Hash128, string, float&gt; Decision
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_GetActiveNodes"></a></p>
+<h3 id="getactivenodes">GetActiveNodes</h3>
+<pre><code class="language-csharp">public void GetActiveNodes (List&lt;UnityEngine.Hash128&gt; destination)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_GetCallStack"></a></p>
+<h3 id="getcallstack">GetCallStack</h3>
+<pre><code class="language-csharp">public void GetCallStack (List&lt;GraphLocation&gt; destination)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Signal"></a></p>
+<h3 id="signal">Signal</h3>
+<pre><code class="language-csharp">public void Signal (string name)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_GraphExecution_Cancel"></a></p>
+<h3 id="cancel">Cancel</h3>
+<pre><code class="language-csharp">public void Cancel ()
+</code></pre></main></body></html>

@@ -1,5 +1,17 @@
 ﻿# Changelog
 
+### 2.0.0
+
+- Target Unity 6.7 beta and Unity 7 alpha.
+- Schedule agent simulation in Entities and integrate steering velocities with Burst.
+- Use Unity CLI and Pipeline for scene authoring, navigation and skill installation.
+- Ship offline manuals and project-local skills for Codex, Claude, Gemini and Qwen.
+- Author state machines, nested state machines, behavior trees, Utility AI, GOAP and HTN in Unity Graph Toolkit. Graphs can call each other, invoke C# and run optional ML-Agents policies.
+- **Breaking change.** Visual decision graphs replace the legacy Utility brain and Unity Behavior integration.
+- Add multi-floor surface routes, opt-in flight, spatial vision, and the Floors and Flight samples.
+- Isolate prefab pools by source, index nearby vision candidates, and expose strict route inspection and XYZ placement through Unity Pipeline.
+- Preview skill upgrades, validate clean package installations, and benchmark mixed ECS and GameObject populations.
+
 ### 1.4.1
 
 - Fixed [`KaijuVisionSensor.observables`](https://agents.kaijusolutions.ca/api/KaijuSolutions.Agents.Sensors.KaijuVisionSensor-1.html#KaijuSolutions_Agents_Sensors_KaijuVisionSensor_1_observables "KaijuVisionSensor.observables") being wrongly exposed for serialization.

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samples and Exercises | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="index.html">Kaiju Agents manual</a></nav><main><h1 id="samples-and-exercises">Samples and Exercises</h1>
+<p><a href="#samples" title="Samples">Samples</a> provide quick learning resources for Kaiju Agents, and <a href="#exercises" title="Exercises">exercises</a> provide an easy way to build your skills with Kaiju Agents. To access <a href="#samples" title="Samples">samples</a> and <a href="#exercises" title="Exercises">exercises</a>, from the top menu, go to <code>Window &gt; Package Management &gt; Package Manager</code>, go to the <code>In Project</code> tab, select <code>Kaiju Agents</code>, and click on <code>Samples</code>. From there, click the <code>Import</code> button next to the <a href="#sample" title="Samples">sample</a> or <a href="#exercises" title="Exercises">exercise</a> you want. <strong>Note that for all <a href="#sample" title="Samples">samples</a> and <a href="#exercises" title="Exercises">exercises</a>, you must first import the <a href="#materials" title="Materials Sample"><code>Materials</code> sample</a>.</strong></p>
+<h2 id="samples">Samples</h2>
+<h3 id="materials">Materials</h3>
+<p>The <code>Materials</code> sample simply contains <a href="https://docs.unity3d.com/Manual/class-Material.html" title="Materials">materials</a> used throughout the other samples and <a href="#exercises" title="Exercises">exercises</a>. If materials appear pink, from the top menu, go to <code>Window &gt; Rendering &gt; Render Pipeline Converter</code>, choose <code>Built-in to URP</code> or <code>Built-in to HDRP</code>, select all materials, click <code>Initialize Converters</code>, and lastly click <code>Convert Assets</code>.</p>
+<h3 id="movement">Movement</h3>
+<p>This sample provides multiple scenes to demonstrate <a href="movement.html" title="Movement">movements</a>. There are scenes for:</p>
+<ul>
+<li>Comparing <a href="movement.html#seek" title="Seek">seek</a> and <a href="movement.html#pursue" title="Pursue">pursue</a>.</li>
+<li>Comparing <a href="movement.html#flee" title="Flee">flee</a> and <a href="movement.html#evade" title="Evade">evade</a>.</li>
+<li>Demonstrating <a href="movement.html#wander" title="Wander">wandering</a>.</li>
+<li>Demonstrating <a href="movement.html#sepration" title="Separation">sepration</a>.</li>
+<li>Demonstrating <a href="movement.html#obstacle-avoidance" title="Obstacle Avoidance">obstacle avoidance</a>.</li>
+<li>Demonstrating <a href="movement.html#path-following" title="Path Following">path following</a>.</li>
+</ul>
+<h3 id="keyboard">Keyboard</h3>
+<p>This sample provides a scene with an agent that can be controlled with a keyboard. To control the agent, use WASD or the arrow keys to move, and Q and E to turn. Hold space to make the agent move relative to its current heading.</p>
+<h3 id="box-destroyer">Box Destroyer</h3>
+<p>This provides a sample scene of an agent which is tasked with destroying "boxes". The agent demonstrates the use of an <a href="sensors.html#everything-vision-sensor" title="Everything Vision Sensor">everything vision sensor</a> and an <a href="actuators.html#everything-attack-actuator" title="Everything Attack Actuator">everything attack actuator</a> being controlled by a <a href="controllers.html" title="Controllers">controller</a>.</p>
+<p><img alt="Box Destroyer" src="img/box-destroyer.png" /></p>
+<h2 id="exercises">Exercises</h2>
+<p>Several exercises tailored to help you learn Kaiju Agents or use in an education environment are provided. Each exercise is more complicated than the last, providing an efficient learning experience for Kaiju Agents.</p>
+<ol>
+<li><a href="cleaner.html" title="Cleaner">Cleaner</a></li>
+<li><a href="microbes.html" title="Microbes">Microbes</a></li>
+<li><a href="capture-the-flag.html" title="Capture the Flag">Capture the Flag</a></li>
+</ol>
+<h2 id="visual-decisions">Visual Decisions</h2>
+<p>Open Rescue Decisions and inspect the agent as its state machine calls planners, a Utility selector and a behavior tree. With ML-Agents installed the sample executes its identity policy and then a C# pickup action. Without the optional package a C# provider demonstrates the same handoff. <a href="behavior-graph.html">Visual decision graphs</a></p></main></body></html>

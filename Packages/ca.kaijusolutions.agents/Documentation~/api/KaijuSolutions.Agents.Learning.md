@@ -1,0 +1,15 @@
+# KaijuSolutions.Agents.Learning
+
+- [KaijuGraphPolicy](KaijuSolutions.Agents.Learning.KaijuGraphPolicy.md)
+- [KaijuLearningActuator](KaijuSolutions.Agents.Learning.KaijuLearningActuator.md)
+- [KaijuLearningActuatorBase](KaijuSolutions.Agents.Learning.KaijuLearningActuatorBase.md)
+- [KaijuLearningAgentActuator](KaijuSolutions.Agents.Learning.KaijuLearningAgentActuator.md)
+- [KaijuLearningAgentSensor](KaijuSolutions.Agents.Learning.KaijuLearningAgentSensor.md)
+- [KaijuLearningAttackActuator](KaijuSolutions.Agents.Learning.KaijuLearningAttackActuator.md)
+- [KaijuLearningCastSensor](KaijuSolutions.Agents.Learning.KaijuLearningCastSensor.md)
+- [KaijuLearningControlActuator](KaijuSolutions.Agents.Learning.KaijuLearningControlActuator.md)
+- [KaijuLearningRotationSensor](KaijuSolutions.Agents.Learning.KaijuLearningRotationSensor.md)
+- [KaijuLearningSensor](KaijuSolutions.Agents.Learning.KaijuLearningSensor.md)
+- [KaijuLearningSpinActuator](KaijuSolutions.Agents.Learning.KaijuLearningSpinActuator.md)
+- [KaijuLearningVelocitySensor](KaijuSolutions.Agents.Learning.KaijuLearningVelocitySensor.md)
+- [KaijuLearningVisionSensor](KaijuSolutions.Agents.Learning.KaijuLearningVisionSensor.md)

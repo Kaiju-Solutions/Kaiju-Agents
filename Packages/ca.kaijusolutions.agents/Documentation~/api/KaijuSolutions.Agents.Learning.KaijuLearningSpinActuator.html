@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuLearningSpinActuator | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijulearningspinactuator">KaijuLearningSpinActuator</h1>
+<p>Actuator for controlling the rotation of an KaijuSolutions.Agents.KaijuAgent via the KaijuSolutions.Agents.KaijuAgent.Spin property for ML-Agents. This has one continuous action which is assigned to the KaijuSolutions.Agents.KaijuAgent.Spin property. This has no Heuristic implementation, and you will need to extend this class and override for your use case.</p>
+<pre><code class="language-csharp">public class KaijuLearningSpinActuator : KaijuLearningAgentActuator
+</code></pre>
+<p><a href="../../Runtime/Learning/KaijuLearningSpinActuator.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_ActionSpec"></a></p>
+<h3 id="actionspec">ActionSpec</h3>
+<pre><code class="language-csharp">public override ActionSpec ActionSpec { get; }
+</code></pre>
+<p>The specification of the possible actions for this actuator component. This must produce the same results as the corresponding IActuator's ActionSpec.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_OnActionReceived"></a></p>
+<h3 id="onactionreceived">OnActionReceived</h3>
+<pre><code class="language-csharp">public override void OnActionReceived (ActionBuffers actionBuffers)
+</code></pre>
+<p>Method called in order to allow object to execute actions based on the actionBuffers contents. The structure of the contents in the actionBuffers are defined by the action spec.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_WriteDiscreteActionMask"></a></p>
+<h3 id="writediscreteactionmask">WriteDiscreteActionMask</h3>
+<pre><code class="language-csharp">public override void WriteDiscreteActionMask (IDiscreteActionMask actionMask)
+</code></pre>
+<p>Implement to modify the masks for discrete actions. When using discrete actions, the agent will not perform the masked action.</p>
+<p><a id="KaijuSolutions_Agents_Learning_KaijuLearningSpinActuator_Heuristic"></a></p>
+<h3 id="heuristic">Heuristic</h3>
+<pre><code class="language-csharp">public override void Heuristic (in ActionBuffers actionBuffersOut)
+</code></pre>
+<p>Method called on objects which are expected to fill out the actionBuffersOut data structure. Object that implement this interface should be careful to be consistent in the placement of their actions in the actionBuffersOut data structure.</p></main></body></html>

@@ -6,6 +6,8 @@ using KaijuSolutions.Agents.Extensions;
 using KaijuSolutions.Agents.Movement;
 using KaijuSolutions.Agents.Sensors;
 using UnityEngine;
+using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine.AI;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -407,7 +409,7 @@ namespace KaijuSolutions.Agents
         public Vector2 Control
         {
             get => _control;
-            set => _control = value.normalized;
+            set { _control = value.normalized; _climb = 0; }
         }
         
         /// <summary>
@@ -415,8 +417,14 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public Vector3 Control3
         {
-            get => _control.Expand();
-            set => Control = value.Flatten();
+            get => new Vector3(_control.x, _climb, _control.y);
+            set
+            {
+                if (FreeFlight == null) { Control = value.Flatten(); return; }
+                Vector3 direction = value.normalized;
+                _control = direction.Flatten();
+                _climb = direction.y;
+            }
         }
         
         /// <summary>
@@ -432,7 +440,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// The current velocity of the agent.
         /// </summary>
-        public Vector3 Velocity3 => Velocity.Expand();
+        public Vector3 Velocity3 => new Vector3(Velocity.x, _verticalVelocity, Velocity.y);
         
         /// <summary>
         /// The current velocity of the agent relative to the direction we are facing.
@@ -452,7 +460,7 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Get the forward direction of this agent based on how its moving. If moving, this is the direction of its velocity. Otherwise, it is the same as <see cref="KaijuSolutions.Agents.KaijuBehaviour.Forward3"/>.
         /// </summary>
-        public Vector3 MoveForward3 => Velocity == Vector2.zero ? Forward3 : Velocity3;
+        public Vector3 MoveForward3 => Velocity3 == Vector3.zero ? Forward3 : Velocity3;
         
         /// <summary>
         /// All movements the agent is currently performing.
@@ -802,6 +810,141 @@ namespace KaijuSolutions.Agents
         /// </summary>
         public void CalculateVelocity(float delta)
         {
+            if (FreeFlight != null)
+            {
+                var flight = GatherFlight(delta);
+                flight.Integrate(flight.DesiredVelocity, delta);
+                ApplyFlightVelocity(flight.Velocity);
+                return;
+            }
+            KaijuSteering steering = GatherSteering(delta);
+            steering.Integrate(steering.DesiredVelocity, delta);
+            ApplyVelocity(steering.Velocity);
+        }
+
+        /// <summary>The simulation entity while this agent is registered in the default world.</summary>
+        public Entity SimulationEntity { get; private set; }
+
+        internal KaijuAgent PoolPrefab { get; set; }
+        private World _simulationWorld;
+
+        internal void AttachEntity(EntityManager entities)
+        {
+            if (_simulationWorld == entities.World && entities.Exists(SimulationEntity)) return;
+            _simulationWorld = entities.World;
+            SimulationEntity = entities.CreateEntity(typeof(Unity.Transforms.LocalTransform));
+            AddSteering(entities);
+            entities.AddComponentData(SimulationEntity, new KaijuAgentBridge { Agent = this });
+        }
+
+        public KaijuFreeFlight FreeFlight { get; private set; }
+        private float _climb;
+        private float _verticalVelocity;
+
+        internal void SetFlight(KaijuFreeFlight flight)
+        {
+            if (FreeFlight == flight) return;
+            FreeFlight = flight;
+            _climb = _verticalVelocity = 0;
+            if (_simulationWorld == null || !_simulationWorld.IsCreated) return;
+            var entities = _simulationWorld.EntityManager;
+            if (!entities.Exists(SimulationEntity)) return;
+            if (flight)
+            {
+                entities.RemoveComponent<KaijuSteering>(SimulationEntity);
+                entities.RemoveComponent<KaijuMovementInput>(SimulationEntity);
+            }
+            else
+            {
+                entities.RemoveComponent<KaijuFlightSteering>(SimulationEntity);
+                entities.RemoveComponent<KaijuFlightInput>(SimulationEntity);
+            }
+            AddSteering(entities);
+        }
+
+        private void AddSteering(EntityManager entities)
+        {
+            if (FreeFlight != null)
+            {
+                entities.AddComponent<KaijuFlightSteering>(SimulationEntity);
+                entities.AddBuffer<KaijuFlightInput>(SimulationEntity);
+            }
+            else
+            {
+                entities.AddComponent<KaijuSteering>(SimulationEntity);
+                entities.AddBuffer<KaijuMovementInput>(SimulationEntity);
+            }
+        }
+
+        private KaijuFlightSteering GatherFlight(float delta, List<KaijuFlightInput> inputs = null)
+        {
+            Vector3 horizontal = _control.Expand();
+            if (!globalControl) horizontal = Quaternion.Euler(0, transform.eulerAngles.y, 0) * horizontal;
+            Vector3 desired = (horizontal + Vector3.up * _climb) * moveSpeed;
+            Vector3 position = Position3;
+            for (int i = 0; i < _movements.Count; i++)
+            {
+                var movement = _movements[i];
+                if (movement.Done())
+                {
+                    QueueStopped(movement);
+                    _movements.RemoveAt(i--);
+                    continue;
+                }
+                if (inputs != null && (movement.GetType() == typeof(KaijuSeekMovement) || movement.GetType() == typeof(KaijuFleeMovement)))
+                {
+                    inputs.Add(new KaijuFlightInput
+                    {
+                        Mode = movement is KaijuSeekMovement ? KaijuSteeringMode.Seek : KaijuSteeringMode.Flee,
+                        Value = ((KaijuTargetMovement)movement).Target3,
+                        Weight = movement.Weight
+                    });
+                }
+                else desired += movement.Move3(position, delta) * movement.Weight;
+                _performed.Add(movement);
+            }
+            return new KaijuFlightSteering { DesiredVelocity = desired, Velocity = Velocity3, MaxSpeed = moveSpeed, Acceleration = moveAcceleration };
+        }
+
+        internal void DetachEntity(EntityManager entities)
+        {
+            foreach (var actuator in _actuators)
+                if (actuator) actuator.DetachEntity();
+            if (_simulationWorld == entities.World && entities.Exists(SimulationEntity))
+                entities.DestroyEntity(SimulationEntity);
+            SimulationEntity = Entity.Null;
+            _simulationWorld = null;
+        }
+
+        private readonly List<KaijuMovementInput> _simulationMovements = new();
+
+        internal void WriteSteering(EntityManager entities, float delta)
+        {
+            if (FreeFlight != null)
+            {
+                var inputs = FreeFlight.Inputs;
+                inputs.Clear();
+                var flight = GatherFlight(delta, inputs);
+                if (!entities.Exists(SimulationEntity) || FreeFlight == null) return;
+                entities.SetComponentData(SimulationEntity, flight);
+                var flightBuffer = entities.GetBuffer<KaijuFlightInput>(SimulationEntity);
+                flightBuffer.Clear();
+                foreach (var input in inputs) flightBuffer.Add(input);
+                entities.SetComponentData(SimulationEntity, Unity.Transforms.LocalTransform.FromPositionRotation(transform.position, transform.rotation));
+                return;
+            }
+            _simulationMovements.Clear();
+            var steering = GatherSteering(delta, _simulationMovements);
+            if (!entities.Exists(SimulationEntity) || FreeFlight != null) return;
+            entities.SetComponentData(SimulationEntity, steering);
+            entities.SetComponentData(SimulationEntity, Unity.Transforms.LocalTransform.FromPositionRotation(transform.position, transform.rotation));
+            var buffer = entities.GetBuffer<KaijuMovementInput>(SimulationEntity);
+            buffer.Clear();
+            foreach (var input in _simulationMovements) buffer.Add(input);
+        }
+
+        private KaijuSteering GatherSteering(float delta, List<KaijuMovementInput> inputs = null)
+        {
             // Start with any manual steering.
             Vector2 velocity = (globalControl ? _control : Forward * _control.y + Right.Flatten() * _control.x) * moveSpeed;
             Vector2 position = Position;
@@ -812,30 +955,51 @@ namespace KaijuSolutions.Agents
                 // If the movement is done, remove it to the cache.
                 if (_movements[i].Done())
                 {
-                    _stopped.Add(_movements[i]);
+                    QueueStopped(_movements[i]);
                     _movements.RemoveAt(i--);
                     continue;
                 }
                 
                 // Weight the movement.
-                velocity += _movements[i].Move(position, delta) * _movements[i].Weight;
-                _performed.Add(_movements[i]);
+                var movement = _movements[i];
+                if (inputs == null)
+                    velocity += movement.Move(position, delta) * movement.Weight;
+                else if (movement.GetType() == typeof(KaijuSeekMovement) || movement.GetType() == typeof(KaijuFleeMovement))
+                    inputs.Add(new KaijuMovementInput
+                    {
+                        Mode = movement is KaijuSeekMovement ? KaijuSteeringMode.Seek : KaijuSteeringMode.Flee,
+                        Value = ((KaijuTargetMovement)movement).Target,
+                        Weight = movement.Weight
+                    });
+                else
+                    inputs.Add(new KaijuMovementInput { Value = movement.Move(position, delta), Weight = movement.Weight });
+                _performed.Add(movement);
             }
             
-            // Clamp the movement velocity.
-            if (velocity.sqrMagnitude > moveSpeed * moveSpeed)
+            return new KaijuSteering
             {
-                velocity = velocity.normalized * moveSpeed;
-            }
-            
-            // Set the updated velocity.
-            Velocity = moveAcceleration > 0 ? Vector2.Lerp(Velocity, velocity, moveAcceleration * delta) : velocity;
-            
+                DesiredVelocity = velocity,
+                Velocity = Velocity,
+                MaxSpeed = moveSpeed,
+                Acceleration = moveAcceleration
+            };
+        }
+
+        internal void ApplyFlightVelocity(float3 velocity)
+        {
+            _verticalVelocity = velocity.y;
+            ApplyVelocity(velocity.xz);
+        }
+
+        internal void ApplyVelocity(float2 velocity)
+        {
+            Velocity = velocity;
+
             // Handle which movements are done.
             InvokeDoneMovements();
             
             // Invoke callbacks if there has been movement.
-            if (Velocity == Vector2.zero)
+            if (Velocity == Vector2.zero && _verticalVelocity == 0)
             {
                 return;
             }
@@ -901,6 +1065,7 @@ namespace KaijuSolutions.Agents
             StopLooking();
             ClearIdentifiers();
             Velocity = Vector2.zero;
+            _verticalVelocity = 0;
             KaijuAgentsManager.Unregister(this);
             OnDisabled?.Invoke();
             OnDisabledGlobal?.Invoke(this);
@@ -1077,16 +1242,24 @@ namespace KaijuSolutions.Agents
             AddIdentifiers(collection);
         }
         
+        private void QueueStopped(KaijuMovement movement)
+        {
+            if (movement is KaijuPathFollowMovement path && this is KaijuNavigationAgent surface)
+                surface.EndRoute(path);
+            _stopped.Add(movement);
+        }
+
         /// <summary>
         /// Stop all movement, including manual steering.
         /// </summary>
         public void Stop()
         {
             _control = Vector2.zero;
+            _climb = 0;
 
             for (int i = 0; i < _movements.Count; i++)
             {
-                _stopped.Add(_movements[i]);
+                QueueStopped(_movements[i]);
                 _movements.RemoveAt(i--);
             }
         }
@@ -1105,7 +1278,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _stopped.Add(_movements[i]);
+                QueueStopped(_movements[i]);
                 _movements.RemoveAt(i);
                 return true;
             }
@@ -1130,7 +1303,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _stopped.Add(_movements[i]);
+                QueueStopped(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed = true;
             }
@@ -1150,7 +1323,7 @@ namespace KaijuSolutions.Agents
                 return false;
             }
             
-            _stopped.Add(_movements[index]);
+            QueueStopped(_movements[index]);
             _movements.RemoveAt(index);
             return true;
         }
@@ -1177,7 +1350,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _stopped.Add(_movements[i]);
+                QueueStopped(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed++;
             }
@@ -1192,7 +1365,11 @@ namespace KaijuSolutions.Agents
         /// <returns>The number of target movements which were stopped.</returns>
         public int Stop(Vector3 v)
         {
-            return Stop(v.Flatten());
+            if (!FreeFlight) return Stop(v.Flatten());
+            int removed = 0;
+            for (int i = _movements.Count - 1; i >= 0; i--)
+                if (_movements[i] is KaijuTargetMovement target && target.Target3 == v && Stop(i)) removed++;
+            return removed;
         }
         
         /// <summary>
@@ -1211,7 +1388,7 @@ namespace KaijuSolutions.Agents
                     continue;
                 }
                 
-                _stopped.Add(_movements[i]);
+                QueueStopped(_movements[i]);
                 _movements.RemoveAt(i--);
                 removed++;
             }
@@ -2340,11 +2517,13 @@ namespace KaijuSolutions.Agents
         /// <summary>
         /// Execute all <see cref="KaijuSolutions.Agents.Actuators.KaijuActuator"/>s. There is no point in manually calling this.
         /// </summary>
-        public void Act()
+        public void Act() => Act(Time.deltaTime);
+
+        internal void Act(float delta)
         {
             foreach (KaijuActuator actuator in _actuators)
             {
-                actuator.Handle();
+                actuator.Step(delta);
             }
         }
         
@@ -2416,12 +2595,15 @@ namespace KaijuSolutions.Agents
                 }
                 
                 // If we don't want to automatically look or there is no movement, stop.
-                if (!AutoRotate || Velocity == Vector2.zero)
+                if (!AutoRotate || Velocity3 == Vector3.zero)
                 {
                     return;
                 }
                 
-                target = t.position + Velocity3.normalized;
+                Vector3 direction = FreeFlight && FreeFlight.pitchToVelocity ? Velocity3 : Velocity.Expand();
+                if (direction == Vector3.zero)
+                    direction = Quaternion.Euler(0, t.eulerAngles.y, 0) * Vector3.forward;
+                target = t.position + direction.normalized;
             }
             else
             {
@@ -2429,7 +2611,7 @@ namespace KaijuSolutions.Agents
                 _wasLooking = true;
                 
                 // The rotation is only along the Y axis.
-                target = new(v.Value.x, t.position.y, v.Value.z);
+                target = FreeFlight && FreeFlight.pitchToVelocity ? v.Value : new Vector3(v.Value.x, t.position.y, v.Value.z);
             }
             
             // If the look target is our current location, there is nothing to do.
@@ -2442,7 +2624,10 @@ namespace KaijuSolutions.Agents
             Vector3 rotation = Vector3.RotateTowards(t.forward, target - t.position, (lookSpeed > 0 ? lookSpeed * Mathf.Deg2Rad : Mathf.Infinity) * delta, 0.0f);
             if (rotation != Vector3.zero && !float.IsNaN(rotation.x) && !float.IsNaN(rotation.y) && !float.IsNaN(rotation.z))
             {
-                t.rotation = Quaternion.LookRotation(rotation);
+                Vector3 up = Vector3.up;
+                if (FreeFlight && FreeFlight.pitchToVelocity && Mathf.Abs(Vector3.Dot(rotation.normalized, up)) > 0.999f)
+                    up = Vector3.Cross(rotation, t.right);
+                t.rotation = Quaternion.LookRotation(rotation, up);
             }
         }
         

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuAgentsMatcher | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijuagentsmatcher">KaijuAgentsMatcher</h1>
+<p>Helper to allow for matching and comparing objects.</p>
+<pre><code class="language-csharp">public class KaijuAgentsMatcher
+</code></pre>
+<p><a href="../../Runtime/KaijuAgentsMatcher.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMatcher_Match"></a></p>
+<h3 id="match">Match</h3>
+<pre><code class="language-csharp">public string Match { get; set; }
+</code></pre>
+<p>The string the match against.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMatcher_mode"></a></p>
+<h3 id="mode">mode</h3>
+<pre><code class="language-csharp">public KaijuAgentsMatcherMode mode
+</code></pre>
+<p>The mode for how to compare the match value.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMatcher_KaijuAgentsMatcher"></a></p>
+<h3 id="kaijuagentsmatcher_1">KaijuAgentsMatcher</h3>
+<pre><code class="language-csharp">public KaijuAgentsMatcher (string match = &quot;&quot;, KaijuAgentsMatcherMode mode = KaijuAgentsMatcherMode.Equal)
+</code></pre>
+<p>Create a matcher.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMatcher_Matched"></a></p>
+<h3 id="matched">Matched</h3>
+<pre><code class="language-csharp">public bool Matched ([NotNull] string value)
+</code></pre>
+<p>Get if this is a match.</p>
+<p><a id="KaijuSolutions_Agents_KaijuAgentsMatcher_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p>
+<pre><code class="language-csharp">public static implicit operator string ([NotNull] KaijuAgentsMatcher m)
+</code></pre>
+<p>Implicit conversion to a string from the Match.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgentsMatcherMode ([NotNull] KaijuAgentsMatcher m)
+</code></pre>
+<p>Implicit conversion to a KaijuAgentsMatcherMode from the mode.</p>
+<pre><code class="language-csharp">public static implicit operator KaijuAgentsMatcherMode? ([NotNull] KaijuAgentsMatcher m)
+</code></pre>
+<p>Implicit conversion to a nullable KaijuAgentsMatcherMode from the mode.</p>
+<ul>
+<li><a href="KaijuSolutions.Agents.KaijuAgentsMatcher.KaijuAgentsMatcherMode.html">KaijuAgentsMatcherMode</a></li>
+</ul></main></body></html>

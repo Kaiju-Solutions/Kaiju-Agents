@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trooper | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="trooper">Trooper</h1>
+<p>Troopers who aim to capture the enemy flag and defend their own. They have a Health value and have a blaster to battle the other team with. Walking into either the flag, a HealthPickup or an AmmoPickup will automatically interact with them.</p>
+<pre><code class="language-csharp">public class Trooper : KaijuController
+</code></pre>
+<p><a href="../../Samples~/Exercise%203%20-%20Capture%20the%20Flag/Trooper/Trooper.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHitTrooper"></a></p>
+<h3 id="onhittrooper">OnHitTrooper</h3>
+<pre><code class="language-csharp">public event TrooperAction OnHitTrooper
+</code></pre>
+<p>Callback for hitting another trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHitByTrooper"></a></p>
+<h3 id="onhitbytrooper">OnHitByTrooper</h3>
+<pre><code class="language-csharp">public event TrooperAction OnHitByTrooper
+</code></pre>
+<p>Callback for getting hit by another trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnTrooperHitGlobal"></a></p>
+<h3 id="ontrooperhitglobal">OnTrooperHitGlobal</h3>
+<pre><code class="language-csharp">public static MultiTrooperAction OnTrooperHitGlobal
+</code></pre>
+<p>Global callback for one agent hitting another.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnEliminatedTrooper"></a></p>
+<h3 id="oneliminatedtrooper">OnEliminatedTrooper</h3>
+<pre><code class="language-csharp">public event TrooperAction OnEliminatedTrooper
+</code></pre>
+<p>Callback for eliminated another trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnEliminatedByTrooper"></a></p>
+<h3 id="oneliminatedbytrooper">OnEliminatedByTrooper</h3>
+<pre><code class="language-csharp">public event TrooperAction OnEliminatedByTrooper
+</code></pre>
+<p>Callback for getting eliminated by another trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnTrooperEliminatedGlobal"></a></p>
+<h3 id="ontroopereliminatedglobal">OnTrooperEliminatedGlobal</h3>
+<pre><code class="language-csharp">public static event MultiTrooperAction OnTrooperEliminatedGlobal
+</code></pre>
+<p>Global callback for one trooper eliminating another.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagDropped"></a></p>
+<h3 id="onflagdropped">OnFlagDropped</h3>
+<pre><code class="language-csharp">public event FlagAction OnFlagDropped
+</code></pre>
+<p>Callback for when this agent dropped the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagDroppedGlobal"></a></p>
+<h3 id="onflagdroppedglobal">OnFlagDroppedGlobal</h3>
+<pre><code class="language-csharp">public event TrooperFlagAction OnFlagDroppedGlobal
+</code></pre>
+<p>Global callback for when this agent dropped the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagPickedUp"></a></p>
+<h3 id="onflagpickedup">OnFlagPickedUp</h3>
+<pre><code class="language-csharp">public event FlagAction OnFlagPickedUp
+</code></pre>
+<p>Callback for when this agent picking up the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagPickedUpGlobal"></a></p>
+<h3 id="onflagpickedupglobal">OnFlagPickedUpGlobal</h3>
+<pre><code class="language-csharp">public event TrooperFlagAction OnFlagPickedUpGlobal
+</code></pre>
+<p>Global callback for when this agent picking up the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagReturned"></a></p>
+<h3 id="onflagreturned">OnFlagReturned</h3>
+<pre><code class="language-csharp">public event FlagAction OnFlagReturned
+</code></pre>
+<p>Callback for when this agent returned the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagReturnedGlobal"></a></p>
+<h3 id="onflagreturnedglobal">OnFlagReturnedGlobal</h3>
+<pre><code class="language-csharp">public event TrooperFlagAction OnFlagReturnedGlobal
+</code></pre>
+<p>Global callback for when this agent returned the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagCaptured"></a></p>
+<h3 id="onflagcaptured">OnFlagCaptured</h3>
+<pre><code class="language-csharp">public event FlagAction OnFlagCaptured
+</code></pre>
+<p>Callback for when this agent captured the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnFlagCapturedGlobal"></a></p>
+<h3 id="onflagcapturedglobal">OnFlagCapturedGlobal</h3>
+<pre><code class="language-csharp">public event TrooperFlagAction OnFlagCapturedGlobal
+</code></pre>
+<p>Global callback for when this agent captured the Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHealth"></a></p>
+<h3 id="onhealth">OnHealth</h3>
+<pre><code class="language-csharp">public event HealthAction OnHealth
+</code></pre>
+<p>Callback for picking up a HealthPickup.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnHealthGlobal"></a></p>
+<h3 id="onhealthglobal">OnHealthGlobal</h3>
+<pre><code class="language-csharp">public event TrooperHealthAction OnHealthGlobal
+</code></pre>
+<p>Global callback for picking up a HealthPickup.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnAmmo"></a></p>
+<h3 id="onammo">OnAmmo</h3>
+<pre><code class="language-csharp">public event AmmoAction OnAmmo
+</code></pre>
+<p>Callback for picking up a AmmoPickup.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnAmmoGlobal"></a></p>
+<h3 id="onammoglobal">OnAmmoGlobal</h3>
+<pre><code class="language-csharp">public event TrooperAmmoAction OnAmmoGlobal
+</code></pre>
+<p>Global callback for picking up a AmmoPickup.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_All"></a></p>
+<h3 id="all">All</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;Trooper&gt; All { get; }
+</code></pre>
+<p>All troopers currently active.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllOne"></a></p>
+<h3 id="allone">AllOne</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;Trooper&gt; AllOne { get; }
+</code></pre>
+<p>All troopers currently active for team one.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_AllTwo"></a></p>
+<h3 id="alltwo">AllTwo</h3>
+<pre><code class="language-csharp">public static IReadOnlyCollection&lt;Trooper&gt; AllTwo { get; }
+</code></pre>
+<p>All troopers currently active for team two.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Health"></a></p>
+<h3 id="health">Health</h3>
+<pre><code class="language-csharp">public int Health { get; private set; }
+</code></pre>
+<p>The current health of this trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamOne"></a></p>
+<h3 id="teamone">TeamOne</h3>
+<pre><code class="language-csharp">public bool TeamOne { get; private set; }
+</code></pre>
+<p>What team this trooper is on.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase"></a></p>
+<h3 id="ownbase">OwnBase</h3>
+<pre><code class="language-csharp">public Vector2 OwnBase { get; }
+</code></pre>
+<p>Get the location of this trooper's own base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OwnBase3"></a></p>
+<h3 id="ownbase3">OwnBase3</h3>
+<pre><code class="language-csharp">public Vector3 OwnBase3 { get; }
+</code></pre>
+<p>Get the location of this trooper's own base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase"></a></p>
+<h3 id="enemybase">EnemyBase</h3>
+<pre><code class="language-csharp">public Vector2 EnemyBase { get; }
+</code></pre>
+<p>Get the location of the other team's base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyBase3"></a></p>
+<h3 id="enemybase3">EnemyBase3</h3>
+<pre><code class="language-csharp">public Vector3 EnemyBase3 { get; }
+</code></pre>
+<p>Get the location of the other team's base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamFlag"></a></p>
+<h3 id="teamflag">TeamFlag</h3>
+<pre><code class="language-csharp">public Flag TeamFlag { get; }
+</code></pre>
+<p>Get our team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyFlag"></a></p>
+<h3 id="enemyflag">EnemyFlag</h3>
+<pre><code class="language-csharp">public Flag EnemyFlag { get; }
+</code></pre>
+<p>Get the enemy team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamFlagPosition"></a></p>
+<h3 id="teamflagposition">TeamFlagPosition</h3>
+<pre><code class="language-csharp">public Vector2 TeamFlagPosition { get; }
+</code></pre>
+<p>The position of our team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamFlagPosition3"></a></p>
+<h3 id="teamflagposition3">TeamFlagPosition3</h3>
+<pre><code class="language-csharp">public Vector3 TeamFlagPosition3 { get; }
+</code></pre>
+<p>The position of our team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyFlagPosition"></a></p>
+<h3 id="enemyflagposition">EnemyFlagPosition</h3>
+<pre><code class="language-csharp">public Vector2 EnemyFlagPosition { get; }
+</code></pre>
+<p>The position of the enemy team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyFlagPosition3"></a></p>
+<h3 id="enemyflagposition3">EnemyFlagPosition3</h3>
+<pre><code class="language-csharp">public Vector3 EnemyFlagPosition3 { get; }
+</code></pre>
+<p>The position of the enemy team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_HasFlag"></a></p>
+<h3 id="hasflag">HasFlag</h3>
+<pre><code class="language-csharp">public bool HasFlag { get; }
+</code></pre>
+<p>If we have the enemy's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamFlagAtBase"></a></p>
+<h3 id="teamflagatbase">TeamFlagAtBase</h3>
+<pre><code class="language-csharp">public bool TeamFlagAtBase { get; }
+</code></pre>
+<p>If our Flag is at its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyFlagAtBase"></a></p>
+<h3 id="enemyflagatbase">EnemyFlagAtBase</h3>
+<pre><code class="language-csharp">public bool EnemyFlagAtBase { get; }
+</code></pre>
+<p>If the enemy Flag is at its base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TeamCarryingFlag"></a></p>
+<h3 id="teamcarryingflag">TeamCarryingFlag</h3>
+<pre><code class="language-csharp">public bool TeamCarryingFlag { get; }
+</code></pre>
+<p>If someone on our team is carrying the enemy Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_EnemyCarryingFlag"></a></p>
+<h3 id="enemycarryingflag">EnemyCarryingFlag</h3>
+<pre><code class="language-csharp">public bool EnemyCarryingFlag { get; }
+</code></pre>
+<p>If someone on the enemy team is carrying our team's Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_DistanceTeamFlag"></a></p>
+<h3 id="distanceteamflag">DistanceTeamFlag</h3>
+<pre><code class="language-csharp">public float DistanceTeamFlag { get; }
+</code></pre>
+<p>The distance from us to our Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_DistanceEnemyFlag"></a></p>
+<h3 id="distanceenemyflag">DistanceEnemyFlag</h3>
+<pre><code class="language-csharp">public float DistanceEnemyFlag { get; }
+</code></pre>
+<p>The distance from us to the enemy Flag.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_DistanceTeamBase"></a></p>
+<h3 id="distanceteambase">DistanceTeamBase</h3>
+<pre><code class="language-csharp">public float DistanceTeamBase { get; }
+</code></pre>
+<p>The distance from us to our team's base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_DistanceEnemyBase"></a></p>
+<h3 id="distanceenemybase">DistanceEnemyBase</h3>
+<pre><code class="language-csharp">public float DistanceEnemyBase { get; }
+</code></pre>
+<p>The distance from us to the enemy team's base.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Ammo"></a></p>
+<h3 id="ammo">Ammo</h3>
+<pre><code class="language-csharp">public int Ammo { get; private set; }
+</code></pre>
+<p>The ammo for this Trooper's BlasterActuator.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_HasAmmo"></a></p>
+<h3 id="hasammo">HasAmmo</h3>
+<pre><code class="language-csharp">public bool HasAmmo { get; }
+</code></pre>
+<p>If the BlasterActuator has any ammo.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_CanAttack"></a></p>
+<h3 id="canattack">CanAttack</h3>
+<pre><code class="language-csharp">public bool CanAttack { get; }
+</code></pre>
+<p>If the BlasterActuator has any ammo and is not KaijuSolutions.Agents.Actuators.KaijuAttackActuator.OnCooldown.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_FlagPosition"></a></p>
+<h3 id="flagposition">FlagPosition</h3>
+<pre><code class="language-csharp">public Transform FlagPosition { get; private set; }
+</code></pre>
+<p>Where to store the flag when picking it up.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Spawn"></a></p>
+<h3 id="spawn">Spawn</h3>
+<pre><code class="language-csharp">public static Trooper Spawn ([NotNull] KaijuAgent trooperPrefab, [NotNull] SpawnPoint spawnPoint)
+</code></pre>
+<p>Spawn a trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_TakeDamage"></a></p>
+<h3 id="takedamage">TakeDamage</h3>
+<pre><code class="language-csharp">public void TakeDamage ([NotNull] Trooper attacker)
+</code></pre>
+<p>Take damage from another trooper.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_Attack"></a></p>
+<h3 id="attack">Attack</h3>
+<pre><code class="language-csharp">public void Attack ()
+</code></pre>
+<p>Fire the BlasterActuator.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_StopAttacking"></a></p>
+<h3 id="stopattacking">StopAttacking</h3>
+<pre><code class="language-csharp">public void StopAttacking ()
+</code></pre>
+<p>Cancel trying to fire the BlasterActuator.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnEnable"></a></p>
+<h3 id="onenable">OnEnable</h3>
+<pre><code class="language-csharp">protected override void OnEnable ()
+</code></pre>
+<p>This function is called when the object becomes enabled and active.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnDisable"></a></p>
+<h3 id="ondisable">OnDisable</h3>
+<pre><code class="language-csharp">protected override void OnDisable ()
+</code></pre>
+<p>This function is called when the behaviour becomes disabled.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_OnActuatorEnabled"></a></p>
+<h3 id="onactuatorenabled">OnActuatorEnabled</h3>
+<pre><code class="language-csharp">protected override void OnActuatorEnabled (KaijuActuator actuator)
+</code></pre>
+<p>Callback for when an KaijuSolutions.Agents.Actuators.KaijuActuator has been enabled.</p>
+<p><a id="KaijuSolutions_Agents_Exercises_CTF_Trooper_ToString"></a></p>
+<h3 id="tostring">ToString</h3>
+<pre><code class="language-csharp">public override string ToString ()
+</code></pre>
+<p>Get a description of the object.</p></main></body></html>

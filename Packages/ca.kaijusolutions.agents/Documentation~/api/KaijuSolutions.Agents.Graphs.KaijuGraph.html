@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KaijuGraph | Kaiju Agents</title><style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:54rem;margin:2rem auto;padding:0 1rem;color:#222}
+img{max-width:100%;height:auto}pre{padding:1em;background:#f2f4f5;overflow:auto}a{color:#174a90}
+</style></head><body><nav><a href="../index.html">Kaiju Agents manual</a></nav><main><h1 id="kaijugraph">KaijuGraph</h1>
+<p>Shared player asset compiled by the Kaiju Graph Toolkit importers.</p>
+<pre><code class="language-csharp">public sealed class KaijuGraph : ScriptableObject
+</code></pre>
+<p><a href="../../Runtime/Graphs/KaijuGraph.cs">Package source</a></p>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_SourceId"></a></p>
+<h3 id="sourceid">SourceId</h3>
+<pre><code class="language-csharp">public Hash128 SourceId { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_Family"></a></p>
+<h3 id="family">Family</h3>
+<pre><code class="language-csharp">public GraphFamily Family { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_Entry"></a></p>
+<h3 id="entry">Entry</h3>
+<pre><code class="language-csharp">public int Entry { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_Variables"></a></p>
+<h3 id="variables">Variables</h3>
+<pre><code class="language-csharp">public IReadOnlyList&lt;GraphVariable&gt; Variables { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_StepCount"></a></p>
+<h3 id="stepcount">StepCount</h3>
+<pre><code class="language-csharp">public int StepCount { get; }
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_NodeLabel"></a></p>
+<h3 id="nodelabel">NodeLabel</h3>
+<pre><code class="language-csharp">public string NodeLabel (Hash128 id)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_InspectStep"></a></p>
+<h3 id="inspectstep">InspectStep</h3>
+<pre><code class="language-csharp">public GraphStep InspectStep (int index)
+</code></pre>
+<p><a id="KaijuSolutions_Agents_Graphs_KaijuGraph_Create"></a></p>
+<h3 id="create">Create</h3>
+<pre><code class="language-csharp">public static KaijuGraph Create (GraphFamily family, int entry, GraphVariable[] variables, GraphStep[] steps, Hash128 sourceId = default)
+</code></pre></main></body></html>
